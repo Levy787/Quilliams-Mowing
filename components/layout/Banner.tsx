@@ -36,8 +36,9 @@ export function Banner() {
                                 <span>Call: 07593 121 621</span>
                             </a>
                         </Button>
-
+                        {/* 
                         <div className="w-px h-4 bg-white/30 hidden sm:block" aria-hidden="true" />
+
 
                         <Link
                             href="/quote"
@@ -45,7 +46,7 @@ export function Banner() {
                         >
                             <FileText className="w-4 h-4" aria-hidden="true" />
                             <span>Get A Quote</span>
-                        </Link>
+                        </Link> */}
                     </div>
                 </div>
             </div>

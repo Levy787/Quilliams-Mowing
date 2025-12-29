@@ -10,7 +10,7 @@ export function Hero() {
         <section
             className="bg-gray-900 pt-16 pb-4 lg:py-0 mx-4 md:mx-8 lg:mx-16 rounded-4xl relative overflow-hidden"
             style={{
-                backgroundImage: 'url(/images/pattern-1.png)',
+                backgroundImage: 'url(/patterns/pattern-1.png)',
                 backgroundRepeat: 'repeat',
                 backgroundBlendMode: 'overlay',
             }}
@@ -40,7 +40,7 @@ export function Hero() {
                             <Button size="lg" asChild>
                                 <Link href="/quote">
                                     <FileText className="w-5 h-5" aria-hidden="true" />
-                                    Free Quote
+                                    Get Your Quote
                                 </Link>
                             </Button>
 

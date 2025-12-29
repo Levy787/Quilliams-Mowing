@@ -2,7 +2,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Grid2X2, Leaf } from "lucide-react";
+import { ArrowRight, Grid2X2, Leaf, FileText } from "lucide-react";
 import { useState } from "react";
 
 import {
@@ -149,9 +149,9 @@ export function Navbar() {
 
                         {/* Let's Talk Button */}
                         <Button className="hidden md:inline-flex" asChild>
-                            <Link href="/contact">
-                                Let&apos;s Talk
-                                <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                            <Link href="/quote">
+                                Get a Quote
+                                <FileText className="w-4 h-4" aria-hidden="true" />
                             </Link>
                         </Button>
 
@@ -184,9 +184,9 @@ export function Navbar() {
                             ))}
                         </ul>
                         <Button className="mt-4 w-full" size="lg" asChild>
-                            <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
-                                Let&apos;s Talk
-                                <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                            <Link href="/quote" onClick={() => setMobileMenuOpen(false)}>
+                                Get a Quote
+                                <FileText className="w-4 h-4" aria-hidden="true" />
                             </Link>
                         </Button>
                     </div>
