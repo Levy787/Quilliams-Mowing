@@ -2,18 +2,17 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Calendar, ArrowRight } from "lucide-react";
+import { FileText, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function Hero() {
     return (
         <section
-            className="bg-gray-900 py-16 md:py-0 mx-4 md:mx-8 lg:mx-16 rounded-4xl relative overflow-hidden"
+            className="bg-gray-900 pt-16 pb-4 lg:py-0 mx-4 md:mx-8 lg:mx-16 rounded-4xl relative overflow-hidden"
             style={{
                 backgroundImage: 'url(/images/pattern-1.png)',
                 backgroundRepeat: 'repeat',
                 backgroundBlendMode: 'overlay',
-                opacity: 1
             }}
         >
             <div className="container mx-auto px-4 lg:px-12 relative z-10">
@@ -22,7 +21,7 @@ export function Hero() {
                     <div className="space-y-8 min-w-0">
                         {/* Heading */}
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                            <span className="text-primary">Designing landscapes</span>{" "}
+                            <span className="text-green-400">Designing landscapes</span>{" "}
                             <span className="text-white">
                                 that grow with beauty, and last for generations.
                             </span>
@@ -39,9 +38,9 @@ export function Hero() {
                         {/* CTA Buttons */}
                         <div className="flex flex-col sm:flex-row gap-4">
                             <Button size="lg" asChild>
-                                <Link href="/appointment">
-                                    <Calendar className="w-5 h-5" aria-hidden="true" />
-                                    Book An Appointment
+                                <Link href="/quote">
+                                    <FileText className="w-5 h-5" aria-hidden="true" />
+                                    Free Quote
                                 </Link>
                             </Button>
 
@@ -55,7 +54,7 @@ export function Hero() {
                     </div>
 
                     {/* Image Grid - Right Side */}
-                    <div className="grid grid-cols-2 gap-4 h-[700px] w-full max-w-full overflow-hidden min-w-0">
+                    <div className="rounded-xl grid grid-cols-2 gap-4 h-[700px] w-full max-w-full overflow-hidden min-w-0">
                         {/* Column 1 - Scrolling Down */}
                         <div className="flex flex-col gap-2 animate-scroll-down">
                             <div className="relative aspect-[3/4] rounded-xl overflow-hidden shrink-0">
