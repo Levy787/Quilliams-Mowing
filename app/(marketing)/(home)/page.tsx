@@ -1,7 +1,7 @@
 import { Hero } from "./Hero";
 import { Stats } from "./Stats";
 import { AboutUs } from "./AboutUs";
-// import { Services } from "./Services"
+import { Services } from "./Services";
 
 export default function Home() {
     return (
@@ -9,7 +9,7 @@ export default function Home() {
             <Hero />
             <Stats />
             <AboutUs />
-            {/* <Services /> */}
+            <Services />
         </>
     )
 }
