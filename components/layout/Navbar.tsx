@@ -1,6 +1,7 @@
 
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Grid2X2, Leaf, FileText } from "lucide-react";
 import { useState } from "react";
@@ -62,13 +63,14 @@ export function Navbar() {
                 <div className="flex items-center justify-between h-20 lg:h-24">
                     {/* Logo Section */}
                     <Link href="/" className="flex items-center gap-3 group">
-                        <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center group-hover:bg-primary/90 transition-colors">
+                        <Image src="/logos/logo-icon-text.webp" alt="Lawnella Logo" width={48} height={48} />
+                        {/* <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center group-hover:bg-primary/90 transition-colors">
                             <Leaf className="w-7 h-7 text-primary-foreground" aria-hidden="true" />
                         </div>
                         <div className="flex flex-col">
                             <span className="text-xl font-bold text-foreground">Lawnella</span>
                             <span className="text-xs text-muted-foreground">Corner of Nature</span>
-                        </div>
+                        </div> */}
                     </Link>
 
                     {/* Desktop Navigation Menu - Center */}
