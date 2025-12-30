@@ -8,30 +8,30 @@ import { Button } from "@/components/ui/button";
 const COVER_IMAGES_LEFT = [
     {
         src: "/images/IMG_20240509_41792.webp",
-        alt: "Wooden pergola with landscaped garden area"
+        alt: "Garden with freshly cut hedges and a neat lawn"
     },
     {
         src: "/images/IMG_20250704_93515.webp",
-        alt: "Beautiful green lawn with landscaping"
+        alt: "Freshly mown lawn with trimmed hedges in a private garden"
     },
     {
         src: "/images/IMG_20250708_11200.webp",
-        alt: "Beautiful green lawn with landscaping"
+        alt: "Tidy garden lawn with freshly cut hedges and clean edges"
     },
 ]
 
 const COVER_IMAGES_RIGHT = [
     {
         src: "/images/IMG_20250708_16272.webp",
-        alt: "Wooden pergola with landscaped garden area"
+        alt: "Well-kept garden with freshly trimmed hedges and a neat lawn"
     },
     {
         src: "/images/IMG_20250708_34242.webp",
-        alt: "Wooden pergola with landscaped garden area"
+        alt: "Garden after hedge trimming with a fresh cut lawn"
     },
     {
         src: "/images/IMG_20250715_29185.webp",
-        alt: "Wooden pergola with landscaped garden area"
+        alt: "Freshly maintained garden with trimmed hedges and clean lawn lines"
     },
 ]
 
@@ -59,7 +59,6 @@ export function Hero() {
                             <span className="text-green-400">Lawn Care</span>
                             {" "}You Can Rely On
                         </h1>
-                        b
 
                         {/* Subheading */}
                         <p className="text-gray-200 text-lg md:text-xl leading-relaxed max-w-2xl">
