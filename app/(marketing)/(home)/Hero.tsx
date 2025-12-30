@@ -5,6 +5,36 @@ import Image from "next/image";
 import { FileText, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+const COVER_IMAGES_LEFT = [
+    {
+        src: "/images/IMG_20240509_41792.webp",
+        alt: "Wooden pergola with landscaped garden area"
+    },
+    {
+        src: "/images/IMG_20250704_93515.webp",
+        alt: "Beautiful green lawn with landscaping"
+    },
+    {
+        src: "/images/IMG_20250708_11200.webp",
+        alt: "Beautiful green lawn with landscaping"
+    },
+]
+
+const COVER_IMAGES_RIGHT = [
+    {
+        src: "/images/IMG_20250708_16272.webp",
+        alt: "Wooden pergola with landscaped garden area"
+    },
+    {
+        src: "/images/IMG_20250708_34242.webp",
+        alt: "Wooden pergola with landscaped garden area"
+    },
+    {
+        src: "/images/IMG_20250715_29185.webp",
+        alt: "Wooden pergola with landscaped garden area"
+    },
+]
+
 export function Hero() {
     return (
         <section
@@ -58,156 +88,55 @@ export function Hero() {
                     <div className="rounded-xl grid grid-cols-2 gap-4 h-[700px] w-full max-w-full overflow-hidden min-w-0">
                         {/* Column 1 - Scrolling Down */}
                         <div className="flex flex-col gap-2 animate-scroll-down">
-                            <div className="relative aspect-[3/4] rounded-xl overflow-hidden shrink-0">
-                                <Image
-                                    src="https://picsum.photos/id/237/400/600"
-                                    alt="Wooden pergola with landscaped garden area"
-                                    fill
-                                    className="object-cover"
-                                    sizes="(max-width: 768px) 50vw, 20vw"
-                                />
-                            </div>
-                            <div className="relative aspect-[3/4] rounded-xl overflow-hidden shrink-0">
-                                <Image
-                                    src="https://picsum.photos/id/300/400/600"
-                                    alt="Close-up of hands trimming a hedge with garden shears"
-                                    fill
-                                    className="object-cover"
-                                    sizes="(max-width: 768px) 50vw, 20vw"
-                                />
-                            </div>
-                            <div className="relative aspect-[3/4] rounded-xl overflow-hidden shrink-0">
-                                <Image
-                                    src="https://picsum.photos/id/180/400/600"
-                                    alt="Beautiful green lawn with landscaping"
-                                    fill
-                                    className="object-cover"
-                                    sizes="(max-width: 768px) 50vw, 20vw"
-                                />
-                            </div>
-                            <div className="relative aspect-[3/4] rounded-xl overflow-hidden shrink-0">
-                                <Image
-                                    src="https://picsum.photos/id/292/400/600"
-                                    alt="Garden maintenance tools and equipment"
-                                    fill
-                                    className="object-cover"
-                                    sizes="(max-width: 768px) 50vw, 20vw"
-                                />
-                            </div>
-                            {/* Duplicate for seamless loop */}
-                            <div className="relative aspect-[3/4] rounded-xl overflow-hidden shrink-0">
-                                <Image
-                                    src="https://picsum.photos/id/237/400/600"
-                                    alt="Wooden pergola with landscaped garden area"
-                                    fill
-                                    className="object-cover"
-                                    sizes="(max-width: 768px) 50vw, 20vw"
-                                />
-                            </div>
-                            <div className="relative aspect-[3/4] rounded-xl overflow-hidden shrink-0">
-                                <Image
-                                    src="https://picsum.photos/id/300/400/600"
-                                    alt="Close-up of hands trimming a hedge with garden shears"
-                                    fill
-                                    className="object-cover"
-                                    sizes="(max-width: 768px) 50vw, 20vw"
-                                />
-                            </div>
-                            <div className="relative aspect-[3/4] rounded-xl overflow-hidden shrink-0">
-                                <Image
-                                    src="https://picsum.photos/id/180/400/600"
-                                    alt="Beautiful green lawn with landscaping"
-                                    fill
-                                    className="object-cover"
-                                    sizes="(max-width: 768px) 50vw, 20vw"
-                                />
-                            </div>
-                            <div className="relative aspect-[3/4] rounded-xl overflow-hidden shrink-0">
-                                <Image
-                                    src="https://picsum.photos/id/292/400/600"
-                                    alt="Garden maintenance tools and equipment"
-                                    fill
-                                    className="object-cover"
-                                    sizes="(max-width: 768px) 50vw, 20vw"
-                                />
-                            </div>
+                            {COVER_IMAGES_LEFT.map((image, index) => (
+                                <div key={index} className="relative aspect-[3/4] rounded-xl overflow-hidden shrink-0">
+                                    <Image
+                                        src={image.src}
+                                        alt={image.alt}
+                                        fill
+                                        className="object-cover"
+                                        sizes="(max-width: 768px) 50vw, 20vw"
+                                    />
+                                </div>
+                            ))}
+                            {COVER_IMAGES_LEFT.map((image, index) => (
+                                <div key={index} className="relative aspect-[3/4] rounded-xl overflow-hidden shrink-0">
+                                    <Image
+                                        src={image.src}
+                                        alt={image.alt}
+                                        fill
+                                        className="object-cover"
+                                        sizes="(max-width: 768px) 50vw, 20vw"
+                                    />
+                                </div>
+                            ))}
+
                         </div>
 
                         {/* Column 2 - Scrolling Up */}
                         <div className="flex flex-col gap-2 animate-scroll-up">
-                            <div className="relative aspect-[3/4] rounded-xl overflow-hidden shrink-0">
-                                <Image
-                                    src="https://picsum.photos/id/200/400/600"
-                                    alt="Professional gardener holding gardening equipment"
-                                    fill
-                                    className="object-cover"
-                                    sizes="(max-width: 768px) 50vw, 20vw"
-                                />
-                            </div>
-                            <div className="relative aspect-[3/4] rounded-xl overflow-hidden shrink-0">
-                                <Image
-                                    src="https://picsum.photos/id/20/400/600"
-                                    alt="Person using a hedge trimmer on bushes"
-                                    fill
-                                    className="object-cover"
-                                    sizes="(max-width: 768px) 50vw, 20vw"
-                                />
-                            </div>
-                            <div className="relative aspect-[3/4] rounded-xl overflow-hidden shrink-0">
-                                <Image
-                                    src="https://picsum.photos/id/152/400/600"
-                                    alt="Flowering plants in landscaped garden bed"
-                                    fill
-                                    className="object-cover"
-                                    sizes="(max-width: 768px) 50vw, 20vw"
-                                />
-                            </div>
-                            <div className="relative aspect-[3/4] rounded-xl overflow-hidden shrink-0">
-                                <Image
-                                    src="https://picsum.photos/id/225/400/600"
-                                    alt="Lush garden with stone pathway"
-                                    fill
-                                    className="object-cover"
-                                    sizes="(max-width: 768px) 50vw, 20vw"
-                                />
-                            </div>
-                            {/* Duplicate for seamless loop */}
-                            <div className="relative aspect-[3/4] rounded-xl overflow-hidden shrink-0">
-                                <Image
-                                    src="https://picsum.photos/id/200/400/600"
-                                    alt="Professional gardener holding gardening equipment"
-                                    fill
-                                    className="object-cover"
-                                    sizes="(max-width: 768px) 50vw, 20vw"
-                                />
-                            </div>
-                            <div className="relative aspect-[3/4] rounded-xl overflow-hidden shrink-0">
-                                <Image
-                                    src="https://picsum.photos/id/20/400/600"
-                                    alt="Person using a hedge trimmer on bushes"
-                                    fill
-                                    className="object-cover"
-                                    sizes="(max-width: 768px) 50vw, 20vw"
-                                />
-                            </div>
-                            <div className="relative aspect-[3/4] rounded-xl overflow-hidden shrink-0">
-                                <Image
-                                    src="https://picsum.photos/id/152/400/600"
-                                    alt="Flowering plants in landscaped garden bed"
-                                    fill
-                                    className="object-cover"
-                                    sizes="(max-width: 768px) 50vw, 20vw"
-                                />
-                            </div>
-                            <div className="relative aspect-[3/4] rounded-xl overflow-hidden shrink-0">
-                                <Image
-                                    src="https://picsum.photos/id/225/400/600"
-                                    alt="Lush garden with stone pathway"
-                                    fill
-                                    className="object-cover"
-                                    sizes="(max-width: 768px) 50vw, 20vw"
-                                />
-                            </div>
+                            {COVER_IMAGES_RIGHT.map((image, index) => (
+                                <div key={index} className="relative aspect-[3/4] rounded-xl overflow-hidden shrink-0">
+                                    <Image
+                                        src={image.src}
+                                        alt={image.alt}
+                                        fill
+                                        className="object-cover"
+                                        sizes="(max-width: 768px) 50vw, 20vw"
+                                    />
+                                </div>
+                            ))}
+                            {COVER_IMAGES_RIGHT.map((image, index) => (
+                                <div key={index} className="relative aspect-[3/4] rounded-xl overflow-hidden shrink-0">
+                                    <Image
+                                        src={image.src}
+                                        alt={image.alt}
+                                        fill
+                                        className="object-cover"
+                                        sizes="(max-width: 768px) 50vw, 20vw"
+                                    />
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
