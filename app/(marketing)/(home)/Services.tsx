@@ -53,6 +53,7 @@ const SERVICES: ServiceItem[] = [
     },
 ];
 
+
 export function Services() {
     const shouldReduceMotion = useReducedMotion();
     const sectionRef = React.useRef<HTMLElement | null>(null);

@@ -1,6 +1,7 @@
 
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import * as React from "react";
 import {
@@ -13,6 +14,7 @@ import {
 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+import { Input } from "@/components/ui/input";
 
 function IconLink({
     href,
@@ -42,30 +44,26 @@ function IconLink({
 export function Footer() {
     return (
         <footer className="container mx-auto">
-            <div className="rounded-t-4xl bg-foreground text-background overflow-hidden">
+            <div className="rounded-t-4xl bg-gray-900 text-background overflow-hidden">
                 {/* Main panel */}
                 <div className="px-6 py-12 md:px-10 md:py-14">
                     <div className="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-16">
                         {/* About Company */}
                         <div className="min-w-0">
-                            <h3 className="text-2xl font-semibold tracking-tight">About Company</h3>
+                            <Link href="/">
+                                <Image src="/logos/logo-icon-text.webp" alt="Quilliams Gardening & Landscaping" width={176} height={40} />
+                            </Link>
                             <p className="mt-6 max-w-md text-base leading-relaxed text-background/75">
-                                Lawnella’s hardworking team has been delivering outstanding,
-                                environmentally friendly landscapes for over 25 years around the world...
+                                Quilliams Gardening & Landscaping hardworking team has been delivering outstanding,
+                                environmentally friendly landscapes for over 5 years.
                             </p>
 
                             <h4 className="mt-10 text-xl font-semibold">Connect With Us</h4>
                             <div className="mt-5 flex flex-wrap gap-4">
-                                <IconLink href="#" label="Facebook">
+                                <IconLink href="https://www.facebook.com/quilliamsmowing/" label="Facebook">
                                     <Facebook className="h-5 w-5" aria-hidden="true" />
                                 </IconLink>
-                                <IconLink href="#" label="X">
-                                    <X className="h-5 w-5" aria-hidden="true" />
-                                </IconLink>
-                                <IconLink href="#" label="YouTube">
-                                    <Youtube className="h-5 w-5" aria-hidden="true" />
-                                </IconLink>
-                                <IconLink href="#" label="Instagram">
+                                <IconLink href="https://www.instagram.com/quilliamsmowing/" label="Instagram">
                                     <Instagram className="h-5 w-5" aria-hidden="true" />
                                 </IconLink>
                             </div>
@@ -79,16 +77,21 @@ export function Footer() {
                                 <div>
                                     <div className="text-sm font-semibold text-primary">Mon – Fri</div>
                                     <div className="mt-1 text-base text-background/75">
-                                        09:00 am : 08:00 pm
+                                        08:00 am : 05:00 pm
                                     </div>
-                                </div>
-                                <div>
-                                    <div className="text-sm font-semibold text-primary">
-                                        Saturday ( 1st &amp; 4th )
-                                    </div>
+                                    <div className="text-sm font-semibold text-primary">Saturday</div>
                                     <div className="mt-1 text-base text-background/75">
-                                        09:00 am : 08:00 pm
+                                        Closed
                                     </div>
+                                    <div className="text-sm font-semibold text-primary">Sunday</div>
+                                    <div className="mt-1 text-base text-background/75">
+                                        Closed
+                                    </div>
+                                    <div className="text-sm font-semibold text-primary">Bank Holidays</div>
+                                    <div className="mt-1 text-base text-background/75">
+                                        Closed
+                                    </div>
+
                                 </div>
                             </div>
 
@@ -99,10 +102,10 @@ export function Footer() {
                                     <PhoneCall className="h-10 w-10 text-primary" aria-hidden="true" />
                                 </div>
                                 <div>
-                                    <div className="text-sm text-background/75">24/7 Emergency Service</div>
-                                    <div className="mt-1 text-3xl font-semibold tracking-tight">
-                                        +1800900122
-                                    </div>
+                                    <div className="text-sm text-background/75">Phone</div>
+                                    <Link href="tel:07593121621" className={"mt-1 text-3xl font-semibold tracking-tight hover:underline"}>
+                                        07593 121 621
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -111,7 +114,7 @@ export function Footer() {
                         <div className="min-w-0">
                             <h3 className="text-2xl font-semibold tracking-tight">Subscribe Us</h3>
                             <p className="mt-6 max-w-md text-base leading-relaxed text-background/75">
-                                Subscribe Us &amp; Recive Our Offers and Updates i Your Inbox Directly.
+                                Subscribe &amp; eceive Our Offers and Updates to Your Inbox Directly.
                             </p>
 
                             <form
@@ -125,7 +128,7 @@ export function Footer() {
                                 </label>
 
                                 <div className="relative">
-                                    <input
+                                    <Input
                                         id="footer-email"
                                         type="email"
                                         inputMode="email"
@@ -151,20 +154,27 @@ export function Footer() {
                                         <ArrowRight className="h-4 w-4" aria-hidden="true" />
                                     </button>
                                 </div>
-
-                                <p className="mt-4 text-sm text-background/75">
-                                    *We do not share your email id.
-                                </p>
                             </form>
                         </div>
                     </div>
                 </div>
 
                 {/* Bottom bar */}
-                <div className="bg-gray-900 border-t border-border/30 px-6 py-6 md:px-10">
+                <div className="bg-gray-800 border-t border-border/30 px-6 py-6 md:px-10">
                     <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                         <div className="text-sm text-background/75">
                             Copyright © 2025 Quilliams Gardening & Landscaping, All Rights Reserved.
+                        </div>
+                        <div className="text-sm text-background/75">
+                            Designed and Developed by{" "}
+                            <Link
+                                href="https://www.tradesender.co.uk/"
+                                target="_blank"
+                                rel="noopener"
+                                className="hover:underline"
+                            >
+                                TradeSender
+                            </Link>
                         </div>
 
                         <nav aria-label="Footer links" className="flex flex-wrap items-center gap-x-8 gap-y-2">
