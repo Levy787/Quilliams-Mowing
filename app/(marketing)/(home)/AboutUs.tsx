@@ -57,7 +57,7 @@ export function AboutUs() {
                             })}
                     >
                         <Image
-                            src="https://picsum.photos/id/1062/1400/1050"
+                            src="/images/IMG_20250708_34242.webp"
                             alt="Gardener caring for plants in a lush garden"
                             fill
                             className="object-cover"

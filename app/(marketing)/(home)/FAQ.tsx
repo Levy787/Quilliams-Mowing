@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import * as React from "react";
 import { Plus } from "lucide-react";
 
@@ -60,8 +61,21 @@ const FAQS: FaqItem[] = [
 
 export function FAQ() {
     return (
-        <section className="mx-4 md:mx-8 lg:mx-16 py-12 md:py-16">
-            <div className="container mx-auto px-4 lg:px-12">
+        <section className="relative overflow-hidden mx-4 md:mx-8 lg:mx-16 py-12 md:py-16">
+            <div className="pointer-events-none absolute bottom-0 left-0 hidden md:block">
+                <div className="relative h-40 w-40 md:h-48 md:w-48 lg:h-56 lg:w-56">
+                    <Image
+                        src="/images/closeu_up_removed_white.webp"
+                        alt=""
+                        aria-hidden="true"
+                        fill
+                        className="object-contain"
+                        sizes="(min-width: 1024px) 224px, (min-width: 768px) 192px, 160px"
+                    />
+                </div>
+            </div>
+
+            <div className="container mx-auto px-4 lg:px-12 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
                     {/* Left */}
                     <div className="lg:pt-6">
@@ -87,7 +101,7 @@ export function FAQ() {
                     </div>
 
                     {/* Right */}
-                    <div className="min-w-0">
+                    <div className="min-w-0 pb-6 md:pb-8">
                         <Accordion type="single" collapsible className="space-y-4">
                             {FAQS.map((item) => (
                                 <AccordionItem
