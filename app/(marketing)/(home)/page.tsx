@@ -5,6 +5,8 @@ import { Services } from "./Services";
 import { RecentWorks } from "./RecentWorks";
 import { FAQ } from "./FAQ";
 import { BoldHeadings } from "./BoldHeadings"
+import { LargeCta } from "./LargeCta";
+import { Testimonials } from "./Testimonials";
 
 export default function Home() {
     return (
@@ -16,6 +18,8 @@ export default function Home() {
             <RecentWorks />
             <BoldHeadings />
             <FAQ />
+            <LargeCta />
+            <Testimonials />
         </>
     )
 }
