@@ -161,7 +161,7 @@ export function Footer() {
                 </div>
 
                 {/* Bottom bar */}
-                <div className="border-t border-border/30 px-6 py-6 md:px-10">
+                <div className="bg-gray-900 border-t border-border/30 px-6 py-6 md:px-10">
                     <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                         <div className="text-sm text-background/75">
                             Copyright © 2025 Quilliams Gardening & Landscaping, All Rights Reserved.

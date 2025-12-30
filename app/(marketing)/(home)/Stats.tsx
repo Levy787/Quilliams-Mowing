@@ -12,10 +12,10 @@ type StatItem = {
 };
 
 const STATS: StatItem[] = [
-    { value: 2860, suffix: "+", label: "Projects Completed", Icon: Trees },
-    { value: 128, label: "Expert Landscapers", Icon: HardHat },
+    { value: 120, suffix: "+", label: "Projects Completed", Icon: Trees },
+    { value: 30, label: "Active Clients", Icon: HardHat },
     { value: 14, label: "Landscaping Awards", Icon: Award },
-    { value: 24, suffix: "+", label: "Years of Experience", Icon: TreePine },
+    { value: 5, suffix: "+", label: "Years of Experience", Icon: TreePine },
 ];
 
 const COUNT_DURATION_S = 1.5;

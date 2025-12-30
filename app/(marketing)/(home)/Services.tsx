@@ -75,7 +75,7 @@ export function Services() {
                                     transition: { duration: 0.6, ease: EASE_OUT },
                                 })}
                         >
-                            About Us
+                            Services
                         </motion.div>
 
                         <motion.h2

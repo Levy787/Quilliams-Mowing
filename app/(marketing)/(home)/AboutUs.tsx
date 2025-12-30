@@ -17,19 +17,19 @@ const FEATURES: Feature[] = [
     {
         title: "Quality",
         description:
-            "We embrace innovation and creativity in our designs, ensuring each project is unique and inspiring.",
+            "We take pride in doing the job right, using professional equipment and proven techniques to deliver consistent, long-lasting results.",
         Icon: Star,
     },
     {
         title: "Satisfaction",
         description:
-            "We are dedicated to delivering exceptional craftsmanship and using the highest quality materials to create enduring landscapes.",
+            "Your satisfaction matters. We listen to your needs, communicate clearly, and make sure every service meets your expectations.",
         Icon: ThumbsUp,
     },
     {
         title: "Sustainability",
         description:
-            "Our focus is on exceeding client expectations, providing attentive service and personalized solutions tailored to their needs.",
+            "We care for your landscape responsibly, focusing on healthy growth, smart maintenance, and practices that protect your yard for the long term.",
         Icon: ShieldCheck,
     },
 ];
@@ -91,9 +91,7 @@ export function AboutUs() {
                                     transition: { duration: 0.6, ease: EASE_OUT, delay: 0.05 },
                                 })}
                         >
-                            The Best Landscaping Services
-                            <br />
-                            in your Area
+                            Reliable Landscaping Services<br /> You Can Count On
                         </motion.h2>
 
                         <motion.p
@@ -106,10 +104,9 @@ export function AboutUs() {
                                     transition: { duration: 0.6, ease: EASE_OUT, delay: 0.1 },
                                 })}
                         >
-                            At Lawnella, we are passionate about creating exceptional outdoor spaces that
-                            inspire, refresh, and delight. Combining creativity with a commitment to
-                            quality, we bring your vision to life—transforming landscapes into thriving
-                            environments that exceed expectations every time.
+                            At Quilliams Gardening & Landscaping, we help homeowners enjoy clean, healthy, and beautiful outdoor spaces—without the physical work or time commitment. Whether you need regular mowing, garden maintenance, landscaping improvements, or a full yard clean-up, our team provides dependable, professional care tailored to your property and lifestyle.
+                            <br /><br />We proudly serve homeowners who value their time, comfort, and peace of mind. From retirees who want to enjoy their yard without the strain, to busy families who simply don’t have the hours to maintain it, we take care of the details so you don’t have to.
+                            <br /><br />Our approach is simple: show up when we say we will, do the job properly, and leave your yard looking better every time. We use proven best practices to keep landscapes healthy, attractive, and easy to maintain—season after season.
                         </motion.p>
 
                         <motion.div

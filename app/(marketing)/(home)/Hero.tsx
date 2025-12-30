@@ -20,19 +20,20 @@ export function Hero() {
                     {/* Content Area - Left Side */}
                     <div className="space-y-8 min-w-0">
                         {/* Heading */}
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                            <span className="text-green-400">Designing landscapes</span>{" "}
-                            <span className="text-white">
-                                that grow with beauty, and last for generations.
-                            </span>
+                        <h1 className="text-4xl text-white md:text-5xl lg:text-6xl font-bold leading-tight">
+                            Professional{" "}
+                            <span className="text-green-400">Landscaping</span>
+                            ,{" "}
+                            <span className="text-green-400">Gardening</span>
+                            , and{" "}
+                            <span className="text-green-400">Lawn Care</span>
+                            {" "}You Can Rely On
                         </h1>
                         b
 
                         {/* Subheading */}
                         <p className="text-gray-200 text-lg md:text-xl leading-relaxed max-w-2xl">
-                            Transforming lawns, gardens, and landscapes into vibrant,
-                            sustainable spaces that enhance beauty and bring nature closer to
-                            you.
+                            From weekly mowing and garden maintenance to full yard clean-ups and landscape improvements, we deliver stress-free, dependable care that keeps your outdoor spaces beautiful, functional, and something you can truly be proud of.
                         </p>
 
                         {/* CTA Buttons */}
