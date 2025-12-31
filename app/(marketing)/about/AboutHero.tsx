@@ -1,0 +1,114 @@
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, BadgeCheck, Phone } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+
+export function AboutHero() {
+    return (
+        <section className="mx-4 md:mx-8 lg:mx-16 pt-10 md:pt-12">
+            <div className="container mx-auto px-4 lg:px-12">
+                <Card
+                    className="rounded-4xl border-border shadow-none overflow-hidden"
+                    style={{
+                        backgroundImage: "url(/patterns/pattern-1.png)",
+                        backgroundRepeat: "repeat",
+                        backgroundBlendMode: "overlay",
+                    }}
+                >
+                    <CardContent className="p-0">
+                        <div className="grid grid-cols-1 gap-0 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
+                            {/* Copy */}
+                            <div className="p-6 md:p-10">
+                                <div className="inline-flex items-center rounded-full bg-muted px-4 py-1.5 text-sm text-muted-foreground">
+                                    About Quilliams Gardening
+                                </div>
+
+                                <h1 className="mt-5 text-4xl md:text-5xl font-extrabold tracking-tight text-foreground leading-tight">
+                                    A hands-on gardener who cares about the finish.
+                                </h1>
+
+                                <p className="mt-4 text-base md:text-lg leading-relaxed text-muted-foreground max-w-2xl">
+                                    I keep things simple: show up on time, do the work properly, and leave your outdoor space looking sharper than when I arrived.
+                                </p>
+
+                                <div className="mt-7 grid gap-3 sm:grid-cols-2">
+                                    <div className="rounded-3xl border border-border bg-background/70 px-5 py-4">
+                                        <div className="flex items-start gap-2">
+                                            <BadgeCheck className="mt-0.5 h-5 w-5 text-primary" aria-hidden />
+                                            <div className="text-sm text-muted-foreground">
+                                                <span className="font-semibold text-foreground">High standards</span> on tidy edges, clean lines, and a proper finish.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="rounded-3xl border border-border bg-background/70 px-5 py-4">
+                                        <div className="flex items-start gap-2">
+                                            <BadgeCheck className="mt-0.5 h-5 w-5 text-primary" aria-hidden />
+                                            <div className="text-sm text-muted-foreground">
+                                                <span className="font-semibold text-foreground">Clear communication</span> so you know what’s happening and when.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="rounded-3xl border border-border bg-background/70 px-5 py-4">
+                                        <div className="flex items-start gap-2">
+                                            <BadgeCheck className="mt-0.5 h-5 w-5 text-primary" aria-hidden />
+                                            <div className="text-sm text-muted-foreground">
+                                                <span className="font-semibold text-foreground">Practical solutions</span> that look good and stay manageable.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="rounded-3xl border border-border bg-background/70 px-5 py-4">
+                                        <div className="flex items-start gap-2">
+                                            <BadgeCheck className="mt-0.5 h-5 w-5 text-primary" aria-hidden />
+                                            <div className="text-sm text-muted-foreground">
+                                                <span className="font-semibold text-foreground">Respect for your property</span> — clean up is part of the job.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+                                    <Button size="lg" asChild>
+                                        <Link href="/quote">
+                                            Get a Quote
+                                            <ArrowRight className="h-5 w-5" aria-hidden />
+                                        </Link>
+                                    </Button>
+                                    <Button size="lg" variant="outline" asChild>
+                                        <Link href="/contact">Contact</Link>
+                                    </Button>
+                                    <Button size="lg" variant="ghost" asChild>
+                                        <Link href="tel:+15551234567">
+                                            <Phone className="h-5 w-5" aria-hidden />
+                                            Call
+                                        </Link>
+                                    </Button>
+                                </div>
+
+                                <p className="mt-5 text-sm text-muted-foreground">
+                                    Prefer a quick message? The quote form works best.
+                                </p>
+                            </div>
+
+                            {/* Headshot */}
+                            <div className="relative bg-muted/30">
+                                <div className="absolute inset-0 bg-linear-to-t from-background/50 via-transparent to-transparent" aria-hidden="true" />
+                                <div className="relative h-full min-h-[320px] lg:min-h-[560px]">
+                                    <Image
+                                        src="/images/closeu_up_removed_white.webp"
+                                        alt="Portrait headshot"
+                                        fill
+                                        className="object-contain p-10"
+                                        sizes="(max-width: 1024px) 100vw, 40vw"
+                                        priority={false}
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </CardContent>
+                </Card>
+            </div>
+        </section>
+    );
+}

@@ -1,9 +1,19 @@
-import { AboutUs } from "../(home)/AboutUs";
+
+
+import { AboutFAQ } from "./AboutFAQ";
+import { AboutHero } from "./AboutHero";
+import { AboutProcess } from "./AboutProcess";
+import { AboutStory } from "./AboutStory";
+import { AboutTimeline } from "./AboutTimeline";
 
 export default function AboutPage() {
     return (
         <main>
-            <AboutUs />
+            <AboutHero />
+            <AboutStory />
+            <AboutTimeline />
+            <AboutProcess />
+            <AboutFAQ />
         </main>
     );
 }

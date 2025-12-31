@@ -18,9 +18,10 @@ import { NavbarSearch } from "@/components/layout/NavbarSearch";
 
 const NAV_ITEMS = [
     { label: "Home", href: "/" },
+    { label: "About", href: "/about" },
+    { label: "Pricing", href: "/pricing" },
     { label: "Services", href: "/services" },
     { label: "Projects", href: "/projects" },
-    { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
 ] as const;
 
