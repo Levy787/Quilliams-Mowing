@@ -1,7 +1,10 @@
 export type TrustStripIcon = "shield" | "star" | "clock" | "sparkles";
 
+export type OfferTemplate = "standard" | "funnel";
+
 export type Offer = {
     slug: string;
+    template?: OfferTemplate;
     headline: string;
     subheadline: string;
     terms: string;
@@ -24,6 +27,7 @@ export type Offer = {
 export const OFFERS = [
     {
         slug: "spring-cleanup-special",
+        template: "funnel",
         headline: "Spring Cleanup Special",
         subheadline:
             "Clear the mess, refresh your garden beds, and get your yard back under control — fast, tidy, and stress-free.",
@@ -84,8 +88,6 @@ export const OFFERS = [
 
 export type OfferSlug = (typeof OFFERS)[number]["slug"];
 
-export function getOfferBySlug(slug: string) {
-    return (
-        OFFERS.find((offer) => offer.slug === slug) ?? null
-    );
+export function getOfferBySlug(slug: string): Offer | null {
+    return OFFERS.find((offer) => offer.slug === slug) ?? null;
 }
