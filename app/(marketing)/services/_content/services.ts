@@ -1766,8 +1766,10 @@ export type Service = ServiceDefinition;
 
 export function getServiceBySlug(slug: string): ServiceDefinition | null {
     return (
-        (SERVICES as readonly ServiceDefinition[]).find((s) => s.slug === slug) ??
-        null
+        (SERVICES as readonly ServiceDefinition[]).find((s) =>
+            s.slug === slug
+        ) ??
+            null
     );
 }
 
