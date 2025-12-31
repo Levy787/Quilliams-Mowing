@@ -1,4 +1,4 @@
-import { config, fields, singleton } from "@keystatic/core";
+import { collection, config, fields, singleton } from "@keystatic/core";
 
 const headlineToneOptions = [
   { label: "Normal", value: "normal" },
@@ -28,9 +28,95 @@ const serviceIconOptions = [
   { label: "Droplets", value: "droplets" },
 ] as const satisfies readonly IconOption[];
 
-export default config({
+export const keystaticConfig = config({
   storage: {
     kind: "local",
+  },
+  collections: {
+    offers: collection({
+      label: "Offers",
+      path: "content/offers/*",
+      format: "json",
+      slugField: "slug",
+      schema: {
+        slug: fields.slug({
+          name: {
+            label: "Name",
+            validation: { isRequired: true },
+          },
+          slug: {
+            label: "Slug",
+          },
+        }),
+        template: fields.select({
+          label: "Template",
+          options: [
+            { label: "Standard", value: "standard" },
+            { label: "Funnel", value: "funnel" },
+          ] as const,
+          defaultValue: "standard",
+        }),
+
+        headline: fields.text({ label: "Headline" }),
+        subheadline: fields.text({ label: "Subheadline", multiline: true }),
+        terms: fields.text({ label: "Terms" }),
+        serviceArea: fields.text({ label: "Service area" }),
+        phoneDisplay: fields.text({ label: "Phone (display)" }),
+        phoneTel: fields.text({ label: "Phone (tel:)" }),
+        email: fields.text({ label: "Email" }),
+
+        heroImage: fields.object(
+          {
+            src: fields.url({
+              label: "Hero image URL",
+              validation: { isRequired: true },
+            }),
+            alt: fields.text({ label: "Hero image alt" }),
+          },
+          { label: "Hero image" },
+        ),
+
+        highlights: fields.array(fields.text({ label: "Highlight" }), {
+          label: "Highlights",
+        }),
+
+        trustStrip: fields.array(
+          fields.object({
+            label: fields.text({ label: "Label" }),
+            icon: fields.select({
+              label: "Icon",
+              options: [
+                { label: "Shield", value: "shield" },
+                { label: "Star", value: "star" },
+                { label: "Clock", value: "clock" },
+                { label: "Sparkles", value: "sparkles" },
+              ] as const,
+              defaultValue: "shield",
+            }),
+          }),
+          { label: "Trust strip" },
+        ),
+
+        included: fields.array(fields.text({ label: "Included item" }), {
+          label: "Included",
+        }),
+        idealFor: fields.array(fields.text({ label: "Ideal for item" }), {
+          label: "Ideal for",
+        }),
+        typicalTimeline: fields.text({
+          label: "Typical timeline",
+          multiline: true,
+        }),
+
+        faq: fields.array(
+          fields.object({
+            q: fields.text({ label: "Question" }),
+            a: fields.text({ label: "Answer", multiline: true }),
+          }),
+          { label: "FAQ" },
+        ),
+      },
+    }),
   },
   singletons: {
     home: singleton({
@@ -577,5 +663,87 @@ export default config({
         ),
       },
     }),
+
+    contact: singleton({
+      label: "Contact",
+      path: "content/contact",
+      format: "json",
+      schema: {
+        header: fields.object(
+          {
+            badge: fields.text({ label: "Badge" }),
+            heading: fields.text({ label: "Heading" }),
+            description: fields.text({ label: "Description", multiline: true }),
+          },
+          { label: "Header" },
+        ),
+
+        details: fields.object(
+          {
+            title: fields.text({ label: "Title" }),
+            description: fields.text({ label: "Description", multiline: true }),
+
+            phoneLabel: fields.text({ label: "Phone label" }),
+            phoneDisplay: fields.text({ label: "Phone display" }),
+            phoneTel: fields.text({ label: "Phone tel" }),
+
+            emailLabel: fields.text({ label: "Email label" }),
+            emailAddress: fields.text({ label: "Email address" }),
+
+            hoursLabel: fields.text({ label: "Hours label" }),
+            hoursText: fields.text({ label: "Hours text", multiline: true }),
+
+            serviceAreaLabel: fields.text({ label: "Service area label" }),
+            serviceAreaText: fields.text({
+              label: "Service area text",
+              multiline: true,
+            }),
+          },
+          { label: "Contact details" },
+        ),
+
+        form: fields.object(
+          {
+            title: fields.text({ label: "Title" }),
+            description: fields.text({ label: "Description", multiline: true }),
+
+            fullNameLabel: fields.text({ label: "Full name label" }),
+            emailLabel: fields.text({ label: "Email label" }),
+            phoneLabel: fields.text({ label: "Phone label" }),
+
+            serviceLabel: fields.text({ label: "Service label" }),
+            servicePlaceholder: fields.text({ label: "Service placeholder" }),
+            services: fields.array(fields.text({ label: "Service" }), {
+              label: "Services",
+            }),
+
+            messageLabel: fields.text({ label: "Message label" }),
+            messagePlaceholder: fields.text({
+              label: "Message placeholder",
+              multiline: true,
+            }),
+
+            submittedText: fields.text({ label: "Submitted text" }),
+            toastSuccess: fields.text({ label: "Toast success message" }),
+            submitIdleLabel: fields.text({ label: "Submit idle label" }),
+            submitLoadingLabel: fields.text({ label: "Submit loading label" }),
+          },
+          { label: "Form" },
+        ),
+
+        map: fields.object(
+          {
+            iframeTitle: fields.text({ label: "Iframe title" }),
+            iframeSrc: fields.url({
+              label: "Iframe src",
+              validation: { isRequired: true },
+            }),
+          },
+          { label: "Map" },
+        ),
+      },
+    }),
   },
 });
+
+export default keystaticConfig;

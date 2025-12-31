@@ -25,7 +25,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
-import type { Offer, TrustStripIcon } from "../_content/offers";
+import type { Offer, TrustStripIcon } from "@/lib/offers";
 
 type PreviewItem = {
     id: string;

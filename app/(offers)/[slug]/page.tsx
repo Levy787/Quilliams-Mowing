@@ -1,14 +1,12 @@
 import { notFound } from "next/navigation";
 
-import {
-    getOfferBySlug,
-    OFFERS,
-} from "../_content/offers";
+import { getOfferBySlug, listOfferSlugs } from "@/lib/keystatic-reader";
 import OfferClient from "./offer-client";
 import OfferFunnelClient from "./offer-funnel-client";
 
-export function generateStaticParams() {
-    return OFFERS.map((offer) => ({ slug: offer.slug }));
+export async function generateStaticParams() {
+    const slugs = await listOfferSlugs();
+    return slugs.map((slug) => ({ slug }));
 }
 
 export default async function OfferPage({
@@ -17,7 +15,7 @@ export default async function OfferPage({
     params: Promise<{ slug: string }>;
 }) {
     const { slug } = await params;
-    const offer = getOfferBySlug(slug);
+    const offer = await getOfferBySlug(slug);
 
     if (!offer) notFound();
 
