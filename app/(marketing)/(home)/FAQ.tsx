@@ -20,53 +20,47 @@ type FaqItem = {
     answer: string;
 };
 
-const FAQS: FaqItem[] = [
-    {
-        id: "cost",
-        question: "How much does a garden makeover cost?",
-        answer:
-            "Costs vary based on the size of the space and the scope of work. We’ll recommend options that fit your goals after a quick chat and site visit.",
-    },
-    {
-        id: "permission",
-        question: "Will I need planning permission for my project?",
-        answer:
-            "It depends on the type of work and local requirements. We can help you understand what may be needed before you commit to the project.",
-    },
-    {
-        id: "duration",
-        question: "How long will the work take?",
-        answer:
-            "Timelines depend on the complexity of the design and site conditions. We’ll share a clear schedule once we confirm the plan and materials.",
-    },
-    {
-        id: "existing",
-        question: "Can you work with my existing garden features?",
-        answer:
-            "Yes—where possible, we can incorporate existing features into the new design. We’ll advise what can be kept, improved, or repositioned.",
-    },
-    {
-        id: "maintenance",
-        question: "Do you offer maintenance after the project is finished?",
-        answer:
-            "We can discuss ongoing upkeep options to help your garden stay in great shape. The right plan depends on the planting and your preferences.",
-    },
-    {
-        id: "areas",
-        question: "What areas do you cover?",
-        answer:
-            "Coverage depends on your location and the type of job. Send us your postcode and we’ll confirm availability and next steps.",
-    },
-];
+export type FAQProps = {
+    badge: string;
+    headingLines: readonly string[];
+    description: string;
+    ctaLabel: string;
+    ctaHref: string;
+    decorativeImageSrc: string;
+    decorativeImageAlt: string;
+    items: readonly FaqItem[];
+};
 
-export function FAQ() {
+function renderHeadingLines(lines: readonly string[]) {
+    return lines.map((line, index) => (
+        <React.Fragment key={index}>
+            {line}
+            {index < lines.length - 1 ? (
+                <>
+                    <br />
+                </>
+            ) : null}
+        </React.Fragment>
+    ));
+}
+
+export function FAQ({
+    badge,
+    headingLines,
+    description,
+    ctaLabel,
+    ctaHref,
+    decorativeImageSrc,
+    decorativeImageAlt,
+    items,
+}: FAQProps) {
     return (
         <section className="relative overflow-hidden mx-4 md:mx-8 lg:mx-16 py-12 md:py-16">
             <div className="pointer-events-none absolute bottom-0 left-0 hidden md:block">
                 <div className="relative h-40 w-40 md:h-48 md:w-48 lg:h-56 lg:w-56">
                     <Image
-                        src="/images/closeu_up_removed_white.webp"
-                        alt=""
+                        src={decorativeImageSrc}
+                        alt={decorativeImageAlt}
                         aria-hidden="true"
                         fill
                         className="object-contain"
@@ -80,22 +74,20 @@ export function FAQ() {
                     {/* Left */}
                     <div className="lg:pt-6">
                         <div className="inline-flex items-center rounded-full bg-muted px-4 py-1.5 text-sm text-muted-foreground">
-                            FAQs
+                            {badge}
                         </div>
 
                         <h2 className="mt-5 text-4xl md:text-5xl font-bold tracking-tight text-foreground">
-                            Answering your
-                            <br />
-                            questions
+                            {renderHeadingLines(headingLines)}
                         </h2>
 
                         <p className="mt-4 text-base leading-relaxed text-muted-foreground max-w-md">
-                            Got more questions? Reach out to us using the button below
+                            {description}
                         </p>
 
                         <div className="mt-7">
                             <Button asChild>
-                                <Link href="/contact">Get In Touch</Link>
+                                <Link href={ctaHref}>{ctaLabel}</Link>
                             </Button>
                         </div>
                     </div>
@@ -103,7 +95,7 @@ export function FAQ() {
                     {/* Right */}
                     <div className="min-w-0 pb-6 md:pb-8">
                         <Accordion type="single" collapsible className="space-y-4">
-                            {FAQS.map((item) => (
+                            {items.map((item) => (
                                 <AccordionItem
                                     key={item.id}
                                     value={item.id}

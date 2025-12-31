@@ -5,37 +5,39 @@ import Image from "next/image";
 import { FileText, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const COVER_IMAGES_LEFT = [
-    {
-        src: "/images/IMG_20240509_41792.webp",
-        alt: "Garden with freshly cut hedges and a neat lawn"
-    },
-    {
-        src: "/images/IMG_20250704_93515.webp",
-        alt: "Freshly mown lawn with trimmed hedges in a private garden"
-    },
-    {
-        src: "/images/IMG_20250708_11200.webp",
-        alt: "Tidy garden lawn with freshly cut hedges and clean edges"
-    },
-]
+type HeroHeadlineTone = "normal" | "primary" | "muted";
 
-const COVER_IMAGES_RIGHT = [
-    {
-        src: "/images/IMG_20250708_16272.webp",
-        alt: "Well-kept garden with freshly trimmed hedges and a neat lawn"
-    },
-    {
-        src: "/images/IMG_20250708_34242.webp",
-        alt: "Garden after hedge trimming with a fresh cut lawn"
-    },
-    {
-        src: "/images/IMG_20250715_29185.webp",
-        alt: "Freshly maintained garden with trimmed hedges and clean lawn lines"
-    },
-]
+type HeroHeadlinePart = {
+    text: string;
+    tone: HeroHeadlineTone;
+};
 
-export function Hero() {
+type HeroImage = {
+    src: string;
+    alt: string;
+};
+
+export type HeroProps = {
+    headlineParts: readonly HeroHeadlinePart[];
+    subheading: string;
+    primaryCtaLabel: string;
+    primaryCtaHref: string;
+    secondaryCtaLabel: string;
+    secondaryCtaHref: string;
+    imagesLeft: readonly HeroImage[];
+    imagesRight: readonly HeroImage[];
+};
+
+export function Hero({
+    headlineParts,
+    subheading,
+    primaryCtaLabel,
+    primaryCtaHref,
+    secondaryCtaLabel,
+    secondaryCtaHref,
+    imagesLeft,
+    imagesRight,
+}: HeroProps) {
     return (
         <section
             className="bg-gray-900 pt-16 pb-4 lg:py-0 mx-4 md:mx-8 lg:mx-16 rounded-4xl relative overflow-hidden"
@@ -51,32 +53,33 @@ export function Hero() {
                     <div className="space-y-8 min-w-0">
                         {/* Heading */}
                         <h1 className="text-4xl text-white md:text-5xl lg:text-6xl font-bold leading-tight">
-                            Professional{" "}
-                            <span className="text-green-400">Landscaping</span>
-                            ,{" "}
-                            <span className="text-green-400">Gardening</span>
-                            , and{" "}
-                            <span className="text-green-400">Lawn Care</span>
-                            {" "}You Can Rely On
+                            {headlineParts.map((part, index) => (
+                                <span
+                                    key={index}
+                                    className={part.tone === "primary" ? "text-green-600" : undefined}
+                                >
+                                    {part.text}
+                                </span>
+                            ))}
                         </h1>
 
                         {/* Subheading */}
                         <p className="text-gray-200 text-lg md:text-xl leading-relaxed max-w-2xl">
-                            From weekly mowing and garden maintenance to full yard clean-ups and landscape improvements, we deliver stress-free, dependable care that keeps your outdoor spaces beautiful, functional, and something you can truly be proud of.
+                            {subheading}
                         </p>
 
                         {/* CTA Buttons */}
                         <div className="flex flex-col sm:flex-row gap-4">
                             <Button size="lg" asChild>
-                                <Link href="/quote">
+                                <Link href={primaryCtaHref}>
                                     <FileText className="w-5 h-5" aria-hidden="true" />
-                                    Get Your Quote
+                                    {primaryCtaLabel}
                                 </Link>
                             </Button>
 
                             <Button variant="outline" size="lg" asChild>
-                                <Link href="/contact">
-                                    Contact Us
+                                <Link href={secondaryCtaHref}>
+                                    {secondaryCtaLabel}
                                     <ArrowRight className="w-5 h-5" aria-hidden="true" />
                                 </Link>
                             </Button>
@@ -87,7 +90,7 @@ export function Hero() {
                     <div className="rounded-xl grid grid-cols-2 gap-4 h-[700px] w-full max-w-full overflow-hidden min-w-0">
                         {/* Column 1 - Scrolling Down */}
                         <div className="flex flex-col gap-2 animate-scroll-down">
-                            {COVER_IMAGES_LEFT.map((image, index) => (
+                            {imagesLeft.map((image, index) => (
                                 <div key={index} className="relative aspect-[3/4] rounded-xl overflow-hidden shrink-0">
                                     <Image
                                         src={image.src}
@@ -98,7 +101,7 @@ export function Hero() {
                                     />
                                 </div>
                             ))}
-                            {COVER_IMAGES_LEFT.map((image, index) => (
+                            {imagesLeft.map((image, index) => (
                                 <div key={index} className="relative aspect-[3/4] rounded-xl overflow-hidden shrink-0">
                                     <Image
                                         src={image.src}
@@ -114,7 +117,7 @@ export function Hero() {
 
                         {/* Column 2 - Scrolling Up */}
                         <div className="flex flex-col gap-2 animate-scroll-up">
-                            {COVER_IMAGES_RIGHT.map((image, index) => (
+                            {imagesRight.map((image, index) => (
                                 <div key={index} className="relative aspect-[3/4] rounded-xl overflow-hidden shrink-0">
                                     <Image
                                         src={image.src}
@@ -125,7 +128,7 @@ export function Hero() {
                                     />
                                 </div>
                             ))}
-                            {COVER_IMAGES_RIGHT.map((image, index) => (
+                            {imagesRight.map((image, index) => (
                                 <div key={index} className="relative aspect-[3/4] rounded-xl overflow-hidden shrink-0">
                                     <Image
                                         src={image.src}

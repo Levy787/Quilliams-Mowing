@@ -10,31 +10,56 @@ import { cn } from "@/lib/utils";
 type Feature = {
     title: string;
     description: string;
-    Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+    icon: "star" | "thumbsUp" | "shieldCheck";
 };
 
-const FEATURES: Feature[] = [
-    {
-        title: "Quality",
-        description:
-            "We take pride in doing the job right, using professional equipment and proven techniques to deliver consistent, long-lasting results.",
-        Icon: Star,
-    },
-    {
-        title: "Satisfaction",
-        description:
-            "Your satisfaction matters. We listen to your needs, communicate clearly, and make sure every service meets your expectations.",
-        Icon: ThumbsUp,
-    },
-    {
-        title: "Sustainability",
-        description:
-            "We care for your landscape responsibly, focusing on healthy growth, smart maintenance, and practices that protect your yard for the long term.",
-        Icon: ShieldCheck,
-    },
-];
+const FEATURE_ICONS = {
+    star: Star,
+    thumbsUp: ThumbsUp,
+    shieldCheck: ShieldCheck,
+} as const;
 
-export function AboutUs() {
+export type AboutUsProps = {
+    badge: string;
+    headingLines: readonly string[];
+    body: string;
+    imageSrc: string;
+    imageAlt: string;
+    features: readonly Feature[];
+};
+
+function renderHeadingLines(lines: readonly string[]) {
+    return lines.map((line, index) => (
+        <React.Fragment key={index}>
+            {line}
+            {index < lines.length - 1 ? <br /> : null}
+        </React.Fragment>
+    ));
+}
+
+function renderBodyWithParagraphBreaks(text: string) {
+    const paragraphs = text.split(/\n\n+/g);
+    return paragraphs.map((p, index) => (
+        <React.Fragment key={index}>
+            {p}
+            {index < paragraphs.length - 1 ? (
+                <>
+                    <br />
+                    <br />
+                </>
+            ) : null}
+        </React.Fragment>
+    ));
+}
+
+export function AboutUs({
+    badge,
+    headingLines,
+    body,
+    imageSrc,
+    imageAlt,
+    features,
+}: AboutUsProps) {
     const shouldReduceMotion = useReducedMotion();
     const sectionRef = React.useRef<HTMLElement | null>(null);
     const inView = useInView(sectionRef, { once: true, amount: 0.35 });
@@ -57,8 +82,8 @@ export function AboutUs() {
                             })}
                     >
                         <Image
-                            src="/images/IMG_20250708_34242.webp"
-                            alt="Gardener caring for plants in a lush garden"
+                            src={imageSrc}
+                            alt={imageAlt}
                             fill
                             className="object-cover"
                             sizes="(max-width: 1024px) 100vw, 50vw"
@@ -78,7 +103,7 @@ export function AboutUs() {
                                     transition: { duration: 0.6, ease: EASE_OUT },
                                 })}
                         >
-                            About Us
+                            {badge}
                         </motion.div>
 
                         <motion.h2
@@ -91,7 +116,7 @@ export function AboutUs() {
                                     transition: { duration: 0.6, ease: EASE_OUT, delay: 0.05 },
                                 })}
                         >
-                            Reliable Landscaping Services<br /> You Can Count On
+                            {renderHeadingLines(headingLines)}
                         </motion.h2>
 
                         <motion.p
@@ -104,9 +129,7 @@ export function AboutUs() {
                                     transition: { duration: 0.6, ease: EASE_OUT, delay: 0.1 },
                                 })}
                         >
-                            At Quilliams Gardening & Landscaping, we help homeowners enjoy clean, healthy, and beautiful outdoor spaces—without the physical work or time commitment. Whether you need regular mowing, garden maintenance, landscaping improvements, or a full yard clean-up, our team provides dependable, professional care tailored to your property and lifestyle.
-                            <br /><br />We proudly serve homeowners who value their time, comfort, and peace of mind. From retirees who want to enjoy their yard without the strain, to busy families who simply don’t have the hours to maintain it, we take care of the details so you don’t have to.
-                            <br /><br />Our approach is simple: show up when we say we will, do the job properly, and leave your yard looking better every time. We use proven best practices to keep landscapes healthy, attractive, and easy to maintain—season after season.
+                            {renderBodyWithParagraphBreaks(body)}
                         </motion.p>
 
                         <motion.div
@@ -121,8 +144,8 @@ export function AboutUs() {
                         />
 
                         <div className="mt-6">
-                            {FEATURES.map((feature, idx) => {
-                                const Icon = feature.Icon;
+                            {features.map((feature, idx) => {
+                                const Icon = FEATURE_ICONS[feature.icon];
                                 return (
                                     <motion.div
                                         key={feature.title}

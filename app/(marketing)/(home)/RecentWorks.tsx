@@ -17,35 +17,27 @@ type WorkItem = {
     duration: string;
 };
 
-const WORKS: WorkItem[] = [
-    {
-        title: "Elegant Garden Makeover",
-        description:
-            "Transforming a dull backyard into a vibrant green retreat with fresh turf, seasonal flowers, and decorative pathways.",
-        perfectFor:
-            "Installed automatic irrigation, added eco-friendly lighting, and designed a low-maintenance plant layout.",
-        budget: "$800 - $2,500",
-        duration: "2-3 days",
-    },
-    {
-        title: "Elegant Garden Makeover",
-        description:
-            "Transforming a dull backyard into a vibrant green retreat with fresh turf, seasonal flowers, and decorative pathways.",
-        perfectFor:
-            "Installed automatic irrigation, added eco-friendly lighting, and designed a low-maintenance plant layout.",
-        budget: "$800 - $2,500",
-        duration: "2-3 days",
-    },
-    {
-        title: "Elegant Garden Makeover",
-        description:
-            "Transforming a dull backyard into a vibrant green retreat with fresh turf, seasonal flowers, and decorative pathways.",
-        perfectFor:
-            "Installed automatic irrigation, added eco-friendly lighting, and designed a low-maintenance plant layout.",
-        budget: "$800 - $2,500",
-        duration: "2-3 days",
-    },
-] as const;
+export type RecentWorksProps = {
+    badge: string;
+    headingLines: readonly string[];
+    description: string;
+    items: readonly WorkItem[];
+    ctaLabel: string;
+    ctaHref: string;
+};
+
+function renderHeadingLines(lines: readonly string[]) {
+    return lines.map((line, index) => (
+        <React.Fragment key={index}>
+            {line}
+            {index < lines.length - 1 ? (
+                <>
+                    <br />
+                </>
+            ) : null}
+        </React.Fragment>
+    ));
+}
 
 function InfoBlock({ label, value }: { label: string; value: string }) {
     return (
@@ -92,11 +84,15 @@ function WorkRow({
     index,
     inView,
     shouldReduceMotion,
+    ctaLabel,
+    ctaHref,
 }: {
     item: WorkItem;
     index: number;
     inView: boolean;
     shouldReduceMotion: boolean;
+    ctaLabel: string;
+    ctaHref: string;
 }) {
     const EASE_OUT = [0.16, 1, 0.3, 1] as const;
     const variant = (index + 1) as 1 | 2 | 3;
@@ -131,8 +127,8 @@ function WorkRow({
     const ctaBlock = (
         <div className="flex items-center lg:justify-end">
             <Button asChild>
-                <Link href="#">
-                    View More Details
+                <Link href={ctaHref}>
+                    {ctaLabel}
                     <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
             </Button>
@@ -204,7 +200,7 @@ function WorkRow({
     );
 }
 
-export function RecentWorks() {
+export function RecentWorks({ badge, headingLines, description, items, ctaLabel, ctaHref }: RecentWorksProps) {
     const shouldReduceMotion = !!useReducedMotion();
     const sectionRef = React.useRef<HTMLElement | null>(null);
     const inView = useInView(sectionRef, { once: true, amount: 0.3 });
@@ -232,7 +228,7 @@ export function RecentWorks() {
                                             transition: { duration: 0.6, ease: EASE_OUT },
                                         })}
                                 >
-                                    Our Recent Works
+                                    {badge}
                                 </motion.div>
 
                                 <motion.h2
@@ -251,9 +247,7 @@ export function RecentWorks() {
                                             },
                                         })}
                                 >
-                                    Beautiful Gardens &amp;
-                                    <br />
-                                    Landscapes We Created
+                                    {renderHeadingLines(headingLines)}
                                 </motion.h2>
                             </div>
 
@@ -269,20 +263,21 @@ export function RecentWorks() {
                                         transition: { duration: 0.7, ease: EASE_OUT, delay: 0.1 },
                                     })}
                             >
-                                See how we’ve transformed spaces with our expert craftsmanship and attention
-                                to detail.
+                                {description}
                             </motion.p>
                         </div>
 
                         {/* Rows */}
                         <div className="mt-10 space-y-6">
-                            {WORKS.map((item, idx) => (
+                            {items.map((item, idx) => (
                                 <WorkRow
                                     key={idx}
                                     item={item}
                                     index={idx}
                                     inView={inView}
                                     shouldReduceMotion={shouldReduceMotion}
+                                    ctaLabel={ctaLabel}
+                                    ctaHref={ctaHref}
                                 />
                             ))}
                         </div>

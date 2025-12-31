@@ -4,7 +4,36 @@ import { ArrowRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
-export function LargeCta() {
+export type LargeCtaProps = {
+    leftImageUrl: string;
+    leftImageAlt: string;
+    rightImageUrl: string;
+    rightImageAlt: string;
+    headingLines: readonly string[];
+    body: string;
+    ctaLabel: string;
+    ctaHref: string;
+};
+
+function renderHeadingLines(lines: readonly string[]) {
+    return lines.map((line, index) => (
+        <span key={index}>
+            {line}
+            {index < lines.length - 1 ? <br /> : null}
+        </span>
+    ));
+}
+
+export function LargeCta({
+    leftImageUrl,
+    leftImageAlt,
+    rightImageUrl,
+    rightImageAlt,
+    headingLines,
+    body,
+    ctaLabel,
+    ctaHref,
+}: LargeCtaProps) {
     return (
         <section
             className="bg-gray-900 mx-4 md:mx-8 lg:mx-16 rounded-4xl relative overflow-hidden py-16 lg:py-20"
@@ -20,8 +49,8 @@ export function LargeCta() {
                     {/* Left Image */}
                     <div className="relative overflow-hidden rounded-4xl h-80 sm:h-95 lg:h-115 mb-12">
                         <Image
-                            src="https://picsum.photos/id/1018/1200/900"
-                            alt="Modern landscaped garden and outdoor living space"
+                            src={leftImageUrl}
+                            alt={leftImageAlt}
                             fill
                             className="object-cover"
                             sizes="(max-width: 1024px) 100vw, 33vw"
@@ -32,19 +61,17 @@ export function LargeCta() {
                     {/* Center Content */}
                     <div className="text-center space-y-6">
                         <h2 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
-                            Let’s create a
-                            <br />
-                            garden you’ll love
+                            {renderHeadingLines(headingLines)}
                         </h2>
 
                         <p className="text-white/80 text-base md:text-lg leading-relaxed max-w-xl mx-auto">
-                            Let’s turn your outdoor space into something beautiful. Get in touch for a free consultation today.
+                            {body}
                         </p>
 
                         <div className="pt-2">
                             <Button size="lg" asChild>
-                                <Link href="/contact">
-                                    Talk To The Team
+                                <Link href={ctaHref}>
+                                    {ctaLabel}
                                     <ArrowRight className="h-5 w-5" aria-hidden="true" />
                                 </Link>
                             </Button>
@@ -54,8 +81,8 @@ export function LargeCta() {
                     {/* Right Image */}
                     <div className="relative w-full overflow-hidden rounded-4xl h-80 sm:h-90 lg:h-115 mt-12">
                         <Image
-                            src="https://picsum.photos/id/1027/900/1400"
-                            alt="Gardener trimming a hedge"
+                            src={rightImageUrl}
+                            alt={rightImageAlt}
                             fill
                             className="object-cover"
                             sizes="(max-width: 1024px) 100vw, 25vw"

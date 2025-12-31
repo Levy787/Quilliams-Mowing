@@ -19,42 +19,26 @@ import { cn } from "@/lib/utils";
 type ServiceItem = {
     title: string;
     description: string;
-    Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
     tag: string;
+    icon: "leaf" | "sprout" | "snowflake" | "droplets";
 };
 
-const SERVICES: ServiceItem[] = [
-    {
-        title: "Spring Cleanup",
-        description:
-            "These cases perfectly simple easy to distinguish desires obtain extremly.",
-        Icon: Leaf,
-        tag: "Commercial",
-    },
-    {
-        title: "Lawn Fertilization",
-        description: "Blinded by desire they cannot foresee and trouble are bounded.",
-        Icon: Sprout,
-        tag: "Commercial",
-    },
-    {
-        title: "Snow & Ice RemoveI",
-        description:
-            "Perfectly simple and easy to distinguish a free , when our power.",
-        Icon: Snowflake,
-        tag: "Commercial",
-    },
-    {
-        title: "Irrigation & Drainage",
-        description:
-            "Prevents our being able to do what like enjoy every pleasure.",
-        Icon: Droplets,
-        tag: "Commercial",
-    },
-];
+const SERVICE_ICONS = {
+    leaf: Leaf,
+    sprout: Sprout,
+    snowflake: Snowflake,
+    droplets: Droplets,
+} as const;
 
+export type ServicesProps = {
+    badge: string;
+    heading: string;
+    ctaLabel: string;
+    ctaHref: string;
+    items: readonly ServiceItem[];
+};
 
-export function Services() {
+export function Services({ badge, heading, ctaLabel, ctaHref, items }: ServicesProps) {
     const shouldReduceMotion = useReducedMotion();
     const sectionRef = React.useRef<HTMLElement | null>(null);
     const inView = useInView(sectionRef, { once: true, amount: 0.25 });
@@ -76,7 +60,7 @@ export function Services() {
                                     transition: { duration: 0.6, ease: EASE_OUT },
                                 })}
                         >
-                            Services
+                            {badge}
                         </motion.div>
 
                         <motion.h2
@@ -89,7 +73,7 @@ export function Services() {
                                     transition: { duration: 0.7, ease: EASE_OUT, delay: 0.05 },
                                 })}
                         >
-                            Exclusive Services
+                            {heading}
                         </motion.h2>
                     </div>
 
@@ -104,8 +88,8 @@ export function Services() {
                             })}
                     >
                         <Button asChild>
-                            <Link href="#">
-                                More Services
+                            <Link href={ctaHref}>
+                                {ctaLabel}
                                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
                             </Link>
                         </Button>
@@ -119,8 +103,8 @@ export function Services() {
                         className="relative"
                     >
                         <CarouselContent>
-                            {SERVICES.map((service, idx) => {
-                                const Icon = service.Icon;
+                            {items.map((service, idx) => {
+                                const Icon = SERVICE_ICONS[service.icon];
                                 return (
                                     <CarouselItem
                                         key={service.title}

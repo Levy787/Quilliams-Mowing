@@ -4,19 +4,25 @@ import * as React from "react";
 import { animate, motion, useInView, useReducedMotion } from "framer-motion";
 import { Award, HardHat, TreePine, Trees } from "lucide-react";
 
-type StatItem = {
+const STAT_ICONS = {
+    trees: Trees,
+    hardHat: HardHat,
+    award: Award,
+    treePine: TreePine,
+} as const;
+
+type StatIconKey = keyof typeof STAT_ICONS;
+
+export type StatsItem = {
     value: number;
     suffix?: string;
     label: string;
-    Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+    icon: StatIconKey;
 };
 
-const STATS: StatItem[] = [
-    { value: 120, suffix: "+", label: "Projects Completed", Icon: Trees },
-    { value: 30, label: "Active Clients", Icon: HardHat },
-    { value: 14, label: "Landscaping Awards", Icon: Award },
-    { value: 5, suffix: "+", label: "Years of Experience", Icon: TreePine },
-];
+export type StatsProps = {
+    items: readonly StatsItem[];
+};
 
 const COUNT_DURATION_S = 1.5;
 
@@ -25,7 +31,7 @@ function StatCard({
     index,
     inView,
 }: {
-    stat: StatItem;
+    stat: StatsItem;
     index: number;
     inView: boolean;
 }) {
@@ -49,7 +55,7 @@ function StatCard({
         return () => controls.stop();
     }, [inView, shouldReduceMotion, stat.value]);
 
-    const Icon = stat.Icon;
+    const Icon = STAT_ICONS[stat.icon];
 
     return (
         <motion.div
@@ -70,7 +76,7 @@ function StatCard({
     );
 }
 
-export function Stats() {
+export function Stats({ items }: StatsProps) {
     const sectionRef = React.useRef<HTMLElement | null>(null);
     const inView = useInView(sectionRef, { once: true, amount: 0.35 });
 
@@ -78,7 +84,7 @@ export function Stats() {
         <section ref={sectionRef} className="mx-4 md:mx-8 lg:mx-16 py-10 md:py-12">
             <div className="container mx-auto px-4 lg:px-12">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {STATS.map((stat, index) => (
+                    {items.map((stat, index) => (
                         <StatCard key={stat.label} stat={stat} index={index} inView={inView} />
                     ))}
                 </div>

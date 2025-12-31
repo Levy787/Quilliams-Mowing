@@ -9,19 +9,23 @@ import { BoldHeadings } from "./BoldHeadings"
 import { LargeCta } from "./LargeCta";
 import { Testimonials } from "./Testimonials";
 
-export default function Home() {
+import { getHomeContent } from "@/lib/keystatic-reader";
+
+export default async function Home() {
+    const home = await getHomeContent();
+
     return (
         <>
-            <Hero />
-            <Stats />
-            <AboutUs />
-            <Services />
-            <ServiceArea />
-            <RecentWorks />
-            <BoldHeadings />
-            <FAQ />
-            <LargeCta />
-            <Testimonials />
+            <Hero {...home.hero} />
+            <Stats items={home.stats} />
+            <AboutUs {...home.about} />
+            <Services {...home.services} />
+            <ServiceArea {...home.serviceArea} />
+            <RecentWorks {...home.recentWorks} />
+            <BoldHeadings categories={home.marquee.categories} />
+            <FAQ {...home.faq} />
+            <LargeCta {...home.largeCta} />
+            <Testimonials {...home.testimonials} />
         </>
     )
 }
