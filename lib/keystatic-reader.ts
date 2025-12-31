@@ -18,6 +18,12 @@ export async function getPricingContent() {
 
 export type PricingContent = Awaited<ReturnType<typeof getPricingContent>>;
 
+export async function getContactContent() {
+    return reader.singletons.contact.readOrThrow();
+}
+
+export type ContactContent = Awaited<ReturnType<typeof getContactContent>>;
+
 export async function listOfferSlugs() {
     return reader.collections.offers.list();
 }
