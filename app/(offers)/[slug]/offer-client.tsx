@@ -27,7 +27,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
 import type {
-    SpringCleanupOffer,
+    Offer,
     TrustStripIcon,
 } from "../_content/offers";
 
@@ -53,10 +53,10 @@ const TRUST_ICON_MAP: Record<TrustStripIcon, React.ComponentType<{ className?: s
     sparkles: Sparkles,
 };
 
-export default function SpringCleanupOfferClient({
+export default function OfferClient({
     offer,
 }: {
-    offer: SpringCleanupOffer;
+    offer: Offer;
 }) {
     const formRef = React.useRef<HTMLDivElement | null>(null);
     const fileInputRef = React.useRef<HTMLInputElement | null>(null);
@@ -188,21 +188,21 @@ export default function SpringCleanupOfferClient({
                                     <li className="flex items-center gap-2">
                                         <BadgeCheck
                                             className="h-5 w-5 text-primary"
-                                            aria-hidden="true"
+                                            aria-hidden
                                         />
                                         {offer.highlights[0]}
                                     </li>
                                     <li className="flex items-center gap-2">
                                         <Sparkles
                                             className="h-5 w-5 text-primary"
-                                            aria-hidden="true"
+                                            aria-hidden
                                         />
                                         {offer.highlights[1]}
                                     </li>
                                     <li className="flex items-center gap-2">
                                         <ShieldCheck
                                             className="h-5 w-5 text-primary"
-                                            aria-hidden="true"
+                                            aria-hidden
                                         />
                                         {offer.highlights[2]}
                                     </li>
@@ -217,7 +217,7 @@ export default function SpringCleanupOfferClient({
                                     </Button>
                                     <Button size="lg" variant="outline" asChild>
                                         <Link href={`tel:${offer.phoneTel}`}>
-                                            <Phone className="h-5 w-5" aria-hidden="true" />
+                                            <Phone className="h-5 w-5" aria-hidden />
                                             Call {offer.phoneDisplay}
                                         </Link>
                                     </Button>
@@ -258,7 +258,7 @@ export default function SpringCleanupOfferClient({
                                         <div className="flex items-center gap-3">
                                             <Icon
                                                 className="h-5 w-5 text-primary"
-                                                aria-hidden="true"
+                                                aria-hidden
                                             />
                                             <div className="text-sm font-medium text-foreground">
                                                 {item.label}
@@ -458,7 +458,7 @@ export default function SpringCleanupOfferClient({
                                                                 onClick={() => removeFileById(item.id)}
                                                                 className="absolute right-2 top-2 inline-flex h-8 w-8 items-center justify-center rounded-md border border-border bg-background/90 text-foreground shadow-xs hover:bg-accent"
                                                             >
-                                                                <X className="h-4 w-4" aria-hidden="true" />
+                                                                <X className="h-4 w-4" aria-hidden />
                                                             </button>
                                                         </div>
                                                     ))}

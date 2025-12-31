@@ -1,25 +1,25 @@
 import { notFound } from "next/navigation";
 
 import {
-    getSpringCleanupOfferBySlug,
-    SPRING_CLEANUP_OFFERS,
+    getOfferBySlug,
+    OFFERS,
 } from "../_content/offers";
-import SpringCleanupOfferClient from "./spring-cleanup-offer-client";
+import OfferClient from "./offer-client";
 
 export function generateStaticParams() {
-    return SPRING_CLEANUP_OFFERS.map((offer) => ({ slug: offer.slug }));
+    return OFFERS.map((offer) => ({ slug: offer.slug }));
 }
 
-export default async function SpringCleanupOfferPage({
+export default async function OfferPage({
     params,
 }: {
     params: Promise<{ slug: string }>;
 }) {
     const { slug } = await params;
-    const offer = getSpringCleanupOfferBySlug(slug);
+    const offer = getOfferBySlug(slug);
 
     if (!offer) notFound();
 
-    return <SpringCleanupOfferClient offer={offer} />;
+    return <OfferClient offer={offer} />;
 }
 

@@ -1,6 +1,6 @@
 export type TrustStripIcon = "shield" | "star" | "clock" | "sparkles";
 
-export type SpringCleanupOffer = {
+export type Offer = {
     slug: string;
     headline: string;
     subheadline: string;
@@ -21,7 +21,7 @@ export type SpringCleanupOffer = {
     faq: Array<{ q: string; a: string }>;
 };
 
-export const SPRING_CLEANUP_OFFERS = [
+export const OFFERS = [
     {
         slug: "spring-cleanup-special",
         headline: "Spring Cleanup Special",
@@ -80,13 +80,12 @@ export const SPRING_CLEANUP_OFFERS = [
             },
         ],
     },
-] as const satisfies readonly SpringCleanupOffer[];
+] as const satisfies readonly Offer[];
 
-export type SpringCleanupOfferSlug =
-    (typeof SPRING_CLEANUP_OFFERS)[number]["slug"];
+export type OfferSlug = (typeof OFFERS)[number]["slug"];
 
-export function getSpringCleanupOfferBySlug(slug: string) {
+export function getOfferBySlug(slug: string) {
     return (
-        SPRING_CLEANUP_OFFERS.find((offer) => offer.slug === slug) ?? null
+        OFFERS.find((offer) => offer.slug === slug) ?? null
     );
 }

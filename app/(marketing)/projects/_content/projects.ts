@@ -239,12 +239,13 @@ export const PROJECTS = [
 ] as const satisfies readonly ProjectDefinition[];
 
 export type ProjectSlug = (typeof PROJECTS)[number]["slug"];
-export type Project = (typeof PROJECTS)[number];
+export type Project = ProjectDefinition;
 
-export function getProjectBySlug(slug: string): Project | null {
-    return (PROJECTS as readonly ProjectDefinition[]).find((p) =>
-        p.slug === slug
-    ) ?? null;
+export function getProjectBySlug(slug: string): ProjectDefinition | null {
+    return (
+        (PROJECTS as readonly ProjectDefinition[]).find((p) => p.slug === slug) ??
+        null
+    );
 }
 
 /**
