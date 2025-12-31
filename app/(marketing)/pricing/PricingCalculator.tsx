@@ -39,46 +39,29 @@ type Estimate = {
     drivers: string[];
 };
 
-const CONFIG = {
-    base: {
-        cleanup: 100,
-        maintenance: 30,
-        lawn: 30,
-        landscaping: 500,
-    } satisfies Record<JobType, number>,
-    sizeMultiplier: {
-        small: 1,
-        medium: 1.5,
-        large: 2,
-    } satisfies Record<YardSize, number>,
-    conditionMultiplier: {
-        light: 1,
-        medium: 1.5,
-        heavy: 2,
-    } satisfies Record<Condition, number>,
-    accessMultiplier: {
-        easy: 1,
-        normal: 1.12,
-        difficult: 1.5,
-    } satisfies Record<Access, number>,
+type CalculatorConfig = {
+    base: Record<JobType, number>;
+    sizeMultiplier: Record<YardSize, number>;
+    conditionMultiplier: Record<Condition, number>;
+    accessMultiplier: Record<Access, number>;
     addon: {
-        greenWaste: 20,
-        pruning: 20,
-        hedgeTrim: 50,
-    },
-    rangePct: 0.2,
-    roundTo: 10,
-} as const;
+        greenWaste: number;
+        pruning: number;
+        hedgeTrim: number;
+    };
+    rangePct: number;
+    roundTo: number;
+};
 
 function roundTo(value: number, multiple: number) {
     return Math.max(multiple, Math.round(value / multiple) * multiple);
 }
 
-function buildEstimate(state: CalcState): Estimate {
-    const base = CONFIG.base[state.jobType];
-    const size = CONFIG.sizeMultiplier[state.yardSize];
-    const condition = CONFIG.conditionMultiplier[state.condition];
-    const access = CONFIG.accessMultiplier[state.access];
+function buildEstimate(state: CalcState, config: CalculatorConfig): Estimate {
+    const base = config.base[state.jobType];
+    const size = config.sizeMultiplier[state.yardSize];
+    const condition = config.conditionMultiplier[state.condition];
+    const access = config.accessMultiplier[state.access];
 
     let subtotal = base * size * condition * access;
 
@@ -89,15 +72,15 @@ function buildEstimate(state: CalcState): Estimate {
     drivers.push(`Access: ${state.access}`);
 
     if (state.greenWaste) {
-        subtotal += CONFIG.addon.greenWaste;
+        subtotal += config.addon.greenWaste;
         drivers.push("Green waste");
     }
     if (state.pruning) {
-        subtotal += CONFIG.addon.pruning;
+        subtotal += config.addon.pruning;
         drivers.push("Pruning");
     }
     if (state.hedgeTrim) {
-        subtotal += CONFIG.addon.hedgeTrim;
+        subtotal += config.addon.hedgeTrim;
         drivers.push("Hedge trim");
     }
 
@@ -113,12 +96,12 @@ function buildEstimate(state: CalcState): Estimate {
         }
     }
 
-    const lowRaw = subtotal * (1 - CONFIG.rangePct);
-    const highRaw = subtotal * (1 + CONFIG.rangePct);
+    const lowRaw = subtotal * (1 - config.rangePct);
+    const highRaw = subtotal * (1 + config.rangePct);
 
     return {
-        low: roundTo(lowRaw, CONFIG.roundTo),
-        high: roundTo(highRaw, CONFIG.roundTo),
+        low: roundTo(lowRaw, config.roundTo),
+        high: roundTo(highRaw, config.roundTo),
         drivers,
     };
 }
@@ -142,19 +125,114 @@ function buildQuoteQuery(state: CalcState, estimate: Estimate) {
     return params.toString();
 }
 
-export function PricingCalculator() {
-    const [state, setState] = React.useState<CalcState>({
-        jobType: "cleanup",
-        yardSize: "medium",
-        condition: "medium",
-        access: "normal",
-        greenWaste: true,
-        pruning: false,
-        hedgeTrim: false,
-        frequency: "one-off",
-    });
+export type PricingCalculatorProps = {
+    badge: string;
+    heading: string;
+    description: string;
 
-    const estimate = React.useMemo(() => buildEstimate(state), [state]);
+    addonSectionTitle: string;
+    greenWasteTitle: string;
+    greenWasteDescription: string;
+    pruningTitle: string;
+    pruningDescription: string;
+    hedgeTrimTitle: string;
+    hedgeTrimDescription: string;
+
+    estimatedRangeLabel: string;
+    estimatedRangeNote: string;
+    includesTitle: string;
+    sendTitle: string;
+    sendDescription: string;
+    sendPrimaryCtaLabel: string;
+    sendSecondaryCtaLabel: string;
+    sendSecondaryCtaHref: string;
+    disclaimer: string;
+
+    defaults: {
+        jobType: JobType;
+        yardSize: YardSize;
+        condition: Condition;
+        access: Access;
+        greenWaste: boolean;
+        pruning: boolean;
+        hedgeTrim: boolean;
+        frequency: Frequency;
+    };
+
+    config: {
+        baseCleanup: number;
+        baseMaintenance: number;
+        baseLawn: number;
+        baseLandscaping: number;
+        sizeSmall: number;
+        sizeMedium: number;
+        sizeLarge: number;
+        conditionLight: number;
+        conditionMedium: number;
+        conditionHeavy: number;
+        accessEasy: number;
+        accessNormal: number;
+        accessDifficult: number;
+        addonGreenWaste: number;
+        addonPruning: number;
+        addonHedgeTrim: number;
+        rangePct: number;
+        roundTo: number;
+    };
+};
+
+export function PricingCalculator(props: PricingCalculatorProps) {
+    const { defaults } = props;
+
+    const calculatorConfig: CalculatorConfig = React.useMemo(
+        () => ({
+            base: {
+                cleanup: props.config.baseCleanup,
+                maintenance: props.config.baseMaintenance,
+                lawn: props.config.baseLawn,
+                landscaping: props.config.baseLandscaping,
+            },
+            sizeMultiplier: {
+                small: props.config.sizeSmall,
+                medium: props.config.sizeMedium,
+                large: props.config.sizeLarge,
+            },
+            conditionMultiplier: {
+                light: props.config.conditionLight,
+                medium: props.config.conditionMedium,
+                heavy: props.config.conditionHeavy,
+            },
+            accessMultiplier: {
+                easy: props.config.accessEasy,
+                normal: props.config.accessNormal,
+                difficult: props.config.accessDifficult,
+            },
+            addon: {
+                greenWaste: props.config.addonGreenWaste,
+                pruning: props.config.addonPruning,
+                hedgeTrim: props.config.addonHedgeTrim,
+            },
+            rangePct: props.config.rangePct,
+            roundTo: props.config.roundTo,
+        }),
+        [props.config],
+    );
+
+    const [state, setState] = React.useState<CalcState>(() => ({
+        jobType: defaults.jobType,
+        yardSize: defaults.yardSize,
+        condition: defaults.condition,
+        access: defaults.access,
+        greenWaste: defaults.greenWaste,
+        pruning: defaults.pruning,
+        hedgeTrim: defaults.hedgeTrim,
+        frequency: defaults.frequency,
+    }));
+
+    const estimate = React.useMemo(
+        () => buildEstimate(state, calculatorConfig),
+        [state, calculatorConfig]
+    );
     const quoteQuery = React.useMemo(
         () => buildQuoteQuery(state, estimate),
         [state, estimate]
@@ -169,13 +247,13 @@ export function PricingCalculator() {
                             {/* Controls */}
                             <div className="p-6 md:p-10">
                                 <div className="inline-flex items-center rounded-full bg-muted px-4 py-1.5 text-sm text-muted-foreground">
-                                    Pricing calculator
+                                    {props.badge}
                                 </div>
                                 <h2 className="mt-5 text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-                                    Try a few options.
+                                    {props.heading}
                                 </h2>
                                 <p className="mt-3 text-base md:text-lg leading-relaxed text-muted-foreground max-w-2xl">
-                                    This is a rough guide only. We’ll confirm scope quickly and give you a more accurate range.
+                                    {props.description}
                                 </p>
 
                                 <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2">
@@ -271,16 +349,16 @@ export function PricingCalculator() {
 
                                 <div className="mt-6 rounded-4xl border border-border bg-muted/25 p-5">
                                     <div className="text-sm font-semibold text-foreground">
-                                        Optional add-ons
+                                        {props.addonSectionTitle}
                                     </div>
                                     <div className="mt-4 grid gap-3">
                                         <div className="flex items-center justify-between gap-4">
                                             <div>
                                                 <div className="text-sm font-medium text-foreground">
-                                                    Green waste handling
+                                                    {props.greenWasteTitle}
                                                 </div>
                                                 <div className="text-xs text-muted-foreground">
-                                                    Bag/stack/removal needs affect time and cost.
+                                                    {props.greenWasteDescription}
                                                 </div>
                                             </div>
                                             <Switch
@@ -297,10 +375,10 @@ export function PricingCalculator() {
                                         <div className="flex items-center justify-between gap-4">
                                             <div>
                                                 <div className="text-sm font-medium text-foreground">
-                                                    Pruning
+                                                    {props.pruningTitle}
                                                 </div>
                                                 <div className="text-xs text-muted-foreground">
-                                                    Light to moderate pruning.
+                                                    {props.pruningDescription}
                                                 </div>
                                             </div>
                                             <Switch
@@ -317,10 +395,10 @@ export function PricingCalculator() {
                                         <div className="flex items-center justify-between gap-4">
                                             <div>
                                                 <div className="text-sm font-medium text-foreground">
-                                                    Hedge trim
+                                                    {props.hedgeTrimTitle}
                                                 </div>
                                                 <div className="text-xs text-muted-foreground">
-                                                    Basic shaping and tidy-up.
+                                                    {props.hedgeTrimDescription}
                                                 </div>
                                             </div>
                                             <Switch
@@ -366,7 +444,7 @@ export function PricingCalculator() {
                                 <div className="p-6 md:p-10">
                                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                                         <Calculator className="h-4 w-4 text-primary" aria-hidden />
-                                        Estimated range
+                                        {props.estimatedRangeLabel}
                                     </div>
 
                                     <div className="mt-3 text-4xl md:text-5xl font-extrabold tracking-tight text-foreground">
@@ -374,12 +452,12 @@ export function PricingCalculator() {
                                     </div>
 
                                     <p className="mt-3 text-sm md:text-base leading-relaxed text-muted-foreground">
-                                        Rough guide only. Final pricing depends on photos, access, exact scope, and green waste handling.
+                                        {props.estimatedRangeNote}
                                     </p>
 
                                     <div className="mt-6">
                                         <div className="text-sm font-semibold text-foreground">
-                                            What this estimate includes
+                                            {props.includesTitle}
                                         </div>
                                         <div className="mt-3 flex flex-wrap gap-2">
                                             {estimate.drivers.slice(0, 7).map((driver) => (
@@ -396,26 +474,26 @@ export function PricingCalculator() {
 
                                     <div className="mt-8 rounded-4xl border border-border bg-muted/25 p-5">
                                         <div className="text-sm font-semibold text-foreground">
-                                            Send this with your quote
+                                            {props.sendTitle}
                                         </div>
                                         <p className="mt-2 text-sm text-muted-foreground">
-                                            We’ll receive your selections and the estimated range so we can confirm scope faster.
+                                            {props.sendDescription}
                                         </p>
 
                                         <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center">
                                             <Button asChild size="lg">
                                                 <Link href={`/quote?${quoteQuery}`}>
                                                     <Send className="h-5 w-5" aria-hidden />
-                                                    Send to Quote
+                                                    {props.sendPrimaryCtaLabel}
                                                 </Link>
                                             </Button>
                                             <Button asChild size="lg" variant="outline">
-                                                <Link href="/quote">Open Quote Form</Link>
+                                                <Link href={props.sendSecondaryCtaHref}>{props.sendSecondaryCtaLabel}</Link>
                                             </Button>
                                         </div>
 
                                         <p className="mt-4 text-xs text-muted-foreground">
-                                            Calculator outputs are not a fixed price and may change after review.
+                                            {props.disclaimer}
                                         </p>
                                     </div>
                                 </div>

@@ -9,3 +9,7 @@ https://posthog.com/docs/libraries/next-js?tab=Instrumentation+client Reverse
 Proxy: https://posthog.com/docs/advanced/proxy
 
 Emails: https://sendgrid.com/en-us
+
+Image Hosting: https://cloudinary.com/
+
+Content Layer: https://keystatic.com/

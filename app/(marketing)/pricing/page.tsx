@@ -3,13 +3,17 @@ import { PricingCalculator } from "./PricingCalculator";
 import { PricingFAQ } from "./PricingFAQ";
 import { PricingHero } from "./PricingHero";
 
-export default function PricingPage() {
+import { getPricingContent } from "@/lib/keystatic-reader";
+
+export default async function PricingPage() {
+    const pricing = await getPricingContent();
+
     return (
         <main>
-            <PricingHero />
-            <PricingCalculator />
-            <PricingBreakdown />
-            <PricingFAQ />
+            <PricingHero {...pricing.hero} />
+            <PricingCalculator {...pricing.calculator} />
+            <PricingBreakdown {...pricing.breakdown} />
+            <PricingFAQ {...pricing.faq} />
         </main>
     );
 }

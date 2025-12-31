@@ -1,265 +1,579 @@
-import { config, fields, singleton } from '@keystatic/core';
+import { config, fields, singleton } from "@keystatic/core";
 
 const headlineToneOptions = [
-  { label: 'Normal', value: 'normal' },
-  { label: 'Primary', value: 'primary' },
-  { label: 'Muted', value: 'muted' },
+  { label: "Normal", value: "normal" },
+  { label: "Primary", value: "primary" },
+  { label: "Muted", value: "muted" },
 ] as const;
 
 type IconOption = { label: string; value: string };
 
 const statIconOptions = [
-  { label: 'Trees', value: 'trees' },
-  { label: 'Hard Hat', value: 'hardHat' },
-  { label: 'Award', value: 'award' },
-  { label: 'Tree Pine', value: 'treePine' },
+  { label: "Trees", value: "trees" },
+  { label: "Hard Hat", value: "hardHat" },
+  { label: "Award", value: "award" },
+  { label: "Tree Pine", value: "treePine" },
 ] as const satisfies readonly IconOption[];
 
 const aboutFeatureIconOptions = [
-  { label: 'Star', value: 'star' },
-  { label: 'Thumbs Up', value: 'thumbsUp' },
-  { label: 'Shield Check', value: 'shieldCheck' },
+  { label: "Star", value: "star" },
+  { label: "Thumbs Up", value: "thumbsUp" },
+  { label: "Shield Check", value: "shieldCheck" },
 ] as const satisfies readonly IconOption[];
 
 const serviceIconOptions = [
-  { label: 'Leaf', value: 'leaf' },
-  { label: 'Sprout', value: 'sprout' },
-  { label: 'Snowflake', value: 'snowflake' },
-  { label: 'Droplets', value: 'droplets' },
+  { label: "Leaf", value: "leaf" },
+  { label: "Sprout", value: "sprout" },
+  { label: "Snowflake", value: "snowflake" },
+  { label: "Droplets", value: "droplets" },
 ] as const satisfies readonly IconOption[];
 
 export default config({
   storage: {
-    kind: 'local',
+    kind: "local",
   },
   singletons: {
     home: singleton({
-      label: 'Home',
-      path: 'content/home',
-      format: 'json',
+      label: "Home",
+      path: "content/home",
+      format: "json",
       schema: {
         hero: fields.object(
           {
             headlineParts: fields.array(
               fields.object({
-                text: fields.text({ label: 'Text' }),
+                text: fields.text({ label: "Text" }),
                 tone: fields.select({
-                  label: 'Tone',
+                  label: "Tone",
                   options: headlineToneOptions,
-                  defaultValue: 'normal',
+                  defaultValue: "normal",
                 }),
               }),
-              { label: 'Headline parts' }
+              { label: "Headline parts" },
             ),
-            subheading: fields.text({ label: 'Subheading', multiline: true }),
-            primaryCtaLabel: fields.text({ label: 'Primary CTA label' }),
-            primaryCtaHref: fields.text({ label: 'Primary CTA href' }),
-            secondaryCtaLabel: fields.text({ label: 'Secondary CTA label' }),
-            secondaryCtaHref: fields.text({ label: 'Secondary CTA href' }),
+            subheading: fields.text({ label: "Subheading", multiline: true }),
+            primaryCtaLabel: fields.text({ label: "Primary CTA label" }),
+            primaryCtaHref: fields.text({ label: "Primary CTA href" }),
+            secondaryCtaLabel: fields.text({ label: "Secondary CTA label" }),
+            secondaryCtaHref: fields.text({ label: "Secondary CTA href" }),
             imagesLeft: fields.array(
               fields.object({
-                src: fields.text({ label: 'Image src' }),
-                alt: fields.text({ label: 'Alt text' }),
+                src: fields.text({ label: "Image src" }),
+                alt: fields.text({ label: "Alt text" }),
               }),
-              { label: 'Left column images' }
+              { label: "Left column images" },
             ),
             imagesRight: fields.array(
               fields.object({
-                src: fields.text({ label: 'Image src' }),
-                alt: fields.text({ label: 'Alt text' }),
+                src: fields.text({ label: "Image src" }),
+                alt: fields.text({ label: "Alt text" }),
               }),
-              { label: 'Right column images' }
+              { label: "Right column images" },
             ),
           },
-          { label: 'Hero' }
+          { label: "Hero" },
         ),
 
         stats: fields.array(
           fields.object({
-            value: fields.number({ label: 'Value', validation: { isRequired: true } }),
-            suffix: fields.text({ label: 'Suffix' }),
-            label: fields.text({ label: 'Label' }),
+            value: fields.number({
+              label: "Value",
+              validation: { isRequired: true },
+            }),
+            suffix: fields.text({ label: "Suffix" }),
+            label: fields.text({ label: "Label" }),
             icon: fields.select({
-              label: 'Icon',
+              label: "Icon",
               options: statIconOptions,
-              defaultValue: 'trees',
+              defaultValue: "trees",
             }),
           }),
-          { label: 'Stats' }
+          { label: "Stats" },
         ),
 
         about: fields.object(
           {
-            badge: fields.text({ label: 'Badge' }),
-            headingLines: fields.array(fields.text({ label: 'Line' }), {
-              label: 'Heading lines',
+            badge: fields.text({ label: "Badge" }),
+            headingLines: fields.array(fields.text({ label: "Line" }), {
+              label: "Heading lines",
             }),
-            body: fields.text({ label: 'Body', multiline: true }),
-            imageSrc: fields.text({ label: 'Image src' }),
-            imageAlt: fields.text({ label: 'Image alt' }),
+            body: fields.text({ label: "Body", multiline: true }),
+            imageSrc: fields.text({ label: "Image src" }),
+            imageAlt: fields.text({ label: "Image alt" }),
             features: fields.array(
               fields.object({
-                title: fields.text({ label: 'Title' }),
-                description: fields.text({ label: 'Description', multiline: true }),
+                title: fields.text({ label: "Title" }),
+                description: fields.text({
+                  label: "Description",
+                  multiline: true,
+                }),
                 icon: fields.select({
-                  label: 'Icon',
+                  label: "Icon",
                   options: aboutFeatureIconOptions,
-                  defaultValue: 'star',
+                  defaultValue: "star",
                 }),
               }),
-              { label: 'Features' }
+              { label: "Features" },
             ),
           },
-          { label: 'About' }
+          { label: "About" },
         ),
 
         services: fields.object(
           {
-            badge: fields.text({ label: 'Badge' }),
-            heading: fields.text({ label: 'Heading' }),
-            ctaLabel: fields.text({ label: 'CTA label' }),
-            ctaHref: fields.text({ label: 'CTA href' }),
+            badge: fields.text({ label: "Badge" }),
+            heading: fields.text({ label: "Heading" }),
+            ctaLabel: fields.text({ label: "CTA label" }),
+            ctaHref: fields.text({ label: "CTA href" }),
             items: fields.array(
               fields.object({
-                title: fields.text({ label: 'Title' }),
-                description: fields.text({ label: 'Description', multiline: true }),
-                tag: fields.text({ label: 'Tag' }),
+                title: fields.text({ label: "Title" }),
+                description: fields.text({
+                  label: "Description",
+                  multiline: true,
+                }),
+                tag: fields.text({ label: "Tag" }),
                 icon: fields.select({
-                  label: 'Icon',
+                  label: "Icon",
                   options: serviceIconOptions,
-                  defaultValue: 'leaf',
+                  defaultValue: "leaf",
                 }),
               }),
-              { label: 'Service items' }
+              { label: "Service items" },
             ),
           },
-          { label: 'Services' }
+          { label: "Services" },
         ),
 
         serviceArea: fields.object(
           {
-            badge: fields.text({ label: 'Badge' }),
-            heading: fields.text({ label: 'Heading' }),
-            body: fields.text({ label: 'Body', multiline: true }),
-            chips: fields.array(fields.text({ label: 'Chip' }), { label: 'Chips' }),
-            primaryCtaLabel: fields.text({ label: 'Primary CTA label' }),
-            primaryCtaHref: fields.text({ label: 'Primary CTA href' }),
-            secondaryCtaLabel: fields.text({ label: 'Secondary CTA label' }),
-            secondaryCtaHref: fields.text({ label: 'Secondary CTA href' }),
-            footnote: fields.text({ label: 'Footnote', multiline: true }),
+            badge: fields.text({ label: "Badge" }),
+            heading: fields.text({ label: "Heading" }),
+            body: fields.text({ label: "Body", multiline: true }),
+            chips: fields.array(fields.text({ label: "Chip" }), {
+              label: "Chips",
+            }),
+            primaryCtaLabel: fields.text({ label: "Primary CTA label" }),
+            primaryCtaHref: fields.text({ label: "Primary CTA href" }),
+            secondaryCtaLabel: fields.text({ label: "Secondary CTA label" }),
+            secondaryCtaHref: fields.text({ label: "Secondary CTA href" }),
+            footnote: fields.text({ label: "Footnote", multiline: true }),
             map: fields.object(
               {
-                centerLat: fields.number({ label: 'Center latitude', validation: { isRequired: true } }),
-                centerLng: fields.number({ label: 'Center longitude', validation: { isRequired: true } }),
-                zoom: fields.number({ label: 'Zoom', validation: { isRequired: true } }),
-                circleLat: fields.number({ label: 'Circle latitude', validation: { isRequired: true } }),
-                circleLng: fields.number({ label: 'Circle longitude', validation: { isRequired: true } }),
+                centerLat: fields.number({
+                  label: "Center latitude",
+                  validation: { isRequired: true },
+                }),
+                centerLng: fields.number({
+                  label: "Center longitude",
+                  validation: { isRequired: true },
+                }),
+                zoom: fields.number({
+                  label: "Zoom",
+                  validation: { isRequired: true },
+                }),
+                circleLat: fields.number({
+                  label: "Circle latitude",
+                  validation: { isRequired: true },
+                }),
+                circleLng: fields.number({
+                  label: "Circle longitude",
+                  validation: { isRequired: true },
+                }),
                 circleRadiusMeters: fields.number({
-                  label: 'Circle radius (meters)',
+                  label: "Circle radius (meters)",
                   validation: { isRequired: true },
                 }),
               },
-              { label: 'Map' }
+              { label: "Map" },
             ),
             mapLabels: fields.array(
               fields.object({
-                text: fields.text({ label: 'Label' }),
-                leftPercent: fields.number({ label: 'Left (%)', validation: { isRequired: true } }),
-                topPercent: fields.number({ label: 'Top (%)', validation: { isRequired: true } }),
+                text: fields.text({ label: "Label" }),
+                leftPercent: fields.number({
+                  label: "Left (%)",
+                  validation: { isRequired: true },
+                }),
+                topPercent: fields.number({
+                  label: "Top (%)",
+                  validation: { isRequired: true },
+                }),
               }),
-              { label: 'Map labels' }
+              { label: "Map labels" },
             ),
           },
-          { label: 'Service Area' }
+          { label: "Service Area" },
         ),
 
         recentWorks: fields.object(
           {
-            badge: fields.text({ label: 'Badge' }),
-            headingLines: fields.array(fields.text({ label: 'Line' }), {
-              label: 'Heading lines',
+            badge: fields.text({ label: "Badge" }),
+            headingLines: fields.array(fields.text({ label: "Line" }), {
+              label: "Heading lines",
             }),
-            description: fields.text({ label: 'Description', multiline: true }),
+            description: fields.text({ label: "Description", multiline: true }),
             items: fields.array(
               fields.object({
-                title: fields.text({ label: 'Title' }),
-                description: fields.text({ label: 'Description', multiline: true }),
-                perfectFor: fields.text({ label: 'Perfect for', multiline: true }),
-                budget: fields.text({ label: 'Budget' }),
-                duration: fields.text({ label: 'Duration' }),
+                title: fields.text({ label: "Title" }),
+                description: fields.text({
+                  label: "Description",
+                  multiline: true,
+                }),
+                perfectFor: fields.text({
+                  label: "Perfect for",
+                  multiline: true,
+                }),
+                budget: fields.text({ label: "Budget" }),
+                duration: fields.text({ label: "Duration" }),
               }),
-              { label: 'Work items' }
+              { label: "Work items" },
             ),
-            ctaLabel: fields.text({ label: 'CTA label' }),
-            ctaHref: fields.text({ label: 'CTA href' }),
+            ctaLabel: fields.text({ label: "CTA label" }),
+            ctaHref: fields.text({ label: "CTA href" }),
           },
-          { label: 'Recent Works' }
+          { label: "Recent Works" },
         ),
 
         marquee: fields.object(
           {
-            categories: fields.array(fields.text({ label: 'Category' }), {
-              label: 'Categories',
+            categories: fields.array(fields.text({ label: "Category" }), {
+              label: "Categories",
             }),
           },
-          { label: 'Marquee' }
+          { label: "Marquee" },
         ),
 
         faq: fields.object(
           {
-            badge: fields.text({ label: 'Badge' }),
-            headingLines: fields.array(fields.text({ label: 'Line' }), {
-              label: 'Heading lines',
+            badge: fields.text({ label: "Badge" }),
+            headingLines: fields.array(fields.text({ label: "Line" }), {
+              label: "Heading lines",
             }),
-            description: fields.text({ label: 'Description', multiline: true }),
-            ctaLabel: fields.text({ label: 'CTA label' }),
-            ctaHref: fields.text({ label: 'CTA href' }),
-            decorativeImageSrc: fields.text({ label: 'Decorative image src' }),
-            decorativeImageAlt: fields.text({ label: 'Decorative image alt' }),
+            description: fields.text({ label: "Description", multiline: true }),
+            ctaLabel: fields.text({ label: "CTA label" }),
+            ctaHref: fields.text({ label: "CTA href" }),
+            decorativeImageSrc: fields.text({ label: "Decorative image src" }),
+            decorativeImageAlt: fields.text({ label: "Decorative image alt" }),
             items: fields.array(
               fields.object({
-                id: fields.text({ label: 'ID' }),
-                question: fields.text({ label: 'Question' }),
-                answer: fields.text({ label: 'Answer', multiline: true }),
+                id: fields.text({ label: "ID" }),
+                question: fields.text({ label: "Question" }),
+                answer: fields.text({ label: "Answer", multiline: true }),
               }),
-              { label: 'FAQ items' }
+              { label: "FAQ items" },
             ),
           },
-          { label: 'FAQ' }
+          { label: "FAQ" },
         ),
 
         largeCta: fields.object(
           {
-            leftImageUrl: fields.url({ label: 'Left image URL', validation: { isRequired: true } }),
-            leftImageAlt: fields.text({ label: 'Left image alt' }),
-            rightImageUrl: fields.url({ label: 'Right image URL', validation: { isRequired: true } }),
-            rightImageAlt: fields.text({ label: 'Right image alt' }),
-            headingLines: fields.array(fields.text({ label: 'Line' }), {
-              label: 'Heading lines',
+            leftImageUrl: fields.url({
+              label: "Left image URL",
+              validation: { isRequired: true },
             }),
-            body: fields.text({ label: 'Body', multiline: true }),
-            ctaLabel: fields.text({ label: 'CTA label' }),
-            ctaHref: fields.text({ label: 'CTA href' }),
+            leftImageAlt: fields.text({ label: "Left image alt" }),
+            rightImageUrl: fields.url({
+              label: "Right image URL",
+              validation: { isRequired: true },
+            }),
+            rightImageAlt: fields.text({ label: "Right image alt" }),
+            headingLines: fields.array(fields.text({ label: "Line" }), {
+              label: "Heading lines",
+            }),
+            body: fields.text({ label: "Body", multiline: true }),
+            ctaLabel: fields.text({ label: "CTA label" }),
+            ctaHref: fields.text({ label: "CTA href" }),
           },
-          { label: 'Large CTA' }
+          { label: "Large CTA" },
         ),
 
         testimonials: fields.object(
           {
-            badge: fields.text({ label: 'Badge' }),
-            heading: fields.text({ label: 'Heading' }),
-            description: fields.text({ label: 'Description', multiline: true }),
+            badge: fields.text({ label: "Badge" }),
+            heading: fields.text({ label: "Heading" }),
+            description: fields.text({ label: "Description", multiline: true }),
             items: fields.array(
               fields.object({
-                name: fields.text({ label: 'Name' }),
-                location: fields.text({ label: 'Location' }),
-                date: fields.text({ label: 'Date' }),
-                quote: fields.text({ label: 'Quote', multiline: true }),
+                name: fields.text({ label: "Name" }),
+                location: fields.text({ label: "Location" }),
+                date: fields.text({ label: "Date" }),
+                quote: fields.text({ label: "Quote", multiline: true }),
               }),
-              { label: 'Testimonials' }
+              { label: "Testimonials" },
             ),
           },
-          { label: 'Testimonials' }
+          { label: "Testimonials" },
+        ),
+      },
+    }),
+
+    pricing: singleton({
+      label: "Pricing",
+      path: "content/pricing",
+      format: "json",
+      schema: {
+        hero: fields.object(
+          {
+            badge: fields.text({ label: "Badge" }),
+            heading: fields.text({ label: "Heading" }),
+            description: fields.text({ label: "Description", multiline: true }),
+            primaryCtaLabel: fields.text({ label: "Primary CTA label" }),
+            primaryCtaHref: fields.text({ label: "Primary CTA href" }),
+            secondaryCtaLabel: fields.text({ label: "Secondary CTA label" }),
+            secondaryCtaHref: fields.text({ label: "Secondary CTA href" }),
+            footnote: fields.text({ label: "Footnote", multiline: true }),
+            sideCardTitle: fields.text({ label: "Side card title" }),
+            sideCardBody: fields.text({
+              label: "Side card body",
+              multiline: true,
+            }),
+          },
+          { label: "Hero" },
+        ),
+
+        calculator: fields.object(
+          {
+            badge: fields.text({ label: "Badge" }),
+            heading: fields.text({ label: "Heading" }),
+            description: fields.text({ label: "Description", multiline: true }),
+
+            addonSectionTitle: fields.text({ label: "Add-on section title" }),
+
+            greenWasteTitle: fields.text({ label: "Green waste title" }),
+            greenWasteDescription: fields.text({
+              label: "Green waste description",
+              multiline: true,
+            }),
+            pruningTitle: fields.text({ label: "Pruning title" }),
+            pruningDescription: fields.text({
+              label: "Pruning description",
+              multiline: true,
+            }),
+            hedgeTrimTitle: fields.text({ label: "Hedge trim title" }),
+            hedgeTrimDescription: fields.text({
+              label: "Hedge trim description",
+              multiline: true,
+            }),
+
+            estimatedRangeLabel: fields.text({
+              label: "Estimated range label",
+            }),
+            estimatedRangeNote: fields.text({
+              label: "Estimated range note",
+              multiline: true,
+            }),
+            includesTitle: fields.text({ label: "Includes title" }),
+            sendTitle: fields.text({ label: "Send title" }),
+            sendDescription: fields.text({
+              label: "Send description",
+              multiline: true,
+            }),
+            sendPrimaryCtaLabel: fields.text({
+              label: "Send primary CTA label",
+            }),
+            sendSecondaryCtaLabel: fields.text({
+              label: "Send secondary CTA label",
+            }),
+            sendSecondaryCtaHref: fields.text({
+              label: "Send secondary CTA href",
+            }),
+            disclaimer: fields.text({ label: "Disclaimer", multiline: true }),
+
+            defaults: fields.object(
+              {
+                jobType: fields.select({
+                  label: "Default job type",
+                  options: [
+                    { label: "Cleanup", value: "cleanup" },
+                    { label: "Maintenance", value: "maintenance" },
+                    { label: "Lawn care", value: "lawn" },
+                    { label: "Landscaping", value: "landscaping" },
+                  ] as const,
+                  defaultValue: "cleanup",
+                }),
+                yardSize: fields.select({
+                  label: "Default yard size",
+                  options: [
+                    { label: "Small", value: "small" },
+                    { label: "Medium", value: "medium" },
+                    { label: "Large", value: "large" },
+                  ] as const,
+                  defaultValue: "medium",
+                }),
+                condition: fields.select({
+                  label: "Default condition",
+                  options: [
+                    { label: "Light", value: "light" },
+                    { label: "Medium", value: "medium" },
+                    { label: "Heavy", value: "heavy" },
+                  ] as const,
+                  defaultValue: "medium",
+                }),
+                access: fields.select({
+                  label: "Default access",
+                  options: [
+                    { label: "Easy", value: "easy" },
+                    { label: "Normal", value: "normal" },
+                    { label: "Difficult", value: "difficult" },
+                  ] as const,
+                  defaultValue: "normal",
+                }),
+                greenWaste: fields.checkbox({
+                  label: "Default: green waste",
+                  defaultValue: true,
+                }),
+                pruning: fields.checkbox({
+                  label: "Default: pruning",
+                  defaultValue: false,
+                }),
+                hedgeTrim: fields.checkbox({
+                  label: "Default: hedge trim",
+                  defaultValue: false,
+                }),
+                frequency: fields.select({
+                  label: "Default frequency",
+                  options: [
+                    { label: "One-off", value: "one-off" },
+                    { label: "Fortnightly", value: "fortnightly" },
+                    { label: "Monthly", value: "monthly" },
+                  ] as const,
+                  defaultValue: "one-off",
+                }),
+              },
+              { label: "Defaults" },
+            ),
+
+            config: fields.object(
+              {
+                baseCleanup: fields.number({
+                  label: "Base: cleanup",
+                  validation: { isRequired: true },
+                }),
+                baseMaintenance: fields.number({
+                  label: "Base: maintenance",
+                  validation: { isRequired: true },
+                }),
+                baseLawn: fields.number({
+                  label: "Base: lawn",
+                  validation: { isRequired: true },
+                }),
+                baseLandscaping: fields.number({
+                  label: "Base: landscaping",
+                  validation: { isRequired: true },
+                }),
+
+                sizeSmall: fields.number({
+                  label: "Size multiplier: small",
+                  validation: { isRequired: true },
+                }),
+                sizeMedium: fields.number({
+                  label: "Size multiplier: medium",
+                  validation: { isRequired: true },
+                }),
+                sizeLarge: fields.number({
+                  label: "Size multiplier: large",
+                  validation: { isRequired: true },
+                }),
+
+                conditionLight: fields.number({
+                  label: "Condition multiplier: light",
+                  validation: { isRequired: true },
+                }),
+                conditionMedium: fields.number({
+                  label: "Condition multiplier: medium",
+                  validation: { isRequired: true },
+                }),
+                conditionHeavy: fields.number({
+                  label: "Condition multiplier: heavy",
+                  validation: { isRequired: true },
+                }),
+
+                accessEasy: fields.number({
+                  label: "Access multiplier: easy",
+                  validation: { isRequired: true },
+                }),
+                accessNormal: fields.number({
+                  label: "Access multiplier: normal",
+                  validation: { isRequired: true },
+                }),
+                accessDifficult: fields.number({
+                  label: "Access multiplier: difficult",
+                  validation: { isRequired: true },
+                }),
+
+                addonGreenWaste: fields.number({
+                  label: "Addon: green waste",
+                  validation: { isRequired: true },
+                }),
+                addonPruning: fields.number({
+                  label: "Addon: pruning",
+                  validation: { isRequired: true },
+                }),
+                addonHedgeTrim: fields.number({
+                  label: "Addon: hedge trim",
+                  validation: { isRequired: true },
+                }),
+
+                rangePct: fields.number({
+                  label: "Range percent (e.g. 0.2)",
+                  validation: { isRequired: true },
+                }),
+                roundTo: fields.number({
+                  label: "Round to (e.g. 10)",
+                  validation: { isRequired: true },
+                }),
+              },
+              { label: "Calculator config" },
+            ),
+          },
+          { label: "Calculator" },
+        ),
+
+        breakdown: fields.object(
+          {
+            badge: fields.text({ label: "Badge" }),
+            heading: fields.text({ label: "Heading" }),
+            description: fields.text({ label: "Description", multiline: true }),
+            drivers: fields.array(
+              fields.object({
+                title: fields.text({ label: "Title" }),
+                description: fields.text({
+                  label: "Description",
+                  multiline: true,
+                }),
+                icon: fields.select({
+                  label: "Icon",
+                  options: [
+                    { label: "Leaf", value: "leaf" },
+                    { label: "Timer", value: "timer" },
+                    { label: "Footprints", value: "footprints" },
+                    { label: "Recycle", value: "recycle" },
+                  ] as const,
+                  defaultValue: "leaf",
+                }),
+              }),
+              { label: "Drivers" },
+            ),
+            tipTitle: fields.text({ label: "Tip title" }),
+            tipBody: fields.text({ label: "Tip body", multiline: true }),
+          },
+          { label: "Breakdown" },
+        ),
+
+        faq: fields.object(
+          {
+            badge: fields.text({ label: "Badge" }),
+            heading: fields.text({ label: "Heading" }),
+            items: fields.array(
+              fields.object({
+                q: fields.text({ label: "Question" }),
+                a: fields.text({ label: "Answer", multiline: true }),
+              }),
+              { label: "FAQ items" },
+            ),
+          },
+          { label: "FAQ" },
         ),
       },
     }),
