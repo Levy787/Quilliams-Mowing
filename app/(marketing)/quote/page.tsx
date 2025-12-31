@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { X } from "lucide-react";
+import { useSearchParams } from "next/navigation";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
@@ -44,6 +45,90 @@ type PreviewItem = {
 function formatBytes(bytes: number) {
     const mb = bytes / (1024 * 1024);
     return `${mb.toFixed(mb >= 10 ? 0 : 1)}MB`;
+}
+
+function formatCurrency(amount: number) {
+    return `$${amount.toLocaleString()}`;
+}
+
+function labelFromParam(value: string | null) {
+    if (!value) return null;
+    return value
+        .replace(/-/g, " ")
+        .replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+function parseBooleanParam(value: string | null) {
+    return value === "1" || value === "true";
+}
+
+function parseNumberParam(value: string | null) {
+    if (!value) return null;
+    const n = Number(value);
+    return Number.isFinite(n) ? n : null;
+}
+
+function CalculatorSummaryFields() {
+    const searchParams = useSearchParams();
+
+    const summary = React.useMemo(() => {
+        const estimateLow = parseNumberParam(searchParams.get("estimateLow"));
+        const estimateHigh = parseNumberParam(searchParams.get("estimateHigh"));
+
+        if (!estimateLow || !estimateHigh) return null;
+
+        const jobType = labelFromParam(searchParams.get("jobType"));
+        const yardSize = labelFromParam(searchParams.get("yardSize"));
+        const condition = labelFromParam(searchParams.get("condition"));
+        const access = labelFromParam(searchParams.get("access"));
+
+        const addOns: string[] = [];
+        if (parseBooleanParam(searchParams.get("greenWaste"))) addOns.push("Green waste");
+        if (parseBooleanParam(searchParams.get("pruning"))) addOns.push("Pruning");
+        if (parseBooleanParam(searchParams.get("hedgeTrim"))) addOns.push("Hedge trim");
+
+        const frequency = labelFromParam(searchParams.get("frequency"));
+
+        const detailsParts = [
+            jobType ? `Job: ${jobType}` : null,
+            yardSize ? `Size: ${yardSize}` : null,
+            condition ? `Condition: ${condition}` : null,
+            access ? `Access: ${access}` : null,
+            frequency ? `Frequency: ${frequency}` : null,
+        ].filter((p): p is string => Boolean(p));
+
+        const addonsText = addOns.length > 0 ? addOns.join(", ") : "None";
+
+        return {
+            headline: `${formatCurrency(estimateLow)}–${formatCurrency(estimateHigh)}`,
+            details: detailsParts.length > 0 ? detailsParts.join(" • ") : null,
+            addons: addonsText,
+            hiddenValue: `Pricing calculator (rough guide): ${formatCurrency(estimateLow)}–${formatCurrency(estimateHigh)}. ${detailsParts.join(" | ")}. Add-ons: ${addonsText}.`,
+        };
+    }, [searchParams]);
+
+    if (!summary) return null;
+
+    return (
+        <div className="rounded-4xl border border-border bg-muted/25 p-5">
+            <div className="text-sm font-semibold text-foreground">
+                Pricing calculator estimate
+            </div>
+            <div className="mt-2 text-2xl font-extrabold tracking-tight text-foreground">
+                {summary.headline}
+            </div>
+            {summary.details && (
+                <p className="mt-2 text-sm text-muted-foreground">{summary.details}</p>
+            )}
+            <p className="mt-2 text-sm text-muted-foreground">
+                Add-ons: {summary.addons}
+            </p>
+            <p className="mt-3 text-xs text-muted-foreground">
+                Rough guide only — final pricing depends on photos, access, and exact scope.
+            </p>
+            <input type="hidden" name="calculatorSummary" value={summary.hiddenValue} />
+        </div>
+    );
 }
 
 export default function QuotePage() {
@@ -352,12 +437,16 @@ export default function QuotePage() {
                                                         onClick={() => removeFileById(item.id)}
                                                         className="absolute right-2 top-2 inline-flex h-8 w-8 items-center justify-center rounded-md border border-border bg-background/90 text-foreground shadow-xs hover:bg-accent"
                                                     >
-                                                        <X className="h-4 w-4" aria-hidden="true" />
+                                                        <X className="h-4 w-4" aria-hidden />
                                                     </button>
                                                 </div>
                                             ))}
                                         </div>
                                     )}
+
+                                    <React.Suspense fallback={null}>
+                                        <CalculatorSummaryFields />
+                                    </React.Suspense>
 
                                     <div className="space-y-2">
                                         <Label htmlFor="details">Job details</Label>
