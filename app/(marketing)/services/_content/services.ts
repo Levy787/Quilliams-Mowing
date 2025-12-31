@@ -726,7 +726,8 @@ export const SERVICES = [
                 },
                 {
                     title: "Easier upkeep",
-                    description: "Regular attention prevents big catch-up jobs.",
+                    description:
+                        "Regular attention prevents big catch-up jobs.",
                     icon: "Leaf",
                 },
                 {
@@ -747,7 +748,8 @@ export const SERVICES = [
         faq: {
             label: "FAQs",
             title: "Quick answers",
-            description: "If you don’t see your question here, just get in touch.",
+            description:
+                "If you don’t see your question here, just get in touch.",
             items: [
                 {
                     id: "what-included",
@@ -776,7 +778,8 @@ export const SERVICES = [
                 {
                     id: "area",
                     question: "Do you cover my area?",
-                    answer: "Send your postcode and we’ll confirm availability.",
+                    answer:
+                        "Send your postcode and we’ll confirm availability.",
                 },
             ],
         },
@@ -798,7 +801,8 @@ export const SERVICES = [
             "Neat shapes, clean lines, and a consistent look—whether it’s a quick trim or a proper reset after overgrowth.",
         hero: {
             imageSrc: "/images/IMG_20250708_11200.webp",
-            imageAlt: "Freshly trimmed hedges with a tidy lawn in a private garden",
+            imageAlt:
+                "Freshly trimmed hedges with a tidy lawn in a private garden",
             caption: "A sharp trim makes the whole garden look more finished.",
             pattern: "pattern-1",
         },
@@ -839,8 +843,7 @@ export const SERVICES = [
                 },
                 {
                     title: "Green waste removal (optional)",
-                    description:
-                        "Clippings can be collected and taken away.",
+                    description: "Clippings can be collected and taken away.",
                     icon: "Trash2",
                 },
                 {
@@ -865,8 +868,7 @@ export const SERVICES = [
                 },
                 {
                     title: "Shape and refine",
-                    description:
-                        "A more deliberate trim for a sharper look.",
+                    description: "A more deliberate trim for a sharper look.",
                     bullets: ["Even shape", "Consistent height", "Neat finish"],
                     icon: "Ruler",
                 },
@@ -946,14 +948,12 @@ export const SERVICES = [
             bullets: [
                 {
                     title: "Looks sharper",
-                    description:
-                        "Clean lines improve the whole garden’s look.",
+                    description: "Clean lines improve the whole garden’s look.",
                     icon: "Sparkles",
                 },
                 {
                     title: "Easier upkeep",
-                    description:
-                        "Regular trimming prevents big catch-up jobs.",
+                    description: "Regular trimming prevents big catch-up jobs.",
                     icon: "Leaf",
                 },
                 {
@@ -974,7 +974,8 @@ export const SERVICES = [
         faq: {
             label: "FAQs",
             title: "Quick answers",
-            description: "If you don’t see your question here, just get in touch.",
+            description:
+                "If you don’t see your question here, just get in touch.",
             items: [
                 {
                     id: "frequency",
@@ -997,13 +998,13 @@ export const SERVICES = [
                 {
                     id: "one-off",
                     question: "Do you do one-off trims?",
-                    answer:
-                        "Yes—one-off trims and reset jobs are available.",
+                    answer: "Yes—one-off trims and reset jobs are available.",
                 },
                 {
                     id: "area",
                     question: "Do you cover my area?",
-                    answer: "Send your postcode and we’ll confirm availability.",
+                    answer:
+                        "Send your postcode and we’ll confirm availability.",
                 },
             ],
         },
@@ -1050,8 +1051,7 @@ export const SERVICES = [
                 },
                 {
                     title: "Weeding before mulching",
-                    description:
-                        "A better base helps the result last longer.",
+                    description: "A better base helps the result last longer.",
                     icon: "Sprout",
                 },
                 {
@@ -1062,20 +1062,17 @@ export const SERVICES = [
                 },
                 {
                     title: "Mulch application",
-                    description:
-                        "Even coverage for a consistent, tidy look.",
+                    description: "Even coverage for a consistent, tidy look.",
                     icon: "Layers",
                 },
                 {
                     title: "Season-aware advice",
-                    description:
-                        "Practical guidance on timing and upkeep.",
+                    description: "Practical guidance on timing and upkeep.",
                     icon: "Leaf",
                 },
                 {
                     title: "Waste removal (optional)",
-                    description:
-                        "Green waste can be collected and taken away.",
+                    description: "Green waste can be collected and taken away.",
                     icon: "Trash2",
                 },
             ],
@@ -1097,8 +1094,7 @@ export const SERVICES = [
                     description:
                         "Clean lines that make beds look deliberate and tidy.",
                     imageSrc: "/images/IMG_20250708_16272.webp",
-                    imageAlt:
-                        "Tidy garden edges with a neat border finish",
+                    imageAlt: "Tidy garden edges with a neat border finish",
                     ctaText: "View more details",
                     ctaHref: "/#recent-works",
                 },
@@ -1107,8 +1103,7 @@ export const SERVICES = [
                     description:
                         "A simple bed refresh that lifts the whole garden.",
                     imageSrc: "/images/IMG_20250715_29185.webp",
-                    imageAlt:
-                        "Garden looking well cared for after a tidy-up",
+                    imageAlt: "Garden looking well cared for after a tidy-up",
                     ctaText: "View more details",
                     ctaHref: "/#recent-works",
                 },
@@ -1159,7 +1154,8 @@ export const SERVICES = [
         faq: {
             label: "FAQs",
             title: "Quick answers",
-            description: "If you don’t see your question here, just get in touch.",
+            description:
+                "If you don’t see your question here, just get in touch.",
             items: [
                 {
                     id: "what",
@@ -1188,7 +1184,8 @@ export const SERVICES = [
                 {
                     id: "area",
                     question: "Do you cover my area?",
-                    answer: "Send your postcode and we’ll confirm availability.",
+                    answer:
+                        "Send your postcode and we’ll confirm availability.",
                 },
             ],
         },
@@ -1281,8 +1278,7 @@ export const SERVICES = [
                     description:
                         "A reset that makes the garden feel lighter and cleaner.",
                     imageSrc: "/images/IMG_20240509_41792.webp",
-                    imageAlt:
-                        "Garden after a cleanup with tidy borders",
+                    imageAlt: "Garden after a cleanup with tidy borders",
                     ctaText: "View more details",
                     ctaHref: "/#recent-works",
                 },
@@ -1291,8 +1287,7 @@ export const SERVICES = [
                     description:
                         "A tidy-up that makes hedges, edges, and shapes feel more intentional.",
                     imageSrc: "/images/IMG_20250708_11200.webp",
-                    imageAlt:
-                        "Tidy garden structure with neat hedges and lawn",
+                    imageAlt: "Tidy garden structure with neat hedges and lawn",
                     ctaText: "View more details",
                     ctaHref: "/#recent-works",
                 },
@@ -1327,8 +1322,7 @@ export const SERVICES = [
                 },
                 {
                     title: "Straightforward quote",
-                    description:
-                        "Clear scope and a tidy finish you can see.",
+                    description: "Clear scope and a tidy finish you can see.",
                     icon: "Shovel",
                 },
             ],
@@ -1343,7 +1337,8 @@ export const SERVICES = [
         faq: {
             label: "FAQs",
             title: "Quick answers",
-            description: "If you don’t see your question here, just get in touch.",
+            description:
+                "If you don’t see your question here, just get in touch.",
             items: [
                 {
                     id: "when",
@@ -1366,12 +1361,14 @@ export const SERVICES = [
                 {
                     id: "one-off",
                     question: "Can this be a one-off job?",
-                    answer: "Yes—seasonal cleanups are commonly one-off resets.",
+                    answer:
+                        "Yes—seasonal cleanups are commonly one-off resets.",
                 },
                 {
                     id: "area",
                     question: "Do you cover my area?",
-                    answer: "Send your postcode and we’ll confirm availability.",
+                    answer:
+                        "Send your postcode and we’ll confirm availability.",
                 },
             ],
         },
@@ -1388,16 +1385,22 @@ export const SERVICES = [
     {
         slug: "irrigation-drainage",
         label: "Irrigation & Drainage",
-        title: "Irrigation and drainage improvements that reduce garden headaches",
+        title:
+            "Irrigation and drainage improvements that reduce garden headaches",
         description:
             "Practical fixes to help your garden cope better with wet weather and dry spells—so it stays healthier and easier to maintain.",
         hero: {
             imageSrc: "/images/IMG_20250708_34242.webp",
-            imageAlt: "Garden looking healthy and tidy after practical improvements",
+            imageAlt:
+                "Garden looking healthy and tidy after practical improvements",
             caption: "Smarter water management makes upkeep easier.",
             pattern: "pattern-1",
         },
-        trustChips: ["Practical approach", "Clear quote", "Better long-term upkeep"],
+        trustChips: [
+            "Practical approach",
+            "Clear quote",
+            "Better long-term upkeep",
+        ],
         ctas: {
             primaryText: "Get a Quote",
             primaryHref: "/quote",
@@ -1436,8 +1439,7 @@ export const SERVICES = [
                 },
                 {
                     title: "Tidy edges and finish",
-                    description:
-                        "A neat, finished look once work is complete.",
+                    description: "A neat, finished look once work is complete.",
                     icon: "Ruler",
                 },
                 {
@@ -1465,7 +1467,8 @@ export const SERVICES = [
                     description:
                         "Practical upgrades that help planting thrive more consistently.",
                     imageSrc: "/images/IMG_20250704_93515.webp",
-                    imageAlt: "Garden looking tidy with healthy beds and borders",
+                    imageAlt:
+                        "Garden looking tidy with healthy beds and borders",
                     ctaText: "View more details",
                     ctaHref: "/#recent-works",
                 },
@@ -1474,7 +1477,8 @@ export const SERVICES = [
                     description:
                         "A smarter layout and finish that feels more intentional.",
                     imageSrc: "/images/IMG_20250708_16272.webp",
-                    imageAlt: "Tidy garden edges and borders after improvements",
+                    imageAlt:
+                        "Tidy garden edges and borders after improvements",
                     ctaText: "View more details",
                     ctaHref: "/#recent-works",
                 },
@@ -1524,11 +1528,13 @@ export const SERVICES = [
         faq: {
             label: "FAQs",
             title: "Quick answers",
-            description: "If you don’t see your question here, just get in touch.",
+            description:
+                "If you don’t see your question here, just get in touch.",
             items: [
                 {
                     id: "what",
-                    question: "What kind of irrigation or drainage work do you do?",
+                    question:
+                        "What kind of irrigation or drainage work do you do?",
                     answer:
                         "We focus on practical garden improvements and clear recommendations. Tell us the issue (pooling water, dry beds, etc.) and we’ll advise what’s worth doing.",
                 },
@@ -1553,7 +1559,8 @@ export const SERVICES = [
                 {
                     id: "area",
                     question: "Do you cover my area?",
-                    answer: "Send your postcode and we’ll confirm availability.",
+                    answer:
+                        "Send your postcode and we’ll confirm availability.",
                 },
             ],
         },
@@ -1575,8 +1582,10 @@ export const SERVICES = [
             "Practical plant choices and tidy bed finishing—so your garden looks better now and stays manageable long-term.",
         hero: {
             imageSrc: "/images/IMG_20250708_16272.webp",
-            imageAlt: "Tidy garden border and lawn with a clean, refreshed look",
-            caption: "Better planting makes the whole space feel more intentional.",
+            imageAlt:
+                "Tidy garden border and lawn with a clean, refreshed look",
+            caption:
+                "Better planting makes the whole space feel more intentional.",
             pattern: "pattern-1",
         },
         trustChips: ["Practical advice", "Tidy finish", "Lower upkeep options"],
@@ -1705,7 +1714,8 @@ export const SERVICES = [
         faq: {
             label: "FAQs",
             title: "Quick answers",
-            description: "If you don’t see your question here, just get in touch.",
+            description:
+                "If you don’t see your question here, just get in touch.",
             items: [
                 {
                     id: "choices",
@@ -1734,7 +1744,8 @@ export const SERVICES = [
                 {
                     id: "area",
                     question: "Do you cover my area?",
-                    answer: "Send your postcode and we’ll confirm availability.",
+                    answer:
+                        "Send your postcode and we’ll confirm availability.",
                 },
             ],
         },

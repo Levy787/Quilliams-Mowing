@@ -146,7 +146,7 @@ export function Testimonials() {
                 </div>
 
                 <h2 className="mt-4 text-4xl md:text-5xl font-bold tracking-tight text-foreground">
-                    Don't just take our word for it
+                    Don&apos;t just take our word for it
                 </h2>
 
                 <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg leading-relaxed text-muted-foreground">
