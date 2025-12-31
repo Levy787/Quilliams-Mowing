@@ -743,6 +743,116 @@ export const keystaticConfig = config({
         ),
       },
     }),
+
+    quote: singleton({
+      label: "Quote",
+      path: "content/quote",
+      format: "json",
+      schema: {
+        header: fields.object(
+          {
+            badge: fields.text({ label: "Badge" }),
+            heading: fields.text({ label: "Heading" }),
+            description: fields.text({ label: "Description", multiline: true }),
+          },
+          { label: "Header" },
+        ),
+
+        expect: fields.object(
+          {
+            title: fields.text({ label: "Title" }),
+            description: fields.text({ label: "Description", multiline: true }),
+            steps: fields.array(fields.text({ label: "Step" }), {
+              label: "Steps",
+            }),
+            responseTimeLabel: fields.text({ label: "Response time label" }),
+            responseTimeValue: fields.text({ label: "Response time value" }),
+          },
+          { label: "What to expect" },
+        ),
+
+        calculatorSummary: fields.object(
+          {
+            title: fields.text({ label: "Title" }),
+            addonsLabel: fields.text({ label: "Add-ons label" }),
+            note: fields.text({ label: "Note", multiline: true }),
+          },
+          { label: "Calculator summary" },
+        ),
+
+        form: fields.object(
+          {
+            title: fields.text({ label: "Title" }),
+            description: fields.text({ label: "Description", multiline: true }),
+
+            fullNameLabel: fields.text({ label: "Full name label" }),
+            emailLabel: fields.text({ label: "Email label" }),
+            phoneLabel: fields.text({ label: "Phone label" }),
+            addressLabel: fields.text({ label: "Address label" }),
+
+            serviceTypeLabel: fields.text({ label: "Service type label" }),
+            serviceTypePlaceholder: fields.text({
+              label: "Service type placeholder",
+            }),
+            serviceOptions: fields.array(fields.text({ label: "Service" }), {
+              label: "Service options",
+            }),
+
+            timeframeLabel: fields.text({ label: "Timeframe label" }),
+            timeframePlaceholder: fields.text({
+              label: "Timeframe placeholder",
+            }),
+            timeframeOptions: fields.array(
+              fields.text({ label: "Timeframe" }),
+              {
+                label: "Timeframe options",
+              },
+            ),
+
+            budgetLabel: fields.text({ label: "Budget label" }),
+            budgetPlaceholder: fields.text({ label: "Budget placeholder" }),
+            budgetOptions: fields.array(
+              fields.text({ label: "Budget option" }),
+              {
+                label: "Budget options",
+              },
+            ),
+
+            photosLabel: fields.text({ label: "Photos label" }),
+            photosHelp: fields.text({ label: "Photos help", multiline: true }),
+            maxPhotosError: fields.text({ label: "Max photos error" }),
+            onlyImagesError: fields.text({ label: "Only images error" }),
+            largePhotosWarningPrefix: fields.text({
+              label: "Large photos warning prefix",
+            }),
+            largePhotosWarningSuffix: fields.text({
+              label: "Large photos warning suffix",
+            }),
+            removeImageAriaLabelPrefix: fields.text({
+              label: "Remove image aria-label prefix",
+            }),
+            selectedPhotoAltPrefix: fields.text({
+              label: "Selected photo alt prefix",
+            }),
+
+            jobDetailsLabel: fields.text({ label: "Job details label" }),
+            jobDetailsPlaceholder: fields.text({
+              label: "Job details placeholder",
+              multiline: true,
+            }),
+
+            requiredServiceError: fields.text({
+              label: "Required service error",
+            }),
+            submittedText: fields.text({ label: "Submitted text" }),
+            toastSuccess: fields.text({ label: "Toast success" }),
+            submitIdleLabel: fields.text({ label: "Submit idle label" }),
+            submitLoadingLabel: fields.text({ label: "Submit loading label" }),
+          },
+          { label: "Form" },
+        ),
+      },
+    }),
   },
 });
 

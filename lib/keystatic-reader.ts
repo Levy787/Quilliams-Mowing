@@ -24,6 +24,12 @@ export async function getContactContent() {
 
 export type ContactContent = Awaited<ReturnType<typeof getContactContent>>;
 
+export async function getQuoteContent() {
+    return reader.singletons.quote.readOrThrow();
+}
+
+export type QuoteContent = Awaited<ReturnType<typeof getQuoteContent>>;
+
 export async function listOfferSlugs() {
     return reader.collections.offers.list();
 }

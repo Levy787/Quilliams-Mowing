@@ -1,47 +1,47 @@
 {
-  "header": {
-    "badge": "Contact",
-    "heading": "Contact Us",
-    "description": "Have a question or want to book a free consultation? Send us a message and we’ll reply as soon as possible."
-  },
-  "details": {
-    "title": "Get in touch",
-    "description": "Prefer to reach out directly? Call or email and we’ll help you plan the next steps.",
-    "phoneLabel": "Phone",
-    "phoneDisplay": "+1 (555) 123-4567",
-    "phoneTel": "+15551234567",
-    "emailLabel": "Email",
-    "emailAddress": "hello@quilliamsgardening.com",
-    "hoursLabel": "Hours",
-    "hoursText": "Mon–Fri: 8am–6pm\nSat: 9am–2pm\nSun: Closed",
-    "serviceAreaLabel": "Service area",
-    "serviceAreaText": "Serving your local area and surrounding suburbs."
-  },
-  "form": {
-    "title": "Send a message",
-    "description": "Tell us a bit about what you need and we’ll get back to you.",
-    "fullNameLabel": "Full name",
-    "emailLabel": "Email",
-    "phoneLabel": "Phone (optional)",
-    "serviceLabel": "Service interested in",
-    "servicePlaceholder": "Select a service",
-    "services": [
-      "Landscaping",
-      "Lawn Care",
-      "Garden Maintenance",
-      "Hedge Trimming",
-      "Seasonal Cleanup",
-      "Other"
-    ],
-    "messageLabel": "Message",
-    "messagePlaceholder": "Tell us about your property and what you’d like help with.",
-    "submittedText": "Thanks — your message has been sent.",
-    "toastSuccess": "Message sent! We'll get back to you soon.",
-    "submitIdleLabel": "Send Message",
-    "submitLoadingLabel": "Sending…"
-  },
-  "map": {
-    "iframeTitle": "Map",
-    "iframeSrc": "https://www.openstreetmap.org/export/embed.html?bbox=-0.134%2C51.503%2C-0.114%2C51.513&layer=mapnik"
-  }
+    "header": {
+        "badge": "Contact",
+        "heading": "Contact Us",
+        "description": "Have a question or want to book a free consultation? Send us a message and we’ll reply as soon as possible."
+    },
+    "details": {
+        "title": "Get in touch",
+        "description": "Prefer to reach out directly? Call or email and we’ll help you plan the next steps.",
+        "phoneLabel": "Phone",
+        "phoneDisplay": "+1 (555) 123-4567",
+        "phoneTel": "+15551234567",
+        "emailLabel": "Email",
+        "emailAddress": "hello@quilliamsgardening.com",
+        "hoursLabel": "Hours",
+        "hoursText": "Mon–Fri: 8am–6pm\nSat: 9am–2pm\nSun: Closed",
+        "serviceAreaLabel": "Service area",
+        "serviceAreaText": "Serving your local area and surrounding suburbs."
+    },
+    "form": {
+        "title": "Send a message",
+        "description": "Tell us a bit about what you need and we’ll get back to you.",
+        "fullNameLabel": "Full name",
+        "emailLabel": "Email",
+        "phoneLabel": "Phone (optional)",
+        "serviceLabel": "Service interested in",
+        "servicePlaceholder": "Select a service",
+        "services": [
+            "Landscaping",
+            "Lawn Care",
+            "Garden Maintenance",
+            "Hedge Trimming",
+            "Seasonal Cleanup",
+            "Other"
+        ],
+        "messageLabel": "Message",
+        "messagePlaceholder": "Tell us about your property and what you’d like help with.",
+        "submittedText": "Thanks — your message has been sent.",
+        "toastSuccess": "Message sent! We'll get back to you soon.",
+        "submitIdleLabel": "Send Message",
+        "submitLoadingLabel": "Sending…"
+    },
+    "map": {
+        "iframeTitle": "Map",
+        "iframeSrc": "https://www.openstreetmap.org/export/embed.html?bbox=-0.134%2C51.503%2C-0.114%2C51.513&layer=mapnik"
+    }
 }

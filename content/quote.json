@@ -1,0 +1,74 @@
+{
+    "header": {
+        "badge": "Quote",
+        "heading": "Get Your Quote",
+        "description": "Share a few details and upload photos of the area — we’ll review everything and get back to you with next steps."
+    },
+    "expect": {
+        "title": "What to expect",
+        "description": "Here’s what typically happens after you submit your request.",
+        "steps": [
+            "We review your details and photos.",
+            "We may contact you with a couple of quick questions.",
+            "We send an estimated range and a suggested timeline.",
+            "If needed, we schedule a short site visit.",
+            "You approve the quote and we book the job."
+        ],
+        "responseTimeLabel": "Typical response time:",
+        "responseTimeValue": "within 1 business day"
+    },
+    "calculatorSummary": {
+        "title": "Pricing calculator estimate",
+        "addonsLabel": "Add-ons:",
+        "note": "Rough guide only — final pricing depends on photos, access, and exact scope."
+    },
+    "form": {
+        "title": "Quote request",
+        "description": "The more detail you provide, the more accurate your estimate will be.",
+        "fullNameLabel": "Full name",
+        "emailLabel": "Email",
+        "phoneLabel": "Phone (optional)",
+        "addressLabel": "Address / Suburb (optional)",
+        "serviceTypeLabel": "Service type",
+        "serviceTypePlaceholder": "Select a service",
+        "serviceOptions": [
+            "Landscaping",
+            "Lawn Care",
+            "Garden Maintenance",
+            "Hedge Trimming",
+            "Mulching",
+            "Seasonal Cleanup"
+        ],
+        "timeframeLabel": "Preferred start timeframe (optional)",
+        "timeframePlaceholder": "Choose a timeframe",
+        "timeframeOptions": [
+            "ASAP",
+            "1–2 weeks",
+            "This month",
+            "Flexible"
+        ],
+        "budgetLabel": "Budget range (optional)",
+        "budgetPlaceholder": "Select a range",
+        "budgetOptions": [
+            "Under $500",
+            "$500–$1,500",
+            "$1,500–$3,000",
+            "$3,000+"
+        ],
+        "photosLabel": "Photos (up to 6)",
+        "photosHelp": "Add clear photos of the area from a few angles.",
+        "maxPhotosError": "You can upload up to 6 photos.",
+        "onlyImagesError": "Only image files are allowed.",
+        "largePhotosWarningPrefix": "Some photos are large",
+        "largePhotosWarningSuffix": "Upload may take longer.",
+        "removeImageAriaLabelPrefix": "Remove image",
+        "selectedPhotoAltPrefix": "Selected photo",
+        "jobDetailsLabel": "Job details",
+        "jobDetailsPlaceholder": "What would you like done? Include approximate sizes, access notes, and anything else that helps us quote accurately.",
+        "requiredServiceError": "Please select a service type.",
+        "submittedText": "Thanks — we received your request.",
+        "toastSuccess": "Quote request received! We'll be in touch soon.",
+        "submitIdleLabel": "Request Quote",
+        "submitLoadingLabel": "Submitting…"
+    }
+}
