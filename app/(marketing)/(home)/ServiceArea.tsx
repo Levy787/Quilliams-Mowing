@@ -8,7 +8,7 @@ import { LeafletMap } from "@/components/reusable/leaflet-map";
 
 export function ServiceArea() {
     return (
-        <section className="mx-4 md:mx-8 lg:mx-16 py-12 md:py-16">
+        <section className="mx-4 md:mx-8 lg:mx-16 ">
             <div className="container mx-auto px-4 lg:px-12">
                 <Card className="rounded-4xl border-border shadow-none overflow-hidden">
                     <CardContent className="p-0">
@@ -53,7 +53,7 @@ export function ServiceArea() {
                             </div>
 
                             {/* Map */}
-                            <div className="relative overflow-hidden border-t border-border lg:border-t-0 lg:border-l">
+                            <div className="relative overflow-hidden">
                                 <div className="relative aspect-[16/11] w-full lg:aspect-[16/12] overflow-hidden rounded-3xl z-0">
                                     <LeafletMap
                                         center={[50.338, -4.973]}
