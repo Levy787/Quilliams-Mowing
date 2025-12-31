@@ -1762,12 +1762,13 @@ export const SERVICES = [
 ] as const satisfies readonly ServiceDefinition[];
 
 export type ServiceSlug = (typeof SERVICES)[number]["slug"];
-export type Service = (typeof SERVICES)[number];
+export type Service = ServiceDefinition;
 
-export function getServiceBySlug(slug: string): Service | null {
-    return (SERVICES as readonly ServiceDefinition[]).find((s) =>
-        s.slug === slug
-    ) ?? null;
+export function getServiceBySlug(slug: string): ServiceDefinition | null {
+    return (
+        (SERVICES as readonly ServiceDefinition[]).find((s) => s.slug === slug) ??
+        null
+    );
 }
 
 /**
