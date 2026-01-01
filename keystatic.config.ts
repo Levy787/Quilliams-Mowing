@@ -1275,6 +1275,66 @@ export const keystaticConfig = config({
       },
     }),
 
+    referral: singleton({
+      label: "Referral",
+      path: "content/referral",
+      format: "json",
+      schema: {
+        seo: seoFields(),
+
+        hero: fields.object(
+          {
+            eyebrow: fields.text({ label: "Eyebrow" }),
+            heading: fields.text({ label: "Heading" }),
+            subheading: fields.text({ label: "Subheading", multiline: true }),
+          },
+          { label: "Hero" },
+        ),
+
+        offer: fields.object(
+          {
+            headline: fields.text({ label: "Headline" }),
+            description: fields.text({ label: "Description", multiline: true }),
+            discountPercent: fields.number({
+              label: "Discount percent",
+              validation: { isRequired: true },
+            }),
+            voucherLabel: fields.text({ label: "Voucher label" }),
+            terms: fields.text({ label: "Terms", multiline: true }),
+          },
+          { label: "Offer" },
+        ),
+
+        services: fields.array(
+          fields.object({
+            label: fields.text({ label: "Label" }),
+            value: fields.text({ label: "Value" }),
+          }),
+          { label: "Services" },
+        ),
+
+        formCopy: fields.object(
+          {
+            submitIdleLabel: fields.text({ label: "Submit idle label" }),
+            submitLoadingLabel: fields.text({ label: "Submit loading label" }),
+            privacyNote: fields.text({
+              label: "Privacy note",
+              multiline: true,
+            }),
+            successTitle: fields.text({ label: "Success title" }),
+            successMessage: fields.text({
+              label: "Success message",
+              multiline: true,
+            }),
+            voucherCodeLabel: fields.text({ label: "Voucher code label" }),
+            copyCodeLabel: fields.text({ label: "Copy code label" }),
+            copiedCodeLabel: fields.text({ label: "Copied code label" }),
+          },
+          { label: "Form copy" },
+        ),
+      },
+    }),
+
     quote: singleton({
       label: "Quote",
       path: "content/quote",

@@ -15,3 +15,5 @@ Image Hosting: https://cloudinary.com/
 Content Layer: https://keystatic.com/
 
 Bot Detection: https://cloud.google.com/security/products/recaptcha
+
+Domain Hosting: https://porkbun.com/

@@ -1,0 +1,67 @@
+{
+    "slug": "back-garden-tidy-reshape",
+    "order": 5,
+    "title": "Back garden tidy and reshape",
+    "subtitle": "A more finished feel with clean lines, cleared areas, and structure that’s easier to maintain.",
+    "locationLabel": "Residential",
+    "seo": {
+        "title": "Back garden tidy and reshape",
+        "description": "A more finished feel with clean lines, cleared areas, and structure that’s easier to maintain.",
+        "ogTitle": "",
+        "ogDescription": "",
+        "ogImage": "/images/IMG_20240509_41792.webp"
+    },
+    "hero": {
+        "imageSrc": "/images/IMG_20240509_41792.webp",
+        "imageAlt": "Well-kept back garden with trimmed hedges and a neat lawn",
+        "pattern": "pattern-1"
+    },
+    "chips": ["Reset", "Reshape", "Tidy up", "Polished"],
+    "overview": {
+        "label": "Overview",
+        "paragraphs": [
+            "This project focused on getting the space back under control and making it feel deliberate again—clear areas, cleaner lines, and a finish that looks properly cared for.",
+            "The result is a garden that looks better immediately and is easier to keep tidy going forward."
+        ]
+    },
+    "whatWeDid": {
+        "label": "What we did",
+        "bullets": [
+            "Clear and tidy overgrown areas",
+            "Reshape edges for a more deliberate look",
+            "Reset structure so the space feels finished"
+        ]
+    },
+    "result": {
+        "label": "Result",
+        "bullets": [
+            "A cleaner, more usable space",
+            "Sharper structure and shape",
+            "Easier maintenance going forward"
+        ]
+    },
+    "gallery": [
+        {
+            "imageSrc": "/images/IMG_20240509_41792.webp",
+            "imageAlt": "Well-kept back garden with trimmed hedges and a neat lawn",
+            "caption": "Reset and reshape for a cleaner outline."
+        },
+        {
+            "imageSrc": "/images/IMG_20250708_34242.webp",
+            "imageAlt": "Freshly maintained garden with trimmed hedges and neat lawn",
+            "caption": "A more finished look from every angle."
+        },
+        {
+            "imageSrc": "/images/IMG_20250715_29185.webp",
+            "imageAlt": "Garden looking tidy and well kept",
+            "caption": "A tidy look that’s easier to maintain."
+        }
+    ],
+    "faq": [],
+    "ctas": {
+        "primaryText": "Get a Quote",
+        "primaryHref": "/quote",
+        "secondaryText": "Back to Projects",
+        "secondaryHref": "/projects"
+    }
+}

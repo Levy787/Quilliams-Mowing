@@ -1,0 +1,68 @@
+{
+    "slug": "front-garden-refresh",
+    "order": 1,
+    "title": "Front garden refresh",
+    "subtitle": "Sharper edges, tidier structure, and a cleaner finish that stays presentable.",
+    "locationLabel": "Residential",
+    "seo": {
+        "title": "Front garden refresh",
+        "description": "Sharper edges, tidier structure, and a cleaner finish that stays presentable.",
+        "ogTitle": "",
+        "ogDescription": "",
+        "ogImage": "/images/IMG_20250708_16272.webp"
+    },
+    "hero": {
+        "imageSrc": "/images/IMG_20250708_16272.webp",
+        "imageAlt": "Front garden with neat lawn edges and trimmed hedges",
+        "pattern": "pattern-1"
+    },
+    "chips": ["Edges", "Tidy finish", "Structure", "Clear plan"],
+    "overview": {
+        "label": "Overview",
+        "paragraphs": [
+            "This project was all about making the front of the property feel cared for again—clean lines, a tidier outline, and a finish that looks intentional from the street.",
+            "We focused on high-impact changes that improve the look immediately and make ongoing upkeep simpler."
+        ]
+    },
+    "whatWeDid": {
+        "label": "What we did",
+        "bullets": [
+            "Reset beds and borders for a cleaner outline",
+            "Tidy structure and shape for a sharper look",
+            "Clean edges to make the space feel finished",
+            "Leave a tidy, presentable finish"
+        ]
+    },
+    "result": {
+        "label": "Result",
+        "bullets": [
+            "Sharper lines that lift the whole frontage",
+            "More finished look from the street",
+            "Easier ongoing upkeep"
+        ]
+    },
+    "gallery": [
+        {
+            "imageSrc": "/images/IMG_20250708_16272.webp",
+            "imageAlt": "Front garden with neat lawn edges and trimmed hedges",
+            "caption": "Crisp edges and tidy structure."
+        },
+        {
+            "imageSrc": "/images/IMG_20250715_29185.webp",
+            "imageAlt": "Well-kept garden with trimmed hedges and clean borders",
+            "caption": "A tidy look that holds up."
+        },
+        {
+            "imageSrc": "/images/IMG_20250708_11200.webp",
+            "imageAlt": "Garden with freshly trimmed hedges and a tidy lawn",
+            "caption": "Clean lines make a big difference."
+        }
+    ],
+    "faq": [],
+    "ctas": {
+        "primaryText": "Get a Quote",
+        "primaryHref": "/quote",
+        "secondaryText": "Back to Projects",
+        "secondaryHref": "/projects"
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "seo": {
+        "title": "Refer a friend",
+        "description": "Share Quilliams Gardening with someone you care about — you both get a reward when they book.",
+        "ogTitle": "",
+        "ogDescription": "",
+        "ogImage": null
+    },
+    "hero": {
+        "eyebrow": "Referral",
+        "heading": "Refer a friend",
+        "subheading": "Send a referral in under a minute. If they book, you both get a reward on your next visit."
+    },
+    "offer": {
+        "headline": "You both get 20% off your next visit",
+        "description": "When your friend books their first service, we’ll send you both a voucher to use on a future visit.",
+        "discountPercent": 20,
+        "voucherLabel": "20% off voucher",
+        "terms": "Referral reward applies when the referred customer completes their first paid booking. One voucher per household per referral. Vouchers can’t be combined with other offers."
+    },
+    "services": [
+        { "label": "Garden maintenance", "value": "garden-maintenance" },
+        { "label": "Hedge trimming", "value": "hedge-trimming" },
+        { "label": "Garden cleanup", "value": "garden-cleanup" },
+        { "label": "Lawn care", "value": "lawn-care" },
+        { "label": "Landscaping", "value": "landscaping" }
+    ],
+    "formCopy": {
+        "submitIdleLabel": "Create my voucher",
+        "submitLoadingLabel": "Creating voucher…",
+        "privacyNote": "We’ll only use these details to follow up about the referral. This form does not automatically email your friend yet.",
+        "successTitle": "Voucher created",
+        "successMessage": "Thanks — your referral is saved. Keep this code safe; we’ll apply the reward when the referred booking is confirmed.",
+        "voucherCodeLabel": "Voucher code",
+        "copyCodeLabel": "Copy code",
+        "copiedCodeLabel": "Copied"
+    }
+}

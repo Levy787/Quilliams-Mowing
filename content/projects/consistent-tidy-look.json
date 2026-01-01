@@ -1,0 +1,56 @@
+{
+    "slug": "consistent-tidy-look",
+    "order": 4,
+    "title": "Consistent tidy look",
+    "subtitle": "Regular care that keeps growth even and the garden looking sharp week after week.",
+    "locationLabel": "Residential",
+    "seo": {
+        "title": "Consistent tidy look",
+        "description": "Regular care that keeps growth even and the garden looking sharp week after week.",
+        "ogTitle": "",
+        "ogDescription": "",
+        "ogImage": "/images/IMG_20250715_29185.webp"
+    },
+    "hero": {
+        "imageSrc": "/images/IMG_20250715_29185.webp",
+        "imageAlt": "Well-kept garden lawn with trimmed hedges and clean edges",
+        "pattern": "pattern-1"
+    },
+    "chips": ["Maintenance", "Consistency", "Tidy"],
+    "overview": {
+        "label": "Overview",
+        "paragraphs": [
+            "Regular care that keeps growth even and the garden looking sharp week after week."
+        ]
+    },
+    "whatWeDid": {
+        "label": "What we did",
+        "bullets": [
+            "Maintain a steady rhythm of upkeep",
+            "Keep edges crisp and borders tidy",
+            "Communicate clearly around weather and timing"
+        ]
+    },
+    "result": {
+        "label": "Result",
+        "bullets": [
+            "More consistent presentation",
+            "Less catch-up work",
+            "A garden that feels calmer"
+        ]
+    },
+    "gallery": [
+        {
+            "imageSrc": "/images/IMG_20250715_29185.webp",
+            "imageAlt": "Well-kept garden lawn with trimmed hedges and clean edges",
+            "caption": ""
+        }
+    ],
+    "faq": [],
+    "ctas": {
+        "primaryText": "Get a Quote",
+        "primaryHref": "/quote",
+        "secondaryText": "Back to Projects",
+        "secondaryHref": "/projects"
+    }
+}

@@ -1,0 +1,78 @@
+{
+    "slug": "fresh-cut-clean-lines",
+    "order": 2,
+    "title": "Fresh cut + clean lines",
+    "subtitle": "A tidy finish with crisp edges that makes the whole garden feel looked after.",
+    "locationLabel": "Residential",
+    "seo": {
+        "title": "Fresh cut + clean lines",
+        "description": "A tidy finish with crisp edges that makes the whole garden feel looked after.",
+        "ogTitle": "",
+        "ogDescription": "",
+        "ogImage": "/images/IMG_20250708_11200.webp"
+    },
+    "hero": {
+        "imageSrc": "/images/IMG_20250708_11200.webp",
+        "imageAlt": "Garden with freshly cut hedges and a tidy lawn",
+        "pattern": "pattern-1"
+    },
+    "chips": ["Lawn", "Edges", "Consistency", "Tidy finish"],
+    "overview": {
+        "label": "Overview",
+        "paragraphs": [
+            "The goal here was simple: clean lines, a neat cut, and a finish that looks intentional rather than rushed.",
+            "When edges are crisp and the cut is consistent, the whole garden feels calmer and more presentable."
+        ]
+    },
+    "whatWeDid": {
+        "label": "What we did",
+        "bullets": [
+            "Consistent cut for a neat overall look",
+            "Clean edges and corners",
+            "Light tidy to finish properly"
+        ]
+    },
+    "result": {
+        "label": "Result",
+        "bullets": [
+            "Instantly neater feel",
+            "Crisp edges that look intentional",
+            "A lawn that feels easier to maintain"
+        ]
+    },
+    "gallery": [
+        {
+            "imageSrc": "/images/IMG_20250708_11200.webp",
+            "imageAlt": "Garden with freshly cut hedges and a tidy lawn",
+            "caption": "Fresh cut, clean outline."
+        },
+        {
+            "imageSrc": "/images/IMG_20250704_93515.webp",
+            "imageAlt": "Freshly mown lawn with trimmed hedges in a private garden",
+            "caption": "A tidy finish that makes everything look sharper."
+        },
+        {
+            "imageSrc": "/images/IMG_20250708_16272.webp",
+            "imageAlt": "Neat lawn with clean edges in a private garden",
+            "caption": "Edges that hold the look together."
+        }
+    ],
+    "faq": [
+        {
+            "id": "timing",
+            "question": "How often do you recommend maintenance cuts?",
+            "answer": "It depends on the time of year and how tidy you want it to stay. We can recommend a schedule when we quote."
+        },
+        {
+            "id": "weather",
+            "question": "What happens if weather affects timing?",
+            "answer": "If conditions aren’t suitable, we’ll communicate clearly and reschedule to the next good window."
+        }
+    ],
+    "ctas": {
+        "primaryText": "Get a Quote",
+        "primaryHref": "/quote",
+        "secondaryText": "Back to Projects",
+        "secondaryHref": "/projects"
+    }
+}

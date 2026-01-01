@@ -3,6 +3,7 @@ import { createReader } from "@keystatic/core/reader";
 import keystaticConfig from "../keystatic.config";
 
 import type { Offer } from "@/lib/offers";
+import type { ReferralContent } from "@/lib/referral";
 import type { Service } from "@/lib/services";
 
 const reader = createReader(process.cwd(), keystaticConfig);
@@ -30,6 +31,27 @@ export async function getQuoteContent() {
 }
 
 export type QuoteContent = Awaited<ReturnType<typeof getQuoteContent>>;
+
+export async function getReferralContent(): Promise<ReferralContent> {
+    const entry = await reader.singletons.referral.readOrThrow();
+
+    return {
+        seo: {
+            title: entry.seo.title,
+            description: entry.seo.description,
+            ogTitle: entry.seo.ogTitle,
+            ogDescription: entry.seo.ogDescription,
+            ogImage: entry.seo.ogImage || undefined,
+        },
+        hero: entry.hero,
+        offer: entry.offer,
+        services: entry.services.map((s) => ({
+            label: s.label,
+            value: s.value,
+        })),
+        formCopy: entry.formCopy,
+    };
+}
 
 export async function getServicesLandingContent() {
     return reader.singletons.servicesLanding.readOrThrow();

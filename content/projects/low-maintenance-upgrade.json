@@ -1,0 +1,56 @@
+{
+    "slug": "low-maintenance-upgrade",
+    "order": 3,
+    "title": "Low-maintenance upgrade",
+    "subtitle": "Small improvements designed to look great without demanding constant upkeep.",
+    "locationLabel": "Residential",
+    "seo": {
+        "title": "Low-maintenance upgrade",
+        "description": "Small improvements designed to look great without demanding constant upkeep.",
+        "ogTitle": "",
+        "ogDescription": "",
+        "ogImage": "/images/IMG_20250704_93515.webp"
+    },
+    "hero": {
+        "imageSrc": "/images/IMG_20250704_93515.webp",
+        "imageAlt": "Garden lawn with tidy borders and freshly maintained planting areas",
+        "pattern": "pattern-1"
+    },
+    "chips": ["Planting", "Beds", "Low maintenance"],
+    "overview": {
+        "label": "Overview",
+        "paragraphs": [
+            "Small improvements designed to look great without demanding constant upkeep."
+        ]
+    },
+    "whatWeDid": {
+        "label": "What we did",
+        "bullets": [
+            "Tidy and refresh borders to clean up the overall look",
+            "Make practical improvements for long-term manageability",
+            "Leave a polished finish that holds up"
+        ]
+    },
+    "result": {
+        "label": "Result",
+        "bullets": [
+            "A more intentional layout",
+            "Cleaner beds and borders",
+            "Simpler ongoing maintenance"
+        ]
+    },
+    "gallery": [
+        {
+            "imageSrc": "/images/IMG_20250704_93515.webp",
+            "imageAlt": "Garden lawn with tidy borders and freshly maintained planting areas",
+            "caption": ""
+        }
+    ],
+    "faq": [],
+    "ctas": {
+        "primaryText": "Get a Quote",
+        "primaryHref": "/quote",
+        "secondaryText": "Back to Projects",
+        "secondaryHref": "/projects"
+    }
+}
