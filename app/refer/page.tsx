@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 
+import { Suspense } from "react";
+
 import ReferClient from "./refer-client";
 
 import { getReferralContent } from "@/lib/keystatic-reader";
@@ -18,5 +20,9 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function ReferPage() {
     const content = await getReferralContent();
 
-    return <ReferClient content={content} />;
+    return (
+        <Suspense fallback={null}>
+            <ReferClient content={content} />
+        </Suspense>
+    );
 }
