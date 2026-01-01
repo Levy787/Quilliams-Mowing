@@ -381,9 +381,6 @@ export default function ReferClient({ content }: ReferClientProps) {
                                             <Button type="button" variant="outline" onClick={onEditDetails}>
                                                 Edit details
                                             </Button>
-                                            <Button type="button" asChild>
-                                                <a href="/quote">Get a Quote</a>
-                                            </Button>
                                         </div>
                                     </div>
                                 )}
