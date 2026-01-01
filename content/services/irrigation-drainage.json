@@ -1,0 +1,179 @@
+{
+  "slug": "irrigation-drainage",
+  "label": "Irrigation & Drainage",
+  "title": "Irrigation and drainage improvements that reduce garden headaches",
+  "description": "Practical fixes to help your garden cope better with wet weather and dry spells—so it stays healthier and easier to maintain.",
+  "hero": {
+    "imageSrc": "/images/IMG_20250708_34242.webp",
+    "imageAlt": "Garden looking healthy and tidy after practical improvements",
+    "caption": "Smarter water management makes upkeep easier.",
+    "pattern": "pattern-1"
+  },
+  "trustChips": [
+    "Practical approach",
+    "Clear quote",
+    "Better long-term upkeep"
+  ],
+  "ctas": {
+    "primaryText": "Get a Quote",
+    "primaryHref": "/quote",
+    "secondaryText": "Contact Us",
+    "secondaryHref": "/contact"
+  },
+  "included": {
+    "label": "What’s included",
+    "title": "Simple, practical improvements",
+    "description": "We focus on sensible upgrades that help manage water better and improve how your garden performs through the seasons.",
+    "items": [
+      {
+        "title": "Problem-area assessment",
+        "description": "Identify where water is pooling, running, or being wasted.",
+        "icon": "CloudRain"
+      },
+      {
+        "title": "Soil and bed improvement",
+        "description": "Targeted improvements to help water soak in and support growth.",
+        "icon": "Layers"
+      },
+      {
+        "title": "Mulch and moisture support",
+        "description": "A tidy finish that helps beds retain moisture more evenly.",
+        "icon": "Leaf"
+      },
+      {
+        "title": "Practical planting advice",
+        "description": "Plant choices that cope better with local conditions.",
+        "icon": "Flower2"
+      },
+      {
+        "title": "Tidy edges and finish",
+        "description": "A neat, finished look once work is complete.",
+        "icon": "Ruler"
+      },
+      {
+        "title": "Waste removal (optional)",
+        "description": "Clear-up can include taking waste away if needed.",
+        "icon": "Trash2"
+      }
+    ]
+  },
+  "results": {
+    "label": "Recent results",
+    "title": "Healthier beds, easier upkeep",
+    "description": "Small improvements to water management can make a big difference to how your garden looks and how much effort it takes to maintain.",
+    "headerCtas": {
+      "primaryText": "Get a Quote",
+      "primaryHref": "/quote",
+      "secondaryText": "See more work",
+      "secondaryHref": "/"
+    },
+    "cards": [
+      {
+        "title": "Better-performing beds",
+        "description": "Practical upgrades that help planting thrive more consistently.",
+        "imageSrc": "/images/IMG_20250704_93515.webp",
+        "imageAlt": "Garden looking tidy with healthy beds and borders",
+        "ctaText": "View more details",
+        "ctaHref": "/#recent-works"
+      },
+      {
+        "title": "Cleaner, tidier finish",
+        "description": "A smarter layout and finish that feels more intentional.",
+        "imageSrc": "/images/IMG_20250708_16272.webp",
+        "imageAlt": "Tidy garden edges and borders after improvements",
+        "ctaText": "View more details",
+        "ctaHref": "/#recent-works"
+      },
+      {
+        "title": "More manageable upkeep",
+        "description": "A garden that’s easier to keep looking good through the season.",
+        "imageSrc": "/images/IMG_20250715_29185.webp",
+        "imageAlt": "Well-maintained garden after practical work",
+        "ctaText": "View more details",
+        "ctaHref": "/#recent-works"
+      }
+    ],
+    "footerNote": ""
+  },
+  "valueBand": {
+    "label": "Value",
+    "title": "A garden that handles weather better",
+    "description": "When water is managed better, beds perform better and the whole garden becomes easier to maintain.",
+    "bullets": [
+      {
+        "title": "More consistent growth",
+        "description": "Beds and planting cope better through wet and dry periods.",
+        "icon": "Leaf"
+      },
+      {
+        "title": "Practical improvements",
+        "description": "Focus on changes that make a noticeable difference.",
+        "icon": "Shovel"
+      },
+      {
+        "title": "Cleaner finish",
+        "description": "A tidy end result that looks intentional.",
+        "icon": "Sparkles"
+      }
+    ],
+    "pattern": "pattern-2",
+    "ctas": {
+      "primaryText": "Request a Quote",
+      "primaryHref": "/quote",
+      "secondaryText": "Contact Us",
+      "secondaryHref": "/contact"
+    }
+  },
+  "faq": {
+    "label": "FAQs",
+    "title": "Quick answers",
+    "description": "If you don’t see your question here, just get in touch.",
+    "items": [
+      {
+        "id": "what",
+        "question": "What kind of irrigation or drainage work do you do?",
+        "answer": "We focus on practical garden improvements and clear recommendations. Tell us the issue (pooling water, dry beds, etc.) and we’ll advise what’s worth doing."
+      },
+      {
+        "id": "photos",
+        "question": "Can I send photos?",
+        "answer": "Yes—photos help us understand the issue and quote accurately."
+      },
+      {
+        "id": "timing",
+        "question": "When is the best time to address drainage?",
+        "answer": "Any time you’re seeing problems, but seasonal timing can help. We’ll advise when quoting."
+      },
+      {
+        "id": "disruption",
+        "question": "Will it be disruptive?",
+        "answer": "It depends on the scope. We’ll outline what’s involved before starting."
+      },
+      {
+        "id": "area",
+        "question": "Do you cover my area?",
+        "answer": "Send your postcode and we’ll confirm availability."
+      }
+    ]
+  },
+  "finalCta": {
+    "title": "Got a wet patch or beds that struggle in dry spells?",
+    "description": "Tell us what’s happening (and send photos if you can) and we’ll recommend a practical fix—then quote it clearly.",
+    "primaryText": "Get a Quote",
+    "primaryHref": "/quote",
+    "secondaryText": "Contact Us",
+    "secondaryHref": "/contact"
+  },
+  "plans": {
+    "label": "",
+    "title": "",
+    "description": "",
+    "cards": [],
+    "ctas": {
+      "primaryText": "",
+      "primaryHref": "",
+      "secondaryText": "",
+      "secondaryHref": ""
+    }
+  }
+}

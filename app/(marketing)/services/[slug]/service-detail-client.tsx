@@ -30,7 +30,7 @@ import type {
     IconName,
     PatternName,
     Service,
-} from "@/app/(marketing)/services/_content/services";
+} from "@/lib/services";
 
 const ICON_MAP: Record<IconName, React.ComponentType<React.SVGProps<SVGSVGElement>>> = {
     Leaf,

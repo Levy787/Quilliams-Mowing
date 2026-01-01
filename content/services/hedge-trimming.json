@@ -1,0 +1,218 @@
+{
+  "slug": "hedge-trimming",
+  "label": "Hedge Trimming",
+  "title": "Hedge trimming for a crisp, tidy finish",
+  "description": "Neat shapes, clean lines, and a consistent look—whether it’s a quick trim or a proper reset after overgrowth.",
+  "hero": {
+    "imageSrc": "/images/IMG_20250708_11200.webp",
+    "imageAlt": "Freshly trimmed hedges with a tidy lawn in a private garden",
+    "caption": "A sharp trim makes the whole garden look more finished.",
+    "pattern": "pattern-1"
+  },
+  "trustChips": [
+    "Clean lines",
+    "Tidy finish",
+    "Practical advice"
+  ],
+  "ctas": {
+    "primaryText": "Get a Quote",
+    "primaryHref": "/quote",
+    "secondaryText": "Contact Us",
+    "secondaryHref": "/contact"
+  },
+  "included": {
+    "label": "What’s included",
+    "title": "A clean shape that stays looking tidy",
+    "description": "We focus on a neat finish with sensible shaping—so hedges look sharp without looking overdone.",
+    "items": [
+      {
+        "title": "Shaping & trimming",
+        "description": "Clean lines that make hedges look intentional.",
+        "icon": "Brush"
+      },
+      {
+        "title": "Height & width control",
+        "description": "Keep growth manageable and consistent.",
+        "icon": "Ruler"
+      },
+      {
+        "title": "Problem area tidy-up",
+        "description": "Reset awkward corners and uneven spots.",
+        "icon": "Sparkles"
+      },
+      {
+        "title": "Season-aware approach",
+        "description": "Practical timing guidance to keep things healthy.",
+        "icon": "Leaf"
+      },
+      {
+        "title": "Green waste removal (optional)",
+        "description": "Clippings can be collected and taken away.",
+        "icon": "Trash2"
+      },
+      {
+        "title": "Ongoing maintenance option",
+        "description": "Keep it looking sharp with repeat visits.",
+        "icon": "CalendarDays"
+      }
+    ]
+  },
+  "plans": {
+    "label": "Options",
+    "title": "Choose a trim that matches your needs",
+    "description": "From a quick tidy to a more thorough reset—pick the level of work that suits the hedge and the result you want.",
+    "cards": [
+      {
+        "title": "Light tidy trim",
+        "description": "A quick refresh to keep the hedge looking neat.",
+        "bullets": [
+          "Tidy the outline",
+          "Clean edges and corners"
+        ],
+        "icon": "Brush"
+      },
+      {
+        "title": "Shape and refine",
+        "description": "A more deliberate trim for a sharper look.",
+        "bullets": [
+          "Even shape",
+          "Consistent height",
+          "Neat finish"
+        ],
+        "icon": "Ruler"
+      },
+      {
+        "title": "One-off reset",
+        "description": "When growth has gotten away and you want it back under control.",
+        "bullets": [
+          "Bring it back to shape",
+          "Improve overall look",
+          "Advice for maintenance"
+        ],
+        "icon": "Sparkles"
+      },
+      {
+        "title": "Regular maintenance",
+        "description": "Keep hedges crisp with repeat visits.",
+        "bullets": [
+          "Keep growth controlled",
+          "Consistent tidy look"
+        ],
+        "icon": "CalendarDays"
+      }
+    ],
+    "ctas": {
+      "primaryText": "Request a quote",
+      "primaryHref": "/quote",
+      "secondaryText": "Ask a question",
+      "secondaryHref": "/contact"
+    }
+  },
+  "results": {
+    "label": "Recent results",
+    "title": "Sharper lines, neater garden",
+    "description": "A well-shaped hedge improves the whole space—structure looks stronger and everything feels more cared for.",
+    "headerCtas": {
+      "primaryText": "Get a Quote",
+      "primaryHref": "/quote",
+      "secondaryText": "See more work",
+      "secondaryHref": "/"
+    },
+    "cards": [
+      {
+        "title": "Crisp, clean outline",
+        "description": "A tidy trim that makes the hedge look sharp again.",
+        "imageSrc": "/images/IMG_20250708_11200.webp",
+        "imageAlt": "Hedges trimmed into a neat shape with a tidy lawn",
+        "ctaText": "View more details",
+        "ctaHref": "/#recent-works"
+      },
+      {
+        "title": "Consistent structure",
+        "description": "Even shaping for a more finished look from every angle.",
+        "imageSrc": "/images/IMG_20250715_29185.webp",
+        "imageAlt": "Garden with neatly trimmed hedges and clean borders",
+        "ctaText": "View more details",
+        "ctaHref": "/#recent-works"
+      },
+      {
+        "title": "Reset after overgrowth",
+        "description": "A more controlled shape that’s easier to maintain.",
+        "imageSrc": "/images/IMG_20240509_41792.webp",
+        "imageAlt": "Garden after a hedge tidy-up and reset",
+        "ctaText": "View more details",
+        "ctaHref": "/#recent-works"
+      }
+    ],
+    "footerNote": ""
+  },
+  "valueBand": {
+    "label": "Value",
+    "title": "A garden that looks more finished instantly",
+    "description": "Hedges are structure. When they’re tidy, everything else looks better—paths, lawns, and planting all feel more intentional.",
+    "bullets": [
+      {
+        "title": "Looks sharper",
+        "description": "Clean lines improve the whole garden’s look.",
+        "icon": "Sparkles"
+      },
+      {
+        "title": "Easier upkeep",
+        "description": "Regular trimming prevents big catch-up jobs.",
+        "icon": "Leaf"
+      },
+      {
+        "title": "Done properly",
+        "description": "A clean finish with practical advice for next steps.",
+        "icon": "Shovel"
+      }
+    ],
+    "pattern": "pattern-2",
+    "ctas": {
+      "primaryText": "Request a Quote",
+      "primaryHref": "/quote",
+      "secondaryText": "Contact Us",
+      "secondaryHref": "/contact"
+    }
+  },
+  "faq": {
+    "label": "FAQs",
+    "title": "Quick answers",
+    "description": "If you don’t see your question here, just get in touch.",
+    "items": [
+      {
+        "id": "frequency",
+        "question": "How often should hedges be trimmed?",
+        "answer": "It depends on the hedge type and the look you want. We can recommend timing when we quote."
+      },
+      {
+        "id": "height",
+        "question": "Can you reduce the height or width?",
+        "answer": "Often yes. Send a photo and we’ll advise what’s practical and include it in the quote."
+      },
+      {
+        "id": "waste",
+        "question": "Do you remove hedge clippings?",
+        "answer": "Yes—waste removal can be included. Let us know what you want taken away."
+      },
+      {
+        "id": "one-off",
+        "question": "Do you do one-off trims?",
+        "answer": "Yes—one-off trims and reset jobs are available."
+      },
+      {
+        "id": "area",
+        "question": "Do you cover my area?",
+        "answer": "Send your postcode and we’ll confirm availability."
+      }
+    ]
+  },
+  "finalCta": {
+    "title": "Want your hedges looking sharp again?",
+    "description": "Send a quick description (and photos if you can) and we’ll quote the trim clearly.",
+    "primaryText": "Get a Quote",
+    "primaryHref": "/quote",
+    "secondaryText": "Contact Us",
+    "secondaryHref": "/contact"
+  }
+}

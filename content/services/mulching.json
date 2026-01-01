@@ -1,0 +1,179 @@
+{
+  "slug": "mulching",
+  "label": "Mulching",
+  "title": "Mulching that makes beds look finished and easier to manage",
+  "description": "A clean layer of mulch improves the look of beds, helps keep things tidy, and supports healthier growth with less day-to-day hassle.",
+  "hero": {
+    "imageSrc": "/images/IMG_20250704_93515.webp",
+    "imageAlt": "Garden border and lawn looking tidy after a refresh",
+    "caption": "A simple upgrade that makes beds look intentional.",
+    "pattern": "pattern-1"
+  },
+  "trustChips": [
+    "Polished finish",
+    "Cleaner beds",
+    "Lower upkeep"
+  ],
+  "ctas": {
+    "primaryText": "Get a Quote",
+    "primaryHref": "/quote",
+    "secondaryText": "Contact Us",
+    "secondaryHref": "/contact"
+  },
+  "included": {
+    "label": "What’s included",
+    "title": "A tidy bed refresh with a clean finish",
+    "description": "We prep beds properly, apply mulch neatly, and leave the space looking sharp—so it stays easier to manage going forward.",
+    "items": [
+      {
+        "title": "Bed prep & tidy",
+        "description": "Clear and tidy beds so the finish looks clean.",
+        "icon": "Sparkles"
+      },
+      {
+        "title": "Weeding before mulching",
+        "description": "A better base helps the result last longer.",
+        "icon": "Sprout"
+      },
+      {
+        "title": "Neat edging for a crisp line",
+        "description": "A sharp border makes the mulch look intentional.",
+        "icon": "Ruler"
+      },
+      {
+        "title": "Mulch application",
+        "description": "Even coverage for a consistent, tidy look.",
+        "icon": "Layers"
+      },
+      {
+        "title": "Season-aware advice",
+        "description": "Practical guidance on timing and upkeep.",
+        "icon": "Leaf"
+      },
+      {
+        "title": "Waste removal (optional)",
+        "description": "Green waste can be collected and taken away.",
+        "icon": "Trash2"
+      }
+    ]
+  },
+  "results": {
+    "label": "Recent results",
+    "title": "Beds that look sharper and stay cleaner",
+    "description": "Mulch can transform the look of a border—cleaner lines, a more finished feel, and less mess day-to-day.",
+    "headerCtas": {
+      "primaryText": "Get a Quote",
+      "primaryHref": "/quote",
+      "secondaryText": "See more work",
+      "secondaryHref": "/"
+    },
+    "cards": [
+      {
+        "title": "Crisp borders",
+        "description": "Clean lines that make beds look deliberate and tidy.",
+        "imageSrc": "/images/IMG_20250708_16272.webp",
+        "imageAlt": "Tidy garden edges with a neat border finish",
+        "ctaText": "View more details",
+        "ctaHref": "/#recent-works"
+      },
+      {
+        "title": "A more finished look",
+        "description": "A simple bed refresh that lifts the whole garden.",
+        "imageSrc": "/images/IMG_20250715_29185.webp",
+        "imageAlt": "Garden looking well cared for after a tidy-up",
+        "ctaText": "View more details",
+        "ctaHref": "/#recent-works"
+      },
+      {
+        "title": "Reset for the season",
+        "description": "A tidy base that’s easier to maintain going forward.",
+        "imageSrc": "/images/IMG_20240509_41792.webp",
+        "imageAlt": "Garden bed area looking neat after a refresh",
+        "ctaText": "View more details",
+        "ctaHref": "/#recent-works"
+      }
+    ],
+    "footerNote": ""
+  },
+  "valueBand": {
+    "label": "Value",
+    "title": "A smarter bed finish with less day-to-day hassle",
+    "description": "Mulch helps beds look tidy, protects soil, and keeps things more manageable—especially when paired with clean edging.",
+    "bullets": [
+      {
+        "title": "Looks cleaner",
+        "description": "A polished bed finish that lifts the whole space.",
+        "icon": "Sparkles"
+      },
+      {
+        "title": "Supports healthier growth",
+        "description": "Better moisture control and improved soil condition.",
+        "icon": "Leaf"
+      },
+      {
+        "title": "Practical improvement",
+        "description": "A straightforward job that feels worth it visually.",
+        "icon": "Shovel"
+      }
+    ],
+    "pattern": "pattern-2",
+    "ctas": {
+      "primaryText": "Request a Quote",
+      "primaryHref": "/quote",
+      "secondaryText": "Contact Us",
+      "secondaryHref": "/contact"
+    }
+  },
+  "faq": {
+    "label": "FAQs",
+    "title": "Quick answers",
+    "description": "If you don’t see your question here, just get in touch.",
+    "items": [
+      {
+        "id": "what",
+        "question": "What does mulching include?",
+        "answer": "Usually bed tidy/prep, weeding where needed, neat edges, and an even mulch finish. We’ll confirm scope when we quote."
+      },
+      {
+        "id": "timing",
+        "question": "When is the best time to mulch?",
+        "answer": "Often spring or autumn, but it depends on your garden and what you want to achieve. We can advise."
+      },
+      {
+        "id": "cleanup",
+        "question": "Do you remove waste?",
+        "answer": "Yes—waste removal can be included. Tell us what you want taken away when requesting a quote."
+      },
+      {
+        "id": "materials",
+        "question": "Do you supply the mulch?",
+        "answer": "We can. Tell us the look you want and we’ll recommend an option and include it in the quote."
+      },
+      {
+        "id": "area",
+        "question": "Do you cover my area?",
+        "answer": "Send your postcode and we’ll confirm availability."
+      }
+    ]
+  },
+  "finalCta": {
+    "title": "Want beds that look finished and stay tidy?",
+    "description": "Tell us which areas you want refreshed and we’ll quote the job clearly.",
+    "primaryText": "Get a Quote",
+    "primaryHref": "/quote",
+    "secondaryText": "Contact Us",
+    "secondaryHref": "/contact"
+  },
+  "plans": {
+    "label": "",
+    "title": "",
+    "description": "",
+    "cards": [],
+    "ctas": {
+      "primaryText": "",
+      "primaryHref": "",
+      "secondaryText": "",
+      "secondaryHref": ""
+    }
+  }
+}

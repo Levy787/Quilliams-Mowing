@@ -1,0 +1,220 @@
+{
+  "slug": "garden-maintenance",
+  "label": "Garden Maintenance",
+  "title": "Garden maintenance that keeps everything looking cared for",
+  "description": "Regular, reliable visits to keep your garden tidy, healthy, and consistently presentable—without the stress of falling behind.",
+  "hero": {
+    "imageSrc": "/images/IMG_20250715_29185.webp",
+    "imageAlt": "Well-kept garden with trimmed hedges and neat borders after maintenance",
+    "caption": "A consistent tidy-up makes the whole space feel better.",
+    "pattern": "pattern-1"
+  },
+  "trustChips": [
+    "Reliable visits",
+    "Tidy finish",
+    "Clear communication"
+  ],
+  "ctas": {
+    "primaryText": "Get a Quote",
+    "primaryHref": "/quote",
+    "secondaryText": "Contact Us",
+    "secondaryHref": "/contact"
+  },
+  "included": {
+    "label": "What’s included",
+    "title": "The routine jobs that keep a garden in shape",
+    "description": "We focus on the essentials: tidy beds, neat edges, sensible pruning, and a clean finish—plus practical advice when you want it.",
+    "items": [
+      {
+        "title": "General tidy & reset",
+        "description": "A quick refresh that makes everything feel looked after.",
+        "icon": "Sparkles"
+      },
+      {
+        "title": "Weeding & bed care",
+        "description": "Keep beds clean so plants have space to thrive.",
+        "icon": "Sprout"
+      },
+      {
+        "title": "Borders & edging",
+        "description": "Crisp edges that instantly lift the look of a garden.",
+        "icon": "Ruler"
+      },
+      {
+        "title": "Light pruning (as needed)",
+        "description": "Small trims to keep growth under control and tidy.",
+        "icon": "Brush"
+      },
+      {
+        "title": "Green waste removal (optional)",
+        "description": "Clippings and waste can be collected and taken away.",
+        "icon": "Trash2"
+      },
+      {
+        "title": "Season-aware advice",
+        "description": "Simple next-step guidance to keep things manageable.",
+        "icon": "Leaf"
+      }
+    ]
+  },
+  "plans": {
+    "label": "Regular care",
+    "title": "Choose a maintenance schedule that suits you",
+    "description": "Weekly, fortnightly, or seasonal visits—pick what keeps your garden looking the way you want, without overdoing it.",
+    "cards": [
+      {
+        "title": "Weekly visit",
+        "description": "For gardens that need a consistently tidy look all the time.",
+        "bullets": [
+          "Quick tidy",
+          "Beds and edges",
+          "Keep growth under control"
+        ],
+        "icon": "CalendarDays"
+      },
+      {
+        "title": "Fortnightly visit",
+        "description": "A dependable rhythm that keeps things in good shape.",
+        "bullets": [
+          "Weeding and bed care",
+          "Tidy borders",
+          "Light pruning as needed"
+        ],
+        "icon": "CalendarDays"
+      },
+      {
+        "title": "Monthly tidy",
+        "description": "A bigger reset to stop things drifting.",
+        "bullets": [
+          "General tidy",
+          "Beds refreshed",
+          "Practical next steps"
+        ],
+        "icon": "Sparkles"
+      },
+      {
+        "title": "Seasonal refresh",
+        "description": "A focused tidy to set the garden up for the season ahead.",
+        "bullets": [
+          "Cut back and tidy",
+          "Waste cleared",
+          "Plan for the next few months"
+        ],
+        "icon": "Leaf"
+      }
+    ],
+    "ctas": {
+      "primaryText": "Request a schedule",
+      "primaryHref": "/quote",
+      "secondaryText": "Ask a question",
+      "secondaryHref": "/contact"
+    }
+  },
+  "results": {
+    "label": "Recent results",
+    "title": "A maintained garden feels calmer",
+    "description": "A consistent tidy-up makes everything look sharper—beds, borders, and structure all feel more intentional.",
+    "headerCtas": {
+      "primaryText": "Get a Quote",
+      "primaryHref": "/quote",
+      "secondaryText": "See more work",
+      "secondaryHref": "/"
+    },
+    "cards": [
+      {
+        "title": "Clean borders + tidy beds",
+        "description": "A simple refresh that makes the garden feel looked after again.",
+        "imageSrc": "/images/IMG_20250708_16272.webp",
+        "imageAlt": "Tidy garden with neat lawn edges and trimmed borders",
+        "ctaText": "View more details",
+        "ctaHref": "/#recent-works"
+      },
+      {
+        "title": "Consistent upkeep",
+        "description": "Regular visits keep everything presentable week after week.",
+        "imageSrc": "/images/IMG_20250715_29185.webp",
+        "imageAlt": "Well-kept garden after regular maintenance",
+        "ctaText": "View more details",
+        "ctaHref": "/#recent-works"
+      },
+      {
+        "title": "Reset after overgrowth",
+        "description": "A tidy reset that makes the space easier to maintain going forward.",
+        "imageSrc": "/images/IMG_20240509_41792.webp",
+        "imageAlt": "Garden looking neat after a maintenance reset",
+        "ctaText": "View more details",
+        "ctaHref": "/#recent-works"
+      }
+    ],
+    "footerNote": ""
+  },
+  "valueBand": {
+    "label": "Value",
+    "title": "A garden that stays tidy without the hassle",
+    "description": "The goal is consistency: a clear plan, reliable visits, and a finish that makes your whole property feel better kept.",
+    "bullets": [
+      {
+        "title": "Looks cared for",
+        "description": "Small details add up—beds, borders, and structure feel sharper.",
+        "icon": "Sparkles"
+      },
+      {
+        "title": "Easier upkeep",
+        "description": "Regular attention prevents big catch-up jobs.",
+        "icon": "Leaf"
+      },
+      {
+        "title": "Straightforward process",
+        "description": "Clear quote, clear schedule, and good communication.",
+        "icon": "Shovel"
+      }
+    ],
+    "pattern": "pattern-2",
+    "ctas": {
+      "primaryText": "Request a Quote",
+      "primaryHref": "/quote",
+      "secondaryText": "Contact Us",
+      "secondaryHref": "/contact"
+    }
+  },
+  "faq": {
+    "label": "FAQs",
+    "title": "Quick answers",
+    "description": "If you don’t see your question here, just get in touch.",
+    "items": [
+      {
+        "id": "what-included",
+        "question": "What’s included in garden maintenance?",
+        "answer": "It depends on your garden, but typically bed care, weeding, light pruning, tidy edges, and a clean finish. We’ll confirm details in your quote."
+      },
+      {
+        "id": "schedule",
+        "question": "Do you offer regular visits?",
+        "answer": "Yes—weekly, fortnightly, monthly, and seasonal options depending on the time of year and what you want maintained."
+      },
+      {
+        "id": "waste",
+        "question": "Can you remove green waste?",
+        "answer": "Yes—waste removal can be included. Let us know what you’d like taken away when requesting a quote."
+      },
+      {
+        "id": "one-off",
+        "question": "Can you do a one-off tidy?",
+        "answer": "Yes—one-off resets are available, especially as a starting point before regular maintenance."
+      },
+      {
+        "id": "area",
+        "question": "Do you cover my area?",
+        "answer": "Send your postcode and we’ll confirm availability."
+      }
+    ]
+  },
+  "finalCta": {
+    "title": "Want your garden to stay tidy all season?",
+    "description": "Tell us what you want maintained and how often—then we’ll recommend a schedule and quote it clearly.",
+    "primaryText": "Get a Quote",
+    "primaryHref": "/quote",
+    "secondaryText": "Contact Us",
+    "secondaryHref": "/contact"
+  }
+}

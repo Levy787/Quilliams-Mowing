@@ -3,6 +3,7 @@ import { createReader } from "@keystatic/core/reader";
 import keystaticConfig from "../keystatic.config";
 
 import type { Offer } from "@/lib/offers";
+import type { Service } from "@/lib/services";
 
 const reader = createReader(process.cwd(), keystaticConfig);
 
@@ -34,6 +35,10 @@ export async function listOfferSlugs() {
     return reader.collections.offers.list();
 }
 
+export async function listServiceSlugs() {
+    return reader.collections.services.list();
+}
+
 export async function getOfferBySlug(slug: string): Promise<Offer | null> {
     const entry = await reader.collections.offers.read(slug);
     if (!entry) return null;
@@ -58,5 +63,47 @@ export async function getOfferBySlug(slug: string): Promise<Offer | null> {
         idealFor: entry.idealFor,
         typicalTimeline: entry.typicalTimeline,
         faq: entry.faq,
+    };
+}
+
+export async function getServiceBySlug(slug: string): Promise<Service | null> {
+    const entry = await reader.collections.services.read(slug);
+    if (!entry) return null;
+
+    const hasPlans = entry.plans.title.trim().length > 0 ||
+        entry.plans.cards.length > 0;
+
+    const plans = hasPlans
+        ? {
+            label: entry.plans.label,
+            title: entry.plans.title,
+            description: entry.plans.description,
+            cards: entry.plans.cards,
+            ctas: entry.plans.ctas,
+        }
+        : undefined;
+
+    return {
+        slug,
+        label: entry.label,
+        title: entry.title,
+        description: entry.description,
+        hero: {
+            imageSrc: entry.hero.imageSrc,
+            imageAlt: entry.hero.imageAlt,
+            caption: entry.hero.caption || undefined,
+            pattern: entry.hero.pattern,
+        },
+        trustChips: entry.trustChips,
+        ctas: entry.ctas,
+        included: entry.included,
+        plans,
+        results: {
+            ...entry.results,
+            footerNote: entry.results.footerNote || undefined,
+        },
+        valueBand: entry.valueBand,
+        faq: entry.faq,
+        finalCta: entry.finalCta,
     };
 }

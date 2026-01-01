@@ -28,6 +28,25 @@ const serviceIconOptions = [
   { label: "Droplets", value: "droplets" },
 ] as const satisfies readonly IconOption[];
 
+const serviceDetailIconOptions = [
+  { label: "Leaf", value: "Leaf" },
+  { label: "Ruler", value: "Ruler" },
+  { label: "Sprout", value: "Sprout" },
+  { label: "Trash2", value: "Trash2" },
+  { label: "CalendarDays", value: "CalendarDays" },
+  { label: "CloudRain", value: "CloudRain" },
+  { label: "Brush", value: "Brush" },
+  { label: "Flower2", value: "Flower2" },
+  { label: "Layers", value: "Layers" },
+  { label: "Shovel", value: "Shovel" },
+  { label: "Sparkles", value: "Sparkles" },
+] as const satisfies readonly IconOption[];
+
+const servicePatternOptions = [
+  { label: "Pattern 1", value: "pattern-1" },
+  { label: "Pattern 2", value: "pattern-2" },
+] as const;
+
 export const keystaticConfig = config({
   storage: {
     kind: "local",
@@ -114,6 +133,216 @@ export const keystaticConfig = config({
             a: fields.text({ label: "Answer", multiline: true }),
           }),
           { label: "FAQ" },
+        ),
+      },
+    }),
+
+    services: collection({
+      label: "Services",
+      path: "content/services/*",
+      format: "json",
+      slugField: "slug",
+      schema: {
+        slug: fields.slug({
+          name: {
+            label: "Name",
+            validation: { isRequired: true },
+          },
+          slug: {
+            label: "Slug",
+          },
+        }),
+
+        label: fields.text({ label: "Label" }),
+        title: fields.text({ label: "Title" }),
+        description: fields.text({ label: "Description", multiline: true }),
+
+        hero: fields.object(
+          {
+            imageSrc: fields.text({ label: "Image src" }),
+            imageAlt: fields.text({ label: "Image alt" }),
+            caption: fields.text({ label: "Caption", multiline: true }),
+            pattern: fields.select({
+              label: "Pattern",
+              options: servicePatternOptions,
+              defaultValue: "pattern-1",
+            }),
+          },
+          { label: "Hero" },
+        ),
+
+        trustChips: fields.array(fields.text({ label: "Chip" }), {
+          label: "Trust chips",
+        }),
+
+        ctas: fields.object(
+          {
+            primaryText: fields.text({ label: "Primary text" }),
+            primaryHref: fields.text({ label: "Primary href" }),
+            secondaryText: fields.text({ label: "Secondary text" }),
+            secondaryHref: fields.text({ label: "Secondary href" }),
+          },
+          { label: "CTAs" },
+        ),
+
+        included: fields.object(
+          {
+            label: fields.text({ label: "Label" }),
+            title: fields.text({ label: "Title" }),
+            description: fields.text({ label: "Description", multiline: true }),
+            items: fields.array(
+              fields.object({
+                title: fields.text({ label: "Title" }),
+                description: fields.text({
+                  label: "Description",
+                  multiline: true,
+                }),
+                icon: fields.select({
+                  label: "Icon",
+                  options: serviceDetailIconOptions,
+                  defaultValue: "Leaf",
+                }),
+              }),
+              { label: "Items" },
+            ),
+          },
+          { label: "What's included" },
+        ),
+
+        plans: fields.object(
+          {
+            label: fields.text({ label: "Label" }),
+            title: fields.text({ label: "Title" }),
+            description: fields.text({ label: "Description", multiline: true }),
+            cards: fields.array(
+              fields.object({
+                title: fields.text({ label: "Title" }),
+                description: fields.text({
+                  label: "Description",
+                  multiline: true,
+                }),
+                bullets: fields.array(fields.text({ label: "Bullet" }), {
+                  label: "Bullets",
+                }),
+                icon: fields.select({
+                  label: "Icon",
+                  options: serviceDetailIconOptions,
+                  defaultValue: "Leaf",
+                }),
+              }),
+              { label: "Cards" },
+            ),
+            ctas: fields.object(
+              {
+                primaryText: fields.text({ label: "Primary text" }),
+                primaryHref: fields.text({ label: "Primary href" }),
+                secondaryText: fields.text({ label: "Secondary text" }),
+                secondaryHref: fields.text({ label: "Secondary href" }),
+              },
+              { label: "CTAs" },
+            ),
+          },
+          { label: "Plans" },
+        ),
+
+        results: fields.object(
+          {
+            label: fields.text({ label: "Label" }),
+            title: fields.text({ label: "Title" }),
+            description: fields.text({ label: "Description", multiline: true }),
+            headerCtas: fields.object(
+              {
+                primaryText: fields.text({ label: "Primary text" }),
+                primaryHref: fields.text({ label: "Primary href" }),
+                secondaryText: fields.text({ label: "Secondary text" }),
+                secondaryHref: fields.text({ label: "Secondary href" }),
+              },
+              { label: "Header CTAs" },
+            ),
+            cards: fields.array(
+              fields.object({
+                title: fields.text({ label: "Title" }),
+                description: fields.text({
+                  label: "Description",
+                  multiline: true,
+                }),
+                imageSrc: fields.text({ label: "Image src" }),
+                imageAlt: fields.text({ label: "Image alt" }),
+                ctaText: fields.text({ label: "CTA text" }),
+                ctaHref: fields.text({ label: "CTA href" }),
+              }),
+              { label: "Cards" },
+            ),
+            footerNote: fields.text({ label: "Footer note", multiline: true }),
+          },
+          { label: "Results" },
+        ),
+
+        valueBand: fields.object(
+          {
+            label: fields.text({ label: "Label" }),
+            title: fields.text({ label: "Title" }),
+            description: fields.text({ label: "Description", multiline: true }),
+            bullets: fields.array(
+              fields.object({
+                title: fields.text({ label: "Title" }),
+                description: fields.text({
+                  label: "Description",
+                  multiline: true,
+                }),
+                icon: fields.select({
+                  label: "Icon",
+                  options: serviceDetailIconOptions,
+                  defaultValue: "Leaf",
+                }),
+              }),
+              { label: "Bullets" },
+            ),
+            pattern: fields.select({
+              label: "Pattern",
+              options: servicePatternOptions,
+              defaultValue: "pattern-2",
+            }),
+            ctas: fields.object(
+              {
+                primaryText: fields.text({ label: "Primary text" }),
+                primaryHref: fields.text({ label: "Primary href" }),
+                secondaryText: fields.text({ label: "Secondary text" }),
+                secondaryHref: fields.text({ label: "Secondary href" }),
+              },
+              { label: "CTAs" },
+            ),
+          },
+          { label: "Value band" },
+        ),
+
+        faq: fields.object(
+          {
+            label: fields.text({ label: "Label" }),
+            title: fields.text({ label: "Title" }),
+            description: fields.text({ label: "Description", multiline: true }),
+            items: fields.array(
+              fields.object({
+                id: fields.text({ label: "ID" }),
+                question: fields.text({ label: "Question" }),
+                answer: fields.text({ label: "Answer", multiline: true }),
+              }),
+              { label: "Items" },
+            ),
+          },
+          { label: "FAQ" },
+        ),
+
+        finalCta: fields.object(
+          {
+            title: fields.text({ label: "Title" }),
+            description: fields.text({ label: "Description", multiline: true }),
+            primaryText: fields.text({ label: "Primary text" }),
+            primaryHref: fields.text({ label: "Primary href" }),
+            secondaryText: fields.text({ label: "Secondary text" }),
+            secondaryHref: fields.text({ label: "Secondary href" }),
+          },
+          { label: "Final CTA" },
         ),
       },
     }),

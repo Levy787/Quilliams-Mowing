@@ -1,0 +1,179 @@
+{
+  "slug": "seasonal-cleanup",
+  "label": "Seasonal Cleanup",
+  "title": "Seasonal cleanups that reset your garden properly",
+  "description": "A focused tidy-up that clears the mess, brings things back under control, and sets your garden up for the season ahead.",
+  "hero": {
+    "imageSrc": "/images/IMG_20240509_41792.webp",
+    "imageAlt": "Garden looking tidy after a seasonal cleanup and reset",
+    "caption": "A proper reset makes everything feel easier to manage.",
+    "pattern": "pattern-1"
+  },
+  "trustChips": [
+    "One-off reset",
+    "Tidy finish",
+    "Waste removal optional"
+  ],
+  "ctas": {
+    "primaryText": "Get a Quote",
+    "primaryHref": "/quote",
+    "secondaryText": "Contact Us",
+    "secondaryHref": "/contact"
+  },
+  "included": {
+    "label": "What’s included",
+    "title": "A clear, practical reset for the season",
+    "description": "We’ll focus on the work that makes the biggest difference: clearing, cutting back, tidying structure, and leaving a clean finish.",
+    "items": [
+      {
+        "title": "General clear-out",
+        "description": "Remove the built-up mess so the garden feels usable again.",
+        "icon": "Trash2"
+      },
+      {
+        "title": "Cut back & tidy",
+        "description": "A sensible prune and tidy for a cleaner shape.",
+        "icon": "Brush"
+      },
+      {
+        "title": "Bed cleanup",
+        "description": "Clear and tidy borders so everything looks sharper.",
+        "icon": "Sprout"
+      },
+      {
+        "title": "Edges and borders",
+        "description": "Crisp lines that make the garden feel more finished.",
+        "icon": "Ruler"
+      },
+      {
+        "title": "Season-aware plan",
+        "description": "Practical advice for what to do next and when.",
+        "icon": "Leaf"
+      },
+      {
+        "title": "Polished finish",
+        "description": "A tidy, complete look—not half-done.",
+        "icon": "Sparkles"
+      }
+    ]
+  },
+  "results": {
+    "label": "Recent results",
+    "title": "From messy to manageable",
+    "description": "A seasonal reset makes ongoing upkeep easier and the whole space feel more presentable.",
+    "headerCtas": {
+      "primaryText": "Get a Quote",
+      "primaryHref": "/quote",
+      "secondaryText": "See more work",
+      "secondaryHref": "/"
+    },
+    "cards": [
+      {
+        "title": "Clearer beds and borders",
+        "description": "A reset that makes the garden feel lighter and cleaner.",
+        "imageSrc": "/images/IMG_20240509_41792.webp",
+        "imageAlt": "Garden after a cleanup with tidy borders",
+        "ctaText": "View more details",
+        "ctaHref": "/#recent-works"
+      },
+      {
+        "title": "Sharper structure",
+        "description": "A tidy-up that makes hedges, edges, and shapes feel more intentional.",
+        "imageSrc": "/images/IMG_20250708_11200.webp",
+        "imageAlt": "Tidy garden structure with neat hedges and lawn",
+        "ctaText": "View more details",
+        "ctaHref": "/#recent-works"
+      },
+      {
+        "title": "Ready for the season",
+        "description": "A fresh start that’s easier to maintain going forward.",
+        "imageSrc": "/images/IMG_20250708_16272.webp",
+        "imageAlt": "Garden looking neat and ready after seasonal work",
+        "ctaText": "View more details",
+        "ctaHref": "/#recent-works"
+      }
+    ],
+    "footerNote": ""
+  },
+  "valueBand": {
+    "label": "Value",
+    "title": "A reset that makes the whole garden feel better",
+    "description": "Seasonal cleanups are about momentum: once it’s tidy again, everything becomes simpler to maintain.",
+    "bullets": [
+      {
+        "title": "Immediate difference",
+        "description": "Clearer, cleaner, and more presentable straight away.",
+        "icon": "Sparkles"
+      },
+      {
+        "title": "Easier upkeep next",
+        "description": "Less catch-up work week to week.",
+        "icon": "Leaf"
+      },
+      {
+        "title": "Straightforward quote",
+        "description": "Clear scope and a tidy finish you can see.",
+        "icon": "Shovel"
+      }
+    ],
+    "pattern": "pattern-2",
+    "ctas": {
+      "primaryText": "Request a Quote",
+      "primaryHref": "/quote",
+      "secondaryText": "Contact Us",
+      "secondaryHref": "/contact"
+    }
+  },
+  "faq": {
+    "label": "FAQs",
+    "title": "Quick answers",
+    "description": "If you don’t see your question here, just get in touch.",
+    "items": [
+      {
+        "id": "when",
+        "question": "When should I book a seasonal cleanup?",
+        "answer": "Spring and autumn are common, but it depends on your garden. Tell us what you want achieved and we’ll advise."
+      },
+      {
+        "id": "scope",
+        "question": "What’s included in a cleanup?",
+        "answer": "Usually clearing, tidying beds, light pruning/cut back, edges, and a clean finish. We’ll confirm in your quote."
+      },
+      {
+        "id": "waste",
+        "question": "Do you remove waste?",
+        "answer": "Yes—waste removal can be included. Let us know what you want taken away."
+      },
+      {
+        "id": "one-off",
+        "question": "Can this be a one-off job?",
+        "answer": "Yes—seasonal cleanups are commonly one-off resets."
+      },
+      {
+        "id": "area",
+        "question": "Do you cover my area?",
+        "answer": "Send your postcode and we’ll confirm availability."
+      }
+    ]
+  },
+  "finalCta": {
+    "title": "Want a proper garden reset for the season?",
+    "description": "Tell us what needs clearing and we’ll recommend a practical plan—then quote it clearly.",
+    "primaryText": "Get a Quote",
+    "primaryHref": "/quote",
+    "secondaryText": "Contact Us",
+    "secondaryHref": "/contact"
+  },
+  "plans": {
+    "label": "",
+    "title": "",
+    "description": "",
+    "cards": [],
+    "ctas": {
+      "primaryText": "",
+      "primaryHref": "",
+      "secondaryText": "",
+      "secondaryHref": ""
+    }
+  }
+}

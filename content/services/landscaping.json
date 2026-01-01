@@ -1,0 +1,179 @@
+{
+  "slug": "landscaping",
+  "label": "Landscaping",
+  "title": "Landscaping that makes your garden feel finished",
+  "description": "Clean lines, practical planting, and tidy finishes—delivered with clear quotes and a straightforward process.",
+  "hero": {
+    "imageSrc": "/images/IMG_20250708_34242.webp",
+    "imageAlt": "Freshly maintained garden with trimmed hedges and a neat lawn",
+    "caption": "A sharp, finished look—without the hassle.",
+    "pattern": "pattern-1"
+  },
+  "trustChips": [
+    "Clear quotes",
+    "Tidy finish",
+    "Practical advice"
+  ],
+  "ctas": {
+    "primaryText": "Get a Quote",
+    "primaryHref": "/quote",
+    "secondaryText": "Contact Us",
+    "secondaryHref": "/contact"
+  },
+  "included": {
+    "label": "What’s included",
+    "title": "The details that make it feel done properly",
+    "description": "Landscaping doesn’t have to mean a massive project. We focus on improvements that are practical, tidy, and worth the spend.",
+    "items": [
+      {
+        "title": "Bed shaping & edging",
+        "description": "Clean lines that make the whole garden feel intentional.",
+        "icon": "Ruler"
+      },
+      {
+        "title": "Planting & replanting",
+        "description": "Practical plant choices to match your space and upkeep.",
+        "icon": "Flower2"
+      },
+      {
+        "title": "Mulching & soil improvement",
+        "description": "Better soil, better growth, and a more polished finish.",
+        "icon": "Layers"
+      },
+      {
+        "title": "Lawn prep & turfing",
+        "description": "Level, fresh, and ready for the season ahead.",
+        "icon": "Leaf"
+      },
+      {
+        "title": "Hedge shaping & structure tidy-up",
+        "description": "A crisp shape that keeps things looking neat.",
+        "icon": "Brush"
+      },
+      {
+        "title": "Seasonal refresh & waste removal",
+        "description": "Green waste cleared and the space reset properly.",
+        "icon": "Trash2"
+      }
+    ]
+  },
+  "results": {
+    "label": "Recent landscaping projects",
+    "title": "A few results we’re proud of",
+    "description": "Small changes add up—clean edges, better structure, and a finish that looks good from every angle.",
+    "headerCtas": {
+      "primaryText": "Get a Quote",
+      "primaryHref": "/quote",
+      "secondaryText": "See more work",
+      "secondaryHref": "/"
+    },
+    "cards": [
+      {
+        "title": "Front garden refresh",
+        "description": "A clean reset with sharper edges, fresh mulch, and structure that stays tidy.",
+        "imageSrc": "/images/IMG_20250708_16272.webp",
+        "imageAlt": "Front garden with freshly trimmed hedges and neat lawn edges",
+        "ctaText": "View more details",
+        "ctaHref": "/#recent-works"
+      },
+      {
+        "title": "Low-maintenance planting upgrade",
+        "description": "Practical planting choices that look great and don’t demand constant upkeep.",
+        "imageSrc": "/images/IMG_20250704_93515.webp",
+        "imageAlt": "Garden lawn with fresh cut hedges and a tidy planted border",
+        "ctaText": "View more details",
+        "ctaHref": "/#recent-works"
+      },
+      {
+        "title": "Back garden tidy and reshape",
+        "description": "A more finished feel with clean lines, cleared areas, and a consistent look.",
+        "imageSrc": "/images/IMG_20240509_41792.webp",
+        "imageAlt": "Well-kept back garden with trimmed hedges and a neat lawn",
+        "ctaText": "View more details",
+        "ctaHref": "/#recent-works"
+      }
+    ],
+    "footerNote": "Looking for more examples? Browse our recent work on the home page."
+  },
+  "valueBand": {
+    "label": "Value",
+    "title": "Improvements that add real value",
+    "description": "We focus on changes that feel worth it—visually, practically, and long-term.",
+    "bullets": [
+      {
+        "title": "Looks finished",
+        "description": "Tidy lines and clean structure you notice immediately.",
+        "icon": "Sparkles"
+      },
+      {
+        "title": "Easier upkeep",
+        "description": "Smarter planting and layout so it stays manageable.",
+        "icon": "Leaf"
+      },
+      {
+        "title": "Done properly",
+        "description": "Clear plan, clear quote, and a clean finish.",
+        "icon": "Shovel"
+      }
+    ],
+    "pattern": "pattern-2",
+    "ctas": {
+      "primaryText": "Request a Quote",
+      "primaryHref": "/quote",
+      "secondaryText": "Ask a Question",
+      "secondaryHref": "/contact"
+    }
+  },
+  "faq": {
+    "label": "FAQs",
+    "title": "Quick answers",
+    "description": "If you don’t see your question here, just get in touch.",
+    "items": [
+      {
+        "id": "ideas",
+        "question": "Do you help with design ideas?",
+        "answer": "Yes. We can recommend simple layout and planting improvements that fit your space and the amount of upkeep you want."
+      },
+      {
+        "id": "existing",
+        "question": "Can you work with what I already have?",
+        "answer": "Absolutely. If something can be kept or improved, we’ll tell you—no unnecessary rip-out."
+      },
+      {
+        "id": "duration",
+        "question": "How long does a landscaping job take?",
+        "answer": "It depends on the scope. Some refreshes take a day; bigger improvements can take longer. We’ll confirm timing with your quote."
+      },
+      {
+        "id": "waste",
+        "question": "Do you remove waste?",
+        "answer": "Yes—green waste removal can be included. Just let us know what you want cleared and we’ll include it in pricing."
+      },
+      {
+        "id": "low-maintenance",
+        "question": "Can you recommend low-maintenance plants?",
+        "answer": "Yes. We’ll suggest options that suit your garden and how much time you want to spend maintaining it."
+      }
+    ]
+  },
+  "finalCta": {
+    "title": "Ready to tidy up the layout and make it feel finished?",
+    "description": "Tell us what you’d like to improve and we’ll recommend a practical plan—then quote it clearly.",
+    "primaryText": "Get a Quote",
+    "primaryHref": "/quote",
+    "secondaryText": "Contact Us",
+    "secondaryHref": "/contact"
+  },
+  "plans": {
+    "label": "",
+    "title": "",
+    "description": "",
+    "cards": [],
+    "ctas": {
+      "primaryText": "",
+      "primaryHref": "",
+      "secondaryText": "",
+      "secondaryHref": ""
+    }
+  }
+}

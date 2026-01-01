@@ -1,14 +1,11 @@
 import { notFound } from "next/navigation";
 
-import {
-    getServiceBySlug,
-    SERVICES,
-    type ServiceSlug,
-} from "@/app/(marketing)/services/_content/services";
+import { getServiceBySlug, listServiceSlugs } from "@/lib/keystatic-reader";
 import ServiceDetailClient from "./service-detail-client";
 
-export function generateStaticParams(): Array<{ slug: ServiceSlug }> {
-    return SERVICES.map((s) => ({ slug: s.slug }));
+export async function generateStaticParams(): Promise<Array<{ slug: string }>> {
+    const slugs = await listServiceSlugs();
+    return slugs.map((slug) => ({ slug }));
 }
 
 export default async function ServiceDetailPage({
@@ -17,7 +14,7 @@ export default async function ServiceDetailPage({
     params: Promise<{ slug: string }>;
 }) {
     const { slug } = await params;
-    const service = getServiceBySlug(slug);
+    const service = await getServiceBySlug(slug);
 
     if (!service) notFound();
 
