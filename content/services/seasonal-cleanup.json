@@ -3,6 +3,15 @@
   "label": "Seasonal Cleanup",
   "title": "Seasonal cleanups that reset your garden properly",
   "description": "A focused tidy-up that clears the mess, brings things back under control, and sets your garden up for the season ahead.",
+  "seo": {
+    "title": "Seasonal cleanups that reset your garden properly",
+    "description": "A focused tidy-up that clears the mess, brings things back under control, and sets your garden up for the season ahead.",
+    "ogTitle": "",
+    "ogDescription": "",
+    "ogImage": "/images/IMG_20240509_41792.webp"
+  },
+  "cardTag": "Popular",
+  "cardIcon": "Wind",
   "hero": {
     "imageSrc": "/images/IMG_20240509_41792.webp",
     "imageAlt": "Garden looking tidy after a seasonal cleanup and reset",

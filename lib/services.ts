@@ -13,11 +13,29 @@ export type IconName =
 
 export type PatternName = "pattern-1" | "pattern-2";
 
+export type ServiceCardIconName =
+    | "Trees"
+    | "Sprout"
+    | "Flower2"
+    | "Scissors"
+    | "Layers"
+    | "Wind"
+    | "Droplets";
+
 export type Service = {
     slug: string;
     label: string;
     title: string;
     description: string;
+    cardTag?: string;
+    cardIcon?: ServiceCardIconName;
+    seo?: {
+        title: string;
+        description: string;
+        ogTitle: string;
+        ogDescription: string;
+        ogImage?: string;
+    };
     hero: {
         imageSrc: string;
         imageAlt: string;

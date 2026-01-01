@@ -3,6 +3,15 @@
   "label": "Mulching",
   "title": "Mulching that makes beds look finished and easier to manage",
   "description": "A clean layer of mulch improves the look of beds, helps keep things tidy, and supports healthier growth with less day-to-day hassle.",
+  "seo": {
+    "title": "Mulching that makes beds look finished and easier to manage",
+    "description": "A clean layer of mulch improves the look of beds, helps keep things tidy, and supports healthier growth with less day-to-day hassle.",
+    "ogTitle": "",
+    "ogDescription": "",
+    "ogImage": "/images/IMG_20250708_34242.webp"
+  },
+  "cardTag": "",
+  "cardIcon": "Layers",
   "hero": {
     "imageSrc": "/images/IMG_20250704_93515.webp",
     "imageAlt": "Garden border and lawn looking tidy after a refresh",

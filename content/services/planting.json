@@ -3,6 +3,15 @@
   "label": "Planting",
   "title": "Planting that looks great and suits your level of upkeep",
   "description": "Practical plant choices and tidy bed finishing—so your garden looks better now and stays manageable long-term.",
+  "seo": {
+    "title": "Planting that looks great and suits your level of upkeep",
+    "description": "Practical plant choices and tidy bed finishing—so your garden looks better now and stays manageable long-term.",
+    "ogTitle": "",
+    "ogDescription": "",
+    "ogImage": "/images/IMG_20250708_34242.webp"
+  },
+  "cardTag": "",
+  "cardIcon": "Sprout",
   "hero": {
     "imageSrc": "/images/IMG_20250708_16272.webp",
     "imageAlt": "Tidy garden border and lawn with a clean, refreshed look",

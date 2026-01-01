@@ -1,4 +1,11 @@
 {
+    "seo": {
+        "title": "Quilliams Gardening",
+        "description": "From weekly mowing and garden maintenance to full yard clean-ups and landscape improvements, we deliver stress-free, dependable care that keeps your outdoor spaces beautiful, functional, and something you can truly be proud of.",
+        "ogTitle": "",
+        "ogDescription": "",
+        "ogImage": null
+    },
     "hero": {
         "headlineParts": [
             { "text": "Professional ", "tone": "normal" },

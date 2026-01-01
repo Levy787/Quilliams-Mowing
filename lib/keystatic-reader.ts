@@ -31,6 +31,14 @@ export async function getQuoteContent() {
 
 export type QuoteContent = Awaited<ReturnType<typeof getQuoteContent>>;
 
+export async function getServicesLandingContent() {
+    return reader.singletons.servicesLanding.readOrThrow();
+}
+
+export type ServicesLandingContent = Awaited<
+    ReturnType<typeof getServicesLandingContent>
+>;
+
 export async function listOfferSlugs() {
     return reader.collections.offers.list();
 }
@@ -48,6 +56,13 @@ export async function getOfferBySlug(slug: string): Promise<Offer | null> {
         template: entry.template,
         headline: entry.headline,
         subheadline: entry.subheadline,
+        seo: {
+            title: entry.seo.title,
+            description: entry.seo.description,
+            ogTitle: entry.seo.ogTitle,
+            ogDescription: entry.seo.ogDescription,
+            ogImage: entry.seo.ogImage || undefined,
+        },
         terms: entry.terms,
         serviceArea: entry.serviceArea,
         phoneDisplay: entry.phoneDisplay,
@@ -88,6 +103,17 @@ export async function getServiceBySlug(slug: string): Promise<Service | null> {
         label: entry.label,
         title: entry.title,
         description: entry.description,
+        cardTag: entry.cardTag?.trim().length ? entry.cardTag : undefined,
+        cardIcon: entry.cardIcon,
+        seo: entry.seo
+            ? {
+                title: entry.seo.title,
+                description: entry.seo.description,
+                ogTitle: entry.seo.ogTitle,
+                ogDescription: entry.seo.ogDescription,
+                ogImage: entry.seo.ogImage || undefined,
+            }
+            : undefined,
         hero: {
             imageSrc: entry.hero.imageSrc,
             imageAlt: entry.hero.imageAlt,

@@ -1,9 +1,31 @@
-import { listServiceSlugs, getServiceBySlug } from "@/lib/keystatic-reader";
+import type { Metadata } from "next";
+
+import {
+    getServicesLandingContent,
+    getServiceBySlug,
+    listServiceSlugs,
+} from "@/lib/keystatic-reader";
+import { buildMetadata } from "@/lib/seo";
 import ServicesLandingClient, {
     type ServiceCardModel,
+    type ServicesLandingContentModel,
 } from "./ServicesLandingClient";
 
+export async function generateMetadata(): Promise<Metadata> {
+    const content = await getServicesLandingContent();
+
+    return buildMetadata({
+        seo: content.seo,
+        fallbackTitle: content.hero.title,
+        fallbackDescription: content.hero.description,
+        fallbackOgImage: content.hero.image.src,
+    });
+}
+
 export default async function ServicesPage() {
+    const content =
+        (await getServicesLandingContent()) as ServicesLandingContentModel;
+
     const slugs = await listServiceSlugs();
     const services = (await Promise.all(slugs.map((s) => getServiceBySlug(s))))
         .filter((s): s is NonNullable<typeof s> => !!s)
@@ -12,12 +34,14 @@ export default async function ServicesPage() {
                 slug: service.slug,
                 title: service.title,
                 description: service.description,
+                tag: service.cardTag,
+                icon: service.cardIcon,
             }),
         )
         .sort((a, b) =>
             a.title.localeCompare(b.title) || a.slug.localeCompare(b.slug),
         );
 
-    return <ServicesLandingClient services={services} />;
+    return <ServicesLandingClient services={services} content={content} />;
 }
 

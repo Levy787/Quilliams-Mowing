@@ -1,4 +1,11 @@
 {
+    "seo": {
+        "title": "Contact",
+        "description": "Have a question or want to book a free consultation? Send us a message and we’ll reply as soon as possible.",
+        "ogTitle": "",
+        "ogDescription": "",
+        "ogImage": null
+    },
     "header": {
         "badge": "Contact",
         "heading": "Contact Us",

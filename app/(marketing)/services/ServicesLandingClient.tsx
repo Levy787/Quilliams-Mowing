@@ -32,32 +32,100 @@ export type ServiceCardModel = {
     slug: string;
     title: string;
     description: string;
-};
-
-type ServiceCardMeta = {
     tag?: string;
-    Icon: ComponentType<SVGProps<SVGSVGElement>>;
+    icon?:
+    | "Trees"
+    | "Sprout"
+    | "Flower2"
+    | "Scissors"
+    | "Layers"
+    | "Wind"
+    | "Droplets";
 };
 
-const DEFAULT_META: ServiceCardMeta = {
-    Icon: Sprout,
+export type ServicesLandingContentModel = {
+    hero: {
+        badge: string;
+        title: string;
+        description: string;
+        primaryCta: { label: string; href: string };
+        secondaryCta: { label: string; href: string };
+        chips: readonly string[];
+        image: { src: string; alt: string; caption: string };
+    };
+    process: {
+        title: string;
+        description: string;
+        steps: ReadonlyArray<{
+            title: string;
+            description: string;
+            icon:
+            | "MessageCircle"
+            | "Lightbulb"
+            | "ClipboardCheck"
+            | "CalendarDays";
+        }>;
+    };
+    servicesGrid: {
+        title: string;
+        description: string;
+    };
+    highlights: {
+        title: string;
+        description: string;
+        items: ReadonlyArray<{
+            image: { src: string; alt: string };
+            title: string;
+            bullets: readonly string[];
+            cta: {
+                label: string;
+                href: string;
+                variant: "default" | "outline";
+            };
+        }>;
+    };
+    faq: {
+        title: string;
+        description: string;
+        items: ReadonlyArray<{ id: string; question: string; answer: string }>;
+    };
+    finalCta: {
+        title: string;
+        description: string;
+        primaryCta: { label: string; href: string };
+        secondaryCta: { label: string; href: string };
+    };
 };
 
-const SERVICE_META_BY_SLUG: Record<string, ServiceCardMeta> = {
-    landscaping: { tag: "Most requested", Icon: Trees },
-    "lawn-care": { Icon: Sprout },
-    "garden-maintenance": { tag: "Popular", Icon: Flower2 },
-    "hedge-trimming": { Icon: Scissors },
-    mulching: { Icon: Layers },
-    "seasonal-cleanup": { tag: "Popular", Icon: Wind },
-    "irrigation-drainage": { Icon: Droplets },
-    planting: { Icon: Sprout },
+const SERVICE_CARD_ICONS: Record<
+    NonNullable<ServiceCardModel["icon"]>,
+    ComponentType<SVGProps<SVGSVGElement>>
+> = {
+    Trees,
+    Sprout,
+    Flower2,
+    Scissors,
+    Layers,
+    Wind,
+    Droplets,
+};
+
+const PROCESS_ICONS: Record<
+    ServicesLandingContentModel["process"]["steps"][number]["icon"],
+    ComponentType<SVGProps<SVGSVGElement>>
+> = {
+    MessageCircle,
+    Lightbulb,
+    ClipboardCheck,
+    CalendarDays,
 };
 
 export default function ServicesLandingClient({
     services,
+    content,
 }: {
     services: ServiceCardModel[];
+    content: ServicesLandingContentModel;
 }) {
     const fadeUp = {
         hidden: { opacity: 0, y: 12 },
@@ -78,36 +146,39 @@ export default function ServicesLandingClient({
                             transition={{ duration: 0.5, ease: "easeOut" }}
                         >
                             <div className="inline-flex items-center rounded-full bg-muted px-4 py-1.5 text-sm text-muted-foreground">
-                                Services
+                                {content.hero.badge}
                             </div>
 
                             <h1 className="mt-4 text-4xl md:text-5xl font-bold tracking-tight text-foreground">
-                                Our Services
+                                {content.hero.title}
                             </h1>
 
                             <p className="mt-4 max-w-xl text-base md:text-lg leading-relaxed text-muted-foreground">
-                                From regular maintenance to full landscape improvements, we offer dependable services tailored to your property.
+                                {content.hero.description}
                             </p>
 
                             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
                                 <Button asChild size="lg">
-                                    <Link href="/quote">Get a Quote</Link>
+                                    <Link href={content.hero.primaryCta.href}>
+                                        {content.hero.primaryCta.label}
+                                    </Link>
                                 </Button>
                                 <Button asChild size="lg" variant="outline">
-                                    <Link href="/contact">Ask a Question</Link>
+                                    <Link href={content.hero.secondaryCta.href}>
+                                        {content.hero.secondaryCta.label}
+                                    </Link>
                                 </Button>
                             </div>
 
                             <div className="mt-6 flex flex-wrap gap-3 text-sm text-muted-foreground">
-                                <div className="inline-flex items-center rounded-full bg-muted px-3 py-1">
-                                    Friendly, practical advice
-                                </div>
-                                <div className="inline-flex items-center rounded-full bg-muted px-3 py-1">
-                                    Clear quotes
-                                </div>
-                                <div className="inline-flex items-center rounded-full bg-muted px-3 py-1">
-                                    Clean finish
-                                </div>
+                                {content.hero.chips.map((chip) => (
+                                    <div
+                                        key={chip}
+                                        className="inline-flex items-center rounded-full bg-muted px-3 py-1"
+                                    >
+                                        {chip}
+                                    </div>
+                                ))}
                             </div>
                         </motion.div>
 
@@ -126,8 +197,8 @@ export default function ServicesLandingClient({
                                 <div className="relative aspect-16/11 w-full">
                                     <div className="absolute inset-0 bg-[url('/patterns/pattern-2.svg')] bg-repeat opacity-20" />
                                     <Image
-                                        src="https://picsum.photos/seed/quilliams-services/1600/1100"
-                                        alt="A well-kept garden and outdoor space"
+                                        src={content.hero.image.src}
+                                        alt={content.hero.image.alt}
                                         fill
                                         className="object-cover"
                                         sizes="(min-width: 1024px) 50vw, 100vw"
@@ -136,7 +207,7 @@ export default function ServicesLandingClient({
                                     <div className="absolute inset-0 bg-linear-to-t from-background/60 via-background/10 to-transparent" />
                                     <div className="absolute bottom-0 left-0 right-0 p-6">
                                         <div className="max-w-md text-sm leading-relaxed text-foreground">
-                                            Practical, tidy, and reliable—work that makes your property easier to enjoy and easier to maintain.
+                                            {content.hero.image.caption}
                                         </div>
                                     </div>
                                 </div>
@@ -158,74 +229,53 @@ export default function ServicesLandingClient({
                                     className="max-w-2xl"
                                 >
                                     <div className="text-2xl font-semibold">
-                                        How we work
+                                        {content.process.title}
                                     </div>
                                     <p className="mt-2 text-sm md:text-base leading-relaxed text-background/80 dark:text-muted-foreground">
-                                        A straightforward process—clear recommendations, clear pricing, and clean results.
+                                        {content.process.description}
                                     </p>
                                 </motion.div>
 
                                 <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                                    {[
-                                        {
-                                            title: "Tell us what you need",
-                                            description:
-                                                "Share a few details (and photos if you have them) so we can understand the job.",
-                                            Icon: MessageCircle,
-                                        },
-                                        {
-                                            title: "We assess and recommend",
-                                            description:
-                                                "We’ll suggest the best approach for your yard, budget, and maintenance level.",
-                                            Icon: Lightbulb,
-                                        },
-                                        {
-                                            title: "We quote clearly",
-                                            description:
-                                                "You’ll get a clear quote so you know exactly what’s included.",
-                                            Icon: ClipboardCheck,
-                                        },
-                                        {
-                                            title: "We schedule and deliver",
-                                            description:
-                                                "We book a time that works and show up ready to get it done.",
-                                            Icon: CalendarDays,
-                                        },
-                                    ].map((step, index) => (
-                                        <motion.div
-                                            key={step.title}
-                                            variants={fadeUp}
-                                            initial="hidden"
-                                            whileInView="show"
-                                            viewport={{ once: true, amount: 0.2 }}
-                                            transition={{
-                                                duration: 0.45,
-                                                ease: "easeOut",
-                                                delay: 0.06 * index,
-                                            }}
-                                        >
-                                            <Card className="rounded-3xl h-full border-background/15 bg-background/5 text-background shadow-none dark:border-border dark:bg-muted dark:text-foreground">
-                                                <CardContent className="px-6 py-6">
-                                                    <div className="flex items-start gap-4">
-                                                        <div className="mt-0.5 rounded-xl bg-background/10 p-3 dark:bg-muted">
-                                                            <step.Icon
-                                                                className="h-6 w-6 text-primary"
-                                                                aria-hidden="true"
-                                                            />
-                                                        </div>
-                                                        <div className="min-w-0">
-                                                            <div className="text-sm font-semibold">
-                                                                {step.title}
+                                    {content.process.steps.map((step, index) => {
+                                        const StepIcon = PROCESS_ICONS[step.icon];
+
+                                        return (
+                                            <motion.div
+                                                key={step.title}
+                                                variants={fadeUp}
+                                                initial="hidden"
+                                                whileInView="show"
+                                                viewport={{ once: true, amount: 0.2 }}
+                                                transition={{
+                                                    duration: 0.45,
+                                                    ease: "easeOut",
+                                                    delay: 0.06 * index,
+                                                }}
+                                            >
+                                                <Card className="rounded-3xl h-full border-background/15 bg-background/5 text-background shadow-none dark:border-border dark:bg-muted dark:text-foreground">
+                                                    <CardContent className="px-6 py-6">
+                                                        <div className="flex items-start gap-4">
+                                                            <div className="mt-0.5 rounded-xl bg-background/10 p-3 dark:bg-muted">
+                                                                <StepIcon
+                                                                    className="h-6 w-6 text-primary"
+                                                                    aria-hidden="true"
+                                                                />
                                                             </div>
-                                                            <p className="mt-2 text-sm leading-relaxed text-background/80 dark:text-muted-foreground">
-                                                                {step.description}
-                                                            </p>
+                                                            <div className="min-w-0">
+                                                                <div className="text-sm font-semibold">
+                                                                    {step.title}
+                                                                </div>
+                                                                <p className="mt-2 text-sm leading-relaxed text-background/80 dark:text-muted-foreground">
+                                                                    {step.description}
+                                                                </p>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </CardContent>
-                                            </Card>
-                                        </motion.div>
-                                    ))}
+                                                    </CardContent>
+                                                </Card>
+                                            </motion.div>
+                                        );
+                                    })}
                                 </div>
                             </div>
                         </div>
@@ -235,19 +285,19 @@ export default function ServicesLandingClient({
                     <div className="mt-14">
                         <div className="max-w-2xl">
                             <div className="text-2xl font-semibold text-foreground">
-                                What we can help with
+                                {content.servicesGrid.title}
                             </div>
                             <p className="mt-2 text-sm md:text-base leading-relaxed text-muted-foreground">
-                                Pick a service to learn more. If you’re not sure, request a quote and we’ll recommend the best next step.
+                                {content.servicesGrid.description}
                             </p>
                         </div>
 
                         <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
                             {services.map((service) => {
-                                const meta =
-                                    SERVICE_META_BY_SLUG[service.slug] ??
-                                    DEFAULT_META;
-                                const Icon = meta.Icon;
+                                const Icon =
+                                    service.icon && SERVICE_CARD_ICONS[service.icon]
+                                        ? SERVICE_CARD_ICONS[service.icon]
+                                        : Sprout;
 
                                 return (
                                     <Link
@@ -270,9 +320,9 @@ export default function ServicesLandingClient({
                                                             <div className="text-lg font-semibold text-foreground">
                                                                 {service.title}
                                                             </div>
-                                                            {meta.tag ? (
+                                                            {service.tag ? (
                                                                 <div className="inline-flex items-center rounded-full bg-muted px-2 py-0.5 text-xs text-muted-foreground">
-                                                                    {meta.tag}
+                                                                    {service.tag}
                                                                 </div>
                                                             ) : null}
                                                         </div>
@@ -312,99 +362,106 @@ export default function ServicesLandingClient({
                                     className="max-w-2xl"
                                 >
                                     <div className="text-2xl font-semibold">
-                                        Service highlights
+                                        {content.highlights.title}
                                     </div>
                                     <p className="mt-2 text-sm md:text-base leading-relaxed text-primary-foreground/80">
-                                        Two common goals we hear: keep things consistently tidy, and make improvements that feel worth it.
+                                        {content.highlights.description}
                                     </p>
                                 </motion.div>
 
                                 <div className="mt-6 space-y-6">
-                                    {/* Highlight 1 */}
-                                    <Card className="rounded-4xl border-border shadow-none overflow-hidden">
-                                        <CardContent className="px-6 py-6">
-                                            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:items-center">
-                                                <div className="relative aspect-16/10 w-full overflow-hidden rounded-3xl border border-border">
-                                                    <Image
-                                                        src="https://picsum.photos/seed/quilliams-maintenance/1400/900"
-                                                        alt="A tidy garden after maintenance"
-                                                        fill
-                                                        className="object-cover"
-                                                        sizes="(min-width: 768px) 50vw, 100vw"
-                                                    />
-                                                </div>
+                                    {content.highlights.items.map(
+                                        (highlight, index) => (
+                                            <Card
+                                                key={`${highlight.title}-${index}`}
+                                                className="rounded-4xl border-border shadow-none overflow-hidden"
+                                            >
+                                                <CardContent className="px-6 py-6">
+                                                    <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:items-center">
+                                                        <div
+                                                            className={`relative aspect-16/10 w-full overflow-hidden rounded-3xl border border-border ${index % 2 === 1
+                                                                ? "md:order-2"
+                                                                : ""
+                                                                }`}
+                                                        >
+                                                            <Image
+                                                                src={
+                                                                    highlight
+                                                                        .image
+                                                                        .src
+                                                                }
+                                                                alt={
+                                                                    highlight
+                                                                        .image
+                                                                        .alt
+                                                                }
+                                                                fill
+                                                                className="object-cover"
+                                                                sizes="(min-width: 768px) 50vw, 100vw"
+                                                            />
+                                                        </div>
 
-                                                <div className="min-w-0">
-                                                    <div className="text-xl md:text-2xl font-semibold text-foreground">
-                                                        Maintenance that stays consistent
+                                                        <div
+                                                            className={`min-w-0 ${index % 2 === 1
+                                                                ? "md:order-1"
+                                                                : ""
+                                                                }`}
+                                                        >
+                                                            <div className="text-xl md:text-2xl font-semibold text-foreground">
+                                                                {
+                                                                    highlight.title
+                                                                }
+                                                            </div>
+                                                            <ul className="mt-4 space-y-2 text-sm md:text-base text-muted-foreground">
+                                                                {highlight.bullets.map(
+                                                                    (
+                                                                        bullet,
+                                                                    ) => (
+                                                                        <li
+                                                                            key={
+                                                                                bullet
+                                                                            }
+                                                                            className="flex gap-2"
+                                                                        >
+                                                                            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-muted-foreground/50" />
+                                                                            {
+                                                                                bullet
+                                                                            }
+                                                                        </li>
+                                                                    ),
+                                                                )}
+                                                            </ul>
+
+                                                            <div className="mt-6">
+                                                                <Button
+                                                                    asChild
+                                                                    variant={
+                                                                        highlight
+                                                                            .cta
+                                                                            .variant
+                                                                    }
+                                                                >
+                                                                    <Link
+                                                                        href={
+                                                                            highlight
+                                                                                .cta
+                                                                                .href
+                                                                        }
+                                                                    >
+                                                                        {
+                                                                            highlight
+                                                                                .cta
+                                                                                .label
+                                                                        }
+                                                                    </Link>
+                                                                </Button>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <ul className="mt-4 space-y-2 text-sm md:text-base text-muted-foreground">
-                                                        <li className="flex gap-2">
-                                                            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-muted-foreground/50" />
-                                                            Reliable regular visits so your yard doesn’t get away from you.
-                                                        </li>
-                                                        <li className="flex gap-2">
-                                                            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-muted-foreground/50" />
-                                                            Clean edges, tidy beds, and seasonal refreshes when needed.
-                                                        </li>
-                                                        <li className="flex gap-2">
-                                                            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-muted-foreground/50" />
-                                                            Clear communication on what we’ll do each visit.
-                                                        </li>
-                                                    </ul>
-
-                                                    <div className="mt-6">
-                                                        <Button asChild>
-                                                            <Link href="/quote">Get a Quote</Link>
-                                                        </Button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </CardContent>
-                                    </Card>
-
-                                    {/* Highlight 2 */}
-                                    <Card className="rounded-4xl border-border shadow-none overflow-hidden">
-                                        <CardContent className="px-6 py-6">
-                                            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:items-center">
-                                                <div className="relative aspect-16/10 w-full overflow-hidden rounded-3xl border border-border md:order-2">
-                                                    <Image
-                                                        src="https://picsum.photos/seed/quilliams-improvements/1400/900"
-                                                        alt="A landscaped outdoor space"
-                                                        fill
-                                                        className="object-cover"
-                                                        sizes="(min-width: 768px) 50vw, 100vw"
-                                                    />
-                                                </div>
-
-                                                <div className="min-w-0 md:order-1">
-                                                    <div className="text-xl md:text-2xl font-semibold text-foreground">
-                                                        Improvements that add real value
-                                                    </div>
-                                                    <ul className="mt-4 space-y-2 text-sm md:text-base text-muted-foreground">
-                                                        <li className="flex gap-2">
-                                                            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-muted-foreground/50" />
-                                                            Smarter planting and layout for easier long-term upkeep.
-                                                        </li>
-                                                        <li className="flex gap-2">
-                                                            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-muted-foreground/50" />
-                                                            Mulch, edging, and tidy finishes that make a big difference.
-                                                        </li>
-                                                        <li className="flex gap-2">
-                                                            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-muted-foreground/50" />
-                                                            Practical recommendations that fit your budget and timeline.
-                                                        </li>
-                                                    </ul>
-
-                                                    <div className="mt-6">
-                                                        <Button asChild variant="outline">
-                                                            <Link href="/quote">Get a Quote</Link>
-                                                        </Button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </CardContent>
-                                    </Card>
+                                                </CardContent>
+                                            </Card>
+                                        ),
+                                    )}
                                 </div>
                             </div>
                         </div>
@@ -414,10 +471,10 @@ export default function ServicesLandingClient({
                     <div className="mt-14">
                         <div className="max-w-2xl">
                             <div className="text-2xl font-semibold text-foreground">
-                                FAQs
+                                {content.faq.title}
                             </div>
                             <p className="mt-2 text-sm md:text-base leading-relaxed text-muted-foreground">
-                                Quick answers to the most common questions we hear.
+                                {content.faq.description}
                             </p>
                         </div>
 
@@ -428,50 +485,19 @@ export default function ServicesLandingClient({
                                     collapsible
                                     className="w-full"
                                 >
-                                    <AccordionItem value="maintenance">
-                                        <AccordionTrigger>
-                                            Do you offer ongoing maintenance?
-                                        </AccordionTrigger>
-                                        <AccordionContent>
-                                            Yes. We can schedule regular visits (weekly, fortnightly, or as needed) to keep your yard consistently tidy.
-                                        </AccordionContent>
-                                    </AccordionItem>
-
-                                    <AccordionItem value="photos">
-                                        <AccordionTrigger>
-                                            Can I get a quote from photos?
-                                        </AccordionTrigger>
-                                        <AccordionContent>
-                                            Often, yes. If the job is straightforward, photos and a quick description can be enough to provide a quote or a good estimate.
-                                        </AccordionContent>
-                                    </AccordionItem>
-
-                                    <AccordionItem value="waste">
-                                        <AccordionTrigger>
-                                            Do you remove green waste?
-                                        </AccordionTrigger>
-                                        <AccordionContent>
-                                            Yes—green waste removal can be included. Let us know what you’d like cleared and we’ll include it in the quote.
-                                        </AccordionContent>
-                                    </AccordionItem>
-
-                                    <AccordionItem value="timing">
-                                        <AccordionTrigger>
-                                            How soon can you start?
-                                        </AccordionTrigger>
-                                        <AccordionContent>
-                                            It depends on the season and the scope of work. Once we know what you need, we’ll confirm the next available times.
-                                        </AccordionContent>
-                                    </AccordionItem>
-
-                                    <AccordionItem value="pricing">
-                                        <AccordionTrigger>
-                                            Do you provide fixed quotes?
-                                        </AccordionTrigger>
-                                        <AccordionContent>
-                                            Yes. For most jobs we provide a clear quote outlining what’s included. If anything changes, we’ll discuss it before proceeding.
-                                        </AccordionContent>
-                                    </AccordionItem>
+                                    {content.faq.items.map((item) => (
+                                        <AccordionItem
+                                            key={item.id}
+                                            value={item.id}
+                                        >
+                                            <AccordionTrigger>
+                                                {item.question}
+                                            </AccordionTrigger>
+                                            <AccordionContent>
+                                                {item.answer}
+                                            </AccordionContent>
+                                        </AccordionItem>
+                                    ))}
                                 </Accordion>
                             </CardContent>
                         </Card>
@@ -484,23 +510,47 @@ export default function ServicesLandingClient({
                                 <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
                                     <div className="min-w-0">
                                         <div className="text-2xl font-semibold text-foreground">
-                                            Not sure what you need?
+                                            {content.finalCta.title}
                                         </div>
                                         <p className="mt-2 text-sm md:text-base leading-relaxed text-muted-foreground max-w-2xl">
-                                            Tell us a bit about your yard and we’ll recommend the best next step.
+                                            {content.finalCta.description}
                                         </p>
                                     </div>
 
                                     <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
                                         <Button asChild size="lg">
-                                            <Link href="/quote">Get a Quote</Link>
+                                            <Link
+                                                href={
+                                                    content.finalCta
+                                                        .primaryCta
+                                                        .href
+                                                }
+                                            >
+                                                {
+                                                    content.finalCta
+                                                        .primaryCta
+                                                        .label
+                                                }
+                                            </Link>
                                         </Button>
                                         <Button
                                             asChild
                                             size="lg"
                                             variant="outline"
                                         >
-                                            <Link href="/contact">Contact Us</Link>
+                                            <Link
+                                                href={
+                                                    content.finalCta
+                                                        .secondaryCta
+                                                        .href
+                                                }
+                                            >
+                                                {
+                                                    content.finalCta
+                                                        .secondaryCta
+                                                        .label
+                                                }
+                                            </Link>
                                         </Button>
                                     </div>
                                 </div>

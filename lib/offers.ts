@@ -7,6 +7,13 @@ export type Offer = {
     template: OfferTemplate;
     headline: string;
     subheadline: string;
+    seo: {
+        title: string;
+        description: string;
+        ogTitle: string;
+        ogDescription: string;
+        ogImage?: string;
+    };
     terms: string;
     serviceArea: string;
     phoneDisplay: string;

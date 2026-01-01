@@ -2,7 +2,16 @@
   "slug": "irrigation-drainage",
   "label": "Irrigation & Drainage",
   "title": "Irrigation and drainage improvements that reduce garden headaches",
-  "description": "Practical fixes to help your garden cope better with wet weather and dry spells—so it stays healthier and easier to maintain.",
+  "description": "Smart watering and drainage solutions to support healthy growth and reduce water issues.",
+  "seo": {
+    "title": "Irrigation and drainage improvements that reduce garden headaches",
+    "description": "Smart watering and drainage solutions to support healthy growth and reduce water issues.",
+    "ogTitle": "",
+    "ogDescription": "",
+    "ogImage": "/images/IMG_20250704_93515.webp"
+  },
+  "cardTag": "",
+  "cardIcon": "Droplets",
   "hero": {
     "imageSrc": "/images/IMG_20250708_34242.webp",
     "imageAlt": "Garden looking healthy and tidy after practical improvements",

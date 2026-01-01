@@ -3,6 +3,15 @@
   "label": "Garden Maintenance",
   "title": "Garden maintenance that keeps everything looking cared for",
   "description": "Regular, reliable visits to keep your garden tidy, healthy, and consistently presentable—without the stress of falling behind.",
+  "seo": {
+    "title": "Garden maintenance that keeps everything looking cared for",
+    "description": "Regular, reliable visits to keep your garden tidy, healthy, and consistently presentable—without the stress of falling behind.",
+    "ogTitle": "",
+    "ogDescription": "",
+    "ogImage": "/images/IMG_20250715_29185.webp"
+  },
+  "cardTag": "Popular",
+  "cardIcon": "Flower2",
   "hero": {
     "imageSrc": "/images/IMG_20250715_29185.webp",
     "imageAlt": "Well-kept garden with trimmed hedges and neat borders after maintenance",

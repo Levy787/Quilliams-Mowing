@@ -3,6 +3,15 @@
   "label": "Landscaping",
   "title": "Landscaping that makes your garden feel finished",
   "description": "Clean lines, practical planting, and tidy finishes—delivered with clear quotes and a straightforward process.",
+  "seo": {
+    "title": "Landscaping that makes your garden feel finished",
+    "description": "Clean lines, practical planting, and tidy finishes—delivered with clear quotes and a straightforward process.",
+    "ogTitle": "",
+    "ogDescription": "",
+    "ogImage": "/images/IMG_20250708_34242.webp"
+  },
+  "cardTag": "Most requested",
+  "cardIcon": "Trees",
   "hero": {
     "imageSrc": "/images/IMG_20250708_34242.webp",
     "imageAlt": "Freshly maintained garden with trimmed hedges and a neat lawn",

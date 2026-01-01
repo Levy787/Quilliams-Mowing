@@ -1,4 +1,11 @@
 {
+    "seo": {
+        "title": "Get a Quote",
+        "description": "Share a few details and upload photos of the area — we’ll review everything and get back to you with next steps.",
+        "ogTitle": "",
+        "ogDescription": "",
+        "ogImage": null
+    },
     "header": {
         "badge": "Quote",
         "heading": "Get Your Quote",

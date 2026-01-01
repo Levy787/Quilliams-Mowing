@@ -1,120 +1,124 @@
 {
-    "hero": {
-        "badge": "Pricing",
-        "heading": "A rough price guide — fast confirmation.",
-        "description": "Use the calculator to get a ballpark range. We’ll confirm scope and timing quickly once you send your details.",
-        "primaryCtaLabel": "Get a Quote",
-        "primaryCtaHref": "/quote",
-        "secondaryCtaLabel": "Contact",
-        "secondaryCtaHref": "/contact",
-        "footnote": "Estimates are a guide only — every yard is different.",
-        "sideCardTitle": "Best for planning",
-        "sideCardBody": "Get a rough range, then send it with your quote request."
+  "seo": {
+    "title": "Pricing",
+    "description": "Use the calculator to get a ballpark range. We’ll confirm scope and timing quickly once you send your details."
+  },
+  "hero": {
+    "badge": "Pricing",
+    "heading": "A rough price guide — fast confirmation.",
+    "description": "Use the calculator to get a ballpark range. We’ll confirm scope and timing quickly once you send your details.",
+    "primaryCtaLabel": "Get a Quote",
+    "primaryCtaHref": "/quote",
+    "secondaryCtaLabel": "Contact",
+    "secondaryCtaHref": "/contact",
+    "footnote": "Estimates are a guide only — every yard is different.",
+    "sideCardTitle": "Best for planning",
+    "sideCardBody": "Get a rough range, then send it with your quote request."
+  },
+  "calculator": {
+    "badge": "Pricing calculator",
+    "heading": "Try a few options.",
+    "description": "This is a rough guide only. We’ll confirm scope quickly and give you a more accurate range.",
+    "addonSectionTitle": "Optional add-ons",
+    "greenWasteTitle": "Green waste handling",
+    "greenWasteDescription": "Bag/stack/removal needs affect time and cost.",
+    "pruningTitle": "Pruning",
+    "pruningDescription": "Light to moderate pruning.",
+    "hedgeTrimTitle": "Hedge trim",
+    "hedgeTrimDescription": "Basic shaping and tidy-up.",
+    "estimatedRangeLabel": "Estimated range",
+    "estimatedRangeNote": "Rough guide only. Final pricing depends on photos, access, exact scope, and green waste handling.",
+    "includesTitle": "What this estimate includes",
+    "sendTitle": "Send this with your quote",
+    "sendDescription": "We’ll receive your selections and the estimated range so we can confirm scope faster.",
+    "sendPrimaryCtaLabel": "Send to Quote",
+    "sendSecondaryCtaLabel": "Open Quote Form",
+    "sendSecondaryCtaHref": "/quote",
+    "disclaimer": "Calculator outputs are not a fixed price and may change after review.",
+    "defaults": {
+      "jobType": "lawn",
+      "yardSize": "small",
+      "condition": "light",
+      "access": "easy",
+      "greenWaste": false,
+      "pruning": false,
+      "hedgeTrim": false,
+      "frequency": "one-off"
     },
-    "calculator": {
-        "badge": "Pricing calculator",
-        "heading": "Try a few options.",
-        "description": "This is a rough guide only. We’ll confirm scope quickly and give you a more accurate range.",
-        "addonSectionTitle": "Optional add-ons",
-        "greenWasteTitle": "Green waste handling",
-        "greenWasteDescription": "Bag/stack/removal needs affect time and cost.",
-        "pruningTitle": "Pruning",
-        "pruningDescription": "Light to moderate pruning.",
-        "hedgeTrimTitle": "Hedge trim",
-        "hedgeTrimDescription": "Basic shaping and tidy-up.",
-        "estimatedRangeLabel": "Estimated range",
-        "estimatedRangeNote": "Rough guide only. Final pricing depends on photos, access, exact scope, and green waste handling.",
-        "includesTitle": "What this estimate includes",
-        "sendTitle": "Send this with your quote",
-        "sendDescription": "We’ll receive your selections and the estimated range so we can confirm scope faster.",
-        "sendPrimaryCtaLabel": "Send to Quote",
-        "sendSecondaryCtaLabel": "Open Quote Form",
-        "sendSecondaryCtaHref": "/quote",
-        "disclaimer": "Calculator outputs are not a fixed price and may change after review.",
-        "defaults": {
-            "jobType": "cleanup",
-            "yardSize": "medium",
-            "condition": "medium",
-            "access": "normal",
-            "greenWaste": true,
-            "pruning": false,
-            "hedgeTrim": false,
-            "frequency": "one-off"
-        },
-        "config": {
-            "baseCleanup": 100,
-            "baseMaintenance": 30,
-            "baseLawn": 30,
-            "baseLandscaping": 500,
-            "sizeSmall": 1,
-            "sizeMedium": 1.5,
-            "sizeLarge": 2,
-            "conditionLight": 1,
-            "conditionMedium": 1.5,
-            "conditionHeavy": 2,
-            "accessEasy": 1,
-            "accessNormal": 1.12,
-            "accessDifficult": 1.5,
-            "addonGreenWaste": 20,
-            "addonPruning": 20,
-            "addonHedgeTrim": 50,
-            "rangePct": 0.2,
-            "roundTo": 10
-        }
-    },
-    "breakdown": {
-        "badge": "What affects price",
-        "heading": "A few real-world factors.",
-        "description": "We keep pricing straightforward. The fastest way to confirm your range is a short description and a few photos.",
-        "drivers": [
-            {
-                "title": "Yard size + layout",
-                "description": "More area, more edges, more time. Layout matters too (beds, paths, slopes, tight corners).",
-                "icon": "leaf"
-            },
-            {
-                "title": "Current condition",
-                "description": "Light tidy-ups are quicker. Heavy overgrowth, thick weeds, or neglected beds take longer and need more handling.",
-                "icon": "timer"
-            },
-            {
-                "title": "Access",
-                "description": "Easy access keeps things efficient. Stairs, narrow gates, long carries, or limited parking can increase time.",
-                "icon": "footprints"
-            },
-            {
-                "title": "Green waste handling",
-                "description": "Bagging, stacking, or removal changes the workload. We’ll confirm what you want done with clippings.",
-                "icon": "recycle"
-            }
-        ],
-        "tipTitle": "Tip for accuracy",
-        "tipBody": "Include photos from a few angles, plus any access notes (gates, stairs, parking)."
-    },
-    "faq": {
-        "badge": "FAQ",
-        "heading": "Pricing questions.",
-        "items": [
-            {
-                "q": "Is the calculator a fixed quote?",
-                "a": "No — it’s a rough guide. We confirm scope based on photos, access, and what’s included, then provide a more accurate range."
-            },
-            {
-                "q": "What’s the fastest way to get an accurate estimate?",
-                "a": "Send a short description and a few photos from different angles. Include access notes (stairs, narrow gate, parking)."
-            },
-            {
-                "q": "Do you charge differently for one-off vs ongoing maintenance?",
-                "a": "Ongoing maintenance is usually more efficient because we keep the garden under control. One-offs can take longer depending on condition."
-            },
-            {
-                "q": "What about green waste removal?",
-                "a": "Green waste handling varies by job and preference. We can bag/stack on-site or discuss removal options when quoting."
-            },
-            {
-                "q": "Can you work within a budget range?",
-                "a": "Often, yes. If you share a rough budget, we can prioritise the highest-impact work first."
-            }
-        ]
+    "config": {
+      "baseCleanup": 100,
+      "baseMaintenance": 30,
+      "baseLawn": 30,
+      "baseLandscaping": 500,
+      "sizeSmall": 1,
+      "sizeMedium": 1.5,
+      "sizeLarge": 2,
+      "conditionLight": 1,
+      "conditionMedium": 1.5,
+      "conditionHeavy": 2,
+      "accessEasy": 1,
+      "accessNormal": 1.12,
+      "accessDifficult": 1.5,
+      "addonGreenWaste": 20,
+      "addonPruning": 20,
+      "addonHedgeTrim": 50,
+      "rangePct": 0.2,
+      "roundTo": 10
     }
+  },
+  "breakdown": {
+    "badge": "What affects price",
+    "heading": "A few real-world factors.",
+    "description": "We keep pricing straightforward. The fastest way to confirm your range is a short description and a few photos.",
+    "drivers": [
+      {
+        "title": "Yard size + layout",
+        "description": "More area, more edges, more time. Layout matters too (beds, paths, slopes, tight corners).",
+        "icon": "leaf"
+      },
+      {
+        "title": "Current condition",
+        "description": "Light tidy-ups are quicker. Heavy overgrowth, thick weeds, or neglected beds take longer and need more handling.",
+        "icon": "timer"
+      },
+      {
+        "title": "Access",
+        "description": "Easy access keeps things efficient. Stairs, narrow gates, long carries, or limited parking can increase time.",
+        "icon": "footprints"
+      },
+      {
+        "title": "Green waste handling",
+        "description": "Bagging, stacking, or removal changes the workload. We’ll confirm what you want done with clippings.",
+        "icon": "recycle"
+      }
+    ],
+    "tipTitle": "Tip for accuracy",
+    "tipBody": "Include photos from a few angles, plus any access notes (gates, stairs, parking)."
+  },
+  "faq": {
+    "badge": "FAQ",
+    "heading": "Pricing questions.",
+    "items": [
+      {
+        "q": "Is the calculator a fixed quote?",
+        "a": "No — it’s a rough guide. We confirm scope based on photos, access, and what’s included, then provide a more accurate range."
+      },
+      {
+        "q": "What’s the fastest way to get an accurate estimate?",
+        "a": "Send a short description and a few photos from different angles. Include access notes (stairs, narrow gate, parking)."
+      },
+      {
+        "q": "Do you charge differently for one-off vs ongoing maintenance?",
+        "a": "Ongoing maintenance is usually more efficient because we keep the garden under control. One-offs can take longer depending on condition."
+      },
+      {
+        "q": "What about green waste removal?",
+        "a": "Green waste handling varies by job and preference. We can bag/stack on-site or discuss removal options when quoting."
+      },
+      {
+        "q": "Can you work within a budget range?",
+        "a": "Often, yes. If you share a rough budget, we can prioritise the highest-impact work first."
+      }
+    ]
+  }
 }

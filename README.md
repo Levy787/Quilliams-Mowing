@@ -13,3 +13,5 @@ Emails: https://sendgrid.com/en-us
 Image Hosting: https://cloudinary.com/
 
 Content Layer: https://keystatic.com/
+
+Bot Detection: https://cloud.google.com/security/products/recaptcha

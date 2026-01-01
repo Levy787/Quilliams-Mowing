@@ -42,16 +42,151 @@ const serviceDetailIconOptions = [
   { label: "Sparkles", value: "Sparkles" },
 ] as const satisfies readonly IconOption[];
 
+const serviceCardIconOptions = [
+  { label: "Trees", value: "Trees" },
+  { label: "Sprout", value: "Sprout" },
+  { label: "Flower2", value: "Flower2" },
+  { label: "Scissors", value: "Scissors" },
+  { label: "Layers", value: "Layers" },
+  { label: "Wind", value: "Wind" },
+  { label: "Droplets", value: "Droplets" },
+] as const satisfies readonly IconOption[];
+
+const servicesLandingProcessIconOptions = [
+  { label: "MessageCircle", value: "MessageCircle" },
+  { label: "Lightbulb", value: "Lightbulb" },
+  { label: "ClipboardCheck", value: "ClipboardCheck" },
+  { label: "CalendarDays", value: "CalendarDays" },
+] as const satisfies readonly IconOption[];
+
 const servicePatternOptions = [
   { label: "Pattern 1", value: "pattern-1" },
   { label: "Pattern 2", value: "pattern-2" },
 ] as const;
+
+const projectPatternOptions = servicePatternOptions;
+
+const seoFields = () =>
+  fields.object(
+    {
+      title: fields.text({ label: "Title" }),
+      description: fields.text({ label: "Description", multiline: true }),
+      ogTitle: fields.text({ label: "OG title" }),
+      ogDescription: fields.text({ label: "OG description", multiline: true }),
+      ogImage: fields.url({ label: "OG image URL" }),
+    },
+    { label: "SEO" },
+  );
 
 export const keystaticConfig = config({
   storage: {
     kind: "local",
   },
   collections: {
+    projects: collection({
+      label: "Projects",
+      path: "content/projects/*",
+      format: "json",
+      slugField: "slug",
+      schema: {
+        slug: fields.slug({
+          name: {
+            label: "Name",
+            validation: { isRequired: true },
+          },
+          slug: {
+            label: "Slug",
+          },
+        }),
+
+        order: fields.number({
+          label: "Order",
+          validation: { isRequired: true },
+        }),
+
+        title: fields.text({ label: "Title" }),
+        subtitle: fields.text({ label: "Subtitle", multiline: true }),
+        locationLabel: fields.text({ label: "Location label" }),
+
+        seo: seoFields(),
+
+        hero: fields.object(
+          {
+            imageSrc: fields.text({ label: "Image src" }),
+            imageAlt: fields.text({ label: "Image alt" }),
+            pattern: fields.select({
+              label: "Pattern",
+              options: projectPatternOptions,
+              defaultValue: "pattern-1",
+            }),
+          },
+          { label: "Hero" },
+        ),
+
+        chips: fields.array(fields.text({ label: "Chip" }), {
+          label: "Chips",
+        }),
+
+        overview: fields.object(
+          {
+            label: fields.text({ label: "Label" }),
+            paragraphs: fields.array(
+              fields.text({ label: "Paragraph", multiline: true }),
+              { label: "Paragraphs" },
+            ),
+          },
+          { label: "Overview" },
+        ),
+
+        whatWeDid: fields.object(
+          {
+            label: fields.text({ label: "Label" }),
+            bullets: fields.array(fields.text({ label: "Bullet" }), {
+              label: "Bullets",
+            }),
+          },
+          { label: "What we did" },
+        ),
+
+        result: fields.object(
+          {
+            label: fields.text({ label: "Label" }),
+            bullets: fields.array(fields.text({ label: "Bullet" }), {
+              label: "Bullets",
+            }),
+          },
+          { label: "Result" },
+        ),
+
+        gallery: fields.array(
+          fields.object({
+            imageSrc: fields.text({ label: "Image src" }),
+            imageAlt: fields.text({ label: "Image alt" }),
+            caption: fields.text({ label: "Caption", multiline: true }),
+          }),
+          { label: "Gallery" },
+        ),
+
+        faq: fields.array(
+          fields.object({
+            id: fields.text({ label: "ID" }),
+            question: fields.text({ label: "Question" }),
+            answer: fields.text({ label: "Answer", multiline: true }),
+          }),
+          { label: "FAQ" },
+        ),
+
+        ctas: fields.object(
+          {
+            primaryText: fields.text({ label: "Primary text" }),
+            primaryHref: fields.text({ label: "Primary href" }),
+            secondaryText: fields.text({ label: "Secondary text" }),
+            secondaryHref: fields.text({ label: "Secondary href" }),
+          },
+          { label: "CTAs" },
+        ),
+      },
+    }),
     offers: collection({
       label: "Offers",
       path: "content/offers/*",
@@ -78,6 +213,9 @@ export const keystaticConfig = config({
 
         headline: fields.text({ label: "Headline" }),
         subheadline: fields.text({ label: "Subheadline", multiline: true }),
+
+        seo: seoFields(),
+
         terms: fields.text({ label: "Terms" }),
         serviceArea: fields.text({ label: "Service area" }),
         phoneDisplay: fields.text({ label: "Phone (display)" }),
@@ -156,6 +294,15 @@ export const keystaticConfig = config({
         label: fields.text({ label: "Label" }),
         title: fields.text({ label: "Title" }),
         description: fields.text({ label: "Description", multiline: true }),
+
+        seo: seoFields(),
+
+        cardTag: fields.text({ label: "Card tag" }),
+        cardIcon: fields.select({
+          label: "Card icon",
+          options: serviceCardIconOptions,
+          defaultValue: "Sprout",
+        }),
 
         hero: fields.object(
           {
@@ -348,11 +495,162 @@ export const keystaticConfig = config({
     }),
   },
   singletons: {
+    servicesLanding: singleton({
+      label: "Services Landing",
+      path: "content/services-landing",
+      format: "json",
+      schema: {
+        seo: seoFields(),
+
+        hero: fields.object(
+          {
+            badge: fields.text({ label: "Badge" }),
+            title: fields.text({ label: "Title" }),
+            description: fields.text({ label: "Description", multiline: true }),
+            primaryCta: fields.object(
+              {
+                label: fields.text({ label: "Label" }),
+                href: fields.text({ label: "Href" }),
+              },
+              { label: "Primary CTA" },
+            ),
+            secondaryCta: fields.object(
+              {
+                label: fields.text({ label: "Label" }),
+                href: fields.text({ label: "Href" }),
+              },
+              { label: "Secondary CTA" },
+            ),
+            chips: fields.array(fields.text({ label: "Chip" }), {
+              label: "Chips",
+            }),
+            image: fields.object(
+              {
+                src: fields.text({ label: "Image src" }),
+                alt: fields.text({ label: "Image alt" }),
+                caption: fields.text({ label: "Caption", multiline: true }),
+              },
+              { label: "Hero image" },
+            ),
+          },
+          { label: "Hero" },
+        ),
+
+        process: fields.object(
+          {
+            title: fields.text({ label: "Title" }),
+            description: fields.text({ label: "Description", multiline: true }),
+            steps: fields.array(
+              fields.object({
+                title: fields.text({ label: "Title" }),
+                description: fields.text({
+                  label: "Description",
+                  multiline: true,
+                }),
+                icon: fields.select({
+                  label: "Icon",
+                  options: servicesLandingProcessIconOptions,
+                  defaultValue: "MessageCircle",
+                }),
+              }),
+              { label: "Steps" },
+            ),
+          },
+          { label: "Process" },
+        ),
+
+        servicesGrid: fields.object(
+          {
+            title: fields.text({ label: "Title" }),
+            description: fields.text({ label: "Description", multiline: true }),
+          },
+          { label: "Services grid" },
+        ),
+
+        highlights: fields.object(
+          {
+            title: fields.text({ label: "Title" }),
+            description: fields.text({ label: "Description", multiline: true }),
+            items: fields.array(
+              fields.object({
+                image: fields.object(
+                  {
+                    src: fields.text({ label: "Image src" }),
+                    alt: fields.text({ label: "Image alt" }),
+                  },
+                  { label: "Image" },
+                ),
+                title: fields.text({ label: "Title" }),
+                bullets: fields.array(fields.text({ label: "Bullet" }), {
+                  label: "Bullets",
+                }),
+                cta: fields.object(
+                  {
+                    label: fields.text({ label: "Label" }),
+                    href: fields.text({ label: "Href" }),
+                    variant: fields.select({
+                      label: "Variant",
+                      options: [
+                        { label: "Default", value: "default" },
+                        { label: "Outline", value: "outline" },
+                      ] as const,
+                      defaultValue: "default",
+                    }),
+                  },
+                  { label: "CTA" },
+                ),
+              }),
+              { label: "Highlights" },
+            ),
+          },
+          { label: "Highlights" },
+        ),
+
+        faq: fields.object(
+          {
+            title: fields.text({ label: "Title" }),
+            description: fields.text({ label: "Description", multiline: true }),
+            items: fields.array(
+              fields.object({
+                id: fields.text({ label: "ID" }),
+                question: fields.text({ label: "Question" }),
+                answer: fields.text({ label: "Answer", multiline: true }),
+              }),
+              { label: "FAQ items" },
+            ),
+          },
+          { label: "FAQ" },
+        ),
+
+        finalCta: fields.object(
+          {
+            title: fields.text({ label: "Title" }),
+            description: fields.text({ label: "Description", multiline: true }),
+            primaryCta: fields.object(
+              {
+                label: fields.text({ label: "Label" }),
+                href: fields.text({ label: "Href" }),
+              },
+              { label: "Primary CTA" },
+            ),
+            secondaryCta: fields.object(
+              {
+                label: fields.text({ label: "Label" }),
+                href: fields.text({ label: "Href" }),
+              },
+              { label: "Secondary CTA" },
+            ),
+          },
+          { label: "Final CTA" },
+        ),
+      },
+    }),
     home: singleton({
       label: "Home",
       path: "content/home",
       format: "json",
       schema: {
+        seo: seoFields(),
         hero: fields.object(
           {
             headlineParts: fields.array(
@@ -628,6 +926,8 @@ export const keystaticConfig = config({
       path: "content/pricing",
       format: "json",
       schema: {
+        seo: seoFields(),
+
         hero: fields.object(
           {
             badge: fields.text({ label: "Badge" }),
@@ -898,6 +1198,8 @@ export const keystaticConfig = config({
       path: "content/contact",
       format: "json",
       schema: {
+        seo: seoFields(),
+
         header: fields.object(
           {
             badge: fields.text({ label: "Badge" }),
@@ -978,6 +1280,8 @@ export const keystaticConfig = config({
       path: "content/quote",
       format: "json",
       schema: {
+        seo: seoFields(),
+
         header: fields.object(
           {
             badge: fields.text({ label: "Badge" }),

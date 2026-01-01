@@ -3,6 +3,13 @@
     "template": "funnel",
     "headline": "Spring Cleanup Special",
     "subheadline": "Clear the mess, refresh your garden beds, and get your yard back under control — fast, tidy, and stress-free.",
+    "seo": {
+        "title": "Spring Cleanup Special",
+        "description": "Clear the mess, refresh your garden beds, and get your yard back under control — fast, tidy, and stress-free.",
+        "ogTitle": "",
+        "ogDescription": "",
+        "ogImage": "https://picsum.photos/id/292/1200/1400"
+    },
     "terms": "Limited spots available. New customers only.",
     "serviceArea": "Serving Wollongong & nearby suburbs",
     "phoneDisplay": "+1 (555) 123-4567",

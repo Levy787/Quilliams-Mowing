@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+
 import { Hero } from "./Hero";
 import { Stats } from "./Stats";
 import { AboutUs } from "./AboutUs";
@@ -10,6 +12,17 @@ import { LargeCta } from "./LargeCta";
 import { Testimonials } from "./Testimonials";
 
 import { getHomeContent } from "@/lib/keystatic-reader";
+import { buildMetadata } from "@/lib/seo";
+
+export async function generateMetadata(): Promise<Metadata> {
+    const home = await getHomeContent();
+
+    return buildMetadata({
+        seo: home.seo,
+        fallbackTitle: "Home",
+        fallbackDescription: home.hero.subheading,
+    });
+}
 
 export default async function Home() {
     const home = await getHomeContent();
