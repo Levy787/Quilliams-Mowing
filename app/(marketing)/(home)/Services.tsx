@@ -112,6 +112,7 @@ export function Services({ badge, heading, ctaLabel, ctaHref, items }: ServicesP
                                 const resolvedImageSrc = service.imageFile?.trim()
                                     ? `/images/uploads/${service.imageFile}`
                                     : service.imageSrc;
+                                const hasImage = Boolean(resolvedImageSrc?.trim());
 
                                 return (
                                     <CarouselItem
@@ -136,14 +137,16 @@ export function Services({ badge, heading, ctaLabel, ctaHref, items }: ServicesP
                                             <Card className="border-0 shadow-none bg-transparent py-0">
                                                 <CardContent className="px-0">
                                                     <div className="relative overflow-hidden rounded-3xl border border-border bg-muted aspect-video">
-                                                        <Image
-                                                            src={resolvedImageSrc}
-                                                            alt={service.imageAlt}
-                                                            fill
-                                                            sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                                                            className="object-cover"
-                                                            priority={idx < 2}
-                                                        />
+                                                        {hasImage && (
+                                                            <Image
+                                                                src={resolvedImageSrc}
+                                                                alt={service.imageAlt}
+                                                                fill
+                                                                sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                                                                className="object-cover"
+                                                                priority={idx < 2}
+                                                            />
+                                                        )}
                                                         <div className="absolute right-4 top-4 rounded-full bg-background/90 px-3 py-1 text-sm text-foreground">
                                                             {service.tag}
                                                         </div>

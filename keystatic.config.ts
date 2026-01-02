@@ -766,11 +766,6 @@ export const keystaticConfig = config({
       format: "json",
       schema: {
         seo: seoFields(),
-        test: fields.image({
-          label: "Test image",
-          directory: "public/images/uploads",
-        }),
-        testAlt: fields.text({ label: "Test image alt" }),
         hero: fields.object(
           {
             headlineParts: fields.array(
