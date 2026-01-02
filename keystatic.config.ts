@@ -78,6 +78,81 @@ const seoFields = () =>
     { label: "SEO" },
   );
 
+type ImageFieldKeys = {
+  fileKey?: string;
+  srcKey?: string;
+  altKey?: string;
+  descriptionKey?: string;
+};
+
+function imageFields(
+  {
+    label = "Image",
+    directory = "public/images/uploads",
+    keys,
+    includeDescription = true,
+  }: {
+    label?: string;
+    directory?: string;
+    keys?: ImageFieldKeys;
+    includeDescription?: boolean;
+  } = {},
+) {
+  const fileKey = keys?.fileKey ?? "file";
+  const srcKey = keys?.srcKey ?? "src";
+  const altKey = keys?.altKey ?? "alt";
+  const descriptionKey = keys?.descriptionKey ?? "description";
+
+  return {
+    [fileKey]: fields.image({ label: `${label} file`, directory }),
+    [srcKey]: fields.text({ label: `${label} src (legacy/manual)` }),
+    [altKey]: fields.text({ label: `${label} alt` }),
+    ...(includeDescription
+      ? {
+        [descriptionKey]: fields.text({
+          label: `${label} description`,
+          multiline: true,
+        }),
+      }
+      : {}),
+  };
+}
+
+function urlImageFields(
+  {
+    label = "Image",
+    keys,
+    includeDescription = true,
+    isRequired = false,
+  }: {
+    label?: string;
+    keys?: Omit<ImageFieldKeys, "fileKey">;
+    includeDescription?: boolean;
+    isRequired?: boolean;
+  } = {},
+) {
+  const srcKey = keys?.srcKey ?? "src";
+  const altKey = keys?.altKey ?? "alt";
+  const descriptionKey = keys?.descriptionKey ?? "description";
+
+  const srcField = isRequired
+    ? fields.url({ label: `${label} URL`, validation: { isRequired: true } })
+    : fields.url({ label: `${label} URL` });
+
+  return {
+    [srcKey]: srcField,
+    [altKey]: fields.text({ label: `${label} alt` }),
+    ...(includeDescription
+      ? {
+        [descriptionKey]: fields.text({
+          label: `${label} description`,
+          multiline: true,
+        }),
+      }
+      : {}),
+  };
+}
+
 export const keystaticConfig = config({
   storage: {
     kind: "local",
@@ -112,8 +187,15 @@ export const keystaticConfig = config({
 
         hero: fields.object(
           {
-            imageSrc: fields.text({ label: "Image src" }),
-            imageAlt: fields.text({ label: "Image alt" }),
+            ...imageFields({
+              label: "Hero image",
+              keys: {
+                fileKey: "imageFile",
+                srcKey: "imageSrc",
+                altKey: "imageAlt",
+              },
+              includeDescription: false,
+            }),
             pattern: fields.select({
               label: "Pattern",
               options: projectPatternOptions,
@@ -160,9 +242,15 @@ export const keystaticConfig = config({
 
         gallery: fields.array(
           fields.object({
-            imageSrc: fields.text({ label: "Image src" }),
-            imageAlt: fields.text({ label: "Image alt" }),
-            caption: fields.text({ label: "Caption", multiline: true }),
+            ...imageFields({
+              label: "Gallery image",
+              keys: {
+                fileKey: "imageFile",
+                srcKey: "imageSrc",
+                altKey: "imageAlt",
+                descriptionKey: "caption",
+              },
+            }),
           }),
           { label: "Gallery" },
         ),
@@ -224,11 +312,12 @@ export const keystaticConfig = config({
 
         heroImage: fields.object(
           {
-            src: fields.url({
-              label: "Hero image URL",
-              validation: { isRequired: true },
+            ...urlImageFields({
+              label: "Hero image",
+              keys: { srcKey: "src", altKey: "alt" },
+              includeDescription: false,
+              isRequired: true,
             }),
-            alt: fields.text({ label: "Hero image alt" }),
           },
           { label: "Hero image" },
         ),
@@ -306,9 +395,15 @@ export const keystaticConfig = config({
 
         hero: fields.object(
           {
-            imageSrc: fields.text({ label: "Image src" }),
-            imageAlt: fields.text({ label: "Image alt" }),
-            caption: fields.text({ label: "Caption", multiline: true }),
+            ...imageFields({
+              label: "Hero image",
+              keys: {
+                fileKey: "imageFile",
+                srcKey: "imageSrc",
+                altKey: "imageAlt",
+                descriptionKey: "caption",
+              },
+            }),
             pattern: fields.select({
               label: "Pattern",
               options: servicePatternOptions,
@@ -413,8 +508,15 @@ export const keystaticConfig = config({
                   label: "Description",
                   multiline: true,
                 }),
-                imageSrc: fields.text({ label: "Image src" }),
-                imageAlt: fields.text({ label: "Image alt" }),
+                ...imageFields({
+                  label: "Card image",
+                  keys: {
+                    fileKey: "imageFile",
+                    srcKey: "imageSrc",
+                    altKey: "imageAlt",
+                  },
+                  includeDescription: false,
+                }),
                 ctaText: fields.text({ label: "CTA text" }),
                 ctaHref: fields.text({ label: "CTA href" }),
               }),
@@ -526,9 +628,15 @@ export const keystaticConfig = config({
             }),
             image: fields.object(
               {
-                src: fields.text({ label: "Image src" }),
-                alt: fields.text({ label: "Image alt" }),
-                caption: fields.text({ label: "Caption", multiline: true }),
+                ...imageFields({
+                  label: "Hero image",
+                  keys: {
+                    fileKey: "file",
+                    srcKey: "src",
+                    altKey: "alt",
+                    descriptionKey: "caption",
+                  },
+                }),
               },
               { label: "Hero image" },
             ),
@@ -575,8 +683,15 @@ export const keystaticConfig = config({
               fields.object({
                 image: fields.object(
                   {
-                    src: fields.text({ label: "Image src" }),
-                    alt: fields.text({ label: "Image alt" }),
+                    ...imageFields({
+                      label: "Highlight image",
+                      keys: {
+                        fileKey: "file",
+                        srcKey: "src",
+                        altKey: "alt",
+                      },
+                      includeDescription: false,
+                    }),
                   },
                   { label: "Image" },
                 ),
@@ -651,6 +766,11 @@ export const keystaticConfig = config({
       format: "json",
       schema: {
         seo: seoFields(),
+        test: fields.image({
+          label: "Test image",
+          directory: "public/images/uploads",
+        }),
+        testAlt: fields.text({ label: "Test image alt" }),
         hero: fields.object(
           {
             headlineParts: fields.array(
@@ -671,15 +791,29 @@ export const keystaticConfig = config({
             secondaryCtaHref: fields.text({ label: "Secondary CTA href" }),
             imagesLeft: fields.array(
               fields.object({
-                src: fields.text({ label: "Image src" }),
-                alt: fields.text({ label: "Alt text" }),
+                ...imageFields({
+                  label: "Image",
+                  keys: {
+                    fileKey: "file",
+                    srcKey: "src",
+                    altKey: "alt",
+                  },
+                  includeDescription: false,
+                }),
               }),
               { label: "Left column images" },
             ),
             imagesRight: fields.array(
               fields.object({
-                src: fields.text({ label: "Image src" }),
-                alt: fields.text({ label: "Alt text" }),
+                ...imageFields({
+                  label: "Image",
+                  keys: {
+                    fileKey: "file",
+                    srcKey: "src",
+                    altKey: "alt",
+                  },
+                  includeDescription: false,
+                }),
               }),
               { label: "Right column images" },
             ),
@@ -711,8 +845,15 @@ export const keystaticConfig = config({
               label: "Heading lines",
             }),
             body: fields.text({ label: "Body", multiline: true }),
-            imageSrc: fields.text({ label: "Image src" }),
-            imageAlt: fields.text({ label: "Image alt" }),
+            ...imageFields({
+              label: "About image",
+              keys: {
+                fileKey: "imageFile",
+                srcKey: "imageSrc",
+                altKey: "imageAlt",
+                descriptionKey: "imageDescription",
+              },
+            }),
             features: fields.array(
               fields.object({
                 title: fields.text({ label: "Title" }),
@@ -745,8 +886,15 @@ export const keystaticConfig = config({
                   label: "Description",
                   multiline: true,
                 }),
-                imageSrc: fields.text({ label: "Image src" }),
-                imageAlt: fields.text({ label: "Image alt" }),
+                ...imageFields({
+                  label: "Service image",
+                  keys: {
+                    fileKey: "imageFile",
+                    srcKey: "imageSrc",
+                    altKey: "imageAlt",
+                    descriptionKey: "imageDescription",
+                  },
+                }),
                 tag: fields.text({ label: "Tag" }),
                 icon: fields.select({
                   label: "Icon",
@@ -867,8 +1015,15 @@ export const keystaticConfig = config({
             description: fields.text({ label: "Description", multiline: true }),
             ctaLabel: fields.text({ label: "CTA label" }),
             ctaHref: fields.text({ label: "CTA href" }),
-            decorativeImageSrc: fields.text({ label: "Decorative image src" }),
-            decorativeImageAlt: fields.text({ label: "Decorative image alt" }),
+            ...imageFields({
+              label: "Decorative image",
+              keys: {
+                fileKey: "decorativeImageFile",
+                srcKey: "decorativeImageSrc",
+                altKey: "decorativeImageAlt",
+                descriptionKey: "decorativeImageDescription",
+              },
+            }),
             items: fields.array(
               fields.object({
                 id: fields.text({ label: "ID" }),
@@ -883,16 +1038,18 @@ export const keystaticConfig = config({
 
         largeCta: fields.object(
           {
-            leftImageUrl: fields.url({
-              label: "Left image URL",
-              validation: { isRequired: true },
+            ...urlImageFields({
+              label: "Left image",
+              keys: { srcKey: "leftImageUrl", altKey: "leftImageAlt" },
+              includeDescription: false,
+              isRequired: true,
             }),
-            leftImageAlt: fields.text({ label: "Left image alt" }),
-            rightImageUrl: fields.url({
-              label: "Right image URL",
-              validation: { isRequired: true },
+            ...urlImageFields({
+              label: "Right image",
+              keys: { srcKey: "rightImageUrl", altKey: "rightImageAlt" },
+              includeDescription: false,
+              isRequired: true,
             }),
-            rightImageAlt: fields.text({ label: "Right image alt" }),
             headingLines: fields.array(fields.text({ label: "Line" }), {
               label: "Heading lines",
             }),

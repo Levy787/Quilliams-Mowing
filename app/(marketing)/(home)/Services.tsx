@@ -20,6 +20,7 @@ import { cn } from "@/lib/utils";
 type ServiceItem = {
     title: string;
     description: string;
+    imageFile?: string;
     imageSrc: string;
     imageAlt: string;
     tag: string;
@@ -108,6 +109,10 @@ export function Services({ badge, heading, ctaLabel, ctaHref, items }: ServicesP
                         <CarouselContent>
                             {items.map((service, idx) => {
                                 const Icon = SERVICE_ICONS[service.icon];
+                                const resolvedImageSrc = service.imageFile?.trim()
+                                    ? `/images/uploads/${service.imageFile}`
+                                    : service.imageSrc;
+
                                 return (
                                     <CarouselItem
                                         key={service.title}
@@ -132,7 +137,7 @@ export function Services({ badge, heading, ctaLabel, ctaHref, items }: ServicesP
                                                 <CardContent className="px-0">
                                                     <div className="relative overflow-hidden rounded-3xl border border-border bg-muted aspect-video">
                                                         <Image
-                                                            src={service.imageSrc}
+                                                            src={resolvedImageSrc}
                                                             alt={service.imageAlt}
                                                             fill
                                                             sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
@@ -169,14 +174,14 @@ export function Services({ badge, heading, ctaLabel, ctaHref, items }: ServicesP
                         <CarouselPrevious
                             variant="outline"
                             className={cn(
-                                "top-0 md:-top-[3.75rem] right-14 left-auto translate-y-0 size-10 md:size-8",
+                                "top-0 md:-top-15 right-14 left-auto translate-y-0 size-10 md:size-8",
                                 "bg-background border-border"
                             )}
                         />
                         <CarouselNext
                             variant="outline"
                             className={cn(
-                                "top-0 md:-top-[3.75rem] right-3 left-auto translate-y-0 size-10 md:size-8",
+                                "top-0 md:-top-15 right-3 left-auto translate-y-0 size-10 md:size-8",
                                 "bg-background border-border"
                             )}
                         />
