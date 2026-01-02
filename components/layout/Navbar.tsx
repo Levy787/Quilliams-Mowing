@@ -34,7 +34,7 @@ export function Navbar() {
                 <div className="flex items-center justify-between h-20 lg:h-24">
                     {/* Logo Section */}
                     <Link href="/" className="flex items-center gap-3 group">
-                        <div className="relative h-10 w-44">
+                        <div className="relative h-16 w-64">
                             <Image
                                 src="/logos/logo-icon-text.webp"
                                 alt="Quilliams Gardening & Landscaping"

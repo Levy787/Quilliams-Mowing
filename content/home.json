@@ -1,20 +1,38 @@
 {
     "seo": {
         "title": "Quilliams Gardening",
-        "description": "From weekly mowing and garden maintenance to full yard clean-ups and landscape improvements, we deliver stress-free, dependable care that keeps your outdoor spaces beautiful, functional, and something you can truly be proud of.",
-        "ogTitle": "",
-        "ogDescription": "",
-        "ogImage": null
+        "description": "From weekly mowing and garden maintenance to full yard clean-ups and landscape improvements, we deliver stress-free, dependable care that keeps your outdoor spaces beautiful, functional, and something you can truly be proud of."
     },
     "hero": {
         "headlineParts": [
-            { "text": "Professional ", "tone": "normal" },
-            { "text": "Landscaping", "tone": "primary" },
-            { "text": ", ", "tone": "normal" },
-            { "text": "Gardening", "tone": "primary" },
-            { "text": ", and ", "tone": "normal" },
-            { "text": "Lawn Care", "tone": "primary" },
-            { "text": " You Can Rely On", "tone": "normal" }
+            {
+                "text": "Professional ",
+                "tone": "normal"
+            },
+            {
+                "text": "Landscaping",
+                "tone": "primary"
+            },
+            {
+                "text": ", ",
+                "tone": "normal"
+            },
+            {
+                "text": "Gardening",
+                "tone": "primary"
+            },
+            {
+                "text": ", and ",
+                "tone": "normal"
+            },
+            {
+                "text": "Lawn Care",
+                "tone": "primary"
+            },
+            {
+                "text": " You Can Rely On",
+                "tone": "normal"
+            }
         ],
         "subheading": "From weekly mowing and garden maintenance to full yard clean-ups and landscape improvements, we deliver stress-free, dependable care that keeps your outdoor spaces beautiful, functional, and something you can truly be proud of.",
         "primaryCtaLabel": "Get Your Quote",
@@ -59,13 +77,11 @@
         },
         {
             "value": 30,
-            "suffix": "",
             "label": "Active Clients",
             "icon": "hardHat"
         },
         {
             "value": 14,
-            "suffix": "",
             "label": "Landscaping Awards",
             "icon": "award"
         },
@@ -78,7 +94,10 @@
     ],
     "about": {
         "badge": "About Us",
-        "headingLines": ["Reliable Landscaping Services", "You Can Count On"],
+        "headingLines": [
+            "Reliable Landscaping Services",
+            "You Can Count On"
+        ],
         "body": "At Quilliams Gardening & Landscaping, we help homeowners enjoy clean, healthy, and beautiful outdoor spaces—without the physical work or time commitment. Whether you need regular mowing, garden maintenance, landscaping improvements, or a full yard clean-up, our team provides dependable, professional care tailored to your property and lifestyle.\n\nWe proudly serve homeowners who value their time, comfort, and peace of mind. From retirees who want to enjoy their yard without the strain, to busy families who simply don’t have the hours to maintain it, we take care of the details so you don’t have to.\n\nOur approach is simple: show up when we say we will, do the job properly, and leave your yard looking better every time. We use proven best practices to keep landscapes healthy, attractive, and easy to maintain—season after season.",
         "imageSrc": "/images/IMG_20250708_34242.webp",
         "imageAlt": "Gardener caring for plants in a lush garden",
@@ -104,30 +123,62 @@
         "badge": "Services",
         "heading": "Exclusive Services",
         "ctaLabel": "More Services",
-        "ctaHref": "#",
+        "ctaHref": "/services",
         "items": [
             {
-                "title": "Spring Cleanup",
-                "description": "These cases perfectly simple easy to distinguish desires obtain extremly.",
-                "tag": "Commercial",
+                "title": "Landscaping",
+                "description": "Design and build improvements that make your outdoor space more functional, beautiful, and easy to enjoy.",
+                "imageSrc": "/images/IMG_20250708_34242.webp",
+                "imageAlt": "A freshly maintained garden with trimmed hedges and clean lines",
+                "tag": "Residential",
                 "icon": "leaf"
             },
             {
-                "title": "Lawn Fertilization",
-                "description": "Blinded by desire they cannot foresee and trouble are bounded.",
-                "tag": "Commercial",
+                "title": "Lawn Mowing",
+                "description": "Reliable mowing with clean edges and a tidy finish for homes and commercial properties.",
+                "imageSrc": "/images/IMG_20250704_93515.webp",
+                "imageAlt": "Freshly mown lawn with tidy borders",
+                "tag": "Residential & Commercial",
                 "icon": "sprout"
             },
             {
-                "title": "Snow & Ice RemoveI",
-                "description": "Perfectly simple and easy to distinguish a free , when our power.",
-                "tag": "Commercial",
+                "title": "Hedge Trimming",
+                "description": "Crisp lines and healthy growth with professional trimming for residential and commercial hedges.",
+                "imageSrc": "/images/IMG_20250715_29185.webp",
+                "imageAlt": "Neatly trimmed hedges in a well-kept garden",
+                "tag": "Residential & Commercial",
                 "icon": "snowflake"
             },
             {
-                "title": "Irrigation & Drainage",
-                "description": "Prevents our being able to do what like enjoy every pleasure.",
-                "tag": "Commercial",
+                "title": "Garden Maintenance",
+                "description": "Ongoing care to keep gardens healthy, tidy, and looking their best all year round.",
+                "imageSrc": "/images/IMG_20250708_11200.webp",
+                "imageAlt": "A tidy garden with clean edges and healthy planting",
+                "tag": "Residential & Commercial",
+                "icon": "droplets"
+            },
+            {
+                "title": "Fencing",
+                "description": "Install or refresh fencing for privacy, security, and a cleaner boundary finish.",
+                "imageSrc": "/images/IMG_20240509_41792.webp",
+                "imageAlt": "Garden boundary area suitable for a fencing project",
+                "tag": "Residential",
+                "icon": "leaf"
+            },
+            {
+                "title": "Garden Cleanup",
+                "description": "One-off clear-outs to get things back under control — then leave it tidy and manageable.",
+                "imageSrc": "/images/IMG_20250708_16272.webp",
+                "imageAlt": "Front garden looking refreshed and tidy",
+                "tag": "Residential & Commercial",
+                "icon": "sprout"
+            },
+            {
+                "title": "Weed Control",
+                "description": "Targeted weeding and tidy-up to keep beds, borders, and paths looking sharp.",
+                "imageSrc": "/images/IMG_20250708_34242.webp",
+                "imageAlt": "Clean borders and beds after maintenance",
+                "tag": "Residential & Commercial",
                 "icon": "droplets"
             }
         ]
@@ -147,22 +198,37 @@
         "secondaryCtaHref": "/contact",
         "footnote": "Not sure if you’re in range? Send your suburb in the quote form.",
         "map": {
-            "centerLat": 50.338,
-            "centerLng": -4.973,
-            "zoom": 9.6,
+            "centerLat": 50.4,
+            "centerLng": -4.93,
+            "zoom": 10,
             "circleLat": 50.4,
             "circleLng": -4.93,
             "circleRadiusMeters": 20000
         },
         "mapLabels": [
-            { "text": "Newquay", "leftPercent": 20, "topPercent": 30 },
-            { "text": "Truro", "leftPercent": 46, "topPercent": 34 },
-            { "text": "St Austell", "leftPercent": 56, "topPercent": 49 }
+            {
+                "text": "Newquay",
+                "leftPercent": 20,
+                "topPercent": 30
+            },
+            {
+                "text": "Truro",
+                "leftPercent": 46,
+                "topPercent": 34
+            },
+            {
+                "text": "St Austell",
+                "leftPercent": 56,
+                "topPercent": 49
+            }
         ]
     },
     "recentWorks": {
         "badge": "Our Recent Works",
-        "headingLines": ["Beautiful Gardens & Landscapes", "We Created"],
+        "headingLines": [
+            "Beautiful Gardens & Landscapes",
+            "We Created"
+        ],
         "description": "See how we’ve transformed spaces with our expert craftsmanship and attention\nto detail.",
         "items": [
             {
@@ -204,12 +270,14 @@
     },
     "faq": {
         "badge": "FAQs",
-        "headingLines": ["Answering your", "questions"],
+        "headingLines": [
+            "Answering your",
+            "questions"
+        ],
         "description": "Got more questions? Reach out to us using the button below",
         "ctaLabel": "Get In Touch",
         "ctaHref": "/contact",
         "decorativeImageSrc": "/images/closeu_up_removed_white.webp",
-        "decorativeImageAlt": "",
         "items": [
             {
                 "id": "cost",
@@ -248,7 +316,10 @@
         "leftImageAlt": "Modern landscaped garden and outdoor living space",
         "rightImageUrl": "https://picsum.photos/id/1027/900/1400",
         "rightImageAlt": "Gardener trimming a hedge",
-        "headingLines": ["Let’s create a", "garden you’ll love"],
+        "headingLines": [
+            "Let’s create a",
+            "garden you’ll love"
+        ],
         "body": "Let’s turn your outdoor space into something beautiful. Get in touch for a free consultation today.",
         "ctaLabel": "Talk To The Team",
         "ctaHref": "/contact"

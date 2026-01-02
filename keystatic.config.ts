@@ -745,6 +745,8 @@ export const keystaticConfig = config({
                   label: "Description",
                   multiline: true,
                 }),
+                imageSrc: fields.text({ label: "Image src" }),
+                imageAlt: fields.text({ label: "Image alt" }),
                 tag: fields.text({ label: "Tag" }),
                 icon: fields.select({
                   label: "Icon",

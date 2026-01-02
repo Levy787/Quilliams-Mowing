@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import * as React from "react";
 import { motion, useInView, useReducedMotion } from "framer-motion";
@@ -19,6 +20,8 @@ import { cn } from "@/lib/utils";
 type ServiceItem = {
     title: string;
     description: string;
+    imageSrc: string;
+    imageAlt: string;
     tag: string;
     icon: "leaf" | "sprout" | "snowflake" | "droplets";
 };
@@ -97,10 +100,10 @@ export function Services({ badge, heading, ctaLabel, ctaHref, items }: ServicesP
                 </div>
 
                 {/* Carousel */}
-                <div className="mt-10">
+                <div className="mt-2 md:mt-10">
                     <Carousel
                         opts={{ align: "start", loop: false }}
-                        className="relative"
+                        className="relative pt-12 md:pt-0"
                     >
                         <CarouselContent>
                             {items.map((service, idx) => {
@@ -128,6 +131,14 @@ export function Services({ badge, heading, ctaLabel, ctaHref, items }: ServicesP
                                             <Card className="border-0 shadow-none bg-transparent py-0">
                                                 <CardContent className="px-0">
                                                     <div className="relative overflow-hidden rounded-3xl border border-border bg-muted aspect-video">
+                                                        <Image
+                                                            src={service.imageSrc}
+                                                            alt={service.imageAlt}
+                                                            fill
+                                                            sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                                                            className="object-cover"
+                                                            priority={idx < 2}
+                                                        />
                                                         <div className="absolute right-4 top-4 rounded-full bg-background/90 px-3 py-1 text-sm text-foreground">
                                                             {service.tag}
                                                         </div>
@@ -158,14 +169,14 @@ export function Services({ badge, heading, ctaLabel, ctaHref, items }: ServicesP
                         <CarouselPrevious
                             variant="outline"
                             className={cn(
-                                "top-10 right-14 left-auto translate-y-0",
+                                "top-0 md:-top-[3.75rem] right-14 left-auto translate-y-0 size-10 md:size-8",
                                 "bg-background border-border"
                             )}
                         />
                         <CarouselNext
                             variant="outline"
                             className={cn(
-                                "top-10 right-3 left-auto translate-y-0",
+                                "top-0 md:-top-[3.75rem] right-3 left-auto translate-y-0 size-10 md:size-8",
                                 "bg-background border-border"
                             )}
                         />
