@@ -18,13 +18,13 @@ export async function generateMetadata(): Promise<Metadata> {
         seo: content.seo,
         fallbackTitle: content.hero.title,
         fallbackDescription: content.hero.description,
-        fallbackOgImage: content.hero.image.src,
+        fallbackOgImage: content.hero.image.src || undefined,
     });
 }
 
 export default async function ServicesPage() {
     const content =
-        (await getServicesLandingContent()) as ServicesLandingContentModel;
+        (await getServicesLandingContent()) as unknown as ServicesLandingContentModel;
 
     const slugs = await listServiceSlugs();
     const services = (await Promise.all(slugs.map((s) => getServiceBySlug(s))))

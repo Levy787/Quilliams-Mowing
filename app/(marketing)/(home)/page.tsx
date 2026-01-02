@@ -28,7 +28,7 @@ export default async function Home() {
     const home = await getHomeContent();
 
     return (
-        <>
+        <main>
             <Hero {...home.hero} />
             <Stats items={home.stats} />
             <AboutUs {...home.about} />
@@ -39,6 +39,6 @@ export default async function Home() {
             <FAQ {...home.faq} />
             <LargeCta {...home.largeCta} />
             <Testimonials {...home.testimonials} />
-        </>
+        </main>
     )
 }

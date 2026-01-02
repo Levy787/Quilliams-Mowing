@@ -5,10 +5,10 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export type LargeCtaProps = {
-    leftImageUrl: string;
-    leftImageAlt: string;
-    rightImageUrl: string;
-    rightImageAlt: string;
+    leftImageUrl?: string | null;
+    leftImageAlt?: string | null;
+    rightImageUrl?: string | null;
+    rightImageAlt?: string | null;
     headingLines: readonly string[];
     body: string;
     ctaLabel: string;
@@ -34,6 +34,11 @@ export function LargeCta({
     ctaLabel,
     ctaHref,
 }: LargeCtaProps) {
+    const resolvedLeftImageUrl = leftImageUrl?.trim() ?? "";
+    const resolvedRightImageUrl = rightImageUrl?.trim() ?? "";
+    const hasLeftImage = Boolean(resolvedLeftImageUrl);
+    const hasRightImage = Boolean(resolvedRightImageUrl);
+
     return (
         <section
             className="bg-gray-900 mx-4 md:mx-8 lg:mx-16 rounded-4xl relative overflow-hidden py-16 lg:py-20"
@@ -48,14 +53,16 @@ export function LargeCta({
                 <div className="grid gap-10 items-center lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1.6fr)_minmax(0,1fr)]">
                     {/* Left Image */}
                     <div className="relative overflow-hidden rounded-4xl h-80 sm:h-95 lg:h-115 mb-12">
-                        <Image
-                            src={leftImageUrl}
-                            alt={leftImageAlt}
-                            fill
-                            className="object-cover"
-                            sizes="(max-width: 1024px) 100vw, 33vw"
-                            priority={false}
-                        />
+                        {hasLeftImage ? (
+                            <Image
+                                src={resolvedLeftImageUrl}
+                                alt={leftImageAlt ?? ""}
+                                fill
+                                className="object-cover"
+                                sizes="(max-width: 1024px) 100vw, 33vw"
+                                priority={false}
+                            />
+                        ) : null}
                     </div>
 
                     {/* Center Content */}
@@ -80,14 +87,16 @@ export function LargeCta({
 
                     {/* Right Image */}
                     <div className="relative w-full overflow-hidden rounded-4xl h-80 sm:h-90 lg:h-115 mt-12">
-                        <Image
-                            src={rightImageUrl}
-                            alt={rightImageAlt}
-                            fill
-                            className="object-cover"
-                            sizes="(max-width: 1024px) 100vw, 25vw"
-                            priority={false}
-                        />
+                        {hasRightImage ? (
+                            <Image
+                                src={resolvedRightImageUrl}
+                                alt={rightImageAlt ?? ""}
+                                fill
+                                className="object-cover"
+                                sizes="(max-width: 1024px) 100vw, 25vw"
+                                priority={false}
+                            />
+                        ) : null}
                     </div>
                 </div>
             </div>

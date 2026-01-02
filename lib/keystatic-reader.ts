@@ -108,8 +108,8 @@ export async function getOfferBySlug(slug: string): Promise<Offer | null> {
         phoneTel: entry.phoneTel,
         email: entry.email,
         heroImage: {
-            src: entry.heroImage.src,
-            alt: entry.heroImage.alt,
+            src: entry.heroImage.src ?? "",
+            alt: entry.heroImage.alt ?? "",
         },
         highlights: entry.highlights,
         trustStrip: entry.trustStrip,
@@ -124,6 +124,13 @@ export async function getServiceBySlug(slug: string): Promise<Service | null> {
     const entry = await reader.collections.services.read(slug);
     if (!entry) return null;
 
+    const hero = entry.hero as unknown as {
+        imageSrc?: string | null;
+        imageAlt?: string | null;
+        caption?: string | null;
+        pattern: Service["hero"]["pattern"];
+    };
+
     const hasPlans = entry.plans.title.trim().length > 0 ||
         entry.plans.cards.length > 0;
 
@@ -136,6 +143,23 @@ export async function getServiceBySlug(slug: string): Promise<Service | null> {
             ctas: entry.plans.ctas,
         }
         : undefined;
+
+    const results = entry.results as unknown as {
+        label: string;
+        title: string;
+        description: string;
+        headerCtas: Service["results"]["headerCtas"];
+        cards: ReadonlyArray<{
+            title: string;
+            description: string;
+            imageFile?: string | null;
+            imageSrc?: string | null;
+            imageAlt?: string | null;
+            ctaText: string;
+            ctaHref: string;
+        }>;
+        footerNote?: string | null;
+    };
 
     return {
         slug,
@@ -154,18 +178,31 @@ export async function getServiceBySlug(slug: string): Promise<Service | null> {
             }
             : undefined,
         hero: {
-            imageSrc: entry.hero.imageSrc,
-            imageAlt: entry.hero.imageAlt,
-            caption: entry.hero.caption || undefined,
-            pattern: entry.hero.pattern,
+            imageSrc: hero.imageSrc ?? "",
+            imageAlt: hero.imageAlt ?? "",
+            caption: hero.caption || undefined,
+            pattern: hero.pattern,
         },
         trustChips: entry.trustChips,
         ctas: entry.ctas,
         included: entry.included,
         plans,
         results: {
-            ...entry.results,
-            footerNote: entry.results.footerNote || undefined,
+            label: results.label,
+            title: results.title,
+            description: results.description,
+            headerCtas: results.headerCtas,
+            cards: results.cards.map((card) => ({
+                title: card.title,
+                description: card.description,
+                imageSrc: card.imageFile?.trim()
+                    ? `/images/uploads/${card.imageFile}`
+                    : (card.imageSrc ?? ""),
+                imageAlt: card.imageAlt ?? "",
+                ctaText: card.ctaText,
+                ctaHref: card.ctaHref,
+            })),
+            footerNote: results.footerNote || undefined,
         },
         valueBand: entry.valueBand,
         faq: entry.faq,

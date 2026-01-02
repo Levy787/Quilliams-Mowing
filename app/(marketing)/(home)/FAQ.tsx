@@ -26,8 +26,9 @@ export type FAQProps = {
     description: string;
     ctaLabel: string;
     ctaHref: string;
-    decorativeImageSrc: string;
-    decorativeImageAlt: string;
+    decorativeImageFile?: string | null;
+    decorativeImageSrc?: string | null;
+    decorativeImageAlt?: string | null;
     items: readonly FaqItem[];
 };
 
@@ -50,22 +51,30 @@ export function FAQ({
     description,
     ctaLabel,
     ctaHref,
+    decorativeImageFile,
     decorativeImageSrc,
     decorativeImageAlt,
     items,
 }: FAQProps) {
+    const resolvedDecorativeSrc = decorativeImageFile?.trim()
+        ? `/images/uploads/${decorativeImageFile}`
+        : decorativeImageSrc ?? "";
+    const hasDecorativeImage = Boolean(resolvedDecorativeSrc.trim());
+
     return (
         <section className="relative overflow-hidden mx-4 md:mx-8 lg:mx-16 py-12 md:py-16">
             <div className="pointer-events-none absolute bottom-0 left-0 hidden md:block">
                 <div className="relative h-40 w-40 md:h-48 md:w-48 lg:h-56 lg:w-56">
-                    <Image
-                        src={decorativeImageSrc}
-                        alt={decorativeImageAlt}
-                        aria-hidden="true"
-                        fill
-                        className="object-contain"
-                        sizes="(min-width: 1024px) 224px, (min-width: 768px) 192px, 160px"
-                    />
+                    {hasDecorativeImage ? (
+                        <Image
+                            src={resolvedDecorativeSrc}
+                            alt={decorativeImageAlt ?? ""}
+                            aria-hidden="true"
+                            fill
+                            className="object-contain"
+                            sizes="(min-width: 1024px) 224px, (min-width: 768px) 192px, 160px"
+                        />
+                    ) : null}
                 </div>
             </div>
 

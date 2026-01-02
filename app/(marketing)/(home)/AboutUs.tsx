@@ -23,8 +23,9 @@ export type AboutUsProps = {
     badge: string;
     headingLines: readonly string[];
     body: string;
-    imageSrc: string;
-    imageAlt: string;
+    imageFile?: string | null;
+    imageSrc?: string | null;
+    imageAlt?: string | null;
     features: readonly Feature[];
 };
 
@@ -56,10 +57,16 @@ export function AboutUs({
     badge,
     headingLines,
     body,
+    imageFile,
     imageSrc,
     imageAlt,
     features,
 }: AboutUsProps) {
+    const resolvedImageSrc = imageFile?.trim()
+        ? `/images/uploads/${imageFile}`
+        : imageSrc ?? "";
+    const hasImage = Boolean(resolvedImageSrc.trim());
+
     const shouldReduceMotion = useReducedMotion();
     const sectionRef = React.useRef<HTMLElement | null>(null);
     const inView = useInView(sectionRef, { once: true, amount: 0.35 });
@@ -81,14 +88,16 @@ export function AboutUs({
                                 transition: { duration: 0.7, ease: EASE_OUT },
                             })}
                     >
-                        <Image
-                            src={imageSrc}
-                            alt={imageAlt}
-                            fill
-                            className="object-cover"
-                            sizes="(max-width: 1024px) 100vw, 50vw"
-                            priority={false}
-                        />
+                        {hasImage ? (
+                            <Image
+                                src={resolvedImageSrc}
+                                alt={imageAlt ?? ""}
+                                fill
+                                className="object-cover"
+                                sizes="(max-width: 1024px) 100vw, 50vw"
+                                priority={false}
+                            />
+                        ) : null}
                     </motion.div>
 
                     {/* Content */}

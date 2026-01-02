@@ -20,9 +20,9 @@ import { cn } from "@/lib/utils";
 type ServiceItem = {
     title: string;
     description: string;
-    imageFile?: string;
-    imageSrc: string;
-    imageAlt: string;
+    imageFile?: string | null;
+    imageSrc?: string | null;
+    imageAlt?: string | null;
     tag: string;
     icon: "leaf" | "sprout" | "snowflake" | "droplets";
 };
@@ -109,10 +109,10 @@ export function Services({ badge, heading, ctaLabel, ctaHref, items }: ServicesP
                         <CarouselContent>
                             {items.map((service, idx) => {
                                 const Icon = SERVICE_ICONS[service.icon];
-                                const resolvedImageSrc = service.imageFile?.trim()
+                                const resolvedImageSrc = (service.imageFile?.trim()
                                     ? `/images/uploads/${service.imageFile}`
-                                    : service.imageSrc;
-                                const hasImage = Boolean(resolvedImageSrc?.trim());
+                                    : service.imageSrc) ?? "";
+                                const hasImage = Boolean(resolvedImageSrc.trim());
 
                                 return (
                                     <CarouselItem
@@ -140,7 +140,7 @@ export function Services({ badge, heading, ctaLabel, ctaHref, items }: ServicesP
                                                         {hasImage && (
                                                             <Image
                                                                 src={resolvedImageSrc}
-                                                                alt={service.imageAlt}
+                                                                alt={service.imageAlt ?? ""}
                                                                 fill
                                                                 sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                                                                 className="object-cover"
