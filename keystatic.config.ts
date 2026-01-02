@@ -59,6 +59,18 @@ const servicesLandingProcessIconOptions = [
   { label: "CalendarDays", value: "CalendarDays" },
 ] as const satisfies readonly IconOption[];
 
+const aboutStoryHighlightIconOptions = [
+  { label: "Leaf", value: "Leaf" },
+  { label: "Sparkles", value: "Sparkles" },
+  { label: "ShieldCheck", value: "ShieldCheck" },
+] as const satisfies readonly IconOption[];
+
+const aboutProcessIconOptions = [
+  { label: "BadgeCheck", value: "BadgeCheck" },
+  { label: "Wand2", value: "Wand2" },
+  { label: "Sparkles", value: "Sparkles" },
+] as const satisfies readonly IconOption[];
+
 const servicePatternOptions = [
   { label: "Pattern 1", value: "pattern-1" },
   { label: "Pattern 2", value: "pattern-2" },
@@ -597,6 +609,216 @@ export const keystaticConfig = config({
     }),
   },
   singletons: {
+    about: singleton({
+      label: "About",
+      path: "content/about",
+      format: "json",
+      schema: {
+        seo: seoFields(),
+
+        hero: fields.object(
+          {
+            badge: fields.text({ label: "Badge" }),
+            headline: fields.text({ label: "Headline" }),
+            subheading: fields.text({ label: "Subheading", multiline: true }),
+            features: fields.array(
+              fields.object({
+                strong: fields.text({ label: "Strong" }),
+                text: fields.text({ label: "Text", multiline: true }),
+              }),
+              { label: "Features" },
+            ),
+            ctas: fields.object(
+              {
+                primary: fields.object(
+                  {
+                    label: fields.text({ label: "Label" }),
+                    href: fields.text({ label: "Href" }),
+                  },
+                  { label: "Primary" },
+                ),
+                secondary: fields.object(
+                  {
+                    label: fields.text({ label: "Label" }),
+                    href: fields.text({ label: "Href" }),
+                  },
+                  { label: "Secondary" },
+                ),
+                phone: fields.object(
+                  {
+                    label: fields.text({ label: "Label" }),
+                    href: fields.text({ label: "Href" }),
+                  },
+                  { label: "Phone" },
+                ),
+              },
+              { label: "CTAs" },
+            ),
+            footnote: fields.text({ label: "Footnote" }),
+            image: fields.object(
+              {
+                ...imageFields({
+                  label: "Hero image",
+                  keys: {
+                    fileKey: "imageFile",
+                    srcKey: "imageSrc",
+                    altKey: "imageAlt",
+                  },
+                  includeDescription: false,
+                }),
+              },
+              { label: "Image" },
+            ),
+          },
+          { label: "Hero" },
+        ),
+
+        story: fields.object(
+          {
+            badge: fields.text({ label: "Badge" }),
+            title: fields.text({ label: "Title" }),
+            paragraphs: fields.array(
+              fields.text({ label: "Paragraph", multiline: true }),
+              { label: "Paragraphs" },
+            ),
+            highlights: fields.array(
+              fields.object({
+                title: fields.text({ label: "Title" }),
+                description: fields.text({
+                  label: "Description",
+                  multiline: true,
+                }),
+                icon: fields.select({
+                  label: "Icon",
+                  options: aboutStoryHighlightIconOptions,
+                  defaultValue: "Leaf",
+                }),
+              }),
+              { label: "Highlights" },
+            ),
+            expect: fields.object(
+              {
+                title: fields.text({ label: "Title" }),
+                items: fields.array(
+                  fields.object({
+                    strong: fields.text({ label: "Strong" }),
+                    text: fields.text({ label: "Text", multiline: true }),
+                  }),
+                  { label: "Items" },
+                ),
+              },
+              { label: "What you can expect" },
+            ),
+            goal: fields.object(
+              {
+                title: fields.text({ label: "Title" }),
+                description: fields.text({
+                  label: "Description",
+                  multiline: true,
+                }),
+              },
+              { label: "Goal" },
+            ),
+            image: fields.object(
+              {
+                ...imageFields({
+                  label: "Story image",
+                  keys: {
+                    fileKey: "imageFile",
+                    srcKey: "imageSrc",
+                    altKey: "imageAlt",
+                  },
+                  includeDescription: false,
+                }),
+              },
+              { label: "Image" },
+            ),
+          },
+          { label: "Story" },
+        ),
+
+        timeline: fields.object(
+          {
+            badge: fields.text({ label: "Badge" }),
+            title: fields.text({ label: "Title" }),
+            description: fields.text({ label: "Description", multiline: true }),
+            pillText: fields.text({ label: "Pill text" }),
+            items: fields.array(
+              fields.object({
+                tag: fields.text({ label: "Tag" }),
+                title: fields.text({ label: "Title" }),
+                description: fields.text({
+                  label: "Description",
+                  multiline: true,
+                }),
+              }),
+              { label: "Items" },
+            ),
+          },
+          { label: "Timeline" },
+        ),
+
+        process: fields.object(
+          {
+            badge: fields.text({ label: "Badge" }),
+            title: fields.text({ label: "Title" }),
+            description: fields.text({ label: "Description", multiline: true }),
+            ctas: fields.object(
+              {
+                primary: fields.object(
+                  {
+                    label: fields.text({ label: "Label" }),
+                    href: fields.text({ label: "Href" }),
+                  },
+                  { label: "Primary" },
+                ),
+                secondary: fields.object(
+                  {
+                    label: fields.text({ label: "Label" }),
+                    href: fields.text({ label: "Href" }),
+                  },
+                  { label: "Secondary" },
+                ),
+              },
+              { label: "CTAs" },
+            ),
+            steps: fields.array(
+              fields.object({
+                title: fields.text({ label: "Title" }),
+                description: fields.text({
+                  label: "Description",
+                  multiline: true,
+                }),
+                icon: fields.select({
+                  label: "Icon",
+                  options: aboutProcessIconOptions,
+                  defaultValue: "BadgeCheck",
+                }),
+              }),
+              { label: "Steps" },
+            ),
+          },
+          { label: "Process" },
+        ),
+
+        faq: fields.object(
+          {
+            badge: fields.text({ label: "Badge" }),
+            title: fields.text({ label: "Title" }),
+            description: fields.text({ label: "Description", multiline: true }),
+            items: fields.array(
+              fields.object({
+                id: fields.text({ label: "ID" }),
+                question: fields.text({ label: "Question" }),
+                answer: fields.text({ label: "Answer", multiline: true }),
+              }),
+              { label: "Items" },
+            ),
+          },
+          { label: "FAQ" },
+        ),
+      },
+    }),
     servicesLanding: singleton({
       label: "Services Landing",
       path: "content/services-landing",

@@ -13,9 +13,10 @@ type HeroHeadlinePart = {
 };
 
 type HeroImage = {
-    src: string;
-    alt: string;
-};
+    file?: string | null;
+    src?: string | null;
+    alt?: string | null;
+} & Record<string, string | null | undefined>;
 
 export type HeroProps = {
     headlineParts: readonly HeroHeadlinePart[];
@@ -24,9 +25,16 @@ export type HeroProps = {
     primaryCtaHref: string;
     secondaryCtaLabel: string;
     secondaryCtaHref: string;
-    imagesLeft: readonly HeroImage[];
-    imagesRight: readonly HeroImage[];
+    imagesLeft: ReadonlyArray<HeroImage>;
+    imagesRight: ReadonlyArray<HeroImage>;
 };
+
+function resolveImageSrc(image: HeroImage): string {
+    const file = image.file?.trim();
+    if (file) return `/images/uploads/${file}`;
+
+    return image.src?.trim() ? image.src : "";
+}
 
 export function Hero({
     headlineParts,
@@ -92,24 +100,28 @@ export function Hero({
                         <div className="flex flex-col gap-2 animate-scroll-down">
                             {imagesLeft.map((image, index) => (
                                 <div key={index} className="relative aspect-[3/4] rounded-xl overflow-hidden shrink-0">
-                                    <Image
-                                        src={image.src}
-                                        alt={image.alt}
-                                        fill
-                                        className="object-cover"
-                                        sizes="(max-width: 768px) 50vw, 20vw"
-                                    />
+                                    {resolveImageSrc(image) ? (
+                                        <Image
+                                            src={resolveImageSrc(image)}
+                                            alt={image.alt ?? ""}
+                                            fill
+                                            className="object-cover"
+                                            sizes="(max-width: 768px) 50vw, 20vw"
+                                        />
+                                    ) : null}
                                 </div>
                             ))}
                             {imagesLeft.map((image, index) => (
                                 <div key={index} className="relative aspect-[3/4] rounded-xl overflow-hidden shrink-0">
-                                    <Image
-                                        src={image.src}
-                                        alt={image.alt}
-                                        fill
-                                        className="object-cover"
-                                        sizes="(max-width: 768px) 50vw, 20vw"
-                                    />
+                                    {resolveImageSrc(image) ? (
+                                        <Image
+                                            src={resolveImageSrc(image)}
+                                            alt={image.alt ?? ""}
+                                            fill
+                                            className="object-cover"
+                                            sizes="(max-width: 768px) 50vw, 20vw"
+                                        />
+                                    ) : null}
                                 </div>
                             ))}
 
@@ -119,24 +131,28 @@ export function Hero({
                         <div className="flex flex-col gap-2 animate-scroll-up">
                             {imagesRight.map((image, index) => (
                                 <div key={index} className="relative aspect-[3/4] rounded-xl overflow-hidden shrink-0">
-                                    <Image
-                                        src={image.src}
-                                        alt={image.alt}
-                                        fill
-                                        className="object-cover"
-                                        sizes="(max-width: 768px) 50vw, 20vw"
-                                    />
+                                    {resolveImageSrc(image) ? (
+                                        <Image
+                                            src={resolveImageSrc(image)}
+                                            alt={image.alt ?? ""}
+                                            fill
+                                            className="object-cover"
+                                            sizes="(max-width: 768px) 50vw, 20vw"
+                                        />
+                                    ) : null}
                                 </div>
                             ))}
                             {imagesRight.map((image, index) => (
                                 <div key={index} className="relative aspect-[3/4] rounded-xl overflow-hidden shrink-0">
-                                    <Image
-                                        src={image.src}
-                                        alt={image.alt}
-                                        fill
-                                        className="object-cover"
-                                        sizes="(max-width: 768px) 50vw, 20vw"
-                                    />
+                                    {resolveImageSrc(image) ? (
+                                        <Image
+                                            src={resolveImageSrc(image)}
+                                            alt={image.alt ?? ""}
+                                            fill
+                                            className="object-cover"
+                                            sizes="(max-width: 768px) 50vw, 20vw"
+                                        />
+                                    ) : null}
                                 </div>
                             ))}
                         </div>

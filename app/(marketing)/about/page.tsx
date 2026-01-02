@@ -7,23 +7,28 @@ import { AboutStory } from "./AboutStory";
 import { AboutTimeline } from "./AboutTimeline";
 
 import { buildMetadata } from "@/lib/seo";
+import { getAboutContent } from "@/lib/keystatic-reader";
 
 export async function generateMetadata(): Promise<Metadata> {
+    const about = await getAboutContent();
+
     return buildMetadata({
+        seo: about.seo,
         fallbackTitle: "About",
-        fallbackDescription:
-            "A hands-on gardener who cares about the finish. I keep things simple: show up on time, do the work properly, and leave your outdoor space looking sharper than when I arrived.",
+        fallbackDescription: about.hero.subheading,
     });
 }
 
-export default function AboutPage() {
+export default async function AboutPage() {
+    const about = await getAboutContent();
+
     return (
         <main>
-            <AboutHero />
-            <AboutStory />
-            <AboutTimeline />
-            <AboutProcess />
-            <AboutFAQ />
+            <AboutHero {...about.hero} />
+            <AboutStory {...about.story} />
+            <AboutTimeline {...about.timeline} />
+            <AboutProcess {...about.process} />
+            <AboutFAQ {...about.faq} />
         </main>
     );
 }

@@ -32,6 +32,23 @@ export async function getQuoteContent() {
 
 export type QuoteContent = Awaited<ReturnType<typeof getQuoteContent>>;
 
+export async function getAboutContent() {
+    const entry = await reader.singletons.about.readOrThrow();
+
+    return {
+        ...entry,
+        seo: {
+            title: entry.seo.title,
+            description: entry.seo.description,
+            ogTitle: entry.seo.ogTitle,
+            ogDescription: entry.seo.ogDescription,
+            ogImage: entry.seo.ogImage || undefined,
+        },
+    };
+}
+
+export type AboutContent = Awaited<ReturnType<typeof getAboutContent>>;
+
 export async function getReferralContent(): Promise<ReferralContent> {
     const entry = await reader.singletons.referral.readOrThrow();
 

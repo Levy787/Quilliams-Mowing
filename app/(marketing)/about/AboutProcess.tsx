@@ -4,34 +4,28 @@ import { ArrowRight, BadgeCheck, Sparkles, Wand2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
-const STEPS = [
-    {
-        title: "Quick scope",
-        description:
-            "A short chat and (if needed) a couple of photos so we understand the job and your priorities.",
-        icon: BadgeCheck,
-    },
-    {
-        title: "Clear plan",
-        description:
-            "We agree on what’s included, what matters most, and how we’ll leave the space at the end.",
-        icon: Wand2,
-    },
-    {
-        title: "Quality work",
-        description:
-            "Careful, consistent work — with an eye for the details that make it look sharp.",
-        icon: Sparkles,
-    },
-    {
-        title: "Clean finish",
-        description:
-            "Paths cleared, beds tidied, and the final blow-down so it looks properly finished.",
-        icon: BadgeCheck,
-    },
-] as const;
+export type AboutProcessProps = {
+    badge: string;
+    title: string;
+    description: string;
+    ctas: {
+        primary: { label: string; href: string };
+        secondary: { label: string; href: string };
+    };
+    steps: ReadonlyArray<{
+        title: string;
+        description: string;
+        icon: "BadgeCheck" | "Wand2" | "Sparkles";
+    }>;
+};
 
-export function AboutProcess() {
+const stepIconMap = {
+    BadgeCheck,
+    Wand2,
+    Sparkles,
+} as const;
+
+export function AboutProcess(props: AboutProcessProps) {
     return (
         <section className="mx-4 md:mx-8 lg:mx-16 py-10 md:py-12">
             <div className="container mx-auto px-4 lg:px-12">
@@ -39,32 +33,32 @@ export function AboutProcess() {
                     <Card className="rounded-4xl border-border shadow-none">
                         <CardContent className="px-6">
                             <div className="inline-flex items-center rounded-full bg-muted px-4 py-1.5 text-sm text-muted-foreground">
-                                How we work
+                                {props.badge}
                             </div>
                             <h2 className="mt-5 text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-                                A simple process that keeps standards high.
+                                {props.title}
                             </h2>
                             <p className="mt-3 text-base md:text-lg leading-relaxed text-muted-foreground">
-                                No overcomplication. Just clear expectations, reliable delivery, and a finish you’ll notice.
+                                {props.description}
                             </p>
 
                             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                                 <Button asChild size="lg">
-                                    <Link href="/quote">
-                                        Get a Quote
+                                    <Link href={props.ctas.primary.href}>
+                                        {props.ctas.primary.label}
                                         <ArrowRight className="h-5 w-5" aria-hidden />
                                     </Link>
                                 </Button>
                                 <Button asChild size="lg" variant="outline">
-                                    <Link href="/services">See Services</Link>
+                                    <Link href={props.ctas.secondary.href}>{props.ctas.secondary.label}</Link>
                                 </Button>
                             </div>
                         </CardContent>
                     </Card>
 
                     <div className="grid grid-cols-1 gap-4">
-                        {STEPS.map((step, index) => {
-                            const Icon = step.icon;
+                        {props.steps.map((step, index) => {
+                            const Icon = stepIconMap[step.icon];
                             return (
                                 <Card
                                     key={step.title}
