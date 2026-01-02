@@ -1,0 +1,60 @@
+{
+    "seo": {
+        "title": "Projects",
+        "description": "A mini showcase of recent work—tidier structure, cleaner lines, and a finish that feels properly looked after.",
+        "ogTitle": "",
+        "ogDescription": "",
+        "ogImage": "/images/IMG_20250708_11200.webp"
+    },
+    "hero": {
+        "badge": "Projects",
+        "title": "A mini showcase of recent work",
+        "description": "Real gardens, real results—tidier structure, cleaner lines, and a finish that feels properly looked after.",
+        "primaryCta": {
+            "label": "Get a Quote",
+            "href": "/quote"
+        },
+        "secondaryCta": {
+            "label": "Contact Us",
+            "href": "/contact"
+        },
+        "chips": [
+            "Clean lines",
+            "Tidy finish",
+            "Practical work",
+            "Clear communication"
+        ],
+        "image": {
+            "src": "/images/IMG_20250708_11200.webp",
+            "alt": "Freshly maintained garden with tidy hedges and a neat lawn",
+            "caption": "Browse featured projects, then jump into the details."
+        }
+    },
+    "featured": {
+        "badge": "Featured",
+        "title": "Click a project to jump straight in",
+        "description": "A quick visual skim—then tap through to see what was done and the result.",
+        "featuredSlugs": [
+            "front-garden-refresh",
+            "fresh-cut-clean-lines",
+            "low-maintenance-upgrade"
+        ]
+    },
+    "allProjects": {
+        "badge": "All projects",
+        "title": "Browse and jump to details",
+        "description": "Pick a project, then scroll straight to the full breakdown."
+    },
+    "finalCta": {
+        "title": "Have a garden that needs a refresh?",
+        "description": "Tell us what you want improved and we’ll recommend a practical plan—then quote it clearly.",
+        "primaryCta": {
+            "label": "Get a Quote",
+            "href": "/quote"
+        },
+        "secondaryCta": {
+            "label": "Contact Us",
+            "href": "/contact"
+        }
+    }
+}

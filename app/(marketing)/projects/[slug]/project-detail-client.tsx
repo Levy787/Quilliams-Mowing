@@ -15,18 +15,19 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
-import type {
-    PatternName,
-    Project,
-} from "@/app/(marketing)/projects/_content/projects";
+import type { ProjectDetail, ProjectPattern } from "@/lib/keystatic-reader";
 
-function patternUrl(pattern: PatternName): string {
+function patternUrl(pattern: ProjectPattern): string {
     return pattern === "pattern-1"
         ? "url('/patterns/pattern-1.png')"
         : "url('/patterns/pattern-2.svg')";
 }
 
-export default function ProjectDetailClient({ project }: { project: Project }) {
+export default function ProjectDetailClient({
+    project,
+}: {
+    project: ProjectDetail;
+}) {
     const shouldReduceMotion = !!useReducedMotion();
     const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 

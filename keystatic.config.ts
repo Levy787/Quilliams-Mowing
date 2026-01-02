@@ -609,6 +609,97 @@ export const keystaticConfig = config({
     }),
   },
   singletons: {
+    projectsLanding: singleton({
+      label: "Projects Landing",
+      path: "content/projects-landing",
+      format: "json",
+      schema: {
+        seo: seoFields(),
+
+        hero: fields.object(
+          {
+            badge: fields.text({ label: "Badge" }),
+            title: fields.text({ label: "Title" }),
+            description: fields.text({ label: "Description", multiline: true }),
+            primaryCta: fields.object(
+              {
+                label: fields.text({ label: "Label" }),
+                href: fields.text({ label: "Href" }),
+              },
+              { label: "Primary CTA" },
+            ),
+            secondaryCta: fields.object(
+              {
+                label: fields.text({ label: "Label" }),
+                href: fields.text({ label: "Href" }),
+              },
+              { label: "Secondary CTA" },
+            ),
+            chips: fields.array(fields.text({ label: "Chip" }), {
+              label: "Chips",
+            }),
+            image: fields.object(
+              {
+                ...imageFields({
+                  label: "Hero image",
+                  keys: {
+                    fileKey: "file",
+                    srcKey: "src",
+                    altKey: "alt",
+                    descriptionKey: "caption",
+                  },
+                }),
+              },
+              { label: "Hero image" },
+            ),
+          },
+          { label: "Hero" },
+        ),
+
+        featured: fields.object(
+          {
+            badge: fields.text({ label: "Badge" }),
+            title: fields.text({ label: "Title" }),
+            description: fields.text({ label: "Description", multiline: true }),
+            featuredSlugs: fields.array(fields.text({ label: "Slug" }), {
+              label: "Featured project slugs",
+            }),
+          },
+          { label: "Featured" },
+        ),
+
+        allProjects: fields.object(
+          {
+            badge: fields.text({ label: "Badge" }),
+            title: fields.text({ label: "Title" }),
+            description: fields.text({ label: "Description", multiline: true }),
+          },
+          { label: "All projects" },
+        ),
+
+        finalCta: fields.object(
+          {
+            title: fields.text({ label: "Title" }),
+            description: fields.text({ label: "Description", multiline: true }),
+            primaryCta: fields.object(
+              {
+                label: fields.text({ label: "Label" }),
+                href: fields.text({ label: "Href" }),
+              },
+              { label: "Primary CTA" },
+            ),
+            secondaryCta: fields.object(
+              {
+                label: fields.text({ label: "Label" }),
+                href: fields.text({ label: "Href" }),
+              },
+              { label: "Secondary CTA" },
+            ),
+          },
+          { label: "Final CTA" },
+        ),
+      },
+    }),
     about: singleton({
       label: "About",
       path: "content/about",

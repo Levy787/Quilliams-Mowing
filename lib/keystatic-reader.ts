@@ -78,6 +78,154 @@ export type ServicesLandingContent = Awaited<
     ReturnType<typeof getServicesLandingContent>
 >;
 
+export async function getProjectsLandingContent() {
+    const entry = await reader.singletons.projectsLanding.readOrThrow();
+
+    return {
+        ...entry,
+        seo: {
+            title: entry.seo.title,
+            description: entry.seo.description,
+            ogTitle: entry.seo.ogTitle,
+            ogDescription: entry.seo.ogDescription,
+            ogImage: entry.seo.ogImage || undefined,
+        },
+    };
+}
+
+export type ProjectsLandingContent = Awaited<
+    ReturnType<typeof getProjectsLandingContent>
+>;
+
+export async function listProjectSlugs() {
+    return reader.collections.projects.list();
+}
+
+export type ProjectPattern = "pattern-1" | "pattern-2";
+
+export type ProjectDetail = {
+    slug: string;
+    order: number;
+    title: string;
+    subtitle: string;
+    locationLabel?: string;
+    seo: {
+        title: string;
+        description: string;
+        ogTitle: string;
+        ogDescription: string;
+        ogImage?: string;
+    };
+    hero: {
+        imageSrc: string;
+        imageAlt: string;
+        pattern: ProjectPattern;
+    };
+    chips: ReadonlyArray<string>;
+    overview: {
+        label: string;
+        paragraphs: ReadonlyArray<string>;
+    };
+    whatWeDid: {
+        label: string;
+        bullets: ReadonlyArray<string>;
+    };
+    result: {
+        label: string;
+        bullets: ReadonlyArray<string>;
+    };
+    gallery: ReadonlyArray<{
+        imageSrc: string;
+        imageAlt: string;
+        caption?: string;
+    }>;
+    faq: ReadonlyArray<{ id: string; question: string; answer: string }>;
+    ctas: {
+        primaryText: string;
+        primaryHref: string;
+        secondaryText: string;
+        secondaryHref: string;
+    };
+};
+
+function resolveKeystaticImageSrc({
+    file,
+    src,
+}: {
+    file?: string | null;
+    src?: string | null;
+}): string {
+    if (file?.trim()) return `/images/uploads/${file}`;
+    return src ?? "";
+}
+
+export async function getProjectBySlug(slug: string): Promise<ProjectDetail | null> {
+    const entry = await reader.collections.projects.read(slug);
+    if (!entry) return null;
+
+    const hero = entry.hero as unknown as {
+        imageFile?: string | null;
+        imageSrc?: string | null;
+        imageAlt?: string | null;
+        pattern: ProjectPattern;
+    };
+
+    const gallery = entry.gallery as unknown as ReadonlyArray<{
+        imageFile?: string | null;
+        imageSrc?: string | null;
+        imageAlt?: string | null;
+        caption?: string | null;
+    }>;
+
+    return {
+        slug,
+        order: entry.order,
+        title: entry.title,
+        subtitle: entry.subtitle,
+        locationLabel: entry.locationLabel?.trim().length
+            ? entry.locationLabel
+            : undefined,
+        seo: {
+            title: entry.seo.title,
+            description: entry.seo.description,
+            ogTitle: entry.seo.ogTitle,
+            ogDescription: entry.seo.ogDescription,
+            ogImage: entry.seo.ogImage || undefined,
+        },
+        hero: {
+            imageSrc: resolveKeystaticImageSrc({
+                file: hero.imageFile,
+                src: hero.imageSrc,
+            }),
+            imageAlt: hero.imageAlt ?? "",
+            pattern: hero.pattern,
+        },
+        chips: entry.chips,
+        overview: entry.overview,
+        whatWeDid: entry.whatWeDid,
+        result: entry.result,
+        gallery: gallery.map((g) => ({
+            imageSrc: resolveKeystaticImageSrc({
+                file: g.imageFile,
+                src: g.imageSrc,
+            }),
+            imageAlt: g.imageAlt ?? "",
+            caption: g.caption?.trim().length ? g.caption : undefined,
+        })),
+        faq: entry.faq,
+        ctas: entry.ctas,
+    };
+}
+
+export async function listProjects(): Promise<ProjectDetail[]> {
+    const slugs = await listProjectSlugs();
+    const projects = await Promise.all(slugs.map((slug) => getProjectBySlug(slug)));
+
+    return projects
+        .filter((p): p is ProjectDetail => Boolean(p))
+        .sort((a, b) => a.order - b.order);
+}
+
 export async function listOfferSlugs() {
     return reader.collections.offers.list();
 }
