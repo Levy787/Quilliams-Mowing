@@ -222,7 +222,7 @@ export default function ProjectsClient({
             ) : null}
 
             {/* Projects index */}
-            <section className="mx-4 md:mx-8 lg:mx-16 pb-12 md:pb-16">
+            <section className="mx-4 md:mx-8 lg:mx-16 pb-12 md:pb-16 mt-16">
                 <div className="container mx-auto px-4 lg:px-12">
                     <motion.div {...fadeUp} className="max-w-2xl">
                         <div className="inline-flex items-center rounded-full bg-muted px-4 py-1.5 text-sm text-muted-foreground">
