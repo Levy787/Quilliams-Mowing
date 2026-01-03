@@ -1,0 +1,25 @@
+{
+  "slug": "Gravel Garden with Patio",
+  "order": 2,
+  "template": "image",
+  "seo": {},
+  "hero": {
+    "pattern": "pattern-1"
+  },
+  "heroVideo": {
+    "poster": {}
+  },
+  "chips": [],
+  "overview": {
+    "paragraphs": []
+  },
+  "whatWeDid": {
+    "bullets": []
+  },
+  "result": {
+    "bullets": []
+  },
+  "gallery": [],
+  "faq": [],
+  "ctas": {}
+}

@@ -2052,6 +2052,55 @@ export const keystaticConfig = config({
         ),
       },
     }),
+
+    site: singleton({
+      label: "Site",
+      path: "content/site",
+      format: "json",
+      schema: {
+        siteName: fields.text({ label: "Site name" }),
+        siteUrl: fields.url({
+          label: "Site URL (canonical)",
+          validation: { isRequired: true },
+        }),
+
+        pwa: fields.object(
+          {
+            themeColor: fields.text({ label: "Theme color (hex)" }),
+            backgroundColor: fields.text({ label: "Background color (hex)" }),
+          },
+          { label: "PWA" },
+        ),
+
+        assets: fields.object(
+          {
+            faviconPngFile: fields.image({
+              label: "Favicon (PNG)",
+              directory: "public/images/uploads/site",
+            }),
+            appleTouchIconPngFile: fields.image({
+              label: "Apple touch icon (PNG)",
+              directory: "public/images/uploads/site",
+            }),
+
+            androidChrome192PngFile: fields.image({
+              label: "Android Chrome 192x192 (PNG)",
+              directory: "public/images/uploads/site",
+            }),
+            androidChrome512PngFile: fields.image({
+              label: "Android Chrome 512x512 (PNG)",
+              directory: "public/images/uploads/site",
+            }),
+
+            safariPinnedTabSvgFile: fields.file({
+              label: "Safari pinned tab (SVG)",
+              directory: "public/images/uploads/site",
+            }),
+          },
+          { label: "Assets" },
+        ),
+      },
+    }),
   },
 });
 

@@ -114,7 +114,7 @@ export function Footer() {
                         <div className="min-w-0">
                             <h3 className="text-2xl font-semibold tracking-tight">Subscribe Us</h3>
                             <p className="mt-6 max-w-md text-base leading-relaxed text-background/75">
-                                Subscribe &amp; eceive Our Offers and Updates to Your Inbox Directly.
+                                Subscribe &amp; Receive Our Offers and Updates to Your Inbox Directly.
                             </p>
 
                             <form

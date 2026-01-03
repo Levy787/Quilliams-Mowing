@@ -44,6 +44,12 @@ export async function getTermsContent() {
 
 export type TermsContent = Awaited<ReturnType<typeof getTermsContent>>;
 
+export async function getSiteContent() {
+    return reader.singletons.site.readOrThrow();
+}
+
+export type SiteContent = Awaited<ReturnType<typeof getSiteContent>>;
+
 export async function getAboutContent() {
     const entry = await reader.singletons.about.readOrThrow();
 
