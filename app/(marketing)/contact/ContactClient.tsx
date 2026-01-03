@@ -71,20 +71,52 @@ export default function ContactClient({ header, details, form, map }: ContactCli
     const [submitted, setSubmitted] = React.useState(false);
     const [isSubmitting, setIsSubmitting] = React.useState(false);
 
-    function onSubmit(event: React.FormEvent<HTMLFormElement>) {
+    async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
 
         setIsSubmitting(true);
         setSubmitted(false);
 
-        // MVP: no backend. Simulate a brief submit.
-        window.setTimeout(() => {
+        try {
+            const formEl = event.currentTarget;
+            const fd = new FormData(formEl);
+
+            const payload = {
+                name: String(fd.get("name") ?? "").trim(),
+                email: String(fd.get("email") ?? "").trim(),
+                phone: String(fd.get("phone") ?? "").trim() || null,
+                service: service ?? null,
+                message: String(fd.get("message") ?? "").trim(),
+                company: String(fd.get("company") ?? "").trim(),
+            };
+
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload),
+            });
+
+            const json = (await res.json().catch(() => null)) as
+                | { ok: true }
+                | { ok: false; error: string }
+                | null;
+
+            if (!res.ok || !json || ("ok" in json && json.ok === false)) {
+                const message = json && "error" in json ? json.error : "Unable to submit. Please try again.";
+                toast.error(message);
+                setIsSubmitting(false);
+                return;
+            }
+
             setIsSubmitting(false);
             setSubmitted(true);
             toast.success(form.toastSuccess);
-            event.currentTarget.reset();
+            formEl.reset();
             setService(undefined);
-        }, 350);
+        } catch {
+            setIsSubmitting(false);
+            toast.error("Unable to submit. Please try again.");
+        }
     }
 
     return (
@@ -213,6 +245,15 @@ export default function ContactClient({ header, details, form, map }: ContactCli
                                 </div>
 
                                 <form className="mt-6 space-y-5" onSubmit={onSubmit}>
+                                    {/* Honeypot field for basic spam protection */}
+                                    <input
+                                        type="text"
+                                        name="company"
+                                        tabIndex={-1}
+                                        autoComplete="off"
+                                        className="hidden"
+                                    />
+
                                     <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                                         <div className="space-y-2">
                                             <Label htmlFor="name">{form.fullNameLabel}</Label>

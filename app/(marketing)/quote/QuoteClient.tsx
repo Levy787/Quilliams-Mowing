@@ -244,7 +244,7 @@ export default function QuoteClient({ header, expect, calculatorSummary, form }:
         if (fileInputRef.current) fileInputRef.current.value = "";
     }
 
-    function onSubmit(event: React.FormEvent<HTMLFormElement>) {
+    async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
         setSubmitted(false);
         setFormError(null);
@@ -266,12 +266,49 @@ export default function QuoteClient({ header, expect, calculatorSummary, form }:
 
         setIsSubmitting(true);
 
-        window.setTimeout(() => {
+        try {
+            const formEl = event.currentTarget;
+            const fd = new FormData(formEl);
+
+            const payload = {
+                name: String(fd.get("name") ?? "").trim(),
+                email: String(fd.get("email") ?? "").trim(),
+                phone: String(fd.get("phone") ?? "").trim() || null,
+                address: String(fd.get("address") ?? "").trim() || null,
+                serviceType: service,
+                timeframe: String(fd.get("timeframe") ?? "").trim() || null,
+                budget: String(fd.get("budget") ?? "").trim() || null,
+                jobDetails: String(fd.get("details") ?? "").trim() || null,
+                calculatorSummary: String(fd.get("calculatorSummary") ?? "").trim() || null,
+                company: String(fd.get("company") ?? "").trim(),
+            };
+
+            const res = await fetch("/api/quote", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload),
+            });
+
+            const json = (await res.json().catch(() => null)) as
+                | { ok: true }
+                | { ok: false; error: string }
+                | null;
+
+            if (!res.ok || !json || ("ok" in json && json.ok === false)) {
+                const message = json && "error" in json ? json.error : "Unable to submit. Please try again.";
+                toast.error(message);
+                setIsSubmitting(false);
+                return;
+            }
+
             setIsSubmitting(false);
             setSubmitted(true);
             toast.success(form.toastSuccess);
-            resetForm(event.currentTarget);
-        }, 400);
+            resetForm(formEl);
+        } catch {
+            setIsSubmitting(false);
+            toast.error("Unable to submit. Please try again.");
+        }
     }
 
     return (
@@ -329,6 +366,15 @@ export default function QuoteClient({ header, expect, calculatorSummary, form }:
                                 </p>
 
                                 <form className="mt-6 space-y-5" onSubmit={onSubmit}>
+                                    {/* Honeypot field for basic spam protection */}
+                                    <input
+                                        type="text"
+                                        name="company"
+                                        tabIndex={-1}
+                                        autoComplete="off"
+                                        className="hidden"
+                                    />
+
                                     <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                                         <div className="space-y-2">
                                             <Label htmlFor="name">{form.fullNameLabel}</Label>

@@ -4,6 +4,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import * as React from "react";
+import { toast } from "sonner";
 import {
     ArrowRight,
     Facebook,
@@ -109,6 +110,47 @@ export function FooterInner({
     creditHref?: string;
     footerLinks?: ReadonlyArray<FooterLink>;
 } = {}) {
+    const [subscribeEmail, setSubscribeEmail] = React.useState("");
+    const [isSubscribing, setIsSubscribing] = React.useState(false);
+
+    async function onSubscribe(event: React.FormEvent<HTMLFormElement>) {
+        event.preventDefault();
+        const email = subscribeEmail.trim();
+
+        if (!email) {
+            toast.error("Please enter your email address.");
+            return;
+        }
+
+        setIsSubscribing(true);
+
+        try {
+            const res = await fetch("/api/subscribe", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email, company: "" }),
+            });
+
+            const json = (await res.json().catch(() => null)) as
+                | { ok: true }
+                | { ok: false; error: string }
+                | null;
+
+            if (!res.ok || !json || ("ok" in json && json.ok === false)) {
+                const message = json && "error" in json ? json.error : "Unable to subscribe. Please try again.";
+                toast.error(message);
+                setIsSubscribing(false);
+                return;
+            }
+
+            toast.success("Thanks — you’re subscribed.");
+            setSubscribeEmail("");
+            setIsSubscribing(false);
+        } catch {
+            setIsSubscribing(false);
+            toast.error("Unable to subscribe. Please try again.");
+        }
+    }
 
     return (
         <footer className="container mx-auto">
@@ -208,10 +250,17 @@ export function FooterInner({
 
                             <form
                                 className="mt-8"
-                                onSubmit={(e) => {
-                                    e.preventDefault();
-                                }}
+                                onSubmit={onSubscribe}
                             >
+                                {/* Honeypot field for basic spam protection */}
+                                <input
+                                    type="text"
+                                    name="company"
+                                    tabIndex={-1}
+                                    autoComplete="off"
+                                    className="hidden"
+                                />
+
                                 <label className="sr-only" htmlFor="footer-email">
                                     Email address
                                 </label>
@@ -223,6 +272,9 @@ export function FooterInner({
                                         inputMode="email"
                                         autoComplete="email"
                                         placeholder="Email Address... *"
+                                        value={subscribeEmail}
+                                        onChange={(e) => setSubscribeEmail(e.currentTarget.value)}
+                                        disabled={isSubscribing}
                                         className={cn(
                                             "h-12 w-full rounded-full border bg-background px-5 pr-14",
                                             "border-border text-foreground placeholder:text-muted-foreground",
@@ -233,6 +285,7 @@ export function FooterInner({
                                     <button
                                         type="submit"
                                         aria-label="Subscribe"
+                                        disabled={isSubscribing}
                                         className={cn(
                                             "absolute right-2 top-1/2 -translate-y-1/2",
                                             "inline-flex h-9 w-9 items-center justify-center rounded-full",
