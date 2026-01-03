@@ -179,7 +179,7 @@ export function Footer() {
 
                         <nav aria-label="Footer links" className="flex flex-wrap items-center gap-x-8 gap-y-2">
                             <Link
-                                href="#"
+                                href="/terms"
                                 className={cn(
                                     "text-sm text-background/75 hover:text-background transition-colors motion-reduce:transition-none",
                                     "focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background rounded-sm"
@@ -188,7 +188,7 @@ export function Footer() {
                                 Terms &amp; Conditions
                             </Link>
                             <Link
-                                href="#"
+                                href="/privacy"
                                 className={cn(
                                     "text-sm text-background/75 hover:text-background transition-colors motion-reduce:transition-none",
                                     "focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background rounded-sm"
@@ -197,7 +197,7 @@ export function Footer() {
                                 Privacy Policy
                             </Link>
                             <Link
-                                href="#"
+                                href="/sitemap"
                                 className={cn(
                                     "text-sm text-background/75 hover:text-background transition-colors motion-reduce:transition-none",
                                     "focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background rounded-sm"

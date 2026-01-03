@@ -1,0 +1,85 @@
+{
+    "seo": {
+        "title": "Privacy Policy",
+        "description": "How we collect, use, and protect your information.",
+        "ogTitle": "Privacy Policy",
+        "ogDescription": "How we collect, use, and protect your information.",
+        "ogImage": null
+    },
+    "header": {
+        "badge": "Privacy",
+        "heading": "Privacy Policy",
+        "description": "This page explains what we collect, why we collect it, and how to get in touch if you have questions.",
+        "lastUpdatedLabel": "Last updated",
+        "lastUpdatedText": "3 January 2026"
+    },
+    "sections": [
+        {
+            "title": "What information we collect",
+            "paragraphs": [
+                "We only collect information that helps us reply to you and deliver gardening services."
+            ],
+            "bullets": [
+                "Contact details you provide (for example: name, email address, phone number).",
+                "Quote and job details (for example: address, service type, timeframe, budget range, and any notes you include).",
+                "Photos you choose to upload when requesting a quote (to help us understand the work).",
+                "Basic technical data when you visit the website (for example: device/browser type, pages viewed, and approximate location derived from IP address)."
+            ]
+        },
+        {
+            "title": "How we use your information",
+            "paragraphs": [],
+            "bullets": [
+                "To respond to enquiries and provide quotes.",
+                "To plan and deliver the services you request.",
+                "To communicate with you about scheduling, follow-ups, and service details.",
+                "To improve our website and understand what content is most useful."
+            ]
+        },
+        {
+            "title": "How we store and protect information",
+            "paragraphs": [
+                "We take reasonable steps to protect your information. This includes limiting access to people who need it to do their job and using reputable service providers for website hosting and communications.",
+                "No method of transmission or storage is 100% secure, but we work to keep your data safe."
+            ],
+            "bullets": []
+        },
+        {
+            "title": "Sharing and third-party services",
+            "paragraphs": [
+                "We do not sell your personal information. We may share information with trusted third parties only when needed to run the website and deliver services."
+            ],
+            "bullets": [
+                "Website hosting and infrastructure providers.",
+                "Email/communication tools we use to reply to you.",
+                "Analytics tools to understand website usage (if enabled)."
+            ]
+        },
+        {
+            "title": "Cookies and analytics",
+            "paragraphs": [
+                "Cookies are small files stored on your device. We may use essential cookies to help the site function, and we may use analytics cookies to understand how the site is used.",
+                "You can control cookies through your browser settings. Disabling certain cookies may affect how the website works."
+            ],
+            "bullets": []
+        },
+        {
+            "title": "Your rights",
+            "paragraphs": [
+                "You can ask us to access, correct, or delete personal information we hold about you."
+            ],
+            "bullets": [
+                "Request a copy of your information.",
+                "Ask us to correct inaccurate information.",
+                "Ask us to delete your information (where appropriate)."
+            ]
+        },
+        {
+            "title": "Contact us",
+            "paragraphs": [
+                "If you have any questions about this Privacy Policy, contact us using the details below."
+            ],
+            "bullets": []
+        }
+    ]
+}

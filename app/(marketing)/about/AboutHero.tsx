@@ -100,15 +100,15 @@ export function AboutHero(props: AboutHeroProps) {
                             </div>
 
                             {/* Headshot */}
-                            <div className="relative bg-muted/30">
+                            <div className="relative m-6 bg-muted/30 rounded-2xl overflow-hidden">
                                 <div className="absolute inset-0 bg-linear-to-t from-background/50 via-transparent to-transparent" aria-hidden="true" />
-                                <div className="relative h-full min-h-80 lg:min-h-140">
+                                <div className="relative  h-full min-h-80 lg:min-h-140">
                                     {hasImage ? (
                                         <Image
                                             src={resolvedImageSrc}
                                             alt={props.image?.imageAlt || ""}
                                             fill
-                                            className="object-contain p-10"
+                                            className="object-cover"
                                             sizes="(max-width: 1024px) 100vw, 40vw"
                                             priority={false}
                                         />

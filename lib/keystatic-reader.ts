@@ -32,6 +32,18 @@ export async function getQuoteContent() {
 
 export type QuoteContent = Awaited<ReturnType<typeof getQuoteContent>>;
 
+export async function getPrivacyContent() {
+    return reader.singletons.privacy.readOrThrow();
+}
+
+export type PrivacyContent = Awaited<ReturnType<typeof getPrivacyContent>>;
+
+export async function getTermsContent() {
+    return reader.singletons.terms.readOrThrow();
+}
+
+export type TermsContent = Awaited<ReturnType<typeof getTermsContent>>;
+
 export async function getAboutContent() {
     const entry = await reader.singletons.about.readOrThrow();
 

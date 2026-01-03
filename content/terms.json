@@ -1,0 +1,55 @@
+{
+    "seo": {
+        "title": "Terms of Service",
+        "description": "The terms for using this website.",
+        "ogTitle": "Terms of Service",
+        "ogDescription": "The terms for using this website.",
+        "ogImage": null
+    },
+    "header": {
+        "badge": "Legal",
+        "heading": "Terms of Service",
+        "description": "These terms apply to the use of this website.",
+        "lastUpdatedLabel": "Last updated",
+        "lastUpdatedText": "3 January 2026"
+    },
+    "sections": [
+        {
+            "title": "Using this website",
+            "paragraphs": [
+                "You may use this website to learn about our services and to contact us for enquiries and quotes.",
+                "Please do not misuse the website or attempt to interfere with its normal operation."
+            ],
+            "bullets": []
+        },
+        {
+            "title": "Information and quotes",
+            "paragraphs": [
+                "We aim to keep the information on this website accurate and up to date. However, it may change over time.",
+                "Any estimates or guidance are indicative only until we’ve confirmed details and provided a written quote."
+            ],
+            "bullets": []
+        },
+        {
+            "title": "Third-party links",
+            "paragraphs": [
+                "This website may link to third-party services (for example: maps or social profiles). We’re not responsible for the content or policies of third-party websites."
+            ],
+            "bullets": []
+        },
+        {
+            "title": "Changes to these terms",
+            "paragraphs": [
+                "We may update these terms from time to time. When we do, we’ll update the “Last updated” date on this page."
+            ],
+            "bullets": []
+        },
+        {
+            "title": "Contact",
+            "paragraphs": [
+                "If you have any questions about these terms, please contact us using the details below."
+            ],
+            "bullets": []
+        }
+    ]
+}

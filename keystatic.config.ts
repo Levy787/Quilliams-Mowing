@@ -1984,6 +1984,74 @@ export const keystaticConfig = config({
         ),
       },
     }),
+
+    privacy: singleton({
+      label: "Privacy",
+      path: "content/privacy",
+      format: "json",
+      schema: {
+        seo: seoFields(),
+
+        header: fields.object(
+          {
+            badge: fields.text({ label: "Badge" }),
+            heading: fields.text({ label: "Heading" }),
+            description: fields.text({ label: "Description", multiline: true }),
+            lastUpdatedLabel: fields.text({ label: "Last updated label" }),
+            lastUpdatedText: fields.text({ label: "Last updated text" }),
+          },
+          { label: "Header" },
+        ),
+
+        sections: fields.array(
+          fields.object({
+            title: fields.text({ label: "Title" }),
+            paragraphs: fields.array(
+              fields.text({ label: "Paragraph", multiline: true }),
+              { label: "Paragraphs" },
+            ),
+            bullets: fields.array(fields.text({ label: "Bullet" }), {
+              label: "Bullets",
+            }),
+          }),
+          { label: "Sections" },
+        ),
+      },
+    }),
+
+    terms: singleton({
+      label: "Terms",
+      path: "content/terms",
+      format: "json",
+      schema: {
+        seo: seoFields(),
+
+        header: fields.object(
+          {
+            badge: fields.text({ label: "Badge" }),
+            heading: fields.text({ label: "Heading" }),
+            description: fields.text({ label: "Description", multiline: true }),
+            lastUpdatedLabel: fields.text({ label: "Last updated label" }),
+            lastUpdatedText: fields.text({ label: "Last updated text" }),
+          },
+          { label: "Header" },
+        ),
+
+        sections: fields.array(
+          fields.object({
+            title: fields.text({ label: "Title" }),
+            paragraphs: fields.array(
+              fields.text({ label: "Paragraph", multiline: true }),
+              { label: "Paragraphs" },
+            ),
+            bullets: fields.array(fields.text({ label: "Bullet" }), {
+              label: "Bullets",
+            }),
+          }),
+          { label: "Sections" },
+        ),
+      },
+    }),
   },
 });
 
