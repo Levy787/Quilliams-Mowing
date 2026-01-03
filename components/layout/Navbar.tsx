@@ -16,7 +16,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { NavbarSearch } from "@/components/layout/NavbarSearch";
 
-const NAV_ITEMS = [
+const DEFAULT_NAV_ITEMS = [
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
     { label: "Pricing", href: "/pricing" },
@@ -25,7 +25,21 @@ const NAV_ITEMS = [
     { label: "Contact", href: "/contact" },
 ] as const;
 
-export function Navbar() {
+type NavItem = { label: string; href: string };
+
+export function Navbar({
+    logoSrc = "/logos/logo-icon-text.webp",
+    logoAlt = "Quilliams Gardening & Landscaping",
+    navItems = DEFAULT_NAV_ITEMS,
+    primaryCtaLabel = "Get a Quote",
+    primaryCtaHref = "/quote",
+}: {
+    logoSrc?: string;
+    logoAlt?: string;
+    navItems?: ReadonlyArray<NavItem>;
+    primaryCtaLabel?: string;
+    primaryCtaHref?: string;
+} = {}) {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     return (
@@ -36,8 +50,8 @@ export function Navbar() {
                     <Link href="/" className="flex items-center gap-3 group">
                         <div className="relative h-16 w-64">
                             <Image
-                                src="/logos/logo-icon-text.webp"
-                                alt="Quilliams Gardening & Landscaping"
+                                src={logoSrc}
+                                alt={logoAlt}
                                 fill
                                 className="object-contain"
                                 sizes="176px"
@@ -50,7 +64,7 @@ export function Navbar() {
                     <div className="hidden lg:flex">
                         <NavigationMenu>
                             <NavigationMenuList>
-                                {NAV_ITEMS.map((item) => (
+                                {navItems.map((item) => (
                                     <NavigationMenuItem key={item.href}>
                                         <NavigationMenuLink asChild>
                                             <Link
@@ -73,8 +87,8 @@ export function Navbar() {
 
                         {/* Let's Talk Button */}
                         <Button className="hidden md:inline-flex" asChild>
-                            <Link href="/quote">
-                                Get a Quote
+                            <Link href={primaryCtaHref}>
+                                {primaryCtaLabel}
                                 <FileText className="w-4 h-4" aria-hidden />
                             </Link>
                         </Button>
@@ -95,7 +109,7 @@ export function Navbar() {
                 {mobileMenuOpen && (
                     <div className="lg:hidden py-4 border-t">
                         <ul className="flex flex-col gap-4">
-                            {NAV_ITEMS.map((item) => (
+                            {navItems.map((item) => (
                                 <li key={item.label}>
                                     <Link
                                         href={item.href}
@@ -108,8 +122,8 @@ export function Navbar() {
                             ))}
                         </ul>
                         <Button className="mt-4 w-full" size="lg" asChild>
-                            <Link href="/quote" onClick={() => setMobileMenuOpen(false)}>
-                                Get a Quote
+                            <Link href={primaryCtaHref} onClick={() => setMobileMenuOpen(false)}>
+                                {primaryCtaLabel}
                                 <FileText className="w-4 h-4" aria-hidden />
                             </Link>
                         </Button>

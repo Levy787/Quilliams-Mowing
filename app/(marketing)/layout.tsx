@@ -1,6 +1,6 @@
 import { Banner } from "@/components/layout/Banner";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
+import { NavbarWithContent } from "@/components/layout/NavbarWithContent";
+import { FooterWithContent } from "@/components/layout/FooterWithContent";
 
 
 
@@ -12,9 +12,9 @@ export default function Layout({
     return (
         <>
             <Banner />
-            <Navbar />
+            <NavbarWithContent />
             {children}
-            <Footer />
+            <FooterWithContent />
         </>
     );
 }

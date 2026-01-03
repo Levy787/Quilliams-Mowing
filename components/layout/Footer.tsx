@@ -16,6 +16,30 @@ import {
 import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
 
+const DEFAULT_BUSINESS_HOURS = [
+    { dayLabel: "Mon – Fri", hours: "08:00 am : 05:00 pm" },
+    { dayLabel: "Saturday", hours: "Closed" },
+    { dayLabel: "Sunday", hours: "Closed" },
+    { dayLabel: "Bank Holidays", hours: "Closed" },
+] as const;
+
+const DEFAULT_SOCIAL_LINKS = [
+    {
+        platform: "facebook" as const,
+        href: "https://www.facebook.com/quilliamsmowing/",
+    },
+    {
+        platform: "instagram" as const,
+        href: "https://www.instagram.com/quilliamsmowing/",
+    },
+] as const;
+
+const DEFAULT_FOOTER_LINKS = [
+    { label: "Terms & Conditions", href: "/terms" },
+    { label: "Privacy Policy", href: "/privacy" },
+    { label: "Sitemap", href: "/sitemap" },
+] as const;
+
 function IconLink({
     href,
     label,
@@ -42,6 +66,50 @@ function IconLink({
 }
 
 export function Footer() {
+    return <FooterInner />;
+}
+
+type FooterLink = { label: string; href: string };
+type SocialPlatform = "facebook" | "instagram" | "x" | "youtube";
+
+export function FooterInner({
+    logoSrc = "/logos/logo-icon-text.webp",
+    logoAlt = "Quilliams Gardening & Landscaping",
+    aboutText =
+    "Quilliams Gardening & Landscaping hardworking team has been delivering outstanding, environmentally friendly landscapes for over 5 years.",
+    connectHeading = "Connect With Us",
+    businessHoursHeading = "Business Hours",
+    businessHours = DEFAULT_BUSINESS_HOURS,
+    phoneLabel = "Phone",
+    phoneNumber = "07593121621",
+    phoneDisplay = "07593 121 621",
+    subscribeHeading = "Subscribe Us",
+    subscribeText = "Subscribe & Receive Our Offers and Updates to Your Inbox Directly.",
+    socialLinks = DEFAULT_SOCIAL_LINKS,
+    copyrightText =
+    "Copyright © 2025 Quilliams Gardening & Landscaping, All Rights Reserved.",
+    creditText = "TradeSender",
+    creditHref = "https://www.tradesender.co.uk/",
+    footerLinks = DEFAULT_FOOTER_LINKS,
+}: {
+    logoSrc?: string;
+    logoAlt?: string;
+    aboutText?: string;
+    connectHeading?: string;
+    businessHoursHeading?: string;
+    businessHours?: ReadonlyArray<{ dayLabel: string; hours: string }>;
+    phoneLabel?: string;
+    phoneNumber?: string;
+    phoneDisplay?: string;
+    subscribeHeading?: string;
+    subscribeText?: string;
+    socialLinks?: ReadonlyArray<{ platform: SocialPlatform; href: string }>;
+    copyrightText?: string;
+    creditText?: string;
+    creditHref?: string;
+    footerLinks?: ReadonlyArray<FooterLink>;
+} = {}) {
+
     return (
         <footer className="container mx-auto">
             <div className="rounded-t-4xl bg-gray-900 text-background overflow-hidden">
@@ -51,47 +119,63 @@ export function Footer() {
                         {/* About Company */}
                         <div className="min-w-0">
                             <Link href="/">
-                                <Image src="/logos/logo-icon-text.webp" alt="Quilliams Gardening & Landscaping" width={176} height={40} />
+                                <Image
+                                    src={logoSrc}
+                                    alt={logoAlt}
+                                    width={176}
+                                    height={40}
+                                />
                             </Link>
                             <p className="mt-6 max-w-md text-base leading-relaxed text-background/75">
-                                Quilliams Gardening & Landscaping hardworking team has been delivering outstanding,
-                                environmentally friendly landscapes for over 5 years.
+                                {aboutText}
                             </p>
 
-                            <h4 className="mt-10 text-xl font-semibold">Connect With Us</h4>
+                            <h4 className="mt-10 text-xl font-semibold">
+                                {connectHeading}
+                            </h4>
                             <div className="mt-5 flex flex-wrap gap-4">
-                                <IconLink href="https://www.facebook.com/quilliamsmowing/" label="Facebook">
-                                    <Facebook className="h-5 w-5" aria-hidden="true" />
-                                </IconLink>
-                                <IconLink href="https://www.instagram.com/quilliamsmowing/" label="Instagram">
-                                    <Instagram className="h-5 w-5" aria-hidden="true" />
-                                </IconLink>
+                                {socialLinks.map((item) => {
+                                    const label =
+                                        item.platform === "facebook"
+                                            ? "Facebook"
+                                            : item.platform === "instagram"
+                                                ? "Instagram"
+                                                : item.platform === "x"
+                                                    ? "X"
+                                                    : "YouTube";
+
+                                    const Icon =
+                                        item.platform === "facebook"
+                                            ? Facebook
+                                            : item.platform === "instagram"
+                                                ? Instagram
+                                                : item.platform === "x"
+                                                    ? X
+                                                    : Youtube;
+
+                                    return (
+                                        <IconLink key={`${item.platform}-${item.href}`} href={item.href} label={label}>
+                                            <Icon className="h-5 w-5" aria-hidden="true" />
+                                        </IconLink>
+                                    );
+                                })}
                             </div>
                         </div>
 
                         {/* Business Hours */}
                         <div className="min-w-0">
-                            <h3 className="text-2xl font-semibold tracking-tight">Business Hours</h3>
+                            <h3 className="text-2xl font-semibold tracking-tight">
+                                {businessHoursHeading}
+                            </h3>
 
                             <div className="mt-6 space-y-3">
                                 <div>
-                                    <div className="text-sm font-semibold text-primary">Mon – Fri</div>
-                                    <div className="mt-1 text-base text-background/75">
-                                        08:00 am : 05:00 pm
-                                    </div>
-                                    <div className="text-sm font-semibold text-primary">Saturday</div>
-                                    <div className="mt-1 text-base text-background/75">
-                                        Closed
-                                    </div>
-                                    <div className="text-sm font-semibold text-primary">Sunday</div>
-                                    <div className="mt-1 text-base text-background/75">
-                                        Closed
-                                    </div>
-                                    <div className="text-sm font-semibold text-primary">Bank Holidays</div>
-                                    <div className="mt-1 text-base text-background/75">
-                                        Closed
-                                    </div>
-
+                                    {businessHours.map((row) => (
+                                        <div key={`${row.dayLabel}-${row.hours}`}>
+                                            <div className="text-sm font-semibold text-primary">{row.dayLabel}</div>
+                                            <div className="mt-1 text-base text-background/75">{row.hours}</div>
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
 
@@ -102,9 +186,12 @@ export function Footer() {
                                     <PhoneCall className="h-10 w-10 text-primary" aria-hidden="true" />
                                 </div>
                                 <div>
-                                    <div className="text-sm text-background/75">Phone</div>
-                                    <Link href="tel:07593121621" className={"mt-1 text-3xl font-semibold tracking-tight hover:underline"}>
-                                        07593 121 621
+                                    <div className="text-sm text-background/75">{phoneLabel || "Phone"}</div>
+                                    <Link
+                                        href={`tel:${phoneNumber || "07593121621"}`}
+                                        className={"mt-1 text-3xl font-semibold tracking-tight hover:underline"}
+                                    >
+                                        {phoneDisplay || phoneNumber || "07593 121 621"}
                                     </Link>
                                 </div>
                             </div>
@@ -112,9 +199,11 @@ export function Footer() {
 
                         {/* Subscribe */}
                         <div className="min-w-0">
-                            <h3 className="text-2xl font-semibold tracking-tight">Subscribe Us</h3>
+                            <h3 className="text-2xl font-semibold tracking-tight">
+                                {subscribeHeading}
+                            </h3>
                             <p className="mt-6 max-w-md text-base leading-relaxed text-background/75">
-                                Subscribe &amp; Receive Our Offers and Updates to Your Inbox Directly.
+                                {subscribeText}
                             </p>
 
                             <form
@@ -163,48 +252,33 @@ export function Footer() {
                 <div className="bg-gray-800 border-t border-border/30 px-6 py-6 md:px-10">
                     <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                         <div className="text-sm text-background/75">
-                            Copyright © 2025 Quilliams Gardening & Landscaping, All Rights Reserved.
+                            {copyrightText}
                         </div>
                         <div className="text-sm text-background/75">
                             Designed and Developed by{" "}
                             <Link
-                                href="https://www.tradesender.co.uk/"
+                                href={creditHref}
                                 target="_blank"
                                 rel="noopener"
                                 className="hover:underline"
                             >
-                                TradeSender
+                                {creditText}
                             </Link>
                         </div>
 
                         <nav aria-label="Footer links" className="flex flex-wrap items-center gap-x-8 gap-y-2">
-                            <Link
-                                href="/terms"
-                                className={cn(
-                                    "text-sm text-background/75 hover:text-background transition-colors motion-reduce:transition-none",
-                                    "focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background rounded-sm"
-                                )}
-                            >
-                                Terms &amp; Conditions
-                            </Link>
-                            <Link
-                                href="/privacy"
-                                className={cn(
-                                    "text-sm text-background/75 hover:text-background transition-colors motion-reduce:transition-none",
-                                    "focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background rounded-sm"
-                                )}
-                            >
-                                Privacy Policy
-                            </Link>
-                            <Link
-                                href="/sitemap"
-                                className={cn(
-                                    "text-sm text-background/75 hover:text-background transition-colors motion-reduce:transition-none",
-                                    "focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background rounded-sm"
-                                )}
-                            >
-                                Sitemap
-                            </Link>
+                            {footerLinks.map((item) => (
+                                <Link
+                                    key={`${item.label}-${item.href}`}
+                                    href={item.href}
+                                    className={cn(
+                                        "text-sm text-background/75 hover:text-background transition-colors motion-reduce:transition-none",
+                                        "focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background rounded-sm"
+                                    )}
+                                >
+                                    {item.label}
+                                </Link>
+                            ))}
                         </nav>
                     </div>
                 </div>

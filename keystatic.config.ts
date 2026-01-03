@@ -2064,12 +2064,126 @@ export const keystaticConfig = config({
           validation: { isRequired: true },
         }),
 
+        branding: fields.object(
+          {
+            logoFile: fields.image({
+              label: "Logo file",
+              directory: "public/images/uploads/site",
+            }),
+            logoSrc: fields.text({ label: "Logo src (legacy/manual)" }),
+            logoAlt: fields.text({ label: "Logo alt" }),
+          },
+          { label: "Branding" },
+        ),
+
+        navigation: fields.object(
+          {
+            headerItems: fields.array(
+              fields.object({
+                label: fields.text({
+                  label: "Label",
+                  validation: { isRequired: true },
+                }),
+                href: fields.text({
+                  label: "Href",
+                  validation: { isRequired: true },
+                }),
+              }),
+              { label: "Header items" },
+            ),
+
+            primaryCta: fields.object(
+              {
+                label: fields.text({ label: "Label" }),
+                href: fields.text({ label: "Href" }),
+              },
+              { label: "Primary CTA" },
+            ),
+
+            footerItems: fields.array(
+              fields.object({
+                label: fields.text({
+                  label: "Label",
+                  validation: { isRequired: true },
+                }),
+                href: fields.text({
+                  label: "Href",
+                  validation: { isRequired: true },
+                }),
+              }),
+              { label: "Footer items" },
+            ),
+          },
+          { label: "Navigation" },
+        ),
+
         pwa: fields.object(
           {
             themeColor: fields.text({ label: "Theme color (hex)" }),
             backgroundColor: fields.text({ label: "Background color (hex)" }),
           },
           { label: "PWA" },
+        ),
+
+        footer: fields.object(
+          {
+            aboutText: fields.text({
+              label: "About text",
+              multiline: true,
+            }),
+            connectHeading: fields.text({ label: "Connect heading" }),
+            businessHoursHeading: fields.text({
+              label: "Business hours heading",
+            }),
+            businessHours: fields.array(
+              fields.object({
+                dayLabel: fields.text({
+                  label: "Day label",
+                  validation: { isRequired: true },
+                }),
+                hours: fields.text({
+                  label: "Hours",
+                  validation: { isRequired: true },
+                }),
+              }),
+              { label: "Business hours" },
+            ),
+
+            phoneLabel: fields.text({ label: "Phone label" }),
+            phoneNumber: fields.text({ label: "Phone number (tel:)" }),
+            phoneDisplay: fields.text({ label: "Phone display" }),
+
+            subscribeHeading: fields.text({ label: "Subscribe heading" }),
+            subscribeText: fields.text({
+              label: "Subscribe text",
+              multiline: true,
+            }),
+
+            socialLinks: fields.array(
+              fields.object({
+                platform: fields.select({
+                  label: "Platform",
+                  options: [
+                    { label: "Facebook", value: "facebook" },
+                    { label: "Instagram", value: "instagram" },
+                    { label: "X", value: "x" },
+                    { label: "YouTube", value: "youtube" },
+                  ] as const,
+                  defaultValue: "facebook",
+                }),
+                href: fields.url({
+                  label: "URL",
+                  validation: { isRequired: true },
+                }),
+              }),
+              { label: "Social links" },
+            ),
+
+            copyrightText: fields.text({ label: "Copyright text" }),
+            creditText: fields.text({ label: "Credit text" }),
+            creditHref: fields.url({ label: "Credit URL" }),
+          },
+          { label: "Footer" },
         ),
 
         assets: fields.object(
