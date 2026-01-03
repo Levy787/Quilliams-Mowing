@@ -17,6 +17,7 @@ import {
     SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import { LeafletMap } from "@/components/reusable/leaflet-map";
 
 export type ContactClientProps = {
     header: {
@@ -36,6 +37,8 @@ export type ContactClientProps = {
         hoursText: string;
         serviceAreaLabel: string;
         serviceAreaText: string;
+        googleMapsProfileLabel: string;
+        googleMapsProfileUrl: string | null;
     };
     form: {
         title: string;
@@ -54,8 +57,12 @@ export type ContactClientProps = {
         submitLoadingLabel: string;
     };
     map: {
-        iframeTitle: string;
-        iframeSrc: string;
+        centerLat: number;
+        centerLng: number;
+        zoom: number;
+        circleLat: number;
+        circleLng: number;
+        circleRadiusMeters: number;
     };
 };
 
@@ -102,14 +109,15 @@ export default function ContactClient({ header, details, form, map }: ContactCli
                     {/* Main grid */}
                     <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8">
                         {/* Contact details */}
-                        <Card className="rounded-4xl border-border shadow-none">
-                            <CardContent className="px-6">
+                        <Card className="relative overflow-hidden rounded-4xl border-border bg-foreground text-background shadow-none dark:bg-background dark:text-foreground">
+                            <div className="absolute inset-0 bg-[url('/patterns/pattern-1.png')] bg-repeat opacity-10 dark:opacity-5" />
+                            <CardContent className="relative px-6">
                                 <div className="space-y-6">
                                     <div>
-                                        <div className="text-xl font-semibold text-foreground">
+                                        <div className="text-xl font-semibold text-background dark:text-foreground">
                                             {details.title}
                                         </div>
-                                        <p className="mt-2 text-sm md:text-base leading-relaxed text-muted-foreground">
+                                        <p className="mt-2 text-sm md:text-base leading-relaxed text-background/80 dark:text-muted-foreground">
                                             {details.description}
                                         </p>
                                     </div>
@@ -118,12 +126,12 @@ export default function ContactClient({ header, details, form, map }: ContactCli
                                         <div className="flex items-start gap-3">
                                             <Phone className="mt-0.5 h-5 w-5 text-primary" aria-hidden="true" />
                                             <div className="min-w-0">
-                                                <div className="text-sm font-medium text-foreground">
+                                                <div className="text-sm font-medium text-background dark:text-foreground">
                                                     {details.phoneLabel}
                                                 </div>
                                                 <Link
                                                     href={`tel:${details.phoneTel}`}
-                                                    className="mt-1 block text-sm text-muted-foreground hover:text-foreground"
+                                                    className="mt-1 block text-sm text-background/80 hover:text-background dark:text-muted-foreground dark:hover:text-foreground"
                                                 >
                                                     {details.phoneDisplay}
                                                 </Link>
@@ -133,12 +141,12 @@ export default function ContactClient({ header, details, form, map }: ContactCli
                                         <div className="flex items-start gap-3">
                                             <Mail className="mt-0.5 h-5 w-5 text-primary" aria-hidden="true" />
                                             <div className="min-w-0">
-                                                <div className="text-sm font-medium text-foreground">
+                                                <div className="text-sm font-medium text-background dark:text-foreground">
                                                     {details.emailLabel}
                                                 </div>
                                                 <Link
                                                     href={`mailto:${details.emailAddress}`}
-                                                    className="mt-1 block text-sm text-muted-foreground hover:text-foreground"
+                                                    className="mt-1 block text-sm text-background/80 hover:text-background dark:text-muted-foreground dark:hover:text-foreground"
                                                 >
                                                     {details.emailAddress}
                                                 </Link>
@@ -148,10 +156,10 @@ export default function ContactClient({ header, details, form, map }: ContactCli
                                         <div className="flex items-start gap-3">
                                             <Clock className="mt-0.5 h-5 w-5 text-primary" aria-hidden="true" />
                                             <div className="min-w-0">
-                                                <div className="text-sm font-medium text-foreground">
+                                                <div className="text-sm font-medium text-background dark:text-foreground">
                                                     {details.hoursLabel}
                                                 </div>
-                                                <div className="mt-1 text-sm text-muted-foreground whitespace-pre-line">
+                                                <div className="mt-1 text-sm text-background/80 whitespace-pre-line dark:text-muted-foreground">
                                                     {details.hoursText}
                                                 </div>
                                             </div>
@@ -160,14 +168,33 @@ export default function ContactClient({ header, details, form, map }: ContactCli
                                         <div className="flex items-start gap-3">
                                             <MapPin className="mt-0.5 h-5 w-5 text-primary" aria-hidden="true" />
                                             <div className="min-w-0">
-                                                <div className="text-sm font-medium text-foreground">
+                                                <div className="text-sm font-medium text-background dark:text-foreground">
                                                     {details.serviceAreaLabel}
                                                 </div>
-                                                <div className="mt-1 text-sm text-muted-foreground">
+                                                <div className="mt-1 text-sm text-background/80 dark:text-muted-foreground">
                                                     {details.serviceAreaText}
                                                 </div>
                                             </div>
                                         </div>
+
+                                        {details.googleMapsProfileUrl?.trim() ? (
+                                            <div className="flex items-start gap-3">
+                                                <MapPin className="mt-0.5 h-5 w-5 text-primary" aria-hidden="true" />
+                                                <div className="min-w-0">
+                                                    <div className="text-sm font-medium text-background dark:text-foreground">
+                                                        {details.googleMapsProfileLabel}
+                                                    </div>
+                                                    <Link
+                                                        href={details.googleMapsProfileUrl}
+                                                        target="_blank"
+                                                        rel="noreferrer"
+                                                        className="mt-1 block text-sm text-primary hover:underline dark:hover:text-foreground"
+                                                    >
+                                                        View on Google Maps
+                                                    </Link>
+                                                </div>
+                                            </div>
+                                        ) : null}
                                     </div>
                                 </div>
                             </CardContent>
@@ -258,12 +285,21 @@ export default function ContactClient({ header, details, form, map }: ContactCli
                         <Card className="rounded-4xl border-border shadow-none overflow-hidden">
                             <CardContent className="px-0">
                                 <div className="relative aspect-video">
-                                    <iframe
-                                        title={map.iframeTitle}
-                                        className="absolute inset-0 h-full w-full"
-                                        loading="lazy"
-                                        referrerPolicy="no-referrer-when-downgrade"
-                                        src={map.iframeSrc}
+                                    <LeafletMap
+                                        center={[map.centerLat, map.centerLng]}
+                                        zoom={map.zoom}
+                                        elements={[
+                                            {
+                                                type: "circle",
+                                                center: [map.circleLat, map.circleLng],
+                                                radius: map.circleRadiusMeters,
+                                                pathOptions: {
+                                                    color: "#00a63e",
+                                                    fillColor: "#00a63e",
+                                                    fillOpacity: 0.2,
+                                                },
+                                            },
+                                        ]}
                                     />
                                 </div>
                             </CardContent>

@@ -5,8 +5,10 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export type LargeCtaProps = {
+    leftImageFile?: string | null;
     leftImageUrl?: string | null;
     leftImageAlt?: string | null;
+    rightImageFile?: string | null;
     rightImageUrl?: string | null;
     rightImageAlt?: string | null;
     headingLines: readonly string[];
@@ -14,6 +16,17 @@ export type LargeCtaProps = {
     ctaLabel: string;
     ctaHref: string;
 };
+
+function resolveKeystaticUploadUrl({
+    file,
+    url,
+}: {
+    file?: string | null;
+    url?: string | null;
+}): string {
+    if (file?.trim()) return `/images/uploads/${file}`;
+    return url?.trim() ?? "";
+}
 
 function renderHeadingLines(lines: readonly string[]) {
     return lines.map((line, index) => (
@@ -25,8 +38,10 @@ function renderHeadingLines(lines: readonly string[]) {
 }
 
 export function LargeCta({
+    leftImageFile,
     leftImageUrl,
     leftImageAlt,
+    rightImageFile,
     rightImageUrl,
     rightImageAlt,
     headingLines,
@@ -34,8 +49,14 @@ export function LargeCta({
     ctaLabel,
     ctaHref,
 }: LargeCtaProps) {
-    const resolvedLeftImageUrl = leftImageUrl?.trim() ?? "";
-    const resolvedRightImageUrl = rightImageUrl?.trim() ?? "";
+    const resolvedLeftImageUrl = resolveKeystaticUploadUrl({
+        file: leftImageFile,
+        url: leftImageUrl,
+    });
+    const resolvedRightImageUrl = resolveKeystaticUploadUrl({
+        file: rightImageFile,
+        url: rightImageUrl,
+    });
     const hasLeftImage = Boolean(resolvedLeftImageUrl);
     const hasRightImage = Boolean(resolvedRightImageUrl);
 

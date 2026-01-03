@@ -338,11 +338,11 @@ export default function ProjectDetailClient({
                                 <button
                                     type="button"
                                     onClick={() => openGalleryAt(index)}
-                                    className="block w-full text-left"
+                                    className="block w-full text-left cursor-pointer"
                                     aria-label={`Open image ${index + 1} of ${galleryCount}`}
                                 >
-                                    <Card className="rounded-4xl border-border shadow-none overflow-hidden h-full">
-                                        <div className="relative aspect-16/10 w-full">
+                                    <Card className="rounded-4xl border-border shadow-none overflow-hidden h-full p-0">
+                                        <div className="relative aspect-16/10 w-full h-full">
                                             <Image
                                                 src={g.imageSrc}
                                                 alt={g.imageAlt}

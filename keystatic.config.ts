@@ -1385,17 +1385,23 @@ export const keystaticConfig = config({
 
         largeCta: fields.object(
           {
-            ...urlImageFields({
+            ...imageFields({
               label: "Left image",
-              keys: { srcKey: "leftImageUrl", altKey: "leftImageAlt" },
+              keys: {
+                fileKey: "leftImageFile",
+                srcKey: "leftImageUrl",
+                altKey: "leftImageAlt",
+              },
               includeDescription: false,
-              isRequired: true,
             }),
-            ...urlImageFields({
+            ...imageFields({
               label: "Right image",
-              keys: { srcKey: "rightImageUrl", altKey: "rightImageAlt" },
+              keys: {
+                fileKey: "rightImageFile",
+                srcKey: "rightImageUrl",
+                altKey: "rightImageAlt",
+              },
               includeDescription: false,
-              isRequired: true,
             }),
             headingLines: fields.array(fields.text({ label: "Line" }), {
               label: "Heading lines",
@@ -1735,6 +1741,13 @@ export const keystaticConfig = config({
               label: "Service area text",
               multiline: true,
             }),
+
+            googleMapsProfileLabel: fields.text({
+              label: "Google Maps profile label",
+            }),
+            googleMapsProfileUrl: fields.url({
+              label: "Google Maps profile URL",
+            }),
           },
           { label: "Contact details" },
         ),
@@ -1770,9 +1783,28 @@ export const keystaticConfig = config({
 
         map: fields.object(
           {
-            iframeTitle: fields.text({ label: "Iframe title" }),
-            iframeSrc: fields.url({
-              label: "Iframe src",
+            centerLat: fields.number({
+              label: "Center latitude",
+              validation: { isRequired: true },
+            }),
+            centerLng: fields.number({
+              label: "Center longitude",
+              validation: { isRequired: true },
+            }),
+            zoom: fields.number({
+              label: "Zoom",
+              validation: { isRequired: true },
+            }),
+            circleLat: fields.number({
+              label: "Circle latitude",
+              validation: { isRequired: true },
+            }),
+            circleLng: fields.number({
+              label: "Circle longitude",
+              validation: { isRequired: true },
+            }),
+            circleRadiusMeters: fields.number({
+              label: "Circle radius (meters)",
               validation: { isRequired: true },
             }),
           },

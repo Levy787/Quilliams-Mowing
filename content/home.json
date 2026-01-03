@@ -99,8 +99,8 @@
       "You Can Count On"
     ],
     "body": "At Quilliams Gardening & Landscaping, we help homeowners enjoy clean, healthy, and beautiful outdoor spaces—without the physical work or time commitment. Whether you need regular mowing, garden maintenance, landscaping improvements, or a full yard clean-up, our team provides dependable, professional care tailored to your property and lifestyle.\n\nWe proudly serve homeowners who value their time, comfort, and peace of mind. From retirees who want to enjoy their yard without the strain, to busy families who simply don’t have the hours to maintain it, we take care of the details so you don’t have to.\n\nOur approach is simple: show up when we say we will, do the job properly, and leave your yard looking better every time. We use proven best practices to keep landscapes healthy, attractive, and easy to maintain—season after season.",
-    "imageSrc": "/images/IMG_20250708_34242.webp",
-    "imageAlt": "Gardener caring for plants in a lush garden",
+    "imageFile": "about/imageFile.webp",
+    "imageAlt": "Levi hedge trimming a large hedge",
     "features": [
       {
         "title": "Quality",
@@ -318,10 +318,10 @@
     ]
   },
   "largeCta": {
-    "leftImageUrl": "https://picsum.photos/id/1018/1200/900",
-    "leftImageAlt": "Modern landscaped garden and outdoor living space",
-    "rightImageUrl": "https://picsum.photos/id/1027/900/1400",
-    "rightImageAlt": "Gardener trimming a hedge",
+    "leftImageFile": "largeCta/leftImageFile.webp",
+    "leftImageAlt": "Perfectly trimmed hedge in cornwall",
+    "rightImageFile": "largeCta/rightImageFile.webp",
+    "rightImageAlt": "Well maintained garden with garden path",
     "headingLines": [
       "Let’s create a",
       "garden you’ll love"

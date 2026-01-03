@@ -1,10 +1,7 @@
 {
     "seo": {
         "title": "Contact",
-        "description": "Have a question or want to book a free consultation? Send us a message and we’ll reply as soon as possible.",
-        "ogTitle": "",
-        "ogDescription": "",
-        "ogImage": null
+        "description": "Have a question or want to book a free consultation? Send us a message and we’ll reply as soon as possible."
     },
     "header": {
         "badge": "Contact",
@@ -15,14 +12,16 @@
         "title": "Get in touch",
         "description": "Prefer to reach out directly? Call or email and we’ll help you plan the next steps.",
         "phoneLabel": "Phone",
-        "phoneDisplay": "+1 (555) 123-4567",
-        "phoneTel": "+15551234567",
+        "phoneDisplay": "07593 121 621",
+        "phoneTel": "+447593 121 621",
         "emailLabel": "Email",
-        "emailAddress": "hello@quilliamsgardening.com",
+        "emailAddress": "levi@quilliamsmowing.co.uk",
         "hoursLabel": "Hours",
-        "hoursText": "Mon–Fri: 8am–6pm\nSat: 9am–2pm\nSun: Closed",
+        "hoursText": "Mon–Fri: 8am–5pm\nSat: Closed\nSun: Closed",
         "serviceAreaLabel": "Service area",
-        "serviceAreaText": "Serving your local area and surrounding suburbs."
+        "serviceAreaText": "Serving your local area and surrounding suburbs.",
+        "googleMapsProfileLabel": "Find us on Google Maps",
+        "googleMapsProfileUrl": "https://share.google/Nk3TLOsru77h6ixBI"
     },
     "form": {
         "title": "Send a message",
@@ -48,7 +47,11 @@
         "submitLoadingLabel": "Sending…"
     },
     "map": {
-        "iframeTitle": "Map",
-        "iframeSrc": "https://www.openstreetmap.org/export/embed.html?bbox=-0.134%2C51.503%2C-0.114%2C51.513&layer=mapnik"
+        "centerLat": 50.4,
+        "centerLng": -4.93,
+        "zoom": 10,
+        "circleLat": 50.4,
+        "circleLng": -4.93,
+        "circleRadiusMeters": 20000
     }
 }

@@ -1,206 +1,200 @@
 {
-    "seo": {
-        "title": "About",
-        "description": "A hands-on gardener who cares about the finish. I keep things simple: show up on time, do the work properly, and leave your outdoor space looking sharper than when I arrived."
+  "seo": {
+    "title": "About",
+    "description": "A hands-on gardener who cares about the finish. I keep things simple: show up on time, do the work properly, and leave your outdoor space looking sharper than when I arrived."
+  },
+  "hero": {
+    "badge": "About Quilliams Gardening",
+    "headline": "A hands-on gardener who cares about the finish.",
+    "subheading": "I keep things simple: show up on time, do the work properly, and leave your outdoor space looking sharper than when I arrived.",
+    "features": [
+      {
+        "strong": "High standards",
+        "text": "on tidy edges, clean lines, and a proper finish."
+      },
+      {
+        "strong": "Clear communication",
+        "text": "so you know what’s happening and when."
+      },
+      {
+        "strong": "Practical solutions",
+        "text": "that look good and stay manageable."
+      },
+      {
+        "strong": "Respect for your property",
+        "text": "— clean up is part of the job."
+      }
+    ],
+    "ctas": {
+      "primary": {
+        "label": "Get a Quote",
+        "href": "/quote"
+      },
+      "secondary": {
+        "label": "Contact",
+        "href": "/contact"
+      },
+      "phone": {
+        "label": "Call",
+        "href": "tel:+15551234567"
+      }
     },
-    "hero": {
-        "badge": "About Quilliams Gardening",
-        "headline": "A hands-on gardener who cares about the finish.",
-        "subheading": "I keep things simple: show up on time, do the work properly, and leave your outdoor space looking sharper than when I arrived.",
-        "features": [
-            {
-                "strong": "High standards",
-                "text": "on tidy edges, clean lines, and a proper finish."
-            },
-            {
-                "strong": "Clear communication",
-                "text": "so you know what’s happening and when."
-            },
-            {
-                "strong": "Practical solutions",
-                "text": "that look good and stay manageable."
-            },
-            {
-                "strong": "Respect for your property",
-                "text": "— clean up is part of the job."
-            }
-        ],
-        "ctas": {
-            "primary": {
-                "label": "Get a Quote",
-                "href": "/quote"
-            },
-            "secondary": {
-                "label": "Contact",
-                "href": "/contact"
-            },
-            "phone": {
-                "label": "Call",
-                "href": "tel:+15551234567"
-            }
-        },
-        "footnote": "Prefer a quick message? The quote form works best.",
-        "image": {
-            "imageFile": "",
-            "imageSrc": "/images/closeu_up_removed_white.webp",
-            "imageAlt": "Portrait headshot"
-        }
-    },
-    "story": {
-        "badge": "The approach",
-        "title": "Clean, calm, and maintained — not just “done”.",
-        "paragraphs": [
-            "Good gardening is the small stuff done consistently: edges that stay sharp, beds that don’t creep, lawns cut the right way, and clean-ups that actually feel like a reset.",
-            "Whether it’s ongoing maintenance or a one-off transformation, the goal is the same — leave you with an outdoor space you’re proud of."
-        ],
-        "highlights": [
-            {
-                "title": "Practical choices",
-                "description": "Designs and maintenance plans that suit your time, budget, and yard.",
-                "icon": "Leaf"
-            },
-            {
-                "title": "Strong finish",
-                "description": "Tidy-up isn’t optional — it’s the last 10% that makes it look 100%.",
-                "icon": "Sparkles"
-            },
-            {
-                "title": "Reliable routine",
-                "description": "Clear comms, consistent quality, and no surprises.",
-                "icon": "ShieldCheck"
-            }
-        ],
-        "expect": {
-            "title": "What you can expect",
-            "items": [
-                {
-                    "strong": "A quick plan",
-                    "text": "— what we’re doing, what we’re not, and what matters most."
-                },
-                {
-                    "strong": "A tidy site",
-                    "text": "— paths cleared, clippings handled, and a clean finish."
-                },
-                {
-                    "strong": "Work that lasts",
-                    "text": "— maintained edges, controlled growth, and less mess over time."
-                },
-                {
-                    "strong": "Respect for your space",
-                    "text": "— gates, access, pets, and neighbours considered."
-                }
-            ]
-        },
-        "goal": {
-            "title": "The goal",
-            "description": "Leave you with a garden that looks better now — and is easier to keep looking good."
-        },
-        "image": {
-            "imageFile": "",
-            "imageSrc": "",
-            "imageAlt": ""
-        }
-    },
-    "timeline": {
-        "badge": "Timeline",
-        "title": "Built step-by-step — quality first.",
-        "description": "A quick snapshot of how the work evolved: from basic maintenance to a clean, consistent standard across every job.",
-        "pillText": "Always improving",
-        "items": [
-            {
-                "tag": "Step 1",
-                "title": "Started with the basics",
-                "description": "Simple maintenance jobs, cleanups, and learning what makes a garden actually stay tidy week to week."
-            },
-            {
-                "tag": "Step 2",
-                "title": "Dialled in a ‘clean finish’ standard",
-                "description": "Edges, blow-down, and leaving things neat became non-negotiable — the final 10% that people notice."
-            },
-            {
-                "tag": "Step 3",
-                "title": "Bigger yards + better systems",
-                "description": "Built repeatable routines for lawns, pruning, and weeding so the quality stays consistent."
-            },
-            {
-                "tag": "Step 4",
-                "title": "More landscaping-style work",
-                "description": "Refreshes, reshapes, and smarter layouts — practical upgrades that make the space feel new."
-            },
-            {
-                "tag": "Step 5",
-                "title": "Today",
-                "description": "Reliable maintenance, one-off transformations, and honest advice — with a focus on calm, clean outdoor spaces."
-            }
-        ]
-    },
-    "process": {
-        "badge": "How we work",
-        "title": "A simple process that keeps standards high.",
-        "description": "No overcomplication. Just clear expectations, reliable delivery, and a finish you’ll notice.",
-        "ctas": {
-            "primary": {
-                "label": "Get a Quote",
-                "href": "/quote"
-            },
-            "secondary": {
-                "label": "See Services",
-                "href": "/services"
-            }
-        },
-        "steps": [
-            {
-                "title": "Quick scope",
-                "description": "A short chat and (if needed) a couple of photos so we understand the job and your priorities.",
-                "icon": "BadgeCheck"
-            },
-            {
-                "title": "Clear plan",
-                "description": "We agree on what’s included, what matters most, and how we’ll leave the space at the end.",
-                "icon": "Wand2"
-            },
-            {
-                "title": "Quality work",
-                "description": "Careful, consistent work — with an eye for the details that make it look sharp.",
-                "icon": "Sparkles"
-            },
-            {
-                "title": "Clean finish",
-                "description": "Paths cleared, beds tidied, and the final blow-down so it looks properly finished.",
-                "icon": "BadgeCheck"
-            }
-        ]
-    },
-    "faq": {
-        "badge": "FAQ",
-        "title": "Quick answers.",
-        "description": "",
-        "items": [
-            {
-                "id": "q1",
-                "question": "Do you only do ongoing maintenance?",
-                "answer": "No — I do both ongoing garden maintenance and one-off cleanups/refreshes. We’ll figure out what makes sense for your space."
-            },
-            {
-                "id": "q2",
-                "question": "Can I get a quote without an inspection?",
-                "answer": "Often, yes. A short description and a few photos is usually enough for an initial quote. If anything’s unclear, I’ll ask follow-up questions."
-            },
-            {
-                "id": "q3",
-                "question": "What areas do you cover?",
-                "answer": "I work locally and can confirm availability quickly once you send your suburb/address."
-            },
-            {
-                "id": "q4",
-                "question": "Do you take away green waste?",
-                "answer": "Green waste handling depends on the job and your preference. We can discuss options when confirming scope."
-            },
-            {
-                "id": "q5",
-                "question": "How do I book?",
-                "answer": "Use the quote form or contact page. I’ll confirm timing, scope, and next steps."
-            }
-        ]
+    "footnote": "Prefer a quick message? The quote form works best.",
+    "image": {
+      "imageFile": "hero/image/imageFile.webp",
+      "imageAlt": "Levi Hedge Trimming"
     }
+  },
+  "story": {
+    "badge": "The approach",
+    "title": "Clean, calm, and maintained — not just “done”.",
+    "paragraphs": [
+      "Good gardening is the small stuff done consistently: edges that stay sharp, beds that don’t creep, lawns cut the right way, and clean-ups that actually feel like a reset.",
+      "Whether it’s ongoing maintenance or a one-off transformation, the goal is the same — leave you with an outdoor space you’re proud of."
+    ],
+    "highlights": [
+      {
+        "title": "Practical choices",
+        "description": "Designs and maintenance plans that suit your time, budget, and yard.",
+        "icon": "Leaf"
+      },
+      {
+        "title": "Strong finish",
+        "description": "Tidy-up isn’t optional — it’s the last 10% that makes it look 100%.",
+        "icon": "Sparkles"
+      },
+      {
+        "title": "Reliable routine",
+        "description": "Clear comms, consistent quality, and no surprises.",
+        "icon": "ShieldCheck"
+      }
+    ],
+    "expect": {
+      "title": "What you can expect",
+      "items": [
+        {
+          "strong": "A quick plan",
+          "text": "— what we’re doing, what we’re not, and what matters most."
+        },
+        {
+          "strong": "A tidy site",
+          "text": "— paths cleared, clippings handled, and a clean finish."
+        },
+        {
+          "strong": "Work that lasts",
+          "text": "— maintained edges, controlled growth, and less mess over time."
+        },
+        {
+          "strong": "Respect for your space",
+          "text": "— gates, access, pets, and neighbours considered."
+        }
+      ]
+    },
+    "goal": {
+      "title": "The goal",
+      "description": "Leave you with a garden that looks better now — and is easier to keep looking good."
+    },
+    "image": {}
+  },
+  "timeline": {
+    "badge": "Timeline",
+    "title": "Built step-by-step — quality first.",
+    "description": "A quick snapshot of how the work evolved: from basic maintenance to a clean, consistent standard across every job.",
+    "pillText": "Always improving",
+    "items": [
+      {
+        "tag": "Step 1",
+        "title": "Started with the basics",
+        "description": "Simple maintenance jobs, cleanups, and learning what makes a garden actually stay tidy week to week."
+      },
+      {
+        "tag": "Step 2",
+        "title": "Dialled in a ‘clean finish’ standard",
+        "description": "Edges, blow-down, and leaving things neat became non-negotiable — the final 10% that people notice."
+      },
+      {
+        "tag": "Step 3",
+        "title": "Bigger yards + better systems",
+        "description": "Built repeatable routines for lawns, pruning, and weeding so the quality stays consistent."
+      },
+      {
+        "tag": "Step 4",
+        "title": "More landscaping-style work",
+        "description": "Refreshes, reshapes, and smarter layouts — practical upgrades that make the space feel new."
+      },
+      {
+        "tag": "Step 5",
+        "title": "Today",
+        "description": "Reliable maintenance, one-off transformations, and honest advice — with a focus on calm, clean outdoor spaces."
+      }
+    ]
+  },
+  "process": {
+    "badge": "How we work",
+    "title": "A simple process that keeps standards high.",
+    "description": "No overcomplication. Just clear expectations, reliable delivery, and a finish you’ll notice.",
+    "ctas": {
+      "primary": {
+        "label": "Get a Quote",
+        "href": "/quote"
+      },
+      "secondary": {
+        "label": "See Services",
+        "href": "/services"
+      }
+    },
+    "steps": [
+      {
+        "title": "Quick scope",
+        "description": "A short chat and (if needed) a couple of photos so we understand the job and your priorities.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Clear plan",
+        "description": "We agree on what’s included, what matters most, and how we’ll leave the space at the end.",
+        "icon": "Wand2"
+      },
+      {
+        "title": "Quality work",
+        "description": "Careful, consistent work — with an eye for the details that make it look sharp.",
+        "icon": "Sparkles"
+      },
+      {
+        "title": "Clean finish",
+        "description": "Paths cleared, beds tidied, and the final blow-down so it looks properly finished.",
+        "icon": "BadgeCheck"
+      }
+    ]
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title": "Quick answers.",
+    "items": [
+      {
+        "id": "q1",
+        "question": "Do you only do ongoing maintenance?",
+        "answer": "No — I do both ongoing garden maintenance and one-off cleanups/refreshes. We’ll figure out what makes sense for your space."
+      },
+      {
+        "id": "q2",
+        "question": "Can I get a quote without an inspection?",
+        "answer": "Often, yes. A short description and a few photos is usually enough for an initial quote. If anything’s unclear, I’ll ask follow-up questions."
+      },
+      {
+        "id": "q3",
+        "question": "What areas do you cover?",
+        "answer": "I work locally and can confirm availability quickly once you send your suburb/address."
+      },
+      {
+        "id": "q4",
+        "question": "Do you take away green waste?",
+        "answer": "Green waste handling depends on the job and your preference. We can discuss options when confirming scope."
+      },
+      {
+        "id": "q5",
+        "question": "How do I book?",
+        "answer": "Use the quote form or contact page. I’ll confirm timing, scope, and next steps."
+      }
+    ]
+  }
 }
