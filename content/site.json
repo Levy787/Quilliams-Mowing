@@ -1,10 +1,7 @@
 {
   "siteName": "Quilliams Gardening",
   "siteUrl": "http://localhost:3000",
-  "pwa": {
-    "themeColor": "#111",
-    "backgroundColor": "#000"
-  },
+  "pwa": {},
   "assets": {
     "faviconPngFile": "assets/faviconPngFile.ico",
     "appleTouchIconPngFile": "assets/appleTouchIconPngFile.png",

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "leaflet/dist/leaflet.css";
@@ -42,22 +42,30 @@ export async function generateMetadata(): Promise<Metadata> {
       default: siteName,
       template: `%s | ${siteName}`,
     },
-    manifest: "/site.webmanifest",
-    themeColor,
+    manifest: "/manifest.webmanifest",
     icons: {
       icon: favicon ? [{ url: favicon, type: "image/png" }] : undefined,
       apple: appleTouch ? [{ url: appleTouch, type: "image/png" }] : undefined,
-      other: safariPinnedTab
-        ? [
+      other:
+        safariPinnedTab && themeColor
+          ? [
             {
               rel: "mask-icon",
               url: safariPinnedTab,
               color: themeColor,
             },
           ]
-        : undefined,
+          : undefined,
     },
   };
+}
+
+export async function generateViewport(): Promise<Viewport> {
+  const site = await getSiteContent();
+
+  const themeColor = site.pwa?.themeColor?.trim() || undefined;
+
+  return themeColor ? { themeColor } : {};
 }
 
 export default function RootLayout({

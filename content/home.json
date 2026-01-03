@@ -41,30 +41,30 @@
     "secondaryCtaHref": "/contact",
     "imagesLeft": [
       {
-        "src": "/images/IMG_20240509_41792.webp",
+        "file": "hero/imagesLeft/0/file.webp",
         "alt": "Garden with freshly cut hedges and a neat lawn"
       },
       {
-        "src": "/images/IMG_20250704_93515.webp",
+        "file": "hero/imagesLeft/1/file.webp",
         "alt": "Freshly mown lawn with trimmed hedges in a private garden"
       },
       {
-        "src": "/images/IMG_20250708_11200.webp",
+        "file": "hero/imagesLeft/2/file.webp",
         "alt": "Tidy garden lawn with freshly cut hedges and clean edges"
       }
     ],
     "imagesRight": [
       {
-        "src": "/images/IMG_20250708_16272.webp",
+        "file": "hero/imagesRight/0/file.webp",
         "alt": "Well-kept garden with freshly trimmed hedges and a neat lawn"
       },
       {
-        "src": "/images/IMG_20250708_34242.webp",
+        "file": "hero/imagesRight/1/file.webp",
         "alt": "Garden after hedge trimming with a fresh cut lawn"
       },
       {
-        "src": "/images/IMG_20250715_29185.webp",
-        "alt": "Freshly maintained garden with trimmed hedges and clean lawn lines"
+        "file": "hero/imagesRight/2/file.jpg",
+        "alt": "Fresh cut grass with lines and pampas grass"
       }
     ]
   },
@@ -79,11 +79,6 @@
       "value": 30,
       "label": "Active Clients",
       "icon": "hardHat"
-    },
-    {
-      "value": 14,
-      "label": "Landscaping Awards",
-      "icon": "award"
     },
     {
       "value": 5,
@@ -128,15 +123,15 @@
       {
         "title": "Landscaping",
         "description": "Design and build improvements that make your outdoor space more functional, beautiful, and easy to enjoy.",
-        "imageSrc": "/images/IMG_20250708_34242.webp",
-        "imageAlt": "A freshly maintained garden with trimmed hedges and clean lines",
+        "imageFile": "services/items/0/imageFile.jpeg",
+        "imageAlt": "Newly created gravel garden",
         "tag": "Residential",
         "icon": "leaf"
       },
       {
         "title": "Lawn Mowing",
         "description": "Reliable mowing with clean edges and a tidy finish for homes and commercial properties.",
-        "imageSrc": "/images/IMG_20250704_93515.webp",
+        "imageFile": "services/items/1/imageFile.webp",
         "imageAlt": "Freshly mown lawn with tidy borders",
         "tag": "Residential & Commercial",
         "icon": "sprout"
@@ -144,7 +139,7 @@
       {
         "title": "Hedge Trimming",
         "description": "Crisp lines and healthy growth with professional trimming for residential and commercial hedges.",
-        "imageSrc": "/images/IMG_20250715_29185.webp",
+        "imageFile": "services/items/2/imageFile.webp",
         "imageAlt": "Neatly trimmed hedges in a well-kept garden",
         "tag": "Residential & Commercial",
         "icon": "snowflake"
@@ -152,32 +147,24 @@
       {
         "title": "Garden Maintenance",
         "description": "Ongoing care to keep gardens healthy, tidy, and looking their best all year round.",
-        "imageSrc": "/images/IMG_20250708_11200.webp",
+        "imageFile": "services/items/3/imageFile.webp",
         "imageAlt": "A tidy garden with clean edges and healthy planting",
         "tag": "Residential & Commercial",
         "icon": "droplets"
       },
       {
-        "title": "Fencing",
-        "description": "Install or refresh fencing for privacy, security, and a cleaner boundary finish.",
-        "imageSrc": "/images/IMG_20240509_41792.webp",
-        "imageAlt": "Garden boundary area suitable for a fencing project",
-        "tag": "Residential",
-        "icon": "leaf"
-      },
-      {
         "title": "Garden Cleanup",
         "description": "One-off clear-outs to get things back under control — then leave it tidy and manageable.",
-        "imageSrc": "/images/IMG_20250708_16272.webp",
-        "imageAlt": "Front garden looking refreshed and tidy",
+        "imageFile": "services/items/4/imageFile.webp",
+        "imageAlt": "Before and after of dense bramble clearance",
         "tag": "Residential & Commercial",
         "icon": "sprout"
       },
       {
         "title": "Weed Control",
         "description": "Targeted weeding and tidy-up to keep beds, borders, and paths looking sharp.",
-        "imageSrc": "/images/IMG_20250708_34242.webp",
-        "imageAlt": "Clean borders and beds after maintenance",
+        "imageFile": "services/items/5/imageFile.webp",
+        "imageAlt": "Overgrown weeds to nice gravel garden with a water feature",
         "tag": "Residential & Commercial",
         "icon": "droplets"
       }
@@ -283,7 +270,8 @@
     "description": "Got more questions? Reach out to us using the button below",
     "ctaLabel": "Get In Touch",
     "ctaHref": "/contact",
-    "decorativeImageSrc": "/images/closeu_up_removed_white.webp",
+    "decorativeImageFile": "faq/decorativeImageFile.webp",
+    "decorativeImageAlt": "Levi Quilliam - Close up Headshot",
     "items": [
       {
         "id": "cost",
