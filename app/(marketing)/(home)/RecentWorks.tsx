@@ -13,6 +13,7 @@ import { cn } from "@/lib/utils";
 type WorkItem = {
     title: string;
     description: string;
+    projectSlug?: string;
     imageFile?: string | null;
     imageSrc?: string | null;
     imageAlt?: string | null;
@@ -166,7 +167,13 @@ function WorkRow({
     const ctaBlock = (
         <div className="flex items-center lg:justify-end">
             <Button asChild>
-                <Link href={ctaHref}>
+                <Link
+                    href={
+                        item.projectSlug?.trim()
+                            ? `/projects/${item.projectSlug.trim()}`
+                            : ctaHref
+                    }
+                >
                     {ctaLabel}
                     <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>

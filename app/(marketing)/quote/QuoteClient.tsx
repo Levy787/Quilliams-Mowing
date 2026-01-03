@@ -296,7 +296,7 @@ export default function QuoteClient({ header, expect, calculatorSummary, form }:
                     {/* Main grid */}
                     <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8">
                         {/* What to expect */}
-                        <Card className="relative overflow-hidden rounded-4xl border-border bg-foreground text-background shadow-none dark:bg-background dark:text-foreground">
+                        <Card className="relative overflow-hidden rounded-4xl border-border bg-slate-900 text-background shadow-none dark:bg-background dark:text-foreground">
                             <div className="absolute inset-0 bg-[url('/patterns/pattern-1.png')] bg-repeat opacity-10 dark:opacity-5" />
                             <CardContent className="relative px-6">
                                 <div className="text-xl font-semibold text-background dark:text-foreground">{expect.title}</div>

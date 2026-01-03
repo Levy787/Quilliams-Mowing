@@ -2,13 +2,15 @@
   "slug": "Overgrown Mess to Clean Gravel Garden",
   "order": 1,
   "title": "Overgrown Mess to Clean Gravel Garden",
+  "subtitle": "A complete front garden transformation in Newquay, Cornwall — cleared back from a year of overgrowth and rebuilt as a clean, low-maintenance gravel garden the homeowner can enjoy without stress.",
   "locationLabel": "Newquay, Cornwall",
   "template": "video",
   "seo": {
     "title": "Overgrown Mess to Clean Gravel Garden | Newquay Project",
     "description": "See how we transformed an overgrown, high-maintenance garden in Newquay into a beautiful, no-maintenance gravel space that brings joy and pride to its owner.",
     "ogTitle": "From Overgrown to Outstanding: Newquay Gravel Garden Transformation",
-    "ogDescription": "A year of neglect turned into a stunning, easy-care gravel garden. The homeowner loves it—and so do the neighbours!"
+    "ogDescription": "A year of neglect turned into a stunning, easy-care gravel garden. The homeowner loves it—and so do the neighbours!",
+    "ogImage": ""
   },
   "hero": {
     "imageFile": "hero/imageFile.webp",
@@ -26,39 +28,57 @@
     "Happy homeowner"
   ],
   "overview": {
+    "label": "Project overview",
     "paragraphs": [
-      "This Newquay project was a complete transformation over just 2-3 days. The homeowner had struggled to keep on top of her garden for over a year, and every time she walked in the front door, she felt an overwhelming sense of sadness. She truly cared about her garden but couldn't physically manage it anymore."
+      "This Newquay project was a complete front garden transformation completed over just 2–3 days. The homeowner had struggled to keep on top of the space for over a year and wanted a solution that looked great without demanding constant upkeep.",
+      "We cleared the area back, removed tired planting and built-up weeds, and then prepared the ground properly so the new finish would last.",
+      "The end result is a clean, low-maintenance gravel garden that looks tidy from the street, feels easier to manage day-to-day, and gives the homeowner pride (instead of stress) every time they come home."
     ]
   },
   "whatWeDid": {
+    "label": "What we did",
     "bullets": [
       "Cleared a year's worth of overgrowth and weeds",
       "Removed tired, high-maintenance planting",
-      "Installed a beautiful, no-maintenance gravel garden with simple, clean lines"
+      "Prepared and levelled the area ready for a long-lasting finish",
+      "Installed a clean, low-maintenance gravel garden with simple lines and a tidy edge",
+      "Left the site clean and presentable"
     ]
   },
   "result": {
+    "label": "The result",
     "bullets": [
       "A garden the homeowner absolutely loves and can enjoy without worry",
       "Neighbours have been commenting on how good it looks as they walk past",
-      "A space that brings pride and relief instead of stress"
+      "A space that brings pride and relief instead of stress",
+      "A tidy, low-maintenance finish that’s easy to keep looking sharp"
     ]
   },
   "gallery": [
     {
-      "imageFile": "gallery/0/imageFile.webp"
+      "imageFile": "gallery/0/imageFile.webp",
+      "imageAlt": "Overgrown garden before the transformation",
+      "caption": "Before: overgrowth and weeds had taken over the space."
     },
     {
-      "imageFile": "gallery/1/imageFile.webp"
+      "imageFile": "gallery/1/imageFile.webp",
+      "imageAlt": "Garden cleared back during the transformation",
+      "caption": "During: the garden cleared and prepared for the new finish."
     },
     {
-      "imageFile": "gallery/2/imageFile.webp"
+      "imageFile": "gallery/2/imageFile.webp",
+      "imageAlt": "Gravel garden taking shape",
+      "caption": "During: the low-maintenance gravel layout coming together."
     },
     {
-      "imageFile": "gallery/3/imageFile.jpg"
+      "imageFile": "gallery/3/imageFile.jpg",
+      "imageAlt": "Finished gravel garden in Newquay, Cornwall",
+      "caption": "After: a clean, tidy gravel garden with a fresh, modern look."
     },
     {
-      "imageFile": "gallery/4/imageFile.webp"
+      "imageFile": "gallery/4/imageFile.webp",
+      "imageAlt": "Completed low-maintenance garden transformation",
+      "caption": "After: a space that’s easy to maintain and enjoyable year-round."
     }
   ],
   "faq": [
@@ -76,6 +96,16 @@
       "id": "can-i-have-this-too",
       "question": "Can you create a similar garden for me?",
       "answer": "Absolutely! We specialise in low-maintenance transformations tailored to your needs. Get in touch for a free quote."
+    },
+    {
+      "id": "will-weeds-come-back",
+      "question": "Will weeds come back through the gravel?",
+      "answer": "Good ground preparation and a proper weed-suppression layer can dramatically reduce weeds. Over time, some surface weeds can still appear from wind-blown seeds, but they’re usually quick to remove and far less work than a traditional bed."
+    },
+    {
+      "id": "how-do-i-maintain",
+      "question": "How do I maintain a gravel garden?",
+      "answer": "Gravel gardens are easy to maintain: occasional raking, removing leaves/debris, and topping up gravel when needed will keep it looking tidy. If you want, we can also provide an ongoing maintenance plan."
     }
   ],
   "ctas": {

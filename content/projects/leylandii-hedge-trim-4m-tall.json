@@ -1,0 +1,96 @@
+{
+  "slug": "Leylandii hedge trim (4m tall)",
+  "order": 3,
+  "title": "Leylandii Hedge Trim (4m tall)",
+  "subtitle": "A clean, professional trim on a tall Leylandii hedge in Mount Hawke, Cornwall — reshaped for a sharper finish, healthier growth, and easier ongoing maintenance.",
+  "locationLabel": "Mount Hawke - Cornwall",
+  "template": "image",
+  "seo": {
+    "title": "Leylandii Hedge Trim (4m) in Mount Hawke, Cornwall",
+    "description": "See how we trimmed and reshaped a 4m tall Leylandii hedge in Mount Hawke, Cornwall for a crisp finish, improved shape, and easier maintenance.",
+    "ogTitle": "Before & After: 4m Leylandii Hedge Trim (Mount Hawke)",
+    "ogDescription": "A tall Leylandii hedge brought back into shape with a clean, even trim and a tidy finish — ideal for keeping growth manageable.",
+    "ogImage": ""
+  },
+  "hero": {
+    "imageFile": "hero/imageFile.webp",
+    "imageAlt": "Neatly trimmed leylandii hedge",
+    "pattern": "pattern-1"
+  },
+  "heroVideo": {
+    "poster": {}
+  },
+  "chips": [
+    "Hedge Trimming",
+    "Leylandii",
+    "Height Reduction",
+    "Tidy Finish",
+    "Garden Maintenance"
+  ],
+  "overview": {
+    "label": "Project overview",
+    "paragraphs": [
+      "This Mount Hawke hedge had grown tall (around 4m) and needed a professional trim to keep it neat, safe, and under control.",
+      "We shaped and levelled the Leylandii for a more even appearance, focusing on a clean finish that looks sharp from the street and across the garden.",
+      "The result is a well-maintained hedge that’s easier to manage going forward and helps the whole property look tidier immediately."
+    ]
+  },
+  "whatWeDid": {
+    "label": "What we did",
+    "bullets": [
+      "Trimmed and reshaped the Leylandii hedge for an even, consistent line",
+      "Reduced and controlled height/width where needed for manageability",
+      "Cleared clippings and debris and left the area clean and tidy",
+      "Checked overall hedge shape for a neat finish from multiple angles"
+    ]
+  },
+  "result": {
+    "label": "The result",
+    "bullets": [
+      "A crisp, tidy hedge line that instantly improves kerb appeal",
+      "More manageable growth for easier future maintenance",
+      "A cleaner, brighter garden edge with a professional finish",
+      "A safer, more controlled hedge height and shape"
+    ]
+  },
+  "gallery": [
+    {
+      "imageFile": "gallery/0/imageFile.webp",
+      "imageAlt": "Untrimmed Leylandii hedge",
+      "caption": "Before: an overgrown Leylandii hedge in need of shaping and control."
+    },
+    {
+      "imageFile": "gallery/1/imageFile.webp",
+      "imageAlt": "Neatly trimmed Leylandii hedge",
+      "caption": "After: a clean, even trim with a tidy, professional finish."
+    }
+  ],
+  "faq": [
+    {
+      "id": "best-time-to-trim-leylandii",
+      "question": "When is the best time to trim a Leylandii hedge?",
+      "answer": "Generally, late spring to early autumn is ideal for trimming Leylandii, depending on growth and nesting wildlife. For very tall hedges or regular maintenance, we can advise the safest timing after a quick look at the hedge."
+    },
+    {
+      "id": "how-often-should-i-trim",
+      "question": "How often should a Leylandii hedge be trimmed?",
+      "answer": "Many Leylandii hedges benefit from trimming once or twice a year to keep growth even and prevent it becoming too wide or tall. The right schedule depends on how fast your hedge grows and the look you want."
+    },
+    {
+      "id": "can-you-reduce-height",
+      "question": "Can you reduce the height as well as trim the sides?",
+      "answer": "Yes. We can reduce and reshape height where appropriate to make future maintenance easier and improve the overall look. We’ll discuss the best approach based on hedge condition and access."
+    },
+    {
+      "id": "do-you-remove-waste",
+      "question": "Do you remove the clippings and waste?",
+      "answer": "Yes — we can remove and dispose of hedge waste so the area is left tidy. If you’d prefer to keep clippings for composting or green-waste bins, just let us know."
+    }
+  ],
+  "ctas": {
+    "primaryText": "Get a Quote",
+    "primaryHref": "/quote",
+    "secondaryText": "View More Projects",
+    "secondaryHref": "/projects"
+  }
+}

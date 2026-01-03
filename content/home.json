@@ -221,6 +221,7 @@
       {
         "title": "Garden makeover + tidy up",
         "description": "A full tidy-up to bring an overgrown garden back under control—clean lines, shaped growth, and a lawn that looks cared for again.",
+        "projectSlug": "ongoing-garden-maintenance",
         "imageFile": "recentWorks/items/0/imageFile.webp",
         "imageAlt": "Freshly maintained garden with tidy hedges and a neat lawn",
         "perfectFor": "Previously overgrown with weeds and oversized bushes/hedges. We weeded thoroughly, shaped the hedges and bushes, and finished with a fresh lawn mow.",
@@ -230,6 +231,7 @@
       {
         "title": "Leylandii hedge trim (4m tall)",
         "description": "A crisp Leylandii hedge trim to keep growth even, tidy, and manageable—done cleanly with a sharp finish.",
+        "projectSlug": "leylandii-hedge-trim-4m-tall",
         "imageFile": "recentWorks/items/1/imageFile.webp",
         "imageAlt": "Front garden with neat lawn edges and trimmed hedges",
         "perfectFor": "A 10m long Leylandii hedge around 4m tall, trimmed as part of a twice-yearly routine to keep it neat and under control.",
@@ -239,6 +241,7 @@
       {
         "title": "Full gravel garden transformation",
         "description": "A complete gravel garden install for a clean, low-maintenance finish, with rustic edging to keep everything looking intentional.",
+        "projectSlug": "overgrown-mess-to-clean-gravel-garden",
         "imageFile": "recentWorks/items/2/imageFile.webp",
         "imageAlt": "Freshly mown lawn with trimmed hedges in a private garden",
         "perfectFor": "A full gravel garden built over 3 days, featuring rustic edging plus a lily bed that was mulched for a neat, finished look.",

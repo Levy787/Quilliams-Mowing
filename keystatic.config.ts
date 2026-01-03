@@ -1320,6 +1320,9 @@ export const keystaticConfig = config({
                   label: "Description",
                   multiline: true,
                 }),
+                projectSlug: fields.text({
+                  label: "Project slug (optional)",
+                }),
                 ...imageFields({
                   label: "Work image",
                   keys: {

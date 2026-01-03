@@ -14,15 +14,12 @@ import {
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 
-const PAGES = [
-    { title: "Home", href: "/" },
-    { title: "About", href: "/about" },
-    { title: "Services", href: "/services" },
-    { title: "Projects", href: "/projects" },
-    { title: "Contact", href: "/contact" },
-    { title: "Quote", href: "/quote" },
-    { title: "Appointment", href: "/appointment" },
-] as const;
+type SearchResult = {
+    title: string;
+    href: string;
+    type: "page" | "service" | "project" | "offer";
+    snippet?: string;
+};
 
 function useDebouncedValue<T>(value: T, delayMs: number) {
     const [debounced, setDebounced] = React.useState(value);
@@ -48,13 +45,42 @@ export function NavbarSearch({ className }: { className?: string }) {
 
     const debouncedQuery = useDebouncedValue(query, 200);
 
-    const results = React.useMemo(() => {
-        const trimmed = debouncedQuery.trim();
-        if (!trimmed) return [];
+    const [results, setResults] = React.useState<ReadonlyArray<SearchResult>>(
+        []
+    );
 
-        const q = trimmed.toLowerCase();
-        return PAGES.filter((p) => p.title.toLowerCase().includes(q));
-    }, [debouncedQuery]);
+    React.useEffect(() => {
+        if (!dialogOpen) return;
+
+        const trimmed = debouncedQuery.trim();
+        if (!trimmed) {
+            setResults([]);
+            setLoading(false);
+            return;
+        }
+
+        const controller = new AbortController();
+        setLoading(true);
+
+        fetch(`/api/search?q=${encodeURIComponent(trimmed)}`, {
+            signal: controller.signal,
+        })
+            .then(async (res) => {
+                if (!res.ok) throw new Error("Search request failed");
+                return (await res.json()) as { results: SearchResult[] };
+            })
+            .then((data) => {
+                setResults(Array.isArray(data.results) ? data.results : []);
+                setLoading(false);
+            })
+            .catch((err) => {
+                if (err instanceof DOMException && err.name === "AbortError") return;
+                setResults([]);
+                setLoading(false);
+            });
+
+        return () => controller.abort();
+    }, [debouncedQuery, dialogOpen]);
 
     React.useEffect(() => {
         if (!dialogOpen) return;
@@ -250,10 +276,15 @@ export function NavbarSearch({ className }: { className?: string }) {
                                                         onResultSelect(r.href);
                                                     }}
                                                 >
-                                                    {r.title}
-                                                    <span className="ml-2 text-xs text-muted-foreground">
-                                                        {r.href}
-                                                    </span>
+                                                    <div className="flex items-baseline justify-between gap-3">
+                                                        <span className="font-medium">{r.title}</span>
+                                                        <span className="text-xs text-muted-foreground">
+                                                            {r.type}
+                                                        </span>
+                                                    </div>
+                                                    <div className="mt-1 text-xs text-muted-foreground">
+                                                        {r.snippet ? r.snippet : r.href}
+                                                    </div>
                                                 </Link>
                                             </li>
                                         );

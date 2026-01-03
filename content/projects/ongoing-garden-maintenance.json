@@ -1,0 +1,101 @@
+{
+  "slug": "Ongoing Garden Maintenance",
+  "order": 3,
+  "title": "Ongoing Garden Maintenance",
+  "subtitle": "A regular maintenance routine in Grampound, Cornwall — keeping the garden tidy, healthy, and enjoyable with consistent visits and a clean finish every time.",
+  "locationLabel": "Grampound - Cornwall",
+  "template": "image",
+  "seo": {
+    "title": "Ongoing Garden Maintenance in Grampound, Cornwall",
+    "description": "See how regular garden maintenance visits in Grampound, Cornwall keep this outdoor space tidy, healthy, and easy to enjoy — from general tidy-ups to ongoing upkeep.",
+    "ogTitle": "Before & After: Ongoing Garden Maintenance (Grampound)",
+    "ogDescription": "A garden kept looking its best with consistent maintenance — tidier beds, a cleaner overall look, and less work for the homeowner.",
+    "ogImage": ""
+  },
+  "hero": {
+    "imageFile": "hero/imageFile.webp",
+    "imageAlt": "Image of a clean well kept garden",
+    "pattern": "pattern-1"
+  },
+  "heroVideo": {
+    "poster": {}
+  },
+  "chips": [
+    "Garden Maintenance",
+    "Weeding & Tidy-Up",
+    "Ongoing Care",
+    "Low Stress Upkeep",
+    "Kerb Appeal"
+  ],
+  "overview": {
+    "label": "Project overview",
+    "paragraphs": [
+      "This Grampound garden needed reliable ongoing maintenance to keep it tidy and manageable throughout the year.",
+      "We focus on consistent upkeep — clearing debris, keeping growth under control, and leaving the space looking clean and cared for after every visit.",
+      "Regular maintenance prevents small issues becoming big ones, helping the garden stay enjoyable, presentable, and easier to manage long-term."
+    ]
+  },
+  "whatWeDid": {
+    "label": "What we did",
+    "bullets": [
+      "General tidy-up to remove debris and refresh the space",
+      "Weeding and clearing to keep beds and borders under control",
+      "Light pruning/shaping where needed to maintain a neat look",
+      "Final clean-down and leaving paths/areas looking tidy"
+    ]
+  },
+  "result": {
+    "label": "The result",
+    "bullets": [
+      "A noticeably tidier garden that looks cared for",
+      "Less overwhelm for the homeowner thanks to regular upkeep",
+      "A cleaner overall look around the shed and key areas",
+      "A garden that stays manageable and enjoyable year-round"
+    ]
+  },
+  "gallery": [
+    {
+      "imageFile": "gallery/0/imageFile.webp",
+      "imageAlt": "Messy garden with shed",
+      "caption": "Before: the garden area around the shed needed a tidy-up and ongoing care."
+    },
+    {
+      "imageFile": "gallery/1/imageFile.webp",
+      "imageAlt": "Clean garden with shed",
+      "caption": "After: a cleaner, tidier space with improved presentation and usability."
+    },
+    {
+      "imageFile": "gallery/2/imageFile.webp",
+      "imageAlt": "Well kept garden",
+      "caption": "Ongoing: regular visits keep the garden looking neat and well maintained."
+    }
+  ],
+  "faq": [
+    {
+      "id": "how-often-do-you-visit",
+      "question": "How often do you offer garden maintenance visits?",
+      "answer": "We can tailor a schedule to your garden and your goals — common options are weekly, fortnightly, or monthly. We’ll recommend what makes sense after a quick look at the space."
+    },
+    {
+      "id": "what-is-included",
+      "question": "What’s included in ongoing garden maintenance?",
+      "answer": "Maintenance typically includes general tidy-ups, weeding, light pruning, and keeping the garden looking neat. If you need specific jobs (hedges, clearance, planting, mulching), we can add those as needed."
+    },
+    {
+      "id": "do-you-remove-waste",
+      "question": "Do you remove garden waste?",
+      "answer": "Yes — we can remove green waste and leave everything tidy. If you have a green-waste bin or compost and prefer we use that, just let us know."
+    },
+    {
+      "id": "can-you-do-one-off",
+      "question": "Can I book a one-off tidy-up first?",
+      "answer": "Absolutely. Many clients start with a one-off clear-up, then move onto a regular maintenance plan once the garden is back under control."
+    }
+  ],
+  "ctas": {
+    "primaryText": "Get a Quote",
+    "primaryHref": "/quote",
+    "secondaryText": "View More Projects",
+    "secondaryHref": "/projects"
+  }
+}
