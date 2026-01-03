@@ -1,103 +1,103 @@
 {
-    "siteName": "Quilliams Gardening",
-    "siteUrl": "http://localhost:3000",
-    "branding": {
-        "logoFile": "branding/logoFile.webp",
-        "logoAlt": "Quilliams Gardening & Landscaping Logo"
+  "siteName": "Quilliams Gardening",
+  "siteUrl": "http://localhost:3000",
+  "branding": {
+    "logoFile": "branding/logoFile.webp",
+    "logoAlt": "Quilliams Gardening & Landscaping Logo"
+  },
+  "navigation": {
+    "headerItems": [
+      {
+        "label": "Home",
+        "href": "/"
+      },
+      {
+        "label": "About",
+        "href": "/about"
+      },
+      {
+        "label": "Pricing",
+        "href": "/pricing"
+      },
+      {
+        "label": "Services",
+        "href": "/services"
+      },
+      {
+        "label": "Projects",
+        "href": "/projects"
+      },
+      {
+        "label": "Contact",
+        "href": "/contact"
+      }
+    ],
+    "primaryCta": {
+      "label": "Get a Quote",
+      "href": "/quote"
     },
-    "navigation": {
-        "headerItems": [
-            {
-                "label": "Home",
-                "href": "/"
-            },
-            {
-                "label": "About",
-                "href": "/about"
-            },
-            {
-                "label": "Pricing",
-                "href": "/pricing"
-            },
-            {
-                "label": "Services",
-                "href": "/services"
-            },
-            {
-                "label": "Projects",
-                "href": "/projects"
-            },
-            {
-                "label": "Contact",
-                "href": "/contact"
-            }
-        ],
-        "primaryCta": {
-            "label": "Get a Quote",
-            "href": "/quote"
-        },
-        "footerItems": [
-            {
-                "label": "Terms & Conditions",
-                "href": "/terms"
-            },
-            {
-                "label": "Privacy Policy",
-                "href": "/privacy"
-            },
-            {
-                "label": "Sitemap",
-                "href": "/sitemap"
-            }
-        ]
-    },
-    "pwa": {},
-    "footer": {
-        "aboutText": "Quilliams Gardening & Landscaping hardworking team has been delivering outstanding,\n                                environmentally friendly landscapes for over 5 years.",
-        "connectHeading": "Connect With Us",
-        "businessHoursHeading": "Business Hours",
-        "businessHours": [
-            {
-                "dayLabel": "Mon – Fri",
-                "hours": "08:00 am : 05:00 pm"
-            },
-            {
-                "dayLabel": "Saturday",
-                "hours": "Closed"
-            },
-            {
-                "dayLabel": "Sunday",
-                "hours": "Closed"
-            },
-            {
-                "dayLabel": "Bank Holidays",
-                "hours": "Closed"
-            }
-        ],
-        "phoneLabel": "Phone",
-        "phoneNumber": "07593121621",
-        "phoneDisplay": "07593 121 621",
-        "subscribeHeading": "Subscribe Us",
-        "subscribeText": "Subscribe & Receive Our Offers and Updates to Your Inbox Directly.",
-        "socialLinks": [
-            {
-                "platform": "facebook",
-                "href": "https://www.facebook.com/quilliamsmowing/"
-            },
-            {
-                "platform": "instagram",
-                "href": "https://www.instagram.com/quilliamsmowing/"
-            }
-        ],
-        "copyrightText": "Copyright © 2025 Quilliams Gardening & Landscaping, All Rights Reserved.",
-        "creditText": "TradeSender",
-        "creditHref": "https://www.tradesender.co.uk/"
-    },
-    "assets": {
-        "faviconPngFile": "assets/faviconPngFile.ico",
-        "appleTouchIconPngFile": "assets/appleTouchIconPngFile.png",
-        "androidChrome192PngFile": "assets/androidChrome192PngFile.png",
-        "androidChrome512PngFile": "assets/androidChrome512PngFile.png",
-        "safariPinnedTabSvgFile": "assets/safariPinnedTabSvgFile.svg"
-    }
+    "footerItems": [
+      {
+        "label": "Terms & Conditions",
+        "href": "/terms"
+      },
+      {
+        "label": "Privacy Policy",
+        "href": "/privacy"
+      },
+      {
+        "label": "Sitemap",
+        "href": "/sitemap"
+      }
+    ]
+  },
+  "pwa": {},
+  "footer": {
+    "aboutText": "Quilliams Gardening & Landscaping hardworking team has been delivering outstanding, environmentally friendly landscapes for over 5 years.",
+    "connectHeading": "Connect With Us",
+    "businessHoursHeading": "Business Hours",
+    "businessHours": [
+      {
+        "dayLabel": "Mon – Fri",
+        "hours": "08:00 am : 05:00 pm"
+      },
+      {
+        "dayLabel": "Saturday",
+        "hours": "Closed"
+      },
+      {
+        "dayLabel": "Sunday",
+        "hours": "Closed"
+      },
+      {
+        "dayLabel": "Bank Holidays",
+        "hours": "Closed"
+      }
+    ],
+    "phoneLabel": "Phone",
+    "phoneNumber": "07593121621",
+    "phoneDisplay": "07593 121 621",
+    "subscribeHeading": "Subscribe Us",
+    "subscribeText": "Subscribe & Receive Our Offers and Updates to Your Inbox Directly.",
+    "socialLinks": [
+      {
+        "platform": "facebook",
+        "href": "https://www.facebook.com/quilliamsmowing/"
+      },
+      {
+        "platform": "instagram",
+        "href": "https://www.instagram.com/quilliamsmowing/"
+      }
+    ],
+    "copyrightText": "Copyright © 2026 Quilliams Gardening & Landscaping, All Rights Reserved.",
+    "creditText": "TradeSender",
+    "creditHref": "https://www.tradesender.co.uk/"
+  },
+  "assets": {
+    "faviconPngFile": "assets/faviconPngFile.ico",
+    "appleTouchIconPngFile": "assets/appleTouchIconPngFile.png",
+    "androidChrome192PngFile": "assets/androidChrome192PngFile.png",
+    "androidChrome512PngFile": "assets/androidChrome512PngFile.png",
+    "safariPinnedTabSvgFile": "assets/safariPinnedTabSvgFile.svg"
+  }
 }

@@ -253,7 +253,7 @@ export default function ProjectsClient({
                                         },
                                     })}
                             >
-                                <Card className="rounded-4xl border-border shadow-none overflow-hidden h-full">
+                                <Card className="rounded-4xl border-border shadow-none overflow-hidden h-full p-0">
                                     <div className="relative aspect-16/10 w-full">
                                         {p.hero.imageSrc ? (
                                             <Image

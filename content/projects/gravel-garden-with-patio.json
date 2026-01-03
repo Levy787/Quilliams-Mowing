@@ -1,25 +1,110 @@
 {
   "slug": "Gravel Garden with Patio",
   "order": 2,
+  "title": "Pampas Grass Removed - Gravel Garden Added",
+  "subtitle": "A full garden transformation in Newquay, Cornwall — pampas grass removed, ground prepared, weed membrane installed, and a clean gravel finish with a new patio area.",
+  "locationLabel": "Newquay - Cornwall",
   "template": "image",
-  "seo": {},
+  "seo": {
+    "title": "Gravel Garden & Patio Transformation in Newquay",
+    "description": "See how we transformed an overgrown garden in Newquay, Cornwall by removing pampas grass and creating a low-maintenance gravel garden with a fresh patio area.",
+    "ogTitle": "Before & After: Gravel Garden with Patio (Newquay)",
+    "ogDescription": "Pampas grass removed and replaced with a tidy, low-maintenance gravel garden and patio — a clean, modern outdoor space built to last.",
+    "ogImage": ""
+  },
   "hero": {
+    "imageFile": "hero/imageFile.jpg",
+    "imageAlt": "Brand new gravel garden with new patio",
     "pattern": "pattern-1"
   },
   "heroVideo": {
     "poster": {}
   },
-  "chips": [],
+  "chips": [
+    "Garden Clearance",
+    "Pampas Grass Removal",
+    "Gravel Garden",
+    "Weed Membrane",
+    "Patio Installation",
+    "Low Maintenance Landscaping"
+  ],
   "overview": {
-    "paragraphs": []
+    "label": "Project overview",
+    "paragraphs": [
+      "This Newquay garden was dominated by overgrown pampas grass and untidy planting, making the space hard to use and difficult to maintain.",
+      "We cleared the area back, removed the pampas grass, then prepared and levelled the ground ready for a long-lasting, low-maintenance finish.",
+      "To complete the transformation, we installed weed membrane and a gravel surface, alongside a fresh patio area — creating a clean, practical outdoor space that looks great year-round."
+    ]
   },
   "whatWeDid": {
-    "bullets": []
+    "label": "What we did",
+    "bullets": [
+      "Removed pampas grass and cleared overgrown vegetation",
+      "Prepared and levelled the ground for a stable finish",
+      "Installed weed membrane to help prevent regrowth",
+      "Added gravel for a clean, modern and low-maintenance surface",
+      "Created a new patio area for seating and usability",
+      "Removed waste and left the site tidy"
+    ]
   },
   "result": {
-    "bullets": []
+    "label": "The result",
+    "bullets": [
+      "A dramatically cleaner garden with a fresh, modern look",
+      "A low-maintenance gravel surface that’s easy to keep tidy",
+      "Improved usability with a dedicated patio seating area",
+      "Reduced weed pressure thanks to membrane and proper preparation",
+      "A brighter, more open space that’s ready to enjoy"
+    ]
   },
-  "gallery": [],
-  "faq": [],
-  "ctas": {}
+  "gallery": [
+    {
+      "imageFile": "gallery/0/imageFile.webp",
+      "imageAlt": "Overgrown garden before transformation",
+      "caption": "Before: an overgrown garden area with dense planting and pampas grass."
+    },
+    {
+      "imageFile": "gallery/1/imageFile.webp",
+      "imageAlt": "Gravel garden mid transformation, weed matting laid",
+      "caption": "During: ground prepared and weed membrane installed ready for gravel."
+    },
+    {
+      "imageFile": "gallery/2/imageFile.webp",
+      "imageAlt": "Finished gravel garden with patio",
+      "caption": "After: a clean gravel finish with a fresh patio area."
+    },
+    {
+      "imageFile": "gallery/3/imageFile.webp",
+      "imageAlt": "Finished gravel garden with patio",
+      "caption": "After: a low-maintenance space designed for everyday use."
+    }
+  ],
+  "faq": [
+    {
+      "id": "how-long-does-it-take",
+      "question": "How long does a gravel garden transformation take?",
+      "answer": "Most gravel garden projects can be completed in a few days, depending on access, the amount of clearance required, and whether patio works are included. We’ll confirm timings after a site visit or photos."
+    },
+    {
+      "id": "will-weeds-come-through",
+      "question": "Will weeds grow through the gravel?",
+      "answer": "A properly installed weed membrane and good ground preparation greatly reduces weeds. Some surface weeds can still appear over time (often from wind-blown seeds), but they’re usually quick to remove."
+    },
+    {
+      "id": "how-to-maintain-gravel",
+      "question": "How do I maintain a gravel garden?",
+      "answer": "Gravel gardens are generally low maintenance. Occasional raking, removing debris, and topping up gravel when needed will keep the area looking sharp."
+    },
+    {
+      "id": "can-you-add-a-patio",
+      "question": "Can you add a patio or path as part of the project?",
+      "answer": "Yes — we can design and install patios, paths, and edging to make the space more usable and create a clean finish between areas."
+    }
+  ],
+  "ctas": {
+    "primaryText": "Get a Quote",
+    "primaryHref": "/quote",
+    "secondaryText": "View More Projects",
+    "secondaryHref": "/projects"
+  }
 }
