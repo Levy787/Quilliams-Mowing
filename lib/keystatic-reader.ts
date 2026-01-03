@@ -159,7 +159,9 @@ function resolveKeystaticImageSrc({
     return src ?? "";
 }
 
-export async function getProjectBySlug(slug: string): Promise<ProjectDetail | null> {
+export async function getProjectBySlug(
+    slug: string,
+): Promise<ProjectDetail | null> {
     const entry = await reader.collections.projects.read(slug);
     if (!entry) return null;
 
@@ -219,7 +221,9 @@ export async function getProjectBySlug(slug: string): Promise<ProjectDetail | nu
 
 export async function listProjects(): Promise<ProjectDetail[]> {
     const slugs = await listProjectSlugs();
-    const projects = await Promise.all(slugs.map((slug) => getProjectBySlug(slug)));
+    const projects = await Promise.all(
+        slugs.map((slug) => getProjectBySlug(slug)),
+    );
 
     return projects
         .filter((p): p is ProjectDetail => Boolean(p))

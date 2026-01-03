@@ -1290,6 +1290,15 @@ export const keystaticConfig = config({
                   label: "Description",
                   multiline: true,
                 }),
+                ...imageFields({
+                  label: "Work image",
+                  keys: {
+                    fileKey: "imageFile",
+                    srcKey: "imageSrc",
+                    altKey: "imageAlt",
+                    descriptionKey: "imageDescription",
+                  },
+                }),
                 perfectFor: fields.text({
                   label: "Perfect for",
                   multiline: true,

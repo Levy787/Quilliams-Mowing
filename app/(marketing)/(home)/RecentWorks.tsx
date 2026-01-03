@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import * as React from "react";
 import { motion, useInView, useReducedMotion } from "framer-motion";
@@ -12,6 +13,9 @@ import { cn } from "@/lib/utils";
 type WorkItem = {
     title: string;
     description: string;
+    imageFile?: string | null;
+    imageSrc?: string | null;
+    imageAlt?: string | null;
     perfectFor: string;
     budget: string;
     duration: string;
@@ -48,18 +52,53 @@ function InfoBlock({ label, value }: { label: string; value: string }) {
     );
 }
 
-function MediaPlaceholder({ variant }: { variant: 1 | 2 | 3 }) {
+function resolveImageSrc({
+    file,
+    src,
+}: {
+    file?: string | null;
+    src?: string | null;
+}): string {
+    if (file?.trim()) return `/images/uploads/${file}`;
+    return src ?? "";
+}
+
+function MediaBlock({
+    variant,
+    item,
+}: {
+    variant: 1 | 2 | 3;
+    item: WorkItem;
+}) {
+    const src = resolveImageSrc({ file: item.imageFile, src: item.imageSrc });
+    const alt = item.imageAlt ?? "";
+
     const main = (
-        <div className="aspect-square w-full rounded-2xl bg-background/10" aria-hidden="true" />
+        <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-background/10">
+            {src ? (
+                <Image
+                    src={src}
+                    alt={alt}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 240px, 70vw"
+                />
+            ) : null}
+        </div>
     );
 
     const strip = (
-        <div
-            className={cn(
-                "hidden sm:block w-20 rounded-2xl bg-background/10 aspect-1/3"
-            )}
-            aria-hidden="true"
-        />
+        <div className={cn("relative hidden sm:block w-20 overflow-hidden rounded-2xl bg-background/10 aspect-1/3")}>
+            {src ? (
+                <Image
+                    src={src}
+                    alt={alt}
+                    fill
+                    className="object-cover"
+                    sizes="80px"
+                />
+            ) : null}
+        </div>
     );
 
     if (variant === 2) {
@@ -139,7 +178,7 @@ function WorkRow({
     // Mobile always stacks: media -> content -> perfect for -> button.
     const media = (
         <div className="min-w-0">
-            <MediaPlaceholder variant={variant} />
+            <MediaBlock variant={variant} item={item} />
         </div>
     );
 

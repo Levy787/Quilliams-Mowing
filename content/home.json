@@ -232,29 +232,35 @@
         "description": "See how we’ve transformed spaces with our expert craftsmanship and attention\nto detail.",
         "items": [
             {
-                "title": "Elegant Garden Makeover",
-                "description": "Transforming a dull backyard into a vibrant green retreat with fresh turf, seasonal flowers, and decorative pathways.",
-                "perfectFor": "Installed automatic irrigation, added eco-friendly lighting, and designed a low-maintenance plant layout.",
-                "budget": "$800 - $2,500",
-                "duration": "2-3 days"
+                "title": "Garden makeover + tidy up",
+                "description": "A full tidy-up to bring an overgrown garden back under control—clean lines, shaped growth, and a lawn that looks cared for again.",
+                "imageFile": "recentWorks/items/0/imageFile.webp",
+                "imageAlt": "Freshly maintained garden with tidy hedges and a neat lawn",
+                "perfectFor": "Previously overgrown with weeds and oversized bushes/hedges. We weeded thoroughly, shaped the hedges and bushes, and finished with a fresh lawn mow.",
+                "budget": "£50 - £150",
+                "duration": "0.5-1 day"
             },
             {
-                "title": "Elegant Garden Makeover",
-                "description": "Transforming a dull backyard into a vibrant green retreat with fresh turf, seasonal flowers, and decorative pathways.",
-                "perfectFor": "Installed automatic irrigation, added eco-friendly lighting, and designed a low-maintenance plant layout.",
-                "budget": "$800 - $2,500",
-                "duration": "2-3 days"
+                "title": "Leylandii hedge trim (4m tall)",
+                "description": "A crisp Leylandii hedge trim to keep growth even, tidy, and manageable—done cleanly with a sharp finish.",
+                "imageSrc": "/images/IMG_20250708_16272.webp",
+                "imageAlt": "Front garden with neat lawn edges and trimmed hedges",
+                "perfectFor": "A 10m long Leylandii hedge around 4m tall, trimmed as part of a twice-yearly routine to keep it neat and under control.",
+                "budget": "£100 - £200",
+                "duration": "0.5 day"
             },
             {
-                "title": "Elegant Garden Makeover",
-                "description": "Transforming a dull backyard into a vibrant green retreat with fresh turf, seasonal flowers, and decorative pathways.",
-                "perfectFor": "Installed automatic irrigation, added eco-friendly lighting, and designed a low-maintenance plant layout.",
-                "budget": "$800 - $2,500",
-                "duration": "2-3 days"
+                "title": "Full gravel garden transformation",
+                "description": "A complete gravel garden install for a clean, low-maintenance finish, with rustic edging to keep everything looking intentional.",
+                "imageSrc": "/images/IMG_20250704_93515.webp",
+                "imageAlt": "Freshly mown lawn with trimmed hedges in a private garden",
+                "perfectFor": "A full gravel garden built over 3 days, featuring rustic edging plus a lily bed that was mulched for a neat, finished look.",
+                "budget": "£1500 - £2500",
+                "duration": "3 days"
             }
         ],
         "ctaLabel": "View More Details",
-        "ctaHref": "#"
+        "ctaHref": "/projects"
     },
     "marquee": {
         "categories": [

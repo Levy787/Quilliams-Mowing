@@ -35,11 +35,11 @@ export default function ProjectsClient({
     const fadeUp = shouldReduceMotion
         ? {}
         : {
-              initial: { opacity: 0, y: 12 },
-              whileInView: { opacity: 1, y: 0 },
-              viewport: { once: true, amount: 0.25 },
-              transition: { duration: 0.6, ease: EASE_OUT },
-          };
+            initial: { opacity: 0, y: 12 },
+            whileInView: { opacity: 1, y: 0 },
+            viewport: { once: true, amount: 0.25 },
+            transition: { duration: 0.6, ease: EASE_OUT },
+        };
 
     const featuredSlugs = new Set(content.featured.featuredSlugs);
     const featured = projects.filter((p) => featuredSlugs.has(p.slug)).slice(0, 3);
@@ -100,15 +100,15 @@ export default function ProjectsClient({
                                     {...(shouldReduceMotion
                                         ? {}
                                         : {
-                                              initial: { opacity: 0, y: 12 },
-                                              whileInView: { opacity: 1, y: 0 },
-                                              viewport: { once: true, amount: 0.25 },
-                                              transition: {
-                                                  duration: 0.65,
-                                                  ease: EASE_OUT,
-                                                  delay: 0.05,
-                                              },
-                                          })}
+                                            initial: { opacity: 0, y: 12 },
+                                            whileInView: { opacity: 1, y: 0 },
+                                            viewport: { once: true, amount: 0.25 },
+                                            transition: {
+                                                duration: 0.65,
+                                                ease: EASE_OUT,
+                                                delay: 0.05,
+                                            },
+                                        })}
                                 >
                                     <Card className="rounded-4xl overflow-hidden border-border/20 bg-background/5 text-background shadow-none p-0 py-0 gap-0">
                                         <div className="relative aspect-16/11 w-full">
@@ -243,15 +243,15 @@ export default function ProjectsClient({
                                 {...(shouldReduceMotion
                                     ? {}
                                     : {
-                                          initial: { opacity: 0, y: 12 },
-                                          whileInView: { opacity: 1, y: 0 },
-                                          viewport: { once: true, amount: 0.2 },
-                                          transition: {
-                                              duration: 0.55,
-                                              ease: EASE_OUT,
-                                              delay: 0.03 * index,
-                                          },
-                                      })}
+                                        initial: { opacity: 0, y: 12 },
+                                        whileInView: { opacity: 1, y: 0 },
+                                        viewport: { once: true, amount: 0.2 },
+                                        transition: {
+                                            duration: 0.55,
+                                            ease: EASE_OUT,
+                                            delay: 0.03 * index,
+                                        },
+                                    })}
                             >
                                 <Card className="rounded-4xl border-border shadow-none overflow-hidden h-full">
                                     <div className="relative aspect-16/10 w-full">
