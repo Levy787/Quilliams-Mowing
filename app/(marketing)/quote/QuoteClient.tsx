@@ -296,14 +296,15 @@ export default function QuoteClient({ header, expect, calculatorSummary, form }:
                     {/* Main grid */}
                     <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8">
                         {/* What to expect */}
-                        <Card className="rounded-4xl border-border shadow-none">
-                            <CardContent className="px-6">
-                                <div className="text-xl font-semibold text-foreground">{expect.title}</div>
-                                <p className="mt-2 text-sm md:text-base leading-relaxed text-muted-foreground">
+                        <Card className="relative overflow-hidden rounded-4xl border-border bg-foreground text-background shadow-none dark:bg-background dark:text-foreground">
+                            <div className="absolute inset-0 bg-[url('/patterns/pattern-1.png')] bg-repeat opacity-10 dark:opacity-5" />
+                            <CardContent className="relative px-6">
+                                <div className="text-xl font-semibold text-background dark:text-foreground">{expect.title}</div>
+                                <p className="mt-2 text-sm md:text-base leading-relaxed text-background/80 dark:text-muted-foreground">
                                     {expect.description}
                                 </p>
 
-                                <ol className="mt-6 space-y-3 text-sm md:text-base text-muted-foreground">
+                                <ol className="mt-6 space-y-3 text-sm md:text-base text-background/80 dark:text-muted-foreground">
                                     {expect.steps.map((step, index) => (
                                         <li key={`${index + 1}-${step}`} className="flex gap-3">
                                             <span className="text-primary font-semibold">{index + 1}.</span>
@@ -312,9 +313,9 @@ export default function QuoteClient({ header, expect, calculatorSummary, form }:
                                     ))}
                                 </ol>
 
-                                <div className="mt-6 text-sm text-muted-foreground">
+                                <div className="mt-6 text-sm text-background/80 dark:text-muted-foreground">
                                     {expect.responseTimeLabel}{" "}
-                                    <span className="text-foreground">{expect.responseTimeValue}</span>.
+                                    <span className="text-background dark:text-foreground">{expect.responseTimeValue}</span>.
                                 </div>
                             </CardContent>
                         </Card>
