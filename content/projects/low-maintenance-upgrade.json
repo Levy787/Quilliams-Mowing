@@ -4,6 +4,7 @@
     "title": "Low-maintenance upgrade",
     "subtitle": "Small improvements designed to look great without demanding constant upkeep.",
     "locationLabel": "Residential",
+    "template": "image",
     "seo": {
         "title": "Low-maintenance upgrade",
         "description": "Small improvements designed to look great without demanding constant upkeep.",
@@ -15,6 +16,13 @@
         "imageSrc": "/images/IMG_20250704_93515.webp",
         "imageAlt": "Garden lawn with tidy borders and freshly maintained planting areas",
         "pattern": "pattern-1"
+    },
+    "heroVideo": {
+        "videoSrc": "",
+        "poster": {
+            "posterSrc": "",
+            "posterAlt": ""
+        }
     },
     "chips": ["Planting", "Beds", "Low maintenance"],
     "overview": {

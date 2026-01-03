@@ -1,0 +1,87 @@
+{
+  "slug": "Overgrown Mess to Clean Gravel Garden",
+  "order": 1,
+  "title": "Overgrown Mess to Clean Gravel Garden",
+  "locationLabel": "Newquay, Cornwall",
+  "template": "video",
+  "seo": {
+    "title": "Overgrown Mess to Clean Gravel Garden | Newquay Project",
+    "description": "See how we transformed an overgrown, high-maintenance garden in Newquay into a beautiful, no-maintenance gravel space that brings joy and pride to its owner.",
+    "ogTitle": "From Overgrown to Outstanding: Newquay Gravel Garden Transformation",
+    "ogDescription": "A year of neglect turned into a stunning, easy-care gravel garden. The homeowner loves it—and so do the neighbours!"
+  },
+  "hero": {
+    "imageFile": "hero/imageFile.webp",
+    "imageAlt": "Image of the completed gravel garden.",
+    "pattern": "pattern-1"
+  },
+  "heroVideo": {
+    "videoSrc": "https://youtube.com/shorts/BVk9KOlP-xA",
+    "poster": {}
+  },
+  "chips": [
+    "No maintenance",
+    "Gravel garden",
+    "Transformation",
+    "Happy homeowner"
+  ],
+  "overview": {
+    "paragraphs": [
+      "This Newquay project was a complete transformation over just 2-3 days. The homeowner had struggled to keep on top of her garden for over a year, and every time she walked in the front door, she felt an overwhelming sense of sadness. She truly cared about her garden but couldn't physically manage it anymore."
+    ]
+  },
+  "whatWeDid": {
+    "bullets": [
+      "Cleared a year's worth of overgrowth and weeds",
+      "Removed tired, high-maintenance planting",
+      "Installed a beautiful, no-maintenance gravel garden with simple, clean lines"
+    ]
+  },
+  "result": {
+    "bullets": [
+      "A garden the homeowner absolutely loves and can enjoy without worry",
+      "Neighbours have been commenting on how good it looks as they walk past",
+      "A space that brings pride and relief instead of stress"
+    ]
+  },
+  "gallery": [
+    {
+      "imageFile": "gallery/0/imageFile.webp"
+    },
+    {
+      "imageFile": "gallery/1/imageFile.webp"
+    },
+    {
+      "imageFile": "gallery/2/imageFile.webp"
+    },
+    {
+      "imageFile": "gallery/3/imageFile.jpg"
+    },
+    {
+      "imageFile": "gallery/4/imageFile.webp"
+    }
+  ],
+  "faq": [
+    {
+      "id": "why-gravel-garden",
+      "question": "Why choose a gravel garden for low maintenance?",
+      "answer": "Gravel gardens require minimal upkeep, suppress weeds, and provide a clean, modern look. They’re perfect for anyone who wants a beautiful space without the stress of constant gardening."
+    },
+    {
+      "id": "how-long-did-it-take",
+      "question": "How long did the transformation take?",
+      "answer": "The entire project was completed in just 2-3 days, including clearing, preparation, and installation."
+    },
+    {
+      "id": "can-i-have-this-too",
+      "question": "Can you create a similar garden for me?",
+      "answer": "Absolutely! We specialise in low-maintenance transformations tailored to your needs. Get in touch for a free quote."
+    }
+  ],
+  "ctas": {
+    "primaryText": "Get Your Free Quote",
+    "primaryHref": "/quote",
+    "secondaryText": "See More Projects",
+    "secondaryHref": "/projects"
+  }
+}

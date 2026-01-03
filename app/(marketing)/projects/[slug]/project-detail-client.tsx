@@ -23,6 +23,55 @@ function patternUrl(pattern: ProjectPattern): string {
         : "url('/patterns/pattern-2.svg')";
 }
 
+function parseYouTubeVideoId(url: string): string | null {
+    try {
+        const parsed = new URL(url);
+
+        if (parsed.hostname === "youtu.be") {
+            const id = parsed.pathname.replace("/", "").trim();
+            return id || null;
+        }
+
+        if (
+            parsed.hostname.endsWith("youtube.com") ||
+            parsed.hostname.endsWith("youtube-nocookie.com")
+        ) {
+            const pathname = parsed.pathname;
+
+            // https://www.youtube.com/watch?v=VIDEO_ID
+            const v = parsed.searchParams.get("v");
+            if (v?.trim()) return v;
+
+            // https://youtube.com/shorts/VIDEO_ID
+            const shortsMatch = pathname.match(/\/shorts\/([^/?#]+)/);
+            if (shortsMatch?.[1]) return shortsMatch[1];
+
+            // https://www.youtube.com/embed/VIDEO_ID
+            const embedMatch = pathname.match(/\/embed\/([^/?#]+)/);
+            if (embedMatch?.[1]) return embedMatch[1];
+        }
+
+        return null;
+    } catch {
+        return null;
+    }
+}
+
+function buildYouTubeEmbedUrl(videoId: string): string {
+    const base = `https://www.youtube-nocookie.com/embed/${videoId}`;
+    const params = new URLSearchParams({
+        autoplay: "1",
+        mute: "1",
+        loop: "1",
+        playlist: videoId,
+        controls: "0",
+        playsinline: "1",
+        modestbranding: "1",
+        rel: "0",
+    });
+    return `${base}?${params.toString()}`;
+}
+
 export default function ProjectDetailClient({
     project,
 }: {
@@ -57,6 +106,53 @@ export default function ProjectDetailClient({
             viewport: { once: true, amount: 0.25 },
             transition: { duration: 0.6, ease: EASE_OUT },
         };
+
+    const resolvedHeroMedia = (() => {
+        const videoSrc = project.heroVideo.videoSrc;
+        if (project.template === "video" && videoSrc?.trim()) {
+            const youTubeId = parseYouTubeVideoId(videoSrc);
+            if (youTubeId) {
+                return (
+                    <iframe
+                        className="absolute inset-0 h-full w-full"
+                        src={buildYouTubeEmbedUrl(youTubeId)}
+                        title={project.title}
+                        allow="autoplay; encrypted-media; picture-in-picture"
+                        allowFullScreen
+                        referrerPolicy="strict-origin-when-cross-origin"
+                    />
+                );
+            }
+
+            return (
+                <video
+                    className="absolute inset-0 h-full w-full object-cover"
+                    src={videoSrc}
+                    poster={project.heroVideo.posterSrc || undefined}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                />
+            );
+        }
+
+        if (project.hero.imageSrc?.trim()) {
+            return (
+                <Image
+                    src={project.hero.imageSrc}
+                    alt={project.hero.imageAlt}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    priority
+                />
+            );
+        }
+
+        return null;
+    })();
 
     return (
         <main>
@@ -125,14 +221,7 @@ export default function ProjectDetailClient({
                                     <Card className="rounded-4xl overflow-hidden border-border/20 bg-background/5 text-background shadow-none p-0 py-0 gap-0">
                                         <div className="relative aspect-16/11 w-full">
                                             <div className="absolute inset-0 bg-[url('/patterns/pattern-2.svg')] bg-repeat opacity-15" />
-                                            <Image
-                                                src={project.hero.imageSrc}
-                                                alt={project.hero.imageAlt}
-                                                fill
-                                                className="object-cover"
-                                                sizes="(min-width: 1024px) 50vw, 100vw"
-                                                priority
-                                            />
+                                            {resolvedHeroMedia}
                                             <div className="absolute inset-0 bg-linear-to-t from-foreground/80 via-foreground/10 to-transparent" />
                                         </div>
                                     </Card>

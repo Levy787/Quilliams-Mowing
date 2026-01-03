@@ -4,6 +4,7 @@
     "title": "Finished-look refresh",
     "subtitle": "A tidy refresh that makes the garden feel more intentional from every angle.",
     "locationLabel": "Residential",
+    "template": "image",
     "seo": {
         "title": "Finished-look refresh",
         "description": "A tidy refresh that makes the garden feel more intentional from every angle.",
@@ -15,6 +16,13 @@
         "imageSrc": "/images/IMG_20250708_34242.webp",
         "imageAlt": "Freshly maintained garden with trimmed hedges and neat lawn",
         "pattern": "pattern-1"
+    },
+    "heroVideo": {
+        "videoSrc": "",
+        "poster": {
+            "posterSrc": "",
+            "posterAlt": ""
+        }
     },
     "chips": ["Refresh", "Detail", "Tidy finish"],
     "overview": {

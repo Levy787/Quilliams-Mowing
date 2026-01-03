@@ -248,9 +248,14 @@ export function RecentWorks({ badge, headingLines, description, items, ctaLabel,
     return (
         <section ref={sectionRef} className="mx-4 md:mx-8 lg:mx-16 py-12 md:py-16">
             <div
-                className="bg-foreground text-background rounded-4xl overflow-hidden"
+                className="relative bg-foreground text-background rounded-4xl overflow-hidden"
             >
-                <div className="container mx-auto px-4 lg:px-12">
+                <div
+                    className="absolute inset-0 bg-[url('/patterns/pattern-1.png')] bg-repeat opacity-3"
+                    aria-hidden="true"
+                />
+
+                <div className="relative container mx-auto px-4 lg:px-12">
                     <div className="px-2 py-12 md:py-14">
                         {/* Header */}
                         <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">

@@ -4,6 +4,7 @@
     "title": "Fresh cut + clean lines",
     "subtitle": "A tidy finish with crisp edges that makes the whole garden feel looked after.",
     "locationLabel": "Residential",
+    "template": "image",
     "seo": {
         "title": "Fresh cut + clean lines",
         "description": "A tidy finish with crisp edges that makes the whole garden feel looked after.",
@@ -15,6 +16,13 @@
         "imageSrc": "/images/IMG_20250708_11200.webp",
         "imageAlt": "Garden with freshly cut hedges and a tidy lawn",
         "pattern": "pattern-1"
+    },
+    "heroVideo": {
+        "videoSrc": "",
+        "poster": {
+            "posterSrc": "",
+            "posterAlt": ""
+        }
     },
     "chips": ["Lawn", "Edges", "Consistency", "Tidy finish"],
     "overview": {

@@ -103,9 +103,12 @@ export async function listProjectSlugs() {
 
 export type ProjectPattern = "pattern-1" | "pattern-2";
 
+export type ProjectTemplate = "image" | "video";
+
 export type ProjectDetail = {
     slug: string;
     order: number;
+    template: ProjectTemplate;
     title: string;
     subtitle: string;
     locationLabel?: string;
@@ -120,6 +123,11 @@ export type ProjectDetail = {
         imageSrc: string;
         imageAlt: string;
         pattern: ProjectPattern;
+    };
+    heroVideo: {
+        videoSrc: string;
+        posterSrc: string;
+        posterAlt: string;
     };
     chips: ReadonlyArray<string>;
     overview: {
@@ -151,11 +159,19 @@ export type ProjectDetail = {
 function resolveKeystaticImageSrc({
     file,
     src,
+    subdir,
 }: {
     file?: string | null;
     src?: string | null;
+    subdir?: string;
 }): string {
-    if (file?.trim()) return `/images/uploads/${file}`;
+    if (file?.trim()) {
+        // If file is already absolute, use as-is
+        if (file.startsWith("/")) return file;
+        // If subdir provided, prepend it
+        if (subdir) return `/images/uploads/${subdir}/${file}`;
+        return `/images/uploads/${file}`;
+    }
     return src ?? "";
 }
 
@@ -164,6 +180,10 @@ export async function getProjectBySlug(
 ): Promise<ProjectDetail | null> {
     const entry = await reader.collections.projects.read(slug);
     if (!entry) return null;
+
+    const template =
+        (entry as unknown as { template?: ProjectTemplate }).template ??
+            "image";
 
     const hero = entry.hero as unknown as {
         imageFile?: string | null;
@@ -179,9 +199,21 @@ export async function getProjectBySlug(
         caption?: string | null;
     }>;
 
+    const heroVideo = (entry as unknown as {
+        heroVideo?: {
+            videoSrc?: string | null;
+            poster?: {
+                posterFile?: string | null;
+                posterSrc?: string | null;
+                posterAlt?: string | null;
+            };
+        };
+    }).heroVideo;
+
     return {
         slug,
         order: entry.order,
+        template,
         title: entry.title,
         subtitle: entry.subtitle,
         locationLabel: entry.locationLabel?.trim().length
@@ -198,9 +230,19 @@ export async function getProjectBySlug(
             imageSrc: resolveKeystaticImageSrc({
                 file: hero.imageFile,
                 src: hero.imageSrc,
+                subdir: slug,
             }),
             imageAlt: hero.imageAlt ?? "",
             pattern: hero.pattern,
+        },
+        heroVideo: {
+            videoSrc: heroVideo?.videoSrc ?? "",
+            posterSrc: resolveKeystaticImageSrc({
+                file: heroVideo?.poster?.posterFile,
+                src: heroVideo?.poster?.posterSrc,
+                subdir: slug,
+            }),
+            posterAlt: heroVideo?.poster?.posterAlt ?? "",
         },
         chips: entry.chips,
         overview: entry.overview,
@@ -210,6 +252,7 @@ export async function getProjectBySlug(
             imageSrc: resolveKeystaticImageSrc({
                 file: g.imageFile,
                 src: g.imageSrc,
+                subdir: slug,
             }),
             imageAlt: g.imageAlt ?? "",
             caption: g.caption?.trim().length ? g.caption : undefined,

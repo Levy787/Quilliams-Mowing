@@ -195,6 +195,15 @@ export const keystaticConfig = config({
         subtitle: fields.text({ label: "Subtitle", multiline: true }),
         locationLabel: fields.text({ label: "Location label" }),
 
+        template: fields.select({
+          label: "Template",
+          options: [
+            { label: "Image hero", value: "image" },
+            { label: "Video hero", value: "video" },
+          ] as const,
+          defaultValue: "image",
+        }),
+
         seo: seoFields(),
 
         hero: fields.object(
@@ -215,6 +224,27 @@ export const keystaticConfig = config({
             }),
           },
           { label: "Hero" },
+        ),
+
+        heroVideo: fields.object(
+          {
+            videoSrc: fields.url({ label: "Hero video URL" }),
+            poster: fields.object(
+              {
+                ...imageFields({
+                  label: "Poster image",
+                  keys: {
+                    fileKey: "posterFile",
+                    srcKey: "posterSrc",
+                    altKey: "posterAlt",
+                  },
+                  includeDescription: false,
+                }),
+              },
+              { label: "Poster" },
+            ),
+          },
+          { label: "Hero video" },
         ),
 
         chips: fields.array(fields.text({ label: "Chip" }), {

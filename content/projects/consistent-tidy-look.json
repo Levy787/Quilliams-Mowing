@@ -4,6 +4,7 @@
     "title": "Consistent tidy look",
     "subtitle": "Regular care that keeps growth even and the garden looking sharp week after week.",
     "locationLabel": "Residential",
+    "template": "image",
     "seo": {
         "title": "Consistent tidy look",
         "description": "Regular care that keeps growth even and the garden looking sharp week after week.",
@@ -15,6 +16,13 @@
         "imageSrc": "/images/IMG_20250715_29185.webp",
         "imageAlt": "Well-kept garden lawn with trimmed hedges and clean edges",
         "pattern": "pattern-1"
+    },
+    "heroVideo": {
+        "videoSrc": "",
+        "poster": {
+            "posterSrc": "",
+            "posterAlt": ""
+        }
     },
     "chips": ["Maintenance", "Consistency", "Tidy"],
     "overview": {

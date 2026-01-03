@@ -1,436 +1,436 @@
 {
-    "seo": {
-        "title": "Quilliams Gardening",
-        "description": "From weekly mowing and garden maintenance to full yard clean-ups and landscape improvements, we deliver stress-free, dependable care that keeps your outdoor spaces beautiful, functional, and something you can truly be proud of."
-    },
-    "hero": {
-        "headlineParts": [
-            {
-                "text": "Professional ",
-                "tone": "normal"
-            },
-            {
-                "text": "Landscaping",
-                "tone": "primary"
-            },
-            {
-                "text": ", ",
-                "tone": "normal"
-            },
-            {
-                "text": "Gardening",
-                "tone": "primary"
-            },
-            {
-                "text": ", and ",
-                "tone": "normal"
-            },
-            {
-                "text": "Lawn Care",
-                "tone": "primary"
-            },
-            {
-                "text": " You Can Rely On",
-                "tone": "normal"
-            }
-        ],
-        "subheading": "From weekly mowing and garden maintenance to full yard clean-ups and landscape improvements, we deliver stress-free, dependable care that keeps your outdoor spaces beautiful, functional, and something you can truly be proud of.",
-        "primaryCtaLabel": "Get Your Quote",
-        "primaryCtaHref": "/quote",
-        "secondaryCtaLabel": "Contact Us",
-        "secondaryCtaHref": "/contact",
-        "imagesLeft": [
-            {
-                "src": "/images/IMG_20240509_41792.webp",
-                "alt": "Garden with freshly cut hedges and a neat lawn"
-            },
-            {
-                "src": "/images/IMG_20250704_93515.webp",
-                "alt": "Freshly mown lawn with trimmed hedges in a private garden"
-            },
-            {
-                "src": "/images/IMG_20250708_11200.webp",
-                "alt": "Tidy garden lawn with freshly cut hedges and clean edges"
-            }
-        ],
-        "imagesRight": [
-            {
-                "src": "/images/IMG_20250708_16272.webp",
-                "alt": "Well-kept garden with freshly trimmed hedges and a neat lawn"
-            },
-            {
-                "src": "/images/IMG_20250708_34242.webp",
-                "alt": "Garden after hedge trimming with a fresh cut lawn"
-            },
-            {
-                "src": "/images/IMG_20250715_29185.webp",
-                "alt": "Freshly maintained garden with trimmed hedges and clean lawn lines"
-            }
-        ]
-    },
-    "stats": [
-        {
-            "value": 120,
-            "suffix": "+",
-            "label": "Projects Completed",
-            "icon": "trees"
-        },
-        {
-            "value": 30,
-            "label": "Active Clients",
-            "icon": "hardHat"
-        },
-        {
-            "value": 14,
-            "label": "Landscaping Awards",
-            "icon": "award"
-        },
-        {
-            "value": 5,
-            "suffix": "+",
-            "label": "Years of Experience",
-            "icon": "treePine"
-        }
+  "seo": {
+    "title": "Quilliams Gardening",
+    "description": "From weekly mowing and garden maintenance to full yard clean-ups and landscape improvements, we deliver stress-free, dependable care that keeps your outdoor spaces beautiful, functional, and something you can truly be proud of."
+  },
+  "hero": {
+    "headlineParts": [
+      {
+        "text": "Professional ",
+        "tone": "normal"
+      },
+      {
+        "text": "Landscaping",
+        "tone": "primary"
+      },
+      {
+        "text": ", ",
+        "tone": "normal"
+      },
+      {
+        "text": "Gardening",
+        "tone": "primary"
+      },
+      {
+        "text": ", and ",
+        "tone": "normal"
+      },
+      {
+        "text": "Lawn Care",
+        "tone": "primary"
+      },
+      {
+        "text": " You Can Rely On",
+        "tone": "normal"
+      }
     ],
-    "about": {
-        "badge": "About Us",
-        "headingLines": [
-            "Reliable Landscaping Services",
-            "You Can Count On"
-        ],
-        "body": "At Quilliams Gardening & Landscaping, we help homeowners enjoy clean, healthy, and beautiful outdoor spaces—without the physical work or time commitment. Whether you need regular mowing, garden maintenance, landscaping improvements, or a full yard clean-up, our team provides dependable, professional care tailored to your property and lifestyle.\n\nWe proudly serve homeowners who value their time, comfort, and peace of mind. From retirees who want to enjoy their yard without the strain, to busy families who simply don’t have the hours to maintain it, we take care of the details so you don’t have to.\n\nOur approach is simple: show up when we say we will, do the job properly, and leave your yard looking better every time. We use proven best practices to keep landscapes healthy, attractive, and easy to maintain—season after season.",
-        "imageSrc": "/images/IMG_20250708_34242.webp",
-        "imageAlt": "Gardener caring for plants in a lush garden",
-        "features": [
-            {
-                "title": "Quality",
-                "description": "We take pride in doing the job right, using professional equipment and proven techniques to deliver consistent, long-lasting results.",
-                "icon": "star"
-            },
-            {
-                "title": "Satisfaction",
-                "description": "Your satisfaction matters. We listen to your needs, communicate clearly, and make sure every service meets your expectations.",
-                "icon": "thumbsUp"
-            },
-            {
-                "title": "Sustainability",
-                "description": "We care for your landscape responsibly, focusing on healthy growth, smart maintenance, and practices that protect your yard for the long term.",
-                "icon": "shieldCheck"
-            }
-        ]
+    "subheading": "From weekly mowing and garden maintenance to full yard clean-ups and landscape improvements, we deliver stress-free, dependable care that keeps your outdoor spaces beautiful, functional, and something you can truly be proud of.",
+    "primaryCtaLabel": "Get Your Quote",
+    "primaryCtaHref": "/quote",
+    "secondaryCtaLabel": "Contact Us",
+    "secondaryCtaHref": "/contact",
+    "imagesLeft": [
+      {
+        "src": "/images/IMG_20240509_41792.webp",
+        "alt": "Garden with freshly cut hedges and a neat lawn"
+      },
+      {
+        "src": "/images/IMG_20250704_93515.webp",
+        "alt": "Freshly mown lawn with trimmed hedges in a private garden"
+      },
+      {
+        "src": "/images/IMG_20250708_11200.webp",
+        "alt": "Tidy garden lawn with freshly cut hedges and clean edges"
+      }
+    ],
+    "imagesRight": [
+      {
+        "src": "/images/IMG_20250708_16272.webp",
+        "alt": "Well-kept garden with freshly trimmed hedges and a neat lawn"
+      },
+      {
+        "src": "/images/IMG_20250708_34242.webp",
+        "alt": "Garden after hedge trimming with a fresh cut lawn"
+      },
+      {
+        "src": "/images/IMG_20250715_29185.webp",
+        "alt": "Freshly maintained garden with trimmed hedges and clean lawn lines"
+      }
+    ]
+  },
+  "stats": [
+    {
+      "value": 120,
+      "suffix": "+",
+      "label": "Projects Completed",
+      "icon": "trees"
     },
-    "services": {
-        "badge": "Services",
-        "heading": "Exclusive Services",
-        "ctaLabel": "More Services",
-        "ctaHref": "/services",
-        "items": [
-            {
-                "title": "Landscaping",
-                "description": "Design and build improvements that make your outdoor space more functional, beautiful, and easy to enjoy.",
-                "imageSrc": "/images/IMG_20250708_34242.webp",
-                "imageAlt": "A freshly maintained garden with trimmed hedges and clean lines",
-                "tag": "Residential",
-                "icon": "leaf"
-            },
-            {
-                "title": "Lawn Mowing",
-                "description": "Reliable mowing with clean edges and a tidy finish for homes and commercial properties.",
-                "imageSrc": "/images/IMG_20250704_93515.webp",
-                "imageAlt": "Freshly mown lawn with tidy borders",
-                "tag": "Residential & Commercial",
-                "icon": "sprout"
-            },
-            {
-                "title": "Hedge Trimming",
-                "description": "Crisp lines and healthy growth with professional trimming for residential and commercial hedges.",
-                "imageSrc": "/images/IMG_20250715_29185.webp",
-                "imageAlt": "Neatly trimmed hedges in a well-kept garden",
-                "tag": "Residential & Commercial",
-                "icon": "snowflake"
-            },
-            {
-                "title": "Garden Maintenance",
-                "description": "Ongoing care to keep gardens healthy, tidy, and looking their best all year round.",
-                "imageSrc": "/images/IMG_20250708_11200.webp",
-                "imageAlt": "A tidy garden with clean edges and healthy planting",
-                "tag": "Residential & Commercial",
-                "icon": "droplets"
-            },
-            {
-                "title": "Fencing",
-                "description": "Install or refresh fencing for privacy, security, and a cleaner boundary finish.",
-                "imageSrc": "/images/IMG_20240509_41792.webp",
-                "imageAlt": "Garden boundary area suitable for a fencing project",
-                "tag": "Residential",
-                "icon": "leaf"
-            },
-            {
-                "title": "Garden Cleanup",
-                "description": "One-off clear-outs to get things back under control — then leave it tidy and manageable.",
-                "imageSrc": "/images/IMG_20250708_16272.webp",
-                "imageAlt": "Front garden looking refreshed and tidy",
-                "tag": "Residential & Commercial",
-                "icon": "sprout"
-            },
-            {
-                "title": "Weed Control",
-                "description": "Targeted weeding and tidy-up to keep beds, borders, and paths looking sharp.",
-                "imageSrc": "/images/IMG_20250708_34242.webp",
-                "imageAlt": "Clean borders and beds after maintenance",
-                "tag": "Residential & Commercial",
-                "icon": "droplets"
-            }
-        ]
+    {
+      "value": 30,
+      "label": "Active Clients",
+      "icon": "hardHat"
     },
-    "serviceArea": {
-        "badge": "Service area",
-        "heading": "Newquay, Truro, St Austell",
-        "body": "We cover Newquay, Truro, St Austell and nearby areas. If you’re close by,\nreach out — we’ll confirm availability quickly.",
-        "chips": [
-            "Fast response times",
-            "Local, reliable service",
-            "Clear quotes upfront"
-        ],
-        "primaryCtaLabel": "Get a Quote",
-        "primaryCtaHref": "/quote",
-        "secondaryCtaLabel": "Contact Us",
-        "secondaryCtaHref": "/contact",
-        "footnote": "Not sure if you’re in range? Send your suburb in the quote form.",
-        "map": {
-            "centerLat": 50.4,
-            "centerLng": -4.93,
-            "zoom": 10,
-            "circleLat": 50.4,
-            "circleLng": -4.93,
-            "circleRadiusMeters": 20000
-        },
-        "mapLabels": [
-            {
-                "text": "Newquay",
-                "leftPercent": 20,
-                "topPercent": 30
-            },
-            {
-                "text": "Truro",
-                "leftPercent": 46,
-                "topPercent": 34
-            },
-            {
-                "text": "St Austell",
-                "leftPercent": 56,
-                "topPercent": 49
-            }
-        ]
+    {
+      "value": 14,
+      "label": "Landscaping Awards",
+      "icon": "award"
     },
-    "recentWorks": {
-        "badge": "Our Recent Works",
-        "headingLines": [
-            "Beautiful Gardens & Landscapes",
-            "We Created"
-        ],
-        "description": "See how we’ve transformed spaces with our expert craftsmanship and attention\nto detail.",
-        "items": [
-            {
-                "title": "Garden makeover + tidy up",
-                "description": "A full tidy-up to bring an overgrown garden back under control—clean lines, shaped growth, and a lawn that looks cared for again.",
-                "imageFile": "recentWorks/items/0/imageFile.webp",
-                "imageAlt": "Freshly maintained garden with tidy hedges and a neat lawn",
-                "perfectFor": "Previously overgrown with weeds and oversized bushes/hedges. We weeded thoroughly, shaped the hedges and bushes, and finished with a fresh lawn mow.",
-                "budget": "£50 - £150",
-                "duration": "0.5-1 day"
-            },
-            {
-                "title": "Leylandii hedge trim (4m tall)",
-                "description": "A crisp Leylandii hedge trim to keep growth even, tidy, and manageable—done cleanly with a sharp finish.",
-                "imageSrc": "/images/IMG_20250708_16272.webp",
-                "imageAlt": "Front garden with neat lawn edges and trimmed hedges",
-                "perfectFor": "A 10m long Leylandii hedge around 4m tall, trimmed as part of a twice-yearly routine to keep it neat and under control.",
-                "budget": "£100 - £200",
-                "duration": "0.5 day"
-            },
-            {
-                "title": "Full gravel garden transformation",
-                "description": "A complete gravel garden install for a clean, low-maintenance finish, with rustic edging to keep everything looking intentional.",
-                "imageSrc": "/images/IMG_20250704_93515.webp",
-                "imageAlt": "Freshly mown lawn with trimmed hedges in a private garden",
-                "perfectFor": "A full gravel garden built over 3 days, featuring rustic edging plus a lily bed that was mulched for a neat, finished look.",
-                "budget": "£1500 - £2500",
-                "duration": "3 days"
-            }
-        ],
-        "ctaLabel": "View More Details",
-        "ctaHref": "/projects"
-    },
-    "marquee": {
-        "categories": [
-            "Landscaping",
-            "Lawn Care",
-            "Garden Maintenance",
-            "Hedge Trimming",
-            "Mulching",
-            "Weed Control",
-            "Seasonal Cleanup",
-            "Planting"
-        ]
-    },
-    "faq": {
-        "badge": "FAQs",
-        "headingLines": [
-            "Answering your",
-            "questions"
-        ],
-        "description": "Got more questions? Reach out to us using the button below",
-        "ctaLabel": "Get In Touch",
-        "ctaHref": "/contact",
-        "decorativeImageSrc": "/images/closeu_up_removed_white.webp",
-        "items": [
-            {
-                "id": "cost",
-                "question": "How much does a garden makeover cost?",
-                "answer": "Costs vary based on the size of the space and the scope of work. We’ll recommend options that fit your goals after a quick chat and site visit."
-            },
-            {
-                "id": "permission",
-                "question": "Will I need planning permission for my project?",
-                "answer": "It depends on the type of work and local requirements. We can help you understand what may be needed before you commit to the project."
-            },
-            {
-                "id": "duration",
-                "question": "How long will the work take?",
-                "answer": "Timelines depend on the complexity of the design and site conditions. We’ll share a clear schedule once we confirm the plan and materials."
-            },
-            {
-                "id": "existing",
-                "question": "Can you work with my existing garden features?",
-                "answer": "Yes—where possible, we can incorporate existing features into the new design. We’ll advise what can be kept, improved, or repositioned."
-            },
-            {
-                "id": "maintenance",
-                "question": "Do you offer maintenance after the project is finished?",
-                "answer": "We can discuss ongoing upkeep options to help your garden stay in great shape. The right plan depends on the planting and your preferences."
-            },
-            {
-                "id": "areas",
-                "question": "What areas do you cover?",
-                "answer": "Coverage depends on your location and the type of job. Send us your postcode and we’ll confirm availability and next steps."
-            }
-        ]
-    },
-    "largeCta": {
-        "leftImageUrl": "https://picsum.photos/id/1018/1200/900",
-        "leftImageAlt": "Modern landscaped garden and outdoor living space",
-        "rightImageUrl": "https://picsum.photos/id/1027/900/1400",
-        "rightImageAlt": "Gardener trimming a hedge",
-        "headingLines": [
-            "Let’s create a",
-            "garden you’ll love"
-        ],
-        "body": "Let’s turn your outdoor space into something beautiful. Get in touch for a free consultation today.",
-        "ctaLabel": "Talk To The Team",
-        "ctaHref": "/contact"
-    },
-    "testimonials": {
-        "badge": "Testimonials",
-        "heading": "Don’t just take our word for it",
-        "description": "Hear what homeowners say about working with us.",
-        "items": [
-            {
-                "name": "Matthew Wellington",
-                "location": "Truro, Cornwall",
-                "date": "20 Oct 2025",
-                "quote": "“Great service from start to finish. He cut down a few hedges for us and did a brilliant job – quick, tidy, and very reasonably priced. Everything was left neat and exactly how we wanted it. Would definitely recommend and use again.”"
-            },
-            {
-                "name": "Hannah B",
-                "location": "Summer Court, Cornwall",
-                "date": "03 Jul 2025",
-                "quote": "“We recently contacted Qwilliams mowing as we are selling our house so desperately needed the garden tidied up. I have been putting this off for months as I had no idea where to start. We are extremely pleased with the result - Levi did an amazing job! He was very professional and listened to what we wanted. We will definitely be regular customers of Qwilliams mowing and would highly recommend to anyone looking for garden services!”"
-            },
-            {
-                "name": "Elizabeth Cawley",
-                "location": "St Austell, Cornwall",
-                "date": "18 Aug 2025",
-                "quote": "“Levi has done an excellent job on my gardens meadow reset. Prompt and friendly. The job completed was exactly as I asked. And he left the area very tidy. I would recommend him to anyone.”"
-            },
-            {
-                "name": "Michael Meer",
-                "location": "Grampound, Cornwall",
-                "date": "07 Aug 2025",
-                "quote": "“Levi came for the first time yesterday. I don't know anything about gardening - but Levi does! What to cut, what not to cut, when to cut it and how it should be cut. He works really hard - non-stop, has really good ideas for making a garden both tidy and practical and his prices a very competitive. What's more, he's a really nice bloke. I've already booked him for a second visit.”"
-            },
-            {
-                "name": "Robert Jakes",
-                "location": "Newquay, Cornwall",
-                "date": "12 Sep 2025",
-                "quote": "”Amazing transformation of a massive hedge that had got too big for me to cope with, would highly recommend Levi Quilliams Mowing😊”"
-            },
-            {
-                "name": "James Watson",
-                "location": "Newquay, Cornwall",
-                "date": "1 Jun 2025",
-                "quote": "”Highly recommended! Levi helped us out with our hedge cutting and lawn mowing. Extremely reliable and did exceptional job. We will certainly be getting him back!”"
-            },
-            {
-                "name": "James Perrin",
-                "location": "Newquay, Cornwall",
-                "date": "21 Sep 2025",
-                "quote": "”We recently instructed Levi to look after some sizeable gardens in Porth. Really impressed with him - hardworking, polite and professional. He did a great job on his first visit and is now going to be taking care of regular garden maintenance for us. Would highly recommend him.”"
-            },
-            {
-                "name": "Chris Hall",
-                "location": "Newquay, Cornwall",
-                "date": "20 Jul 2025",
-                "quote": "”Came and gave me a reasonable quote to cut Hedges. Turned up next day to do the work on time. Pleased with the work done and cleared all the cuttings up. Would use again fully recommend..”"
-            },
-            {
-                "name": "Maya J",
-                "location": "Newquay, Cornwall",
-                "date": "18 Nov 2025",
-                "quote": "”Levi did an amazing job in my garden! Everything was done to a high standard, making sure to leave it clean and tidy at the end. He is super friendly and reliable — highly recommend!”"
-            },
-            {
-                "name": "Jamie Q",
-                "location": "Newquay, Cornwall",
-                "date": "18 Jun 2025",
-                "quote": "”Booked a one-off clean and was so impressed I signed up for regular mowing. Super reliable and the lawn always looks great. Highly recommend!”"
-            },
-            {
-                "name": "Kim Brocklehurst",
-                "location": "Newquay, Cornwall",
-                "date": "10 Oct 2025",
-                "quote": "”Quick response to initial enquiry. Fast and thorough clearance of overgrown land. Will definitely use Levi again.”"
-            },
-            {
-                "name": "Marie Preston",
-                "location": "St Austell, Cornwall",
-                "date": "10 Nov 2025",
-                "quote": "”Levi is always professional in manner and services required. I highly recommend him!”"
-            },
-            {
-                "name": "Pat Batey",
-                "location": "Newquay, Cornwall",
-                "date": "1 Nov 2025",
-                "quote": "”A great job carried out at a sensible price.”"
-            },
-            {
-                "name": "David willers",
-                "location": "Truro, Cornwall",
-                "date": "12 Dec 2025",
-                "quote": "”Did an a amazing job on my garden”"
-            },
-            {
-                "name": "Luis McLaren",
-                "location": "Truro, Cornwall",
-                "date": "2 Dec 2025",
-                "quote": "”Highly recommend!"
-            },
-            {
-                "name": "John Kendall",
-                "location": "Newquay, Cornwall",
-                "date": "2 Jun 2025",
-                "quote": "”Really tidied up my bushes"
-            }
-        ]
+    {
+      "value": 5,
+      "suffix": "+",
+      "label": "Years of Experience",
+      "icon": "treePine"
     }
+  ],
+  "about": {
+    "badge": "About Us",
+    "headingLines": [
+      "Reliable Landscaping Services",
+      "You Can Count On"
+    ],
+    "body": "At Quilliams Gardening & Landscaping, we help homeowners enjoy clean, healthy, and beautiful outdoor spaces—without the physical work or time commitment. Whether you need regular mowing, garden maintenance, landscaping improvements, or a full yard clean-up, our team provides dependable, professional care tailored to your property and lifestyle.\n\nWe proudly serve homeowners who value their time, comfort, and peace of mind. From retirees who want to enjoy their yard without the strain, to busy families who simply don’t have the hours to maintain it, we take care of the details so you don’t have to.\n\nOur approach is simple: show up when we say we will, do the job properly, and leave your yard looking better every time. We use proven best practices to keep landscapes healthy, attractive, and easy to maintain—season after season.",
+    "imageSrc": "/images/IMG_20250708_34242.webp",
+    "imageAlt": "Gardener caring for plants in a lush garden",
+    "features": [
+      {
+        "title": "Quality",
+        "description": "We take pride in doing the job right, using professional equipment and proven techniques to deliver consistent, long-lasting results.",
+        "icon": "star"
+      },
+      {
+        "title": "Satisfaction",
+        "description": "Your satisfaction matters. We listen to your needs, communicate clearly, and make sure every service meets your expectations.",
+        "icon": "thumbsUp"
+      },
+      {
+        "title": "Sustainability",
+        "description": "We care for your landscape responsibly, focusing on healthy growth, smart maintenance, and practices that protect your yard for the long term.",
+        "icon": "shieldCheck"
+      }
+    ]
+  },
+  "services": {
+    "badge": "Services",
+    "heading": "Exclusive Services",
+    "ctaLabel": "More Services",
+    "ctaHref": "/services",
+    "items": [
+      {
+        "title": "Landscaping",
+        "description": "Design and build improvements that make your outdoor space more functional, beautiful, and easy to enjoy.",
+        "imageSrc": "/images/IMG_20250708_34242.webp",
+        "imageAlt": "A freshly maintained garden with trimmed hedges and clean lines",
+        "tag": "Residential",
+        "icon": "leaf"
+      },
+      {
+        "title": "Lawn Mowing",
+        "description": "Reliable mowing with clean edges and a tidy finish for homes and commercial properties.",
+        "imageSrc": "/images/IMG_20250704_93515.webp",
+        "imageAlt": "Freshly mown lawn with tidy borders",
+        "tag": "Residential & Commercial",
+        "icon": "sprout"
+      },
+      {
+        "title": "Hedge Trimming",
+        "description": "Crisp lines and healthy growth with professional trimming for residential and commercial hedges.",
+        "imageSrc": "/images/IMG_20250715_29185.webp",
+        "imageAlt": "Neatly trimmed hedges in a well-kept garden",
+        "tag": "Residential & Commercial",
+        "icon": "snowflake"
+      },
+      {
+        "title": "Garden Maintenance",
+        "description": "Ongoing care to keep gardens healthy, tidy, and looking their best all year round.",
+        "imageSrc": "/images/IMG_20250708_11200.webp",
+        "imageAlt": "A tidy garden with clean edges and healthy planting",
+        "tag": "Residential & Commercial",
+        "icon": "droplets"
+      },
+      {
+        "title": "Fencing",
+        "description": "Install or refresh fencing for privacy, security, and a cleaner boundary finish.",
+        "imageSrc": "/images/IMG_20240509_41792.webp",
+        "imageAlt": "Garden boundary area suitable for a fencing project",
+        "tag": "Residential",
+        "icon": "leaf"
+      },
+      {
+        "title": "Garden Cleanup",
+        "description": "One-off clear-outs to get things back under control — then leave it tidy and manageable.",
+        "imageSrc": "/images/IMG_20250708_16272.webp",
+        "imageAlt": "Front garden looking refreshed and tidy",
+        "tag": "Residential & Commercial",
+        "icon": "sprout"
+      },
+      {
+        "title": "Weed Control",
+        "description": "Targeted weeding and tidy-up to keep beds, borders, and paths looking sharp.",
+        "imageSrc": "/images/IMG_20250708_34242.webp",
+        "imageAlt": "Clean borders and beds after maintenance",
+        "tag": "Residential & Commercial",
+        "icon": "droplets"
+      }
+    ]
+  },
+  "serviceArea": {
+    "badge": "Service area",
+    "heading": "Newquay, Truro, St Austell",
+    "body": "We cover Newquay, Truro, St Austell and nearby areas. If you’re close by,\nreach out — we’ll confirm availability quickly.",
+    "chips": [
+      "Fast response times",
+      "Local, reliable service",
+      "Clear quotes upfront"
+    ],
+    "primaryCtaLabel": "Get a Quote",
+    "primaryCtaHref": "/quote",
+    "secondaryCtaLabel": "Contact Us",
+    "secondaryCtaHref": "/contact",
+    "footnote": "Not sure if you’re in range? Send your suburb in the quote form.",
+    "map": {
+      "centerLat": 50.4,
+      "centerLng": -4.93,
+      "zoom": 10,
+      "circleLat": 50.4,
+      "circleLng": -4.93,
+      "circleRadiusMeters": 20000
+    },
+    "mapLabels": [
+      {
+        "text": "Newquay",
+        "leftPercent": 20,
+        "topPercent": 30
+      },
+      {
+        "text": "Truro",
+        "leftPercent": 46,
+        "topPercent": 34
+      },
+      {
+        "text": "St Austell",
+        "leftPercent": 56,
+        "topPercent": 49
+      }
+    ]
+  },
+  "recentWorks": {
+    "badge": "Our Recent Works",
+    "headingLines": [
+      "Beautiful Gardens & Landscapes",
+      "We Created"
+    ],
+    "description": "See how we’ve transformed spaces with our expert craftsmanship and attention\nto detail.",
+    "items": [
+      {
+        "title": "Garden makeover + tidy up",
+        "description": "A full tidy-up to bring an overgrown garden back under control—clean lines, shaped growth, and a lawn that looks cared for again.",
+        "imageFile": "recentWorks/items/0/imageFile.webp",
+        "imageAlt": "Freshly maintained garden with tidy hedges and a neat lawn",
+        "perfectFor": "Previously overgrown with weeds and oversized bushes/hedges. We weeded thoroughly, shaped the hedges and bushes, and finished with a fresh lawn mow.",
+        "budget": "£50 - £150",
+        "duration": "0.5-1 day"
+      },
+      {
+        "title": "Leylandii hedge trim (4m tall)",
+        "description": "A crisp Leylandii hedge trim to keep growth even, tidy, and manageable—done cleanly with a sharp finish.",
+        "imageFile": "recentWorks/items/1/imageFile.webp",
+        "imageAlt": "Front garden with neat lawn edges and trimmed hedges",
+        "perfectFor": "A 10m long Leylandii hedge around 4m tall, trimmed as part of a twice-yearly routine to keep it neat and under control.",
+        "budget": "£100 - £200",
+        "duration": "0.5 day"
+      },
+      {
+        "title": "Full gravel garden transformation",
+        "description": "A complete gravel garden install for a clean, low-maintenance finish, with rustic edging to keep everything looking intentional.",
+        "imageFile": "recentWorks/items/2/imageFile.webp",
+        "imageAlt": "Freshly mown lawn with trimmed hedges in a private garden",
+        "perfectFor": "A full gravel garden built over 3 days, featuring rustic edging plus a lily bed that was mulched for a neat, finished look.",
+        "budget": "£1500 - £2500",
+        "duration": "3 days"
+      }
+    ],
+    "ctaLabel": "View More Details",
+    "ctaHref": "/projects"
+  },
+  "marquee": {
+    "categories": [
+      "Landscaping",
+      "Lawn Care",
+      "Garden Maintenance",
+      "Hedge Trimming",
+      "Mulching",
+      "Weed Control",
+      "Seasonal Cleanup",
+      "Planting"
+    ]
+  },
+  "faq": {
+    "badge": "FAQs",
+    "headingLines": [
+      "Answering your",
+      "questions"
+    ],
+    "description": "Got more questions? Reach out to us using the button below",
+    "ctaLabel": "Get In Touch",
+    "ctaHref": "/contact",
+    "decorativeImageSrc": "/images/closeu_up_removed_white.webp",
+    "items": [
+      {
+        "id": "cost",
+        "question": "How much does a garden makeover cost?",
+        "answer": "Costs vary based on the size of the space and the scope of work. We’ll recommend options that fit your goals after a quick chat and site visit."
+      },
+      {
+        "id": "permission",
+        "question": "Will I need planning permission for my project?",
+        "answer": "It depends on the type of work and local requirements. We can help you understand what may be needed before you commit to the project."
+      },
+      {
+        "id": "duration",
+        "question": "How long will the work take?",
+        "answer": "Timelines depend on the complexity of the design and site conditions. We’ll share a clear schedule once we confirm the plan and materials."
+      },
+      {
+        "id": "existing",
+        "question": "Can you work with my existing garden features?",
+        "answer": "Yes—where possible, we can incorporate existing features into the new design. We’ll advise what can be kept, improved, or repositioned."
+      },
+      {
+        "id": "maintenance",
+        "question": "Do you offer maintenance after the project is finished?",
+        "answer": "We can discuss ongoing upkeep options to help your garden stay in great shape. The right plan depends on the planting and your preferences."
+      },
+      {
+        "id": "areas",
+        "question": "What areas do you cover?",
+        "answer": "Coverage depends on your location and the type of job. Send us your postcode and we’ll confirm availability and next steps."
+      }
+    ]
+  },
+  "largeCta": {
+    "leftImageUrl": "https://picsum.photos/id/1018/1200/900",
+    "leftImageAlt": "Modern landscaped garden and outdoor living space",
+    "rightImageUrl": "https://picsum.photos/id/1027/900/1400",
+    "rightImageAlt": "Gardener trimming a hedge",
+    "headingLines": [
+      "Let’s create a",
+      "garden you’ll love"
+    ],
+    "body": "Let’s turn your outdoor space into something beautiful. Get in touch for a free consultation today.",
+    "ctaLabel": "Talk To The Team",
+    "ctaHref": "/contact"
+  },
+  "testimonials": {
+    "badge": "Testimonials",
+    "heading": "Don’t just take our word for it",
+    "description": "Hear what homeowners say about working with us.",
+    "items": [
+      {
+        "name": "Matthew Wellington",
+        "location": "Truro, Cornwall",
+        "date": "20 Oct 2025",
+        "quote": "“Great service from start to finish. He cut down a few hedges for us and did a brilliant job – quick, tidy, and very reasonably priced. Everything was left neat and exactly how we wanted it. Would definitely recommend and use again.”"
+      },
+      {
+        "name": "Hannah B",
+        "location": "Summer Court, Cornwall",
+        "date": "03 Jul 2025",
+        "quote": "“We recently contacted Qwilliams mowing as we are selling our house so desperately needed the garden tidied up. I have been putting this off for months as I had no idea where to start. We are extremely pleased with the result - Levi did an amazing job! He was very professional and listened to what we wanted. We will definitely be regular customers of Qwilliams mowing and would highly recommend to anyone looking for garden services!”"
+      },
+      {
+        "name": "Elizabeth Cawley",
+        "location": "St Austell, Cornwall",
+        "date": "18 Aug 2025",
+        "quote": "“Levi has done an excellent job on my gardens meadow reset. Prompt and friendly. The job completed was exactly as I asked. And he left the area very tidy. I would recommend him to anyone.”"
+      },
+      {
+        "name": "Michael Meer",
+        "location": "Grampound, Cornwall",
+        "date": "07 Aug 2025",
+        "quote": "“Levi came for the first time yesterday. I don't know anything about gardening - but Levi does! What to cut, what not to cut, when to cut it and how it should be cut. He works really hard - non-stop, has really good ideas for making a garden both tidy and practical and his prices a very competitive. What's more, he's a really nice bloke. I've already booked him for a second visit.”"
+      },
+      {
+        "name": "Robert Jakes",
+        "location": "Newquay, Cornwall",
+        "date": "12 Sep 2025",
+        "quote": "”Amazing transformation of a massive hedge that had got too big for me to cope with, would highly recommend Levi Quilliams Mowing😊”"
+      },
+      {
+        "name": "James Watson",
+        "location": "Newquay, Cornwall",
+        "date": "1 Jun 2025",
+        "quote": "”Highly recommended! Levi helped us out with our hedge cutting and lawn mowing. Extremely reliable and did exceptional job. We will certainly be getting him back!”"
+      },
+      {
+        "name": "James Perrin",
+        "location": "Newquay, Cornwall",
+        "date": "21 Sep 2025",
+        "quote": "”We recently instructed Levi to look after some sizeable gardens in Porth. Really impressed with him - hardworking, polite and professional. He did a great job on his first visit and is now going to be taking care of regular garden maintenance for us. Would highly recommend him.”"
+      },
+      {
+        "name": "Chris Hall",
+        "location": "Newquay, Cornwall",
+        "date": "20 Jul 2025",
+        "quote": "”Came and gave me a reasonable quote to cut Hedges. Turned up next day to do the work on time. Pleased with the work done and cleared all the cuttings up. Would use again fully recommend..”"
+      },
+      {
+        "name": "Maya J",
+        "location": "Newquay, Cornwall",
+        "date": "18 Nov 2025",
+        "quote": "”Levi did an amazing job in my garden! Everything was done to a high standard, making sure to leave it clean and tidy at the end. He is super friendly and reliable — highly recommend!”"
+      },
+      {
+        "name": "Jamie Q",
+        "location": "Newquay, Cornwall",
+        "date": "18 Jun 2025",
+        "quote": "”Booked a one-off clean and was so impressed I signed up for regular mowing. Super reliable and the lawn always looks great. Highly recommend!”"
+      },
+      {
+        "name": "Kim Brocklehurst",
+        "location": "Newquay, Cornwall",
+        "date": "10 Oct 2025",
+        "quote": "”Quick response to initial enquiry. Fast and thorough clearance of overgrown land. Will definitely use Levi again.”"
+      },
+      {
+        "name": "Marie Preston",
+        "location": "St Austell, Cornwall",
+        "date": "10 Nov 2025",
+        "quote": "”Levi is always professional in manner and services required. I highly recommend him!”"
+      },
+      {
+        "name": "Pat Batey",
+        "location": "Newquay, Cornwall",
+        "date": "1 Nov 2025",
+        "quote": "”A great job carried out at a sensible price.”"
+      },
+      {
+        "name": "David willers",
+        "location": "Truro, Cornwall",
+        "date": "12 Dec 2025",
+        "quote": "”Did an a amazing job on my garden”"
+      },
+      {
+        "name": "Luis McLaren",
+        "location": "Truro, Cornwall",
+        "date": "2 Dec 2025",
+        "quote": "”Highly recommend!"
+      },
+      {
+        "name": "John Kendall",
+        "location": "Newquay, Cornwall",
+        "date": "2 Jun 2025",
+        "quote": "”Really tidied up my bushes"
+      }
+    ]
+  }
 }

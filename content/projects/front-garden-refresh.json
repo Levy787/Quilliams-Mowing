@@ -4,6 +4,7 @@
     "title": "Front garden refresh",
     "subtitle": "Sharper edges, tidier structure, and a cleaner finish that stays presentable.",
     "locationLabel": "Residential",
+    "template": "image",
     "seo": {
         "title": "Front garden refresh",
         "description": "Sharper edges, tidier structure, and a cleaner finish that stays presentable.",
@@ -15,6 +16,13 @@
         "imageSrc": "/images/IMG_20250708_16272.webp",
         "imageAlt": "Front garden with neat lawn edges and trimmed hedges",
         "pattern": "pattern-1"
+    },
+    "heroVideo": {
+        "videoSrc": "",
+        "poster": {
+            "posterSrc": "",
+            "posterAlt": ""
+        }
     },
     "chips": ["Edges", "Tidy finish", "Structure", "Clear plan"],
     "overview": {
