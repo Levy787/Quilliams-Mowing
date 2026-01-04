@@ -1,0 +1,29 @@
+{
+  "slug": "Home coupon",
+  "enabled": true,
+  "title": "Home – £10 off coupon",
+  "headline": "£10 off your first visit",
+  "body": "Enter your email to claim £10 off your first visit.\n\nLimited availability — book early to secure a slot.",
+  "image": {
+    "imageSrc": "/images/uploads/recentWorks/items/0/imageFile.webp",
+    "imageAlt": "Freshly landscaped garden"
+  },
+  "popupType": "emailCapture",
+  "emailCapture": {
+    "emailPlaceholder": "Enter your email",
+    "submitLabel": "Claim £10 off",
+    "successTitle": "You're all set",
+    "successBody": "Thanks — we’ve sent your offer details to your inbox.",
+    "offerCode": "FIRST10"
+  },
+  "triggerType": "scroll",
+  "triggerValue": 15,
+  "frequency": {
+    "dismissForDays": 0
+  },
+  "targeting": {
+    "paths": [
+      "/"
+    ]
+  }
+}

@@ -50,6 +50,48 @@ export async function getSiteContent() {
 
 export type SiteContent = Awaited<ReturnType<typeof getSiteContent>>;
 
+export type PopupTriggerType = "scroll" | "exitIntent" | "delay";
+
+export type PopupType = "standard" | "emailCapture";
+
+export type PopupEmailCapture = {
+    emailPlaceholder?: string;
+    submitLabel?: string;
+    successTitle?: string;
+    successBody?: string;
+    offerCode?: string;
+};
+
+export type PopupEntry = {
+    slug: string;
+    enabled: boolean;
+    title: string;
+    headline: string;
+    body: string;
+    image?: {
+        src: string;
+        alt: string;
+    };
+    cta?: {
+        label: string;
+        href: string;
+    };
+
+    popupType?: PopupType;
+    emailCapture?: PopupEmailCapture;
+
+    trigger: {
+        type: PopupTriggerType;
+        value: number;
+    };
+    frequency: {
+        dismissForDays: number;
+    };
+    targeting: {
+        paths: ReadonlyArray<string>;
+    };
+};
+
 export async function getAboutContent() {
     const entry = await reader.singletons.about.readOrThrow();
 
@@ -191,6 +233,121 @@ function resolveKeystaticImageSrc({
         return `/images/uploads/${file}`;
     }
     return src ?? "";
+}
+
+export async function listPopups(): Promise<ReadonlyArray<PopupEntry>> {
+    const slugs = await reader.collections.popups.list();
+
+    const entries: Array<PopupEntry | null> = await Promise.all(
+        slugs.map(async (slug) => {
+            const entry = await reader.collections.popups.read(slug);
+            if (!entry) return null;
+
+            const enabled = Boolean(
+                (entry as unknown as { enabled?: boolean }).enabled,
+            );
+            if (!enabled) return null;
+
+            const image = (entry as unknown as {
+                image?: {
+                    imageFile?: string | null;
+                    imageSrc?: string | null;
+                    imageAlt?: string | null;
+                };
+            }).image;
+
+            const imageSrc = resolveKeystaticImageSrc({
+                file: image?.imageFile,
+                src: image?.imageSrc,
+                subdir: slug,
+            });
+
+            const ctaLabel =
+                (entry as unknown as { ctaLabel?: string | null }).ctaLabel;
+            const ctaHref =
+                (entry as unknown as { ctaHref?: string | null }).ctaHref;
+
+            const popupType =
+                (entry as unknown as { popupType?: PopupType | null })
+                    .popupType ??
+                    "standard";
+
+            const emailCaptureRaw = (entry as unknown as {
+                emailCapture?: {
+                    emailPlaceholder?: string | null;
+                    submitLabel?: string | null;
+                    successTitle?: string | null;
+                    successBody?: string | null;
+                    offerCode?: string | null;
+                };
+            }).emailCapture;
+
+            const emailCapture: PopupEmailCapture | undefined =
+                popupType === "emailCapture" && emailCaptureRaw
+                    ? {
+                        emailPlaceholder: emailCaptureRaw.emailPlaceholder ??
+                            undefined,
+                        submitLabel: emailCaptureRaw.submitLabel ?? undefined,
+                        successTitle: emailCaptureRaw.successTitle ?? undefined,
+                        successBody: emailCaptureRaw.successBody ?? undefined,
+                        offerCode: emailCaptureRaw.offerCode ?? undefined,
+                    }
+                    : undefined;
+
+            const triggerType =
+                (entry as unknown as { triggerType?: PopupTriggerType })
+                    .triggerType;
+            const triggerValue =
+                (entry as unknown as { triggerValue?: number | null })
+                    .triggerValue;
+
+            const dismissForDays = (entry as unknown as {
+                frequency?: { dismissForDays?: number | null };
+            }).frequency?.dismissForDays;
+
+            const paths = (entry as unknown as {
+                targeting?: { paths?: ReadonlyArray<string> };
+            }).targeting
+                ?.paths;
+
+            const result: PopupEntry = {
+                slug,
+                enabled: true,
+                title: (entry as unknown as { title?: string | null }).title ??
+                    "",
+                headline: (entry as unknown as { headline?: string | null })
+                    .headline ?? "",
+                body: (entry as unknown as { body?: string | null }).body ?? "",
+                image: imageSrc
+                    ? {
+                        src: imageSrc,
+                        alt: image?.imageAlt ?? "",
+                    }
+                    : undefined,
+                cta: ctaLabel?.trim() && ctaHref?.trim()
+                    ? { label: ctaLabel, href: ctaHref }
+                    : undefined,
+                popupType,
+                emailCapture,
+                trigger: {
+                    type: triggerType ?? "scroll",
+                    value: typeof triggerValue === "number" ? triggerValue : 0,
+                },
+                frequency: {
+                    dismissForDays: typeof dismissForDays === "number"
+                        ? dismissForDays
+                        : 7,
+                },
+                targeting: {
+                    paths: Array.isArray(paths) ? paths : [],
+                },
+            };
+
+            return result;
+        }),
+    );
+
+    return entries.filter((e): e is PopupEntry => e !== null);
 }
 
 export async function getProjectBySlug(

@@ -637,6 +637,110 @@ export const keystaticConfig = config({
         ),
       },
     }),
+
+    popups: collection({
+      label: "Popups",
+      path: "content/popups/*",
+      format: "json",
+      slugField: "slug",
+      schema: {
+        slug: fields.slug({
+          name: {
+            label: "Name",
+            validation: { isRequired: true },
+          },
+          slug: {
+            label: "Slug",
+          },
+        }),
+
+        enabled: fields.checkbox({
+          label: "Enabled",
+          defaultValue: true,
+        }),
+
+        title: fields.text({ label: "Title (internal)" }),
+
+        headline: fields.text({ label: "Headline" }),
+        body: fields.text({ label: "Body", multiline: true }),
+
+        image: fields.object(
+          {
+            ...imageFields({
+              label: "Image",
+              keys: {
+                fileKey: "imageFile",
+                srcKey: "imageSrc",
+                altKey: "imageAlt",
+              },
+              includeDescription: false,
+            }),
+          },
+          { label: "Image" },
+        ),
+
+        ctaLabel: fields.text({ label: "CTA label" }),
+        ctaHref: fields.text({ label: "CTA href" }),
+
+        popupType: fields.select({
+          label: "Popup type",
+          options: [
+            { label: "Standard", value: "standard" },
+            { label: "Email capture", value: "emailCapture" },
+          ] as const,
+          defaultValue: "standard",
+        }),
+
+        emailCapture: fields.object(
+          {
+            emailPlaceholder: fields.text({ label: "Email placeholder" }),
+            submitLabel: fields.text({ label: "Submit label" }),
+            successTitle: fields.text({ label: "Success title" }),
+            successBody: fields.text({
+              label: "Success body",
+              multiline: true,
+            }),
+            offerCode: fields.text({ label: "Offer code" }),
+          },
+          { label: "Email capture settings" },
+        ),
+
+        triggerType: fields.select({
+          label: "Trigger type",
+          options: [
+            { label: "Scroll", value: "scroll" },
+            { label: "Exit intent", value: "exitIntent" },
+            { label: "Delay", value: "delay" },
+          ] as const,
+          defaultValue: "scroll",
+        }),
+
+        triggerValue: fields.number({
+          label: "Trigger value",
+          defaultValue: 15,
+        }),
+
+        frequency: fields.object(
+          {
+            dismissForDays: fields.number({
+              label: "Dismiss for days",
+              defaultValue: 7,
+            }),
+          },
+          { label: "Frequency" },
+        ),
+
+        targeting: fields.object(
+          {
+            paths: fields.array(fields.text({ label: "Path" }), {
+              label: "Paths",
+              itemLabel: (props) => props.value,
+            }),
+          },
+          { label: "Targeting" },
+        ),
+      },
+    }),
   },
   singletons: {
     projectsLanding: singleton({
