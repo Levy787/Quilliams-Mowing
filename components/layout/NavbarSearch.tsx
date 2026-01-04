@@ -20,7 +20,19 @@ type SearchResult = {
     href: string;
     type: "page" | "service" | "project" | "offer";
     snippet?: string;
+    priority?: number;
 };
+
+type SearchIndexDoc = SearchResult & { haystack: string; priority?: number };
+
+function normalize(value: string): string {
+    return value
+        .toLowerCase()
+        .normalize("NFKD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/\s+/g, " ")
+        .trim();
+}
 
 function useDebouncedValue<T>(value: T, delayMs: number) {
     const [debounced, setDebounced] = React.useState(value);
@@ -50,6 +62,50 @@ export function NavbarSearch({ className }: { className?: string }) {
         []
     );
 
+    const searchIndexRef = React.useRef<ReadonlyArray<SearchIndexDoc> | null>(
+        null,
+    );
+
+    async function loadSearchIndex(): Promise<ReadonlyArray<SearchIndexDoc>> {
+        if (searchIndexRef.current) return searchIndexRef.current;
+
+        const res = await fetch("/search-index.json", {
+            cache: "force-cache",
+        });
+        if (!res.ok) throw new Error("Search index request failed");
+        const json = (await res.json()) as unknown;
+        const docs =
+            json && typeof json === "object" && "docs" in json
+                ? (json as { docs?: unknown }).docs
+                : null;
+
+        const safeDocs = Array.isArray(docs)
+            ? (docs.filter(
+                (d): d is SearchIndexDoc =>
+                    Boolean(d) &&
+                    typeof (d as SearchIndexDoc).title === "string" &&
+                    typeof (d as SearchIndexDoc).href === "string" &&
+                    typeof (d as SearchIndexDoc).type === "string" &&
+                    typeof (d as SearchIndexDoc).haystack === "string",
+            ) as SearchIndexDoc[])
+            : [];
+
+        searchIndexRef.current = safeDocs;
+        return safeDocs;
+    }
+
+    async function searchViaIndex(trimmed: string): Promise<SearchResult[]> {
+        const q = normalize(trimmed);
+        if (q.length < 2) return [];
+
+        const docs = await loadSearchIndex();
+        return docs
+            .filter((d) => d.haystack.includes(q))
+            .sort((a, b) => (b.priority ?? 0) - (a.priority ?? 0))
+            .slice(0, 20)
+            .map(({ haystack: _haystack, ...result }) => result);
+    }
+
     React.useEffect(() => {
         if (!dialogOpen) return;
 
@@ -76,8 +132,17 @@ export function NavbarSearch({ className }: { className?: string }) {
             })
             .catch((err) => {
                 if (err instanceof DOMException && err.name === "AbortError") return;
-                setResults([]);
-                setLoading(false);
+
+                // Fallback for hosts where API routes aren’t available (or erroring).
+                searchViaIndex(trimmed)
+                    .then((fallbackResults) => {
+                        setResults(fallbackResults);
+                        setLoading(false);
+                    })
+                    .catch(() => {
+                        setResults([]);
+                        setLoading(false);
+                    });
             });
 
         return () => controller.abort();

@@ -41,9 +41,41 @@ function normalize(value: string): string {
     return value
         .toLowerCase()
         .normalize("NFKD")
-        .replace(/\p{Diacritic}/gu, "")
+        .replace(/[\u0300-\u036f]/g, "")
         .replace(/\s+/g, " ")
         .trim();
+}
+
+function priorityFor(result: SearchResult): number {
+    // Highest: conversions
+    if (result.href === "/contact" || result.href === "/quote") return 100;
+
+    // Projects (including landing)
+    if (
+        result.type === "project" ||
+        result.href === "/projects" ||
+        result.href.startsWith("/projects/")
+    ) {
+        return 80;
+    }
+
+    // Services (including landing)
+    if (
+        result.type === "service" ||
+        result.href === "/services" ||
+        result.href.startsWith("/services/")
+    ) {
+        return 70;
+    }
+
+    // Offers
+    if (result.type === "offer") return 60;
+
+    // Home lowest
+    if (result.href === "/") return 0;
+
+    // Other pages
+    return 50;
 }
 
 function makeDoc(result: SearchResult, haystack: ReadonlyArray<string>) {
@@ -350,10 +382,30 @@ export async function GET(req: Request) {
 
     const results = docs
         .filter((d) => d.haystack.includes(query))
-        .map((d) => ({
-            ...d.result,
-            snippet: d.result.snippet || makeSnippet(d.haystack, query),
-        }))
+        .map((d) => {
+            const result: SearchResult = {
+                ...d.result,
+                snippet: d.result.snippet || makeSnippet(d.haystack, query),
+            };
+
+            return {
+                ...result,
+                priority: priorityFor(result),
+            };
+        })
+        .sort((a, b) => {
+            const prio = (b.priority ?? 0) - (a.priority ?? 0);
+            if (prio !== 0) return prio;
+
+            // Prefer title matches next
+            const at = normalize(a.title);
+            const bt = normalize(b.title);
+            const aTitleMatch = at.includes(query) ? 1 : 0;
+            const bTitleMatch = bt.includes(query) ? 1 : 0;
+            if (aTitleMatch !== bTitleMatch) return bTitleMatch - aTitleMatch;
+
+            return a.title.localeCompare(b.title);
+        })
         .slice(0, 20);
 
     return NextResponse.json({ results });
