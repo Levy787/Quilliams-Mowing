@@ -1,13 +1,11 @@
 "use client";
 
 import * as React from "react";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import posthog from "posthog-js";
 
 export function PostHogClientInit() {
     const pathname = usePathname();
-    const searchParams = useSearchParams();
-    const search = searchParams?.toString() ?? "";
 
     React.useEffect(() => {
         // Defer analytics initialization until after hydration.
@@ -32,7 +30,7 @@ export function PostHogClientInit() {
         return () => {
             cancelled = true;
         };
-    }, [pathname, search]);
+    }, [pathname]);
 
     return null;
 }
