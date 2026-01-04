@@ -8,6 +8,7 @@ import {
     getClientIp,
     isLikelyBotByHoneypot,
 } from "@/lib/api/abuse";
+import { verifyTurnstileToken } from "@/lib/api/turnstile";
 import { asTrimmedString, isProbablyEmail } from "@/lib/api/validate";
 
 export const runtime = "nodejs";
@@ -38,6 +39,45 @@ export async function POST(req: NextRequest) {
 
         if (isLikelyBotByHoneypot(body.company)) {
             return NextResponse.json({ ok: true }, { status: 200 });
+        }
+
+        const context = typeof body.turnstileContext === "string"
+            ? body.turnstileContext
+            : null;
+
+        const secret = context === "popup"
+            ? process.env.TURNSTILE_SECRET_KEY_POPUP
+            : process.env.TURNSTILE_SECRET_KEY_SUBSCRIBE;
+
+        const turnstile = await verifyTurnstileToken(
+            req,
+            typeof body.turnstileToken === "string"
+                ? body.turnstileToken
+                : typeof body.token === "string"
+                ? body.token
+                : typeof body["cf-turnstile-response"] === "string"
+                ? body["cf-turnstile-response"]
+                : null,
+            { secret },
+        );
+
+        if (!turnstile.ok) {
+            return NextResponse.json(
+                {
+                    ok: false,
+                    error: turnstile.error,
+                    ...(process.env.NODE_ENV !== "production" &&
+                            turnstile.errorCodes
+                        ? { turnstileErrorCodes: turnstile.errorCodes }
+                        : {}),
+                },
+                {
+                    status: turnstile.error ===
+                            "Server is missing Turnstile configuration."
+                        ? 500
+                        : 400,
+                },
+            );
         }
 
         const email = asTrimmedString(body.email);

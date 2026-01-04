@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { PopupBase } from "@/components/popups/PopupBase";
+import { Turnstile, type TurnstileHandle } from "@/components/TurnstileWidget";
 import type { PopupEntry } from "@/lib/keystatic-reader";
 
 function isExactMatch(pathname: string, pattern: string) {
@@ -79,6 +80,12 @@ export function PopupManager({ popups }: { popups: ReadonlyArray<PopupEntry> }) 
         "idle",
     );
     const [errorMessage, setErrorMessage] = React.useState<string | null>(null);
+    const [turnstileToken, setTurnstileToken] = React.useState("");
+    const turnstileRef = React.useRef<TurnstileHandle>(null);
+
+    const isTurnstileEnabled = Boolean(
+        process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY_POPUP?.trim(),
+    );
 
     const popup = React.useMemo(() => {
         if (!pathname) return null;
@@ -91,6 +98,8 @@ export function PopupManager({ popups }: { popups: ReadonlyArray<PopupEntry> }) 
         setEmail("");
         setStatus("idle");
         setErrorMessage(null);
+        setTurnstileToken("");
+        turnstileRef.current?.reset();
     }, [popup?.slug]);
 
     React.useEffect(() => {
@@ -179,6 +188,12 @@ export function PopupManager({ popups }: { popups: ReadonlyArray<PopupEntry> }) 
             return;
         }
 
+        if (isTurnstileEnabled && !turnstileToken.trim()) {
+            setErrorMessage("Please complete the verification.");
+            setStatus("error");
+            return;
+        }
+
         setStatus("submitting");
         setErrorMessage(null);
 
@@ -186,7 +201,12 @@ export function PopupManager({ popups }: { popups: ReadonlyArray<PopupEntry> }) 
             const res = await fetch("/api/subscribe", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email: trimmed, company: "" }),
+                body: JSON.stringify({
+                    email: trimmed,
+                    company: "",
+                    turnstileToken: isTurnstileEnabled ? turnstileToken : "",
+                    turnstileContext: "popup",
+                }),
             });
 
             const json = (await res.json().catch(() => null)) as
@@ -200,14 +220,20 @@ export function PopupManager({ popups }: { popups: ReadonlyArray<PopupEntry> }) 
                     : "Unable to claim this offer. Please try again.";
                 setErrorMessage(message);
                 setStatus("error");
+                setTurnstileToken("");
+                turnstileRef.current?.reset();
                 return;
             }
 
             setDismissedNow(popup);
             setStatus("success");
+            setTurnstileToken("");
+            turnstileRef.current?.reset();
         } catch {
             setErrorMessage("Unable to claim this offer. Please try again.");
             setStatus("error");
+            setTurnstileToken("");
+            turnstileRef.current?.reset();
         }
     }
 
@@ -281,6 +307,15 @@ export function PopupManager({ popups }: { popups: ReadonlyArray<PopupEntry> }) 
                                     <div className="text-sm text-destructive">{errorMessage}</div>
                                 ) : null}
                             </div>
+
+                            {isTurnstileEnabled ? (
+                                <Turnstile
+                                    ref={turnstileRef}
+                                    onToken={setTurnstileToken}
+                                    siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY_POPUP}
+                                    className="pt-2"
+                                />
+                            ) : null}
 
                             <Button type="submit" size="lg" disabled={status === "submitting"}>
                                 {status === "submitting"

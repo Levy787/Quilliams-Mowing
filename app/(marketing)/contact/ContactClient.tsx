@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { LeafletMap } from "@/components/reusable/leaflet-map";
+import { Turnstile, type TurnstileHandle } from "@/components/TurnstileWidget";
 
 export type ContactClientProps = {
     header: {
@@ -70,9 +71,20 @@ export default function ContactClient({ header, details, form, map }: ContactCli
     const [service, setService] = React.useState<string | undefined>(undefined);
     const [submitted, setSubmitted] = React.useState(false);
     const [isSubmitting, setIsSubmitting] = React.useState(false);
+    const [turnstileToken, setTurnstileToken] = React.useState("");
+    const turnstileRef = React.useRef<TurnstileHandle>(null);
+
+    const isTurnstileEnabled = Boolean(
+        process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY_CONTACT?.trim(),
+    );
 
     async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
+
+        if (isTurnstileEnabled && !turnstileToken.trim()) {
+            toast.error("Please complete the verification.");
+            return;
+        }
 
         setIsSubmitting(true);
         setSubmitted(false);
@@ -88,6 +100,7 @@ export default function ContactClient({ header, details, form, map }: ContactCli
                 service: service ?? null,
                 message: String(fd.get("message") ?? "").trim(),
                 company: String(fd.get("company") ?? "").trim(),
+                turnstileToken: isTurnstileEnabled ? turnstileToken : "",
             };
 
             const res = await fetch("/api/contact", {
@@ -105,6 +118,8 @@ export default function ContactClient({ header, details, form, map }: ContactCli
                 const message = json && "error" in json ? json.error : "Unable to submit. Please try again.";
                 toast.error(message);
                 setIsSubmitting(false);
+                setTurnstileToken("");
+                turnstileRef.current?.reset();
                 return;
             }
 
@@ -113,8 +128,12 @@ export default function ContactClient({ header, details, form, map }: ContactCli
             toast.success(form.toastSuccess);
             formEl.reset();
             setService(undefined);
+            setTurnstileToken("");
+            turnstileRef.current?.reset();
         } catch {
             setIsSubmitting(false);
+            setTurnstileToken("");
+            turnstileRef.current?.reset();
             toast.error("Unable to submit. Please try again.");
         }
     }
@@ -308,6 +327,14 @@ export default function ContactClient({ header, details, form, map }: ContactCli
                                     {submitted && (
                                         <p className="text-sm text-primary">{form.submittedText}</p>
                                     )}
+
+                                    {isTurnstileEnabled ? (
+                                        <Turnstile
+                                            ref={turnstileRef}
+                                            onToken={setTurnstileToken}
+                                            siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY_CONTACT}
+                                        />
+                                    ) : null}
 
                                     <div className="pt-1">
                                         <Button type="submit" size="lg" disabled={isSubmitting}>

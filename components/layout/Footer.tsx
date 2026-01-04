@@ -16,6 +16,7 @@ import {
 
 import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
+import { Turnstile, type TurnstileHandle } from "@/components/TurnstileWidget";
 
 const DEFAULT_BUSINESS_HOURS = [
     { dayLabel: "Mon – Fri", hours: "08:00 am : 05:00 pm" },
@@ -112,13 +113,27 @@ export function FooterInner({
 } = {}) {
     const [subscribeEmail, setSubscribeEmail] = React.useState("");
     const [isSubscribing, setIsSubscribing] = React.useState(false);
+    const [turnstileToken, setTurnstileToken] = React.useState("");
+    const turnstileRef = React.useRef<TurnstileHandle>(null);
+
+    const isTurnstileEnabled = Boolean(
+        process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY_SUBSCRIBE?.trim(),
+    );
 
     async function onSubscribe(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
         const email = subscribeEmail.trim();
 
+        const fd = new FormData(event.currentTarget);
+        const company = String(fd.get("company") ?? "").trim();
+
         if (!email) {
             toast.error("Please enter your email address.");
+            return;
+        }
+
+        if (isTurnstileEnabled && !turnstileToken.trim()) {
+            toast.error("Please complete the verification.");
             return;
         }
 
@@ -128,7 +143,12 @@ export function FooterInner({
             const res = await fetch("/api/subscribe", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email, company: "" }),
+                body: JSON.stringify({
+                    email,
+                    company,
+                    turnstileToken: isTurnstileEnabled ? turnstileToken : "",
+                    turnstileContext: "subscribe",
+                }),
             });
 
             const json = (await res.json().catch(() => null)) as
@@ -140,14 +160,20 @@ export function FooterInner({
                 const message = json && "error" in json ? json.error : "Unable to subscribe. Please try again.";
                 toast.error(message);
                 setIsSubscribing(false);
+                setTurnstileToken("");
+                turnstileRef.current?.reset();
                 return;
             }
 
             toast.success("Thanks — you’re subscribed.");
             setSubscribeEmail("");
             setIsSubscribing(false);
+            setTurnstileToken("");
+            turnstileRef.current?.reset();
         } catch {
             setIsSubscribing(false);
+            setTurnstileToken("");
+            turnstileRef.current?.reset();
             toast.error("Unable to subscribe. Please try again.");
         }
     }
@@ -296,6 +322,15 @@ export function FooterInner({
                                         <ArrowRight className="h-4 w-4" aria-hidden="true" />
                                     </button>
                                 </div>
+
+                                {isTurnstileEnabled ? (
+                                    <Turnstile
+                                        ref={turnstileRef}
+                                        onToken={setTurnstileToken}
+                                        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY_SUBSCRIBE}
+                                        className="mt-4"
+                                    />
+                                ) : null}
                             </form>
                         </div>
                     </div>

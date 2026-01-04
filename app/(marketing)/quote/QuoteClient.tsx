@@ -17,6 +17,7 @@ import {
     SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import { Turnstile, type TurnstileHandle } from "@/components/TurnstileWidget";
 
 type PreviewItem = {
     id: string;
@@ -167,9 +168,9 @@ function CalculatorSummaryFields({
 
 export default function QuoteClient({ header, expect, calculatorSummary, form }: QuoteClientProps) {
     const fileInputRef = React.useRef<HTMLInputElement | null>(null);
-    const [service, setService] = React.useState<string | undefined>(undefined);
-    const [timeframe, setTimeframe] = React.useState<string | undefined>(undefined);
-    const [budget, setBudget] = React.useState<string | undefined>(undefined);
+    const [service, setService] = React.useState<string>("");
+    const [timeframe, setTimeframe] = React.useState<string>("");
+    const [budget, setBudget] = React.useState<string>("");
 
     const [files, setFiles] = React.useState<File[]>([]);
     const [previews, setPreviews] = React.useState<PreviewItem[]>([]);
@@ -178,6 +179,11 @@ export default function QuoteClient({ header, expect, calculatorSummary, form }:
     const [formError, setFormError] = React.useState<string | null>(null);
     const [submitted, setSubmitted] = React.useState(false);
     const [isSubmitting, setIsSubmitting] = React.useState(false);
+    const [turnstileToken, setTurnstileToken] = React.useState("");
+    const turnstileRef = React.useRef<TurnstileHandle>(null);
+
+    const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY_QUOTE;
+    const isTurnstileEnabled = Boolean(turnstileSiteKey?.trim());
 
     React.useEffect(() => {
         const next = files.map((file) => {
@@ -233,13 +239,16 @@ export default function QuoteClient({ header, expect, calculatorSummary, form }:
 
     function resetForm(htmlForm: HTMLFormElement) {
         htmlForm.reset();
-        setService(undefined);
-        setTimeframe(undefined);
-        setBudget(undefined);
+        setService("");
+        setTimeframe("");
+        setBudget("");
         setFiles([]);
         setFileError(null);
         setFileWarning(null);
         setFormError(null);
+
+        setTurnstileToken("");
+        turnstileRef.current?.reset();
 
         if (fileInputRef.current) fileInputRef.current.value = "";
     }
@@ -249,7 +258,7 @@ export default function QuoteClient({ header, expect, calculatorSummary, form }:
         setSubmitted(false);
         setFormError(null);
 
-        if (!service) {
+        if (!service.trim()) {
             setFormError(form.requiredServiceError);
             return;
         }
@@ -262,6 +271,21 @@ export default function QuoteClient({ header, expect, calculatorSummary, form }:
         if (files.some((f) => !f.type.startsWith("image/"))) {
             setFileError(form.onlyImagesError);
             return;
+        }
+
+        if (isTurnstileEnabled && !turnstileToken.trim()) {
+            setFormError("Please complete the verification.");
+            return;
+        }
+
+        if (process.env.NODE_ENV !== "production") {
+            console.debug("[quote] submitting", {
+                isTurnstileEnabled,
+                hasTurnstileSiteKey: Boolean(turnstileSiteKey?.trim()),
+                turnstileTokenLength: turnstileToken?.length ?? 0,
+                hasService: Boolean(service.trim()),
+                fileCount: files.length,
+            });
         }
 
         setIsSubmitting(true);
@@ -281,6 +305,7 @@ export default function QuoteClient({ header, expect, calculatorSummary, form }:
                 jobDetails: String(fd.get("details") ?? "").trim() || null,
                 calculatorSummary: String(fd.get("calculatorSummary") ?? "").trim() || null,
                 company: String(fd.get("company") ?? "").trim(),
+                turnstileToken: isTurnstileEnabled ? turnstileToken : "",
             };
 
             const res = await fetch("/api/quote", {
@@ -291,13 +316,23 @@ export default function QuoteClient({ header, expect, calculatorSummary, form }:
 
             const json = (await res.json().catch(() => null)) as
                 | { ok: true }
-                | { ok: false; error: string }
+                | { ok: false; error: string; turnstileErrorCodes?: string[] }
                 | null;
 
             if (!res.ok || !json || ("ok" in json && json.ok === false)) {
                 const message = json && "error" in json ? json.error : "Unable to submit. Please try again.";
+
+                if (process.env.NODE_ENV !== "production") {
+                    console.debug("[quote] /api/quote failed", {
+                        status: res.status,
+                        json,
+                    });
+                }
+
                 toast.error(message);
                 setIsSubmitting(false);
+                setTurnstileToken("");
+                turnstileRef.current?.reset();
                 return;
             }
 
@@ -307,6 +342,8 @@ export default function QuoteClient({ header, expect, calculatorSummary, form }:
             resetForm(formEl);
         } catch {
             setIsSubmitting(false);
+            setTurnstileToken("");
+            turnstileRef.current?.reset();
             toast.error("Unable to submit. Please try again.");
         }
     }
@@ -418,7 +455,7 @@ export default function QuoteClient({ header, expect, calculatorSummary, form }:
                                                     ))}
                                                 </SelectContent>
                                             </Select>
-                                            <input type="hidden" name="service" value={service ?? ""} />
+                                            <input type="hidden" name="service" value={service} />
                                         </div>
 
                                         <div className="space-y-2">
@@ -435,7 +472,7 @@ export default function QuoteClient({ header, expect, calculatorSummary, form }:
                                                     ))}
                                                 </SelectContent>
                                             </Select>
-                                            <input type="hidden" name="timeframe" value={timeframe ?? ""} />
+                                            <input type="hidden" name="timeframe" value={timeframe} />
                                         </div>
                                     </div>
 
@@ -454,7 +491,7 @@ export default function QuoteClient({ header, expect, calculatorSummary, form }:
                                                     ))}
                                                 </SelectContent>
                                             </Select>
-                                            <input type="hidden" name="budget" value={budget ?? ""} />
+                                            <input type="hidden" name="budget" value={budget} />
                                         </div>
 
                                         <div className="space-y-2">
@@ -525,6 +562,22 @@ export default function QuoteClient({ header, expect, calculatorSummary, form }:
                                     {submitted && (
                                         <p className="text-sm text-primary">{form.submittedText}</p>
                                     )}
+
+                                    {isTurnstileEnabled ? (
+                                        <Turnstile
+                                            ref={turnstileRef}
+                                            onToken={setTurnstileToken}
+                                            siteKey={turnstileSiteKey}
+                                        />
+                                    ) : null}
+
+                                    {!isTurnstileEnabled && process.env.NODE_ENV !== "production" ? (
+                                        <p className="text-xs text-muted-foreground">
+                                            Turnstile is not configured for the quote form. Set
+                                            NEXT_PUBLIC_TURNSTILE_SITE_KEY_QUOTE and
+                                            TURNSTILE_SECRET_KEY_QUOTE, then restart the dev server.
+                                        </p>
+                                    ) : null}
 
                                     <div className="pt-1">
                                         <Button type="submit" size="lg" disabled={isSubmitting}>
