@@ -6,7 +6,6 @@ import Link from "next/link";
 import * as React from "react";
 import { toast } from "sonner";
 import {
-    ArrowRight,
     Facebook,
     Instagram,
     PhoneCall,
@@ -116,6 +115,7 @@ export function FooterInner({
 } = {}) {
     const [subscribeEmail, setSubscribeEmail] = React.useState("");
     const [isSubscribing, setIsSubscribing] = React.useState(false);
+    const [hasSubscribed, setHasSubscribed] = React.useState(false);
     const [turnstileToken, setTurnstileToken] = React.useState("");
     const turnstileRef = React.useRef<TurnstileHandle>(null);
 
@@ -141,6 +141,7 @@ export function FooterInner({
         }
 
         setIsSubscribing(true);
+        setHasSubscribed(false);
 
         try {
             const res = await fetch("/api/subscribe", {
@@ -163,6 +164,7 @@ export function FooterInner({
                 const message = json && "error" in json ? json.error : "Unable to subscribe. Please try again.";
                 toast.error(message);
                 setIsSubscribing(false);
+                setHasSubscribed(false);
                 setTurnstileToken("");
                 turnstileRef.current?.reset();
                 return;
@@ -175,12 +177,14 @@ export function FooterInner({
                 turnstileEnabled: isTurnstileEnabled,
             });
 
+            setHasSubscribed(true);
             setSubscribeEmail("");
             setIsSubscribing(false);
             setTurnstileToken("");
             turnstileRef.current?.reset();
         } catch {
             setIsSubscribing(false);
+            setHasSubscribed(false);
             setTurnstileToken("");
             turnstileRef.current?.reset();
             toast.error("Unable to subscribe. Please try again.");
@@ -309,19 +313,32 @@ export function FooterInner({
                                         autoComplete="email"
                                         placeholder="Email Address... *"
                                         value={subscribeEmail}
-                                        onChange={(e) => setSubscribeEmail(e.currentTarget.value)}
-                                        disabled={isSubscribing}
+                                        onChange={(e) => {
+                                            setSubscribeEmail(e.currentTarget.value);
+                                            setHasSubscribed(false);
+                                        }}
+                                        disabled={isSubscribing || hasSubscribed}
                                         className="flex-1"
                                     />
 
                                     <Button
                                         type="submit"
                                         aria-label="Subscribe"
-                                        disabled={isSubscribing}
+                                        disabled={isSubscribing || hasSubscribed}
                                         className="w-1/4"
                                     >
-                                        Subscribe
+                                        {isSubscribing
+                                            ? "Subscribing..."
+                                            : hasSubscribed
+                                                ? "Subscribed"
+                                                : "Subscribe"}
                                     </Button>
+                                </div>
+
+                                <div aria-live="polite" className="mt-3 text-sm">
+                                    {hasSubscribed ? (
+                                        <p className="text-primary">You’re subscribed — check your inbox.</p>
+                                    ) : null}
                                 </div>
 
                                 {isTurnstileEnabled ? (
