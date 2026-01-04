@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Turnstile, type TurnstileHandle } from "@/components/TurnstileWidget";
+import { capturePostHogEvent } from "@/lib/posthog-client";
 
 type PreviewItem = {
     id: string;
@@ -341,6 +342,19 @@ export default function QuoteClient({ header, expect, calculatorSummary, form }:
             setIsSubmitting(false);
             setSubmitted(true);
             toast.success(form.toastSuccess);
+
+            void capturePostHogEvent("conversion_quote_submit", {
+                source: "quote",
+                serviceType: service,
+                timeframe: timeframe || null,
+                budget: budget || null,
+                fileCount: files.length,
+                hasCalculatorSummary: Boolean(
+                    String(fd.get("calculatorSummary") ?? "").trim(),
+                ),
+                turnstileEnabled: isTurnstileEnabled,
+            });
+
             resetForm(formEl);
         } catch {
             setIsSubmitting(false);

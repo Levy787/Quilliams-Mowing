@@ -19,6 +19,7 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { LeafletMap } from "@/components/reusable/leaflet-map";
 import { Turnstile, type TurnstileHandle } from "@/components/TurnstileWidget";
+import { capturePostHogEvent } from "@/lib/posthog-client";
 
 export type ContactClientProps = {
     header: {
@@ -126,6 +127,13 @@ export default function ContactClient({ header, details, form, map }: ContactCli
             setIsSubmitting(false);
             setSubmitted(true);
             toast.success(form.toastSuccess);
+
+            void capturePostHogEvent("conversion_contact_submit", {
+                source: "contact",
+                hasService: Boolean((service ?? "").trim()),
+                turnstileEnabled: isTurnstileEnabled,
+            });
+
             formEl.reset();
             setService("");
             setTurnstileToken("");

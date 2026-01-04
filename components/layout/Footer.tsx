@@ -16,6 +16,8 @@ import {
 
 import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { capturePostHogEvent } from "@/lib/posthog-client";
 import { Turnstile, type TurnstileHandle } from "@/components/TurnstileWidget";
 import { openCookieSettings } from "@/components/CookieBanner";
 
@@ -167,6 +169,12 @@ export function FooterInner({
             }
 
             toast.success("Thanks — you’re subscribed.");
+
+            capturePostHogEvent("conversion_subscribe", {
+                source: "footer",
+                turnstileEnabled: isTurnstileEnabled,
+            });
+
             setSubscribeEmail("");
             setIsSubscribing(false);
             setTurnstileToken("");
@@ -293,7 +301,7 @@ export function FooterInner({
                                     Email address
                                 </label>
 
-                                <div className="relative">
+                                <div className="flex gap-2">
                                     <Input
                                         id="footer-email"
                                         type="email"
@@ -303,24 +311,17 @@ export function FooterInner({
                                         value={subscribeEmail}
                                         onChange={(e) => setSubscribeEmail(e.currentTarget.value)}
                                         disabled={isSubscribing}
-                                        className={cn(
-
-                                        )}
+                                        className="flex-1"
                                     />
 
-                                    <button
+                                    <Button
                                         type="submit"
                                         aria-label="Subscribe"
                                         disabled={isSubscribing}
-                                        className={cn(
-                                            "absolute right-2 top-1/2 -translate-y-1/2",
-                                            "inline-flex h-9 w-9 items-center justify-center rounded-full",
-                                            "text-primary hover:bg-accent hover:text-accent-foreground transition-colors motion-reduce:transition-none",
-                                            "focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background"
-                                        )}
+                                        className="w-1/4"
                                     >
-                                        <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                                    </button>
+                                        Subscribe
+                                    </Button>
                                 </div>
 
                                 {isTurnstileEnabled ? (

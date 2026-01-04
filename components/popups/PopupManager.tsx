@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { PopupBase } from "@/components/popups/PopupBase";
 import { Turnstile, type TurnstileHandle } from "@/components/TurnstileWidget";
 import type { PopupEntry } from "@/lib/keystatic-reader";
+import { capturePostHogEvent } from "@/lib/posthog-client";
 
 function isExactMatch(pathname: string, pattern: string) {
     return pathname === pattern;
@@ -229,6 +230,15 @@ export function PopupManager({ popups }: { popups: ReadonlyArray<PopupEntry> }) 
 
             setDismissedNow(popup);
             setStatus("success");
+
+            void capturePostHogEvent("conversion_popup_email_capture", {
+                source: "popup",
+                popupSlug: popup.slug,
+                popupTitle: popup.title ?? null,
+                offerCode: popup.emailCapture?.offerCode?.trim() || null,
+                turnstileEnabled: isTurnstileEnabled,
+            });
+
             setTurnstileToken("");
             turnstileRef.current?.reset();
         } catch {
