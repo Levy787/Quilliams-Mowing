@@ -171,6 +171,7 @@ export default function QuoteClient({ header, expect, calculatorSummary, form }:
     const [service, setService] = React.useState<string>("");
     const [timeframe, setTimeframe] = React.useState<string>("");
     const [budget, setBudget] = React.useState<string>("");
+    const [selectResetNonce, setSelectResetNonce] = React.useState(0);
 
     const [files, setFiles] = React.useState<File[]>([]);
     const [previews, setPreviews] = React.useState<PreviewItem[]>([]);
@@ -242,6 +243,7 @@ export default function QuoteClient({ header, expect, calculatorSummary, form }:
         setService("");
         setTimeframe("");
         setBudget("");
+        setSelectResetNonce((n) => n + 1);
         setFiles([]);
         setFileError(null);
         setFileWarning(null);
@@ -443,7 +445,7 @@ export default function QuoteClient({ header, expect, calculatorSummary, form }:
                                     <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                                         <div className="space-y-2">
                                             <Label>{form.serviceTypeLabel}</Label>
-                                            <Select value={service} onValueChange={setService}>
+                                            <Select key={`service-${selectResetNonce}`} onValueChange={setService}>
                                                 <SelectTrigger className="w-full">
                                                     <SelectValue placeholder={form.serviceTypePlaceholder} />
                                                 </SelectTrigger>
@@ -460,7 +462,7 @@ export default function QuoteClient({ header, expect, calculatorSummary, form }:
 
                                         <div className="space-y-2">
                                             <Label>{form.timeframeLabel}</Label>
-                                            <Select value={timeframe} onValueChange={setTimeframe}>
+                                            <Select key={`timeframe-${selectResetNonce}`} onValueChange={setTimeframe}>
                                                 <SelectTrigger className="w-full">
                                                     <SelectValue placeholder={form.timeframePlaceholder} />
                                                 </SelectTrigger>
@@ -479,7 +481,7 @@ export default function QuoteClient({ header, expect, calculatorSummary, form }:
                                     <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                                         <div className="space-y-2">
                                             <Label>{form.budgetLabel}</Label>
-                                            <Select value={budget} onValueChange={setBudget}>
+                                            <Select key={`budget-${selectResetNonce}`} onValueChange={setBudget}>
                                                 <SelectTrigger className="w-full">
                                                     <SelectValue placeholder={form.budgetPlaceholder} />
                                                 </SelectTrigger>

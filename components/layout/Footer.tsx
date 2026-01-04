@@ -304,9 +304,7 @@ export function FooterInner({
                                         onChange={(e) => setSubscribeEmail(e.currentTarget.value)}
                                         disabled={isSubscribing}
                                         className={cn(
-                                            "h-12 w-full rounded-full border bg-background px-5 pr-14",
-                                            "border-border text-foreground placeholder:text-muted-foreground",
-                                            "focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background"
+
                                         )}
                                     />
 

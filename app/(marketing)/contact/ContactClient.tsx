@@ -68,7 +68,7 @@ export type ContactClientProps = {
 };
 
 export default function ContactClient({ header, details, form, map }: ContactClientProps) {
-    const [service, setService] = React.useState<string | undefined>(undefined);
+    const [service, setService] = React.useState<string>("");
     const [submitted, setSubmitted] = React.useState(false);
     const [isSubmitting, setIsSubmitting] = React.useState(false);
     const [turnstileToken, setTurnstileToken] = React.useState("");
@@ -97,7 +97,7 @@ export default function ContactClient({ header, details, form, map }: ContactCli
                 name: String(fd.get("name") ?? "").trim(),
                 email: String(fd.get("email") ?? "").trim(),
                 phone: String(fd.get("phone") ?? "").trim() || null,
-                service: service ?? null,
+                service: service.trim() ? service : null,
                 message: String(fd.get("message") ?? "").trim(),
                 company: String(fd.get("company") ?? "").trim(),
                 turnstileToken: isTurnstileEnabled ? turnstileToken : "",
@@ -127,7 +127,7 @@ export default function ContactClient({ header, details, form, map }: ContactCli
             setSubmitted(true);
             toast.success(form.toastSuccess);
             formEl.reset();
-            setService(undefined);
+            setService("");
             setTurnstileToken("");
             turnstileRef.current?.reset();
         } catch {
