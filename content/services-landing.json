@@ -1,145 +1,142 @@
 {
-    "seo": {
-        "title": "Our Services",
-        "description": "From regular maintenance to full landscape improvements, we offer dependable services tailored to your property.",
-        "ogTitle": "",
-        "ogDescription": "",
-        "ogImage": "https://picsum.photos/seed/quilliams-services/1600/1100"
+  "seo": {
+    "title": "Our Services",
+    "description": "From regular maintenance to full landscape improvements, we offer dependable services tailored to your property."
+  },
+  "hero": {
+    "badge": "Services",
+    "title": "Our Services",
+    "description": "From regular maintenance to full landscape improvements, we offer dependable services tailored to your property.",
+    "primaryCta": {
+      "label": "Get a Quote",
+      "href": "/quote"
     },
-    "hero": {
-        "badge": "Services",
-        "title": "Our Services",
-        "description": "From regular maintenance to full landscape improvements, we offer dependable services tailored to your property.",
-        "primaryCta": {
-            "label": "Get a Quote",
-            "href": "/quote"
-        },
-        "secondaryCta": {
-            "label": "Ask a Question",
-            "href": "/contact"
-        },
-        "chips": [
-            "Friendly, practical advice",
-            "Clear quotes",
-            "Clean finish"
-        ],
-        "image": {
-            "src": "https://picsum.photos/seed/quilliams-services/1600/1100",
-            "alt": "A well-kept garden and outdoor space",
-            "caption": "Practical, tidy, and reliable—work that makes your property easier to enjoy and easier to maintain."
-        }
+    "secondaryCta": {
+      "label": "Ask a Question",
+      "href": "/contact"
     },
-    "process": {
-        "title": "How we work",
-        "description": "A straightforward process—clear recommendations, clear pricing, and clean results.",
-        "steps": [
-            {
-                "title": "Tell us what you need",
-                "description": "Share a few details (and photos if you have them) so we can understand the job.",
-                "icon": "MessageCircle"
-            },
-            {
-                "title": "We assess and recommend",
-                "description": "We’ll suggest the best approach for your yard, budget, and maintenance level.",
-                "icon": "Lightbulb"
-            },
-            {
-                "title": "We quote clearly",
-                "description": "You’ll get a clear quote so you know exactly what’s included.",
-                "icon": "ClipboardCheck"
-            },
-            {
-                "title": "We schedule and deliver",
-                "description": "We book a time that works and show up ready to get it done.",
-                "icon": "CalendarDays"
-            }
-        ]
-    },
-    "servicesGrid": {
-        "title": "What we can help with",
-        "description": "Pick a service to learn more. If you’re not sure, request a quote and we’ll recommend the best next step."
-    },
-    "highlights": {
-        "title": "Service highlights",
-        "description": "Two common goals we hear: keep things consistently tidy, and make improvements that feel worth it.",
-        "items": [
-            {
-                "image": {
-                    "src": "https://picsum.photos/seed/quilliams-maintenance/1400/900",
-                    "alt": "A tidy garden after maintenance"
-                },
-                "title": "Maintenance that stays consistent",
-                "bullets": [
-                    "Reliable regular visits so your yard doesn’t get away from you.",
-                    "Clean edges, tidy beds, and seasonal refreshes when needed.",
-                    "Clear communication on what we’ll do each visit."
-                ],
-                "cta": {
-                    "label": "Get a Quote",
-                    "href": "/quote",
-                    "variant": "default"
-                }
-            },
-            {
-                "image": {
-                    "src": "https://picsum.photos/seed/quilliams-improvements/1400/900",
-                    "alt": "A landscaped outdoor space"
-                },
-                "title": "Improvements that add real value",
-                "bullets": [
-                    "Smarter planting and layout for easier long-term upkeep.",
-                    "Mulch, edging, and tidy finishes that make a big difference.",
-                    "Practical recommendations that fit your budget and timeline."
-                ],
-                "cta": {
-                    "label": "Get a Quote",
-                    "href": "/quote",
-                    "variant": "outline"
-                }
-            }
-        ]
-    },
-    "faq": {
-        "title": "FAQs",
-        "description": "Quick answers to the most common questions we hear.",
-        "items": [
-            {
-                "id": "maintenance",
-                "question": "Do you offer ongoing maintenance?",
-                "answer": "Yes. We can schedule regular visits (weekly, fortnightly, or as needed) to keep your yard consistently tidy."
-            },
-            {
-                "id": "photos",
-                "question": "Can I get a quote from photos?",
-                "answer": "Often, yes. If the job is straightforward, photos and a quick description can be enough to provide a quote or a good estimate."
-            },
-            {
-                "id": "waste",
-                "question": "Do you remove green waste?",
-                "answer": "Yes—green waste removal can be included. Let us know what you’d like cleared and we’ll include it in the quote."
-            },
-            {
-                "id": "timing",
-                "question": "How soon can you start?",
-                "answer": "It depends on the season and the scope of work. Once we know what you need, we’ll confirm the next available times."
-            },
-            {
-                "id": "pricing",
-                "question": "Do you provide fixed quotes?",
-                "answer": "Yes. For most jobs we provide a clear quote outlining what’s included. If anything changes, we’ll discuss it before proceeding."
-            }
-        ]
-    },
-    "finalCta": {
-        "title": "Not sure what you need?",
-        "description": "Tell us a bit about your yard and we’ll recommend the best next step.",
-        "primaryCta": {
-            "label": "Get a Quote",
-            "href": "/quote"
-        },
-        "secondaryCta": {
-            "label": "Contact Us",
-            "href": "/contact"
-        }
+    "chips": [
+      "Friendly, practical advice",
+      "Clear quotes",
+      "Clean finish"
+    ],
+    "image": {
+      "file": "hero/image/file.webp",
+      "alt": "A well-kept garden and outdoor space",
+      "caption": "Practical, tidy, and reliable—work that makes your property easier to enjoy and easier to maintain."
     }
+  },
+  "process": {
+    "title": "How we work",
+    "description": "A straightforward process—clear recommendations, clear pricing, and clean results.",
+    "steps": [
+      {
+        "title": "Tell us what you need",
+        "description": "Share a few details (and photos if you have them) so we can understand the job.",
+        "icon": "MessageCircle"
+      },
+      {
+        "title": "We assess and recommend",
+        "description": "We’ll suggest the best approach for your yard, budget, and maintenance level.",
+        "icon": "Lightbulb"
+      },
+      {
+        "title": "We quote clearly",
+        "description": "You’ll get a clear quote so you know exactly what’s included.",
+        "icon": "ClipboardCheck"
+      },
+      {
+        "title": "We schedule and deliver",
+        "description": "We book a time that works and show up ready to get it done.",
+        "icon": "CalendarDays"
+      }
+    ]
+  },
+  "servicesGrid": {
+    "title": "What we can help with",
+    "description": "Pick a service to learn more. If you’re not sure, request a quote and we’ll recommend the best next step."
+  },
+  "highlights": {
+    "title": "Service highlights",
+    "description": "Two common goals we hear: keep things consistently tidy, and make improvements that feel worth it.",
+    "items": [
+      {
+        "image": {
+          "src": "https://picsum.photos/seed/quilliams-maintenance/1400/900",
+          "alt": "A tidy garden after maintenance"
+        },
+        "title": "Maintenance that stays consistent",
+        "bullets": [
+          "Reliable regular visits so your yard doesn’t get away from you.",
+          "Clean edges, tidy beds, and seasonal refreshes when needed.",
+          "Clear communication on what we’ll do each visit."
+        ],
+        "cta": {
+          "label": "Get a Quote",
+          "href": "/quote",
+          "variant": "default"
+        }
+      },
+      {
+        "image": {
+          "src": "https://picsum.photos/seed/quilliams-improvements/1400/900",
+          "alt": "A landscaped outdoor space"
+        },
+        "title": "Improvements that add real value",
+        "bullets": [
+          "Smarter planting and layout for easier long-term upkeep.",
+          "Mulch, edging, and tidy finishes that make a big difference.",
+          "Practical recommendations that fit your budget and timeline."
+        ],
+        "cta": {
+          "label": "Get a Quote",
+          "href": "/quote",
+          "variant": "outline"
+        }
+      }
+    ]
+  },
+  "faq": {
+    "title": "FAQs",
+    "description": "Quick answers to the most common questions we hear.",
+    "items": [
+      {
+        "id": "maintenance",
+        "question": "Do you offer ongoing maintenance?",
+        "answer": "Yes. We can schedule regular visits (weekly, fortnightly, or as needed) to keep your yard consistently tidy."
+      },
+      {
+        "id": "photos",
+        "question": "Can I get a quote from photos?",
+        "answer": "Often, yes. If the job is straightforward, photos and a quick description can be enough to provide a quote or a good estimate."
+      },
+      {
+        "id": "waste",
+        "question": "Do you remove green waste?",
+        "answer": "Yes—green waste removal can be included. Let us know what you’d like cleared and we’ll include it in the quote."
+      },
+      {
+        "id": "timing",
+        "question": "How soon can you start?",
+        "answer": "It depends on the season and the scope of work. Once we know what you need, we’ll confirm the next available times."
+      },
+      {
+        "id": "pricing",
+        "question": "Do you provide fixed quotes?",
+        "answer": "Yes. For most jobs we provide a clear quote outlining what’s included. If anything changes, we’ll discuss it before proceeding."
+      }
+    ]
+  },
+  "finalCta": {
+    "title": "Not sure what you need?",
+    "description": "Tell us a bit about your yard and we’ll recommend the best next step.",
+    "primaryCta": {
+      "label": "Get a Quote",
+      "href": "/quote"
+    },
+    "secondaryCta": {
+      "label": "Contact Us",
+      "href": "/contact"
+    }
+  }
 }

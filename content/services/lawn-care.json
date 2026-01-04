@@ -1,19 +1,15 @@
 {
   "slug": "lawn-care",
   "label": "Lawn Care",
-  "title": "Lawn care that stays consistently tidy",
+  "title": "Lawn Care",
   "description": "Reliable visits, clean edges, and a tidy finish—so your lawn looks good week after week.",
   "seo": {
     "title": "Lawn care that stays consistently tidy",
-    "description": "Reliable visits, clean edges, and a tidy finish—so your lawn looks good week after week.",
-    "ogTitle": "",
-    "ogDescription": "",
-    "ogImage": "/images/IMG_20250704_93515.webp"
+    "description": "Reliable visits, clean edges, and a tidy finish—so your lawn looks good week after week."
   },
-  "cardTag": "",
   "cardIcon": "Sprout",
   "hero": {
-    "imageSrc": "/images/IMG_20250704_93515.webp",
+    "imageFile": "hero/imageFile.webp",
     "imageAlt": "Freshly mown lawn with trimmed hedges in a private garden",
     "caption": "Clean lines, consistent care, and a tidy finish.",
     "pattern": "pattern-1"
@@ -150,8 +146,7 @@
         "ctaText": "View more details",
         "ctaHref": "/#recent-works"
       }
-    ],
-    "footerNote": ""
+    ]
   },
   "valueBand": {
     "label": "Value",

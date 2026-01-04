@@ -35,6 +35,10 @@ export default async function ServicesPage() {
                 title: service.title,
                 description: service.description,
                 tag: service.cardTag,
+                heroImage: {
+                    src: service.hero.imageSrc,
+                    alt: service.hero.imageAlt,
+                },
                 icon: service.cardIcon,
             }),
         )

@@ -1,19 +1,16 @@
 {
   "slug": "landscaping",
   "label": "Landscaping",
-  "title": "Landscaping that makes your garden feel finished",
+  "title": "Landscaping",
   "description": "Clean lines, practical planting, and tidy finishes—delivered with clear quotes and a straightforward process.",
   "seo": {
     "title": "Landscaping that makes your garden feel finished",
-    "description": "Clean lines, practical planting, and tidy finishes—delivered with clear quotes and a straightforward process.",
-    "ogTitle": "",
-    "ogDescription": "",
-    "ogImage": "/images/IMG_20250708_34242.webp"
+    "description": "Clean lines, practical planting, and tidy finishes—delivered with clear quotes and a straightforward process."
   },
   "cardTag": "Most requested",
   "cardIcon": "Trees",
   "hero": {
-    "imageSrc": "/images/IMG_20250708_34242.webp",
+    "imageFile": "hero/imageFile.webp",
     "imageAlt": "Freshly maintained garden with trimmed hedges and a neat lawn",
     "caption": "A sharp, finished look—without the hassle.",
     "pattern": "pattern-1"
@@ -65,6 +62,10 @@
         "icon": "Trash2"
       }
     ]
+  },
+  "plans": {
+    "cards": [],
+    "ctas": {}
   },
   "results": {
     "label": "Recent landscaping projects",
@@ -172,17 +173,5 @@
     "primaryHref": "/quote",
     "secondaryText": "Contact Us",
     "secondaryHref": "/contact"
-  },
-  "plans": {
-    "label": "",
-    "title": "",
-    "description": "",
-    "cards": [],
-    "ctas": {
-      "primaryText": "",
-      "primaryHref": "",
-      "secondaryText": "",
-      "secondaryHref": ""
-    }
   }
 }

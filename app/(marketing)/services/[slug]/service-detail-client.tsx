@@ -56,6 +56,8 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
     const shouldReduceMotion = !!useReducedMotion();
     const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 
+    const hasHeroImage = Boolean(service.hero.imageSrc?.trim());
+
     const fadeUp = shouldReduceMotion
         ? {}
         : {
@@ -134,14 +136,16 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                                     <Card className="rounded-4xl overflow-hidden border-border/20 bg-background/5 text-background shadow-none p-0 py-0 gap-0">
                                         <div className="relative aspect-16/11 w-full">
                                             <div className="absolute inset-0 bg-[url('/patterns/pattern-2.svg')] bg-repeat opacity-15" />
-                                            <Image
-                                                src={service.hero.imageSrc}
-                                                alt={service.hero.imageAlt}
-                                                fill
-                                                className="object-cover"
-                                                sizes="(min-width: 1024px) 50vw, 100vw"
-                                                priority
-                                            />
+                                            {hasHeroImage ? (
+                                                <Image
+                                                    src={service.hero.imageSrc}
+                                                    alt={service.hero.imageAlt}
+                                                    fill
+                                                    className="object-cover"
+                                                    sizes="(min-width: 1024px) 50vw, 100vw"
+                                                    priority
+                                                />
+                                            ) : null}
                                             <div className="absolute inset-0 bg-linear-to-t from-foreground/80 via-foreground/10 to-transparent" />
                                             {service.hero.caption ? (
                                                 <div className="absolute bottom-0 left-0 right-0 p-6">
@@ -336,13 +340,15 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                             >
                                 <Card className="rounded-4xl border-border shadow-none overflow-hidden h-full">
                                     <div className="relative aspect-16/10 w-full">
-                                        <Image
-                                            src={result.imageSrc}
-                                            alt={result.imageAlt}
-                                            fill
-                                            className="object-cover"
-                                            sizes="(min-width: 1024px) 33vw, 100vw"
-                                        />
+                                        {result.imageSrc?.trim() ? (
+                                            <Image
+                                                src={result.imageSrc}
+                                                alt={result.imageAlt}
+                                                fill
+                                                className="object-cover"
+                                                sizes="(min-width: 1024px) 33vw, 100vw"
+                                            />
+                                        ) : null}
                                     </div>
                                     <CardContent className="px-6 py-6">
                                         <div className="text-lg font-semibold text-foreground">

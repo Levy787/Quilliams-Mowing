@@ -1324,6 +1324,7 @@ export const keystaticConfig = config({
             items: fields.array(
               fields.object({
                 title: fields.text({ label: "Title" }),
+                href: fields.text({ label: "Service page href" }),
                 description: fields.text({
                   label: "Description",
                   multiline: true,

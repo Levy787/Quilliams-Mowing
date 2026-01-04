@@ -33,6 +33,7 @@ export type ServiceCardModel = {
     title: string;
     description: string;
     tag?: string;
+    heroImage?: { src: string; alt: string };
     icon?:
     | "Trees"
     | "Sprout"
@@ -196,17 +197,19 @@ export default function ServicesLandingClient({
                             <Card className="rounded-4xl border-border shadow-none overflow-hidden p-0 py-0 gap-0">
                                 <div className="relative aspect-16/11 w-full">
                                     <div className="absolute inset-0 bg-[url('/patterns/pattern-2.svg')] bg-repeat opacity-20" />
-                                    <Image
-                                        src={content.hero.image.src}
-                                        alt={content.hero.image.alt}
-                                        fill
-                                        className="object-cover"
-                                        sizes="(min-width: 1024px) 50vw, 100vw"
-                                        priority
-                                    />
-                                    <div className="absolute inset-0 bg-linear-to-t from-background/60 via-background/10 to-transparent" />
+                                    {content.hero.image?.src?.trim() ? (
+                                        <Image
+                                            src={content.hero.image.src}
+                                            alt={content.hero.image.alt}
+                                            fill
+                                            className="object-cover"
+                                            sizes="(min-width: 1024px) 50vw, 100vw"
+                                            priority
+                                        />
+                                    ) : null}
+                                    <div className="absolute inset-0 bg-linear-to-t from-gray-800/60 via-gray-800/10 to-transparent" />
                                     <div className="absolute bottom-0 left-0 right-0 p-6">
-                                        <div className="max-w-md text-sm leading-relaxed text-foreground">
+                                        <div className="max-w-md text-sm leading-relaxed text-background">
                                             {content.hero.image.caption}
                                         </div>
                                     </div>
@@ -299,13 +302,28 @@ export default function ServicesLandingClient({
                                         ? SERVICE_CARD_ICONS[service.icon]
                                         : Sprout;
 
+                                const heroSrc = service.heroImage?.src?.trim() ?? "";
+                                const hasHero = Boolean(heroSrc);
+
                                 return (
                                     <Link
                                         key={service.slug}
                                         href={`/services/${service.slug}`}
-                                        className="group focus-visible:outline-none"
+                                        className="group block focus-visible:outline-none"
                                     >
-                                        <Card className="h-full rounded-3xl border-border shadow-none transition-transform group-hover:-translate-y-0.5 group-focus-visible:ring-2 group-focus-visible:ring-ring/50">
+                                        <Card className="p-0 h-full overflow-hidden rounded-3xl border-border shadow-none transition-transform group-hover:-translate-y-0.5 group-focus-visible:ring-2 group-focus-visible:ring-ring/50">
+                                            {hasHero ? (
+                                                <div className="relative aspect-video w-full bg-muted">
+                                                    <Image
+                                                        src={heroSrc}
+                                                        alt={service.heroImage?.alt ?? ""}
+                                                        fill
+                                                        className="object-cover"
+                                                        sizes="(min-width: 1024px) 33vw, 100vw"
+                                                    />
+                                                    <div className="absolute inset-0 bg-linear-to-t from-gray-800/70 via-gray-800/10 to-transparent" />
+                                                </div>
+                                            ) : null}
                                             <CardContent className="px-6 py-6">
                                                 <div className="flex items-start gap-4">
                                                     <div className="mt-0.5 rounded-xl bg-muted p-3">

@@ -1,19 +1,16 @@
 {
   "slug": "seasonal-cleanup",
   "label": "Seasonal Cleanup",
-  "title": "Seasonal cleanups that reset your garden properly",
+  "title": "Seasonal Cleanup",
   "description": "A focused tidy-up that clears the mess, brings things back under control, and sets your garden up for the season ahead.",
   "seo": {
     "title": "Seasonal cleanups that reset your garden properly",
-    "description": "A focused tidy-up that clears the mess, brings things back under control, and sets your garden up for the season ahead.",
-    "ogTitle": "",
-    "ogDescription": "",
-    "ogImage": "/images/IMG_20240509_41792.webp"
+    "description": "A focused tidy-up that clears the mess, brings things back under control, and sets your garden up for the season ahead."
   },
   "cardTag": "Popular",
   "cardIcon": "Wind",
   "hero": {
-    "imageSrc": "/images/IMG_20240509_41792.webp",
+    "imageFile": "hero/imageFile.webp",
     "imageAlt": "Garden looking tidy after a seasonal cleanup and reset",
     "caption": "A proper reset makes everything feel easier to manage.",
     "pattern": "pattern-1"
@@ -66,6 +63,10 @@
       }
     ]
   },
+  "plans": {
+    "cards": [],
+    "ctas": {}
+  },
   "results": {
     "label": "Recent results",
     "title": "From messy to manageable",
@@ -101,8 +102,7 @@
         "ctaText": "View more details",
         "ctaHref": "/#recent-works"
       }
-    ],
-    "footerNote": ""
+    ]
   },
   "valueBand": {
     "label": "Value",
@@ -172,17 +172,5 @@
     "primaryHref": "/quote",
     "secondaryText": "Contact Us",
     "secondaryHref": "/contact"
-  },
-  "plans": {
-    "label": "",
-    "title": "",
-    "description": "",
-    "cards": [],
-    "ctas": {
-      "primaryText": "",
-      "primaryHref": "",
-      "secondaryText": "",
-      "secondaryHref": ""
-    }
   }
 }

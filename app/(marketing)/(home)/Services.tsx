@@ -19,6 +19,7 @@ import { cn } from "@/lib/utils";
 
 type ServiceItem = {
     title: string;
+    href: string;
     description: string;
     imageFile?: string | null;
     imageSrc?: string | null;
@@ -113,6 +114,8 @@ export function Services({ badge, heading, ctaLabel, ctaHref, items }: ServicesP
                                     ? `/images/uploads/${service.imageFile}`
                                     : service.imageSrc) ?? "";
                                 const hasImage = Boolean(resolvedImageSrc.trim());
+                                const href = service.href?.trim();
+                                const isClickable = Boolean(href);
 
                                 return (
                                     <CarouselItem
@@ -136,35 +139,79 @@ export function Services({ badge, heading, ctaLabel, ctaHref, items }: ServicesP
                                         >
                                             <Card className="border-0 shadow-none bg-transparent py-0">
                                                 <CardContent className="px-0">
-                                                    <div className="relative overflow-hidden rounded-3xl border border-border bg-muted aspect-video">
-                                                        {hasImage && (
-                                                            <Image
-                                                                src={resolvedImageSrc}
-                                                                alt={service.imageAlt ?? ""}
-                                                                fill
-                                                                sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                                                                className="object-cover"
-                                                                priority={idx < 2}
-                                                            />
-                                                        )}
-                                                        <div className="absolute right-4 top-4 rounded-full bg-background/90 px-3 py-1 text-sm text-foreground">
-                                                            {service.tag}
-                                                        </div>
-                                                    </div>
+                                                    {isClickable ? (
+                                                        <Link
+                                                            href={href!}
+                                                            aria-label={`View ${service.title} service`}
+                                                            className={cn(
+                                                                "block",
+                                                                "rounded-3xl",
+                                                                "focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background",
+                                                            )}
+                                                        >
+                                                            <div className="relative overflow-hidden rounded-3xl border border-border bg-muted aspect-video">
+                                                                {hasImage && (
+                                                                    <Image
+                                                                        src={resolvedImageSrc}
+                                                                        alt={service.imageAlt ?? ""}
+                                                                        fill
+                                                                        sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                                                                        className="object-cover"
+                                                                        priority={idx < 2}
+                                                                    />
+                                                                )}
+                                                                <div className="absolute right-4 top-4 rounded-full bg-background/90 px-3 py-1 text-sm text-foreground">
+                                                                    {service.tag}
+                                                                </div>
+                                                            </div>
 
-                                                    <div className="mt-6 flex items-center gap-3">
-                                                        <Icon
-                                                            className="h-8 w-8 text-primary"
-                                                            aria-hidden="true"
-                                                        />
-                                                        <div className="text-xl font-semibold text-foreground">
-                                                            {service.title}
-                                                        </div>
-                                                    </div>
+                                                            <div className="mt-6 flex items-center gap-3">
+                                                                <Icon
+                                                                    className="h-8 w-8 text-primary"
+                                                                    aria-hidden="true"
+                                                                />
+                                                                <div className="text-xl font-semibold text-foreground">
+                                                                    {service.title}
+                                                                </div>
+                                                            </div>
 
-                                                    <p className="mt-3 text-base leading-relaxed text-muted-foreground line-clamp-3">
-                                                        {service.description}
-                                                    </p>
+                                                            <p className="mt-3 text-base leading-relaxed text-muted-foreground line-clamp-3">
+                                                                {service.description}
+                                                            </p>
+                                                        </Link>
+                                                    ) : (
+                                                        <>
+                                                            <div className="relative overflow-hidden rounded-3xl border border-border bg-muted aspect-video">
+                                                                {hasImage && (
+                                                                    <Image
+                                                                        src={resolvedImageSrc}
+                                                                        alt={service.imageAlt ?? ""}
+                                                                        fill
+                                                                        sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                                                                        className="object-cover"
+                                                                        priority={idx < 2}
+                                                                    />
+                                                                )}
+                                                                <div className="absolute right-4 top-4 rounded-full bg-background/90 px-3 py-1 text-sm text-foreground">
+                                                                    {service.tag}
+                                                                </div>
+                                                            </div>
+
+                                                            <div className="mt-6 flex items-center gap-3">
+                                                                <Icon
+                                                                    className="h-8 w-8 text-primary"
+                                                                    aria-hidden="true"
+                                                                />
+                                                                <div className="text-xl font-semibold text-foreground">
+                                                                    {service.title}
+                                                                </div>
+                                                            </div>
+
+                                                            <p className="mt-3 text-base leading-relaxed text-muted-foreground line-clamp-3">
+                                                                {service.description}
+                                                            </p>
+                                                        </>
+                                                    )}
                                                 </CardContent>
                                             </Card>
                                         </motion.div>

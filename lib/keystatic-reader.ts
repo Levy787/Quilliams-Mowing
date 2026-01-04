@@ -131,7 +131,39 @@ export async function getReferralContent(): Promise<ReferralContent> {
 }
 
 export async function getServicesLandingContent() {
-    return reader.singletons.servicesLanding.readOrThrow();
+    const entry = await reader.singletons.servicesLanding.readOrThrow();
+
+    const heroImage = (entry as unknown as {
+        hero?: {
+            image?: {
+                file?: string | null;
+                src?: string | null;
+            };
+        };
+    }).hero?.image;
+
+    const heroImageSrc = resolveKeystaticImageSrc({
+        file: heroImage?.file,
+        src: heroImage?.src,
+    });
+
+    return {
+        ...entry,
+        seo: {
+            title: entry.seo.title,
+            description: entry.seo.description,
+            ogTitle: entry.seo.ogTitle,
+            ogDescription: entry.seo.ogDescription,
+            ogImage: entry.seo.ogImage || undefined,
+        },
+        hero: {
+            ...entry.hero,
+            image: {
+                ...entry.hero.image,
+                src: heroImageSrc,
+            },
+        },
+    };
 }
 
 export type ServicesLandingContent = Awaited<
@@ -495,6 +527,7 @@ export async function getServiceBySlug(slug: string): Promise<Service | null> {
     if (!entry) return null;
 
     const hero = entry.hero as unknown as {
+        imageFile?: string | null;
         imageSrc?: string | null;
         imageAlt?: string | null;
         caption?: string | null;
@@ -548,7 +581,11 @@ export async function getServiceBySlug(slug: string): Promise<Service | null> {
             }
             : undefined,
         hero: {
-            imageSrc: hero.imageSrc ?? "",
+            imageSrc: resolveKeystaticImageSrc({
+                file: hero.imageFile,
+                src: hero.imageSrc,
+                subdir: slug,
+            }),
             imageAlt: hero.imageAlt ?? "",
             caption: hero.caption || undefined,
             pattern: hero.pattern,

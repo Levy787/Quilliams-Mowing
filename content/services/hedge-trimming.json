@@ -1,19 +1,16 @@
 {
   "slug": "hedge-trimming",
   "label": "Hedge Trimming",
-  "title": "Hedge trimming for a crisp, tidy finish",
+  "title": "Hedge Trimming",
   "description": "Neat shapes, clean lines, and a consistent look—whether it’s a quick trim or a proper reset after overgrowth.",
   "seo": {
     "title": "Hedge trimming for a crisp, tidy finish",
     "description": "Neat shapes, clean lines, and a consistent look—whether it’s a quick trim or a proper reset after overgrowth.",
-    "ogTitle": "",
-    "ogDescription": "",
     "ogImage": "/images/IMG_20250708_11200.webp"
   },
-  "cardTag": "",
   "cardIcon": "Scissors",
   "hero": {
-    "imageSrc": "/images/IMG_20250708_11200.webp",
+    "imageFile": "hero/imageFile.webp",
     "imageAlt": "Freshly trimmed hedges with a tidy lawn in a private garden",
     "caption": "A sharp trim makes the whole garden look more finished.",
     "pattern": "pattern-1"
@@ -152,8 +149,7 @@
         "ctaText": "View more details",
         "ctaHref": "/#recent-works"
       }
-    ],
-    "footerNote": ""
+    ]
   },
   "valueBand": {
     "label": "Value",

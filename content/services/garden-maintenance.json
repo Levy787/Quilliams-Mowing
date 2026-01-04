@@ -1,19 +1,17 @@
 {
   "slug": "garden-maintenance",
   "label": "Garden Maintenance",
-  "title": "Garden maintenance that keeps everything looking cared for",
+  "title": "Garden Maintenance",
   "description": "Regular, reliable visits to keep your garden tidy, healthy, and consistently presentable—without the stress of falling behind.",
   "seo": {
     "title": "Garden maintenance that keeps everything looking cared for",
     "description": "Regular, reliable visits to keep your garden tidy, healthy, and consistently presentable—without the stress of falling behind.",
-    "ogTitle": "",
-    "ogDescription": "",
     "ogImage": "/images/IMG_20250715_29185.webp"
   },
   "cardTag": "Popular",
   "cardIcon": "Flower2",
   "hero": {
-    "imageSrc": "/images/IMG_20250715_29185.webp",
+    "imageFile": "hero/imageFile.webp",
     "imageAlt": "Well-kept garden with trimmed hedges and neat borders after maintenance",
     "caption": "A consistent tidy-up makes the whole space feel better.",
     "pattern": "pattern-1"
@@ -154,8 +152,7 @@
         "ctaText": "View more details",
         "ctaHref": "/#recent-works"
       }
-    ],
-    "footerNote": ""
+    ]
   },
   "valueBand": {
     "label": "Value",

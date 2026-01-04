@@ -1,19 +1,15 @@
 {
   "slug": "mulching",
   "label": "Mulching",
-  "title": "Mulching that makes beds look finished and easier to manage",
+  "title": "Mulching",
   "description": "A clean layer of mulch improves the look of beds, helps keep things tidy, and supports healthier growth with less day-to-day hassle.",
   "seo": {
     "title": "Mulching that makes beds look finished and easier to manage",
-    "description": "A clean layer of mulch improves the look of beds, helps keep things tidy, and supports healthier growth with less day-to-day hassle.",
-    "ogTitle": "",
-    "ogDescription": "",
-    "ogImage": "/images/IMG_20250708_34242.webp"
+    "description": "A clean layer of mulch improves the look of beds, helps keep things tidy, and supports healthier growth with less day-to-day hassle."
   },
-  "cardTag": "",
   "cardIcon": "Layers",
   "hero": {
-    "imageSrc": "/images/IMG_20250704_93515.webp",
+    "imageFile": "hero/imageFile.webp",
     "imageAlt": "Garden border and lawn looking tidy after a refresh",
     "caption": "A simple upgrade that makes beds look intentional.",
     "pattern": "pattern-1"
@@ -66,6 +62,10 @@
       }
     ]
   },
+  "plans": {
+    "cards": [],
+    "ctas": {}
+  },
   "results": {
     "label": "Recent results",
     "title": "Beds that look sharper and stay cleaner",
@@ -101,8 +101,7 @@
         "ctaText": "View more details",
         "ctaHref": "/#recent-works"
       }
-    ],
-    "footerNote": ""
+    ]
   },
   "valueBand": {
     "label": "Value",
@@ -172,17 +171,5 @@
     "primaryHref": "/quote",
     "secondaryText": "Contact Us",
     "secondaryHref": "/contact"
-  },
-  "plans": {
-    "label": "",
-    "title": "",
-    "description": "",
-    "cards": [],
-    "ctas": {
-      "primaryText": "",
-      "primaryHref": "",
-      "secondaryText": "",
-      "secondaryHref": ""
-    }
   }
 }
