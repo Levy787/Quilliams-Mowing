@@ -1,8 +1,13 @@
 "use client";
 
-// Ensure PostHog instrumentation runs in the client bundle.
-import "@/app/instrumentation-client";
+import * as React from "react";
 
 export function PostHogClientInit() {
+    React.useEffect(() => {
+        // Defer analytics initialization until after hydration.
+        // This avoids DOM mutations (e.g. injected <script> tags) during hydration.
+        void import("@/app/instrumentation-client");
+    }, []);
+
     return null;
 }

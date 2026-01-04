@@ -87,7 +87,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {hasTurnstileConfigured ? (
-          <link rel="preconnect" href="https://challenges.cloudflare.com" />
+          <link rel="preconnect" href="https://challenges.cloudflare.com" as="script" />
         ) : null}
       </head>
       <body

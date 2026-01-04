@@ -15,6 +15,9 @@ export function subscribeUserTemplate(data: SubscribeUserData) {
                 "You’ll receive occasional updates and offers. If you didn’t mean to subscribe, you can ignore this email.",
             ),
         ].join(""),
+        {
+            preheaderText: "Subscription confirmed.",
+        },
     );
 
     const text = [

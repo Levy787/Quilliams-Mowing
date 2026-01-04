@@ -1,4 +1,4 @@
-import { labelValue, paragraph, wrapEmailHtml } from "./_shared";
+import { keyValueTable, paragraph, textBox, wrapEmailHtml } from "./_shared";
 
 export type ContactAdminData = {
     name: string;
@@ -11,22 +11,27 @@ export type ContactAdminData = {
 export function contactAdminTemplate(data: ContactAdminData) {
     const subject = `New contact form submission from ${data.name}`;
 
+    const phone = data.phone?.trim() ? data.phone.trim() : "(not provided)";
+    const service = data.service?.trim()
+        ? data.service.trim()
+        : "(not selected)";
+
     const html = wrapEmailHtml(
         "New contact enquiry",
         [
-            paragraph("You have received a new contact form submission."),
-            labelValue("Name", data.name),
-            labelValue("Email", data.email),
-            labelValue(
-                "Phone",
-                data.phone?.trim() ? data.phone : "(not provided)",
-            ),
-            labelValue(
-                "Service",
-                data.service?.trim() ? data.service : "(not selected)",
-            ),
-            labelValue("Message", data.message),
+            paragraph("A new contact form submission was received."),
+            keyValueTable([
+                { label: "Name", value: data.name },
+                { label: "Email", value: data.email },
+                { label: "Phone", value: phone },
+                { label: "Service", value: service },
+            ]),
+            paragraph("Message"),
+            textBox(data.message),
         ].join(""),
+        {
+            preheaderText: `New contact enquiry from ${data.name}`,
+        },
     );
 
     const text = [
@@ -34,10 +39,11 @@ export function contactAdminTemplate(data: ContactAdminData) {
         "",
         `Name: ${data.name}`,
         `Email: ${data.email}`,
-        `Phone: ${data.phone?.trim() ? data.phone : "(not provided)"}`,
-        `Service: ${data.service?.trim() ? data.service : "(not selected)"}`,
+        `Phone: ${phone}`,
+        `Service: ${service}`,
         "",
-        "Message:",
+        "Message",
+        "----------------",
         data.message,
     ].join("\n");
 

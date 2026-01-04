@@ -204,6 +204,8 @@ export function PopupManager({ popups }: { popups: ReadonlyArray<PopupEntry> }) 
                 body: JSON.stringify({
                     email: trimmed,
                     company: "",
+                    offerCode: popup.emailCapture?.offerCode ?? null,
+                    offerHeadline: popup.headline ?? null,
                     turnstileToken: isTurnstileEnabled ? turnstileToken : "",
                     turnstileContext: "popup",
                 }),

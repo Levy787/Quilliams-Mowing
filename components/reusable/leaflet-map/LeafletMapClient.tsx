@@ -29,7 +29,7 @@ export default function LeafletMapClient({ center, zoom, elements }: Props) {
                 if (element.type === "circle") {
                     return (
                         <Circle
-                            // eslint-disable-next-line react/no-array-index-key
+                             
                             key={`circle-${index}`}
                             center={element.center}
                             radius={element.radius}

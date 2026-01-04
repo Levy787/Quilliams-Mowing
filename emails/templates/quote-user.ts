@@ -18,6 +18,10 @@ export function quoteUserTemplate(data: QuoteUserData) {
                 "If you have photos you’d like to share, just reply to this email and attach them.",
             ),
         ].join(""),
+        {
+            preheaderText:
+                "We’ve received your quote request and will be in touch.",
+        },
     );
 
     const text = [

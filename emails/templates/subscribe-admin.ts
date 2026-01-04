@@ -1,4 +1,4 @@
-import { labelValue, paragraph, wrapEmailHtml } from "./_shared";
+import { keyValueTable, paragraph, wrapEmailHtml } from "./_shared";
 
 export type SubscribeAdminData = {
     email: string;
@@ -13,8 +13,11 @@ export function subscribeAdminTemplate(data: SubscribeAdminData) {
             paragraph(
                 "A new email address was submitted via the website subscribe form.",
             ),
-            labelValue("Email", data.email),
+            keyValueTable([{ label: "Email", value: data.email }]),
         ].join(""),
+        {
+            preheaderText: `New subscriber: ${data.email}`,
+        },
     );
 
     const text = [

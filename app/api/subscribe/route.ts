@@ -3,6 +3,7 @@ import { type NextRequest, NextResponse } from "next/server";
 import { getEmailConfig, sendEmail } from "@/lib/email/sendgrid";
 import { subscribeAdminTemplate } from "@/emails/templates/subscribe-admin";
 import { subscribeUserTemplate } from "@/emails/templates/subscribe-user";
+import { popupCouponUserTemplate } from "@/emails/templates/popup-coupon-user";
 import {
     checkRateLimit,
     getClientIp,
@@ -108,7 +109,25 @@ export async function POST(req: NextRequest) {
             replyTo: email,
         });
 
-        const user = subscribeUserTemplate({ email });
+        const offerCodeRaw = context === "popup"
+            ? asTrimmedString(body.offerCode)
+            : null;
+
+        const offerCode = offerCodeRaw && offerCodeRaw.length <= 64
+            ? offerCodeRaw
+            : null;
+
+        const offerHeadlineRaw = context === "popup"
+            ? asTrimmedString(body.offerHeadline)
+            : null;
+
+        const user = offerCode
+            ? popupCouponUserTemplate({
+                email,
+                offerCode,
+                offerHeadline: offerHeadlineRaw,
+            })
+            : subscribeUserTemplate({ email });
         await sendEmail({
             to: email,
             from: config.from,

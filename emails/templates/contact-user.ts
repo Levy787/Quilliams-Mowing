@@ -18,6 +18,9 @@ export function contactUserTemplate(data: ContactUserData) {
                 "If you have any extra details (photos, measurements, access notes), you can simply reply to this email.",
             ),
         ].join(""),
+        {
+            preheaderText: "We’ve received your message and will be in touch.",
+        },
     );
 
     const text = [
