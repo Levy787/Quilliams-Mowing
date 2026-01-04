@@ -8,6 +8,7 @@ import * as React from "react";
 import {
     Dialog,
     DialogContent,
+    DialogDescription,
     DialogHeader,
     DialogTitle,
 } from "@/components/ui/dialog";
@@ -192,6 +193,9 @@ export function NavbarSearch({ className }: { className?: string }) {
                 >
                     <DialogHeader className="sr-only">
                         <DialogTitle>Search</DialogTitle>
+                        <DialogDescription>
+                            Search the site and navigate to results.
+                        </DialogDescription>
                     </DialogHeader>
 
                     <div className="bg-popover text-popover-foreground border rounded-xl shadow">

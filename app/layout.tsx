@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import "leaflet/dist/leaflet.css";
 
@@ -73,11 +74,31 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const hasTurnstileConfigured = Boolean(
+    process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY_SUBSCRIBE?.trim() ||
+      process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY_CONTACT?.trim() ||
+      process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY_QUOTE?.trim() ||
+      process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY_POPUP?.trim() ||
+      process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY?.trim(),
+  );
+
   return (
     <html lang="en">
+      <head>
+        {hasTurnstileConfigured ? (
+          <link rel="preconnect" href="https://challenges.cloudflare.com" />
+        ) : null}
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {hasTurnstileConfigured ? (
+          <Script
+            id="cf-turnstile"
+            src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
+            strategy="beforeInteractive"
+          />
+        ) : null}
         {children}
       </body>
     </html>

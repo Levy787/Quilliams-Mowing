@@ -9,6 +9,7 @@ import {
     Dialog,
     DialogClose,
     DialogContent,
+    DialogDescription,
     DialogOverlay,
     DialogPortal,
     DialogTitle,
@@ -36,6 +37,9 @@ export function PopupBase({
                     )}
                 >
                     <DialogTitle className="sr-only">{title}</DialogTitle>
+                    <DialogDescription className="sr-only">
+                        Popup dialog
+                    </DialogDescription>
 
                     <DialogClose
                         aria-label="Close"

@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-import Script from "next/script";
 
 export type TurnstileHandle = {
     reset: () => void;
@@ -10,6 +9,9 @@ export type TurnstileHandle = {
 type TurnstileOptions = {
     sitekey: string;
     theme?: "auto" | "light" | "dark";
+    size?: "normal" | "compact" | "flexible";
+    appearance?: "always" | "execute" | "interaction-only";
+    execution?: "render" | "execute";
     callback?: (token: string) => void;
     "expired-callback"?: () => void;
     "error-callback"?: () => void;
@@ -18,7 +20,7 @@ type TurnstileOptions = {
 declare global {
     interface Window {
         turnstile?: {
-            render: (container: HTMLElement, options: TurnstileOptions) => string;
+            render: (container: HTMLElement | string, options: TurnstileOptions) => string;
             reset: (widgetId?: string) => void;
             remove: (widgetId: string) => void;
         };
@@ -31,11 +33,17 @@ export function TurnstileWidget(
         className,
         siteKey: siteKeyProp,
         theme = "auto",
+        size = "normal",
+        appearance,
+        execution,
     }: {
         onToken: (token: string) => void;
         className?: string;
         siteKey?: string;
         theme?: "auto" | "light" | "dark";
+        size?: "normal" | "compact" | "flexible";
+        appearance?: "always" | "execute" | "interaction-only";
+        execution?: "render" | "execute";
     },
     ref: React.ForwardedRef<TurnstileHandle>,
 ) {
@@ -82,6 +90,9 @@ export function TurnstileWidget(
             widgetIdRef.current = window.turnstile.render(containerRef.current, {
                 sitekey: siteKey,
                 theme,
+                size,
+                ...(appearance ? { appearance } : {}),
+                ...(execution ? { execution } : {}),
                 callback: (token) => onToken(token),
                 "expired-callback": () => onToken(""),
                 "error-callback": () => onToken(""),
@@ -100,19 +111,11 @@ export function TurnstileWidget(
             }
             widgetIdRef.current = null;
         };
-    }, [onToken, siteKey, theme]);
+    }, [appearance, execution, onToken, siteKey, size, theme]);
 
     if (!siteKey?.trim()) return null;
 
-    return (
-        <>
-            <Script
-                src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
-                strategy="afterInteractive"
-            />
-            <div ref={containerRef} className={className} />
-        </>
-    );
+    return <div ref={containerRef} className={className} />;
 }
 
 export const Turnstile = React.forwardRef(TurnstileWidget);

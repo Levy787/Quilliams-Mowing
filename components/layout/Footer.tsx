@@ -192,6 +192,7 @@ export function FooterInner({
                                     alt={logoAlt}
                                     width={176}
                                     height={40}
+                                    style={{ width: "auto", height: "auto" }}
                                 />
                             </Link>
                             <p className="mt-6 max-w-md text-base leading-relaxed text-background/75">

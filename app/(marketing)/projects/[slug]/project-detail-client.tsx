@@ -22,7 +22,12 @@ import {
     BreadcrumbPage,
     BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogTitle,
+} from "@/components/ui/dialog";
 import type { ProjectDetail, ProjectPattern } from "@/lib/keystatic-reader";
 
 function patternUrl(pattern: ProjectPattern): string {
@@ -402,6 +407,9 @@ export default function ProjectDetailClient({
                             <DialogTitle className="sr-only">
                                 {project.title} gallery
                             </DialogTitle>
+                            <DialogDescription className="sr-only">
+                                Image gallery modal.
+                            </DialogDescription>
                             <div className="relative">
                                 <div className="relative aspect-16/10 w-full bg-muted">
                                     {activeGalleryItem ? (
