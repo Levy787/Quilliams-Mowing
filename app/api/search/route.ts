@@ -113,14 +113,27 @@ function collectStrings(
 }
 
 function guessSnippet(entry: unknown): string | undefined {
-    const e = entry as any;
+    const asObject = (value: unknown): Record<string, unknown> | null =>
+        value && typeof value === "object"
+            ? (value as Record<string, unknown>)
+            : null;
+    const asString = (value: unknown): string | undefined =>
+        typeof value === "string" ? value : undefined;
+
+    const root = asObject(entry);
+    if (!root) return undefined;
+
+    const seo = asObject(root.seo);
+    const header = asObject(root.header);
+    const hero = asObject(root.hero);
+
     return (
-        e?.seo?.description ||
-        e?.header?.description ||
-        e?.hero?.description ||
-        e?.hero?.subheading ||
-        e?.hero?.subtitle ||
-        e?.hero?.heading ||
+        asString(seo?.description) ||
+        asString(header?.description) ||
+        asString(hero?.description) ||
+        asString(hero?.subheading) ||
+        asString(hero?.subtitle) ||
+        asString(hero?.heading) ||
         undefined
     );
 }

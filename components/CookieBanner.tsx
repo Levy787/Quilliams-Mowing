@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import { createPortal } from "react-dom";
-import posthog from "posthog-js";
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -34,15 +33,9 @@ function readConsent(): ConsentValue | null {
     return v === "accepted" || v === "rejected" ? v : null;
 }
 
-function isGpcEnabled(): boolean {
-    if (typeof navigator === "undefined") return false;
-    return (navigator as unknown as { globalPrivacyControl?: boolean }).globalPrivacyControl === true;
-}
-
 export function CookieBanner() {
     const [mounted, setMounted] = React.useState(false);
     const [open, setOpen] = React.useState(false);
-    const [consent, setConsent] = React.useState<ConsentValue | null>(null);
 
     React.useEffect(() => {
         setMounted(true);
@@ -50,10 +43,8 @@ export function CookieBanner() {
 
     React.useEffect(() => {
         const next = readConsent();
-        setConsent(next);
 
         // Always show the banner when there's no stored choice.
-        // (Even if Global Privacy Control is enabled, we still show it for transparency.)
         setOpen(!next);
     }, []);
 
@@ -65,28 +56,11 @@ export function CookieBanner() {
 
     function applyConsent(value: ConsentValue) {
         setCookieValue(CONSENT_COOKIE, value, 60 * 60 * 24 * 365);
-        setConsent(value);
         setOpen(false);
 
-        if (value === "accepted") {
-            posthog.set_config({
-                disable_persistence: false,
-                persistence: "localStorage+cookie",
-            });
-            posthog.opt_in_capturing();
-            posthog.capture("cookie_consent_accepted");
-            posthog.capture("$pageview");
-        } else {
-            // Reject analytics cookies, but keep anonymous (cookieless) analytics.
-            posthog.set_config({
-                disable_persistence: true,
-                persistence: "memory",
-            });
-            posthog.reset(true);
-            posthog.opt_in_capturing();
-            posthog.capture("cookie_consent_rejected");
-            posthog.capture("$pageview");
-        }
+        // Apply tracking mode change immediately.
+        // (Cookieless tracking runs regardless; "Yes" only enables persistence.)
+        if (typeof window !== "undefined") window.location.reload();
     }
 
     if (!mounted || !open) return null;
@@ -102,7 +76,8 @@ export function CookieBanner() {
         >
             <div className="container mx-auto flex flex-col gap-3 px-4 py-4 md:flex-row md:items-center md:justify-between">
                 <div className="text-sm text-foreground">
-                    We use analytics to understand how the site is used and improve it. If you reject, we’ll still collect anonymous usage data without cookies.
+                    Choose “Yes” to allow analytics cookies, or “Only necessary” to continue without analytics cookies.
+                    We still track page visits without cookies.
                 </div>
 
                 <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
@@ -111,13 +86,13 @@ export function CookieBanner() {
                         variant="secondary"
                         onClick={() => applyConsent("rejected")}
                     >
-                        Reject
+                        Only necessary
                     </Button>
                     <Button
                         type="button"
                         onClick={() => applyConsent("accepted")}
                     >
-                        Accept analytics cookies
+                        Yes
                     </Button>
                 </div>
             </div>
