@@ -22,6 +22,14 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
+    Breadcrumb,
+    BreadcrumbItem,
+    BreadcrumbLink,
+    BreadcrumbList,
+    BreadcrumbPage,
+    BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import {
     Accordion,
     AccordionContent,
     AccordionItem,
@@ -135,7 +143,25 @@ export default function ServicesLandingClient({
 
     return (
         <main>
-            <section className="mx-4 md:mx-8 lg:mx-16 py-12 md:py-16">
+            <div className="mx-4 md:mx-8 lg:mx-16 pt-6 md:pt-8">
+                <div className="container mx-auto px-4 lg:px-12">
+                    <Breadcrumb>
+                        <BreadcrumbList>
+                            <BreadcrumbItem>
+                                <BreadcrumbLink asChild>
+                                    <Link href="/">Home</Link>
+                                </BreadcrumbLink>
+                            </BreadcrumbItem>
+                            <BreadcrumbSeparator />
+                            <BreadcrumbItem>
+                                <BreadcrumbPage>Services</BreadcrumbPage>
+                            </BreadcrumbItem>
+                        </BreadcrumbList>
+                    </Breadcrumb>
+                </div>
+            </div>
+
+            <section className="mx-4 md:mx-8 lg:mx-16 pt-6 md:pt-8 pb-12 md:pb-16">
                 <div className="container mx-auto px-4 lg:px-12">
                     {/* Hero */}
                     <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center">

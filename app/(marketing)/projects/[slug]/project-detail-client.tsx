@@ -14,6 +14,14 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion";
+import {
+    Breadcrumb,
+    BreadcrumbItem,
+    BreadcrumbLink,
+    BreadcrumbList,
+    BreadcrumbPage,
+    BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import type { ProjectDetail, ProjectPattern } from "@/lib/keystatic-reader";
 
@@ -156,8 +164,32 @@ export default function ProjectDetailClient({
 
     return (
         <main>
+            <div className="mx-4 md:mx-8 lg:mx-16 pt-6 md:pt-8">
+                <div className="container mx-auto px-4 lg:px-12">
+                    <Breadcrumb>
+                        <BreadcrumbList>
+                            <BreadcrumbItem>
+                                <BreadcrumbLink asChild>
+                                    <Link href="/">Home</Link>
+                                </BreadcrumbLink>
+                            </BreadcrumbItem>
+                            <BreadcrumbSeparator />
+                            <BreadcrumbItem>
+                                <BreadcrumbLink asChild>
+                                    <Link href="/projects">Projects</Link>
+                                </BreadcrumbLink>
+                            </BreadcrumbItem>
+                            <BreadcrumbSeparator />
+                            <BreadcrumbItem>
+                                <BreadcrumbPage>{project.title}</BreadcrumbPage>
+                            </BreadcrumbItem>
+                        </BreadcrumbList>
+                    </Breadcrumb>
+                </div>
+            </div>
+
             {/* Hero */}
-            <section className="mx-4 md:mx-8 lg:mx-16 pt-12 md:pt-16">
+            <section className="mx-4 md:mx-8 lg:mx-16 pt-6 md:pt-8">
                 <div className="container mx-auto px-4 lg:px-12">
                     <div className="relative overflow-hidden rounded-4xl bg-foreground text-background">
                         <div

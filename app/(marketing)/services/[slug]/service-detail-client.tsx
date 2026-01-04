@@ -21,6 +21,14 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
+    Breadcrumb,
+    BreadcrumbItem,
+    BreadcrumbLink,
+    BreadcrumbList,
+    BreadcrumbPage,
+    BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import {
     Accordion,
     AccordionContent,
     AccordionItem,
@@ -71,8 +79,32 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
 
     return (
         <main>
+            <div className="mx-4 md:mx-8 lg:mx-16 pt-6 md:pt-8">
+                <div className="container mx-auto px-4 lg:px-12">
+                    <Breadcrumb>
+                        <BreadcrumbList>
+                            <BreadcrumbItem>
+                                <BreadcrumbLink asChild>
+                                    <Link href="/">Home</Link>
+                                </BreadcrumbLink>
+                            </BreadcrumbItem>
+                            <BreadcrumbSeparator />
+                            <BreadcrumbItem>
+                                <BreadcrumbLink asChild>
+                                    <Link href="/services">Services</Link>
+                                </BreadcrumbLink>
+                            </BreadcrumbItem>
+                            <BreadcrumbSeparator />
+                            <BreadcrumbItem>
+                                <BreadcrumbPage>{service.title}</BreadcrumbPage>
+                            </BreadcrumbItem>
+                        </BreadcrumbList>
+                    </Breadcrumb>
+                </div>
+            </div>
+
             {/* Hero */}
-            <section className="mx-4 md:mx-8 lg:mx-16 pt-12 md:pt-16">
+            <section className="mx-4 md:mx-8 lg:mx-16 pt-6 md:pt-8">
                 <div className="container mx-auto px-4 lg:px-12">
                     <div className="relative overflow-hidden rounded-4xl bg-foreground text-background">
                         <div
