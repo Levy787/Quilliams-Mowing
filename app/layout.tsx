@@ -5,6 +5,7 @@ import "./globals.css";
 import "leaflet/dist/leaflet.css";
 
 import { getSiteContent } from "@/lib/keystatic-reader";
+import { PostHogClientInit } from "@/components/PostHogClientInit";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -99,6 +100,7 @@ export default function RootLayout({
             strategy="beforeInteractive"
           />
         ) : null}
+        <PostHogClientInit />
         {children}
       </body>
     </html>

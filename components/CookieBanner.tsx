@@ -64,16 +64,6 @@ export function CookieBanner() {
     }, []);
 
     function applyConsent(value: ConsentValue) {
-        // Respect Global Privacy Control as a hard opt-out.
-        if (isGpcEnabled()) {
-            setCookieValue(CONSENT_COOKIE, "rejected", 60 * 60 * 24 * 365);
-            setConsent("rejected");
-            setOpen(false);
-            posthog.opt_out_capturing();
-            posthog.reset();
-            return;
-        }
-
         setCookieValue(CONSENT_COOKIE, value, 60 * 60 * 24 * 365);
         setConsent(value);
         setOpen(false);

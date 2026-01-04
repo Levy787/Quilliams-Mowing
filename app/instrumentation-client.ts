@@ -1,6 +1,8 @@
 import posthog from "posthog-js";
 
 const CONSENT_COOKIE = "cookie_consent_analytics";
+const DEBUG = process.env.NODE_ENV !== "production";
+const API_HOST = "/ph";
 
 function getCookieValue(name: string): string | null {
     if (typeof document === "undefined") return null;
@@ -23,24 +25,64 @@ function isGpcEnabled(): boolean {
 
 const key = process.env.NEXT_PUBLIC_POSTHOG_KEY;
 if (key?.trim()) {
+    if (DEBUG && typeof window !== "undefined") {
+        // eslint-disable-next-line no-console
+        console.info("[posthog] instrumentation-client loaded", {
+            api_host: API_HOST,
+            ui_host: process.env.NEXT_PUBLIC_UI_HOST,
+            hasKey: Boolean(key?.trim()),
+        });
+    }
+
     posthog.init(key, {
-        api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST,
+        // Per PostHog Next.js reverse-proxy docs: use a relative path.
+        api_host: API_HOST,
         ui_host: process.env.NEXT_PUBLIC_UI_HOST,
         defaults: "2025-11-30",
 
         // We handle consent + pageview manually.
         capture_pageview: false,
 
+        on_request_error: (err) => {
+            if (!DEBUG) return;
+            // eslint-disable-next-line no-console
+            console.warn("[posthog] request error", {
+                statusCode: err.statusCode,
+                text: err.text,
+            });
+        },
+
         loaded: (ph) => {
+            if (DEBUG) {
+                // eslint-disable-next-line no-console
+                console.info("[posthog] loaded", {
+                    api_host: ph.config.api_host,
+                    ui_host: ph.config.ui_host,
+                });
+            }
+
             if (isGpcEnabled()) {
+                if (DEBUG) {
+                    // eslint-disable-next-line no-console
+                    console.info("[posthog] GPC enabled -> opt_out");
+                }
                 ph.opt_out_capturing();
                 return;
             }
 
             const consent = getCookieValue(CONSENT_COOKIE);
 
+            if (DEBUG) {
+                // eslint-disable-next-line no-console
+                console.info("[posthog] consent", { consent });
+            }
+
             // No choice yet: do not track.
             if (consent !== "accepted" && consent !== "rejected") {
+                if (DEBUG) {
+                    // eslint-disable-next-line no-console
+                    console.info("[posthog] no consent yet -> opt_out");
+                }
                 ph.opt_out_capturing();
                 return;
             }
@@ -60,6 +102,18 @@ if (key?.trim()) {
 
             ph.opt_in_capturing();
             ph.capture("$pageview");
+
+            if (DEBUG) {
+                // eslint-disable-next-line no-console
+                console.info("[posthog] capture enabled", {
+                    mode: consent === "accepted" ? "persistent" : "cookieless",
+                });
+            }
         },
     });
+} else {
+    if (DEBUG && typeof window !== "undefined") {
+        // eslint-disable-next-line no-console
+        console.info("[posthog] disabled (missing NEXT_PUBLIC_POSTHOG_KEY)");
+    }
 }
