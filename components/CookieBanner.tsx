@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { createPortal } from "react-dom";
 import posthog from "posthog-js";
 
 import { Button } from "@/components/ui/button";
@@ -25,9 +26,7 @@ function getCookieValue(name: string): string | null {
 function setCookieValue(name: string, value: string, maxAgeSeconds: number) {
     if (typeof document === "undefined") return;
     const isHttps = typeof location !== "undefined" && location.protocol === "https:";
-    document.cookie = `${name}=${encodeURIComponent(value)}; Path=/; Max-Age=${maxAgeSeconds}; SameSite=Lax${
-        isHttps ? "; Secure" : ""
-    }`;
+    document.cookie = `${name}=${encodeURIComponent(value)}; Path=/; Max-Age=${maxAgeSeconds}; SameSite=Lax${isHttps ? "; Secure" : ""}`;
 }
 
 function readConsent(): ConsentValue | null {
@@ -41,23 +40,20 @@ function isGpcEnabled(): boolean {
 }
 
 export function CookieBanner() {
+    const [mounted, setMounted] = React.useState(false);
     const [open, setOpen] = React.useState(false);
     const [consent, setConsent] = React.useState<ConsentValue | null>(null);
+
+    React.useEffect(() => {
+        setMounted(true);
+    }, []);
 
     React.useEffect(() => {
         const next = readConsent();
         setConsent(next);
 
-        if (!next && isGpcEnabled()) {
-            // Respect Global Privacy Control: default to reject.
-            setCookieValue(CONSENT_COOKIE, "rejected", 60 * 60 * 24 * 365);
-            setConsent("rejected");
-            posthog.opt_out_capturing();
-            posthog.reset();
-            setOpen(false);
-            return;
-        }
-
+        // Always show the banner when there's no stored choice.
+        // (Even if Global Privacy Control is enabled, we still show it for transparency.)
         setOpen(!next);
     }, []);
 
@@ -68,6 +64,16 @@ export function CookieBanner() {
     }, []);
 
     function applyConsent(value: ConsentValue) {
+        // Respect Global Privacy Control as a hard opt-out.
+        if (isGpcEnabled()) {
+            setCookieValue(CONSENT_COOKIE, "rejected", 60 * 60 * 24 * 365);
+            setConsent("rejected");
+            setOpen(false);
+            posthog.opt_out_capturing();
+            posthog.reset();
+            return;
+        }
+
         setCookieValue(CONSENT_COOKIE, value, 60 * 60 * 24 * 365);
         setConsent(value);
         setOpen(false);
@@ -93,12 +99,12 @@ export function CookieBanner() {
         }
     }
 
-    if (!open) return null;
+    if (!mounted || !open) return null;
 
-    return (
+    return createPortal(
         <div
             className={cn(
-                "fixed inset-x-0 bottom-0 z-50",
+                "fixed inset-x-0 bottom-0 z-[120]",
                 "border-t border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80",
             )}
             role="dialog"
@@ -126,6 +132,8 @@ export function CookieBanner() {
                 </div>
             </div>
         </div>
+        ,
+        document.body,
     );
 }
 

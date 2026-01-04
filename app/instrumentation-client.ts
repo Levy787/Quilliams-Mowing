@@ -8,14 +8,17 @@ function getCookieValue(name: string): string | null {
     const parts = document.cookie.split(";");
     for (const part of parts) {
         const trimmed = part.trim();
-        if (trimmed.startsWith(prefix)) return decodeURIComponent(trimmed.slice(prefix.length));
+        if (trimmed.startsWith(prefix)) {
+            return decodeURIComponent(trimmed.slice(prefix.length));
+        }
     }
     return null;
 }
 
 function isGpcEnabled(): boolean {
     if (typeof navigator === "undefined") return false;
-    return (navigator as unknown as { globalPrivacyControl?: boolean }).globalPrivacyControl === true;
+    return (navigator as unknown as { globalPrivacyControl?: boolean })
+        .globalPrivacyControl === true;
 }
 
 const key = process.env.NEXT_PUBLIC_POSTHOG_KEY;
