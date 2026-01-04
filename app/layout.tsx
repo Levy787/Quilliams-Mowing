@@ -76,10 +76,10 @@ export default function RootLayout({
 }>) {
   const hasTurnstileConfigured = Boolean(
     process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY_SUBSCRIBE?.trim() ||
-      process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY_CONTACT?.trim() ||
-      process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY_QUOTE?.trim() ||
-      process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY_POPUP?.trim() ||
-      process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY?.trim(),
+    process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY_CONTACT?.trim() ||
+    process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY_QUOTE?.trim() ||
+    process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY_POPUP?.trim() ||
+    process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY?.trim(),
   );
 
   return (

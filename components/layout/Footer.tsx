@@ -17,6 +17,7 @@ import {
 import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
 import { Turnstile, type TurnstileHandle } from "@/components/TurnstileWidget";
+import { openCookieSettings } from "@/components/CookieBanner";
 
 const DEFAULT_BUSINESS_HOURS = [
     { dayLabel: "Mon – Fri", hours: "08:00 am : 05:00 pm" },
@@ -368,6 +369,17 @@ export function FooterInner({
                                     {item.label}
                                 </Link>
                             ))}
+
+                            <button
+                                type="button"
+                                onClick={openCookieSettings}
+                                className={cn(
+                                    "text-sm text-background/75 hover:text-background transition-colors motion-reduce:transition-none",
+                                    "focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background rounded-sm"
+                                )}
+                            >
+                                Cookie settings
+                            </button>
                         </nav>
                     </div>
                 </div>
