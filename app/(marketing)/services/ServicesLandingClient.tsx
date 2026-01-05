@@ -393,7 +393,7 @@ export default function ServicesLandingClient({
                     </div>
 
                     {/* Highlights */}
-                    <div className="mt-14">
+                    {/* <div className="mt-14">
                         <div className="relative overflow-hidden rounded-4xl border border-border bg-primary text-primary-foreground">
                             <div className="absolute inset-0 bg-[url('/patterns/pattern-2.svg')] bg-repeat opacity-100" />
                             <div className="relative p-6 md:p-10">
@@ -509,7 +509,7 @@ export default function ServicesLandingClient({
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
 
                     {/* FAQ */}
                     <div className="mt-14">

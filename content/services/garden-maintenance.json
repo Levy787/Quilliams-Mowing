@@ -5,8 +5,7 @@
   "description": "Regular, reliable visits to keep your garden tidy, healthy, and consistently presentable—without the stress of falling behind.",
   "seo": {
     "title": "Garden maintenance that keeps everything looking cared for",
-    "description": "Regular, reliable visits to keep your garden tidy, healthy, and consistently presentable—without the stress of falling behind.",
-    "ogImage": "/images/IMG_20250715_29185.webp"
+    "description": "Regular, reliable visits to keep your garden tidy, healthy, and consistently presentable—without the stress of falling behind."
   },
   "cardTag": "Popular",
   "cardIcon": "Flower2",
@@ -131,7 +130,7 @@
       {
         "title": "Clean borders + tidy beds",
         "description": "A simple refresh that makes the garden feel looked after again.",
-        "imageSrc": "/images/IMG_20250708_16272.webp",
+        "imageFile": "results/cards/0/imageFile.webp",
         "imageAlt": "Tidy garden with neat lawn edges and trimmed borders",
         "ctaText": "View more details",
         "ctaHref": "/#recent-works"
