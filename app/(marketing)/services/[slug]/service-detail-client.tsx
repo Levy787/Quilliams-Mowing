@@ -323,7 +323,7 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
             ) : null}
 
             {/* Recent results/projects */}
-            <section className="mx-4 md:mx-8 lg:mx-16 pb-12 md:pb-16">
+            {/* <section className="mx-4 md:mx-8 lg:mx-16 pb-12 md:pb-16">
                 <div className="container mx-auto px-4 lg:px-12">
                     <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
                         <motion.div {...fadeUp} className="max-w-2xl">
@@ -412,16 +412,13 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                         </div>
                     ) : null}
                 </div>
-            </section>
+            </section> */}
 
             {/* Primary value band */}
             <section className="mx-4 md:mx-8 lg:mx-16 pb-12 md:pb-16">
                 <div className="container mx-auto px-4 lg:px-12">
                     <div className="relative overflow-hidden rounded-4xl border border-border bg-primary text-primary-foreground">
-                        <div
-                            className="absolute inset-0 bg-repeat opacity-15"
-                            style={{ backgroundImage: patternUrl(service.valueBand.pattern) }}
-                        />
+                        <div className="absolute inset-0 bg-[url('/patterns/pattern-2.svg')] bg-repeat opacity-80" />
                         <div className="relative p-6 md:p-10">
                             <motion.div {...fadeUp} className="max-w-2xl">
                                 <div className="inline-flex items-center rounded-full bg-primary-foreground/10 px-4 py-1.5 text-sm text-primary-foreground">
