@@ -113,7 +113,7 @@ function makeDoc({ title, href, type, snippet }, payloadStrings) {
 
 function priorityFor({ href, type }) {
   // Highest: conversion-oriented pages
-  if (href === "/contact" || href === "/quote") return 90;
+  if (href === "/contact" || href === "/quote") return 80;
 
   // Next: project pages (including landing)
   if (type === "project" || href === "/projects" || href.startsWith("/projects/")) return 80;

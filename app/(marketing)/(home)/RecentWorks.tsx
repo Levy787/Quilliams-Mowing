@@ -248,12 +248,14 @@ function WorkRow({
 
 export function RecentWorks({ badge, headingLines, description, items, ctaLabel, ctaHref }: RecentWorksProps) {
     const shouldReduceMotion = !!useReducedMotion();
-    const sectionRef = React.useRef<HTMLElement | null>(null);
-    const inView = useInView(sectionRef, { once: true, amount: 0.3 });
+    // NOTE: Don't observe the whole section; it's very tall on mobile.
+    // Intersection ratio can stay below the threshold, leaving content stuck at opacity:0.
+    const inViewRef = React.useRef<HTMLDivElement | null>(null);
+    const inView = useInView(inViewRef, { once: true, amount: 0.2 });
     const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 
     return (
-        <section ref={sectionRef} className="mx-4 md:mx-8 lg:mx-16 py-12 md:py-16">
+        <section className="mx-4 md:mx-8 lg:mx-16 py-12 md:py-16">
             <div
                 className="relative bg-foreground text-background rounded-4xl overflow-hidden"
             >
@@ -262,7 +264,7 @@ export function RecentWorks({ badge, headingLines, description, items, ctaLabel,
                     aria-hidden="true"
                 />
 
-                <div className="relative container mx-auto px-4 lg:px-12">
+                <div ref={inViewRef} className="relative container mx-auto px-4 lg:px-12">
                     <div className="px-2 py-12 md:py-14">
                         {/* Header */}
                         <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-04T17:45:42.952Z",
+  "generatedAt": "2026-01-05T07:17:43.598Z",
   "docs": [
     {
       "title": "Contact",
@@ -7,7 +7,7 @@
       "type": "page",
       "snippet": "Have a question or want to book a free consultation? Send us a message and we’ll reply as soon as possible.",
       "haystack": "contact | /contact | contact | have a question or want to book a free consultation? send us a message and we’ll reply as soon as possible. | contact | contact us | have a question or want to book a free consultation? send us a message and we’ll reply as soon as possible. | get in touch | prefer to reach out directly? call or email and we’ll help you plan the next steps. | phone | 07593 121 621 | +447593 121 621 | email | levi@quilliamsmowing.co.uk | hours | mon–fri: 8am–5pm sat: closed sun: closed | service area | serving your local area and surrounding suburbs. | find us on google maps | https://share.google/nk3tlosru77h6ixbi | send a message | tell us a bit about what you need and we’ll get back to you. | full name | email | phone (optional) | service interested in | select a service | landscaping | lawn care | garden maintenance | hedge trimming | seasonal cleanup | other | message | tell us about your property and what you’d like help with. | thanks — your message has been sent. | message sent! we'll get back to you soon. | send message | sending...",
-      "priority": 90
+      "priority": 80
     },
     {
       "title": "Get a Quote",
@@ -15,7 +15,7 @@
       "type": "page",
       "snippet": "Share a few details and upload photos of the area — we’ll review everything and get back to you with next steps.",
       "haystack": "get a quote | /quote | get a quote | share a few details and upload photos of the area — we’ll review everything and get back to you with next steps. | quote | get your quote | share a few details and upload photos of the area — we’ll review everything and get back to you with next steps. | what to expect | here’s what typically happens after you submit your request. | we review your details and photos. | we may contact you with a couple of quick questions. | we send an estimated range and a suggested timeline. | if needed, we schedule a short site visit. | you approve the quote and we book the job. | typical response time: | within 1 business day | pricing calculator estimate | add-ons: | rough guide only — final pricing depends on photos, access, and exact scope. | quote request | the more detail you provide, the more accurate your estimate will be. | full name | email | phone (optional) | address / suburb (optional) | service type | select a service | landscaping | lawn care | garden maintenance | hedge trimming | mulching | seasonal cleanup | preferred start timeframe (optional) | choose a timeframe | asap | 1–2 weeks | this month | flexible | budget range (optional) | select a range | under $500 | $500–$1,500 | $1,500–$3,000 | $3,000+ | photos (up to 6) | add clear photos of the area from a few angles. | you can upload up to 6 photos. | only image files are allowed. | some photos are large | upload may take longer. | remove image | selected photo | job details | what would you like done? include approximate sizes, access notes, and anything else that helps us quote accurately. | please select a service type. | thanks — we received your request. | quote request received! we'll be in touch soon. | request quote | submitting...",
-      "priority": 90
+      "priority": 80
     },
     {
       "title": "Leylandii Hedge Trim (4m tall)",
