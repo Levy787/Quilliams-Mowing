@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { buildMetadata } from "@/lib/seo";
+import { areas } from "@/lib/areas/data";
 
 export const metadata: Metadata = buildMetadata({
     seo: {
@@ -12,16 +13,13 @@ export const metadata: Metadata = buildMetadata({
     canonicalPath: "/areas",
 });
 
-const areas = [
-    { slug: "truro", name: "Truro", description: "Cornwall's capital city" },
-    { slug: "st-austell", name: "St Austell", description: "Mid Cornwall" },
-    { slug: "bodmin", name: "Bodmin", description: "Central Cornwall" },
-    { slug: "padstow", name: "Padstow", description: "North Cornwall coast" },
-    { slug: "perranporth", name: "Perranporth", description: "Near Newquay" },
-    { slug: "st-ives", name: "St Ives", description: "West Cornwall" },
-];
-
 export default function AreasPage() {
+    const areaList = Object.entries(areas).map(([slug, area]) => ({
+        slug,
+        name: area.name,
+        description: area.description.substring(0, 100) + "...",
+    }));
+
     return (
         <main className="min-h-screen bg-background">
             <div className="container mx-auto px-4 py-16 max-w-4xl">
@@ -36,7 +34,7 @@ export default function AreasPage() {
                 </p>
                 
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-12">
-                    {areas.map((area) => (
+                    {areaList.map((area) => (
                         <Link
                             key={area.slug}
                             href={`/areas/${area.slug}`}
