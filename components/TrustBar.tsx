@@ -10,21 +10,21 @@ export function TrustBar() {
                     <span className="hidden sm:inline">on Google</span>
                 </span>
                 
-                <span className="hidden sm:inline text-muted-foreground/50">•</span>
+                <span className="hidden sm:inline text-muted-foreground/70">•</span>
                 
                 <span className="flex items-center gap-2">
                     <Shield className="w-4 h-4 text-green-600" />
                     <span>Fully Insured</span>
                 </span>
                 
-                <span className="hidden sm:inline text-muted-foreground/50">•</span>
+                <span className="hidden sm:inline text-muted-foreground/70">•</span>
                 
                 <span className="flex items-center gap-2">
                     <MapPin className="w-4 h-4 text-primary" />
                     <span>Local to Newquay</span>
                 </span>
                 
-                <span className="hidden sm:inline text-muted-foreground/50">•</span>
+                <span className="hidden sm:inline text-muted-foreground/70">•</span>
                 
                 <span className="flex items-center gap-2">
                     <Zap className="w-4 h-4 text-yellow-500" />

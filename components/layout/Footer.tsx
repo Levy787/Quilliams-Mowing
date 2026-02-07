@@ -59,7 +59,7 @@ function IconLink({
             aria-label={label}
             className={cn(
                 "inline-flex h-11 w-11 items-center justify-center rounded-full border",
-                "border-border/30 text-background/80",
+                "border-border/30 text-background",
                 "hover:bg-accent hover:text-accent-foreground transition-colors motion-reduce:transition-none",
                 "focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background"
             )}
@@ -199,7 +199,7 @@ export function FooterInner({
                     <div className="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-16">
                         {/* About Company */}
                         <div className="min-w-0">
-                            <Link href="/">
+                            <Link href="/" aria-label="Quilliams Gardening & Landscaping — Home">
                                 <Image
                                     src={logoSrc}
                                     alt={logoAlt}
@@ -208,7 +208,7 @@ export function FooterInner({
                                     style={{ width: "auto", height: "auto" }}
                                 />
                             </Link>
-                            <p className="mt-6 max-w-md text-base leading-relaxed text-background/75">
+                            <p className="mt-6 max-w-md text-base leading-relaxed text-background/90">
                                 {aboutText}
                             </p>
 
@@ -255,7 +255,7 @@ export function FooterInner({
                                     {businessHours.map((row) => (
                                         <div key={`${row.dayLabel}-${row.hours}`}>
                                             <div className="text-sm font-semibold text-primary">{row.dayLabel}</div>
-                                            <div className="mt-1 text-base text-background/75">{row.hours}</div>
+                                            <div className="mt-1 text-base text-background/90">{row.hours}</div>
                                         </div>
                                     ))}
                                 </div>
@@ -268,7 +268,7 @@ export function FooterInner({
                                     <PhoneCall className="h-10 w-10 text-primary" aria-hidden="true" />
                                 </div>
                                 <div>
-                                    <div className="text-sm text-background/75">{phoneLabel || "Phone"}</div>
+                                    <div className="text-sm text-background/90">{phoneLabel || "Phone"}</div>
                                     <Link
                                         href={`tel:${phoneNumber || "07593121621"}`}
                                         className={"mt-1 text-3xl font-semibold tracking-tight hover:underline"}
@@ -284,7 +284,7 @@ export function FooterInner({
                             <h3 className="text-2xl font-semibold tracking-tight">
                                 {subscribeHeading}
                             </h3>
-                            <p className="mt-6 max-w-md text-base leading-relaxed text-background/75">
+                            <p className="mt-6 max-w-md text-base leading-relaxed text-background/90">
                                 {subscribeText}
                             </p>
 
@@ -357,10 +357,10 @@ export function FooterInner({
                 {/* Bottom bar */}
                 <div className="bg-gray-800 border-t border-border/30 px-6 py-6 md:px-10">
                     <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-                        <div className="text-sm text-background/75">
+                        <div className="text-sm text-background/90">
                             {copyrightText}
                         </div>
-                        <div className="text-sm text-background/75">
+                        <div className="text-sm text-background/90">
                             Designed and Developed by{" "}
                             <Link
                                 href={creditHref}
@@ -378,7 +378,7 @@ export function FooterInner({
                                     key={`${item.label}-${item.href}`}
                                     href={item.href}
                                     className={cn(
-                                        "text-sm text-background/75 hover:text-background transition-colors motion-reduce:transition-none",
+                                        "text-sm text-background/90 hover:text-background transition-colors motion-reduce:transition-none",
                                         "focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background rounded-sm"
                                     )}
                                 >
@@ -390,7 +390,7 @@ export function FooterInner({
                                 type="button"
                                 onClick={openCookieSettings}
                                 className={cn(
-                                    "text-sm text-background/75 hover:text-background transition-colors motion-reduce:transition-none",
+                                    "text-sm text-background/90 hover:text-background transition-colors motion-reduce:transition-none",
                                     "focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background rounded-sm"
                                 )}
                             >

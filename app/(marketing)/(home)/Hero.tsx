@@ -108,7 +108,8 @@ export function Hero({
                                             alt={image.alt ?? ""}
                                             fill
                                             className="object-cover"
-                                            sizes="(max-width: 768px) 50vw, 20vw"
+                                            sizes="(max-width: 768px) 45vw, 18vw"
+                                            quality={60}
                                             priority={index === 0}
                                             fetchPriority={index === 0 ? "high" : "auto"}
                                         />
@@ -123,7 +124,8 @@ export function Hero({
                                             alt={image.alt ?? ""}
                                             fill
                                             className="object-cover"
-                                            sizes="(max-width: 768px) 50vw, 20vw"
+                                            sizes="(max-width: 768px) 45vw, 18vw"
+                                            quality={60}
                                             priority={index === 0}
                                             fetchPriority={index === 0 ? "high" : "auto"}
                                         />
@@ -143,7 +145,8 @@ export function Hero({
                                             alt={image.alt ?? ""}
                                             fill
                                             className="object-cover"
-                                            sizes="(max-width: 768px) 50vw, 20vw"
+                                            sizes="(max-width: 768px) 45vw, 18vw"
+                                            quality={60}
                                             priority={index === 0}
                                             fetchPriority={index === 0 ? "high" : "auto"}
                                         />
@@ -158,7 +161,8 @@ export function Hero({
                                             alt={image.alt ?? ""}
                                             fill
                                             className="object-cover"
-                                            sizes="(max-width: 768px) 50vw, 20vw"
+                                            sizes="(max-width: 768px) 45vw, 18vw"
+                                            quality={60}
                                             priority={index === 0}
                                             fetchPriority={index === 0 ? "high" : "auto"}
                                         />

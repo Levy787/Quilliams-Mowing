@@ -20,6 +20,8 @@ const nextConfig: NextConfig = {
     // Reduce image sizes for faster loading
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256],
+    // Lower quality for smaller file sizes (default is 75)
+    qualities: [60, 75],
   },
   
   // Performance optimizations
@@ -92,13 +94,35 @@ const nextConfig: NextConfig = {
           },
           {
             key: "Content-Security-Policy",
-            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://eu.i.posthog.com https://eu-assets.i.posthog.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://picsum.photos https://images.unsplash.com https://*.posthog.com; connect-src 'self' https://eu.i.posthog.com https://eu-assets.i.posthog.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self';",
+            value: [
+              "default-src 'self'",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://eu.i.posthog.com https://eu-assets.i.posthog.com https://challenges.cloudflare.com",
+              "style-src 'self' 'unsafe-inline'",
+              "font-src 'self' data:",
+              "img-src 'self' data: blob: https://picsum.photos https://images.unsplash.com https://*.posthog.com https://*.basemaps.cartocdn.com https://*.tile.openstreetmap.org",
+              "connect-src 'self' https://eu.i.posthog.com https://eu-assets.i.posthog.com https://*.basemaps.cartocdn.com",
+              "worker-src 'self' blob:",
+              "frame-src 'self' https://challenges.cloudflare.com",
+              "frame-ancestors 'self'",
+              "base-uri 'self'",
+              "form-action 'self'",
+            ].join("; ") + ";",
           },
         ],
       },
       {
         // Cache static assets
         source: "/images/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
+        // Cache pattern assets
+        source: "/patterns/:path*",
         headers: [
           {
             key: "Cache-Control",

@@ -1,5 +1,6 @@
 "use client";
 
+import "leaflet/dist/leaflet.css";
 import { Circle, MapContainer, TileLayer } from "react-leaflet";
 
 import type { MapElement } from "./types";

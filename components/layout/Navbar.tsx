@@ -47,7 +47,7 @@ export function Navbar({
             <div className="container mx-auto px-4 lg:px-12">
                 <div className="flex items-center justify-between h-20 lg:h-24">
                     {/* Logo Section */}
-                    <Link href="/" className="flex items-center gap-3 group">
+                    <Link href="/" aria-label="Quilliams Gardening & Landscaping — Home" className="flex items-center gap-3 group">
                         <div className="relative h-16 w-64">
                             <Image
                                 src={logoSrc}
