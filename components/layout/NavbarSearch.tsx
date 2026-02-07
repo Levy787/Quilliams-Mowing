@@ -103,7 +103,7 @@ export function NavbarSearch({ className }: { className?: string }) {
             .filter((d) => d.haystack.includes(q))
             .sort((a, b) => (b.priority ?? 0) - (a.priority ?? 0))
             .slice(0, 20)
-            .map(({ haystack: _haystack, ...result }) => result);
+            .map(({ haystack: haystack, ...result }) => result);
     }
 
     React.useEffect(() => {
