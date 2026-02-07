@@ -41,7 +41,7 @@ const DEFAULT_SOCIAL_LINKS = [
 const DEFAULT_FOOTER_LINKS = [
     { label: "Terms & Conditions", href: "/terms" },
     { label: "Privacy Policy", href: "/privacy" },
-    { label: "Sitemap", href: "/sitemap" },
+    { label: "Sitemap", href: "/site-map" },
 ] as const;
 
 function IconLink({

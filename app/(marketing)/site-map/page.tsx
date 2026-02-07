@@ -11,7 +11,7 @@ export const metadata: Metadata = buildMetadata({
         description: "Browse all pages on Quilliams Gardening & Landscaping website.",
     },
     fallbackTitle: "Sitemap",
-    canonicalPath: "/sitemap",
+    canonicalPath: "/site-map",
 });
 
 const mainPages = [
