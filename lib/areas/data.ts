@@ -35,4 +35,11 @@ export const areas: Record<string, Area> = {
         services: ["lawn-care", "hedge-trimming", "garden-maintenance", "landscaping"],
         nearby: ["newquay", "bodmin", "wadebridge"],
     },
+    "perranporth": {
+        name: "Perranporth",
+        county: "Cornwall",
+        description: "Local gardening services in Perranporth. Just a short drive from our Newquay base, we provide regular garden maintenance, lawn care, and landscaping to Perranporth properties.",
+        services: ["lawn-care", "hedge-trimming", "garden-maintenance"],
+        nearby: ["newquay", "truro", "st-agnes"],
+    },
 };
