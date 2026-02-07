@@ -444,11 +444,13 @@ export default function OfferClient({
                                                             key={item.id}
                                                             className="relative overflow-hidden rounded-xl border border-border bg-muted aspect-square"
                                                         >
-                                                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                                                            <img
+                                                            
+                                                            <Image
                                                                 src={item.url}
+                                                                fill
+                                                                unoptimized
                                                                 alt={`Selected photo ${index + 1}`}
-                                                                className="h-full w-full object-cover"
+                                                                className="object-cover"
                                                             />
                                                             <button
                                                                 type="button"

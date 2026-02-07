@@ -94,7 +94,7 @@ export function NavbarSearch({ className }: { className?: string }) {
         return safeDocs;
     }
 
-    async function searchViaIndex(trimmed: string): Promise<SearchResult[]> {
+    const searchViaIndex = React.useCallback(async (trimmed: string): Promise<SearchResult[]> => {
         const q = normalize(trimmed);
         if (q.length < 2) return [];
 
@@ -104,9 +104,8 @@ export function NavbarSearch({ className }: { className?: string }) {
             .sort((a, b) => (b.priority ?? 0) - (a.priority ?? 0))
             .slice(0, 20)
             .map(({ haystack: _, ...result }) => result);
-    }
+    }, []);
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     React.useEffect(() => {
         if (!dialogOpen) return;
 
@@ -147,7 +146,7 @@ export function NavbarSearch({ className }: { className?: string }) {
             });
 
         return () => controller.abort();
-    }, [debouncedQuery, dialogOpen]);
+    }, [debouncedQuery, dialogOpen, searchViaIndex]);
 
     React.useEffect(() => {
         if (!dialogOpen) return;
