@@ -4,6 +4,7 @@ import { FooterWithContent } from "@/components/layout/FooterWithContent";
 import { CookieBanner } from "@/components/CookieBanner";
 import { LocalBusinessSchema } from "@/components/seo/LocalBusinessSchema";
 import { StickyMobileCTA } from "@/components/StickyMobileCTA";
+import { ExitIntentPopup } from "@/components/ExitIntentPopup";
 
 export default function Layout({
     children,
@@ -19,6 +20,7 @@ export default function Layout({
             <FooterWithContent />
             <CookieBanner />
             <StickyMobileCTA />
+            <ExitIntentPopup />
         </>
     );
 }
