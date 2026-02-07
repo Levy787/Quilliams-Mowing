@@ -103,9 +103,10 @@ export function NavbarSearch({ className }: { className?: string }) {
             .filter((d) => d.haystack.includes(q))
             .sort((a, b) => (b.priority ?? 0) - (a.priority ?? 0))
             .slice(0, 20)
-            .map(({ haystack: haystack, ...result }) => result);
+            .map(({ haystack: _, ...result }) => result);
     }
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     React.useEffect(() => {
         if (!dialogOpen) return;
 
@@ -167,9 +168,6 @@ export function NavbarSearch({ className }: { className?: string }) {
         setActiveIndex(results.length ? 0 : -1);
     }, [results]);
 
-    function collapseIfEmpty() {
-        if (query.trim().length === 0) setDialogOpen(false);
-    }
 
     function openFromIconClick() {
         setDialogOpen(true);

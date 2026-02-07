@@ -476,6 +476,7 @@ export default function OfferFunnelClient({ offer }: { offer: Offer }) {
                                                         key={item.id}
                                                         className="relative overflow-hidden rounded-xl border border-border bg-muted aspect-square"
                                                     >
+                                                        {/* eslint-disable-next-line @next/next/no-img-element */}
                                                         <img
                                                             src={item.url}
                                                             alt={`Selected photo ${index + 1}`}
