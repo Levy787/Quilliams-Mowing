@@ -47,9 +47,9 @@ export default function AreasPage() {
                 </div>
                 
                 <div className="bg-muted/50 rounded-lg p-8">
-                    <h2 className="text-2xl font-semibold mb-4">Don't see your area?</h2>
+                    <h2 className="text-2xl font-semibold mb-4">Don&apos;t see your area?</h2>
                     <p className="text-muted-foreground mb-4">
-                        We may still be able to help. Get in touch and let us know where you're based.
+                        We may still be able to help. Get in touch and let us know where you&apos;re based.
                     </p>
                     <Link
                         href="/contact"
