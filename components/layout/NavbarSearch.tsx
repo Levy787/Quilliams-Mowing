@@ -103,6 +103,7 @@ export function NavbarSearch({ className }: { className?: string }) {
             .filter((d) => d.haystack.includes(q))
             .sort((a, b) => (b.priority ?? 0) - (a.priority ?? 0))
             .slice(0, 20)
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
             .map(({ haystack: _, ...result }) => result);
     }, []);
 

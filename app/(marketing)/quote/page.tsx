@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import QuoteClient from "./QuoteClient";
+import { QuoteClient } from "./QuoteClient";
 
 import { getQuoteContent } from "@/lib/keystatic-reader";
 import { buildMetadata } from "@/lib/seo";
