@@ -3,6 +3,9 @@ import { listServiceSlugs, listProjectSlugs } from "@/lib/keystatic-reader";
 
 const BASE_URL = "https://quilliamsmowing.co.uk";
 
+// Area slugs for location pages
+const areaSlugs = ["truro", "st-austell", "bodmin", "padstow", "perranporth", "st-ives"];
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const serviceSlugs = await listServiceSlugs();
   const projectSlugs = await listProjectSlugs();
@@ -51,6 +54,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.6,
     },
     {
+      url: `${BASE_URL}/areas`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/sitemap`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.3,
+    },
+    {
       url: `${BASE_URL}/privacy`,
       lastModified: new Date(),
       changeFrequency: "yearly",
@@ -78,5 +93,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...servicePages, ...projectPages];
+  const areaPages: MetadataRoute.Sitemap = areaSlugs.map((slug) => ({
+    url: `${BASE_URL}/areas/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...servicePages, ...projectPages, ...areaPages];
 }
