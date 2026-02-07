@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 
 import { getProjectBySlug, listProjectSlugs } from "@/lib/keystatic-reader";
 import { buildMetadata } from "@/lib/seo";
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import ProjectDetailClient from "./project-detail-client";
 
 export async function generateStaticParams(): Promise<Array<{ slug: string }>> {
@@ -24,6 +25,7 @@ export async function generateMetadata({
         fallbackTitle: project.title,
         fallbackDescription: project.subtitle,
         fallbackOgImage: project.hero.imageSrc,
+        canonicalPath: `/projects/${slug}`,
     });
 }
 
@@ -37,5 +39,16 @@ export default async function ProjectDetailPage({
 
     if (!project) notFound();
 
-    return <ProjectDetailClient project={project} />;
+    const breadcrumbs = [
+        { name: "Home", href: "/" },
+        { name: "Projects", href: "/projects" },
+        { name: project.title, href: `/projects/${slug}` },
+    ];
+
+    return (
+        <>
+            <BreadcrumbSchema items={breadcrumbs} />
+            <ProjectDetailClient project={project} />
+        </>
+    );
 }

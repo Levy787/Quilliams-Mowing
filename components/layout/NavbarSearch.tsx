@@ -94,7 +94,7 @@ export function NavbarSearch({ className }: { className?: string }) {
         return safeDocs;
     }
 
-    async function searchViaIndex(trimmed: string): Promise<SearchResult[]> {
+    const searchViaIndex = React.useCallback(async (trimmed: string): Promise<SearchResult[]> => {
         const q = normalize(trimmed);
         if (q.length < 2) return [];
 
@@ -103,8 +103,8 @@ export function NavbarSearch({ className }: { className?: string }) {
             .filter((d) => d.haystack.includes(q))
             .sort((a, b) => (b.priority ?? 0) - (a.priority ?? 0))
             .slice(0, 20)
-            .map(({ haystack: _haystack, ...result }) => result);
-    }
+            .map(({ haystack: _, ...result }) => result);
+    }, []);
 
     React.useEffect(() => {
         if (!dialogOpen) return;
@@ -146,7 +146,7 @@ export function NavbarSearch({ className }: { className?: string }) {
             });
 
         return () => controller.abort();
-    }, [debouncedQuery, dialogOpen]);
+    }, [debouncedQuery, dialogOpen, searchViaIndex]);
 
     React.useEffect(() => {
         if (!dialogOpen) return;
@@ -167,9 +167,6 @@ export function NavbarSearch({ className }: { className?: string }) {
         setActiveIndex(results.length ? 0 : -1);
     }, [results]);
 
-    function collapseIfEmpty() {
-        if (query.trim().length === 0) setDialogOpen(false);
-    }
 
     function openFromIconClick() {
         setDialogOpen(true);

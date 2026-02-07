@@ -7,6 +7,7 @@ import { PricingHero } from "./PricingHero";
 
 import { getPricingContent } from "@/lib/keystatic-reader";
 import { buildMetadata } from "@/lib/seo";
+import { FAQSchema } from "@/components/seo/FAQSchema";
 
 export async function generateMetadata(): Promise<Metadata> {
     const pricing = await getPricingContent();
@@ -15,14 +16,22 @@ export async function generateMetadata(): Promise<Metadata> {
         seo: pricing.seo,
         fallbackTitle: "Pricing",
         fallbackDescription: pricing.hero.description,
+        canonicalPath: "/pricing",
     });
 }
 
 export default async function PricingPage() {
     const pricing = await getPricingContent();
 
+    // Transform FAQ items for schema
+    const faqItems = pricing.faq.items.map((item) => ({
+        question: item.q,
+        answer: item.a,
+    }));
+
     return (
         <main>
+            <FAQSchema items={faqItems} />
             <PricingHero {...pricing.hero} />
             <PricingCalculator {...pricing.calculator} />
             <PricingBreakdown {...pricing.breakdown} />

@@ -1,7 +1,7 @@
 
 import Link from "next/link";
-import { MapPin, PhoneCall, FileText } from "lucide-react";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { MapPin, PhoneCall } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export function Banner() {
     return (

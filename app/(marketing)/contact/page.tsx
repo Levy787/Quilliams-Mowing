@@ -11,6 +11,7 @@ export async function generateMetadata(): Promise<Metadata> {
         seo: contact.seo,
         fallbackTitle: "Contact",
         fallbackDescription: contact.header.description,
+        canonicalPath: "/contact",
     });
 }
 
@@ -18,4 +19,3 @@ export default async function ContactPage() {
     const contact = await getContactContent();
     return <ContactClient {...contact} />;
 }
-

@@ -10,9 +10,12 @@ import { FAQ } from "./FAQ";
 import { BoldHeadings } from "./BoldHeadings"
 import { LargeCta } from "./LargeCta";
 import { Testimonials } from "./Testimonials";
+import { TrustBar } from "@/components/TrustBar";
 
 import { getHomeContent } from "@/lib/keystatic-reader";
 import { buildMetadata } from "@/lib/seo";
+import { ReviewSchema } from "@/components/seo/ReviewSchema";
+import { FAQSchema } from "@/components/seo/FAQSchema";
 
 export async function generateMetadata(): Promise<Metadata> {
     const home = await getHomeContent();
@@ -21,15 +24,34 @@ export async function generateMetadata(): Promise<Metadata> {
         seo: home.seo,
         fallbackTitle: "Home",
         fallbackDescription: home.hero.subheading,
+        isHomepage: true,
+        canonicalPath: "/",
     });
 }
 
 export default async function Home() {
     const home = await getHomeContent();
 
+    // Transform testimonials to review format
+    const reviews = home.testimonials.items.map((item) => ({
+        author: item.name,
+        reviewBody: item.quote,
+        datePublished: item.date,
+        ratingValue: 5,
+    }));
+
+    // Transform FAQ items for schema
+    const faqItems = home.faq.items.map((item) => ({
+        question: item.question,
+        answer: item.answer,
+    }));
+
     return (
         <main>
+            <ReviewSchema reviews={reviews} />
+            <FAQSchema items={faqItems} />
             <Hero {...home.hero} />
+            <TrustBar />
             <Stats items={home.stats} />
             <AboutUs {...home.about} />
             <Services {...home.services} />

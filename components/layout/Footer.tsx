@@ -41,7 +41,7 @@ const DEFAULT_SOCIAL_LINKS = [
 const DEFAULT_FOOTER_LINKS = [
     { label: "Terms & Conditions", href: "/terms" },
     { label: "Privacy Policy", href: "/privacy" },
-    { label: "Sitemap", href: "/sitemap" },
+    { label: "Sitemap", href: "/site-map" },
 ] as const;
 
 function IconLink({
@@ -212,9 +212,9 @@ export function FooterInner({
                                 {aboutText}
                             </p>
 
-                            <h4 className="mt-10 text-xl font-semibold">
+                            <h3 className="mt-10 text-xl font-semibold">
                                 {connectHeading}
-                            </h4>
+                            </h3>
                             <div className="mt-5 flex flex-wrap gap-4">
                                 {socialLinks.map((item) => {
                                     const label =

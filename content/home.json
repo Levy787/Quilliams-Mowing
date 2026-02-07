@@ -1,7 +1,7 @@
 {
     "seo": {
-        "title": "Quilliams Gardening",
-        "description": "From weekly mowing and garden maintenance to full yard clean-ups and landscape improvements, we deliver stress-free, dependable care that keeps your outdoor spaces beautiful, functional, and something you can truly be proud of."
+        "title": "Gardener in Newquay, Cornwall | Quilliams Gardening & Landscaping",
+        "description": "Professional gardening and landscaping services in Newquay, Cornwall. From weekly lawn care and hedge trimming to full garden maintenance and landscape improvements. Reliable, local, and trusted."
     },
     "hero": {
         "headlineParts": [
@@ -35,7 +35,7 @@
             }
         ],
         "subheading": "From weekly mowing and garden maintenance to full yard clean-ups and landscape improvements, we deliver stress-free, dependable care that keeps your outdoor spaces beautiful, functional, and something you can truly be proud of.",
-        "primaryCtaLabel": "Get Your Quote",
+        "primaryCtaLabel": "Get a Free Quote Today",
         "primaryCtaHref": "/quote",
         "secondaryCtaLabel": "Contact Us",
         "secondaryCtaHref": "/contact",
@@ -185,7 +185,7 @@
             "Local, reliable service",
             "Clear quotes upfront"
         ],
-        "primaryCtaLabel": "Get a Quote",
+        "primaryCtaLabel": "Get a Free Quote Today",
         "primaryCtaHref": "/quote",
         "secondaryCtaLabel": "Contact Us",
         "secondaryCtaHref": "/contact",

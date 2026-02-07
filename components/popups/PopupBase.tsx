@@ -10,7 +10,7 @@ import {
     DialogClose,
     DialogContent,
     DialogDescription,
-    DialogOverlay,
+    
     DialogPortal,
     DialogTitle,
 } from "@/components/ui/dialog";

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://quilliamsmowing.com/sitemap.xml

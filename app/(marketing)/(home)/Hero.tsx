@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { FileText, ArrowRight } from "lucide-react";
+import { FileText, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 type HeroHeadlineTone = "normal" | "primary" | "muted";
@@ -41,8 +41,6 @@ export function Hero({
     subheading,
     primaryCtaLabel,
     primaryCtaHref,
-    secondaryCtaLabel,
-    secondaryCtaHref,
     imagesLeft,
     imagesRight,
 }: HeroProps) {
@@ -76,21 +74,25 @@ export function Hero({
                             {subheading}
                         </p>
 
-                        {/* CTA Buttons */}
-                        <div className="flex flex-col sm:flex-row gap-4">
-                            <Button size="lg" asChild>
+                        {/* CTA Buttons - Updated with phone number */}
+                        <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+                            <Button size="lg" asChild className="bg-green-600 hover:bg-green-700">
                                 <Link href={primaryCtaHref}>
                                     <FileText className="w-5 h-5" aria-hidden="true" />
                                     {primaryCtaLabel}
                                 </Link>
                             </Button>
 
-                            <Button variant="outline" size="lg" asChild>
-                                <Link href={secondaryCtaHref}>
-                                    {secondaryCtaLabel}
-                                    <ArrowRight className="w-5 h-5" aria-hidden="true" />
-                                </Link>
-                            </Button>
+                            {/* Phone number instead of secondary CTA */}
+                            <a 
+                                href="tel:07593121621" 
+                                className="flex items-center gap-2 text-white/90 hover:text-white transition-colors group"
+                            >
+                                <span className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 group-hover:bg-white/20 transition-colors">
+                                    <Phone className="w-5 h-5" aria-hidden="true" />
+                                </span>
+                                <span className="text-lg font-medium">07593 121 621</span>
+                            </a>
                         </div>
                     </div>
 
@@ -107,6 +109,8 @@ export function Hero({
                                             fill
                                             className="object-cover"
                                             sizes="(max-width: 768px) 50vw, 20vw"
+                                            priority={index === 0}
+                                            fetchPriority={index === 0 ? "high" : "auto"}
                                         />
                                     ) : null}
                                 </div>
@@ -120,6 +124,8 @@ export function Hero({
                                             fill
                                             className="object-cover"
                                             sizes="(max-width: 768px) 50vw, 20vw"
+                                            priority={index === 0}
+                                            fetchPriority={index === 0 ? "high" : "auto"}
                                         />
                                     ) : null}
                                 </div>
@@ -138,6 +144,8 @@ export function Hero({
                                             fill
                                             className="object-cover"
                                             sizes="(max-width: 768px) 50vw, 20vw"
+                                            priority={index === 0}
+                                            fetchPriority={index === 0 ? "high" : "auto"}
                                         />
                                     ) : null}
                                 </div>
@@ -151,6 +159,8 @@ export function Hero({
                                             fill
                                             className="object-cover"
                                             sizes="(max-width: 768px) 50vw, 20vw"
+                                            priority={index === 0}
+                                            fetchPriority={index === 0 ? "high" : "auto"}
                                         />
                                     ) : null}
                                 </div>
