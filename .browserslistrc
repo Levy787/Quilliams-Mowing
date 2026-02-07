@@ -1,0 +1,5 @@
+# Target modern browsers only to avoid legacy JS polyfills
+# This reduces bundle size significantly
+
+defaults and fully supports es6-module
+maintained node versions
