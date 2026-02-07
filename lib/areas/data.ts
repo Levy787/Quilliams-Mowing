@@ -21,4 +21,11 @@ export const areas: Record<string, Area> = {
         services: ["lawn-care", "hedge-trimming", "garden-maintenance", "landscaping", "seasonal-cleanup"],
         nearby: ["truro", "bodmin", "newquay"],
     },
+    "bodmin": {
+        name: "Bodmin",
+        county: "Cornwall",
+        description: "Expert garden care in Bodmin, Cornwall. Whether you need regular maintenance or a one-off garden clearance, we provide professional, reliable service to Bodmin residents. Fully equipped for all garden sizes.",
+        services: ["lawn-care", "hedge-trimming", "garden-maintenance", "seasonal-cleanup"],
+        nearby: ["newquay", "truro", "padstow"],
+    },
 };
