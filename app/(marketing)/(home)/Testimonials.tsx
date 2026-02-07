@@ -17,7 +17,7 @@ export type TestimonialsProps = {
 };
 
 const CreateCard = ({ card }: { card: CardData }) => (
-    <Card className="mx-4 w-72 shrink-0 rounded-2xl border border-border bg-background text-muted-foreground shadow-none transition-all duration-300 hover:-translate-y-1">
+    <Card className="mx-4 w-72 shrink-0 rounded-2xl border border-border bg-background text-muted-foreground shadow-none transition-transform duration-300 hover:-translate-y-1 will-change-transform">
         <CardContent className="p-6">
             <div className="space-y-4">
                 <div className="flex items-center justify-between">
@@ -63,7 +63,7 @@ export function Testimonials({ badge, heading, description, items }: Testimonial
 
                 <div className="mt-10 marquee-row w-full mx-auto max-w-7xl overflow-hidden relative">
                     <div className="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-linear-to-r from-background to-transparent" />
-                    <div className="marquee-inner flex transform-gpu min-w-[200%] pb-6">
+                    <div className="marquee-inner flex transform-gpu min-w-[200%] pb-6 will-change-transform">
                         {[...items, ...items].map((card, index) => (
                             <CreateCard key={index} card={card} />
                         ))}
