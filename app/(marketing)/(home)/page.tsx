@@ -21,6 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
         seo: home.seo,
         fallbackTitle: "Home",
         fallbackDescription: home.hero.subheading,
+        isHomepage: true,
     });
 }
 

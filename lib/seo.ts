@@ -18,18 +18,23 @@ export function buildMetadata({
     fallbackTitle,
     fallbackDescription,
     fallbackOgImage,
+    isHomepage = false,
 }: {
     seo?: SeoFields | null;
     fallbackTitle: string;
     fallbackDescription?: string;
     fallbackOgImage?: string;
+    isHomepage?: boolean;
 }): Metadata {
-    const title = clean(seo?.title) ?? fallbackTitle;
+    const titleText = clean(seo?.title) ?? fallbackTitle;
     const description = clean(seo?.description) ?? clean(fallbackDescription);
 
-    const ogTitle = clean(seo?.ogTitle) ?? title;
+    const ogTitle = clean(seo?.ogTitle) ?? titleText;
     const ogDescription = clean(seo?.ogDescription) ?? description;
     const ogImage = clean(seo?.ogImage) ?? clean(fallbackOgImage);
+
+    // For homepage, use absolute title to avoid "Site Name | Site Name"
+    const title = isHomepage ? { absolute: titleText } : titleText;
 
     return {
         title,
