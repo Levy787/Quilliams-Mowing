@@ -14,6 +14,7 @@ import { Testimonials } from "./Testimonials";
 import { getHomeContent } from "@/lib/keystatic-reader";
 import { buildMetadata } from "@/lib/seo";
 import { ReviewSchema } from "@/components/seo/ReviewSchema";
+import { FAQSchema } from "@/components/seo/FAQSchema";
 
 export async function generateMetadata(): Promise<Metadata> {
     const home = await getHomeContent();
@@ -37,9 +38,16 @@ export default async function Home() {
         ratingValue: 5,
     }));
 
+    // Transform FAQ items for schema
+    const faqItems = home.faq.items.map((item) => ({
+        question: item.question,
+        answer: item.answer,
+    }));
+
     return (
         <main>
             <ReviewSchema reviews={reviews} />
+            <FAQSchema items={faqItems} />
             <Hero {...home.hero} />
             <Stats items={home.stats} />
             <AboutUs {...home.about} />
