@@ -2,6 +2,7 @@ import { Banner } from "@/components/layout/Banner";
 import { NavbarWithContent } from "@/components/layout/NavbarWithContent";
 import { FooterWithContent } from "@/components/layout/FooterWithContent";
 import { CookieBanner } from "@/components/CookieBanner";
+import { LocalBusinessSchema } from "@/components/seo/LocalBusinessSchema";
 
 
 
@@ -12,6 +13,7 @@ export default function Layout({
 }>) {
     return (
         <>
+            <LocalBusinessSchema />
             <Banner />
             <NavbarWithContent />
             {children}
