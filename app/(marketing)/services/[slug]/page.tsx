@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getServiceBySlug, listServiceSlugs } from "@/lib/keystatic-reader";
 import { buildMetadata } from "@/lib/seo";
 import { ServiceSchema } from "@/components/seo/ServiceSchema";
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import ServiceDetailClient from "./service-detail-client";
 
 export async function generateStaticParams(): Promise<Array<{ slug: string }>> {
@@ -39,6 +40,12 @@ export default async function ServiceDetailPage({
 
     if (!service) notFound();
 
+    const breadcrumbs = [
+        { name: "Home", href: "/" },
+        { name: "Services", href: "/services" },
+        { name: service.title, href: `/services/${slug}` },
+    ];
+
     return (
         <>
             <ServiceSchema
@@ -47,6 +54,7 @@ export default async function ServiceDetailPage({
                 url={`https://quilliamsmowing.co.uk/services/${slug}`}
                 image={service.hero.imageSrc}
             />
+            <BreadcrumbSchema items={breadcrumbs} />
             <ServiceDetailClient service={service} />
         </>
     );
