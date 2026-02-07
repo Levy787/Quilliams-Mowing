@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 
 import { getServiceBySlug, listServiceSlugs } from "@/lib/keystatic-reader";
 import { buildMetadata } from "@/lib/seo";
+import { ServiceSchema } from "@/components/seo/ServiceSchema";
 import ServiceDetailClient from "./service-detail-client";
 
 export async function generateStaticParams(): Promise<Array<{ slug: string }>> {
@@ -37,5 +38,15 @@ export default async function ServiceDetailPage({
 
     if (!service) notFound();
 
-    return <ServiceDetailClient service={service} />;
+    return (
+        <>
+            <ServiceSchema
+                name={service.title}
+                description={service.description}
+                url={`https://quilliamsmowing.co.uk/services/${slug}`}
+                image={service.hero.imageSrc}
+            />
+            <ServiceDetailClient service={service} />
+        </>
+    );
 }
