@@ -107,6 +107,7 @@ export function Hero({
                                             fill
                                             className="object-cover"
                                             sizes="(max-width: 768px) 50vw, 20vw"
+                                            priority={index === 0}
                                         />
                                     ) : null}
                                 </div>
@@ -120,6 +121,7 @@ export function Hero({
                                             fill
                                             className="object-cover"
                                             sizes="(max-width: 768px) 50vw, 20vw"
+                                            priority={index === 0}
                                         />
                                     ) : null}
                                 </div>
@@ -138,6 +140,7 @@ export function Hero({
                                             fill
                                             className="object-cover"
                                             sizes="(max-width: 768px) 50vw, 20vw"
+                                            priority={index === 0}
                                         />
                                     ) : null}
                                 </div>
@@ -151,6 +154,7 @@ export function Hero({
                                             fill
                                             className="object-cover"
                                             sizes="(max-width: 768px) 50vw, 20vw"
+                                            priority={index === 0}
                                         />
                                     ) : null}
                                 </div>
