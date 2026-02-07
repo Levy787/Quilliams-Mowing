@@ -13,6 +13,7 @@ import { Testimonials } from "./Testimonials";
 
 import { getHomeContent } from "@/lib/keystatic-reader";
 import { buildMetadata } from "@/lib/seo";
+import { ReviewSchema } from "@/components/seo/ReviewSchema";
 
 export async function generateMetadata(): Promise<Metadata> {
     const home = await getHomeContent();
@@ -28,8 +29,17 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function Home() {
     const home = await getHomeContent();
 
+    // Transform testimonials to review format
+    const reviews = home.testimonials.items.map((item) => ({
+        author: item.name,
+        reviewBody: item.quote,
+        datePublished: item.date,
+        ratingValue: 5,
+    }));
+
     return (
         <main>
+            <ReviewSchema reviews={reviews} />
             <Hero {...home.hero} />
             <Stats items={home.stats} />
             <AboutUs {...home.about} />
