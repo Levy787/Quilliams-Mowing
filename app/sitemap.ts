@@ -1,14 +1,13 @@
 import { MetadataRoute } from "next";
 import { listServiceSlugs, listProjectSlugs } from "@/lib/keystatic-reader";
+import { areas } from "@/lib/areas/data";
 
 const BASE_URL = "https://quilliamsmowing.co.uk";
-
-// Area slugs for location pages
-const areaSlugs = ["truro", "st-austell", "bodmin", "padstow", "perranporth", "st-ives"];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const serviceSlugs = await listServiceSlugs();
   const projectSlugs = await listProjectSlugs();
+  const areaSlugs = Object.keys(areas);
 
   const staticPages: MetadataRoute.Sitemap = [
     {

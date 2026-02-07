@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { buildMetadata } from "@/lib/seo";
 import { listServiceSlugs, listProjectSlugs } from "@/lib/keystatic-reader";
+import { areas } from "@/lib/areas/data";
 
 export const metadata: Metadata = buildMetadata({
     seo: {
@@ -21,6 +22,7 @@ const mainPages = [
     { href: "/pricing", label: "Pricing" },
     { href: "/quote", label: "Get a Quote" },
     { href: "/contact", label: "Contact" },
+    { href: "/areas", label: "Areas We Cover" },
 ];
 
 const legalPages = [
@@ -31,6 +33,7 @@ const legalPages = [
 export default async function SitemapPage() {
     const serviceSlugs = await listServiceSlugs();
     const projectSlugs = await listProjectSlugs();
+    const areaSlugs = Object.keys(areas);
 
     return (
         <main className="min-h-screen bg-background">
@@ -63,6 +66,22 @@ export default async function SitemapPage() {
                                     className="text-primary hover:underline capitalize"
                                 >
                                     {slug.replace(/-/g, " ")}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </section>
+
+                <section className="mb-10">
+                    <h2 className="text-2xl font-semibold mb-4">Areas We Cover</h2>
+                    <ul className="space-y-2">
+                        {areaSlugs.map((slug) => (
+                            <li key={slug}>
+                                <Link 
+                                    href={`/areas/${slug}`}
+                                    className="text-primary hover:underline"
+                                >
+                                    {areas[slug].name}, Cornwall
                                 </Link>
                             </li>
                         ))}
