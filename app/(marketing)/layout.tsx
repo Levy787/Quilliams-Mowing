@@ -5,6 +5,7 @@ import { CookieBanner } from "@/components/CookieBanner";
 import { LocalBusinessSchema } from "@/components/seo/LocalBusinessSchema";
 import { StickyMobileCTA } from "@/components/StickyMobileCTA";
 import { ExitIntentPopup } from "@/components/ExitIntentPopup";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 
 export default function Layout({
     children,
@@ -21,6 +22,7 @@ export default function Layout({
             <CookieBanner />
             <StickyMobileCTA />
             <ExitIntentPopup />
+            <WhatsAppButton />
         </>
     );
 }
