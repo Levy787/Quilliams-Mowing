@@ -16,6 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
         seo: pricing.seo,
         fallbackTitle: "Pricing",
         fallbackDescription: pricing.hero.description,
+        canonicalPath: "/pricing",
     });
 }
 

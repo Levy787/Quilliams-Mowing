@@ -25,6 +25,7 @@ export async function generateMetadata({
         fallbackTitle: service.title,
         fallbackDescription: service.description,
         fallbackOgImage: service.hero.imageSrc,
+        canonicalPath: `/services/${slug}`,
     });
 }
 

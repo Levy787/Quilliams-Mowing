@@ -24,6 +24,7 @@ export async function generateMetadata(): Promise<Metadata> {
         fallbackTitle: "Home",
         fallbackDescription: home.hero.subheading,
         isHomepage: true,
+        canonicalPath: "/",
     });
 }
 
