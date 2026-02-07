@@ -1,9 +1,20 @@
 "use client";
 
 import "leaflet/dist/leaflet.css";
-import { Circle, MapContainer, TileLayer } from "react-leaflet";
+import { useEffect } from "react";
+import { Circle, MapContainer, TileLayer, useMap } from "react-leaflet";
 
 import type { MapElement } from "./types";
+
+/** Forces Leaflet to recalculate tile grid after the container is sized. */
+function InvalidateSize() {
+    const map = useMap();
+    useEffect(() => {
+        const id = setTimeout(() => map.invalidateSize(), 0);
+        return () => clearTimeout(id);
+    }, [map]);
+    return null;
+}
 
 type Props = {
     center: [number, number]; // [lat, lng]
@@ -21,8 +32,9 @@ export default function LeafletMapClient({ center, zoom, elements }: Props) {
             className="absolute inset-0"
             style={{ height: "100%", width: "100%" }}
         >
+            <InvalidateSize />
             <TileLayer
-                url="https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+                url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
             />
 
