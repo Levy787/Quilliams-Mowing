@@ -86,8 +86,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Preconnect to critical origins for faster resource loading */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         {hasTurnstileConfigured ? (
-          <link rel="preconnect" href="https://challenges.cloudflare.com" as="script" />
+          <link rel="preconnect" href="https://challenges.cloudflare.com" />
         ) : null}
       </head>
       <body
