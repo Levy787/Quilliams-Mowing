@@ -21,7 +21,7 @@ const CreateCard = ({ card }: { card: CardData }) => (
         <CardContent className="p-6">
             <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                    <div className="flex gap-1" aria-label="5 out of 5 stars">
+                    <span role="img" aria-label="5 out of 5 stars" className="flex gap-1">
                         {Array.from({ length: 5 }).map((_, index) => (
                             <Star
                                 key={index}
@@ -29,7 +29,7 @@ const CreateCard = ({ card }: { card: CardData }) => (
                                 aria-hidden="true"
                             />
                         ))}
-                    </div>
+                    </span>
 
                     <p className="text-xs text-muted-foreground">{card.date}</p>
                 </div>
