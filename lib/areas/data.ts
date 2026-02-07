@@ -42,4 +42,11 @@ export const areas: Record<string, Area> = {
         services: ["lawn-care", "hedge-trimming", "garden-maintenance"],
         nearby: ["newquay", "truro", "st-agnes"],
     },
+    "st-ives": {
+        name: "St Ives",
+        county: "Cornwall",
+        description: "Professional gardening in St Ives, Cornwall. From compact town gardens to larger coastal properties, we offer tailored garden care. Lawn mowing, hedge cutting, planting, and full maintenance packages.",
+        services: ["lawn-care", "hedge-trimming", "garden-maintenance", "landscaping"],
+        nearby: ["penzance", "hayle", "newquay"],
+    },
 };
