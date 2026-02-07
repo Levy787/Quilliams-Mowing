@@ -28,4 +28,11 @@ export const areas: Record<string, Area> = {
         services: ["lawn-care", "hedge-trimming", "garden-maintenance", "seasonal-cleanup"],
         nearby: ["newquay", "truro", "padstow"],
     },
+    "padstow": {
+        name: "Padstow",
+        county: "Cornwall",
+        description: "Garden services in Padstow and the North Cornwall coast. We help holiday home owners and residents alike maintain beautiful gardens. Regular visits or seasonal maintenance available.",
+        services: ["lawn-care", "hedge-trimming", "garden-maintenance", "landscaping"],
+        nearby: ["newquay", "bodmin", "wadebridge"],
+    },
 };
