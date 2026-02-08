@@ -23,10 +23,12 @@ type Props = {
 };
 
 export default function LeafletMapClient({ center, zoom, elements }: Props) {
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+
     return (
         <MapContainer
             center={center}
-            zoom={zoom}
+            zoom={isMobile ? zoom - 1 : zoom}
             zoomControl={false}
             scrollWheelZoom={false}
             className="absolute inset-0"

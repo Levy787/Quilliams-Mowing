@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Image from "next/image";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, AnimatePresence } from "framer-motion";
 import {
     Star,
     Phone,
@@ -66,15 +66,125 @@ function StarRating({ count = 5 }: { count?: number }) {
     );
 }
 
+/* ─────────────── smart scroll: hero form vs lower form ──────── */
+
 function scrollToForm() {
+    const heroForm = document.getElementById("hero-form");
+    if (heroForm) {
+        const rect = heroForm.getBoundingClientRect();
+        // If hero form is still visible or above viewport, scroll to it
+        if (rect.top > -rect.height && rect.top < window.innerHeight) {
+            heroForm.scrollIntoView({ behavior: "smooth", block: "center" });
+            return;
+        }
+    }
+    // Otherwise scroll to the lower form
     document
         .getElementById("lead-form")
         ?.scrollIntoView({ behavior: "smooth", block: "center" });
 }
 
+/* ─────────────── countdown timer ────────────────────────────── */
+
+function getEndOfMonth() {
+    const now = new Date();
+    return new Date(now.getFullYear(), now.getMonth() + 1, 1);
+}
+
+function useCountdown() {
+    const [timeLeft, setTimeLeft] = React.useState({ days: 0, hours: 0, mins: 0 });
+    const [mounted, setMounted] = React.useState(false);
+
+    React.useEffect(() => {
+        function calc() {
+            const diff = getEndOfMonth().getTime() - Date.now();
+            if (diff <= 0) return { days: 0, hours: 0, mins: 0 };
+            return {
+                days: Math.floor(diff / 86400000),
+                hours: Math.floor((diff % 86400000) / 3600000),
+                mins: Math.floor((diff % 3600000) / 60000),
+            };
+        }
+        setTimeLeft(calc());
+        setMounted(true);
+        const id = setInterval(() => setTimeLeft(calc()), 60000);
+        return () => clearInterval(id);
+    }, []);
+
+    return { ...timeLeft, mounted };
+}
+
+function CountdownTimer({ compact = false }: { compact?: boolean }) {
+    const { days, hours, mins, mounted } = useCountdown();
+
+    if (!mounted) {
+        // Render zeroed state to avoid hydration flash
+        if (compact) return <span className="text-amber-400 font-semibold text-xs">Offer ending soon</span>;
+        return (
+            <div className="flex items-center justify-center gap-3">
+                {["00", "00", "00"].map((v, i) => (
+                    <div key={i} className="flex flex-col items-center">
+                        <span className="rounded-lg bg-[oklch(0.20_0.02_80)] px-3 py-1.5 text-xl font-bold tabular-nums text-amber-400">
+                            {v}
+                        </span>
+                        <span className="mt-1 text-[10px] font-medium uppercase tracking-wider text-white/40">
+                            {["Days", "Hours", "Mins"][i]}
+                        </span>
+                    </div>
+                ))}
+            </div>
+        );
+    }
+
+    if (compact) {
+        return (
+            <span className="text-amber-400 font-semibold text-xs">
+                {days}d {hours}h left
+            </span>
+        );
+    }
+
+    return (
+        <div className="flex items-center justify-center gap-3">
+            {[
+                { v: days, l: "Days" },
+                { v: hours, l: "Hours" },
+                { v: mins, l: "Mins" },
+            ].map(({ v, l }) => (
+                <div key={l} className="flex flex-col items-center">
+                    <span className="rounded-lg bg-[oklch(0.20_0.02_80)] px-3 py-1.5 text-xl font-bold tabular-nums text-amber-400">
+                        {String(v).padStart(2, "0")}
+                    </span>
+                    <span className="mt-1 text-[10px] font-medium uppercase tracking-wider text-white/40">
+                        {l}
+                    </span>
+                </div>
+            ))}
+        </div>
+    );
+}
+
+/* ─────────────── spots remaining ────────────────────────────── */
+
+function useSpotsRemaining() {
+    const [spots, setSpots] = React.useState(5);
+    React.useEffect(() => {
+        const day = new Date().getDate();
+        // Deterministic: goes from 7 at start of month → 2 at end
+        const calculated = Math.max(2, 7 - Math.floor((day / 31) * 5));
+        setSpots(calculated);
+    }, []);
+    return spots;
+}
+
 /* ─────────────────────────── data ─────────────────────────────── */
 
 const TESTIMONIALS = [
+    {
+        name: "Kim Brocklehurst",
+        location: "Newquay, Cornwall",
+        quote: "Quick response to initial enquiry. Fast and thorough clearance of overgrown land. Will definitely use Levi again.",
+    },
     {
         name: "Hannah B",
         location: "Summer Court, Cornwall",
@@ -86,11 +196,6 @@ const TESTIMONIALS = [
         quote: "Great service from start to finish. Quick, tidy, and very reasonably priced. Everything was left neat and exactly how we wanted it. Would definitely recommend and use again.",
     },
     {
-        name: "Kim Brocklehurst",
-        location: "Newquay, Cornwall",
-        quote: "Quick response to initial enquiry. Fast and thorough clearance of overgrown land. Will definitely use Levi again.",
-    },
-    {
         name: "Michael Meer",
         location: "Grampound, Cornwall",
         quote: "He works really hard — non-stop, has really good ideas for making a garden both tidy and practical and his prices are very competitive. What\u2019s more, he\u2019s a really nice bloke.",
@@ -100,8 +205,8 @@ const TESTIMONIALS = [
 const BENEFITS = [
     {
         icon: Leaf,
-        title: "No More Mowing",
-        desc: "Reclaim your weekends. A gravel garden stays neat year-round with zero cutting.",
+        title: "From Overgrown to Gorgeous",
+        desc: "Whether it\u2019s an untamed front patch or a tired lawn, we clear it all and start fresh.",
     },
     {
         icon: Droplets,
@@ -115,8 +220,8 @@ const BENEFITS = [
     },
     {
         icon: TrendingUp,
-        title: "Adds Property Value",
-        desc: "Clean, low-maintenance frontage is a top buyer attractor in Cornwall.",
+        title: "Instant Kerb Appeal",
+        desc: "Neighbours will notice. A clean gravel frontage transforms how your home looks from the street.",
     },
 ];
 
@@ -153,7 +258,7 @@ const BEFORE_AFTER = [
         after: "/images/uploads/overgrown-mess-to-clean-gravel-garden/hero/imageFile.webp",
         beforeAlt: "Overgrown front garden before gravel transformation",
         afterAlt: "Clean gravel garden after professional installation",
-        label: "Front Garden Rescue",
+        label: "Overgrown Front Garden Rescue",
     },
     {
         before: "/images/uploads/gravel-garden-with-patio/gallery/0/imageFile.webp",
@@ -167,8 +272,14 @@ const BEFORE_AFTER = [
         after: "/images/uploads/overgrown-mess-to-clean-gravel-garden/gallery/4/imageFile.webp",
         beforeAlt: "Messy garden with overgrown plants and weeds",
         afterAlt: "Immaculate gravel garden with neat borders",
-        label: "Complete Transformation",
+        label: "From Jungle to Gorgeous",
     },
+];
+
+const SOCIAL_PROOF_ENTRIES = [
+    { name: "Sarah", location: "Truro", time: "2 hours ago" },
+    { name: "Mark", location: "Newquay", time: "5 hours ago" },
+    { name: "Julie", location: "St Austell", time: "yesterday" },
 ];
 
 /* ─────────────────────────── components ──────────────────────── */
@@ -194,6 +305,8 @@ function TopBar() {
 }
 
 function HeroSection() {
+    const spots = useSpotsRemaining();
+
     return (
         <section className="relative overflow-hidden bg-[oklch(0.14_0.01_150)]">
             {/* texture overlay */}
@@ -218,8 +331,11 @@ function HeroSection() {
                             transition={{ duration: 0.5 }}
                         >
                             <span className="mb-4 inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold tracking-wide text-primary sm:text-sm">
-                                <Calendar className="size-3.5" />
-                                February Special — Limited Spots
+                                <span className="relative flex size-2">
+                                    <span className="absolute inline-flex size-full animate-ping rounded-full bg-primary opacity-75" />
+                                    <span className="relative inline-flex size-2 rounded-full bg-primary" />
+                                </span>
+                                Only {spots} February Spots Left
                             </span>
                         </motion.div>
 
@@ -229,8 +345,8 @@ function HeroSection() {
                             transition={{ duration: 0.6, delay: 0.1 }}
                             className="mt-4 text-4xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl"
                         >
-                            Tired of{" "}
-                            <span className="text-primary">Endless&nbsp;Mowing?</span>
+                            <span className="text-primary">Tired of Mowing?</span>{" "}
+                            <span className="text-primary">Got an Overgrown&nbsp;Mess?</span>
                         </motion.h1>
 
                         <motion.p
@@ -239,26 +355,25 @@ function HeroSection() {
                             transition={{ duration: 0.6, delay: 0.2 }}
                             className="mt-5 max-w-lg text-base leading-relaxed text-white/70 sm:text-lg"
                         >
-                            Transform your garden into a stunning, low-maintenance gravel
-                            space in as little as 3&nbsp;days. No more weekends wasted
-                            mowing. No more weeds. Just a beautiful garden you can
-                            actually enjoy.
+                            Whether it&apos;s a lawn you&apos;re sick of cutting or an overgrown
+                            front patch you&apos;ve been putting off for years — we&apos;ll
+                            transform it into a stunning, low-maintenance gravel garden in as
+                            little as 3&nbsp;days.
                         </motion.p>
 
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.35 }}
-                            className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center"
+                            className="mt-8 flex items-center gap-4"
                         >
-                            <Button
-                                size="lg"
-                                onClick={scrollToForm}
-                                className="h-12 cursor-pointer rounded-xl px-7 text-base font-bold shadow-lg shadow-primary/25 transition-transform hover:scale-[1.02]"
+                            <a
+                                href="tel:07593121621"
+                                className="inline-flex items-center gap-2 text-sm font-semibold text-white/60 transition-colors hover:text-white"
                             >
-                                Claim Your Free Consultation
-                                <ArrowRight className="ml-1 size-4" />
-                            </Button>
+                                <Phone className="size-4" />
+                                07593 121 621
+                            </a>
                             <span className="flex items-center gap-1.5 text-sm text-white/50">
                                 <Shield className="size-4" />
                                 No obligation &middot; 100% free
@@ -291,31 +406,33 @@ function HeroSection() {
                         </motion.div>
                     </div>
 
-                    {/* hero image */}
+                    {/* hero form card (replaces hero image) */}
                     <motion.div
+                        id="hero-form"
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.7, delay: 0.2 }}
-                        className="relative"
                     >
-                        <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
-                            <Image
-                                src="/images/uploads/gravel-garden-with-patio/hero/imageFile.jpg"
-                                alt="Beautiful gravel garden installation by Quilliams in Cornwall"
-                                fill
-                                className="object-cover"
-                                priority
-                                sizes="(max-width: 1024px) 100vw, 50vw"
-                            />
-                            {/* gradient overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-                            <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-                                <span className="rounded-lg bg-black/60 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur-sm">
-                                    Recent project &middot; Cornwall
+                        <div className="rounded-2xl border border-white/10 bg-white p-6 shadow-2xl sm:p-8">
+                            <div className="mb-6 text-center">
+                                <h3 className="text-lg font-bold text-foreground">
+                                    Get Your Free Consultation
+                                </h3>
+                                <p className="mt-1 text-sm text-muted-foreground">
+                                    Takes 30 seconds — we&apos;ll handle the rest
+                                </p>
+                            </div>
+                            <LeadForm />
+                            {/* micro trust strip */}
+                            <div className="mt-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 border-t border-border pt-4 text-xs text-muted-foreground">
+                                <span className="flex items-center gap-1">
+                                    <StarRating count={5} />
+                                    <span className="font-medium">5.0 Google</span>
                                 </span>
-                                <span className="rounded-lg bg-primary/90 px-3 py-1.5 text-xs font-bold text-white">
-                                    3-Day Install
-                                </span>
+                                <span className="h-3 w-px bg-border" />
+                                <span>120+ projects</span>
+                                <span className="h-3 w-px bg-border" />
+                                <span>No obligation</span>
                             </div>
                         </div>
                     </motion.div>
@@ -337,8 +454,8 @@ function BeforeAfterSection() {
                         See the Transformation
                     </h2>
                     <p className="mx-auto mt-3 max-w-xl text-muted-foreground">
-                        These are real gardens in Cornwall we transformed. No stock
-                        photos, no filters — just honest before &amp; after shots.
+                        Overgrown front patches, tired lawns, messy side gardens —
+                        we&apos;ve transformed them all.
                     </p>
                 </FadeIn>
 
@@ -434,6 +551,8 @@ function BenefitsSection() {
 }
 
 function OfferSection() {
+    const spots = useSpotsRemaining();
+
     return (
         <section className="relative overflow-hidden bg-[oklch(0.14_0.01_150)] py-16 sm:py-24">
             {/* decorative blobs */}
@@ -444,7 +563,7 @@ function OfferSection() {
                 <FadeIn>
                     <span className="mb-4 inline-flex items-center gap-1.5 rounded-full border border-amber-400/30 bg-amber-400/10 px-4 py-1.5 text-sm font-semibold text-amber-400">
                         <Sparkles className="size-4" />
-                        February Exclusive Offer
+                        February Exclusive — Ends Soon
                     </span>
 
                     <h2 className="mt-2 text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl">
@@ -496,17 +615,25 @@ function OfferSection() {
                 </FadeIn>
 
                 <FadeIn delay={0.3}>
-                    <Button
-                        size="lg"
-                        onClick={scrollToForm}
-                        className="mt-10 h-13 cursor-pointer rounded-xl px-8 text-base font-bold shadow-lg shadow-primary/25 transition-transform hover:scale-[1.02]"
-                    >
-                        Claim Your Free Consultation
-                        <ArrowRight className="ml-1 size-4" />
-                    </Button>
-                    <p className="mt-3 text-sm text-white/40">
-                        Only a few February slots remaining
-                    </p>
+                    <div className="mt-10 space-y-4">
+                        <CountdownTimer />
+                        <p className="text-sm text-white/60">
+                            We can only take on{" "}
+                            <span className="font-semibold text-amber-400">{spots} more projects</span>{" "}
+                            in February. Once they&apos;re booked, this offer closes.
+                        </p>
+                        <Button
+                            size="lg"
+                            onClick={scrollToForm}
+                            className="h-13 cursor-pointer rounded-xl px-8 text-base font-bold shadow-lg shadow-primary/25 transition-transform hover:scale-[1.02]"
+                        >
+                            Claim Your Free Consultation
+                            <ArrowRight className="ml-1 size-4" />
+                        </Button>
+                        <p className="text-sm text-white/40">
+                            Offer expires when the clock hits zero.
+                        </p>
+                    </div>
                 </FadeIn>
             </div>
         </section>
@@ -742,6 +869,8 @@ function LeadForm() {
 }
 
 function FormSection() {
+    const spots = useSpotsRemaining();
+
     return (
         <section id="lead-form" className="bg-white py-16 sm:py-24">
             <div className="mx-auto max-w-6xl px-4">
@@ -766,7 +895,7 @@ function FormSection() {
                                     "Free on-site design consultation (worth £150)",
                                     "Fixed, no-surprise quote within 24 hours",
                                     "February bonus: free premium membrane upgrade",
-                                    "Most gardens completed in just 2–3 days",
+                                    `Only ${spots} February spots remaining — book now`,
                                 ].map((text, i) => (
                                     <li
                                         key={i}
@@ -882,10 +1011,11 @@ function FinalCTA() {
             <div className="mx-auto max-w-3xl px-4 text-center">
                 <FadeIn>
                     <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
-                        Ready to Ditch the Mower for Good?
+                        Ready to Finally Sort That Garden?
                     </h2>
                     <p className="mt-2 text-white/80">
-                        Your free design consultation is one click away.
+                        Whether it&apos;s overgrown or just boring — your free design
+                        consultation is one click away.
                     </p>
                     <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
                         <Button
@@ -913,6 +1043,8 @@ function FinalCTA() {
 
 function StickyMobileCTA() {
     const [visible, setVisible] = React.useState(false);
+    const [dismissed, setDismissed] = React.useState(false);
+    const spots = useSpotsRemaining();
 
     React.useEffect(() => {
         const handleScroll = () => {
@@ -921,8 +1053,6 @@ function StickyMobileCTA() {
         window.addEventListener("scroll", handleScroll, { passive: true });
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
-
-    const [dismissed, setDismissed] = React.useState(false);
 
     if (dismissed) return null;
 
@@ -933,6 +1063,9 @@ function StickyMobileCTA() {
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
             className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-white/95 p-3 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] backdrop-blur-md lg:hidden"
         >
+            <p className="mb-1.5 text-center text-xs font-medium text-muted-foreground">
+                Only {spots} February spots left — <CountdownTimer compact />
+            </p>
             <div className="flex items-center gap-2">
                 <Button
                     size="lg"
@@ -957,6 +1090,101 @@ function StickyMobileCTA() {
                 </button>
             </div>
         </motion.div>
+    );
+}
+
+/* ─────────────── social proof toast (desktop only) ──────────── */
+
+function SocialProofToast() {
+    const [current, setCurrent] = React.useState(-1);
+    const [showCount, setShowCount] = React.useState(0);
+    const [dismissed, setDismissed] = React.useState(false);
+
+    React.useEffect(() => {
+        if (dismissed) return;
+
+        // Show first toast after 8s
+        const initialTimer = setTimeout(() => {
+            setCurrent(0);
+            setShowCount(1);
+        }, 8000);
+
+        return () => clearTimeout(initialTimer);
+    }, [dismissed]);
+
+    React.useEffect(() => {
+        if (current < 0 || dismissed) return;
+
+        // Hide after 5s
+        const hideTimer = setTimeout(() => {
+            setCurrent(-1);
+
+            // If we haven't shown 3 yet, schedule next
+            if (showCount < 3) {
+                const nextTimer = setTimeout(() => {
+                    const nextIdx = showCount % SOCIAL_PROOF_ENTRIES.length;
+                    setCurrent(nextIdx);
+                    setShowCount((c) => c + 1);
+                }, 15000);
+                // Store cleanup
+                return () => clearTimeout(nextTimer);
+            }
+        }, 5000);
+
+        return () => clearTimeout(hideTimer);
+    }, [current, showCount, dismissed]);
+
+    // Cycle to next entry after hide
+    React.useEffect(() => {
+        if (current !== -1 || showCount >= 3 || showCount === 0 || dismissed) return;
+
+        const nextTimer = setTimeout(() => {
+            const nextIdx = showCount % SOCIAL_PROOF_ENTRIES.length;
+            setCurrent(nextIdx);
+            setShowCount((c) => c + 1);
+        }, 15000);
+
+        return () => clearTimeout(nextTimer);
+    }, [current, showCount, dismissed]);
+
+    if (dismissed) return null;
+
+    const entry = current >= 0 ? SOCIAL_PROOF_ENTRIES[current] : null;
+
+    return (
+        <div className="fixed bottom-6 left-6 z-40 hidden lg:block">
+            <AnimatePresence>
+                {entry && (
+                    <motion.div
+                        key={current}
+                        initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                        transition={{ duration: 0.3 }}
+                        className="flex items-center gap-3 rounded-xl border border-border bg-white px-4 py-3 shadow-lg"
+                    >
+                        <span className="flex size-8 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
+                            {entry.name[0]}
+                        </span>
+                        <div className="text-sm">
+                            <p className="font-semibold text-foreground">
+                                {entry.name} from {entry.location}
+                            </p>
+                            <p className="text-xs text-muted-foreground">
+                                Booked a consultation {entry.time}
+                            </p>
+                        </div>
+                        <button
+                            onClick={() => setDismissed(true)}
+                            className="ml-2 cursor-pointer text-muted-foreground hover:text-foreground"
+                            aria-label="Dismiss"
+                        >
+                            <X className="size-3.5" />
+                        </button>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </div>
     );
 }
 
@@ -993,6 +1221,7 @@ export default function OfferClient() {
             <FinalCTA />
             <FooterMinimal />
             <StickyMobileCTA />
+            <SocialProofToast />
         </div>
     );
 }
