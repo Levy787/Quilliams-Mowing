@@ -17,8 +17,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     
     return buildMetadata({
         seo: {
-            title: `Gardener in ${area.name}, ${area.county} | Local Garden Services`,
-            description: `Professional gardening services in ${area.name}. Lawn care, hedge trimming, landscaping & garden maintenance. Reliable local gardener covering ${area.name} and surrounding ${area.county} areas.`,
+            title: `Lawn Mowing & Gardening in ${area.name}, ${area.county} | Quilliams`,
+            description: `Lawn mowing, hedge trimming, landscaping & garden maintenance in ${area.name}. 5-star rated local gardener covering ${area.name} and surrounding ${area.county} areas. Free quotes.`,
         },
         fallbackTitle: `Gardener in ${area.name}`,
         canonicalPath: `/areas/${slug}`,

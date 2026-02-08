@@ -71,6 +71,12 @@ const nextConfig: NextConfig = {
         destination: "/",
         permanent: true,
       },
+      // Old lawn mowing URL still in Google's index
+      {
+        source: "/services/lawn-mowing-newquay",
+        destination: "/services/lawn-care",
+        permanent: true,
+      },
     ];
   },
 
