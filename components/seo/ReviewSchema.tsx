@@ -1,5 +1,3 @@
-import Script from "next/script";
-
 export interface Review {
   author: string;
   reviewBody: string;
@@ -50,8 +48,7 @@ export function ReviewSchema({
   };
 
   return (
-    <Script
-      id="review-schema"
+    <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
     />

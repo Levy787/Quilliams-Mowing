@@ -1,5 +1,3 @@
-import Script from "next/script";
-
 export interface ServiceSchemaProps {
   name: string;
   description: string;
@@ -37,8 +35,7 @@ export function ServiceSchema({
   };
 
   return (
-    <Script
-      id={`service-schema-${name.toLowerCase().replace(/\s+/g, "-")}`}
+    <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
     />

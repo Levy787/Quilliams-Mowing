@@ -1,5 +1,3 @@
-import Script from "next/script";
-
 export interface LocalBusinessSchemaProps {
   name?: string;
   description?: string;
@@ -74,8 +72,7 @@ export function LocalBusinessSchema({
   };
 
   return (
-    <Script
-      id="local-business-schema"
+    <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
     />
