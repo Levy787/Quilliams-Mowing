@@ -45,6 +45,35 @@ const nextConfig: NextConfig = {
   // Power header (optional, can disable)
   poweredByHeader: false,
   
+  async redirects() {
+    return [
+      // Renamed page: /sitemap → /site-map (avoid conflict with sitemap.xml)
+      {
+        source: "/sitemap",
+        destination: "/site-map",
+        permanent: true,
+      },
+      // Old URL that Google still has indexed
+      {
+        source: "/contact-us",
+        destination: "/contact",
+        permanent: true,
+      },
+      // Removed feature
+      {
+        source: "/scheduler",
+        destination: "/",
+        permanent: true,
+      },
+      // Old articles section no longer exists
+      {
+        source: "/articles/:path*",
+        destination: "/",
+        permanent: true,
+      },
+    ];
+  },
+
   async rewrites() {
     return [
       {
