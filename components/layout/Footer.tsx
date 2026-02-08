@@ -354,6 +354,80 @@ export function FooterInner({
                     </div>
                 </div>
 
+                {/* Site navigation links */}
+                <nav aria-label="Site navigation" className="border-t border-border/30 px-6 py-8 md:px-10">
+                    <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
+                        <div>
+                            <h4 className="text-sm font-semibold text-background">Services</h4>
+                            <ul className="mt-3 space-y-2">
+                                {[
+                                    { label: "Lawn Mowing", href: "/services/lawn-care" },
+                                    { label: "Hedge Trimming", href: "/services/hedge-trimming" },
+                                    { label: "Landscaping", href: "/services/landscaping" },
+                                    { label: "Garden Maintenance", href: "/services/garden-maintenance" },
+                                    { label: "All Services", href: "/services" },
+                                ].map((link) => (
+                                    <li key={link.href}>
+                                        <Link href={link.href} className="text-sm text-background/60 transition-colors hover:text-background">
+                                            {link.label}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 className="text-sm font-semibold text-background">Areas</h4>
+                            <ul className="mt-3 space-y-2">
+                                {[
+                                    { label: "Newquay", href: "/areas" },
+                                    { label: "Truro", href: "/areas/truro" },
+                                    { label: "St Austell", href: "/areas/st-austell" },
+                                    { label: "Bodmin", href: "/areas/bodmin" },
+                                    { label: "All Areas", href: "/areas" },
+                                ].map((link) => (
+                                    <li key={link.label}>
+                                        <Link href={link.href} className="text-sm text-background/60 transition-colors hover:text-background">
+                                            {link.label}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 className="text-sm font-semibold text-background">Company</h4>
+                            <ul className="mt-3 space-y-2">
+                                {[
+                                    { label: "About Us", href: "/about" },
+                                    { label: "Our Projects", href: "/projects" },
+                                    { label: "Pricing", href: "/pricing" },
+                                    { label: "Refer a Friend", href: "/refer" },
+                                ].map((link) => (
+                                    <li key={link.href}>
+                                        <Link href={link.href} className="text-sm text-background/60 transition-colors hover:text-background">
+                                            {link.label}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 className="text-sm font-semibold text-background">Get in Touch</h4>
+                            <ul className="mt-3 space-y-2">
+                                {[
+                                    { label: "Contact Us", href: "/contact" },
+                                    { label: "Get a Quote", href: "/quote" },
+                                ].map((link) => (
+                                    <li key={link.href}>
+                                        <Link href={link.href} className="text-sm text-background/60 transition-colors hover:text-background">
+                                            {link.label}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
                 {/* Bottom bar */}
                 <div className="bg-gray-800 border-t border-border/30 px-6 py-6 md:px-10">
                     <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">

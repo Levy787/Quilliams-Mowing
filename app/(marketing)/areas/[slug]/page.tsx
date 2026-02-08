@@ -105,6 +105,25 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
                     </ul>
                 </section>
                 
+                {area.nearby.length > 0 && (
+                    <section className="mb-12">
+                        <h2 className="text-2xl font-semibold mb-4">We Also Serve Nearby Areas</h2>
+                        <div className="flex flex-wrap gap-3">
+                            {area.nearby
+                                .filter((slug) => areas[slug])
+                                .map((nearbySlug) => (
+                                    <Link
+                                        key={nearbySlug}
+                                        href={`/areas/${nearbySlug}`}
+                                        className="rounded-lg border px-4 py-2 text-sm font-medium hover:border-primary hover:text-primary transition-colors"
+                                    >
+                                        Gardening in {areas[nearbySlug].name}
+                                    </Link>
+                                ))}
+                        </div>
+                    </section>
+                )}
+
                 <section className="bg-muted/50 rounded-lg p-8 text-center">
                     <h2 className="text-2xl font-semibold mb-4">Get a Free Quote</h2>
                     <p className="text-muted-foreground mb-6">

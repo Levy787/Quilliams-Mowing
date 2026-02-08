@@ -76,6 +76,7 @@ export default async function ServiceDetailPage({
                     ...relatedLinks,
                     { label: "View All Services", href: "/services" },
                     { label: "Get a Quote", href: "/quote" },
+                    { label: "Areas We Cover", href: "/areas" },
                 ]}
             />
         </>
