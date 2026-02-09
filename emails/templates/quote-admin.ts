@@ -2,7 +2,7 @@ import { keyValueTable, paragraph, textBox, wrapEmailHtml } from "./_shared";
 
 export type QuoteAdminData = {
     name: string;
-    email: string;
+    email?: string | null;
     phone?: string | null;
     address?: string | null;
     serviceType: string;
@@ -15,6 +15,7 @@ export type QuoteAdminData = {
 export function quoteAdminTemplate(data: QuoteAdminData) {
     const subject = `New quote request from ${data.name}`;
 
+    const email = data.email?.trim() ? data.email.trim() : "(not provided)";
     const phone = data.phone?.trim() ? data.phone.trim() : "(not provided)";
     const address = data.address?.trim()
         ? data.address.trim()
@@ -34,7 +35,7 @@ export function quoteAdminTemplate(data: QuoteAdminData) {
             paragraph("A new quote request was received."),
             keyValueTable([
                 { label: "Name", value: data.name },
-                { label: "Email", value: data.email },
+                { label: "Email", value: email },
                 { label: "Phone", value: phone },
                 { label: "Address", value: address },
                 { label: "Service type", value: data.serviceType },
@@ -60,7 +61,7 @@ export function quoteAdminTemplate(data: QuoteAdminData) {
         "New quote request",
         "",
         `Name: ${data.name}`,
-        `Email: ${data.email}`,
+        `Email: ${email}`,
         `Phone: ${phone}`,
         `Address: ${address}`,
         `Service type: ${data.serviceType}`,

@@ -36,6 +36,11 @@ const nextConfig: NextConfig = {
     ],
   },
   
+  // Include Keystatic content files in Vercel serverless bundles
+  outputFileTracingIncludes: {
+    "/*": ["./content/**/*"],
+  },
+
   // Compression
   compress: true,
   

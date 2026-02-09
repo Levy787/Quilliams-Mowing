@@ -46,7 +46,7 @@ export async function POST(req: NextRequest) {
             ? body.turnstileContext
             : null;
 
-        const secret = context === "popup"
+        const secret = context === "popup" || context === "exit-intent"
             ? process.env.TURNSTILE_SECRET_KEY_POPUP
             : process.env.TURNSTILE_SECRET_KEY_SUBSCRIBE;
 
@@ -82,15 +82,17 @@ export async function POST(req: NextRequest) {
         }
 
         const email = asTrimmedString(body.email);
+        const phone = asTrimmedString(body.phone);
+        const source = asTrimmedString(body.source);
 
-        if (!email) {
+        if (!email && !phone) {
             return NextResponse.json(
-                { ok: false, error: "Please enter your email address." },
+                { ok: false, error: "Please enter your email or phone number." },
                 { status: 400 },
             );
         }
 
-        if (!isProbablyEmail(email)) {
+        if (email && !isProbablyEmail(email)) {
             return NextResponse.json(
                 { ok: false, error: "Please enter a valid email address." },
                 { status: 400 },
@@ -99,17 +101,17 @@ export async function POST(req: NextRequest) {
 
         const config = getEmailConfig();
 
-        const admin = subscribeAdminTemplate({ email });
+        const admin = subscribeAdminTemplate({ email, phone, source });
         await sendEmail({
             to: config.adminTo,
             from: config.from,
             subject: admin.subject,
             html: admin.html,
             text: admin.text,
-            replyTo: email,
+            ...(email ? { replyTo: email } : {}),
         });
 
-        const offerCodeRaw = context === "popup"
+        const offerCodeRaw = (context === "popup" || context === "exit-intent")
             ? asTrimmedString(body.offerCode)
             : null;
 
@@ -117,24 +119,27 @@ export async function POST(req: NextRequest) {
             ? offerCodeRaw
             : null;
 
-        const offerHeadlineRaw = context === "popup"
+        const offerHeadlineRaw = (context === "popup" || context === "exit-intent")
             ? asTrimmedString(body.offerHeadline)
             : null;
 
-        const user = offerCode
-            ? popupCouponUserTemplate({
-                email,
-                offerCode,
-                offerHeadline: offerHeadlineRaw,
-            })
-            : subscribeUserTemplate({ email });
-        await sendEmail({
-            to: email,
-            from: config.from,
-            subject: user.subject,
-            html: user.html,
-            text: user.text,
-        });
+        // Only send user email if they provided an email address
+        if (email) {
+            const user = offerCode
+                ? popupCouponUserTemplate({
+                    email,
+                    offerCode,
+                    offerHeadline: offerHeadlineRaw,
+                })
+                : subscribeUserTemplate({ email });
+            await sendEmail({
+                to: email,
+                from: config.from,
+                subject: user.subject,
+                html: user.html,
+                text: user.text,
+            });
+        }
 
         return NextResponse.json({ ok: true }, { status: 200 });
     } catch (error) {

@@ -91,14 +91,21 @@ export async function POST(req: NextRequest) {
         const jobDetails = asTrimmedString(body.jobDetails);
         const calculatorSummary = asTrimmedString(body.calculatorSummary);
 
-        if (!name || !email || !serviceType || !jobDetails) {
+        if (!name || !jobDetails) {
             return NextResponse.json(
                 { ok: false, error: "Please complete all required fields." },
                 { status: 400 },
             );
         }
 
-        if (!isProbablyEmail(email)) {
+        if (!phone && !email) {
+            return NextResponse.json(
+                { ok: false, error: "Please provide a phone number or email address." },
+                { status: 400 },
+            );
+        }
+
+        if (email && !isProbablyEmail(email)) {
             return NextResponse.json(
                 { ok: false, error: "Please enter a valid email address." },
                 { status: 400 },
@@ -109,10 +116,10 @@ export async function POST(req: NextRequest) {
 
         const admin = quoteAdminTemplate({
             name,
-            email,
+            email: email || null,
             phone,
             address,
-            serviceType,
+            serviceType: serviceType || "Not specified",
             timeframe,
             budget,
             jobDetails,
@@ -125,18 +132,20 @@ export async function POST(req: NextRequest) {
             subject: admin.subject,
             html: admin.html,
             text: admin.text,
-            replyTo: email,
+            ...(email ? { replyTo: email } : {}),
         });
 
-        const user = quoteUserTemplate({ name });
+        if (email) {
+            const user = quoteUserTemplate({ name });
 
-        await sendEmail({
-            to: email,
-            from: config.from,
-            subject: user.subject,
-            html: user.html,
-            text: user.text,
-        });
+            await sendEmail({
+                to: email,
+                from: config.from,
+                subject: user.subject,
+                html: user.html,
+                text: user.text,
+            });
+        }
 
         return NextResponse.json({ ok: true }, { status: 200 });
     } catch (error) {

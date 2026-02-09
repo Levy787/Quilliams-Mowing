@@ -198,9 +198,10 @@ export function QuoteClient({
     const [selectResetNonce, setSelectResetNonce] = React.useState(0);
 
     const [formError, setFormError] = React.useState("");
+    const [contactError, setContactError] = React.useState("");
     const [isSubmitting, setIsSubmitting] = React.useState(false);
     const [submitted, setSubmitted] = React.useState(false);
-    
+
     const [showOptional, setShowOptional] = React.useState(false);
 
     function validateAndAddFiles(incoming: FileList | null) {
@@ -272,6 +273,7 @@ export function QuoteClient({
         setFileError("");
         setFileWarning("");
         setFormError("");
+        setContactError("");
         setTurnstileToken("");
         turnstileRef.current?.reset();
         if (fileInputRef.current) fileInputRef.current.value = "";
@@ -280,6 +282,7 @@ export function QuoteClient({
     async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         setFormError("");
+        setContactError("");
         setIsSubmitting(true);
 
         const formEl = e.currentTarget;
@@ -289,6 +292,15 @@ export function QuoteClient({
         if (honeypot) {
             setIsSubmitting(false);
             setSubmitted(true);
+            return;
+        }
+
+        const phone = String(fd.get("phone") ?? "").trim();
+        const email = String(fd.get("email") ?? "").trim();
+
+        if (!phone && !email) {
+            setContactError("Please provide a phone number or email so we can get back to you.");
+            setIsSubmitting(false);
             return;
         }
 
@@ -312,13 +324,13 @@ export function QuoteClient({
 
             const payload = {
                 name: String(fd.get("name") ?? "").trim(),
-                email: String(fd.get("email") ?? "").trim(),
-                phone: String(fd.get("phone") ?? "").trim(),
+                email: email || undefined,
+                phone: phone || undefined,
                 address: String(fd.get("address") ?? "").trim(),
-                service: service || "Not specified",
+                serviceType: service || "Not specified",
                 timeframe: timeframe || undefined,
                 budget: budget || undefined,
-                details: String(fd.get("details") ?? "").trim(),
+                jobDetails: String(fd.get("details") ?? "").trim(),
                 calculatorSummary: String(fd.get("calculatorSummary") ?? "").trim() || undefined,
                 attachments: attachments.length > 0 ? attachments : undefined,
                 turnstileToken: turnstileToken || undefined,
@@ -441,18 +453,31 @@ export function QuoteClient({
                                         className="hidden"
                                     />
 
-                                    {/* SIMPLIFIED: Core fields only */}
-                                    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                                        <div className="space-y-2">
-                                            <Label htmlFor="name">Your Name *</Label>
-                                            <Input id="name" name="name" autoComplete="name" required placeholder="John Smith" />
-                                        </div>
-                                        <div className="space-y-2">
-                                            <Label htmlFor="phone">Phone Number *</Label>
-                                            <Input id="phone" name="phone" type="tel" autoComplete="tel" required placeholder="07XXX XXXXXX" />
-                                        </div>
+                                    {/* Name */}
+                                    <div className="space-y-2">
+                                        <Label htmlFor="name">Your Name *</Label>
+                                        <Input id="name" name="name" autoComplete="name" required placeholder="John Smith" />
                                     </div>
 
+                                    {/* Contact - at least one required */}
+                                    <fieldset className="space-y-3">
+                                        <legend className="text-sm font-medium text-foreground">
+                                            How should we reach you? <span className="text-muted-foreground font-normal">(one or both)</span>
+                                        </legend>
+                                        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                            <div className="space-y-2">
+                                                <Label htmlFor="phone">Phone</Label>
+                                                <Input id="phone" name="phone" type="tel" autoComplete="tel" placeholder="07XXX XXXXXX" />
+                                            </div>
+                                            <div className="space-y-2">
+                                                <Label htmlFor="email">Email</Label>
+                                                <Input id="email" name="email" type="email" autoComplete="email" placeholder="you@example.com" />
+                                            </div>
+                                        </div>
+                                        {contactError && <p className="text-sm text-destructive">{contactError}</p>}
+                                    </fieldset>
+
+                                    {/* Job details */}
                                     <div className="space-y-2">
                                         <Label htmlFor="details">What do you need help with? *</Label>
                                         <Textarea
@@ -463,7 +488,7 @@ export function QuoteClient({
                                             className="min-h-[100px]"
                                         />
                                     </div>
-                                    
+
                                     {/* Response time indicator */}
                                     <p className="text-sm text-muted-foreground flex items-center gap-2">
                                         <span className="inline-block w-2 h-2 bg-green-500 rounded-full animate-pulse" />
@@ -477,7 +502,7 @@ export function QuoteClient({
                                         className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
                                     >
                                         <ChevronDown className={`w-4 h-4 transition-transform ${showOptional ? 'rotate-180' : ''}`} />
-                                        {showOptional ? 'Hide' : 'Add'} optional details (email, photos, etc.)
+                                        {showOptional ? 'Hide' : 'Add'} optional details (address, photos, etc.)
                                     </button>
 
                                     {/* Optional fields - collapsed by default */}
@@ -485,22 +510,9 @@ export function QuoteClient({
                                         <div className="space-y-5 pt-2 border-t">
                                             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                                                 <div className="space-y-2">
-                                                    <Label htmlFor="email">{form.emailLabel}</Label>
-                                                    <Input
-                                                        id="email"
-                                                        name="email"
-                                                        type="email"
-                                                        autoComplete="email"
-                                                        placeholder="you@example.com"
-                                                    />
-                                                </div>
-                                                <div className="space-y-2">
                                                     <Label htmlFor="address">{form.addressLabel}</Label>
                                                     <Input id="address" name="address" autoComplete="street-address" placeholder="Your street address" />
                                                 </div>
-                                            </div>
-
-                                            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                                                 <div className="space-y-2">
                                                     <Label>{form.serviceTypeLabel}</Label>
                                                     <Select key={`service-${selectResetNonce}`} onValueChange={setService}>
@@ -517,7 +529,9 @@ export function QuoteClient({
                                                     </Select>
                                                     <input type="hidden" name="service" value={service} />
                                                 </div>
+                                            </div>
 
+                                            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                                                 <div className="space-y-2">
                                                     <Label>{form.timeframeLabel}</Label>
                                                     <Select key={`timeframe-${selectResetNonce}`} onValueChange={setTimeframe}>
@@ -533,6 +547,23 @@ export function QuoteClient({
                                                         </SelectContent>
                                                     </Select>
                                                     <input type="hidden" name="timeframe" value={timeframe} />
+                                                </div>
+
+                                                <div className="space-y-2">
+                                                    <Label>{form.budgetLabel}</Label>
+                                                    <Select key={`budget-${selectResetNonce}`} onValueChange={setBudget}>
+                                                        <SelectTrigger className="w-full">
+                                                            <SelectValue placeholder={form.budgetPlaceholder} />
+                                                        </SelectTrigger>
+                                                        <SelectContent>
+                                                            {form.budgetOptions.map((option) => (
+                                                                <SelectItem key={option} value={option}>
+                                                                    {option}
+                                                                </SelectItem>
+                                                            ))}
+                                                        </SelectContent>
+                                                    </Select>
+                                                    <input type="hidden" name="budget" value={budget} />
                                                 </div>
                                             </div>
 
@@ -566,7 +597,6 @@ export function QuoteClient({
                                                             key={item.id}
                                                             className="relative overflow-hidden rounded-xl border border-border bg-muted aspect-square"
                                                         >
-                                                            
                                                             <Image
                                                                 src={item.url}
                                                                 fill
