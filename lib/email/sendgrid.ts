@@ -1,4 +1,4 @@
-import sgMail from "@sendgrid/mail";
+import nodemailer from "nodemailer";
 
 type SendEmailParams = {
     to: string;
@@ -17,13 +17,22 @@ function requireEnv(name: string): string {
     return value.trim();
 }
 
-let configured = false;
+let transporter: nodemailer.Transporter | null = null;
 
-function ensureConfigured() {
-    if (configured) return;
-    const apiKey = requireEnv("SENDGRID_API_KEY");
-    sgMail.setApiKey(apiKey);
-    configured = true;
+function getTransporter() {
+    if (transporter) return transporter;
+
+    transporter = nodemailer.createTransport({
+        host: requireEnv("SMTP_HOST"),
+        port: Number(process.env.SMTP_PORT ?? "465"),
+        secure: true,
+        auth: {
+            user: requireEnv("SMTP_USER"),
+            pass: requireEnv("SMTP_PASS"),
+        },
+    });
+
+    return transporter;
 }
 
 export function getEmailConfig() {
@@ -34,9 +43,9 @@ export function getEmailConfig() {
 }
 
 export async function sendEmail(params: SendEmailParams) {
-    ensureConfigured();
+    const transport = getTransporter();
 
-    await sgMail.send({
+    await transport.sendMail({
         to: params.to,
         from: params.from,
         subject: params.subject,
