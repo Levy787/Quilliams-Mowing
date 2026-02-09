@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { MessageCircle, X } from "lucide-react";
+import { capturePostHogEvent } from "@/lib/posthog-client";
 
 const WHATSAPP_NUMBER = "447593121621"; // UK format without +
 const DEFAULT_MESSAGE = "Hi! I found you on your website and I'm interested in getting a quote for garden services.";
@@ -62,7 +63,10 @@ export function WhatsAppButton() {
                 rel="noopener noreferrer"
                 className="flex items-center justify-center w-14 h-14 bg-[#25D366] hover:bg-[#20BA5C] text-white rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105"
                 aria-label="Chat on WhatsApp"
-                onClick={() => setShowTooltip(false)}
+                onClick={() => {
+                    void capturePostHogEvent("click_whatsapp", { tooltip_was_visible: showTooltip });
+                    setShowTooltip(false);
+                }}
             >
                 <MessageCircle className="w-7 h-7" fill="currentColor" />
             </a>

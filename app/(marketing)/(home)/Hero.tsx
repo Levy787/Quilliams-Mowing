@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { FileText, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { capturePostHogEvent } from "@/lib/posthog-client";
 
 type HeroHeadlineTone = "normal" | "primary" | "muted";
 
@@ -77,16 +78,20 @@ export function Hero({
                         {/* CTA Buttons - Updated with phone number */}
                         <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
                             <Button size="lg" asChild className="bg-green-600 hover:bg-green-700">
-                                <Link href={primaryCtaHref}>
+                                <Link
+                                    href={primaryCtaHref}
+                                    onClick={() => void capturePostHogEvent("click_hero_cta", { label: primaryCtaLabel })}
+                                >
                                     <FileText className="w-5 h-5" aria-hidden="true" />
                                     {primaryCtaLabel}
                                 </Link>
                             </Button>
 
                             {/* Phone number instead of secondary CTA */}
-                            <a 
-                                href="tel:07593121621" 
+                            <a
+                                href="tel:07593121621"
                                 className="flex items-center gap-2 text-white/90 hover:text-white transition-colors group"
+                                onClick={() => void capturePostHogEvent("click_phone", { location: "hero" })}
                             >
                                 <span className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 group-hover:bg-white/20 transition-colors">
                                     <Phone className="w-5 h-5" aria-hidden="true" />

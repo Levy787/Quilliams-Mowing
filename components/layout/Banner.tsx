@@ -1,7 +1,8 @@
 
 import Link from "next/link";
-import { MapPin, PhoneCall } from "lucide-react";
+import { MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { BannerPhoneLink } from "./BannerPhoneLink";
 
 export function Banner() {
     return (
@@ -30,12 +31,7 @@ export function Banner() {
 
                     {/* Right Side Content */}
                     <div className="flex items-center gap-6 ml-auto">
-                        <Button asChild className="flex items-center gap-2" variant="link">
-                            <a href="tel:07593121621">
-                                <PhoneCall className="w-4 h-4" aria-hidden="true" />
-                                <span>Call: 07593 121 621</span>
-                            </a>
-                        </Button>
+                        <BannerPhoneLink />
                         {/* 
                         <div className="w-px h-4 bg-white/30 hidden sm:block" aria-hidden="true" />
 

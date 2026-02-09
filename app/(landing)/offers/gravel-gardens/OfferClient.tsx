@@ -25,6 +25,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Turnstile } from "@/components/TurnstileWidget";
 import { cn } from "@/lib/utils";
+import { capturePostHogEvent } from "@/lib/posthog-client";
 
 /* ─────────────────────────── helpers ─────────────────────────── */
 
@@ -295,6 +296,7 @@ function TopBar() {
                 <a
                     href="tel:07593121621"
                     className="flex items-center gap-1.5 font-semibold text-white transition-colors hover:text-primary"
+                    onClick={() => void capturePostHogEvent("click_phone", { location: "gravel_offer_topbar" })}
                 >
                     <Phone className="size-3.5" />
                     07593 121 621
@@ -370,6 +372,7 @@ function HeroSection() {
                             <a
                                 href="tel:07593121621"
                                 className="inline-flex items-center gap-2 text-sm font-semibold text-white/60 transition-colors hover:text-white"
+                                onClick={() => void capturePostHogEvent("click_phone", { location: "gravel_offer_hero" })}
                             >
                                 <Phone className="size-4" />
                                 07593 121 621
@@ -683,7 +686,7 @@ function TestimonialsSection() {
     );
 }
 
-function LeadForm() {
+function LeadForm({ location = "hero" }: { location?: "hero" | "bottom" }) {
     const [form, setForm] = React.useState({
         name: "",
         phone: "",
@@ -735,6 +738,10 @@ function LeadForm() {
             }
 
             setStatus("success");
+            void capturePostHogEvent("conversion_gravel_offer_submit", {
+                source: "gravel-garden-offer",
+                form_location: location,
+            });
         } catch (err) {
             setErrorMsg(
                 err instanceof Error
@@ -938,7 +945,7 @@ function FormSection() {
                                     Takes 30 seconds — we&apos;ll handle the rest
                                 </p>
                             </div>
-                            <LeadForm />
+                            <LeadForm location="bottom" />
                         </div>
                     </FadeIn>
                 </div>
@@ -1030,6 +1037,7 @@ function FinalCTA() {
                         <a
                             href="tel:07593121621"
                             className="inline-flex items-center gap-2 text-base font-semibold text-white transition-colors hover:text-white/80"
+                            onClick={() => void capturePostHogEvent("click_phone", { location: "gravel_offer_footer" })}
                         >
                             <Phone className="size-4" />
                             07593 121 621

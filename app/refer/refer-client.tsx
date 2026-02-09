@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/select";
 
 import type { ReferralContent } from "@/lib/referral";
+import { capturePostHogEvent } from "@/lib/posthog-client";
 
 function isValidEmail(email: string): boolean {
     const trimmed = email.trim();
@@ -151,6 +152,10 @@ export default function ReferClient({ content }: ReferClientProps) {
         window.setTimeout(() => {
             setVoucherCode(code);
             setIsSubmitting(false);
+            void capturePostHogEvent("conversion_referral_submit", {
+                service,
+                voucher_code: code,
+            });
         }, 650);
     }
 

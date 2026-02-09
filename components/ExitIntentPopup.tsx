@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { capturePostHogEvent } from "@/lib/posthog-client";
 
 const STORAGE_KEY = "exit_intent_dismissed";
 const DISMISS_DURATION_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
@@ -32,6 +33,7 @@ export function ExitIntentPopup() {
             // Only trigger if mouse leaves from top of viewport (exit intent)
             if (hasEntered && e.clientY <= 0) {
                 setShow(true);
+                void capturePostHogEvent("ui_exit_intent_shown");
             }
         };
 
@@ -44,9 +46,14 @@ export function ExitIntentPopup() {
         };
     }, []);
 
-    const handleDismiss = () => {
+    const handleDismiss = (action: "cta" | "dismissed" | "close") => {
         setShow(false);
         localStorage.setItem(STORAGE_KEY, Date.now().toString());
+        if (action === "cta") {
+            void capturePostHogEvent("click_exit_intent_cta");
+        } else {
+            void capturePostHogEvent("ui_exit_intent_dismissed");
+        }
     };
 
     if (!show) return null;
@@ -55,7 +62,7 @@ export function ExitIntentPopup() {
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 p-4">
             <div className="bg-background rounded-2xl p-6 sm:p-8 max-w-md w-full relative shadow-2xl animate-in fade-in zoom-in-95 duration-200">
                 <button
-                    onClick={handleDismiss}
+                    onClick={() => handleDismiss("close")}
                     className="absolute top-4 right-4 text-muted-foreground hover:text-foreground transition-colors"
                     aria-label="Close"
                 >
@@ -72,13 +79,13 @@ export function ExitIntentPopup() {
 
                     <div className="mt-6 flex flex-col sm:flex-row gap-3">
                         <Button asChild className="flex-1" size="lg">
-                            <Link href="/quote" onClick={handleDismiss}>
+                            <Link href="/quote" onClick={() => handleDismiss("cta")}>
                                 Get My Free Quote
                             </Link>
                         </Button>
-                        <Button 
-                            variant="outline" 
-                            onClick={handleDismiss}
+                        <Button
+                            variant="outline"
+                            onClick={() => handleDismiss("dismissed")}
                             className="flex-1"
                             size="lg"
                         >
