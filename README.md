@@ -40,4 +40,4 @@ Set these in `.env` (see `.env.example`):
 
 - Run `pnpm dev`
 - Submit the forms on `/contact`, `/quote`, or the footer subscribe field
-- Check the server console for errors if emails fail 
+- Check the server console for errors if emails fail
