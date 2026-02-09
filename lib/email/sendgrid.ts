@@ -22,14 +22,18 @@ let transporter: nodemailer.Transporter | null = null;
 function getTransporter() {
     if (transporter) return transporter;
 
+    const port = Number(process.env.SMTP_PORT ?? "587");
+
     transporter = nodemailer.createTransport({
         host: requireEnv("SMTP_HOST"),
-        port: Number(process.env.SMTP_PORT ?? "465"),
-        secure: true,
+        port,
+        secure: port === 465,
         auth: {
             user: requireEnv("SMTP_USER"),
             pass: requireEnv("SMTP_PASS"),
         },
+        connectionTimeout: 8000,
+        greetingTimeout: 8000,
     });
 
     return transporter;
