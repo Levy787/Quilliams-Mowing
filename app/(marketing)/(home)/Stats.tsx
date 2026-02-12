@@ -59,7 +59,7 @@ function StatCard({
 
     return (
         <motion.div
-            className="bg-muted rounded-4xl px-8 py-6 flex items-center gap-5"
+            className="bg-muted rounded-4xl px-8 py-6 flex flex-col items-center text-center gap-3"
             initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }}
             animate={inView ? { opacity: 1, y: 0 } : shouldReduceMotion ? {} : { opacity: 0, y: 8 }}
             transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.1 }}
@@ -83,7 +83,7 @@ export function Stats({ items }: StatsProps) {
     return (
         <section ref={sectionRef} className="mx-4 md:mx-8 lg:mx-16 py-10 md:py-12">
             <div className="container mx-auto px-4 lg:px-12">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="flex flex-wrap justify-center gap-6">
                     {items.map((stat, index) => (
                         <StatCard key={stat.label} stat={stat} index={index} inView={inView} />
                     ))}

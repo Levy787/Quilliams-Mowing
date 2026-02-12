@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { X, Phone, Mail, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Turnstile } from "@/components/TurnstileWidget";
 import { capturePostHogEvent } from "@/lib/posthog-client";
 
 const STORAGE_KEY = "exit_intent_dismissed";
@@ -13,6 +14,9 @@ const OFFER_HEADLINE = "£20 off your first booking";
 
 type ContactMethod = "phone" | "email";
 
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY_POPUP?.trim();
+const IS_TURNSTILE_CONFIGURED = Boolean(TURNSTILE_SITE_KEY);
+
 export function ExitIntentPopup() {
     const [show, setShow] = useState(false);
     const [method, setMethod] = useState<ContactMethod>("phone");
@@ -20,7 +24,16 @@ export function ExitIntentPopup() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitted, setSubmitted] = useState(false);
     const [error, setError] = useState("");
+    const [turnstileToken, setTurnstileToken] = useState(IS_TURNSTILE_CONFIGURED ? "" : "dev");
     const inputRef = useRef<HTMLInputElement>(null);
+    const turnstileRef = useRef<{ reset: () => void }>(null);
+
+    const resetTurnstile = useCallback(() => {
+        if (IS_TURNSTILE_CONFIGURED) {
+            setTurnstileToken("");
+            turnstileRef.current?.reset();
+        }
+    }, []);
 
     useEffect(() => {
         const dismissed = localStorage.getItem(STORAGE_KEY);
@@ -32,13 +45,15 @@ export function ExitIntentPopup() {
         }
 
         let hasEntered = false;
+        let hasShown = false;
 
         const handleMouseEnter = () => {
             hasEntered = true;
         };
 
         const handleMouseLeave = (e: MouseEvent) => {
-            if (hasEntered && e.clientY <= 0) {
+            if (hasEntered && !hasShown && e.clientY <= 0) {
+                hasShown = true;
                 setShow(true);
                 void capturePostHogEvent("ui_exit_intent_shown");
             }
@@ -81,6 +96,11 @@ export function ExitIntentPopup() {
             return;
         }
 
+        if (IS_TURNSTILE_CONFIGURED && !turnstileToken) {
+            setError("Please complete the verification.");
+            return;
+        }
+
         setIsSubmitting(true);
 
         try {
@@ -90,6 +110,11 @@ export function ExitIntentPopup() {
                 offerHeadline: OFFER_HEADLINE,
                 source: "exit-intent",
             };
+
+            // Only send token if Turnstile is configured
+            if (IS_TURNSTILE_CONFIGURED && turnstileToken) {
+                payload.turnstileToken = turnstileToken;
+            }
 
             if (method === "email") {
                 payload.email = trimmed;
@@ -112,6 +137,7 @@ export function ExitIntentPopup() {
                 const message = json && "error" in json ? json.error : "Something went wrong. Please try again.";
                 setError(message);
                 setIsSubmitting(false);
+                resetTurnstile();
                 return;
             }
 
@@ -126,6 +152,7 @@ export function ExitIntentPopup() {
         } catch {
             setIsSubmitting(false);
             setError("Something went wrong. Please try again.");
+            resetTurnstile();
         }
     }
 
@@ -192,7 +219,7 @@ export function ExitIntentPopup() {
                         <div className="mt-5 inline-flex rounded-lg bg-muted p-1 gap-1">
                             <button
                                 type="button"
-                                onClick={() => { setMethod("phone"); setValue(""); setError(""); }}
+                                onClick={() => { setMethod("phone"); setValue(""); setError(""); resetTurnstile(); }}
                                 className={`flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${
                                     method === "phone"
                                         ? "bg-background text-foreground shadow-sm"
@@ -204,7 +231,7 @@ export function ExitIntentPopup() {
                             </button>
                             <button
                                 type="button"
-                                onClick={() => { setMethod("email"); setValue(""); setError(""); }}
+                                onClick={() => { setMethod("email"); setValue(""); setError(""); resetTurnstile(); }}
                                 className={`flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${
                                     method === "email"
                                         ? "bg-background text-foreground shadow-sm"
@@ -228,12 +255,23 @@ export function ExitIntentPopup() {
                                     onChange={(e) => { setValue(e.target.value); setError(""); }}
                                     className="flex-1"
                                 />
-                                <Button type="submit" disabled={isSubmitting}>
+                                <Button type="submit" disabled={isSubmitting || (IS_TURNSTILE_CONFIGURED && !turnstileToken)}>
                                     {isSubmitting ? "..." : "Claim"}
                                 </Button>
                             </div>
                             {error && (
                                 <p className="mt-2 text-sm text-destructive">{error}</p>
+                            )}
+                            {IS_TURNSTILE_CONFIGURED && (
+                                <div className="mt-3 flex justify-center">
+                                    <Turnstile
+                                        ref={turnstileRef}
+                                        siteKey={TURNSTILE_SITE_KEY}
+                                        onToken={setTurnstileToken}
+                                        size="compact"
+                                        appearance="interaction-only"
+                                    />
+                                </div>
                             )}
                         </form>
 
