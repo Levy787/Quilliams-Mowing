@@ -82,6 +82,17 @@ const nextConfig: NextConfig = {
         destination: "/services/lawn-care",
         permanent: true,
       },
+      // 404s found in Google Search Console
+      {
+        source: "/quote-success",
+        destination: "/quote",
+        permanent: true,
+      },
+      {
+        source: "/gardening-services",
+        destination: "/services",
+        permanent: true,
+      },
     ];
   },
 
