@@ -10,6 +10,7 @@ import {
     isLikelyBotByHoneypot,
 } from "@/lib/api/abuse";
 import { verifyTurnstileToken } from "@/lib/api/turnstile";
+import { sendLeadToTradeSender } from "@/lib/api/tradesender";
 import { asTrimmedString, isProbablyEmail } from "@/lib/api/validate";
 
 export const runtime = "nodejs";
@@ -138,6 +139,15 @@ export async function POST(req: NextRequest) {
                 subject: user.subject,
                 html: user.html,
                 text: user.text,
+            });
+        }
+
+        if (email) {
+            sendLeadToTradeSender({
+                type: "lead_magnet",
+                name: "Website Subscriber",
+                email,
+                source: source || context || "website",
             });
         }
 

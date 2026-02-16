@@ -9,6 +9,7 @@ import {
     isLikelyBotByHoneypot,
 } from "@/lib/api/abuse";
 import { verifyTurnstileToken } from "@/lib/api/turnstile";
+import { sendLeadToTradeSender } from "@/lib/api/tradesender";
 import { asTrimmedString, isProbablyEmail } from "@/lib/api/validate";
 
 export const runtime = "nodejs";
@@ -146,6 +147,18 @@ export async function POST(req: NextRequest) {
                 text: user.text,
             });
         }
+
+        sendLeadToTradeSender({
+            type: "quote_request",
+            name,
+            email: email || "",
+            phone: phone || undefined,
+            message: jobDetails || undefined,
+            service: serviceType || undefined,
+            timeframe: timeframe || undefined,
+            budgetRange: budget || undefined,
+            address: address ? { line1: address } : undefined,
+        });
 
         return NextResponse.json({ ok: true }, { status: 200 });
     } catch (error) {

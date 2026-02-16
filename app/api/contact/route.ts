@@ -9,6 +9,7 @@ import {
     isLikelyBotByHoneypot,
 } from "@/lib/api/abuse";
 import { verifyTurnstileToken } from "@/lib/api/turnstile";
+import { sendLeadToTradeSender } from "@/lib/api/tradesender";
 import {
     asTrimmedString,
     
@@ -125,6 +126,15 @@ export async function POST(req: NextRequest) {
             subject: user.subject,
             html: user.html,
             text: user.text,
+        });
+
+        sendLeadToTradeSender({
+            type: "contact",
+            name,
+            email,
+            phone: phone || undefined,
+            service: service || undefined,
+            message,
         });
 
         return NextResponse.json({ ok: true }, { status: 200 });
