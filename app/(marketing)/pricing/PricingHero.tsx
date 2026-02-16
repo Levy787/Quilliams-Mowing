@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, BadgeDollarSign } from "lucide-react";
+import { ArrowRight, BadgePoundSterling } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -72,7 +72,7 @@ export function PricingHero({
                                 <div className="rounded-4xl border border-border bg-background/70 p-6">
                                     <div className="flex items-start gap-3">
                                         <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-border bg-muted/40">
-                                            <BadgeDollarSign className="h-6 w-6 text-primary" aria-hidden />
+                                            <BadgePoundSterling className="h-6 w-6 text-primary" aria-hidden />
                                         </div>
                                         <div>
                                             <div className="text-sm font-semibold text-foreground">

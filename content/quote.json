@@ -54,10 +54,12 @@
     "budgetLabel": "Budget range (optional)",
     "budgetPlaceholder": "Select a range",
     "budgetOptions": [
-      "Under $500",
-      "$500–$1,500",
-      "$1,500–$3,000",
-      "$3,000+"
+      "£0–£100",
+      "£100–£500",
+      "£500–£1,500",
+      "£1,500–£3,000",
+      "£3,000–£5,000",
+      "£5,000+"
     ],
     "photosLabel": "Photos (up to 6)",
     "photosHelp": "Add clear photos of the area from a few angles.",

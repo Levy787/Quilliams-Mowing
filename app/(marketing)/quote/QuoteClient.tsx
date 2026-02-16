@@ -33,7 +33,7 @@ function formatBytes(bytes: number) {
 }
 
 function formatCurrency(amount: number) {
-    return `$${amount.toLocaleString()}`;
+    return `£${amount.toLocaleString()}`;
 }
 
 function labelFromParam(value: string | null) {
