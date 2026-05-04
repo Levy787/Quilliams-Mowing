@@ -101,23 +101,23 @@
     "items": [
       {
         "q": "Is the calculator a fixed quote?",
-        "a": "No — it’s a rough guide. We confirm scope based on photos, access, and what’s included, then provide a more accurate range."
+        "a": "No, it gives a rough guide based on typical pricing. I’ll confirm the exact cost after reviewing photos of your garden and understanding access, condition, and what’s included. Most quotes are sent within 24 hours."
       },
       {
         "q": "What’s the fastest way to get an accurate estimate?",
-        "a": "Send a short description and a few photos from different angles. Include access notes (stairs, narrow gate, parking)."
+        "a": "Send a few photos from different angles along with a short description of what you need. Mention any access details like narrow gates, steps, or parking. I’ll usually have a quote back to you within 24 hours."
       },
       {
         "q": "Do you charge differently for one-off vs ongoing maintenance?",
-        "a": "Ongoing maintenance is usually more efficient because we keep the garden under control. One-offs can take longer depending on condition."
+        "a": "Ongoing maintenance is generally more efficient because the garden stays under control between visits, so each session takes less time. One-off jobs can take longer depending on how overgrown things are. Regular visits typically start from around £60 per session."
       },
       {
         "q": "What about green waste removal?",
-        "a": "Green waste handling varies by job and preference. We can bag/stack on-site or discuss removal options when quoting."
+        "a": "I’m a licensed waste carrier. Green waste removal is £10 per dumpy bag and is included in most quotes. I’ll always confirm upfront whether removal is part of the price or listed separately so there are no surprises."
       },
       {
         "q": "Can you work within a budget range?",
-        "a": "Often, yes. If you share a rough budget, we can prioritise the highest-impact work first."
+        "a": "Yes, absolutely. If you share a rough budget I can prioritise the highest-impact work first and save the rest for later. Many customers start with a cleanup and add extra work over time as the garden improves."
       }
     ]
   }

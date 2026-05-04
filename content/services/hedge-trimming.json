@@ -2,10 +2,10 @@
   "slug": "hedge-trimming",
   "label": "Hedge Trimming",
   "title": "Hedge Trimming",
-  "description": "Neat shapes, clean lines, and a consistent look—whether it’s a quick trim or a proper reset after overgrowth.",
+  "description": "Hedge trimming and cutting across Newquay, Truro, St Austell, Bodmin, and the wider Cornwall area. I handle everything from a quick tidy on a low box hedge to a full reset on overgrown leylandii. Neat shapes, clean lines, and a consistent finish every time. Cornwall's mild climate and longer growing season mean hedges here can quickly get out of hand if they are not kept on top of, so sensible timing and regular cuts make all the difference. Prices start from £5 per metre for smaller hedges and go up to around £15 per metre for taller or thicker growth.",
   "seo": {
     "title": "Hedge Trimming in Cornwall | Professional Hedge Cutting Service",
-    "description": "Professional hedge trimming and cutting across Newquay, Truro & Cornwall. Neat shapes, clean lines, overgrown hedges tamed. 5-star rated — get a free quote.",
+    "description": "Hedge trimming and hedge cutting across Newquay, Truro, St Austell and Cornwall. From £5 per metre. Overgrown hedges tamed, neat shapes, clean lines. Licensed and insured local gardener.",
     "ogImage": "/images/IMG_20250708_11200.webp"
   },
   "cardIcon": "Scissors",
@@ -27,38 +27,38 @@
     "secondaryHref": "/contact"
   },
   "included": {
-    "label": "What’s included",
+    "label": "What's included",
     "title": "A clean shape that stays looking tidy",
-    "description": "We focus on a neat finish with sensible shaping—so hedges look sharp without looking overdone.",
+    "description": "I focus on a neat, even finish with sensible shaping that suits the hedge type. Every trim includes clearing up around the base so you are not left with a mess. I will also advise on the best time to cut for your particular species, because getting the timing right keeps hedges healthy and thick rather than thin and leggy. I hold a chainsaw licence and public liability insurance, so larger or more awkward jobs are covered properly.",
     "items": [
       {
         "title": "Shaping & trimming",
-        "description": "Clean lines that make hedges look intentional.",
+        "description": "I cut clean, straight lines that make hedges look intentional and well kept. Whether you want a formal squared-off shape or something a bit softer and more natural, I will match the style to what suits your property and the hedge species.",
         "icon": "Brush"
       },
       {
         "title": "Height & width control",
-        "description": "Keep growth manageable and consistent.",
+        "description": "Keeping height and width under control prevents hedges from encroaching on paths, driveways, or neighbouring properties. I can reduce hedges that have got too big over the years, though the best time for a hard cut-back is late winter before nesting season starts. For regular maintenance trims, I keep the shape consistent so the hedge thickens up rather than getting thin at the base.",
         "icon": "Ruler"
       },
       {
         "title": "Problem area tidy-up",
-        "description": "Reset awkward corners and uneven spots.",
+        "description": "Uneven corners, lopsided sections, and gaps where growth has not filled in properly. These are common in Cornwall where salt winds near the coast can damage one side of a hedge more than the other. I will tidy up problem areas and advise on whether any replanting or infill would help in the long run.",
         "icon": "Sparkles"
       },
       {
         "title": "Season-aware approach",
-        "description": "Practical timing guidance to keep things healthy.",
+        "description": "Different hedge species need cutting at different times of year. Leylandii and similar conifers need a minimum of two cuts per year, typically in late spring and late summer. Beech, laurel, and privet are more forgiving and often only need one or two trims. I will recommend a schedule that keeps your hedge healthy and looking its best throughout the year.",
         "icon": "Leaf"
       },
       {
         "title": "Green waste removal (optional)",
-        "description": "Clippings can be collected and taken away.",
+        "description": "All hedge clippings and trimmings can be collected and removed from site. Green waste removal is £10 per dumpy bag. I am a licensed waste carrier, so disposal is done properly and legally. For smaller trims the waste cost is minimal, and I will always let you know the likely amount before starting.",
         "icon": "Trash2"
       },
       {
         "title": "Ongoing maintenance option",
-        "description": "Keep it looking sharp with repeat visits.",
+        "description": "Regular seasonal trims are the easiest way to keep hedges looking sharp year-round. I offer repeat visits at sensible intervals based on the hedge type, usually two to three times per year. This prevents the kind of heavy overgrowth that costs more to deal with later and keeps the hedge thicker and healthier.",
         "icon": "CalendarDays"
       }
     ]
@@ -66,11 +66,11 @@
   "plans": {
     "label": "Options",
     "title": "Choose a trim that matches your needs",
-    "description": "From a quick tidy to a more thorough reset—pick the level of work that suits the hedge and the result you want.",
+    "description": "Hedge trimming in Cornwall is priced at £5 to £15 per metre depending on the height, thickness, and number of sides that need cutting. I offer everything from a quick tidy to restore clean lines through to a full reset on hedges that have been left for a year or more. Most hedges benefit from two to three cuts per year, and I can set up a regular schedule so you do not have to remember to book each time.",
     "cards": [
       {
         "title": "Light tidy trim",
-        "description": "A quick refresh to keep the hedge looking neat.",
+        "description": "A quick pass to tidy up the outline and restore clean edges. Ideal for hedges that are already in reasonable shape and just need freshening up. Works well as a between-seasons touch-up to keep things neat.",
         "bullets": [
           "Tidy the outline",
           "Clean edges and corners"
@@ -79,7 +79,7 @@
       },
       {
         "title": "Shape and refine",
-        "description": "A more deliberate trim for a sharper look.",
+        "description": "A more thorough trim that evens out the shape, corrects any lopsided growth, and leaves a sharper finish. This is what most customers go for when their hedge needs more than a light tidy but has not been left too long.",
         "bullets": [
           "Even shape",
           "Consistent height",
@@ -89,7 +89,7 @@
       },
       {
         "title": "One-off reset",
-        "description": "When growth has gotten away and you want it back under control.",
+        "description": "For hedges that have been neglected or left to grow unchecked for a season or more. I will cut back hard to restore a manageable shape and advise on what to expect with regrowth. Common with leylandii and laurel that have got too tall or wide.",
         "bullets": [
           "Bring it back to shape",
           "Improve overall look",
@@ -99,7 +99,7 @@
       },
       {
         "title": "Regular maintenance",
-        "description": "Keep hedges crisp with repeat visits.",
+        "description": "Two to three scheduled visits per year keeps hedges thick, even, and looking sharp without the need for bigger reset jobs. I will remind you when each trim is due so nothing gets missed. This is the most cost-effective approach for keeping hedges in good shape over time.",
         "bullets": [
           "Keep growth controlled",
           "Consistent tidy look"
@@ -117,7 +117,7 @@
   "results": {
     "label": "Recent results",
     "title": "Sharper lines, neater garden",
-    "description": "A well-shaped hedge improves the whole space—structure looks stronger and everything feels more cared for.",
+    "description": "A well-shaped hedge improves the look of the whole garden. Structure feels stronger, boundaries look cleaner, and everything from the lawn to the planting beds benefits from that sense of order. These are recent hedge trimming jobs from properties around Newquay, Truro, and the wider Cornwall area.",
     "headerCtas": {
       "primaryText": "Get a Quote",
       "primaryHref": "/quote",
@@ -127,7 +127,7 @@
     "cards": [
       {
         "title": "Crisp, clean outline",
-        "description": "A tidy trim that makes the hedge look sharp again.",
+        "description": "A tidy trim on a mixed hedge that had grown slightly uneven over the summer. Clean lines restored with a single visit and all clippings removed from site.",
         "imageSrc": "/images/IMG_20250708_11200.webp",
         "imageAlt": "Hedges trimmed into a neat shape with a tidy lawn",
         "ctaText": "View more details",
@@ -135,7 +135,7 @@
       },
       {
         "title": "Consistent structure",
-        "description": "Even shaping for a more finished look from every angle.",
+        "description": "Even shaping on a long boundary hedge, cut to a consistent height and width. Regular twice-yearly trims keep this hedge looking finished from every angle without needing heavy work.",
         "imageSrc": "/images/IMG_20250715_29185.webp",
         "imageAlt": "Garden with neatly trimmed hedges and clean borders",
         "ctaText": "View more details",
@@ -143,7 +143,7 @@
       },
       {
         "title": "Reset after overgrowth",
-        "description": "A more controlled shape that’s easier to maintain.",
+        "description": "A full reset on an overgrown laurel hedge that had not been cut for over a year. Reduced in height and width, then shaped to a clean outline. Now on a regular maintenance schedule to keep it manageable.",
         "imageSrc": "/images/IMG_20240509_41792.webp",
         "imageAlt": "Garden after a hedge tidy-up and reset",
         "ctaText": "View more details",
@@ -154,21 +154,21 @@
   "valueBand": {
     "label": "Value",
     "title": "A garden that looks more finished instantly",
-    "description": "Hedges are structure. When they’re tidy, everything else looks better—paths, lawns, and planting all feel more intentional.",
+    "description": "Hedges are the structural backbone of most Cornish gardens. When they are tidy, everything else looks better. Paths feel wider, lawns look neater, and planting beds feel more intentional. Keeping on top of them with regular seasonal trims is far easier and cheaper than dealing with heavy overgrowth once it has got out of hand.",
     "bullets": [
       {
         "title": "Looks sharper",
-        "description": "Clean lines improve the whole garden’s look.",
+        "description": "Clean, even lines on your hedges lift the look of the entire property. It is one of the quickest ways to make a garden feel more cared for, and it is often the first thing visitors and neighbours notice.",
         "icon": "Sparkles"
       },
       {
         "title": "Easier upkeep",
-        "description": "Regular trimming prevents big catch-up jobs.",
+        "description": "Two to three trims per year prevents the kind of heavy overgrowth that costs more to deal with and takes longer to recover from. Regular maintenance keeps hedges thick at the base and tidy on top.",
         "icon": "Leaf"
       },
       {
         "title": "Done properly",
-        "description": "A clean finish with practical advice for next steps.",
+        "description": "A clean finish with all clippings cleared from the base, and practical advice on when the next trim should be. I will let you know if I spot any issues like die-back, disease, or areas where the hedge is thinning.",
         "icon": "Shovel"
       }
     ],
@@ -183,38 +183,38 @@
   "faq": {
     "label": "FAQs",
     "title": "Quick answers",
-    "description": "If you don’t see your question here, just get in touch.",
+    "description": "If you don't see your question here, just get in touch.",
     "items": [
       {
         "id": "frequency",
         "question": "How often should hedges be trimmed?",
-        "answer": "It depends on the hedge type and the look you want. We can recommend timing when we quote."
+        "answer": "Most hedges need 2 to 3 cuts per year to stay healthy and looking sharp. Fast-growing species like leylandii need a minimum of 2 cuts, typically in late spring and late summer, to stop them getting out of hand. Slower-growing hedges such as beech or laurel can often get away with 1 to 2 cuts per year. Cornwall's mild coastal climate means hedges tend to grow for longer than in other parts of the UK, so keeping on top of them is important. I can advise on the right schedule for your specific hedge type when I come out for a quote."
       },
       {
         "id": "height",
         "question": "Can you reduce the height or width?",
-        "answer": "Often yes. Send a photo and we’ll advise what’s practical and include it in the quote."
+        "answer": "Yes, I can reduce hedges in both height and width. This is common when hedges have been left to grow unchecked for a season or two, or when they are encroaching on paths, driveways, or neighbouring properties. The best time for a hard reduction is late winter or early spring before nesting season, though lighter shaping can be done at other times of year. I always check for nesting birds before starting any work. If a hedge needs a significant reduction, I will let you know what to expect in terms of regrowth so there are no surprises."
       },
       {
         "id": "waste",
         "question": "Do you remove hedge clippings?",
-        "answer": "Yes—waste removal can be included. Let us know what you want taken away."
+        "answer": "Yes, I remove all hedge clippings and leave the site tidy. Green waste removal is charged at £10 per dumpy bag, which covers transport and disposal. I am a licensed waste carrier, so you can be confident everything is disposed of properly and legally. For smaller trims the waste cost is minimal. I will always give you a clear idea of likely waste costs before starting the job."
       },
       {
         "id": "one-off",
         "question": "Do you do one-off trims?",
-        "answer": "Yes—one-off trims and reset jobs are available."
+        "answer": "Yes, one-off hedge trims are no problem at all. Plenty of customers get in touch because a hedge has got away from them or they need it tidied before selling a property. Hedge trimming is priced at £5 to £15 per metre depending on the size of the hedge and how many sides need cutting. I am happy to come out, take a look, and give you a straightforward quote. If you then decide you would like regular seasonal trims going forward, I can set that up too."
       },
       {
         "id": "area",
         "question": "Do you cover my area?",
-        "answer": "Send your postcode and we’ll confirm availability."
+        "answer": "I am based near Newquay and cover a good chunk of Cornwall, including Truro, St Austell, Bodmin, Padstow, Perranporth, and St Ives. If you are within that area, I can usually fit you in without any issue. If you are slightly further afield, feel free to get in touch anyway and I will let you know if I can help."
       }
     ]
   },
   "finalCta": {
     "title": "Want your hedges looking sharp again?",
-    "description": "Send a quick description (and photos if you can) and we’ll quote the trim clearly.",
+    "description": "Send me a quick description of your hedge, or a couple of photos showing the height and length, and I will quote the trim clearly. Most quotes come back within 24 hours.",
     "primaryText": "Get a Quote",
     "primaryHref": "/quote",
     "secondaryText": "Contact Us",

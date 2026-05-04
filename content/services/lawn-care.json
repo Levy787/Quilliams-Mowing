@@ -2,10 +2,10 @@
   "slug": "lawn-care",
   "label": "Lawn Care",
   "title": "Lawn Care",
-  "description": "Regular lawn care and grass cutting in Newquay, Cornwall. Reliable weekly visits, clean edges, and a tidy finish every time. Local gardener you can trust.",
+  "description": "Lawn mowing and grass cutting across Newquay and Cornwall, from Truro and St Austell to Bodmin, Padstow, and Perranporth. I offer reliable fortnightly and weekly visits with clean edges, strimming, and a tidy finish as standard on every cut. Cornwall's mild coastal climate means lawns here grow almost year-round, so they benefit from consistent attention rather than the seasonal stop-start you get further up the country. Whether you have a small front lawn or a larger family garden, I will keep it looking its best. Prices start from £20 for a small lawn and £30 to £50 for an average-sized garden, with no hidden extras.",
   "seo": {
     "title": "Lawn Mowing & Lawn Care in Cornwall | Weekly Grass Cutting",
-    "description": "Reliable lawn mowing and lawn care across Newquay, Truro & Cornwall. Weekly visits, clean edges, striped finish. 5-star rated local gardener — get a free quote."
+    "description": "Reliable lawn mowing and lawn care across Newquay, Truro, St Austell and Cornwall. Fortnightly and weekly visits, clean edges, striped finish. From £20 per cut. Local gardener, free quote."
   },
   "cardIcon": "Sprout",
   "hero": {
@@ -26,38 +26,38 @@
     "secondaryHref": "/contact"
   },
   "included": {
-    "label": "What’s included",
+    "label": "What's included",
     "title": "The basics, done properly",
-    "description": "We keep it simple: consistent cutting, tidy edges, and a clean finish—plus practical advice when you need it.",
+    "description": "I keep it simple. Every lawn cut includes mowing, edging, strimming, and a clean blow-down. No upselling, no unnecessary extras. I also offer practical advice on seasonal lawn care when you want it, covering things like feeding schedules, moss treatment, and how to deal with the patchy spots that Cornwall's wet winters can leave behind. The goal is a lawn that looks properly finished, not just mowed.",
     "items": [
       {
         "title": "Regular mowing",
-        "description": "A consistent cut that keeps things looking sharp.",
+        "description": "A consistent cut at the right height for the season. I adjust the blade height throughout the year, cutting higher in summer to help the grass cope with dry spells and lower in spring and autumn to keep things tidy. Lawns in Cornwall grow almost year-round thanks to the mild climate, so regular mowing prevents that overgrown look from creeping in.",
         "icon": "Leaf"
       },
       {
         "title": "Edging & strimming",
-        "description": "Clean borders and corners for a finished look.",
+        "description": "Clean edges and strimming around borders, fences, walls, and paths are included with every visit. This is the difference between a lawn that looks mowed and one that looks properly finished. I use a line trimmer for tight spots and a half-moon edger where beds need a crisp boundary.",
         "icon": "Ruler"
       },
       {
         "title": "Light tidy as needed",
-        "description": "Quick touch-ups that keep the area presentable.",
+        "description": "Quick touch-ups to paths, patios, and borders that keep the surrounding area presentable. I will blow down clippings from hard surfaces and tidy anything that has drifted during the cut so the whole space looks clean when I leave.",
         "icon": "Sprout"
       },
       {
         "title": "Seasonal lawn feed (optional)",
-        "description": "Simple recommendations to support healthy growth.",
+        "description": "I can recommend a seasonal feeding schedule based on your soil type and lawn condition. Cornwall has a mix of sandy coastal soils near Newquay and Perranporth and heavier clay soils inland around Truro and Bodmin. Each responds differently to feed, so getting the timing right matters. I will point you in the right direction without pushing products you do not need.",
         "icon": "Sprout"
       },
       {
         "title": "Moss / thatch advice",
-        "description": "Practical guidance for problem areas and patchy spots.",
+        "description": "Cornwall's damp winters mean moss and thatch can build up quickly, especially in shaded areas or lawns near the coast. I will flag problem patches as I see them and suggest practical steps like scarifying, aerating, or adjusting your mowing height. Sorting these issues early saves you a bigger job down the line.",
         "icon": "Leaf"
       },
       {
         "title": "Green waste removal (optional)",
-        "description": "Clippings can be collected and taken away if needed.",
+        "description": "Grass clippings can be collected and removed if you prefer a cleaner finish. Green waste removal is charged at £10 per dumpy bag, and I am a licensed waste carrier so everything is disposed of properly. For most regular cuts the clippings are fine left on the lawn, where they break down and feed the soil naturally.",
         "icon": "Trash2"
       }
     ]
@@ -65,11 +65,11 @@
   "plans": {
     "label": "Your lawn, your schedule",
     "title": "Choose a rhythm that suits your garden",
-    "description": "Weekly, fortnightly, or a one-off reset—whatever keeps your lawn looking the way you want.",
+    "description": "Most of my lawn care customers in Cornwall go fortnightly from March through to October, then drop to monthly over winter. Weekly visits suit lawns that need a consistently sharp look, while one-off cuts are ideal before events, viewings, or when the grass has simply got away from you. I will recommend the right schedule based on your lawn size and how fast it grows.",
     "cards": [
       {
         "title": "Weekly maintenance",
-        "description": "For lawns that need consistent care and a tidy look all the time.",
+        "description": "Best for lawns that need to look sharp at all times, such as front gardens or properties where presentation matters. Weekly mowing keeps growth even and prevents the lawn from ever looking unkempt. Particularly useful during the fast-growing months from April to September.",
         "bullets": [
           "Mowing",
           "Edges and quick tidy"
@@ -78,7 +78,7 @@
       },
       {
         "title": "Fortnightly maintenance",
-        "description": "A reliable schedule that keeps things under control without overdoing it.",
+        "description": "The most popular option across my customers in Cornwall. Fortnightly visits keep the lawn tidy without overdoing it, and the cost stays manageable. I will adjust the schedule seasonally, moving to monthly visits over winter when growth slows down.",
         "bullets": [
           "Mowing",
           "Edges and strimming"
@@ -87,7 +87,7 @@
       },
       {
         "title": "One-off tidy & reset",
-        "description": "Perfect before guests, photos, or when the lawn has gotten away from you.",
+        "description": "Ideal before guests, photos, property viewings, or when the lawn has been left a bit too long between cuts. I will bring it back to a clean height, tidy the edges, and leave it looking presentable. No ongoing commitment needed.",
         "bullets": [
           "Cut back to neat",
           "Clean lines and finish"
@@ -96,7 +96,7 @@
       },
       {
         "title": "Seasonal refresh",
-        "description": "A tidy-up to set the lawn up for the season ahead.",
+        "description": "A thorough tidy at the start of spring or autumn to set the lawn up for the season ahead. This often includes a lower cut to remove winter growth, edging, and practical advice on feeding or treating any bare patches that have appeared.",
         "bullets": [
           "General tidy",
           "Practical advice for next steps"
@@ -114,7 +114,7 @@
   "results": {
     "label": "Recent results",
     "title": "A tidy lawn makes the whole garden feel better",
-    "description": "A clean cut and crisp edges can completely change how a space feels—especially when it stays consistent.",
+    "description": "A clean cut with crisp edges can completely change how a garden feels, especially when it stays consistent week after week. These are recent lawn care jobs from gardens around Newquay and the surrounding Cornwall area. Regular customers often tell me the biggest difference is not any single cut, but the fact that it never looks untidy in between visits.",
     "headerCtas": {
       "primaryText": "Get a Quote",
       "primaryHref": "/quote",
@@ -124,7 +124,7 @@
     "cards": [
       {
         "title": "Fresh cut + clean lines",
-        "description": "A neat finish with crisp edges that makes the lawn feel cared for.",
+        "description": "A neat finish with crisp edges on a family garden near Newquay. Fortnightly cuts through the growing season keep this lawn looking tidy and even without any fuss.",
         "imageSrc": "/images/IMG_20250708_11200.webp",
         "imageAlt": "Garden with freshly cut hedges and a tidy, freshly mown lawn",
         "ctaText": "View more details",
@@ -132,7 +132,7 @@
       },
       {
         "title": "Consistent tidy look",
-        "description": "Regular care that keeps growth even and the garden looking sharp.",
+        "description": "Regular fortnightly care on a medium-sized lawn. Consistent mowing and edging keep growth even and the whole garden looking sharp from the street.",
         "imageSrc": "/images/IMG_20250715_29185.webp",
         "imageAlt": "Well-kept garden lawn with trimmed hedges and clean edges",
         "ctaText": "View more details",
@@ -140,7 +140,7 @@
       },
       {
         "title": "Tidy up before the season",
-        "description": "A reset that makes the whole space easier to maintain.",
+        "description": "A seasonal reset on a lawn that had grown long over the winter months. One cut and a clean edge brought it back to a manageable state ready for regular visits through spring.",
         "imageSrc": "/images/IMG_20250708_16272.webp",
         "imageAlt": "Neat lawn with freshly trimmed hedges after garden maintenance",
         "ctaText": "View more details",
@@ -151,21 +151,21 @@
   "valueBand": {
     "label": "Value",
     "title": "A lawn that looks good week after week",
-    "description": "Consistency is what makes it feel effortless—regular visits, tidy edges, and clear communication.",
+    "description": "Consistency is what makes lawn care feel effortless. I turn up on the same day each cycle, cut to the right height for the time of year, and leave clean edges every time. If rain shifts the schedule, I will let you know and rebook promptly. You should not have to chase your gardener or wonder when the next visit is.",
     "bullets": [
       {
         "title": "Consistent visits",
-        "description": "A reliable schedule that keeps growth under control.",
+        "description": "I keep to a reliable schedule so your lawn never gets ahead of you. Same day, same quality, every visit. If I need to shift a day due to weather, I will message you in advance.",
         "icon": "CalendarDays"
       },
       {
         "title": "Clean edges",
-        "description": "Crisp borders that make the lawn look finished.",
+        "description": "Crisp borders and clean strimming around every edge, included as standard. This is what separates a quick mow from a properly finished lawn.",
         "icon": "Ruler"
       },
       {
         "title": "Weather-aware",
-        "description": "If rain shifts timing, we’ll communicate clearly.",
+        "description": "Cornwall's weather can be unpredictable, especially near the coast. If heavy rain makes cutting impractical, I will let you know and rebook to the next dry window, usually within a day or two.",
         "icon": "CloudRain"
       }
     ],
@@ -180,43 +180,43 @@
   "faq": {
     "label": "FAQs",
     "title": "Quick answers",
-    "description": "If you don’t see your question here, just get in touch.",
+    "description": "If you don't see your question here, just get in touch.",
     "items": [
       {
         "id": "frequency",
         "question": "Do you offer weekly or fortnightly visits?",
-        "answer": "Yes—weekly and fortnightly are both available depending on your lawn and the time of year."
+        "answer": "Yes, both are available. Most customers in Cornwall go fortnightly from March to October, then drop to monthly over winter. Because of Cornwall's mild coastal climate, lawns here grow almost year-round unlike the rest of the UK, so they still benefit from a winter cut now and then."
+      },
+      {
+        "id": "cost",
+        "question": "How much does lawn mowing cost in Cornwall?",
+        "answer": "A small front lawn typically costs £20 to £30 per cut. An average-sized garden is around £30 to £50. That includes mowing, edging, strimming, and a clean blow-down. I'll confirm your exact price after seeing a photo or two of the lawn."
       },
       {
         "id": "edges",
         "question": "Do you edge and strim?",
-        "answer": "Yes. Keeping edges tidy is part of what makes the lawn look properly finished."
+        "answer": "Yes, always. Edging and strimming are included in every lawn cut as standard. Clean edges are the difference between a lawn that looks mowed and one that looks properly finished."
       },
       {
         "id": "clippings",
         "question": "Can you take away grass clippings?",
-        "answer": "Yes—clippings can be collected and removed. Let us know your preference when requesting a quote."
+        "answer": "Yes, clippings can be collected and removed. Green waste removal is £10 per dumpy bag. Just let me know your preference when requesting a quote and I'll include it in the price."
       },
       {
         "id": "rain",
         "question": "What happens if it rains?",
-        "answer": "If weather affects the cut, we’ll communicate and reschedule to the next suitable time."
-      },
-      {
-        "id": "one-off",
-        "question": "Can you do a one-off tidy?",
-        "answer": "Yes—one-off cuts and tidy-ups are available, especially for a reset before regular maintenance."
+        "answer": "If heavy rain makes cutting impractical, I'll let you know and reschedule to the next dry window, usually within a day or two. Light drizzle is fine, this is Cornwall after all."
       },
       {
         "id": "area",
         "question": "Do you cover my area?",
-        "answer": "Send your postcode and we’ll confirm availability."
+        "answer": "I'm based near Newquay and cover most of Cornwall including Truro, St Austell, Bodmin, Padstow, Perranporth, and St Ives. Send your postcode and I'll confirm availability, usually the same day."
       }
     ]
   },
   "finalCta": {
-    "title": "Want a lawn that stays tidy without the hassle?",
-    "description": "Tell us what you need and we’ll recommend a schedule—then quote it clearly.",
+    "title": "Ready for a lawn that stays tidy without the hassle?",
+    "description": "Send me a couple of photos of your lawn and I will recommend a schedule and quote it clearly. Most quotes are confirmed within 24 hours, and there is no obligation.",
     "primaryText": "Get a Quote",
     "primaryHref": "/quote",
     "secondaryText": "Contact Us",

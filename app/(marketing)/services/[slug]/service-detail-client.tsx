@@ -56,7 +56,7 @@ const ICON_MAP: Record<IconName, React.ComponentType<React.SVGProps<SVGSVGElemen
 function patternUrl(pattern: PatternName): string {
     return pattern === "pattern-1"
         ? "url('/patterns/pattern-1.png')"
-        : "url('/patterns/pattern-2.svg')";
+        : "url('/patterns/pattern-2.png')";
 }
 
 export default function ServiceDetailClient({ service }: { service: Service }) {
@@ -166,7 +166,7 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                                 >
                                     <Card className="rounded-4xl overflow-hidden border-border/20 bg-background/5 text-background shadow-none p-0 py-0 gap-0">
                                         <div className="relative aspect-16/11 w-full">
-                                            <div className="absolute inset-0 bg-[url('/patterns/pattern-2.svg')] bg-repeat opacity-15" />
+                                            <div className="absolute inset-0 bg-[url('/patterns/pattern-2.png')] bg-repeat opacity-15" />
                                             {hasHeroImage ? (
                                                 <Image
                                                     src={service.hero.imageSrc}
@@ -247,7 +247,7 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                 <section className="mx-4 md:mx-8 lg:mx-16 pb-12 md:pb-16">
                     <div className="container mx-auto px-4 lg:px-12">
                         <div className="relative overflow-hidden rounded-4xl border border-border bg-background">
-                            <div className="absolute inset-0 bg-[url('/patterns/pattern-2.svg')] bg-repeat opacity-10" />
+                            <div className="absolute inset-0 bg-[url('/patterns/pattern-2.png')] bg-repeat opacity-10" />
                             <div className="relative p-6 md:p-10">
                                 <motion.div {...fadeUp} className="max-w-2xl">
                                     <div className="inline-flex items-center rounded-full bg-muted px-4 py-1.5 text-sm text-muted-foreground">
@@ -417,7 +417,7 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
             <section className="mx-4 md:mx-8 lg:mx-16 pb-12 md:pb-16">
                 <div className="container mx-auto px-4 lg:px-12">
                     <div className="relative overflow-hidden rounded-4xl border border-border bg-primary text-primary-foreground">
-                        <div className="absolute inset-0 bg-[url('/patterns/pattern-2.svg')] bg-repeat opacity-80" />
+                        <div className="absolute inset-0 bg-[url('/patterns/pattern-2.png')] bg-repeat opacity-80" />
                         <div className="relative p-6 md:p-10">
                             <motion.div {...fadeUp} className="max-w-2xl">
                                 <div className="inline-flex items-center rounded-full bg-primary-foreground/10 px-4 py-1.5 text-sm text-primary-foreground">

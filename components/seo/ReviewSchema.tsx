@@ -10,8 +10,18 @@ export interface ReviewSchemaProps {
   reviews: Review[];
 }
 
+/**
+ * Normalize human-readable dates like "20 Oct 2025" to ISO 8601 "2025-10-20".
+ * Falls back to the original string if parsing fails.
+ */
+function toISODate(raw?: string): string | undefined {
+  if (!raw) return undefined;
+  const parsed = new Date(raw);
+  if (Number.isNaN(parsed.getTime())) return raw;
+  return parsed.toISOString().split("T")[0];
+}
+
 export function ReviewSchema({
-  businessName = "Quilliams Gardening & Landscaping",
   reviews,
 }: ReviewSchemaProps) {
   if (!reviews.length) return null;
@@ -21,13 +31,13 @@ export function ReviewSchema({
 
   const schema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: businessName,
+    "@type": "LandscapingBusiness",
+    "@id": "https://quilliamsmowing.co.uk/#business",
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: averageRating.toFixed(1),
-      bestRating: "5",
-      worstRating: "1",
+      ratingValue: Number(averageRating.toFixed(1)),
+      bestRating: 5,
+      worstRating: 1,
       reviewCount: reviews.length,
     },
     review: reviews.map((review) => ({
@@ -40,10 +50,10 @@ export function ReviewSchema({
       reviewRating: {
         "@type": "Rating",
         ratingValue: review.ratingValue ?? 5,
-        bestRating: "5",
-        worstRating: "1",
+        bestRating: 5,
+        worstRating: 1,
       },
-      datePublished: review.datePublished,
+      datePublished: toISODate(review.datePublished),
     })),
   };
 

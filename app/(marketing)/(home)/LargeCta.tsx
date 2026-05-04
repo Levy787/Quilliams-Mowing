@@ -64,7 +64,7 @@ export function LargeCta({
         <section
             className="bg-gray-900 mx-4 md:mx-8 lg:mx-16 rounded-4xl relative overflow-hidden py-16 lg:py-20"
             style={{
-                backgroundImage: "url(/patterns/pattern-2.svg)",
+                backgroundImage: "url(/patterns/pattern-2.png)",
                 backgroundRepeat: "repeat",
                 backgroundBlendMode: "screen",
                 opacity: 1,

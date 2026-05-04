@@ -222,7 +222,7 @@ export default function ServicesLandingClient({
                         >
                             <Card className="rounded-4xl border-border shadow-none overflow-hidden p-0 py-0 gap-0">
                                 <div className="relative aspect-16/11 w-full">
-                                    <div className="absolute inset-0 bg-[url('/patterns/pattern-2.svg')] bg-repeat opacity-20" />
+                                    <div className="absolute inset-0 bg-[url('/patterns/pattern-2.png')] bg-repeat opacity-20" />
                                     {content.hero.image?.src?.trim() ? (
                                         <Image
                                             src={content.hero.image.src}
@@ -395,7 +395,7 @@ export default function ServicesLandingClient({
                     {/* Highlights */}
                     {/* <div className="mt-14">
                         <div className="relative overflow-hidden rounded-4xl border border-border bg-primary text-primary-foreground">
-                            <div className="absolute inset-0 bg-[url('/patterns/pattern-2.svg')] bg-repeat opacity-100" />
+                            <div className="absolute inset-0 bg-[url('/patterns/pattern-2.png')] bg-repeat opacity-100" />
                             <div className="relative p-6 md:p-10">
                                 <motion.div
                                     variants={fadeUp}

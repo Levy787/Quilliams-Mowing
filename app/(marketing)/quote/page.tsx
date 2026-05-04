@@ -12,6 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
         seo: quote.seo,
         fallbackTitle: "Get a Quote",
         fallbackDescription: quote.header.description,
+        canonicalPath: "/quote",
     });
 }
 

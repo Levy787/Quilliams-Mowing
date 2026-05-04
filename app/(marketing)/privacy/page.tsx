@@ -13,6 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
         seo: privacy.seo,
         fallbackTitle: "Privacy Policy",
         fallbackDescription: privacy.header.description,
+        canonicalPath: "/privacy",
     });
 }
 

@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { buildMetadata } from "@/lib/seo";
 import { areas } from "@/lib/areas/data";
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 
 export const metadata: Metadata = buildMetadata({
     seo: {
@@ -22,6 +23,7 @@ export default function AreasPage() {
 
     return (
         <main className="min-h-screen bg-background">
+            <BreadcrumbSchema items={[{ name: "Home", href: "/" }, { name: "Areas", href: "/areas" }]} />
             <div className="container mx-auto px-4 py-16 max-w-4xl">
                 <h1 className="text-4xl font-bold mb-4">Areas We Cover</h1>
                 <p className="text-xl text-muted-foreground mb-8">

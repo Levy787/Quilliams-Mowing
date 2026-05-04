@@ -1,28 +1,28 @@
 {
   "seo": {
-    "title": "About Quilliams Gardening | Your Local Newquay Gardener",
-    "description": "Meet your local Newquay gardener. Hands-on, reliable garden care across Cornwall. I show up on time, do the work properly, and leave your garden looking sharp."
+    "title": "About Levi Quilliam | Gardener & Landscaper in Cornwall",
+    "description": "Levi Quilliam is a gardener and landscaper based near Newquay, Cornwall. From a Tasmanian farming background, fully insured with a chainsaw licence and waste carrier licence. Honest pricing and a clean finish on every job."
   },
   "hero": {
-    "badge": "About Quilliams Gardening",
-    "headline": "A hands-on gardener who cares about the finish.",
-    "subheading": "I keep things simple: show up on time, do the work properly, and leave your outdoor space looking sharper than when I arrived.",
+    "badge": "About Levi",
+    "headline": "From Tasmanian farmland to Cornish gardens.",
+    "subheading": "I'm Levi Quilliam, a gardener and landscaper based near Newquay, Cornwall. I swapped spreadsheets for secateurs and brought the same attention to detail I learned in accounting and sales into every garden I work on. The difference is, now I can actually see the results at the end of the day.",
     "features": [
       {
-        "strong": "High standards",
-        "text": "on tidy edges, clean lines, and a proper finish."
+        "strong": "Chainsaw licensed",
+        "text": "and trained for safe, efficient tree and hedge work."
       },
       {
-        "strong": "Clear communication",
-        "text": "so you know what’s happening and when."
+        "strong": "Fully insured",
+        "text": "with public liability cover for your peace of mind."
       },
       {
-        "strong": "Practical solutions",
-        "text": "that look good and stay manageable."
+        "strong": "Licensed waste carrier",
+        "text": "so green waste is handled properly and responsibly."
       },
       {
-        "strong": "Respect for your property",
-        "text": "— clean up is part of the job."
+        "strong": "Customer-first approach",
+        "text": "because your experience matters as much as the finished garden."
       }
     ],
     "ctas": {
@@ -36,103 +36,105 @@
       },
       "phone": {
         "label": "Call",
-        "href": "tel:+15551234567"
+        "href": "tel:+447593121621"
       }
     },
     "footnote": "Prefer a quick message? The quote form works best.",
     "image": {
       "imageFile": "hero/image/imageFile.webp",
-      "imageAlt": "Levi Hedge Trimming"
+      "imageAlt": "Levi Quilliam trimming a large hedge in Cornwall"
     }
   },
   "story": {
-    "badge": "The approach",
-    "title": "Clean, calm, and maintained — not just “done”.",
+    "badge": "My story",
+    "title": "Why I left the office to work in your garden.",
     "paragraphs": [
-      "Good gardening is the small stuff done consistently: edges that stay sharp, beds that don’t creep, lawns cut the right way, and clean-ups that actually feel like a reset.",
-      "Whether it’s ongoing maintenance or a one-off transformation, the goal is the same — leave you with an outdoor space you’re proud of."
+      "I grew up on a farm in Tasmania, Australia, where working outdoors was just part of life. After school I studied economics, then spent years working in accounting and sales. I was decent at it, but at the end of a long day all I had to show for it was a spreadsheet I'd spent six hours building.",
+      "Gardening was always the thing I came back to. Six hours in a garden and you can completely transform the way someone feels about their outdoor space. Same amount of time as a day at the desk, completely different level of satisfaction. I'd been thinking about starting a garden maintenance business for over five years before I finally made the leap.",
+      "When I moved to Cornwall in 2025, it felt like the right time. I settled near Newquay and the landscapes here convinced me I'd made the right call. Mild winters that keep things growing almost year-round, rugged coastline, and communities that genuinely value their outdoor spaces. I started Quilliams Gardening & Landscaping and haven't looked back.",
+      "Cornwall's climate brings its own challenges that I've learned to work with. Salt-laden winds near the coast mean choosing hardy, wind-tolerant plants. The mild, wet winters keep lawns growing well into November but also encourage moss and weed growth. Clay-heavy soils in areas like Truro need proper drainage, while the sandy soils closer to the coast drain almost too well. Every garden here has its own character, and that's what makes the work interesting."
     ],
     "highlights": [
       {
-        "title": "Practical choices",
-        "description": "Designs and maintenance plans that suit your time, budget, and yard.",
+        "title": "Farming roots",
+        "description": "Grew up working the land in Tasmania. Hard graft and attention to detail are second nature.",
         "icon": "Leaf"
       },
       {
-        "title": "Strong finish",
-        "description": "Tidy-up isn’t optional — it’s the last 10% that makes it look 100%.",
+        "title": "Clean finish, every time",
+        "description": "The final 10% is what people notice. Paths cleared, edges sharp, clippings gone.",
         "icon": "Sparkles"
       },
       {
-        "title": "Reliable routine",
-        "description": "Clear comms, consistent quality, and no surprises.",
+        "title": "Cornwall-adapted",
+        "description": "I understand coastal winds, clay soils, and the year-round growing season that makes Cornwall different.",
         "icon": "ShieldCheck"
       }
     ],
     "expect": {
-      "title": "What you can expect",
+      "title": "What working with me looks like",
       "items": [
         {
-          "strong": "A quick plan",
-          "text": "— what we’re doing, what we’re not, and what matters most."
+          "strong": "Straight-talking quotes",
+          "text": "with no hidden extras. I'll tell you exactly what's included and what it costs."
         },
         {
-          "strong": "A tidy site",
-          "text": "— paths cleared, clippings handled, and a clean finish."
+          "strong": "An enthusiastic gardener",
+          "text": "who genuinely loves this work. You'll always see a big grin."
         },
         {
-          "strong": "Work that lasts",
-          "text": "— maintained edges, controlled growth, and less mess over time."
+          "strong": "A properly finished job",
+          "text": "with paths cleared, clippings handled, and a clean site when I leave."
         },
         {
-          "strong": "Respect for your space",
-          "text": "— gates, access, pets, and neighbours considered."
+          "strong": "Respect for your property",
+          "text": "with gates, access, pets, and neighbours always considered."
         }
       ]
     },
     "goal": {
       "title": "The goal",
-      "description": "Leave you with a garden that looks better now — and is easier to keep looking good."
+      "description": "Everything I do is built around the experience you get, from the first message to the final blow-down. I'm not the cheapest gardener in Cornwall, but I think you'll notice the difference. My favourite jobs are the big messy clearances. They have the biggest visual impact, make the biggest difference to the customer, and I can justify skipping the gym that day."
     },
     "image": {}
   },
   "timeline": {
-    "badge": "Timeline",
-    "title": "Built step-by-step — quality first.",
-    "description": "A quick snapshot of how the work evolved: from basic maintenance to a clean, consistent standard across every job.",
-    "pillText": "Always improving",
+    "badge": "The journey",
+    "title": "From farm kid to Cornwall's gardener.",
+    "description": "It wasn't a straight path, but every step taught me something I use in your garden today.",
+    "pillText": "Always growing",
     "items": [
       {
-        "tag": "Step 1",
-        "title": "Started with the basics",
-        "description": "Simple maintenance jobs, cleanups, and learning what makes a garden actually stay tidy week to week."
+        "tag": "Tasmania",
+        "title": "Grew up on a farm",
+        "description": "Learned the basics of hard work, land management, and getting things done properly, even when it's raining."
       },
       {
-        "tag": "Step 2",
-        "title": "Dialled in a ‘clean finish’ standard",
-        "description": "Edges, blow-down, and leaving things neat became non-negotiable — the final 10% that people notice."
+        "tag": "Corporate",
+        "title": "Economics, accounting & sales",
+        "description": "Studied economics, then worked in accounting and sales. Good at it, but spent too long staring at spreadsheets and not enough time outdoors."
       },
       {
-        "tag": "Step 3",
-        "title": "Bigger yards + better systems",
-        "description": "Built repeatable routines for lawns, pruning, and weeding so the quality stays consistent."
+        "tag": "The idea",
+        "title": "Five years of 'what if'",
+        "description": "Kept coming back to gardening between office jobs. Spent five years thinking about turning it into a proper business before finally committing."
       },
       {
-        "tag": "Step 4",
-        "title": "More landscaping-style work",
-        "description": "Refreshes, reshapes, and smarter layouts — practical upgrades that make the space feel new."
+        "tag": "2025",
+        "title": "Moved to Cornwall, started Quilliams",
+        "description": "Made the leap. Moved to Trevarrian near Newquay and launched Quilliams Gardening & Landscaping. 120+ projects and counting."
       },
       {
-        "tag": "Step 5",
-        "title": "Today",
-        "description": "Reliable maintenance, one-off transformations, and honest advice — with a focus on calm, clean outdoor spaces."
+        "tag": "Today",
+        "title": "Growing across Cornwall",
+        "description": "Covering Newquay, Truro, St Austell, Bodmin and beyond. Fully licensed, fully insured, and still loving every clearance job that saves me a gym session."
       }
     ]
   },
   "process": {
-    "badge": "How we work",
-    "title": "A simple process that keeps standards high.",
-    "description": "No overcomplication. Just clear expectations, reliable delivery, and a finish you’ll notice.",
+    "badge": "How I work",
+    "title": "Simple process, high standards.",
+    "description": "No overcomplication. Just clear expectations, reliable delivery, and a finish you'll notice.",
     "ctas": {
       "primary": {
         "label": "Get a Quote",
@@ -146,17 +148,17 @@
     "steps": [
       {
         "title": "Quick scope",
-        "description": "A short chat and (if needed) a couple of photos so we understand the job and your priorities.",
+        "description": "A short chat and a couple of photos so I understand the job and your priorities.",
         "icon": "BadgeCheck"
       },
       {
         "title": "Clear plan",
-        "description": "We agree on what’s included, what matters most, and how we’ll leave the space at the end.",
+        "description": "We agree on what's included, what matters most, and how I'll leave the space at the end.",
         "icon": "Wand2"
       },
       {
         "title": "Quality work",
-        "description": "Careful, consistent work — with an eye for the details that make it look sharp.",
+        "description": "Careful, consistent work with an eye for the details that make it look sharp.",
         "icon": "Sparkles"
       },
       {
@@ -168,32 +170,33 @@
   },
   "faq": {
     "badge": "FAQ",
-    "title": "Quick answers.",
+    "title": "Common questions about hiring a gardener in Cornwall.",
+    "description": "If your question isn't answered here, send me a message through the quote form or call me on 07593 121 621.",
     "items": [
       {
         "id": "q1",
         "question": "Do you only do ongoing maintenance?",
-        "answer": "No — I do both ongoing garden maintenance and one-off cleanups/refreshes. We’ll figure out what makes sense for your space."
+        "answer": "Not at all. I do both ongoing garden maintenance and one-off cleanups or transformations. Most of my regular clients started with a one-off job and liked the result enough to book me monthly. We'll figure out what makes sense for your space."
       },
       {
         "id": "q2",
-        "question": "Can I get a quote without an inspection?",
-        "answer": "Often, yes. A short description and a few photos is usually enough for an initial quote. If anything’s unclear, I’ll ask follow-up questions."
+        "question": "Can I get a quote without a site visit?",
+        "answer": "Usually, yes. A short description and a few photos are enough for most quotes. I'll send you a clear price within 24 hours. For bigger jobs like full landscaping projects, I may pop round for a quick look first, free of charge."
       },
       {
         "id": "q3",
         "question": "What areas do you cover?",
-        "answer": "I work locally and can confirm availability quickly once you send your suburb/address."
+        "answer": "I'm based in Trevarrian near Newquay and cover most of Cornwall including Truro, St Austell, Bodmin, Padstow, Perranporth, and St Ives. If you're unsure whether I cover your area, just ask. I'm usually happy to travel."
       },
       {
         "id": "q4",
         "question": "Do you take away green waste?",
-        "answer": "Green waste handling depends on the job and your preference. We can discuss options when confirming scope."
+        "answer": "Yes, I'm a licensed waste carrier so I can handle green waste removal properly. It's included in most quotes, but I'll always confirm upfront whether removal is included or if there's a small additional charge for larger loads."
       },
       {
         "id": "q5",
         "question": "How do I book?",
-        "answer": "Use the quote form or contact page. I’ll confirm timing, scope, and next steps."
+        "answer": "The quickest way is the quote form. Send a few photos and a description and I'll get back to you within 24 hours. You can also call me on 07593 121 621 or send a message through WhatsApp. I usually have availability within the same week."
       }
     ]
   }

@@ -6,6 +6,7 @@ import {
     listServiceSlugs,
 } from "@/lib/keystatic-reader";
 import { buildMetadata } from "@/lib/seo";
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import ServicesLandingClient, {
     type ServiceCardModel,
     type ServicesLandingContentModel,
@@ -19,6 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
         fallbackTitle: content.hero.title,
         fallbackDescription: content.hero.description,
         fallbackOgImage: content.hero.image.src || undefined,
+        canonicalPath: "/services",
     });
 }
 
@@ -46,6 +48,11 @@ export default async function ServicesPage() {
             a.title.localeCompare(b.title) || a.slug.localeCompare(b.slug),
         );
 
-    return <ServicesLandingClient services={services} content={content} />;
+    return (
+        <>
+            <BreadcrumbSchema items={[{ name: "Home", href: "/" }, { name: "Services", href: "/services" }]} />
+            <ServicesLandingClient services={services} content={content} />
+        </>
+    );
 }
 

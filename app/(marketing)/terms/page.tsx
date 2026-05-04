@@ -13,6 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
         seo: terms.seo,
         fallbackTitle: "Terms of Service",
         fallbackDescription: terms.header.description,
+        canonicalPath: "/terms",
     });
 }
 

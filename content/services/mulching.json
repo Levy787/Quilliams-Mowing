@@ -2,10 +2,10 @@
   "slug": "mulching",
   "label": "Mulching",
   "title": "Mulching",
-  "description": "Professional mulching services in Newquay and Cornwall. Improve your garden beds with quality mulch. Tidier appearance, healthier plants, less maintenance.",
+  "description": "I provide mulching services across Newquay, Truro, St Austell, and the wider Cornwall area. A proper mulch application tidies up your beds, suppresses weeds, retains moisture, and protects plant roots through Cornwall's milder but wetter winters. I supply quality bark mulch or composted material at market rate and handle the full job from bed prep through to a clean, even finish.",
   "seo": {
     "title": "Mulching Services in Newquay & Cornwall | Garden Bed Care",
-    "description": "Professional mulching services in Newquay and Cornwall. Improve your garden beds with quality mulch. Tidier appearance, healthier plants, less maintenance."
+    "description": "Mulching services in Newquay, Truro and Cornwall. Bark mulch and composted material supplied at market rate. Full bed prep, weed clearance, edging and even application. Licensed waste carrier. Clear quotes."
   },
   "cardIcon": "Layers",
   "hero": {
@@ -28,36 +28,36 @@
   "included": {
     "label": "What’s included",
     "title": "A tidy bed refresh with a clean finish",
-    "description": "We prep beds properly, apply mulch neatly, and leave the space looking sharp—so it stays easier to manage going forward.",
+    "description": "Mulching is one of the simplest upgrades you can make to a garden, but it only works well when the preparation is done properly first. I clear weeds, tidy the bed edges, and make sure the soil surface is in good condition before laying anything down. In Cornwall's mild, damp climate, skipping this step just means weeds push straight through the mulch within a few weeks. I take the time to do it right so the result actually lasts. Once the beds are prepped, I apply mulch to an even depth for a consistent, tidy finish that makes the whole border look intentional.",
     "items": [
       {
         "title": "Bed prep & tidy",
-        "description": "Clear and tidy beds so the finish looks clean.",
+        "description": "Before any mulch goes down, I clear existing debris, pull weeds, and tidy the bed surface. Cornwall's year-round growing season means there is usually something sprouting, so thorough prep is essential. A clean bed gives the mulch the best chance of doing its job properly.",
         "icon": "Sparkles"
       },
       {
         "title": "Weeding before mulching",
-        "description": "A better base helps the result last longer.",
+        "description": "Weeding before mulching is not optional if you want results that last. I remove weeds by hand and clear root systems where possible, particularly persistent growers like bindweed and couch grass that thrive in Cornwall's damp conditions. This gives you a much longer period before anything pushes back through.",
         "icon": "Sprout"
       },
       {
         "title": "Neat edging for a crisp line",
-        "description": "A sharp border makes the mulch look intentional.",
+        "description": "A crisp, defined edge between lawn and bed makes the mulch look deliberate and contained. I cut fresh edges with a half-moon edger so the border has a clean line. This small detail makes a surprisingly big difference to how polished the finished job looks.",
         "icon": "Ruler"
       },
       {
         "title": "Mulch application",
-        "description": "Even coverage for a consistent, tidy look.",
+        "description": "I spread mulch to an even depth across the bed, typically 5 to 8 centimetres depending on the material and the condition of the soil underneath. I supply either bark mulch for a decorative finish or composted material where the soil needs conditioning. Both are charged at market rate and itemised clearly in your quote.",
         "icon": "Layers"
       },
       {
         "title": "Season-aware advice",
-        "description": "Practical guidance on timing and upkeep.",
+        "description": "Timing matters with mulching. Late autumn and early spring are the best windows in Cornwall. Autumn mulching locks in warmth and moisture before winter, while spring application suppresses weed germination as temperatures rise. I will advise on the ideal timing for your garden based on what you are growing and where you are in the county.",
         "icon": "Leaf"
       },
       {
         "title": "Waste removal (optional)",
-        "description": "Green waste can be collected and taken away.",
+        "description": "Any waste from bed preparation, including old mulch, weeds, and debris, is cleared away and taken off-site. I am a licensed waste carrier, so disposal is handled properly and legally. Green waste removal is charged at £10 per dumpy bag.",
         "icon": "Trash2"
       }
     ]
@@ -69,7 +69,7 @@
   "results": {
     "label": "Recent results",
     "title": "Beds that look sharper and stay cleaner",
-    "description": "Mulch can transform the look of a border—cleaner lines, a more finished feel, and less mess day-to-day.",
+    "description": "A good mulch application changes the entire character of a border. Beds go from patchy and weedy to clean, uniform, and tidy. It is one of those jobs where the visual difference is immediate and obvious, which is why I enjoy doing it. The beds below were all prepped, weeded, edged, and mulched as part of a single visit.",
     "headerCtas": {
       "primaryText": "Get a Quote",
       "primaryHref": "/quote",
@@ -106,21 +106,21 @@
   "valueBand": {
     "label": "Value",
     "title": "A smarter bed finish with less day-to-day hassle",
-    "description": "Mulch helps beds look tidy, protects soil, and keeps things more manageable—especially when paired with clean edging.",
+    "description": "Mulching is one of the best value-for-money improvements in any garden. It protects the soil from Cornwall's heavy winter rainfall, reduces the amount of weeding you need to do, and keeps moisture in during drier spells. Combined with clean edging, it gives beds a polished, finished look that lasts for months. I supply the material at market rate and always include it as a separate line in the quote so you can see exactly what you are paying for.",
     "bullets": [
       {
         "title": "Looks cleaner",
-        "description": "A polished bed finish that lifts the whole space.",
+        "description": "Fresh mulch gives beds an even, tidy appearance that lifts the whole garden. It covers bare soil, hides surface roots, and creates a consistent backdrop that makes your planting look more deliberate.",
         "icon": "Sparkles"
       },
       {
         "title": "Supports healthier growth",
-        "description": "Better moisture control and improved soil condition.",
+        "description": "Mulch insulates plant roots from temperature swings, retains moisture during dry periods, and gradually breaks down to improve soil structure. In Cornwall's variable coastal climate, this protection is particularly valuable through winter.",
         "icon": "Leaf"
       },
       {
         "title": "Practical improvement",
-        "description": "A straightforward job that feels worth it visually.",
+        "description": "This is a straightforward, visible improvement that makes an obvious difference. Most mulching jobs are completed in a single visit, and you see the result immediately. It is one of the easiest ways to make a tired garden look cared for again.",
         "icon": "Shovel"
       }
     ],
@@ -140,33 +140,33 @@
       {
         "id": "what",
         "question": "What does mulching include?",
-        "answer": "Usually bed tidy/prep, weeding where needed, neat edges, and an even mulch finish. We’ll confirm scope when we quote."
+        "answer": "Mulching includes full bed preparation, mulch supply, and application to an even finish. Before laying any mulch, I clear weeds, tidy borders, and make sure the soil surface is ready so the mulch does its job properly. The mulch itself is spread to an even depth across your beds, giving them a clean, tidy look while helping to suppress weeds, retain moisture, and protect plant roots. I supply the mulch at market rate and include bed prep and even application in the service, so you get a complete job rather than just material dumped in the garden."
       },
       {
         "id": "timing",
         "question": "When is the best time to mulch?",
-        "answer": "Often spring or autumn, but it depends on your garden and what you want to achieve. We can advise."
+        "answer": "Late autumn or early spring are the best times to mulch. Applying mulch in autumn protects roots over winter and locks in moisture before the colder months. Spring mulching helps suppress weeds as they start to germinate and gives beds a fresh, tidy appearance for the growing season ahead. In Cornwall, the milder winters mean autumn mulching is particularly effective because the soil stays warmer for longer, giving plants a head start. That said, mulching can be done at any time of year if beds need attention. I will advise on the best timing for your situation."
       },
       {
         "id": "cleanup",
         "question": "Do you remove waste?",
-        "answer": "Yes—waste removal can be included. Tell us what you want taken away when requesting a quote."
+        "answer": "Yes. Any waste generated during bed preparation, such as old mulch, weeds, or debris, is cleared away and taken off-site. Green waste removal is charged at £10 per dumpy bag. I am a licensed waste carrier, so disposal is handled properly and legally. I will give you an idea of likely waste costs when quoting the job."
       },
       {
         "id": "materials",
         "question": "Do you supply the mulch?",
-        "answer": "We can. Tell us the look you want and we’ll recommend an option and include it in the quote."
+        "answer": "Yes, I supply the mulch and charge it at market rate. This means you do not need to worry about sourcing, transporting, or storing bags of material yourself. I use quality mulch suited to the job, whether that is bark mulch for ornamental beds or composted material for improving soil condition. If you have a preference for a particular type, I am happy to accommodate that. The cost of materials is always itemised clearly in your quote so you can see exactly what you are paying for."
       },
       {
         "id": "area",
         "question": "Do you cover my area?",
-        "answer": "Send your postcode and we’ll confirm availability."
+        "answer": "I am based near Newquay and cover a good chunk of Cornwall, including Truro, St Austell, Bodmin, Padstow, Perranporth, and St Ives. If you are within that area, I can usually fit you in without any issue. If you are slightly further afield, feel free to get in touch anyway and I will let you know if I can help."
       }
     ]
   },
   "finalCta": {
-    "title": "Want beds that look finished and stay tidy?",
-    "description": "Tell us which areas you want refreshed and we’ll quote the job clearly.",
+    "title": "Want beds that look finished and stay cleaner for longer?",
+    "description": "Tell me which beds or borders need attention and I will quote the job clearly, including material costs. I cover Newquay, Truro, St Austell, Perranporth, and surrounding areas across Cornwall.",
     "primaryText": "Get a Quote",
     "primaryHref": "/quote",
     "secondaryText": "Contact Us",

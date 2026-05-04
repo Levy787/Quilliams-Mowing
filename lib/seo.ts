@@ -56,7 +56,7 @@ export function buildMetadata({
         description,
         alternates: canonical ? { canonical } : undefined,
         openGraph: {
-            type: isHomepage ? "website" : "article",
+            type: "website",
             siteName: SITE_NAME,
             locale: "en_GB",
             title: ogTitle,

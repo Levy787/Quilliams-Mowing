@@ -157,7 +157,6 @@ export function Services({ badge, heading, ctaLabel, ctaHref, items }: ServicesP
                                                                         fill
                                                                         sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                                                                         className="object-cover"
-                                                                        priority={idx < 2}
                                                                     />
                                                                 )}
                                                                 <div className="absolute right-4 top-4 rounded-full bg-background/90 px-3 py-1 text-sm text-foreground">
@@ -189,7 +188,6 @@ export function Services({ badge, heading, ctaLabel, ctaHref, items }: ServicesP
                                                                         fill
                                                                         sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                                                                         className="object-cover"
-                                                                        priority={idx < 2}
                                                                     />
                                                                 )}
                                                                 <div className="absolute right-4 top-4 rounded-full bg-background/90 px-3 py-1 text-sm text-foreground">

@@ -11,15 +11,15 @@ export interface LocalBusinessSchemaProps {
 export function LocalBusinessSchema({
   name = "Quilliams Gardening & Landscaping",
   description = "Professional gardening, landscaping, lawn mowing, hedge trimming and garden maintenance services in Newquay, Truro, and St Austell, Cornwall.",
-  telephone = "07593121621",
-  email = "info@quilliamsmowing.co.uk",
+  telephone = "+447593121621",
+  email = "levi@quilliamsmowing.co.uk",
   url = "https://quilliamsmowing.co.uk",
   areaServed = ["Newquay", "Truro", "St Austell", "Cornwall"],
   priceRange = "££",
 }: LocalBusinessSchemaProps) {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "LandscapingBusiness",
     "@id": `${url}/#business`,
     name,
     description,
@@ -27,17 +27,19 @@ export function LocalBusinessSchema({
     telephone,
     email,
     priceRange,
-    image: `${url}/images/uploads/site/og-image.png`,
+    image: `${url}/images/uploads/site/branding/logoFile.webp`,
+    logo: `${url}/images/uploads/site/branding/logoFile.webp`,
     address: {
       "@type": "PostalAddress",
       addressLocality: "Newquay",
       addressRegion: "Cornwall",
+      postalCode: "TR8",
       addressCountry: "GB",
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 50.412,
-      longitude: -5.0757,
+      latitude: 50.41200,
+      longitude: -5.07570,
     },
     areaServed: areaServed.map((area) => ({
       "@type": "City",
@@ -54,20 +56,19 @@ export function LocalBusinessSchema({
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "08:00",
-        closes: "18:00",
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: "Saturday",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
         opens: "09:00",
-        closes: "16:00",
+        closes: "17:00",
       },
     ],
     sameAs: [
+      "https://g.page/r/Ca1e8ukWV-qsEAE",
       "https://www.facebook.com/quilliamsmowing",
       "https://www.instagram.com/quilliamsmowing",
+      "https://www.tiktok.com/@quilliamsmowing",
+      "https://www.yell.com/biz/quilliams-mowing-ltd-newquay-10969895/",
+      "https://www.checkatrade.com/trades/quilliamsmowingltd",
+      "https://www.bark.com/en/gb/b/quilliams-gardening-amp-landscaping/KNoMX4/",
     ],
   };
 

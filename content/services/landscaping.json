@@ -2,17 +2,17 @@
   "slug": "landscaping",
   "label": "Landscaping",
   "title": "Landscaping",
-  "description": "Professional landscaping services in Newquay and Cornwall. Garden design, planting, and improvements. Clear quotes, quality results from your local landscaper.",
+  "description": "I offer practical landscaping services across Newquay, Truro, St Austell, and the wider Cornwall area. Whether you want a full gravel garden, new planting beds, or just a smarter layout that is easier to look after, I will plan the job around your space, your budget, and Cornwall's coastal conditions. I grew up on a farm in Tasmania, so working outdoors and shaping land is second nature to me. Every quote is fixed and clear before I start, and I keep things straightforward from start to finish.",
   "seo": {
     "title": "Landscape Gardeners in Cornwall | Landscaping & Garden Design",
-    "description": "Landscape gardeners in Newquay, Truro & Cornwall. Gravel gardens, patios, planting & garden design. Fixed quotes, no surprises. See our recent projects."
+    "description": "Landscape gardener in Newquay, Truro and Cornwall. Gravel gardens from £1,500, bed shaping, turfing, planting and garden design. Fixed quotes, no surprises. Chainsaw licence and public liability insured."
   },
   "cardTag": "Most requested",
   "cardIcon": "Trees",
   "hero": {
     "imageFile": "hero/imageFile.webp",
     "imageAlt": "Freshly maintained garden with trimmed hedges and a neat lawn",
-    "caption": "A sharp, finished look—without the hassle.",
+    "caption": "A sharp, finished look without the hassle.",
     "pattern": "pattern-1"
   },
   "trustChips": [
@@ -29,36 +29,36 @@
   "included": {
     "label": "What’s included",
     "title": "The details that make it feel done properly",
-    "description": "Landscaping doesn’t have to mean a massive project. We focus on improvements that are practical, tidy, and worth the spend.",
+    "description": "Landscaping in Cornwall does not have to mean a massive project or a five-figure budget. Most of my work involves focused improvements that make a real, visible difference without tearing everything up. I will walk the garden with you, talk through what is realistic, and suggest changes that suit Cornwall’s climate and your soil type. Coastal gardens near Newquay or Perranporth often need salt-tolerant planting schemes and windbreaks, while gardens further inland around Truro tend to have heavier clay soils that benefit from better drainage and raised bed design. I plan around all of that so nothing gets installed and then struggles.",
     "items": [
       {
         "title": "Bed shaping & edging",
-        "description": "Clean lines that make the whole garden feel intentional.",
+        "description": "Clean, defined lines that make the whole garden feel intentional. I reshape borders to suit the natural contours of your plot and create crisp edges between lawn and beds. In Cornwall's mild climate, growth is fast, so well-defined bed shapes make ongoing maintenance far simpler.",
         "icon": "Ruler"
       },
       {
         "title": "Planting & replanting",
-        "description": "Practical plant choices to match your space and upkeep.",
+        "description": "I choose plants that genuinely suit your conditions rather than picking whatever looks good on the day. For coastal Cornwall gardens, that often means hebe, escallonia, pittosporum, and ornamental grasses. These handle salt winds well and look good year-round. Inland around Bodmin or Truro, I lean towards varieties that cope with heavier soil and more moisture.",
         "icon": "Flower2"
       },
       {
         "title": "Mulching & soil improvement",
-        "description": "Better soil, better growth, and a more polished finish.",
+        "description": "Cornwall's soils vary a lot across the county. Sandy, free-draining soil near the coast benefits from composted organic matter to improve moisture retention. Clay-heavy soil around Truro needs careful amendment to avoid waterlogging. I work in quality mulch and compost to give new planting the best possible start, and it gives beds a much more polished, finished appearance.",
         "icon": "Layers"
       },
       {
         "title": "Lawn prep & turfing",
-        "description": "Level, fresh, and ready for the season ahead.",
+        "description": "Proper ground preparation is the difference between a lawn that establishes quickly and one that struggles. I level the area, improve the soil underneath, and lay quality turf that suits Cornwall's year-round growing season. Because lawns here rarely go fully dormant, you will see results faster than you might expect.",
         "icon": "Leaf"
       },
       {
         "title": "Hedge shaping & structure tidy-up",
-        "description": "A crisp shape that keeps things looking neat.",
+        "description": "Hedges and structural plants give a garden its shape and sense of boundary. I prune and reshape them to create a crisp, tidy outline that frames the rest of the space. I hold a chainsaw licence, so I can handle larger overgrown hedging that needs cutting back hard before reshaping.",
         "icon": "Brush"
       },
       {
         "title": "Seasonal refresh & waste removal",
-        "description": "Green waste cleared and the space reset properly.",
+        "description": "All green waste is cleared from site and disposed of properly. I am a licensed waste carrier, so everything goes through the right channels. Green waste removal is charged at £10 per dumpy bag, and I include an estimate in every quote so there are no surprises at the end.",
         "icon": "Trash2"
       }
     ]
@@ -70,7 +70,7 @@
   "results": {
     "label": "Recent landscaping projects",
     "title": "A few results we’re proud of",
-    "description": "Small changes add up—clean edges, better structure, and a finish that looks good from every angle.",
+    "description": "Landscaping results tend to be cumulative. A new border here, better planting there, cleaner edges throughout. These small, practical changes combine to make a garden feel genuinely finished. I find the projects with the biggest visual impact are often the ones that started as a simple tidy-up and grew into a proper reshape. Below are a few recent jobs from around Newquay and Truro.",
     "headerCtas": {
       "primaryText": "Get a Quote",
       "primaryHref": "/quote",
@@ -80,7 +80,7 @@
     "cards": [
       {
         "title": "Front garden refresh",
-        "description": "A clean reset with sharper edges, fresh mulch, and structure that stays tidy.",
+        "description": "This front garden near Newquay had lost its definition over a couple of seasons. I reshaped the borders, cut fresh edges, and applied bark mulch across the beds. The whole job took a day and made the entrance look completely different.",
         "imageSrc": "/images/IMG_20250708_16272.webp",
         "imageAlt": "Front garden with freshly trimmed hedges and neat lawn edges",
         "ctaText": "View more details",
@@ -88,7 +88,7 @@
       },
       {
         "title": "Low-maintenance planting upgrade",
-        "description": "Practical planting choices that look great and don’t demand constant upkeep.",
+        "description": "The customer wanted lower maintenance without sacrificing appearance. I replaced a few struggling plants with hardy coastal varieties including pittosporum and hebe, added ornamental grasses, and tidied the borders. The result is a garden that looks deliberate and needs far less attention.",
         "imageSrc": "/images/IMG_20250704_93515.webp",
         "imageAlt": "Garden lawn with fresh cut hedges and a tidy planted border",
         "ctaText": "View more details",
@@ -96,7 +96,7 @@
       },
       {
         "title": "Back garden tidy and reshape",
-        "description": "A more finished feel with clean lines, cleared areas, and a consistent look.",
+        "description": "A back garden in Truro that had become overgrown and shapeless. I cleared the excess growth, reshaped the lawn edges, improved the soil in the beds, and added fresh planting. The space went from cluttered to clean in two days.",
         "imageSrc": "/images/IMG_20240509_41792.webp",
         "imageAlt": "Well-kept back garden with trimmed hedges and a neat lawn",
         "ctaText": "View more details",
@@ -108,21 +108,21 @@
   "valueBand": {
     "label": "Value",
     "title": "Improvements that add real value",
-    "description": "We focus on changes that feel worth it—visually, practically, and long-term.",
+    "description": "I focus on landscaping changes that feel worth the investment, both immediately and in the longer term. A well-planned gravel garden, for example, typically costs between £1,500 and £2,500 and takes 2 to 3 days, but it can transform an awkward or high-maintenance space into something you actually enjoy using. I always recommend improvements that suit Cornwall's growing conditions, so the results hold up through salty coastal winters and damp inland seasons alike.",
     "bullets": [
       {
         "title": "Looks finished",
-        "description": "Tidy lines and clean structure you notice immediately.",
+        "description": "Defined edges, considered planting, and a coherent layout give the garden a finished quality you notice straight away. Most customers say it feels like a different space within the first week.",
         "icon": "Sparkles"
       },
       {
         "title": "Easier upkeep",
-        "description": "Smarter planting and layout so it stays manageable.",
+        "description": "Smarter plant choices and better bed layout reduce the time you spend weeding, watering, and cutting back. I plan for Cornwall's fast growth rate so the garden stays manageable between visits.",
         "icon": "Leaf"
       },
       {
         "title": "Done properly",
-        "description": "Clear plan, clear quote, and a clean finish.",
+        "description": "You get a clear, fixed quote before any work begins. I outline exactly what is included, what materials cost, and how long the job will take. No vague estimates or surprise extras at the end.",
         "icon": "Shovel"
       }
     ],
@@ -142,33 +142,33 @@
       {
         "id": "ideas",
         "question": "Do you help with design ideas?",
-        "answer": "Yes. We can recommend simple layout and planting improvements that fit your space and the amount of upkeep you want."
+        "answer": "Yes, I am happy to help with design ideas. Many customers have a rough vision of what they want but need help working out the practical details. I can suggest layouts, materials, and planting schemes based on your space, your budget, and how much time you want to spend maintaining the finished result. I take into account Cornwall’s coastal climate and soil conditions so that whatever I suggest will actually thrive here. I keep things practical rather than overcomplicating it. If you already have a clear plan, I can work from that too."
       },
       {
         "id": "existing",
         "question": "Can you work with what I already have?",
-        "answer": "Absolutely. If something can be kept or improved, we’ll tell you—no unnecessary rip-out."
+        "answer": "Absolutely. Not every landscaping job is a blank canvas, and many of the projects I take on involve improving or reworking what is already there. That might mean reshaping borders, adding new planting around existing features, improving drainage, or replacing tired surfaces. Working with existing elements often keeps costs down and avoids the disruption of a full redesign. I will always let you know if something existing is worth keeping or if it makes more sense to start fresh in a particular area."
       },
       {
         "id": "duration",
         "question": "How long does a landscaping job take?",
-        "answer": "It depends on the scope. Some refreshes take a day; bigger improvements can take longer. We’ll confirm timing with your quote."
+        "answer": "It depends on the scope. A straightforward job like creating a new border or laying a small patio area might take 1 to 2 days. Larger projects involving ground preparation, planting, and hard landscaping can take anywhere from a few days to a couple of weeks. I will give you a realistic timeframe before starting so you know what to expect. Cornwall’s weather can occasionally cause short delays during wetter months, but I plan around that and always keep you updated if anything changes."
       },
       {
         "id": "waste",
         "question": "Do you remove waste?",
-        "answer": "Yes—green waste removal can be included. Just let us know what you want cleared and we’ll include it in pricing."
+        "answer": "Yes, I remove all waste generated during landscaping work. Green waste removal is charged at £10 per dumpy bag. I am a licensed waste carrier, so all materials, whether green waste, rubble, or old fencing, are disposed of properly and legally. I factor waste removal into the overall quote so you have a clear picture of the total cost before work begins."
       },
       {
         "id": "low-maintenance",
         "question": "Can you recommend low-maintenance plants?",
-        "answer": "Yes. We’ll suggest options that suit your garden and how much time you want to spend maintaining it."
+        "answer": "Yes, and this is something I get asked about a lot. Cornwall’s mild coastal climate gives you a wider range of options than most of the UK, which is a real advantage. For low-maintenance gardens, I often suggest hardy shrubs like hebe, escallonia, and pittosporum, along with ground cover plants that suppress weeds naturally. Ornamental grasses also do well here and need very little attention. I match recommendations to your soil type, how much sun the area gets, and whether it is exposed to coastal wind. The aim is a garden that looks good without constant fussing."
       }
     ]
   },
   "finalCta": {
-    "title": "Ready to tidy up the layout and make it feel finished?",
-    "description": "Tell us what you’d like to improve and we’ll recommend a practical plan—then quote it clearly.",
+    "title": "Ready to improve your garden’s layout and make it feel finished?",
+    "description": "Tell me what you would like to change and I will put together a practical plan with a clear, fixed quote. I cover Newquay, Truro, St Austell, Bodmin, and surrounding areas across Cornwall.",
     "primaryText": "Get a Quote",
     "primaryHref": "/quote",
     "secondaryText": "Contact Us",

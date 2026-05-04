@@ -3,7 +3,6 @@ export interface ServiceSchemaProps {
   description: string;
   url: string;
   image?: string;
-  provider?: string;
   areaServed?: string[];
 }
 
@@ -12,7 +11,6 @@ export function ServiceSchema({
   description,
   url,
   image,
-  provider = "Quilliams Gardening & Landscaping",
   areaServed = ["Newquay", "Truro", "St Austell", "Cornwall"],
 }: ServiceSchemaProps) {
   const schema = {
@@ -23,9 +21,7 @@ export function ServiceSchema({
     url,
     image,
     provider: {
-      "@type": "LocalBusiness",
-      name: provider,
-      url: "https://quilliamsmowing.co.uk",
+      "@id": "https://quilliamsmowing.co.uk/#business",
     },
     areaServed: areaServed.map((area) => ({
       "@type": "City",

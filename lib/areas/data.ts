@@ -1,52 +1,216 @@
+export type AreaTestimonial = {
+    name: string;
+    quote: string;
+    location: string;
+};
+
 export type Area = {
     name: string;
     county: string;
     description: string;
+    paragraphs: string[];
+    gardenChallenges: string;
+    travelTime: string;
+    neighborhoods: string[];
+    landmarks: string[];
+    testimonial: AreaTestimonial | null;
     services: string[];
     nearby: string[];
 };
 
 export const areas: Record<string, Area> = {
-    "truro": {
+    truro: {
         name: "Truro",
         county: "Cornwall",
-        description: "Professional gardening and landscaping services in Truro. As Cornwall's capital city, Truro has many beautiful gardens that deserve expert care. We provide regular maintenance, hedge trimming, lawn care, and landscaping throughout Truro and surrounding areas.",
+        description:
+            "Professional gardening and landscaping services in Truro. Cornwall's only city has a mix of period townhouses, newer estates, and rural properties, each with their own garden challenges. Regular maintenance, hedge trimming, lawn care, and landscaping throughout Truro and surrounding areas.",
+        paragraphs: [
+            "I'm Levi Quilliam, a gardener and landscaper based in Trevarrian near Newquay, and Truro is one of the areas I work in most often. Cornwall's only city has a brilliant mix of garden types, from the walled courtyard gardens behind period townhouses on Lemon Street to the bigger plots out towards Treliske and the newer builds going up around Langarth. Each one comes with its own quirks, and that variety is exactly what keeps the work interesting. Whether you need a one-off cleanup to get on top of things or regular maintenance to keep your garden looking sharp year-round, I can help. I hold a chainsaw licence, carry public liability insurance, and I'm a licensed waste carrier, so everything from the first cut to the final bag of green waste is handled properly.",
+            "Truro sits in a sheltered river valley, which means gardens here tend to grow faster and longer than in the more exposed coastal areas. That's great for getting lush borders and thick hedges, but it also means lawns, weeds, and hedges don't really stop growing. I've worked on properties in Malpas where the combination of damp air off the river and rich soil pushes growth at a pace that catches people off guard. A fortnightly maintenance schedule works well for most Truro gardens, and I find that keeping on top of things little and often saves time and money compared to letting it all get away from you. My regular maintenance visits start from around 60 pounds and typically cover mowing, edging, weeding, and a general tidy-up.",
+            "One thing I really enjoy about working in Truro is the range of properties. In Kenwyn you get larger semi-rural plots with mature trees, hedgerows, and proper lawns that benefit from seasonal care. Closer to the city centre, gardens tend to be smaller but more detailed, with raised beds, patio planting, and hedges that need precise shaping. I've done everything from full garden clearances on neglected rental properties near the Royal Cornwall Hospital to regular hedge trimming for homeowners in Tregolls. Whatever the size of the job, I leave the site clean, paths swept, and clippings removed.",
+            "If you are looking for a reliable gardener in Truro who turns up when he says he will and charges fairly, I'd be happy to hear from you. Send a few photos through the quote form and I will get back to you within 24 hours with a clear price. No hidden extras, no vague estimates. Just a straight answer on what it will cost and when I can fit you in. Truro is about 25 minutes from my base, so I'm in the area regularly and can usually book you in within the same week.",
+        ],
+        gardenChallenges:
+            "Truro's gardens sit on predominantly clay-heavy soils that retain moisture and become waterlogged during Cornwall's wet winters. This creates ideal conditions for moss to take over lawns and for weeds to establish deep root systems that are harder to remove. The sheltered river valley location means less wind damage than coastal areas, but the higher humidity encourages fungal issues in lawns and on woody plants. Drainage is the most common problem I deal with in Truro gardens, particularly on newer housing estates around Treliske and Langarth where construction has compacted the already dense clay. Proper aeration, regular scarifying, and seasonal feeding make a significant difference to lawn health on these soils.",
+        travelTime: "About 25 minutes",
+        neighborhoods: ["Treliske", "Malpas", "Kenwyn", "Tregolls", "Langarth"],
+        landmarks: ["Truro Cathedral", "Lemon Quay", "Royal Cornwall Hospital"],
+        testimonial: {
+            name: "Matthew Wellington",
+            quote: "Great service from start to finish. He cut down a few hedges for us and did a brilliant job, quick, tidy, and very reasonably priced.",
+            location: "Truro, Cornwall",
+        },
         services: ["lawn-care", "hedge-trimming", "garden-maintenance", "landscaping"],
         nearby: ["newquay", "st-austell", "perranporth"],
     },
     "st-austell": {
         name: "St Austell",
         county: "Cornwall",
-        description: "Reliable gardening services in St Austell and the surrounding areas. From regular lawn mowing to complete garden transformations, we help St Austell residents keep their outdoor spaces looking their best all year round.",
+        description:
+            "Reliable gardening services in St Austell and the surrounding areas. From regular lawn mowing to complete garden transformations, helping St Austell residents keep their outdoor spaces looking their best all year round.",
+        paragraphs: [
+            "I'm Levi Quilliam, a gardener and landscaper covering St Austell and the surrounding area from my base in Trevarrian near Newquay. St Austell has a character all its own. It's a town shaped by the china clay industry, and that history has left its mark on the landscape and the soil. The older terraced properties around Poltair and the town centre tend to have compact, sloping gardens that need careful management, while the newer estates out towards Holmbush and the larger plots around Carlyon Bay give me more space to work with. I offer everything from regular lawn mowing and hedge trimming to full garden clearances and landscaping projects. I'm fully insured, hold a chainsaw licence, and I'm a licensed waste carrier, so I handle the entire job from start to clean finish.",
+            "St Austell's connection to the Eden Project is something most people know about, but fewer people realise how that same microclimate benefits ordinary back gardens. The town sits in a relatively sheltered position, protected from the worst of the Atlantic winds by the hills to the west. This means gardens here can support a wider range of plants than you might expect, and growing seasons run long. The downside is that everything grows fast, and gardens that go untended for even a few months can become seriously overgrown. I've cleared properties in Bethel and Trewhiddle where the garden had been left for a full season and the difference a single day's clearance can make is remarkable. Cleanup jobs start from around 80 pounds depending on the size and condition.",
+            "The area around Carlyon Bay is one of my favourite places to work in St Austell. The gardens there tend to be larger and more established, with mature hedging, specimen trees, and proper lawns. Many of the properties along the coast have stunning views that are gradually disappearing behind overgrown hedges and boundary planting, so hedge reduction and reshaping is a common request. I charge between 5 and 15 pounds per linear metre for hedge trimming depending on height and access. Inland, the estates around Holmbush and Penwithick have a different feel, with more modern layouts that lend themselves to clean, low-maintenance designs. I've helped several homeowners in these areas redesign tired front gardens into practical spaces that look good without needing constant attention.",
+            "Getting to St Austell takes me about 30 minutes from Trevarrian, and I'm in the area at least once or twice a week. If you need a gardener in St Austell who gives you a clear quote, does the work to a high standard, and leaves your garden looking properly finished, drop me a message through the quote form. A few photos and a short description is all I need to get you an accurate price, usually within 24 hours. I keep things simple and I keep things honest.",
+        ],
+        gardenChallenges:
+            "St Austell's soil is heavily influenced by the area's china clay heritage. Many gardens sit on a mix of clay and mineral-rich subsoil that can be surprisingly acidic and poorly draining. Lawns on these soils tend to suffer from compaction and moss, particularly through the wetter months from October to March. The sheltered position reduces wind damage compared to the coast, but the higher rainfall totals in this part of mid-Cornwall mean gardens stay damp for longer, encouraging slugs, fungal lawn diseases, and persistent weed growth. Raised beds and improved drainage are two of the most effective long-term improvements I recommend to customers in this area. Acidic soil also means rhododendrons and camellias thrive here, which is worth considering when planning planting.",
+        travelTime: "About 30 minutes",
+        neighborhoods: ["Carlyon Bay", "Poltair", "Holmbush", "Bethel", "Penwithick", "Trewhiddle"],
+        landmarks: ["Eden Project", "Carlyon Bay Beach", "St Austell Brewery"],
+        testimonial: {
+            name: "Elizabeth Cawley",
+            quote: "Levi has done an excellent job on my gardens meadow reset. Prompt and friendly.",
+            location: "St Austell, Cornwall",
+        },
         services: ["lawn-care", "hedge-trimming", "garden-maintenance", "landscaping", "seasonal-cleanup"],
         nearby: ["truro", "bodmin", "newquay"],
     },
-    "bodmin": {
+    bodmin: {
         name: "Bodmin",
         county: "Cornwall",
-        description: "Expert garden care in Bodmin, Cornwall. Whether you need regular maintenance or a one-off garden clearance, we provide professional, reliable service to Bodmin residents. Fully equipped for all garden sizes.",
+        description:
+            "Expert garden care in Bodmin, Cornwall. Whether you need regular maintenance or a one-off garden clearance, professional, reliable service to Bodmin residents. Fully equipped for all garden sizes.",
+        paragraphs: [
+            "I'm Levi Quilliam, a gardener and landscaper based in Trevarrian near Newquay, and I regularly work in Bodmin and the surrounding area. Bodmin is Cornwall's historic county town and it sits right on the edge of Bodmin Moor, which gives the gardens here a completely different feel to the coastal areas I cover. The town itself is a mix of older stone-built properties in the centre around Priory and Berrycoombe, with newer housing estates spreading out towards the Westheath area and along the A30 corridor. Gardens in Bodmin tend to be more exposed than in sheltered towns like Truro, and that exposure shapes the kind of maintenance work that's needed. I offer the full range of garden services here, from mowing and hedge work to clearances and landscaping, all fully insured and properly handled.",
+            "Bodmin's position on the edge of the moor means it sits at a higher elevation than most of Cornwall's towns, and that makes a real difference to how gardens behave. The growing season is slightly shorter, frosts are more frequent, and the winds coming off the moor can be persistent. I've worked on gardens in Lanivet and the outskirts of town where boundary hedging takes a real battering through winter and needs proper reshaping each spring. Exposed lawns up here are also more prone to drying out in summer because the winds strip moisture faster than in sheltered valleys. Regular maintenance that accounts for these conditions keeps gardens in much better shape than a reactive approach. My maintenance visits cover mowing, edging, weeding, and seasonal tasks, starting from around 60 pounds per visit.",
+            "One of the things I appreciate about Bodmin is that the gardens tend to be generous in size compared to the coastal towns. Properties around Berrycoombe Road and Priory Road often have long rear gardens with established fruit trees, older hedgerows, and proper lawn areas. These are the kinds of gardens that reward consistent care. I've helped homeowners in the area bring neglected plots back to life with targeted clearance work, removing years of bramble and overgrowth to reveal the structure underneath. There's something genuinely satisfying about finishing a clearance in Bodmin and seeing a customer's face when they realise how much usable space they actually have. Clearance jobs start from 80 pounds and I remove all green waste as a licensed waste carrier.",
+            "Bodmin is about 25 minutes from my base in Trevarrian, and the A39 makes it a straightforward run. I'm in the area regularly and can usually fit new customers in within the same week. If you're looking for a reliable gardener in Bodmin who gives clear prices and does a thorough job, send me a few photos through the quote form and I'll have a price back to you within 24 hours. I keep things simple: you tell me what you need, I tell you what it costs, and I turn up when I say I will.",
+        ],
+        gardenChallenges:
+            "Bodmin gardens face challenges distinct from the rest of Cornwall due to the town's elevated position on the edge of Bodmin Moor. The higher altitude means more frequent frosts, sometimes well into April and starting again in October, which limits planting choices and can damage tender perennials that thrive in milder coastal areas. Soils here are generally a heavy clay-loam mix that becomes waterlogged in winter and bakes hard in dry summers. The persistent moorland winds are the biggest factor I deal with, causing windburn on exposed hedging, drying out lawns, and making boundary maintenance a priority rather than a luxury. Shelter planting and windbreak hedging are worthwhile investments for exposed Bodmin gardens, and I always recommend hardier native species like hawthorn, blackthorn, and beech for these positions.",
+        travelTime: "About 25 minutes",
+        neighborhoods: ["Priory", "Berrycoombe", "Westheath", "Lanivet"],
+        landmarks: ["Bodmin Moor", "Bodmin Jail", "Camel Trail"],
+        testimonial: null,
         services: ["lawn-care", "hedge-trimming", "garden-maintenance", "seasonal-cleanup"],
-        nearby: ["newquay", "truro", "padstow"],
+        nearby: ["padstow", "st-austell", "wadebridge", "newquay"],
     },
-    "padstow": {
+    padstow: {
         name: "Padstow",
         county: "Cornwall",
-        description: "Garden services in Padstow and the North Cornwall coast. We help holiday home owners and residents alike maintain beautiful gardens. Regular visits or seasonal maintenance available.",
+        description:
+            "Garden services in Padstow and the North Cornwall coast. Helping holiday home owners and residents alike maintain beautiful gardens. Regular visits or seasonal maintenance available.",
+        paragraphs: [
+            "I'm Levi Quilliam, a gardener and landscaper based just down the road in Trevarrian near Newquay, and Padstow is one of the closest areas I cover. This famous harbour town sits on the western side of the Camel Estuary and draws visitors from all over the country, but behind the busy quayside there are residential streets and surrounding villages with gardens that need proper, consistent care. A significant number of properties in Padstow are holiday lets or second homes, and I work with several property owners and letting agents to keep gardens looking presentable between changeovers. Whether it's a cottage garden in the old town near St Petroc's Church or a larger plot in the newer developments towards Trecerus, I offer reliable garden maintenance, hedge trimming, lawn care, and clearance work.",
+            "Managing gardens for holiday properties brings its own set of requirements. Tenants and guests notice first impressions, so lawns need to be cut, paths edged, and hedges tidy before each arrival. I offer flexible scheduling that works around changeover days, and because Padstow is only about 20 minutes from my base, I can respond quickly when something needs attention at short notice. For owners who live away from Cornwall, I also provide seasonal cleanup and preparation services, getting the garden ready for the letting season in spring and tidying everything down in autumn. These visits typically fall in the 80 to 120 pound range depending on the size and condition of the garden.",
+            "Padstow's position on the estuary means it gets less direct Atlantic battering than the fully exposed north coast, but salt exposure is still a factor, especially for properties on higher ground around Trevone and towards the headland. The winds coming up the Camel Estuary carry salt that coats foliage and gradually weakens plants that are not suited to coastal conditions. I've seen hedges in Padstow that have been scorched on the seaward side while the sheltered side stays green, and choosing salt-tolerant species like escallonia, griselinia, and tamarisk makes a noticeable difference to how much maintenance a boundary needs. Hedge trimming runs between 5 and 15 pounds per metre depending on height and thickness.",
+            "If you own a property in Padstow, whether you live there full-time or manage it as a holiday let, I'd be glad to help keep the garden in order. I offer both one-off jobs and regular maintenance schedules, and I'm happy to work directly with property managers or letting agents. Send me a few photos through the quote form and I'll come back to you within 24 hours with a clear price. No guesswork, no call-out fees, just straightforward gardening from someone who's local and takes pride in a clean finish.",
+        ],
+        gardenChallenges:
+            "Padstow's gardens face a combination of salt-laden estuary winds and surprisingly free-draining soils. The Camel Estuary funnels wind into the town, carrying salt spray that damages sensitive foliage and limits plant choice for exposed boundaries. Soils in and around Padstow are often a sandy loam over slate bedrock, meaning they drain quickly and struggle to retain nutrients during dry spells. This combination of salt exposure and rapid drainage means gardens here need salt-tolerant planting on boundaries and regular feeding to keep lawns and borders looking healthy. Holiday let gardens present an additional challenge because they often go weeks without attention during the off-season, allowing weeds and overgrowth to establish before the spring letting season begins. Getting on top of things early in March or April saves significant time and cost later.",
+        travelTime: "About 20 minutes",
+        neighborhoods: ["Trevone", "Trecerus", "St Merryn"],
+        landmarks: ["Padstow Harbour", "St Petroc's Church", "Camel Trail", "Prideaux Place"],
+        testimonial: null,
         services: ["lawn-care", "hedge-trimming", "garden-maintenance", "landscaping"],
-        nearby: ["newquay", "bodmin", "wadebridge"],
+        nearby: ["bodmin", "perranporth", "wadebridge", "newquay"],
     },
-    "perranporth": {
+    perranporth: {
         name: "Perranporth",
         county: "Cornwall",
-        description: "Local gardening services in Perranporth. Just a short drive from our Newquay base, we provide regular garden maintenance, lawn care, and landscaping to Perranporth properties.",
+        description:
+            "Local gardening services in Perranporth. Just a short drive from our Newquay base, providing regular garden maintenance, lawn care, and landscaping to Perranporth properties.",
+        paragraphs: [
+            "I'm Levi Quilliam, a gardener and landscaper based in Trevarrian near Newquay, and Perranporth is the closest area I cover outside of my immediate neighbourhood. It's only about 10 to 15 minutes down the road, which means I'm in the area frequently and can often fit jobs in at short notice. Perranporth is known for its three-mile beach and the dramatic dunes that back it, and the village itself spreads up the hillside and out towards Bolingey and Goonhavern. Gardens here range from compact terraced plots close to the village centre to the larger, more exposed properties on the upper slopes with views towards Cligga Head. I offer lawn care, hedge trimming, garden maintenance, clearance work, and landscaping across Perranporth, all fully insured and with licensed waste removal included.",
+            "Being so close to the coast, Perranporth gardens take the full force of the Atlantic weather. Salt winds are a constant, and after a big winter storm the damage to unprotected planting can be severe. I've worked on properties along the cliff path near Droskyn Point where hedges and shrubs on the seaward side have been completely stripped by a single gale. This is the kind of area where plant selection really matters, and I always recommend proven coastal performers like pittosporum, olearia, and native tamarisk for boundary planting. The soils here are predominantly sandy, which is a double-edged thing: they drain brilliantly and rarely get waterlogged, but they also lose nutrients fast and lawns can brown off quickly during dry spells without regular feeding.",
+            "I have a number of regular maintenance customers in Perranporth and the surrounding villages, and the convenience of being so close means I can offer more flexible scheduling than in areas further afield. Several of my Perranporth clients are on a fortnightly cycle that keeps their gardens consistently tidy without the work ever becoming a major job. Lawn mowing in the area runs between 20 and 50 pounds depending on size, and full maintenance visits covering mowing, edging, weeding, and a general tidy start from around 60 pounds. For the bungalows along Liskey Hill and the newer properties near Reen Cross, straightforward access keeps costs at the lower end of these ranges.",
+            "Perranporth also has a fair number of holiday lets and second homes, particularly close to the beach and along the road towards Penhallow. I work with several property owners in the village to keep gardens guest-ready throughout the season. If you live in Perranporth or own a property here and need a local gardener who can get things done quickly and to a high standard, the quote form is the fastest way to reach me. A few photos and a quick description are all I need. Because of the short travel time, I can often visit within a day or two of getting in touch.",
+        ],
+        gardenChallenges:
+            "Perranporth sits fully exposed to the Atlantic, making salt wind the single biggest challenge for gardens in the village. Properties closest to the beach and on higher ground towards Cligga Head receive near-constant salt-laden air that burns foliage and stunts the growth of non-coastal species. The sandy soils drain very quickly, which prevents waterlogging but also means nutrients wash through rapidly, leaving lawns and borders hungry without regular feeding. Sandy soil is also lower in organic matter, so building it up with compost and mulch over time significantly improves plant health and water retention. Wind exposure is the other major factor. Perranporth gardens on the upper slopes can be fully exposed with little natural shelter, making windbreak planting or fencing an important first investment before establishing beds and borders.",
+        travelTime: "About 10 to 15 minutes",
+        neighborhoods: ["Bolingey", "Goonhavern", "Penhallow", "Liskey Hill"],
+        landmarks: ["Perranporth Beach", "Droskyn Point", "Cligga Head"],
+        testimonial: null,
         services: ["lawn-care", "hedge-trimming", "garden-maintenance"],
-        nearby: ["newquay", "truro", "st-agnes"],
+        nearby: ["truro", "newquay", "st-agnes"],
     },
     "st-ives": {
         name: "St Ives",
         county: "Cornwall",
-        description: "Professional gardening in St Ives, Cornwall. From compact town gardens to larger coastal properties, we offer tailored garden care. Lawn mowing, hedge cutting, planting, and full maintenance packages.",
+        description:
+            "Professional gardening in St Ives, Cornwall. From compact town gardens to larger coastal properties, tailored garden care. Lawn mowing, hedge cutting, planting, and full maintenance packages.",
+        paragraphs: [
+            "I'm Levi Quilliam, a gardener and landscaper based in Trevarrian near Newquay, and I cover St Ives and the surrounding area. St Ives is one of the most beautiful towns in Cornwall, but it's also one of the more challenging places to maintain a garden. The town is built on a steep hillside that drops down to the harbour and Porthmeor Beach, and most properties in the older parts of town, around The Stennack, Barnoon, and Fore Street, have compact terraced gardens on steep gradients. Getting equipment in and out can be tricky, and I've worked on gardens in St Ives where the only access is down a narrow flight of granite steps. I plan for these situations and price accordingly, so you always know the cost upfront. I carry full public liability insurance, a chainsaw licence, and a waste carrier licence for proper green waste removal.",
+            "The artistic heritage of St Ives has left its mark on the gardens too. There are some genuinely lovely courtyard gardens tucked behind the granite cottages in the Downalong area, with sheltered microclimates that support plants you wouldn't expect this far north. I've seen established palms, agapanthus, and even banana plants thriving in south-facing corners where the stone walls trap warmth and block the wind. These sheltered spots are a real asset, but they need careful maintenance to stay at their best. Overcrowded planting, overgrown climbers on old walls, and neglected paving are common issues I deal with in St Ives town gardens. A thorough seasonal tidy, clearing back overgrowth and re-defining borders, often transforms these small spaces completely.",
+            "Outside the old town, the larger properties along the road towards Carbis Bay and up towards Halsetown have more conventional gardens with proper lawns, hedging, and space for borders. These gardens still face significant salt exposure from the prevailing westerly winds, but they tend to have better access and more room to work with. I provide regular maintenance schedules for several homeowners in these areas, covering mowing, hedge trimming, weeding, and seasonal jobs. Hedge trimming is one of the most requested services in St Ives because boundary hedges take a real battering from salt winds and need shaping at least twice a year to stay looking decent. I charge between 5 and 15 pounds per linear metre depending on the hedge's height and condition.",
+            "St Ives is the furthest area I regularly cover from my base, at around 45 minutes on the A30, but I group my St Ives visits to make the travel efficient and keep costs fair. I'm typically in the area once a week and schedule multiple jobs on the same day. If you're looking for a dependable gardener in St Ives who understands the particular challenges of coastal terraced gardens and charges honestly, I'd like to hear from you. Send a few photos and a short description through the quote form and I'll send you a clear price within 24 hours.",
+        ],
+        gardenChallenges:
+            "St Ives presents a unique combination of challenges that make it one of the trickiest areas in Cornwall for garden maintenance. The steep topography means many gardens are terraced, with retaining walls, steps, and slopes that complicate mowing, access, and drainage. Salt exposure is intense, particularly for properties facing Porthmeor Beach and the headland known as The Island, where gardens receive direct Atlantic spray during storms. The old granite walls that define most garden boundaries in the town absorb and release heat, creating warm microclimates in sheltered south-facing spots but also channelling cold draughts in north-facing areas. Soil in St Ives is often shallow and stony, sitting on granite bedrock with limited depth for root establishment. Container planting and raised beds are practical solutions for many town-centre gardens where natural soil is poor or virtually non-existent.",
+        travelTime: "About 45 minutes",
+        neighborhoods: ["Carbis Bay", "Halsetown", "The Stennack", "Barnoon", "Downalong"],
+        landmarks: ["Tate St Ives", "Porthmeor Beach", "St Ives Harbour", "Barbara Hepworth Museum"],
+        testimonial: null,
         services: ["lawn-care", "hedge-trimming", "garden-maintenance", "landscaping"],
-        nearby: ["penzance", "hayle", "newquay"],
+        nearby: ["perranporth", "truro"],
+    },
+    newquay: {
+        name: "Newquay",
+        county: "Cornwall",
+        description:
+            "Gardening, landscaping, and lawn care in Newquay, Cornwall. Based in Trevarrian, Levi Quilliam offers lawn mowing, hedge trimming, garden maintenance, and cleanup across Newquay and surrounding areas. Free quotes, 5-star rated.",
+        paragraphs: [
+            "Newquay is my home patch. I live in Trevarrian, a small hamlet just a few minutes along the coast, so when I say I am a local gardener in Newquay, I genuinely mean it. There is no travel charge, no awkward scheduling around a long drive. I can be at your property within minutes, which makes it easy to fit in regular maintenance visits or respond quickly when the weather has done a number on your garden. A good chunk of my 30+ active clients are based right here in Newquay, and many of my earliest jobs were in Porth, Pentire, and the streets around Narrowcliff. This is where my business started, and it is still the area I know best.",
+            "I offer lawn mowing, hedge trimming, garden maintenance, landscaping, seasonal cleanups, and green waste removal across every part of Newquay. Whether you are in a terraced property on Cranstock Street, a detached house overlooking Fistral, or a bungalow tucked behind the Trenance Valley, the work I do is the same. Lawns are cut with clean edges and stripes. Hedges are shaped properly and left looking intentional. Beds are weeded, borders tidied, and everything is blown down and cleared before I leave. Prices start from £20 for a small lawn, £5 to £15 per metre for hedge trimming, and £60 to £120 per visit for regular garden maintenance. I do not charge for quotes, and I will always give you a clear price before any work starts.",
+            "Newquay gardens have their own character, and after working on over 120 projects across the area, I have a good feel for what works here. The mild Cornish climate keeps things growing almost year round, which is brilliant for enjoying your outdoor space but means lawns, hedges, and borders need consistent attention. Properties near Fistral, Towan, and the harbour cop the worst of the Atlantic weather. Salt-laden winds burn soft growth, sandy soils drain fast and lack nutrients, and exposed gardens can take a proper battering during winter storms. I have learned which plants hold up to coastal conditions and which ones just struggle. That local knowledge saves time and money compared to trial and error.",
+            "A lot of my Newquay work involves holiday lets and Airbnb properties. Owners who are not always on site need someone reliable to keep the garden presentable between guests. I look after several holiday let gardens in Porth and Pentire on a regular schedule, making sure the lawn is cut, hedges are tidy, and the general impression is welcoming.",
+            "Beyond the holiday lets, I work with a mix of retirees, families, and homeowners who simply want their garden kept in good shape without doing it themselves. Some of my favourite Newquay jobs have been the big hedge reductions where years of growth have gotten away from someone. Robert Jakes in Newquay called it an amazing transformation after I tackled a massive hedge that had become too much for him to manage. That sort of job is where I am happiest, honestly. There is a huge visual difference by the end of the day, and the customer can actually use their garden again.",
+            "If you are looking for a gardener in Newquay who actually lives here, knows the local conditions, and will turn up when they say they will, I would be glad to hear from you. Send a few photos through the quote form and I will have a price back to you within 24 hours. Most weeks I have availability within a few days, and being based in Trevarrian means fitting in Newquay jobs is never a problem.",
+        ],
+        gardenChallenges:
+            "Newquay sits on the exposed north Cornwall coast, and gardens here face conditions you simply do not get further inland. The prevailing Atlantic winds carry salt spray that scorches tender foliage, particularly on properties near Fistral Beach, Towan Head, and the harbour. Sandy, free-draining soils are common across the town, meaning nutrients wash through quickly and lawns can dry out surprisingly fast during warm spells. At the same time, Cornwall's mild winters and wet climate keep grass and hedges growing from early spring right through to late autumn, so gardens need regular attention for much longer than in other parts of the country. Exposed hedges on cliff-top properties grow unevenly, with the seaward side often stunted while the sheltered side pushes out aggressively. Getting on top of that growth pattern early, with consistent trimming at the right times of year, makes a real difference to how the garden looks and performs long term.",
+        travelTime: "Immediate, this is my home base",
+        neighborhoods: ["Pentire", "Fistral", "Porth", "Crantock", "Trevarrian", "Narrowcliff", "Towan", "Trenance"],
+        landmarks: ["Fistral Beach", "Newquay Harbour", "Trenance Gardens", "Newquay Zoo", "Gannel Estuary", "Towan Head"],
+        testimonial: {
+            name: "James Perrin",
+            quote: "We recently instructed Levi to look after some sizeable gardens in Porth. Really impressed with him, hardworking, polite and professional. He did a great job on his first visit and is now going to be taking care of regular garden maintenance for us. Would highly recommend him.",
+            location: "Newquay, Cornwall",
+        },
+        services: ["lawn-care", "hedge-trimming", "garden-maintenance", "landscaping", "seasonal-cleanup", "mulching"],
+        nearby: ["perranporth", "padstow", "st-agnes", "wadebridge", "truro"],
+    },
+    wadebridge: {
+        name: "Wadebridge",
+        county: "Cornwall",
+        description:
+            "Professional gardening and garden maintenance in Wadebridge, Cornwall. Covering Wadebridge, Egloshayle, Sladesbridge, and surrounding areas. Lawn mowing, hedge trimming, landscaping, and seasonal cleanup.",
+        paragraphs: [
+            "I'm Levi Quilliam, a gardener and landscaper based in Trevarrian near Newquay, and Wadebridge is an area I work in regularly. It's about 20 minutes up the A39, a straightforward drive that puts me in the town centre or out to the surrounding villages without any fuss. Wadebridge is a proper Cornish market town, sat on the River Camel with a long history and a good mix of properties. You've got the older stone-built terraces and townhouses close to the river, the larger detached homes climbing the hill towards Egloshayle, and the newer housing estates that have spread outwards over the past couple of decades. Each type brings different garden requirements, and I enjoy that variety. I offer everything from regular lawn mowing and hedge trimming to full garden clearances and landscaping projects. I hold a chainsaw licence, carry public liability insurance, and I'm a licensed waste carrier, so the job is handled properly from the first cut to the last bag of green waste.",
+            "Wadebridge sits in the Camel valley, and that sheltered position has a big effect on how gardens behave here. The valley traps warmth and moisture, which means growth is faster and lasts longer than in the more exposed coastal spots I cover. Lawns that might need cutting fortnightly on a windy clifftop need weekly attention in Wadebridge during peak season. I've maintained gardens in Egloshayle where the combination of fertile alluvial soil and sheltered conditions produces thick, lush grass that grows at a remarkable pace from April right through to October. For most Wadebridge gardens, a regular fortnightly maintenance visit keeps things looking tidy without the work becoming a major event. My maintenance visits cover mowing, edging, weeding, and a general tidy, starting from around 60 pounds. Lawn mowing on its own runs between 20 and 50 pounds depending on the size of the garden.",
+            "The Camel Trail is probably the thing most people associate with Wadebridge, and the properties that back onto it or sit near the river have their own particular challenges. Lower-lying gardens close to the River Camel can be prone to waterlogging during heavy winter rainfall, and the soils near the river tend to be a heavy alluvial clay that holds moisture for a long time. I've worked on gardens in Sladesbridge and along the river corridor where standing water through January and February leaves lawns looking tired and patchy by spring. Getting those lawns back into shape with aeration, overseeding, and a proper feed in early spring is one of the more satisfying jobs I do. Higher up the valley towards St Breock and Chapel Amble, the ground becomes more exposed and the soil shifts to a lighter, better-drained mix, but gardens up there catch more wind and boundary hedging takes a battering. Hedge trimming across the Wadebridge area runs between 5 and 15 pounds per linear metre depending on height and access.",
+            "I work with a mix of customers in Wadebridge, from homeowners who want a reliable fortnightly visit to keep everything neat, through to landlords and holiday let owners who need the garden sorted between tenancies. Cleanup jobs start from around 80 pounds, and I remove all green waste as a licensed carrier at 10 pounds per bag. If you are looking for a gardener in Wadebridge who turns up when he says he will, gives you a clear price, and leaves the garden looking properly finished, send me a few photos through the quote form. I'll get back to you within 24 hours with an honest price and a realistic timescale.",
+        ],
+        gardenChallenges:
+            "Wadebridge's position in the Camel valley creates a distinct set of garden challenges. The sheltered, low-lying land near the River Camel is prone to seasonal flooding and prolonged waterlogging, particularly between November and February when rainfall is heaviest. Soils close to the river are predominantly alluvial clay, rich in nutrients but slow to drain, which encourages moss in lawns and makes compaction a recurring problem. This damp, sheltered environment also promotes rapid weed growth and can create ideal conditions for slugs and fungal lawn diseases like red thread and fusarium patch. Properties on higher ground towards St Breock and Chapel Amble face the opposite issue, more exposed to prevailing south-westerly winds, which dry out soils faster and cause windburn on unprotected hedging and border plants.",
+        travelTime: "About 20 minutes",
+        neighborhoods: ["Egloshayle", "Sladesbridge", "St Breock", "Chapel Amble"],
+        landmarks: ["Camel Trail", "River Camel", "Royal Cornwall Showground"],
+        testimonial: null,
+        services: ["lawn-care", "hedge-trimming", "garden-maintenance", "landscaping", "seasonal-cleanup"],
+        nearby: ["padstow", "bodmin", "newquay"],
+    },
+    "st-agnes": {
+        name: "St Agnes",
+        county: "Cornwall",
+        description:
+            "Professional gardening and landscaping in St Agnes, Cornwall. Reliable garden maintenance, hedge trimming, lawn care, and clearance work for this exposed north coast village and surrounding areas including Mithian, Porthtowan, and Peterville.",
+        paragraphs: [
+            "I'm Levi Quilliam, a gardener and landscaper based in Trevarrian near Newquay, and I cover St Agnes and the surrounding villages along this stretch of the north Cornwall coast. St Agnes is a former mining village that sits high above Trevaunance Cove, and it has a character that's quite different from anywhere else I work. The village itself is spread across several distinct areas, from the older cottages clustered around Churchtown and Peterville to the properties further out towards Mithian and Mingoose. Gardens here are shaped by the landscape in a way that's hard to ignore. Steep slopes, thin soils, and relentless wind off the Atlantic all play a part. I offer regular lawn mowing, hedge trimming, garden maintenance, seasonal clearances, and waste removal across St Agnes and the surrounding area. I hold a chainsaw licence, carry public liability insurance, and I'm a licensed waste carrier, so everything is handled properly from first cut to final bag.",
+            "What makes St Agnes gardening different from working in sheltered inland towns is the sheer exposure. The village sits on a clifftop with very little between it and the open ocean, and the prevailing south-westerlies carry salt spray well inland. I've worked on gardens near Wheal Coates and along the lane towards Chapel Porth where hedges are sculpted into lean shapes by the wind before anyone gets near them with a trimmer. Salt burn on foliage is common, especially after winter storms, and plant selection matters enormously here. Griselinia, escallonia, and pittosporum hold up well as boundary hedging, while more tender species just struggle. The soils compound the problem. Much of St Agnes sits on thin, stony ground over granite bedrock, with pockets of mining spoil mixed in from centuries of tin and copper extraction. These soils drain fast, hold very little moisture, and are low in nutrients, so lawns need consistent feeding to stay green through summer.",
+            "St Agnes has a strong community feel, with a mix of long-term residents, families, and people involved in the local arts scene. The gardens reflect that variety. Down in Peterville and along the lanes towards Mithian, you find larger cottage-style plots with established hedgerows, fruit trees, and borders that benefit from seasonal attention. Closer to the coast, properties tend to have smaller, more exposed gardens where practical windbreak planting matters more than anything ornamental. I've also done a fair bit of work in Porthtowan, the coastal village just south of St Agnes, where the gardens face similar wind and salt challenges but sit on slightly different ground. Maintenance visits across the St Agnes area start from around 60 pounds and typically cover mowing, edging, weeding, and a general tidy. Lawn mowing on its own runs between 20 and 50 pounds depending on size, and hedge trimming is 5 to 15 pounds per linear metre based on height and access.",
+            "St Agnes is about 15 minutes from my base in Trevarrian, so it's a straightforward run and I'm in the area regularly. I group jobs locally to keep things efficient, which means I can usually fit new customers in within the same week. If you need a reliable gardener in St Agnes who understands the particular demands of coastal gardens on exposed ground, send a few photos through the quote form and I'll get you a clear price within 24 hours. You tell me what you need, I tell you what it costs, and I turn up when I say I will.",
+        ],
+        gardenChallenges:
+            "St Agnes presents some of the toughest growing conditions on the north Cornwall coast. The village's exposed clifftop position means gardens receive the full force of Atlantic gales carrying salt spray that burns foliage and stunts growth on unprotected plants. The soils are the other major factor. Centuries of tin and copper mining have left much of the area with thin, stony ground that is a mix of granite subsoil and mining waste. These soils are poor in nutrients, drain very quickly, and offer limited root depth for establishing new planting. Steep gradients are common throughout the village, particularly in Churchtown and on the slopes above Trevaunance Cove, making mowing and general access more labour-intensive than on flat ground. Boundary hedging is essential for creating usable garden space in St Agnes, and I always recommend salt-tolerant native species combined with robust evergreens like griselinia or olearia for the most exposed positions.",
+        travelTime: "About 15 minutes",
+        neighborhoods: ["Mithian", "Porthtowan", "Mingoose", "Peterville", "Churchtown"],
+        landmarks: ["St Agnes Beacon", "Wheal Coates", "Trevaunance Cove", "Chapel Porth"],
+        testimonial: null,
+        services: ["lawn-care", "hedge-trimming", "garden-maintenance", "seasonal-cleanup"],
+        nearby: ["perranporth", "truro", "newquay"],
     },
 };

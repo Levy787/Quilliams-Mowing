@@ -2,14 +2,14 @@
   "slug": "Ongoing Garden Maintenance",
   "order": 3,
   "title": "Ongoing Garden Maintenance",
-  "subtitle": "A regular maintenance routine in Grampound, Cornwall — keeping the garden tidy, healthy, and enjoyable with consistent visits and a clean finish every time.",
+  "subtitle": "A regular maintenance routine in Grampound, Cornwall. Keeping the garden tidy, healthy, and enjoyable with consistent visits and a clean finish every time.",
   "locationLabel": "Grampound - Cornwall",
   "template": "image",
   "seo": {
     "title": "Ongoing Garden Maintenance in Grampound, Cornwall",
-    "description": "See how regular garden maintenance visits in Grampound, Cornwall keep this outdoor space tidy, healthy, and easy to enjoy — from general tidy-ups to ongoing upkeep.",
+    "description": "See how regular garden maintenance visits in Grampound near Truro keep this outdoor space tidy and manageable. Visits from £50, half to full day per visit.",
     "ogTitle": "Before & After: Ongoing Garden Maintenance (Grampound)",
-    "ogDescription": "A garden kept looking its best with consistent maintenance — tidier beds, a cleaner overall look, and less work for the homeowner.",
+    "ogDescription": "A garden kept looking its best with consistent maintenance. Tidier beds, a cleaner overall look, and less work for the homeowner.",
     "ogImage": ""
   },
   "hero": {
@@ -30,18 +30,20 @@
   "overview": {
     "label": "Project overview",
     "paragraphs": [
-      "This Grampound garden needed reliable ongoing maintenance to keep it tidy and manageable throughout the year.",
-      "We focus on consistent upkeep — clearing debris, keeping growth under control, and leaving the space looking clean and cared for after every visit.",
-      "Regular maintenance prevents small issues becoming big ones, helping the garden stay enjoyable, presentable, and easier to manage long-term."
+      "This garden in Grampound, a village just south of Truro in mid Cornwall, is one I visit on a regular basis for ongoing maintenance. The homeowner wanted reliable upkeep without having to worry about the garden getting away from them. That is a common situation for people who are busy, have mobility issues, or simply do not enjoy gardening but still want their outdoor space to look decent.",
+      "Each visit typically takes between half a day and a full day depending on the time of year and what needs doing. In spring and summer, growth is faster and there is more weeding, pruning, and general cutting back to handle. Autumn brings leaf clearance and tidying before winter. Winter visits are lighter, usually focused on keeping paths clear and checking for storm damage. The Cornish climate keeps things ticking over year-round, so even the quieter months involve some maintenance.",
+      "The work on a typical visit includes weeding beds and borders, light pruning of shrubs and climbers, clearing debris, tidying around the shed and outbuildings, and making sure paths and edges look clean. If anything bigger crops up, like a hedge that needs cutting or a section that has got out of hand, I flag it and quote separately rather than just adding it to the bill. That way the homeowner always knows what they are paying for.",
+      "The cost for ongoing maintenance visits like this ranges from £50 to £150 per visit, depending on the size of the garden and the scope of work. Green waste is removed at £10 per dumpy bag if needed. Some homeowners prefer to compost their own green waste, which is fine. I carry public liability insurance and am a licensed waste carrier, so everything is handled properly.",
+      "The real benefit of regular maintenance is that the garden never reaches the point where it feels overwhelming. Small problems get dealt with before they turn into big jobs. The homeowner in Grampound has said more than once that they feel relieved knowing it is taken care of. That peace of mind is worth a lot, especially for people who were previously stressing about it every weekend."
     ]
   },
   "whatWeDid": {
-    "label": "What we did",
+    "label": "What I did",
     "bullets": [
       "General tidy-up to remove debris and refresh the space",
       "Weeding and clearing to keep beds and borders under control",
-      "Light pruning/shaping where needed to maintain a neat look",
-      "Final clean-down and leaving paths/areas looking tidy"
+      "Light pruning and shaping where needed to maintain a neat look",
+      "Final clean-down, leaving paths and areas looking tidy"
     ]
   },
   "result": {
@@ -74,22 +76,22 @@
     {
       "id": "how-often-do-you-visit",
       "question": "How often do you offer garden maintenance visits?",
-      "answer": "We can tailor a schedule to your garden and your goals — common options are weekly, fortnightly, or monthly. We’ll recommend what makes sense after a quick look at the space."
+      "answer": "I offer weekly, fortnightly, or monthly visits depending on what the garden needs and the homeowner's budget. For most gardens in Cornwall, fortnightly visits during the growing season and monthly through winter works well. I recommend a schedule after seeing the garden, but it is flexible and can be adjusted as needed."
     },
     {
       "id": "what-is-included",
-      "question": "What’s included in ongoing garden maintenance?",
-      "answer": "Maintenance typically includes general tidy-ups, weeding, light pruning, and keeping the garden looking neat. If you need specific jobs (hedges, clearance, planting, mulching), we can add those as needed."
+      "question": "What's included in ongoing garden maintenance?",
+      "answer": "A typical visit covers weeding, light pruning, border tidying, debris clearance, and path cleaning. If something bigger comes up, like hedge cutting or a clearance job, I quote that separately so there are no surprises on the bill. The aim is to keep the garden looking consistently tidy rather than letting it build up and then doing a big catch-up job."
     },
     {
       "id": "do-you-remove-waste",
       "question": "Do you remove garden waste?",
-      "answer": "Yes — we can remove green waste and leave everything tidy. If you have a green-waste bin or compost and prefer we use that, just let us know."
+      "answer": "Yes. I am a licensed waste carrier and can remove all green waste from site. The charge is £10 per dumpy bag. If the homeowner has their own compost bin or green waste collection and would prefer I use that, no problem at all. Either way, I leave the garden clean and tidy after every visit."
     },
     {
       "id": "can-you-do-one-off",
       "question": "Can I book a one-off tidy-up first?",
-      "answer": "Absolutely. Many clients start with a one-off clear-up, then move onto a regular maintenance plan once the garden is back under control."
+      "answer": "Yes, and that is actually how most of my regular clients started. A one-off tidy-up gets the garden back under control, and then a regular maintenance schedule keeps it there. There is no obligation to sign up for ongoing visits after a one-off. But most people find that once they have seen the difference, they would rather keep it that way than let it slip back."
     }
   ],
   "ctas": {

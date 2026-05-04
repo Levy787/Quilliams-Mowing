@@ -33,7 +33,7 @@ import type { ProjectDetail, ProjectPattern } from "@/lib/keystatic-reader";
 function patternUrl(pattern: ProjectPattern): string {
     return pattern === "pattern-1"
         ? "url('/patterns/pattern-1.png')"
-        : "url('/patterns/pattern-2.svg')";
+        : "url('/patterns/pattern-2.png')";
 }
 
 function parseYouTubeVideoId(url: string): string | null {
@@ -257,7 +257,7 @@ export default function ProjectDetailClient({
                                 >
                                     <Card className="rounded-4xl overflow-hidden border-border/20 bg-background/5 text-background shadow-none p-0 py-0 gap-0">
                                         <div className="relative aspect-16/11 w-full">
-                                            <div className="absolute inset-0 bg-[url('/patterns/pattern-2.svg')] bg-repeat opacity-15" />
+                                            <div className="absolute inset-0 bg-[url('/patterns/pattern-2.png')] bg-repeat opacity-15" />
                                             {resolvedHeroMedia}
                                             <div className="absolute inset-0 bg-linear-to-t from-foreground/80 via-foreground/10 to-transparent" />
                                         </div>
@@ -288,18 +288,18 @@ export default function ProjectDetailClient({
                 </div>
             </section>
 
-            {/* What we did + Result */}
+            {/* What I did + Result */}
             <section className="mx-4 md:mx-8 lg:mx-16 pb-12 md:pb-16">
                 <div className="container mx-auto px-4 lg:px-12">
                     <div className="relative overflow-hidden rounded-4xl border border-border bg-background">
-                        <div className="absolute inset-0 bg-[url('/patterns/pattern-2.svg')] bg-repeat opacity-10" />
+                        <div className="absolute inset-0 bg-[url('/patterns/pattern-2.png')] bg-repeat opacity-10" />
                         <div className="relative p-6 md:p-10">
                             <motion.div {...fadeUp} className="max-w-2xl">
                                 <div className="inline-flex items-center rounded-full bg-muted px-4 py-1.5 text-sm text-muted-foreground">
                                     Breakdown
                                 </div>
                                 <h2 className="mt-5 text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-                                    What changed—and why it works
+                                    What changed, and why it works
                                 </h2>
                                 <p className="mt-4 text-base leading-relaxed text-muted-foreground">
                                     A clean plan, tidy execution, and a finish that holds up.
@@ -351,7 +351,7 @@ export default function ProjectDetailClient({
                             A few angles
                         </h2>
                         <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-                            A quick visual skim—clean lines, tidy structure, and a finished feel.
+                            Clean lines, tidy structure, and a finished feel.
                         </p>
                     </motion.div>
 
@@ -482,7 +482,7 @@ export default function ProjectDetailClient({
                                 Quick answers
                             </h2>
                             <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-                                If you have a similar space, we can recommend a practical approach.
+                                If you have a similar space, I can recommend a practical approach.
                             </p>
                         </motion.div>
 
@@ -518,7 +518,7 @@ export default function ProjectDetailClient({
                                         Want something similar for your garden?
                                     </div>
                                     <p className="mt-3 max-w-2xl text-base leading-relaxed text-background/75">
-                                        Tell us what you want improved and we’ll recommend a practical plan—then quote it clearly.
+                                        Tell me what you want improved and I will recommend a practical plan, then quote it clearly.
                                     </p>
                                     <div className="mt-4 text-sm text-background/75">
                                         <Link
@@ -535,7 +535,7 @@ export default function ProjectDetailClient({
                                         <Link href="/quote">Get a Quote</Link>
                                     </Button>
                                     <Button asChild size="lg" variant="outline">
-                                        <Link href="/contact">Contact Us</Link>
+                                        <Link href="/contact">Contact Me</Link>
                                     </Button>
                                 </div>
                             </div>

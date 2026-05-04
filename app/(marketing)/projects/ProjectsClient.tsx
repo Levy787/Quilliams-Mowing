@@ -138,7 +138,7 @@ export default function ProjectsClient({
                                 >
                                     <Card className="rounded-4xl overflow-hidden border-border/20 bg-background/5 text-background shadow-none p-0 py-0 gap-0">
                                         <div className="relative aspect-16/11 w-full">
-                                            <div className="absolute inset-0 bg-[url('/patterns/pattern-2.svg')] bg-repeat opacity-15" />
+                                            <div className="absolute inset-0 bg-[url('/patterns/pattern-2.png')] bg-repeat opacity-15" />
                                             {heroImageSrc ? (
                                                 <Image
                                                     src={heroImageSrc}

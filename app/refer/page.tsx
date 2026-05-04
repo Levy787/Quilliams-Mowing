@@ -14,6 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
         seo: referral.seo,
         fallbackTitle: "Refer a Friend",
         fallbackDescription: referral.hero.subheading,
+        canonicalPath: "/refer",
     });
 }
 

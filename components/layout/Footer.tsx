@@ -8,6 +8,7 @@ import { toast } from "sonner";
 import {
     Facebook,
     Instagram,
+    Mail,
     PhoneCall,
     X,
     Youtube,
@@ -21,10 +22,7 @@ import { Turnstile, type TurnstileHandle } from "@/components/TurnstileWidget";
 import { openCookieSettings } from "@/components/CookieBanner";
 
 const DEFAULT_BUSINESS_HOURS = [
-    { dayLabel: "Mon – Fri", hours: "08:00 am : 05:00 pm" },
-    { dayLabel: "Saturday", hours: "Closed" },
-    { dayLabel: "Sunday", hours: "Closed" },
-    { dayLabel: "Bank Holidays", hours: "Closed" },
+    { dayLabel: "Mon – Sun", hours: "09:00 am : 05:00 pm" },
 ] as const;
 
 const DEFAULT_SOCIAL_LINKS = [
@@ -87,13 +85,15 @@ export function FooterInner({
     phoneLabel = "Phone",
     phoneNumber = "07593121621",
     phoneDisplay = "07593 121 621",
+    emailLabel = "Email",
+    emailAddress = "levi@quilliamsmowing.co.uk",
     subscribeHeading = "Subscribe Us",
     subscribeText = "Subscribe & Receive Our Offers and Updates to Your Inbox Directly.",
     socialLinks = DEFAULT_SOCIAL_LINKS,
     copyrightText =
     "Copyright © 2025 Quilliams Gardening & Landscaping, All Rights Reserved.",
-    creditText = "TradeSender",
-    creditHref = "https://www.tradesender.co.uk/",
+    creditText = "Quilliam.ai",
+    creditHref = "https://quilliam.ai/",
     footerLinks = DEFAULT_FOOTER_LINKS,
 }: {
     logoSrc?: string;
@@ -105,6 +105,8 @@ export function FooterInner({
     phoneLabel?: string;
     phoneNumber?: string;
     phoneDisplay?: string;
+    emailLabel?: string;
+    emailAddress?: string;
     subscribeHeading?: string;
     subscribeText?: string;
     socialLinks?: ReadonlyArray<{ platform: SocialPlatform; href: string }>;
@@ -271,9 +273,24 @@ export function FooterInner({
                                     <div className="text-sm text-background/90">{phoneLabel || "Phone"}</div>
                                     <Link
                                         href={`tel:${phoneNumber || "07593121621"}`}
-                                        className={"mt-1 text-3xl font-semibold tracking-tight hover:underline"}
+                                        className={"mt-1 text-xl font-semibold tracking-tight hover:underline"}
                                     >
                                         {phoneDisplay || phoneNumber || "07593 121 621"}
+                                    </Link>
+                                </div>
+                            </div>
+
+                            <div className="mt-6 flex items-center gap-4">
+                                <div className="shrink-0">
+                                    <Mail className="h-10 w-10 text-primary" aria-hidden="true" />
+                                </div>
+                                <div>
+                                    <div className="text-sm text-background/90">{emailLabel || "Email"}</div>
+                                    <Link
+                                        href={`mailto:${emailAddress}`}
+                                        className={"mt-1 text-xl font-semibold tracking-tight hover:underline"}
+                                    >
+                                        {emailAddress}
                                     </Link>
                                 </div>
                             </div>
@@ -379,7 +396,7 @@ export function FooterInner({
                             <h4 className="text-sm font-semibold text-background">Areas</h4>
                             <ul className="mt-3 space-y-2">
                                 {[
-                                    { label: "Newquay", href: "/areas" },
+                                    { label: "Newquay", href: "/areas/newquay" },
                                     { label: "Truro", href: "/areas/truro" },
                                     { label: "St Austell", href: "/areas/st-austell" },
                                     { label: "Bodmin", href: "/areas/bodmin" },
@@ -435,7 +452,7 @@ export function FooterInner({
                             {copyrightText}
                         </div>
                         <div className="text-sm text-background/90">
-                            Designed and Developed by{" "}
+                            Powered by{" "}
                             <Link
                                 href={creditHref}
                                 target="_blank"

@@ -3,6 +3,7 @@ import { NavbarWithContent } from "@/components/layout/NavbarWithContent";
 import { FooterWithContent } from "@/components/layout/FooterWithContent";
 import { CookieBanner } from "@/components/CookieBanner";
 import { LocalBusinessSchema } from "@/components/seo/LocalBusinessSchema";
+import { WebSiteSchema } from "@/components/seo/WebSiteSchema";
 import { StickyMobileCTA } from "@/components/StickyMobileCTA";
 import { ExitIntentPopup } from "@/components/ExitIntentPopup";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
@@ -15,6 +16,7 @@ export default function Layout({
     return (
         <>
             <LocalBusinessSchema />
+            <WebSiteSchema />
             <Banner />
             <NavbarWithContent />
             {children}

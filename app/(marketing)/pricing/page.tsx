@@ -8,6 +8,7 @@ import { PricingHero } from "./PricingHero";
 import { getPricingContent } from "@/lib/keystatic-reader";
 import { buildMetadata } from "@/lib/seo";
 import { FAQSchema } from "@/components/seo/FAQSchema";
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 
 export async function generateMetadata(): Promise<Metadata> {
     const pricing = await getPricingContent();
@@ -31,6 +32,7 @@ export default async function PricingPage() {
 
     return (
         <main>
+            <BreadcrumbSchema items={[{ name: "Home", href: "/" }, { name: "Pricing", href: "/pricing" }]} />
             <FAQSchema items={faqItems} />
             <PricingHero {...pricing.hero} />
             <PricingCalculator {...pricing.calculator} />

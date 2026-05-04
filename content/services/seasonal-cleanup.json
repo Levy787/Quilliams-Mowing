@@ -2,10 +2,10 @@
   "slug": "seasonal-cleanup",
   "label": "Seasonal Cleanup",
   "title": "Seasonal Cleanup",
-  "description": "Seasonal garden cleanup and clearance in Newquay, Cornwall. Clear overgrown areas, remove waste, and reset your garden. Local, reliable service.",
+  "description": "I offer seasonal garden cleanup and clearance across Newquay, Truro, St Austell, Bodmin, and the wider Cornwall area. Whether your garden has been let go over winter, needs a spring reset, or just wants tidying before autumn sets in, I will clear the mess, cut back the overgrowth, and leave it looking sharp. Cleanups start from £80, and every quote is clear and fixed before I begin.",
   "seo": {
     "title": "Seasonal Garden Cleanup in Newquay & Cornwall | Garden Clearance",
-    "description": "Seasonal garden cleanup and clearance in Newquay, Cornwall. Clear overgrown areas, remove waste, and reset your garden. Local, reliable service."
+    "description": "Garden clearance and seasonal cleanup in Newquay, Truro and Cornwall. Overgrown garden clearance from £80. Licensed waste carrier, green waste £10 per bag. One-off jobs, clear fixed quotes."
   },
   "cardTag": "Popular",
   "cardIcon": "Wind",
@@ -29,36 +29,36 @@
   "included": {
     "label": "What’s included",
     "title": "A clear, practical reset for the season",
-    "description": "We’ll focus on the work that makes the biggest difference: clearing, cutting back, tidying structure, and leaving a clean finish.",
+    "description": "Seasonal cleanups are honestly my favourite type of job. They give the biggest visual difference in the shortest time, and there is something satisfying about taking a garden that feels overwhelming and turning it into something manageable again. I focus on the work that makes the most impact first, clearing the bulk, cutting back hard where needed, then tidying the details so the whole space feels reset. In Cornwall, gardens rarely stop growing entirely, even through winter. That means things can get ahead of you quickly, and a proper seasonal cleanup twice a year keeps everything under control.",
     "items": [
       {
         "title": "General clear-out",
-        "description": "Remove the built-up mess so the garden feels usable again.",
+        "description": "I start by removing the built-up mess: leaf litter, dead plant material, dumped garden waste, and anything else that has accumulated. This alone makes most gardens feel dramatically different. Cornwall's mild, wet winters produce a surprising volume of organic debris, so clearing it thoroughly is the foundation of every cleanup.",
         "icon": "Trash2"
       },
       {
         "title": "Cut back & tidy",
-        "description": "A sensible prune and tidy for a cleaner shape.",
+        "description": "Overgrown shrubs, wayward branches, and tangled climbers all get cut back to a sensible shape. I hold a chainsaw licence, so I can handle larger jobs including thick hedge reduction and fallen limb removal. The goal is a clean, natural shape that suits the plant and the space around it.",
         "icon": "Brush"
       },
       {
         "title": "Bed cleanup",
-        "description": "Clear and tidy borders so everything looks sharper.",
+        "description": "Borders and beds tend to disappear under weeds and self-seeded plants over the course of a season. I clear them out, pull weeds properly, and redefine the planting areas so they look intentional again. For gardens near the coast around Newquay and Perranporth, I also clear salt-damaged foliage and suggest hardier replacements where plants have struggled.",
         "icon": "Sprout"
       },
       {
         "title": "Edges and borders",
-        "description": "Crisp lines that make the garden feel more finished.",
+        "description": "Clean edges between lawn and border make an instant difference to how finished a garden looks. I cut fresh, crisp lines with a half-moon edger, and tidy along paths, patios, and fence lines. This is the detail that separates a quick tidy from a proper cleanup.",
         "icon": "Ruler"
       },
       {
         "title": "Season-aware plan",
-        "description": "Practical advice for what to do next and when.",
+        "description": "After the cleanup, I will let you know what to prioritise next and when to do it. Spring cleanups in Cornwall are best done by late March so beds are ready for the growing season. Autumn cleanups work best in October or early November, before leaf fall peaks and the wetter weather settles in.",
         "icon": "Leaf"
       },
       {
         "title": "Polished finish",
-        "description": "A tidy, complete look—not half-done.",
+        "description": "I do not leave half-done. Every cleanup finishes with a sweep of paths and patios, a final check of the borders, and a blow-down of any loose debris. The aim is to hand the garden back in a state where you can enjoy it straight away.",
         "icon": "Sparkles"
       }
     ]
@@ -70,7 +70,7 @@
   "results": {
     "label": "Recent results",
     "title": "From messy to manageable",
-    "description": "A seasonal reset makes ongoing upkeep easier and the whole space feel more presentable.",
+    "description": "The before-and-after on a seasonal cleanup is always dramatic. Gardens that look overwhelming and neglected in the morning are clean, open, and manageable by the afternoon. These are the kind of transformations I enjoy most, and the ones where customers are genuinely surprised by how different their own garden can look.",
     "headerCtas": {
       "primaryText": "Get a Quote",
       "primaryHref": "/quote",
@@ -107,21 +107,21 @@
   "valueBand": {
     "label": "Value",
     "title": "A reset that makes the whole garden feel better",
-    "description": "Seasonal cleanups are about momentum: once it’s tidy again, everything becomes simpler to maintain.",
+    "description": "A seasonal cleanup is about momentum. Once the garden is back to a clean baseline, everything becomes simpler to maintain. The weekly mow takes less time, the weeds are easier to spot, and the borders hold their shape for longer. Most of my cleanup customers book twice a year, once in spring and once in autumn, which keeps things manageable year-round. In Cornwall’s mild climate, where growth barely pauses even in winter, that regular reset makes a real difference.",
     "bullets": [
       {
         "title": "Immediate difference",
-        "description": "Clearer, cleaner, and more presentable straight away.",
+        "description": "The transformation is visible straight away. Overgrown borders become defined, cluttered paths become clear, and the whole space feels lighter and more open. Most cleanups are finished in a single visit, so you see the full result the same day.",
         "icon": "Sparkles"
       },
       {
         "title": "Easier upkeep next",
-        "description": "Less catch-up work week to week.",
+        "description": "Once the hard reset is done, regular upkeep takes far less effort. Mowing is quicker, weeds are easier to manage, and seasonal tasks like feeding and planting become practical again. A good cleanup sets you up for months.",
         "icon": "Leaf"
       },
       {
         "title": "Straightforward quote",
-        "description": "Clear scope and a tidy finish you can see.",
+        "description": "Cleanups start from £80, with the final cost depending on the size of the garden and the amount of work needed. Green waste removal is £10 per dumpy bag. I quote a clear, fixed price after seeing the space, so you know exactly what you are paying before I start.",
         "icon": "Shovel"
       }
     ],
@@ -141,33 +141,33 @@
       {
         "id": "when",
         "question": "When should I book a seasonal cleanup?",
-        "answer": "Spring and autumn are common, but it depends on your garden. Tell us what you want achieved and we’ll advise."
+        "answer": "The most popular times are early spring and late autumn. A spring cleanup clears winter debris, cuts back dead growth, and gets your garden ready for the growing season. An autumn cleanup tackles fallen leaves, cuts back perennials, and tidies everything before winter sets in. Cornwall’s mild climate means the growing season runs longer here than in most of the UK, so an autumn cleanup in October or November can make a big difference. I would recommend booking a couple of weeks ahead during peak times, as spring and autumn slots fill up quickly."
       },
       {
         "id": "scope",
         "question": "What’s included in a cleanup?",
-        "answer": "Usually clearing, tidying beds, light pruning/cut back, edges, and a clean finish. We’ll confirm in your quote."
+        "answer": "A seasonal cleanup covers everything needed to get a neglected or tired garden back into shape. That typically includes leaf clearance, border weeding, cutting back overgrown plants, lawn mowing, strimming edges, and a general tidy of paths and hard surfaces. Cleanups start from £80, with the final cost depending on the size of the garden and how much work is needed. I will always quote you a clear price after seeing the space so there are no surprises. If there is something specific you want prioritised, just let me know."
       },
       {
         "id": "waste",
         "question": "Do you remove waste?",
-        "answer": "Yes—waste removal can be included. Let us know what you want taken away."
+        "answer": "Yes, all waste from seasonal cleanups is removed and taken off-site. Green waste removal is charged at £10 per dumpy bag. I am a licensed waste carrier, so everything is disposed of properly and in line with regulations. Cleanups can produce a fair amount of green waste, especially after autumn leaf fall or when cutting back overgrown areas. I will include an estimate for waste removal in your quote so the total cost is clear from the start."
       },
       {
         "id": "one-off",
         "question": "Can this be a one-off job?",
-        "answer": "Yes—seasonal cleanups are commonly one-off resets."
+        "answer": "Yes, seasonal cleanups are typically booked as one-off jobs. Most customers book one in spring, autumn, or both, rather than as part of an ongoing schedule. It is a good option if your garden only needs attention a couple of times a year, or if you handle most of the upkeep yourself but want help with the bigger seasonal tasks. If after the cleanup you decide you would like regular maintenance visits to keep things ticking over, I can arrange that too."
       },
       {
         "id": "area",
         "question": "Do you cover my area?",
-        "answer": "Send your postcode and we’ll confirm availability."
+        "answer": "I am based near Newquay and cover a good chunk of Cornwall, including Truro, St Austell, Bodmin, Padstow, Perranporth, and St Ives. If you are within that area, I can usually fit you in without any issue. If you are slightly further afield, feel free to get in touch anyway and I will let you know if I can help."
       }
     ]
   },
   "finalCta": {
-    "title": "Want a proper garden reset for the season?",
-    "description": "Tell us what needs clearing and we’ll recommend a practical plan—then quote it clearly.",
+    "title": "Ready for a proper garden reset this season?",
+    "description": "Tell me what needs clearing and I will put together a practical plan with a clear, fixed quote. I cover Newquay, Truro, St Austell, Bodmin, Padstow, Perranporth, and surrounding areas across Cornwall.",
     "primaryText": "Get a Quote",
     "primaryHref": "/quote",
     "secondaryText": "Contact Us",

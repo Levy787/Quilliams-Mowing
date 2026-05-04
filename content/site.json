@@ -58,20 +58,8 @@
     "businessHoursHeading": "Business Hours",
     "businessHours": [
       {
-        "dayLabel": "Mon – Fri",
-        "hours": "08:00 am : 05:00 pm"
-      },
-      {
-        "dayLabel": "Saturday",
-        "hours": "Closed"
-      },
-      {
-        "dayLabel": "Sunday",
-        "hours": "Closed"
-      },
-      {
-        "dayLabel": "Bank Holidays",
-        "hours": "Closed"
+        "dayLabel": "Mon – Sun",
+        "hours": "09:00 am : 05:00 pm"
       }
     ],
     "phoneLabel": "Phone",
@@ -90,8 +78,8 @@
       }
     ],
     "copyrightText": "Copyright © 2026 Quilliams Gardening & Landscaping, All Rights Reserved.",
-    "creditText": "TradeSender",
-    "creditHref": "https://www.tradesender.co.uk/"
+    "creditText": "Quilliam.ai",
+    "creditHref": "https://quilliam.ai/"
   },
   "assets": {
     "faviconPngFile": "assets/faviconPngFile.ico",

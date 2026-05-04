@@ -122,7 +122,7 @@ export function Hero({
                                 </div>
                             ))}
                             {imagesLeft.map((image, index) => (
-                                <div key={index} className="relative aspect-[3/4] rounded-xl overflow-hidden shrink-0">
+                                <div key={`dup-${index}`} className="relative aspect-[3/4] rounded-xl overflow-hidden shrink-0">
                                     {resolveImageSrc(image) ? (
                                         <Image
                                             src={resolveImageSrc(image)}
@@ -131,8 +131,6 @@ export function Hero({
                                             className="object-cover"
                                             sizes="(max-width: 768px) 45vw, 18vw"
                                             quality={60}
-                                            priority={index === 0}
-                                            fetchPriority={index === 0 ? "high" : "auto"}
                                         />
                                     ) : null}
                                 </div>
@@ -152,14 +150,12 @@ export function Hero({
                                             className="object-cover"
                                             sizes="(max-width: 768px) 45vw, 18vw"
                                             quality={60}
-                                            priority={index === 0}
-                                            fetchPriority={index === 0 ? "high" : "auto"}
                                         />
                                     ) : null}
                                 </div>
                             ))}
                             {imagesRight.map((image, index) => (
-                                <div key={index} className="relative aspect-[3/4] rounded-xl overflow-hidden shrink-0">
+                                <div key={`dup-${index}`} className="relative aspect-[3/4] rounded-xl overflow-hidden shrink-0">
                                     {resolveImageSrc(image) ? (
                                         <Image
                                             src={resolveImageSrc(image)}
@@ -168,8 +164,6 @@ export function Hero({
                                             className="object-cover"
                                             sizes="(max-width: 768px) 45vw, 18vw"
                                             quality={60}
-                                            priority={index === 0}
-                                            fetchPriority={index === 0 ? "high" : "auto"}
                                         />
                                     ) : null}
                                 </div>

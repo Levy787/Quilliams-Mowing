@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 
 import { buildMetadata } from "@/lib/seo";
 import { areas } from "@/lib/areas/data";
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 
 export async function generateStaticParams() {
     return Object.keys(areas).map((slug) => ({ slug }));
@@ -44,6 +45,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
     
     return (
         <main className="min-h-screen bg-background">
+            <BreadcrumbSchema items={[{ name: "Home", href: "/" }, { name: "Areas", href: "/areas" }, { name: area.name, href: `/areas/${slug}` }]} />
             <div className="container mx-auto px-4 py-16 max-w-4xl">
                 <nav className="text-sm text-muted-foreground mb-8">
                     <Link href="/" className="hover:text-primary">Home</Link>
@@ -62,14 +64,33 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
                 </p>
                 
                 <div className="prose prose-lg max-w-none mb-12">
-                    <p>{area.description}</p>
+                    {area.paragraphs.map((paragraph, index) => (
+                        <p key={index}>{paragraph}</p>
+                    ))}
                 </div>
-                
+
+                <section className="mb-12">
+                    <h2 className="text-2xl font-semibold mb-4">Garden Challenges in {area.name}</h2>
+                    <div className="prose prose-lg max-w-none">
+                        <p>{area.gardenChallenges}</p>
+                    </div>
+                </section>
+
+                {area.testimonial && (
+                    <section className="mb-12 bg-muted/50 rounded-lg p-8">
+                        <h2 className="text-2xl font-semibold mb-4">What Customers in {area.name} Say</h2>
+                        <blockquote className="text-lg italic text-muted-foreground">
+                            &ldquo;{area.testimonial.quote}&rdquo;
+                        </blockquote>
+                        <p className="mt-3 font-medium">{area.testimonial.name}, {area.testimonial.location}</p>
+                    </section>
+                )}
+
                 <section className="mb-12">
                     <h2 className="text-2xl font-semibold mb-6">Services Available in {area.name}</h2>
                     <div className="grid gap-4 sm:grid-cols-2">
                         {area.services.map((service) => (
-                            <Link 
+                            <Link
                                 key={service}
                                 href={`/services/${service}`}
                                 className="p-4 border rounded-lg hover:border-primary transition-colors"
@@ -82,27 +103,32 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
                         ))}
                     </div>
                 </section>
-                
+
                 <section className="mb-12">
-                    <h2 className="text-2xl font-semibold mb-4">Why Choose Us in {area.name}?</h2>
+                    <h2 className="text-2xl font-semibold mb-4">Why Choose Me in {area.name}?</h2>
                     <ul className="space-y-3">
                         <li className="flex items-start gap-3">
-                            <span className="text-primary">✓</span>
-                            <span>Local to {area.county} — quick response times</span>
+                            <span className="text-primary font-bold">✓</span>
+                            <span>{area.travelTime} from my base in Trevarrian</span>
                         </li>
                         <li className="flex items-start gap-3">
-                            <span className="text-primary">✓</span>
-                            <span>Reliable, scheduled visits</span>
+                            <span className="text-primary font-bold">✓</span>
+                            <span>Chainsaw licensed, fully insured, licensed waste carrier</span>
                         </li>
                         <li className="flex items-start gap-3">
-                            <span className="text-primary">✓</span>
-                            <span>Fully equipped for all garden sizes</span>
+                            <span className="text-primary font-bold">✓</span>
+                            <span>Clear, fixed quotes within 24 hours</span>
                         </li>
                         <li className="flex items-start gap-3">
-                            <span className="text-primary">✓</span>
-                            <span>Fair, transparent pricing</span>
+                            <span className="text-primary font-bold">✓</span>
+                            <span>5-star rated with 120+ projects completed across Cornwall</span>
                         </li>
                     </ul>
+                    {area.neighborhoods.length > 0 && (
+                        <p className="mt-4 text-muted-foreground text-sm">
+                            Covering {area.neighborhoods.join(", ")} and surrounding {area.name} areas.
+                        </p>
+                    )}
                 </section>
                 
                 {area.nearby.length > 0 && (

@@ -2,10 +2,10 @@
   "slug": "garden-maintenance",
   "label": "Garden Maintenance",
   "title": "Garden Maintenance",
-  "description": "Garden maintenance services in Newquay and Cornwall. Regular visits to keep your garden tidy and healthy. Reliable local gardener for ongoing garden care.",
+  "description": "Regular garden maintenance across Newquay, Truro, St Austell, Bodmin, and the wider Cornwall area. I offer weekly, fortnightly, and monthly visits to keep your garden tidy, healthy, and manageable throughout the year. Cornwall's mild coastal climate means gardens here stay active well into autumn and start growing early in spring, so consistent upkeep makes a real difference compared to letting things build up. Visits are priced between £60 and £120 depending on garden size and the work involved. I am a reliable, insured local gardener with a farming background, and I treat every garden as if it were my own.",
   "seo": {
     "title": "Garden Maintenance in Newquay & Cornwall | Regular Garden Care",
-    "description": "Garden maintenance services in Newquay and Cornwall. Regular visits to keep your garden tidy and healthy. Reliable local gardener for ongoing garden care."
+    "description": "Garden maintenance in Newquay, Truro, St Austell and Cornwall. Weekly, fortnightly, and monthly visits from £60. Reliable local gardener for ongoing garden care. Free quote."
   },
   "cardTag": "Popular",
   "cardIcon": "Flower2",
@@ -27,38 +27,38 @@
     "secondaryHref": "/contact"
   },
   "included": {
-    "label": "What’s included",
+    "label": "What's included",
     "title": "The routine jobs that keep a garden in shape",
-    "description": "We focus on the essentials: tidy beds, neat edges, sensible pruning, and a clean finish—plus practical advice when you want it.",
+    "description": "I focus on the practical essentials that keep a garden looking its best. That means tidy beds, neat edges, sensible pruning, and a clean finish every time I visit. I tailor each session to what actually needs doing rather than following a rigid checklist, because gardens change week to week with the weather. I also offer straightforward advice on seasonal tasks so you know what is coming up and can plan ahead. Cornwall's longer growing season means there is always something to stay on top of, and regular visits prevent small jobs from turning into big ones.",
     "items": [
       {
         "title": "General tidy & reset",
-        "description": "A quick refresh that makes everything feel looked after.",
+        "description": "A quick refresh each visit that makes the whole garden feel looked after. I will clear fallen leaves, pick up debris, tidy around bins and sheds, and make sure nothing looks neglected. First impressions matter, and a general tidy is often what makes the biggest difference to how a garden feels day to day.",
         "icon": "Sparkles"
       },
       {
         "title": "Weeding & bed care",
-        "description": "Keep beds clean so plants have space to thrive.",
+        "description": "Keeping beds weeded and clear gives your plants the space and light they need to thrive. I remove weeds by hand and hoe where appropriate, and I will flag anything that is spreading aggressively before it becomes a bigger problem. Cornwall's damp, mild climate means weeds can establish quickly, so regular attention here saves a lot of effort later.",
         "icon": "Sprout"
       },
       {
         "title": "Borders & edging",
-        "description": "Crisp edges that instantly lift the look of a garden.",
+        "description": "Crisp lawn edges and clean border lines instantly lift the look of any garden. I use a half-moon edger and line trimmer to keep boundaries sharp between lawn, beds, paths, and paving. This is one of those small details that makes a surprisingly big difference to the overall appearance.",
         "icon": "Ruler"
       },
       {
         "title": "Light pruning (as needed)",
-        "description": "Small trims to keep growth under control and tidy.",
+        "description": "Light pruning on shrubs, climbers, and smaller plants to keep growth tidy and under control. I will cut back anything that is encroaching on paths or blocking light, and I will time pruning to suit the plant species so you are not accidentally removing next season's flowers. For larger pruning jobs or tree work, I will let you know and quote separately.",
         "icon": "Brush"
       },
       {
         "title": "Green waste removal (optional)",
-        "description": "Clippings and waste can be collected and taken away.",
+        "description": "All garden waste, clippings, and prunings can be collected and removed from site. Green waste removal is £10 per dumpy bag, and I am a licensed waste carrier so everything is disposed of responsibly. For regular maintenance customers the waste produced each visit is usually quite manageable, and I will let you know the likely cost upfront.",
         "icon": "Trash2"
       },
       {
         "title": "Season-aware advice",
-        "description": "Simple next-step guidance to keep things manageable.",
+        "description": "Practical, season-aware advice on what needs doing next. Whether it is the right time to cut back perennials, when to mulch, or how to prepare beds for winter, I will keep you informed so nothing gets missed. Cornwall's climate is forgiving, but getting the timing right on seasonal tasks still makes a noticeable difference to how the garden performs.",
         "icon": "Leaf"
       }
     ]
@@ -66,11 +66,11 @@
   "plans": {
     "label": "Regular care",
     "title": "Choose a maintenance schedule that suits you",
-    "description": "Weekly, fortnightly, or seasonal visits—pick what keeps your garden looking the way you want, without overdoing it.",
+    "description": "Most of my garden maintenance customers in Cornwall choose fortnightly visits during the growing season, which runs from roughly March through to November here. Weekly visits suit larger gardens or those that need a consistently tidy appearance, while monthly visits work well for lower-maintenance gardens where you just want someone to keep on top of things. Visits are priced between £60 and £120 depending on garden size. I will recommend the right schedule based on your garden and what you want prioritised.",
     "cards": [
       {
         "title": "Weekly visit",
-        "description": "For gardens that need a consistently tidy look all the time.",
+        "description": "Best for larger gardens or those where presentation needs to stay sharp at all times. Weekly visits keep everything under control so the garden always looks its best. Particularly useful during the fast-growing months from April to September when beds, borders, and lawns all need regular attention.",
         "bullets": [
           "Quick tidy",
           "Beds and edges",
@@ -80,7 +80,7 @@
       },
       {
         "title": "Fortnightly visit",
-        "description": "A dependable rhythm that keeps things in good shape.",
+        "description": "The most popular option across my customers in Cornwall. Fortnightly visits give me enough time to cover everything that needs doing without the cost of weekly attendance. Your garden stays tidy and manageable, and I can adjust the schedule seasonally as growth slows down over winter.",
         "bullets": [
           "Weeding and bed care",
           "Tidy borders",
@@ -90,7 +90,7 @@
       },
       {
         "title": "Monthly tidy",
-        "description": "A bigger reset to stop things drifting.",
+        "description": "A bigger, more thorough visit once a month to stop things drifting. This suits gardens that are relatively low-maintenance or where you do some of the lighter work yourself and just need someone to handle the bigger tasks regularly. I will prioritise the jobs that make the most visible difference each time.",
         "bullets": [
           "General tidy",
           "Beds refreshed",
@@ -100,7 +100,7 @@
       },
       {
         "title": "Seasonal refresh",
-        "description": "A focused tidy to set the garden up for the season ahead.",
+        "description": "A focused tidy at the start of spring or autumn to set the garden up for what is ahead. Spring refreshes often involve cutting back winter growth, weeding beds, edging, and a general clear-up. Autumn visits focus on leaf clearance, cutting back perennials, and preparing borders for the cooler months.",
         "bullets": [
           "Cut back and tidy",
           "Waste cleared",
@@ -119,7 +119,7 @@
   "results": {
     "label": "Recent results",
     "title": "A maintained garden feels calmer",
-    "description": "A consistent tidy-up makes everything look sharper—beds, borders, and structure all feel more intentional.",
+    "description": "A well-maintained garden feels calmer and more enjoyable to spend time in. These are recent maintenance jobs from gardens around Newquay and the surrounding Cornwall area. The difference is not usually one dramatic change but the steady accumulation of small, consistent improvements, visit after visit.",
     "headerCtas": {
       "primaryText": "Get a Quote",
       "primaryHref": "/quote",
@@ -129,7 +129,7 @@
     "cards": [
       {
         "title": "Clean borders + tidy beds",
-        "description": "A simple refresh that makes the garden feel looked after again.",
+        "description": "A thorough border tidy and bed refresh on a family garden near Newquay. Weeds cleared, edges re-cut, and the whole space left looking cared for and welcoming.",
         "imageFile": "results/cards/0/imageFile.webp",
         "imageAlt": "Tidy garden with neat lawn edges and trimmed borders",
         "ctaText": "View more details",
@@ -137,7 +137,7 @@
       },
       {
         "title": "Consistent upkeep",
-        "description": "Regular visits keep everything presentable week after week.",
+        "description": "Regular fortnightly visits on a medium-sized garden. Consistent upkeep means the lawn stays even, beds stay clear, and the garden always looks presentable without any big catch-up jobs.",
         "imageSrc": "/images/IMG_20250715_29185.webp",
         "imageAlt": "Well-kept garden after regular maintenance",
         "ctaText": "View more details",
@@ -145,7 +145,7 @@
       },
       {
         "title": "Reset after overgrowth",
-        "description": "A tidy reset that makes the space easier to maintain going forward.",
+        "description": "A full garden reset after a property had been left unattended for several months. Beds cleared, lawn brought back to shape, and hedges trimmed. Now on a regular fortnightly schedule to keep things manageable going forward.",
         "imageSrc": "/images/IMG_20240509_41792.webp",
         "imageAlt": "Garden looking neat after a maintenance reset",
         "ctaText": "View more details",
@@ -156,21 +156,21 @@
   "valueBand": {
     "label": "Value",
     "title": "A garden that stays tidy without the hassle",
-    "description": "The goal is consistency: a clear plan, reliable visits, and a finish that makes your whole property feel better kept.",
+    "description": "The goal is consistency. A clear plan, reliable visits, and a finish that makes your whole property feel better kept. I turn up when I say I will, I focus on the jobs that make the most visible difference, and I communicate clearly if anything changes. Regular garden maintenance in Cornwall is the most cost-effective way to keep your outdoor space looking good, because preventing problems is always cheaper than fixing them.",
     "bullets": [
       {
         "title": "Looks cared for",
-        "description": "Small details add up—beds, borders, and structure feel sharper.",
+        "description": "Small details add up over time. Clean beds, crisp edges, tidy borders, and well-shaped structure plants all contribute to a garden that feels properly looked after rather than occasionally tidied.",
         "icon": "Sparkles"
       },
       {
         "title": "Easier upkeep",
-        "description": "Regular attention prevents big catch-up jobs.",
+        "description": "Regular attention prevents the kind of overgrowth that leads to expensive catch-up jobs. Staying on top of weeding, pruning, and edging each visit means the garden never gets ahead of you.",
         "icon": "Leaf"
       },
       {
         "title": "Straightforward process",
-        "description": "Clear quote, clear schedule, and good communication.",
+        "description": "A clear quote before any work starts, a consistent schedule you can rely on, and honest communication if anything needs flagging. No surprises on the invoice and no chasing me for updates.",
         "icon": "Shovel"
       }
     ],
@@ -185,38 +185,38 @@
   "faq": {
     "label": "FAQs",
     "title": "Quick answers",
-    "description": "If you don’t see your question here, just get in touch.",
+    "description": "If you don't see your question here, just get in touch.",
     "items": [
       {
         "id": "what-included",
-        "question": "What’s included in garden maintenance?",
-        "answer": "It depends on your garden, but typically bed care, weeding, light pruning, tidy edges, and a clean finish. We’ll confirm details in your quote."
+        "question": "What's included in garden maintenance?",
+        "answer": "Garden maintenance covers the regular tasks that keep your garden looking its best. That typically includes lawn mowing, border weeding, hedge trimming, leaf clearance, light pruning, and general tidying. I tailor each visit to what actually needs doing at the time rather than running through a rigid checklist. Cornwall's longer growing season means gardens here stay active well into autumn and start early in spring, so consistent upkeep makes a real difference. Regular visits are priced between £60 and £120 per visit depending on garden size. I will always discuss what you want prioritised so your garden gets the attention where it matters most."
       },
       {
         "id": "schedule",
         "question": "Do you offer regular visits?",
-        "answer": "Yes—weekly, fortnightly, monthly, and seasonal options depending on the time of year and what you want maintained."
+        "answer": "Yes, regular visits are one of the most popular things I offer. Most customers book fortnightly visits during the growing season, though some prefer weekly or monthly depending on the size of their garden and how quickly things grow. Regular visits are priced at £60 to £120 per visit depending on garden size. Booking regular slots means your garden never gets ahead of you, and it is more cost-effective than letting things build up and needing a big catch-up job. I keep a consistent schedule so you know when to expect me."
       },
       {
         "id": "waste",
         "question": "Can you remove green waste?",
-        "answer": "Yes—waste removal can be included. Let us know what you’d like taken away when requesting a quote."
+        "answer": "Yes, I can take away all green waste from maintenance visits. Removal is charged at £10 per dumpy bag, and I am a licensed waste carrier so everything is disposed of responsibly and in line with regulations. For regular maintenance customers, the waste produced each visit is usually quite manageable. I will let you know the likely waste cost upfront so there are no surprises on the invoice."
       },
       {
         "id": "one-off",
         "question": "Can you do a one-off tidy?",
-        "answer": "Yes—one-off resets are available, especially as a starting point before regular maintenance."
+        "answer": "Yes, one-off garden tidies are something I do regularly. Whether you have let things slip over winter, you are preparing a property for sale, or you just want a fresh start, I can come in and get everything back under control. This usually involves mowing, strimming, weeding, pruning, and clearing debris. The cost depends on the size of the garden and how much work is involved, so I will give you a clear quote after seeing the space. Many customers start with a one-off tidy and then move onto regular maintenance to keep things manageable."
       },
       {
         "id": "area",
         "question": "Do you cover my area?",
-        "answer": "Send your postcode and we’ll confirm availability."
+        "answer": "I am based near Newquay and cover a good chunk of Cornwall, including Truro, St Austell, Bodmin, Padstow, Perranporth, and St Ives. If you are within that area, I can usually fit you in without any issue. If you are slightly further afield, feel free to get in touch anyway and I will let you know if I can help."
       }
     ]
   },
   "finalCta": {
-    "title": "Want your garden to stay tidy all season?",
-    "description": "Tell us what you want maintained and how often—then we’ll recommend a schedule and quote it clearly.",
+    "title": "Want your garden to stay tidy all year round?",
+    "description": "Tell me what you want maintained and how often. I will recommend a schedule based on your garden and quote it clearly, usually within 24 hours. No obligation.",
     "primaryText": "Get a Quote",
     "primaryHref": "/quote",
     "secondaryText": "Contact Us",

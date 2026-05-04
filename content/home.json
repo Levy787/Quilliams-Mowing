@@ -285,32 +285,32 @@
             {
                 "id": "cost",
                 "question": "How much does a garden makeover cost?",
-                "answer": "Costs vary based on the size of the space and the scope of work. We’ll recommend options that fit your goals after a quick chat and site visit."
+                "answer": "A garden tidy-up in Cornwall typically costs from £80 for a half-day job. Larger makeovers including landscaping, gravel installation, and planting range from £1,500 to £2,500 over 2 to 3 days. Final pricing depends on garden size, current condition, and access. Send a few photos for an accurate quote within 24 hours."
             },
             {
-                "id": "permission",
-                "question": "Will I need planning permission for my project?",
-                "answer": "It depends on the type of work and local requirements. We can help you understand what may be needed before you commit to the project."
+                "id": "mowing",
+                "question": "How much does lawn mowing cost?",
+                "answer": "A small front lawn typically costs £20 to £30 per cut. An average-sized garden is around £30 to £50. In Cornwall’s mild coastal climate, lawns grow almost year-round, so most customers book fortnightly cuts from March to October, dropping to monthly over winter. I include edging and a clean finish as standard."
             },
             {
                 "id": "duration",
                 "question": "How long will the work take?",
-                "answer": "Timelines depend on the complexity of the design and site conditions. We’ll share a clear schedule once we confirm the plan and materials."
+                "answer": "A regular lawn mow or garden tidy takes 1 to 3 hours depending on size. Hedge trimming is usually half a day. Full landscaping projects like gravel gardens take 2 to 3 days. I’ll confirm the exact timeline when I quote, and I always aim to complete on schedule."
             },
             {
                 "id": "existing",
                 "question": "Can you work with my existing garden features?",
-                "answer": "Yes—where possible, we can incorporate existing features into the new design. We’ll advise what can be kept, improved, or repositioned."
+                "answer": "Yes, absolutely. If something can be kept or improved I’ll tell you, there’s no unnecessary rip-out. Many of my projects involve reshaping existing beds, working around established plants, or repositioning features to create a better layout. I’ll walk you through what makes sense to keep."
             },
             {
                 "id": "maintenance",
-                "question": "Do you offer maintenance after the project is finished?",
-                "answer": "We can discuss ongoing upkeep options to help your garden stay in great shape. The right plan depends on the planting and your preferences."
+                "question": "Do you offer ongoing maintenance?",
+                "answer": "Yes. I offer weekly, fortnightly, and monthly maintenance visits starting from around £60 per visit depending on garden size. Most of my regular clients started with a one-off tidy and liked the result enough to book ongoing care. I’ll recommend a schedule that suits your garden and budget."
             },
             {
                 "id": "areas",
                 "question": "What areas do you cover?",
-                "answer": "Coverage depends on your location and the type of job. Send us your postcode and we’ll confirm availability and next steps."
+                "answer": "I’m based in Trevarrian near Newquay and cover most of Cornwall including Truro, St Austell, Bodmin, Padstow, Perranporth, and St Ives. If you’re unsure whether I reach your area, just ask. I’m usually happy to travel across Cornwall for the right job."
             }
         ]
     },

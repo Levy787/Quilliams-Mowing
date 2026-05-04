@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { getProjectsLandingContent, listProjects } from "@/lib/keystatic-reader";
 import { buildMetadata } from "@/lib/seo";
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import ProjectsClient from "./ProjectsClient";
 
 function resolveImageSrc({
@@ -27,6 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
         fallbackTitle: content.hero.title || "Projects",
         fallbackDescription: content.hero.description,
         fallbackOgImage: heroImageSrc,
+        canonicalPath: "/projects",
     });
 }
 
@@ -36,5 +38,10 @@ export default async function ProjectsPage() {
         listProjects(),
     ]);
 
-    return <ProjectsClient content={content} projects={projects} />;
+    return (
+        <>
+            <BreadcrumbSchema items={[{ name: "Home", href: "/" }, { name: "Projects", href: "/projects" }]} />
+            <ProjectsClient content={content} projects={projects} />
+        </>
+    );
 }
