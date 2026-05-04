@@ -1,0 +1,32 @@
+{
+  "screenshots": [
+    {
+      "url": "https://quilliamsmowing.co.uk/",
+      "output": "/Users/levi/repos/personal/Quilliams-Mowing/docs/seo-runs/quilliamsmowing-co-uk-audit-20260504-121434/screenshots/quilliamsmowing-co-uk-desktop.png",
+      "viewport": "desktop",
+      "success": true,
+      "error": null
+    },
+    {
+      "url": "https://quilliamsmowing.co.uk/",
+      "output": "/Users/levi/repos/personal/Quilliams-Mowing/docs/seo-runs/quilliamsmowing-co-uk-audit-20260504-121434/screenshots/quilliamsmowing-co-uk-laptop.png",
+      "viewport": "laptop",
+      "success": false,
+      "error": "Page load timed out after 30000ms"
+    },
+    {
+      "url": "https://quilliamsmowing.co.uk/",
+      "output": "/Users/levi/repos/personal/Quilliams-Mowing/docs/seo-runs/quilliamsmowing-co-uk-audit-20260504-121434/screenshots/quilliamsmowing-co-uk-tablet.png",
+      "viewport": "tablet",
+      "success": false,
+      "error": "Page load timed out after 30000ms"
+    },
+    {
+      "url": "https://quilliamsmowing.co.uk/",
+      "output": "/Users/levi/repos/personal/Quilliams-Mowing/docs/seo-runs/quilliamsmowing-co-uk-audit-20260504-121434/screenshots/quilliamsmowing-co-uk-mobile.png",
+      "viewport": "mobile",
+      "success": false,
+      "error": "Page load timed out after 30000ms"
+    }
+  ]
+}

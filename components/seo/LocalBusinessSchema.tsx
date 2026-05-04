@@ -19,7 +19,7 @@ export function LocalBusinessSchema({
 }: LocalBusinessSchemaProps) {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "LandscapingBusiness",
+    "@type": ["LandscapingBusiness", "LocalBusiness", "Organization"],
     "@id": `${url}/#business`,
     name,
     description,

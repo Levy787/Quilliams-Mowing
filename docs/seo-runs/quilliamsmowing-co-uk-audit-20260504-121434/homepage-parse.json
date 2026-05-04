@@ -1,0 +1,979 @@
+{
+  "title": "Lawn Mowing & Gardening in Newquay, Cornwall | Quilliams",
+  "meta_description": "Lawn mowing, hedge trimming, landscaping & garden maintenance in Newquay, Truro & Cornwall. 5-star rated, 120+ projects. Get a free quote today.",
+  "meta_robots": null,
+  "canonical": "https://quilliamsmowing.co.uk",
+  "h1": [
+    "Professional Landscaping , Gardening , and Lawn Care You Can Rely On"
+  ],
+  "h2": [
+    "Reliable Landscaping Services You Can Count On",
+    "Exclusive Services",
+    "Newquay, Truro, St Austell",
+    "Beautiful Gardens & Landscapes We Created",
+    "Answering your questions",
+    "Let\u2019s create a garden you\u2019ll love",
+    "Don\u2019t just take our word for it"
+  ],
+  "h3": [
+    "How much does a garden makeover cost?",
+    "How much does lawn mowing cost?",
+    "How long will the work take?",
+    "Can you work with my existing garden features?",
+    "Do you offer ongoing maintenance?",
+    "What areas do you cover?",
+    "Connect With Us",
+    "Business Hours",
+    "Subscribe"
+  ],
+  "images": [
+    {
+      "src": "https://quilliamsmowing.co.uk/_next/image?url=%2Fimages%2Fuploads%2Fsite%2Fbranding%2FlogoFile.webp&w=1920&q=75",
+      "alt": "Quilliams Gardening & Landscaping Logo",
+      "width": null,
+      "height": null,
+      "loading": null
+    },
+    {
+      "src": "https://quilliamsmowing.co.uk/_next/image?url=%2Fimages%2Fuploads%2Fhero%2FimagesLeft%2F0%2Ffile.webp&w=1920&q=60",
+      "alt": "Garden with freshly cut hedges and a neat lawn",
+      "width": null,
+      "height": null,
+      "loading": null
+    },
+    {
+      "src": "https://quilliamsmowing.co.uk/_next/image?url=%2Fimages%2Fuploads%2Fhero%2FimagesLeft%2F1%2Ffile.webp&w=1920&q=60",
+      "alt": "Freshly mown lawn with trimmed hedges in a private garden",
+      "width": null,
+      "height": null,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://quilliamsmowing.co.uk/_next/image?url=%2Fimages%2Fuploads%2Fhero%2FimagesLeft%2F2%2Ffile.webp&w=1920&q=60",
+      "alt": "Tidy garden lawn with freshly cut hedges and clean edges",
+      "width": null,
+      "height": null,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://quilliamsmowing.co.uk/_next/image?url=%2Fimages%2Fuploads%2Fhero%2FimagesLeft%2F0%2Ffile.webp&w=1920&q=60",
+      "alt": "Garden with freshly cut hedges and a neat lawn",
+      "width": null,
+      "height": null,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://quilliamsmowing.co.uk/_next/image?url=%2Fimages%2Fuploads%2Fhero%2FimagesLeft%2F1%2Ffile.webp&w=1920&q=60",
+      "alt": "Freshly mown lawn with trimmed hedges in a private garden",
+      "width": null,
+      "height": null,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://quilliamsmowing.co.uk/_next/image?url=%2Fimages%2Fuploads%2Fhero%2FimagesLeft%2F2%2Ffile.webp&w=1920&q=60",
+      "alt": "Tidy garden lawn with freshly cut hedges and clean edges",
+      "width": null,
+      "height": null,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://quilliamsmowing.co.uk/_next/image?url=%2Fimages%2Fuploads%2Fhero%2FimagesRight%2F0%2Ffile.webp&w=1920&q=60",
+      "alt": "Well-kept garden with freshly trimmed hedges and a neat lawn",
+      "width": null,
+      "height": null,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://quilliamsmowing.co.uk/_next/image?url=%2Fimages%2Fuploads%2Fhero%2FimagesRight%2F1%2Ffile.webp&w=1920&q=60",
+      "alt": "Garden after hedge trimming with a fresh cut lawn",
+      "width": null,
+      "height": null,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://quilliamsmowing.co.uk/_next/image?url=%2Fimages%2Fuploads%2Fhero%2FimagesRight%2F2%2Ffile.jpg&w=1920&q=60",
+      "alt": "Fresh cut grass with lines and pampas grass",
+      "width": null,
+      "height": null,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://quilliamsmowing.co.uk/_next/image?url=%2Fimages%2Fuploads%2Fhero%2FimagesRight%2F0%2Ffile.webp&w=1920&q=60",
+      "alt": "Well-kept garden with freshly trimmed hedges and a neat lawn",
+      "width": null,
+      "height": null,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://quilliamsmowing.co.uk/_next/image?url=%2Fimages%2Fuploads%2Fhero%2FimagesRight%2F1%2Ffile.webp&w=1920&q=60",
+      "alt": "Garden after hedge trimming with a fresh cut lawn",
+      "width": null,
+      "height": null,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://quilliamsmowing.co.uk/_next/image?url=%2Fimages%2Fuploads%2Fhero%2FimagesRight%2F2%2Ffile.jpg&w=1920&q=60",
+      "alt": "Fresh cut grass with lines and pampas grass",
+      "width": null,
+      "height": null,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://quilliamsmowing.co.uk/_next/image?url=%2Fimages%2Fuploads%2Fabout%2FimageFile.webp&w=1920&q=75",
+      "alt": "Levi hedge trimming a large hedge",
+      "width": null,
+      "height": null,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://quilliamsmowing.co.uk/_next/image?url=%2Fimages%2Fuploads%2Fservices%2Fitems%2F0%2FimageFile.jpeg&w=1920&q=75",
+      "alt": "Newly created gravel garden",
+      "width": null,
+      "height": null,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://quilliamsmowing.co.uk/_next/image?url=%2Fimages%2Fuploads%2Fservices%2Fitems%2F1%2FimageFile.webp&w=1920&q=75",
+      "alt": "Freshly mown lawn with tidy borders",
+      "width": null,
+      "height": null,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://quilliamsmowing.co.uk/_next/image?url=%2Fimages%2Fuploads%2Fservices%2Fitems%2F2%2FimageFile.webp&w=1920&q=75",
+      "alt": "Neatly trimmed hedges in a well-kept garden",
+      "width": null,
+      "height": null,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://quilliamsmowing.co.uk/_next/image?url=%2Fimages%2Fuploads%2Fservices%2Fitems%2F3%2FimageFile.webp&w=1920&q=75",
+      "alt": "A tidy garden with clean edges and healthy planting",
+      "width": null,
+      "height": null,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://quilliamsmowing.co.uk/_next/image?url=%2Fimages%2Fuploads%2Fservices%2Fitems%2F4%2FimageFile.webp&w=1920&q=75",
+      "alt": "Before and after of dense bramble clearance",
+      "width": null,
+      "height": null,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://quilliamsmowing.co.uk/_next/image?url=%2Fimages%2Fuploads%2Fservices%2Fitems%2F5%2FimageFile.webp&w=1920&q=75",
+      "alt": "Overgrown weeds to nice gravel garden with a water feature",
+      "width": null,
+      "height": null,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://quilliamsmowing.co.uk/_next/image?url=%2Fimages%2Fuploads%2FrecentWorks%2Fitems%2F0%2FimageFile.webp&w=1920&q=75",
+      "alt": "Freshly maintained garden with tidy hedges and a neat lawn",
+      "width": null,
+      "height": null,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://quilliamsmowing.co.uk/_next/image?url=%2Fimages%2Fuploads%2FrecentWorks%2Fitems%2F0%2FimageFile.webp&w=1920&q=75",
+      "alt": "Freshly maintained garden with tidy hedges and a neat lawn",
+      "width": null,
+      "height": null,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://quilliamsmowing.co.uk/_next/image?url=%2Fimages%2Fuploads%2FrecentWorks%2Fitems%2F0%2FimageFile.webp&w=1920&q=75",
+      "alt": "Freshly maintained garden with tidy hedges and a neat lawn",
+      "width": null,
+      "height": null,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://quilliamsmowing.co.uk/_next/image?url=%2Fimages%2Fuploads%2FrecentWorks%2Fitems%2F0%2FimageFile.webp&w=1920&q=75",
+      "alt": "Freshly maintained garden with tidy hedges and a neat lawn",
+      "width": null,
+      "height": null,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://quilliamsmowing.co.uk/_next/image?url=%2Fimages%2Fuploads%2FrecentWorks%2Fitems%2F1%2FimageFile.webp&w=1920&q=75",
+      "alt": "Front garden with neat lawn edges and trimmed hedges",
+      "width": null,
+      "height": null,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://quilliamsmowing.co.uk/_next/image?url=%2Fimages%2Fuploads%2FrecentWorks%2Fitems%2F1%2FimageFile.webp&w=1920&q=75",
+      "alt": "Front garden with neat lawn edges and trimmed hedges",
+      "width": null,
+      "height": null,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://quilliamsmowing.co.uk/_next/image?url=%2Fimages%2Fuploads%2FrecentWorks%2Fitems%2F1%2FimageFile.webp&w=1920&q=75",
+      "alt": "Front garden with neat lawn edges and trimmed hedges",
+      "width": null,
+      "height": null,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://quilliamsmowing.co.uk/_next/image?url=%2Fimages%2Fuploads%2FrecentWorks%2Fitems%2F1%2FimageFile.webp&w=1920&q=75",
+      "alt": "Front garden with neat lawn edges and trimmed hedges",
+      "width": null,
+      "height": null,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://quilliamsmowing.co.uk/_next/image?url=%2Fimages%2Fuploads%2FrecentWorks%2Fitems%2F2%2FimageFile.webp&w=1920&q=75",
+      "alt": "Freshly mown lawn with trimmed hedges in a private garden",
+      "width": null,
+      "height": null,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://quilliamsmowing.co.uk/_next/image?url=%2Fimages%2Fuploads%2FrecentWorks%2Fitems%2F2%2FimageFile.webp&w=1920&q=75",
+      "alt": "Freshly mown lawn with trimmed hedges in a private garden",
+      "width": null,
+      "height": null,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://quilliamsmowing.co.uk/_next/image?url=%2Fimages%2Fuploads%2FrecentWorks%2Fitems%2F2%2FimageFile.webp&w=1920&q=75",
+      "alt": "Freshly mown lawn with trimmed hedges in a private garden",
+      "width": null,
+      "height": null,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://quilliamsmowing.co.uk/_next/image?url=%2Fimages%2Fuploads%2FrecentWorks%2Fitems%2F2%2FimageFile.webp&w=1920&q=75",
+      "alt": "Freshly mown lawn with trimmed hedges in a private garden",
+      "width": null,
+      "height": null,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://quilliamsmowing.co.uk/_next/image?url=%2Fimages%2Fuploads%2Ffaq%2FdecorativeImageFile.webp&w=1920&q=75",
+      "alt": "Levi Quilliam - Close up Headshot",
+      "width": null,
+      "height": null,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://quilliamsmowing.co.uk/_next/image?url=%2Fimages%2Fuploads%2FlargeCta%2FleftImageFile.webp&w=1920&q=75",
+      "alt": "Perfectly trimmed hedge in cornwall",
+      "width": null,
+      "height": null,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://quilliamsmowing.co.uk/_next/image?url=%2Fimages%2Fuploads%2FlargeCta%2FrightImageFile.webp&w=1920&q=75",
+      "alt": "Well maintained garden with garden path",
+      "width": null,
+      "height": null,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://quilliamsmowing.co.uk/_next/image?url=%2Fimages%2Fuploads%2Fsite%2Fbranding%2FlogoFile.webp&w=640&q=75",
+      "alt": "Quilliams Gardening & Landscaping Logo",
+      "width": "176",
+      "height": "40",
+      "loading": "lazy"
+    }
+  ],
+  "links": {
+    "internal": [
+      {
+        "href": "https://quilliamsmowing.co.uk/",
+        "text": "",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/",
+        "text": "Home",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/about",
+        "text": "About",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/pricing",
+        "text": "Pricing",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/services",
+        "text": "Services",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/projects",
+        "text": "Projects",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/contact",
+        "text": "Contact",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/quote",
+        "text": "Get a Quote",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/quote",
+        "text": "Get a Free Quote Today",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/services",
+        "text": "More Services",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/services/landscaping",
+        "text": "Residential Landscaping Design and build improvements that make your outdoor space more functional, ",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/services/lawn-care",
+        "text": "Residential & Commercial Lawn Mowing Reliable mowing with clean edges and a tidy finish for homes an",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/services/hedge-trimming",
+        "text": "Residential & Commercial Hedge Trimming Crisp lines and healthy growth with professional trimming fo",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/services/garden-maintenance",
+        "text": "Residential & Commercial Garden Maintenance Ongoing care to keep gardens healthy, tidy, and looking ",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/services/seasonal-cleanup",
+        "text": "Residential & Commercial Garden Cleanup One-off clear-outs to get things back under control \u2014 then l",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/services/garden-maintenance",
+        "text": "Residential & Commercial Weed Control Targeted weeding and tidy-up to keep beds, borders, and paths ",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/quote",
+        "text": "Get a Free Quote Today",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/contact",
+        "text": "Contact Us",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/projects/ongoing-garden-maintenance",
+        "text": "View More Details",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/projects/ongoing-garden-maintenance",
+        "text": "View More Details",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/projects/leylandii-hedge-trim-4m-tall",
+        "text": "View More Details",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/projects/leylandii-hedge-trim-4m-tall",
+        "text": "View More Details",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/projects/overgrown-mess-to-clean-gravel-garden",
+        "text": "View More Details",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/projects/overgrown-mess-to-clean-gravel-garden",
+        "text": "View More Details",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/contact",
+        "text": "Get In Touch",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/contact",
+        "text": "Talk To The Team",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/",
+        "text": "",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/cdn-cgi/l/email-protection#fb979e8d92bb8a8e929797929a968896948c92959cd59894d58e90",
+        "text": "[email\u00a0protected]",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/services/lawn-care",
+        "text": "Lawn Mowing",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/services/hedge-trimming",
+        "text": "Hedge Trimming",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/services/landscaping",
+        "text": "Landscaping",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/services/garden-maintenance",
+        "text": "Garden Maintenance",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/services",
+        "text": "All Services",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/areas/newquay",
+        "text": "Newquay",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/areas/truro",
+        "text": "Truro",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/areas/st-austell",
+        "text": "St Austell",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/areas/bodmin",
+        "text": "Bodmin",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/areas",
+        "text": "All Areas",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/about",
+        "text": "About Us",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/projects",
+        "text": "Our Projects",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/pricing",
+        "text": "Pricing",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/refer",
+        "text": "Refer a Friend",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/contact",
+        "text": "Contact Us",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/quote",
+        "text": "Get a Quote",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/terms",
+        "text": "Terms & Conditions",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/privacy",
+        "text": "Privacy Policy",
+        "rel": []
+      },
+      {
+        "href": "https://quilliamsmowing.co.uk/site-map",
+        "text": "Sitemap",
+        "rel": []
+      }
+    ],
+    "external": [
+      {
+        "href": "https://g.page/r/Ca1e8ukWV-qsEAE",
+        "text": "Trevarrian, Cornwall",
+        "rel": [
+          "noopener",
+          "noreferrer"
+        ]
+      },
+      {
+        "href": "tel:07593121621",
+        "text": "Call: 07593 121 621",
+        "rel": []
+      },
+      {
+        "href": "tel:07593121621",
+        "text": "07593 121 621",
+        "rel": []
+      },
+      {
+        "href": "https://www.facebook.com/quilliamsmowing/",
+        "text": "",
+        "rel": []
+      },
+      {
+        "href": "https://www.instagram.com/quilliamsmowing/",
+        "text": "",
+        "rel": []
+      },
+      {
+        "href": "tel:07593121621",
+        "text": "07593 121 621",
+        "rel": []
+      },
+      {
+        "href": "https://quilliam.ai/",
+        "text": "Quilliam.ai",
+        "rel": [
+          "noopener"
+        ]
+      }
+    ]
+  },
+  "schema": [
+    {
+      "@context": "https://schema.org",
+      "@type": "LandscapingBusiness",
+      "@id": "https://quilliamsmowing.co.uk/#business",
+      "name": "Quilliams Gardening & Landscaping",
+      "description": "Professional gardening, landscaping, lawn mowing, hedge trimming and garden maintenance services in Newquay, Truro, and St Austell, Cornwall.",
+      "url": "https://quilliamsmowing.co.uk",
+      "telephone": "+447593121621",
+      "email": "levi@quilliamsmowing.co.uk",
+      "priceRange": "\u00a3\u00a3",
+      "image": "https://quilliamsmowing.co.uk/images/uploads/site/branding/logoFile.webp",
+      "logo": "https://quilliamsmowing.co.uk/images/uploads/site/branding/logoFile.webp",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Newquay",
+        "addressRegion": "Cornwall",
+        "postalCode": "TR8",
+        "addressCountry": "GB"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 50.412,
+        "longitude": -5.0757
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Newquay"
+        },
+        {
+          "@type": "City",
+          "name": "Truro"
+        },
+        {
+          "@type": "City",
+          "name": "St Austell"
+        },
+        {
+          "@type": "City",
+          "name": "Cornwall"
+        }
+      ],
+      "serviceType": [
+        "Lawn Mowing",
+        "Hedge Trimming",
+        "Garden Maintenance",
+        "Landscaping",
+        "Garden Cleanup",
+        "Weed Control"
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      ],
+      "sameAs": [
+        "https://g.page/r/Ca1e8ukWV-qsEAE",
+        "https://www.facebook.com/quilliamsmowing",
+        "https://www.instagram.com/quilliamsmowing",
+        "https://www.tiktok.com/@quilliamsmowing",
+        "https://www.yell.com/biz/quilliams-mowing-ltd-newquay-10969895/",
+        "https://www.checkatrade.com/trades/quilliamsmowingltd",
+        "https://www.bark.com/en/gb/b/quilliams-gardening-amp-landscaping/KNoMX4/"
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://quilliamsmowing.co.uk/#website",
+      "name": "Quilliams Gardening & Landscaping",
+      "url": "https://quilliamsmowing.co.uk",
+      "publisher": {
+        "@id": "https://quilliamsmowing.co.uk/#business"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "LandscapingBusiness",
+      "@id": "https://quilliamsmowing.co.uk/#business",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": 5,
+        "bestRating": 5,
+        "worstRating": 1,
+        "reviewCount": 16
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Matthew Wellington"
+          },
+          "reviewBody": "\u201cGreat service from start to finish. He cut down a few hedges for us and did a brilliant job \u2013 quick, tidy, and very reasonably priced. Everything was left neat and exactly how we wanted it. Would definitely recommend and use again.\u201d",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5,
+            "bestRating": 5,
+            "worstRating": 1
+          },
+          "datePublished": "2025-10-20"
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Hannah B"
+          },
+          "reviewBody": "\u201cWe recently contacted Qwilliams mowing as we are selling our house so desperately needed the garden tidied up. I have been putting this off for months as I had no idea where to start. We are extremely pleased with the result - Levi did an amazing job! He was very professional and listened to what we wanted. We will definitely be regular customers of Qwilliams mowing and would highly recommend to anyone looking for garden services!\u201d",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5,
+            "bestRating": 5,
+            "worstRating": 1
+          },
+          "datePublished": "2025-07-03"
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Elizabeth Cawley"
+          },
+          "reviewBody": "\u201cLevi has done an excellent job on my gardens meadow reset. Prompt and friendly. The job completed was exactly as I asked. And he left the area very tidy. I would recommend him to anyone.\u201d",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5,
+            "bestRating": 5,
+            "worstRating": 1
+          },
+          "datePublished": "2025-08-18"
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Michael Meer"
+          },
+          "reviewBody": "\u201cLevi came for the first time yesterday. I don't know anything about gardening - but Levi does! What to cut, what not to cut, when to cut it and how it should be cut. He works really hard - non-stop, has really good ideas for making a garden both tidy and practical and his prices a very competitive. What's more, he's a really nice bloke. I've already booked him for a second visit.\u201d",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5,
+            "bestRating": 5,
+            "worstRating": 1
+          },
+          "datePublished": "2025-08-07"
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Robert Jakes"
+          },
+          "reviewBody": "\u201dAmazing transformation of a massive hedge that had got too big for me to cope with, would highly recommend Levi Quilliams Mowing\ud83d\ude0a\u201d",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5,
+            "bestRating": 5,
+            "worstRating": 1
+          },
+          "datePublished": "2025-09-12"
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "James Watson"
+          },
+          "reviewBody": "\u201dHighly recommended! Levi helped us out with our hedge cutting and lawn mowing. Extremely reliable and did exceptional job. We will certainly be getting him back!\u201d",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5,
+            "bestRating": 5,
+            "worstRating": 1
+          },
+          "datePublished": "2025-06-01"
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "James Perrin"
+          },
+          "reviewBody": "\u201dWe recently instructed Levi to look after some sizeable gardens in Porth. Really impressed with him - hardworking, polite and professional. He did a great job on his first visit and is now going to be taking care of regular garden maintenance for us. Would highly recommend him.\u201d",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5,
+            "bestRating": 5,
+            "worstRating": 1
+          },
+          "datePublished": "2025-09-21"
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Chris Hall"
+          },
+          "reviewBody": "\u201dCame and gave me a reasonable quote to cut Hedges. Turned up next day to do the work on time. Pleased with the work done and cleared all the cuttings up. Would use again fully recommend..\u201d",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5,
+            "bestRating": 5,
+            "worstRating": 1
+          },
+          "datePublished": "2025-07-20"
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Maya J"
+          },
+          "reviewBody": "\u201dLevi did an amazing job in my garden! Everything was done to a high standard, making sure to leave it clean and tidy at the end. He is super friendly and reliable \u2014 highly recommend!\u201d",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5,
+            "bestRating": 5,
+            "worstRating": 1
+          },
+          "datePublished": "2025-11-18"
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Jamie Q"
+          },
+          "reviewBody": "\u201dBooked a one-off clean and was so impressed I signed up for regular mowing. Super reliable and the lawn always looks great. Highly recommend!\u201d",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5,
+            "bestRating": 5,
+            "worstRating": 1
+          },
+          "datePublished": "2025-06-18"
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Kim Brocklehurst"
+          },
+          "reviewBody": "\u201dQuick response to initial enquiry. Fast and thorough clearance of overgrown land. Will definitely use Levi again.\u201d",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5,
+            "bestRating": 5,
+            "worstRating": 1
+          },
+          "datePublished": "2025-10-10"
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Marie Preston"
+          },
+          "reviewBody": "\u201dLevi is always professional in manner and services required. I highly recommend him!\u201d",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5,
+            "bestRating": 5,
+            "worstRating": 1
+          },
+          "datePublished": "2025-11-10"
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Pat Batey"
+          },
+          "reviewBody": "\u201dA great job carried out at a sensible price.\u201d",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5,
+            "bestRating": 5,
+            "worstRating": 1
+          },
+          "datePublished": "2025-11-01"
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "David willers"
+          },
+          "reviewBody": "\u201dDid an a amazing job on my garden\u201d",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5,
+            "bestRating": 5,
+            "worstRating": 1
+          },
+          "datePublished": "2025-12-12"
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Luis McLaren"
+          },
+          "reviewBody": "\u201dHighly recommend!",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5,
+            "bestRating": 5,
+            "worstRating": 1
+          },
+          "datePublished": "2025-12-02"
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "John Kendall"
+          },
+          "reviewBody": "\u201dReally tidied up my bushes",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5,
+            "bestRating": 5,
+            "worstRating": 1
+          },
+          "datePublished": "2025-06-02"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does a garden makeover cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A garden tidy-up in Cornwall typically costs from \u00a380 for a half-day job. Larger makeovers including landscaping, gravel installation, and planting range from \u00a31,500 to \u00a32,500 over 2 to 3 days. Final pricing depends on garden size, current condition, and access. Send a few photos for an accurate quote within 24 hours."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does lawn mowing cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A small front lawn typically costs \u00a320 to \u00a330 per cut. An average-sized garden is around \u00a330 to \u00a350. In Cornwall\u2019s mild coastal climate, lawns grow almost year-round, so most customers book fortnightly cuts from March to October, dropping to monthly over winter. I include edging and a clean finish as standard."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long will the work take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A regular lawn mow or garden tidy takes 1 to 3 hours depending on size. Hedge trimming is usually half a day. Full landscaping projects like gravel gardens take 2 to 3 days. I\u2019ll confirm the exact timeline when I quote, and I always aim to complete on schedule."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you work with my existing garden features?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, absolutely. If something can be kept or improved I\u2019ll tell you, there\u2019s no unnecessary rip-out. Many of my projects involve reshaping existing beds, working around established plants, or repositioning features to create a better layout. I\u2019ll walk you through what makes sense to keep."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer ongoing maintenance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. I offer weekly, fortnightly, and monthly maintenance visits starting from around \u00a360 per visit depending on garden size. Most of my regular clients started with a one-off tidy and liked the result enough to book ongoing care. I\u2019ll recommend a schedule that suits your garden and budget."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What areas do you cover?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "I\u2019m based in Trevarrian near Newquay and cover most of Cornwall including Truro, St Austell, Bodmin, Padstow, Perranporth, and St Ives. If you\u2019re unsure whether I reach your area, just ask. I\u2019m usually happy to travel across Cornwall for the right job."
+          }
+        }
+      ]
+    }
+  ],
+  "open_graph": {
+    "og:title": "Lawn Mowing & Gardening in Newquay, Cornwall | Quilliams",
+    "og:description": "Lawn mowing, hedge trimming, landscaping & garden maintenance in Newquay, Truro & Cornwall. 5-star rated, 120+ projects. Get a free quote today.",
+    "og:site_name": "Quilliams Gardening & Landscaping",
+    "og:locale": "en_GB",
+    "og:image": "https://quilliamsmowing.co.uk/images/uploads/site/og-image.png",
+    "og:image:width": "1200",
+    "og:image:height": "630",
+    "og:image:alt": "Lawn Mowing & Gardening in Newquay, Cornwall | Quilliams",
+    "og:type": "website"
+  },
+  "twitter_card": {
+    "twitter:card": "summary_large_image",
+    "twitter:title": "Lawn Mowing & Gardening in Newquay, Cornwall | Quilliams",
+    "twitter:description": "Lawn mowing, hedge trimming, landscaping & garden maintenance in Newquay, Truro & Cornwall. 5-star rated, 120+ projects. Get a free quote today.",
+    "twitter:image": "https://quilliamsmowing.co.uk/images/uploads/site/og-image.png"
+  },
+  "word_count": 3374,
+  "hreflang": []
+}

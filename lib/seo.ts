@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-const DEFAULT_OG_IMAGE = "https://quilliamsmowing.co.uk/images/uploads/site/og-image.png";
+const DEFAULT_OG_IMAGE = "https://quilliamsmowing.co.uk/images/uploads/site/og-image.png?v=20260504";
 const SITE_NAME = "Quilliams Gardening & Landscaping";
 const SITE_URL = "https://quilliamsmowing.co.uk";
 
@@ -28,7 +28,6 @@ export function buildMetadata({
     fallbackTitle,
     fallbackDescription,
     fallbackOgImage,
-    isHomepage = false,
     canonicalPath,
 }: {
     seo?: SeoFields | null;
@@ -45,8 +44,8 @@ export function buildMetadata({
     const ogDescription = clean(seo?.ogDescription) ?? description;
     const ogImageUrl = resolveImageUrl(clean(seo?.ogImage) ?? clean(fallbackOgImage));
 
-    // For homepage, use absolute title to avoid "Site Name | Site Name"
-    const title = isHomepage ? { absolute: titleText } : titleText;
+    // Most content titles already include brand or local intent; keep them exact.
+    const title = { absolute: titleText };
 
     // Build canonical URL
     const canonical = canonicalPath ? `${SITE_URL}${canonicalPath}` : undefined;

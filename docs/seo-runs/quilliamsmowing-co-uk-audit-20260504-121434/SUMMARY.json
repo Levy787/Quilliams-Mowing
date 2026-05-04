@@ -1,0 +1,67 @@
+{
+  "cache_type": "audit-scores",
+  "analyzed_at": "2026-05-04T12:17:17Z",
+  "domain": "quilliamsmowing.co.uk",
+  "business_type": "saas",
+  "industry": "software",
+  "overall_score": 72,
+  "category_scores": {
+    "technical": 87,
+    "content": 66,
+    "on_page": 80,
+    "schema": 76,
+    "performance": 35,
+    "geo": 67,
+    "images": 74
+  },
+  "priority_issues": [
+    {
+      "severity": "critical",
+      "issue": "Geo: Some AI search crawlers are blocked: GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-SearchBot, Claude-User, PerplexityBot."
+    },
+    {
+      "severity": "critical",
+      "issue": "Performance: CLS is above target at 0.350."
+    },
+    {
+      "severity": "critical",
+      "issue": "Performance: INP is above target at 500ms."
+    },
+    {
+      "severity": "critical",
+      "issue": "Performance: LCP is above target at 4.20s."
+    },
+    {
+      "severity": "critical",
+      "issue": "Performance: Real-user/PageSpeed performance data was unavailable, so the report uses deterministic lab heuristics."
+    },
+    {
+      "severity": "critical",
+      "issue": "Visual: Page load timed out after 30000ms"
+    },
+    {
+      "severity": "critical",
+      "issue": "Visual: Viewport meta tag is missing in the rendered mobile document."
+    },
+    {
+      "severity": "high",
+      "issue": "Geo: Author/date attribution is weak in the visible content."
+    },
+    {
+      "severity": "high",
+      "issue": "Geo: Server-rendered content confirmation is weak without technical-cache support."
+    },
+    {
+      "severity": "high",
+      "issue": "Images: 12 image(s) are missing width/height attributes."
+    },
+    {
+      "severity": "high",
+      "issue": "Schema: Recommended schema type(s) are missing: WebPage, Organization, SoftwareApplication."
+    },
+    {
+      "severity": "high",
+      "issue": "Technical: IndexNow support was not detected."
+    }
+  ]
+}

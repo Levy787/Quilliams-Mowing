@@ -16,6 +16,7 @@ import { getHomeContent } from "@/lib/keystatic-reader";
 import { buildMetadata } from "@/lib/seo";
 import { ReviewSchema } from "@/components/seo/ReviewSchema";
 import { FAQSchema } from "@/components/seo/FAQSchema";
+import { WebPageSchema } from "@/components/seo/WebPageSchema";
 
 export async function generateMetadata(): Promise<Metadata> {
     const home = await getHomeContent();
@@ -48,6 +49,10 @@ export default async function Home() {
 
     return (
         <main>
+            <WebPageSchema
+                name={home.seo.title}
+                description={home.seo.description}
+            />
             <ReviewSchema reviews={reviews} />
             <FAQSchema items={faqItems} />
             <Hero {...home.hero} />

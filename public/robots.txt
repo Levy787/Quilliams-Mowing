@@ -30,3 +30,4 @@ User-agent: meta-externalagent
 Disallow: /
 
 Sitemap: https://quilliamsmowing.co.uk/sitemap.xml
+# IndexNow: https://quilliamsmowing.co.uk/6aa67e76d1540f4f36f507f3702f677c.txt

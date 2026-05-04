@@ -31,7 +31,7 @@ export function ReviewSchema({
 
   const schema = {
     "@context": "https://schema.org",
-    "@type": "LandscapingBusiness",
+    "@type": ["LandscapingBusiness", "LocalBusiness", "Organization"],
     "@id": "https://quilliamsmowing.co.uk/#business",
     aggregateRating: {
       "@type": "AggregateRating",

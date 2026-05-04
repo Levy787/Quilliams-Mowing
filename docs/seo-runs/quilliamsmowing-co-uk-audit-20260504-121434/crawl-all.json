@@ -1,0 +1,190 @@
+{
+  "pages": [
+    {
+      "url": "https://quilliamsmowing.co.uk/",
+      "status": 200,
+      "title_length": 56,
+      "meta_description_length": 144
+    },
+    {
+      "url": "https://quilliamsmowing.co.uk/services",
+      "status": 200,
+      "title_length": 78,
+      "meta_description_length": 148
+    },
+    {
+      "url": "https://quilliamsmowing.co.uk/projects",
+      "status": 200,
+      "title_length": 73,
+      "meta_description_length": 154
+    },
+    {
+      "url": "https://quilliamsmowing.co.uk/pricing",
+      "status": 200,
+      "title_length": 73,
+      "meta_description_length": 110
+    },
+    {
+      "url": "https://quilliamsmowing.co.uk/contact",
+      "status": 200,
+      "title_length": 73,
+      "meta_description_length": 107
+    },
+    {
+      "url": "https://quilliamsmowing.co.uk/quote",
+      "status": 200,
+      "title_length": 69,
+      "meta_description_length": 112
+    },
+    {
+      "url": "https://quilliamsmowing.co.uk/about",
+      "status": 200,
+      "title_length": 77,
+      "meta_description_length": 222
+    },
+    {
+      "url": "https://quilliamsmowing.co.uk/areas",
+      "status": 200,
+      "title_length": 73,
+      "meta_description_length": 157
+    },
+    {
+      "url": "https://quilliamsmowing.co.uk/site-map",
+      "status": 200,
+      "title_length": 29,
+      "meta_description_length": 62
+    },
+    {
+      "url": "https://quilliamsmowing.co.uk/refer",
+      "status": 200,
+      "title_length": 36,
+      "meta_description_length": 93
+    },
+    {
+      "url": "https://quilliamsmowing.co.uk/privacy",
+      "status": 200,
+      "title_length": 36,
+      "meta_description_length": 50
+    },
+    {
+      "url": "https://quilliamsmowing.co.uk/terms",
+      "status": 200,
+      "title_length": 38,
+      "meta_description_length": 33
+    },
+    {
+      "url": "https://quilliamsmowing.co.uk/services/garden-maintenance",
+      "status": 200,
+      "title_length": 84,
+      "meta_description_length": 173
+    },
+    {
+      "url": "https://quilliamsmowing.co.uk/services/hedge-trimming",
+      "status": 200,
+      "title_length": 85,
+      "meta_description_length": 186
+    },
+    {
+      "url": "https://quilliamsmowing.co.uk/services/landscaping",
+      "status": 200,
+      "title_length": 83,
+      "meta_description_length": 203
+    },
+    {
+      "url": "https://quilliamsmowing.co.uk/services/lawn-care",
+      "status": 200,
+      "title_length": 80,
+      "meta_description_length": 188
+    },
+    {
+      "url": "https://quilliamsmowing.co.uk/services/mulching",
+      "status": 200,
+      "title_length": 79,
+      "meta_description_length": 206
+    },
+    {
+      "url": "https://quilliamsmowing.co.uk/services/seasonal-cleanup",
+      "status": 200,
+      "title_length": 86,
+      "meta_description_length": 189
+    },
+    {
+      "url": "https://quilliamsmowing.co.uk/projects/gravel-garden-with-patio",
+      "status": 200,
+      "title_length": 69,
+      "meta_description_length": 157
+    },
+    {
+      "url": "https://quilliamsmowing.co.uk/projects/leylandii-hedge-trim-4m-tall",
+      "status": 200,
+      "title_length": 72,
+      "meta_description_length": 149
+    },
+    {
+      "url": "https://quilliamsmowing.co.uk/projects/ongoing-garden-maintenance",
+      "status": 200,
+      "title_length": 71,
+      "meta_description_length": 155
+    },
+    {
+      "url": "https://quilliamsmowing.co.uk/projects/overgrown-mess-to-clean-gravel-garden",
+      "status": 200,
+      "title_length": 77,
+      "meta_description_length": 159
+    },
+    {
+      "url": "https://quilliamsmowing.co.uk/areas/truro",
+      "status": 200,
+      "title_length": 76,
+      "meta_description_length": 159
+    },
+    {
+      "url": "https://quilliamsmowing.co.uk/areas/st-austell",
+      "status": 200,
+      "title_length": 81,
+      "meta_description_length": 169
+    },
+    {
+      "url": "https://quilliamsmowing.co.uk/areas/bodmin",
+      "status": 200,
+      "title_length": 77,
+      "meta_description_length": 161
+    },
+    {
+      "url": "https://quilliamsmowing.co.uk/areas/padstow",
+      "status": 200,
+      "title_length": 78,
+      "meta_description_length": 163
+    },
+    {
+      "url": "https://quilliamsmowing.co.uk/areas/perranporth",
+      "status": 200,
+      "title_length": 82,
+      "meta_description_length": 171
+    },
+    {
+      "url": "https://quilliamsmowing.co.uk/areas/st-ives",
+      "status": 200,
+      "title_length": 78,
+      "meta_description_length": 163
+    },
+    {
+      "url": "https://quilliamsmowing.co.uk/areas/newquay",
+      "status": 200,
+      "title_length": 78,
+      "meta_description_length": 163
+    },
+    {
+      "url": "https://quilliamsmowing.co.uk/areas/wadebridge",
+      "status": 200,
+      "title_length": 81,
+      "meta_description_length": 169
+    },
+    {
+      "url": "https://quilliamsmowing.co.uk/areas/st-agnes",
+      "status": 200,
+      "title_length": 79,
+      "meta_description_length": 165
+    }
+  ]
+}

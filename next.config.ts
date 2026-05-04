@@ -60,6 +60,11 @@ const nextConfig: NextConfig = {
       },
       // Old URL that Google still has indexed
       {
+        source: "/about-us",
+        destination: "/about",
+        permanent: true,
+      },
+      {
         source: "/contact-us",
         destination: "/contact",
         permanent: true,
@@ -112,6 +117,19 @@ const nextConfig: NextConfig = {
   // Security headers
   async headers() {
     return [
+      {
+        source: "/keystatic/:path*",
+        headers: [
+          {
+            key: "X-Robots-Tag",
+            value: "noindex, nofollow, noarchive",
+          },
+          {
+            key: "Cache-Control",
+            value: "private, no-cache, no-store, max-age=0, must-revalidate",
+          },
+        ],
+      },
       {
         source: "/:path*",
         headers: [
