@@ -35,6 +35,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${BASE_URL}/areas`,
     },
     {
+      url: `${BASE_URL}/blog`,
+    },
+    {
+      url: `${BASE_URL}/blog/best-gardeners-newquay`,
+    },
+    {
       url: `${BASE_URL}/site-map`,
     },
     {

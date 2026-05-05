@@ -23,11 +23,16 @@ const mainPages = [
     { href: "/quote", label: "Get a Quote" },
     { href: "/contact", label: "Contact" },
     { href: "/areas", label: "Areas We Cover" },
+    { href: "/blog", label: "Blog" },
 ];
 
 const legalPages = [
     { href: "/privacy", label: "Privacy Policy" },
     { href: "/terms", label: "Terms & Conditions" },
+];
+
+const blogPages = [
+    { href: "/blog/best-gardeners-newquay", label: "Best Gardeners in Newquay" },
 ];
 
 export default async function SitemapPage() {
@@ -98,6 +103,22 @@ export default async function SitemapPage() {
                                     className="text-primary hover:underline capitalize"
                                 >
                                     {slug.replace(/-/g, " ")}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </section>
+
+                <section className="mb-10">
+                    <h2 className="text-2xl font-semibold mb-4">Blog</h2>
+                    <ul className="space-y-2">
+                        {blogPages.map((page) => (
+                            <li key={page.href}>
+                                <Link
+                                    href={page.href}
+                                    className="text-primary hover:underline"
+                                >
+                                    {page.label}
                                 </Link>
                             </li>
                         ))}

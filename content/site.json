@@ -1,5 +1,5 @@
 {
-  "siteName": "Quilliams Gardening",
+  "siteName": "Quilliams Gardening & Landscaping",
   "siteUrl": "https://quilliamsmowing.co.uk",
   "branding": {
     "logoFile": "branding/logoFile.webp",
@@ -53,7 +53,7 @@
   },
   "pwa": {},
   "footer": {
-    "aboutText": "Quilliams Gardening & Landscaping hardworking team has been delivering outstanding, environmentally friendly landscapes for over 5 years.",
+    "aboutText": "Quilliams Gardening & Landscaping is a Newquay-based gardening and landscaping service run by Levi Quilliam. Public liability insured and waste-carrier licensed.",
     "connectHeading": "Connect With Us",
     "businessHoursHeading": "Business Hours",
     "businessHours": [

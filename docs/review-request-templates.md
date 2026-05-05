@@ -12,7 +12,7 @@ Hi [NAME]! 👋
 Thanks for choosing Quilliams Gardening. Hope you're happy with how the garden looks!
 
 If you have 30 seconds, a Google review would really help us out:
-[GOOGLE_REVIEW_LINK]
+https://g.page/r/Ca1e8ukWV-qsEBM/
 
 No worries if not — thanks again!
 
@@ -30,7 +30,7 @@ Thanks again for having us round to sort the garden — hope you're pleased with
 
 I've got a small favour to ask: if you have 30 seconds, would you mind leaving us a quick Google review? It makes a huge difference for a small local business like ours.
 
-👉 [GOOGLE_REVIEW_LINK]
+👉 https://g.page/r/Ca1e8ukWV-qsEBM/
 
 Even just a sentence or two helps. No pressure at all if you're busy!
 
@@ -42,14 +42,20 @@ Quilliams Gardening
 ## Follow-Up (if no response after 1 week)
 
 ```
-Hi [NAME], just a gentle nudge — if you had a good experience, a quick Google review would mean a lot! [GOOGLE_REVIEW_LINK] 🙏
+Hi [NAME], just a gentle nudge — if you had a good experience, a quick Google review would mean a lot! https://g.page/r/Ca1e8ukWV-qsEBM/
 ```
 
 ---
 
 ## Your Google Review Link
 
-To get your direct review link:
+Use the current Google Business Profile link:
+
+```
+https://g.page/r/Ca1e8ukWV-qsEBM/
+```
+
+To get a shorter direct write-review link later:
 
 1. Search "Quilliams Mowing" on Google
 2. Click your business listing

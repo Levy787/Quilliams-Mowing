@@ -113,7 +113,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
                         </li>
                         <li className="flex items-start gap-3">
                             <span className="text-primary font-bold">✓</span>
-                            <span>Chainsaw licensed, fully insured, licensed waste carrier</span>
+                            <span>Public liability insured, waste-carrier licensed</span>
                         </li>
                         <li className="flex items-start gap-3">
                             <span className="text-primary font-bold">✓</span>
@@ -130,6 +130,21 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
                         </p>
                     )}
                 </section>
+
+                {slug === "newquay" && (
+                    <section className="mb-12 rounded-lg border bg-muted/30 p-6">
+                        <h2 className="text-2xl font-semibold mb-3">Comparing gardeners in Newquay?</h2>
+                        <p className="text-muted-foreground">
+                            I have written a practical guide to choosing a local gardener, including what to check before booking and where Quilliams fits best.
+                        </p>
+                        <Link
+                            href="/blog/best-gardeners-newquay"
+                            className="mt-4 inline-flex items-center rounded-lg bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+                        >
+                            Read the Newquay gardener guide
+                        </Link>
+                    </section>
+                )}
                 
                 {area.nearby.length > 0 && (
                     <section className="mb-12">

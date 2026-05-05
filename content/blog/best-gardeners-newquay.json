@@ -1,0 +1,194 @@
+{
+  "slug": "best-gardeners-newquay",
+  "title": "Best Gardeners in Newquay",
+  "subtitle": "A practical local guide to choosing a gardener in Newquay, with Quilliams Gardening & Landscaping listed first and a clear checklist for comparing any other option.",
+  "author": "Levi Quilliam",
+  "publishedDate": "2026-05-04",
+  "updatedDate": "2026-05-04",
+  "readingTime": "7 min read",
+  "heroImage": {
+    "src": "/images/uploads/garden-maintenance/hero/imageFile.webp",
+    "alt": "A tidy Newquay garden after regular maintenance"
+  },
+  "seo": {
+    "title": "Best Gardeners in Newquay | Local Gardener Guide",
+    "description": "Looking for gardeners in Newquay? Compare local options, prices and checks. Quilliams Gardening & Landscaping is listed first for insured garden care."
+  },
+  "quickAnswer": {
+    "title": "Quick answer",
+    "body": "For lawn mowing, hedge trimming, garden maintenance, one-off tidy-ups and practical landscaping in Newquay, we recommend Quilliams Gardening & Landscaping first. This is our own website, so the recommendation is clearly biased, but the reasons are concrete: Newquay base, visible project proof, public liability insurance, waste-carrier registration and clear quote routes."
+  },
+  "quilliams": {
+    "title": "1. Quilliams Gardening & Landscaping",
+    "summary": "Best fit for homeowners in Newquay who want reliable lawn mowing, hedge trimming, garden maintenance, seasonal clearances, waste removal and practical landscaping from an owner-operated local gardener.",
+    "facts": [
+      "Based near Newquay and regularly working across Newquay, Porth, Pentire, Fistral, Crantock, Trevarrian, Towan and Trenance.",
+      "Public liability insured and registered as a licensed waste carrier for green waste removal.",
+      "Clear prices: small lawn mowing from around 20 pounds, hedge trimming from around 5 to 15 pounds per metre, and one-off cleanups from around 80 pounds depending on scope.",
+      "Useful for regular garden maintenance, holiday-let garden checks, hedge trimming, lawn care and messy garden resets.",
+      "Not the right fit for agricultural field mowing, baling, agricultural hedge cutting or large tree surgery."
+    ]
+  },
+  "criteria": [
+    {
+      "title": "Local proof",
+      "description": "Look for evidence that the gardener actually works in Newquay: project photos, named neighbourhoods, local reviews and clear service-area wording."
+    },
+    {
+      "title": "Insurance and waste handling",
+      "description": "Ask whether they carry public liability insurance and how green waste is removed. Garden waste should not be fly-tipped or left unclear in the quote."
+    },
+    {
+      "title": "Clear scope",
+      "description": "A good quote should say what is included, what happens with clippings, whether access is a problem, and whether repeat visits are available."
+    },
+    {
+      "title": "Right fit for the job",
+      "description": "A maintenance gardener, landscaper, tree surgeon and agricultural contractor are different things. Pick the trade that matches the work."
+    }
+  ],
+  "comparisonRows": [
+    {
+      "need": "Regular lawn mowing",
+      "bestFit": "Quilliams or another local maintenance gardener",
+      "whatToCheck": "Frequency, edging, clippings and minimum visit charge"
+    },
+    {
+      "need": "Hedge trimming",
+      "bestFit": "Quilliams for normal domestic hedges",
+      "whatToCheck": "Height, access, nesting season, waste removal and price per metre"
+    },
+    {
+      "need": "One-off garden cleanup",
+      "bestFit": "Quilliams for overgrown domestic gardens",
+      "whatToCheck": "Before photos, waste volume, dumpy-bag charges and what is left at the end"
+    },
+    {
+      "need": "Large tree work",
+      "bestFit": "A qualified tree surgeon",
+      "whatToCheck": "Tree surgery qualifications, climbing cover and waste handling"
+    },
+    {
+      "need": "Field mowing or baling",
+      "bestFit": "An agricultural contractor",
+      "whatToCheck": "Tractor access, acreage, baling equipment and farm insurance"
+    }
+  ],
+  "operatorsIntro": "Including Quilliams above, this gives you 10 gardener and landscaping options to compare around Newquay. Details can change, so use these links as a starting point and confirm services, prices, insurance and availability directly before booking.",
+  "operatorsCheckedDate": "2026-05-04",
+  "operators": [
+    {
+      "name": "Green Guys",
+      "url": "https://www.greenguysgarden.com/",
+      "sourceLabel": "Official website",
+      "icon": "Leaf",
+      "linkLabel": "View site",
+      "bestFit": "General gardening, grass cutting, lawn maintenance, hedge trimming and some home-care/property tasks.",
+      "notes": "Their website lists Green Guys as Newquay-based and shows hourly gardener pricing plus separate travel and garden-waste charges."
+    },
+    {
+      "name": "GreenFern Garden Services",
+      "url": "https://www.greenferngardenservices.com/lawn-care-newquay",
+      "sourceLabel": "Official website",
+      "icon": "Scissors",
+      "linkLabel": "View site",
+      "bestFit": "Lawn care, lawn mowing and garden clearance around Newquay.",
+      "notes": "Their website focuses on lawn care in Newquay and surrounding areas. Their Yell listing also describes garden clearance, lawn cutting and lawn care within a 10-mile radius of Newquay."
+    },
+    {
+      "name": "H and H Landscapes",
+      "url": "https://www.handhlandscapes.co.uk/",
+      "sourceLabel": "Official website",
+      "icon": "Hammer",
+      "linkLabel": "View site",
+      "bestFit": "Landscape gardening, fencing, decking, paving, turfing, garden clearance and hedge trimming.",
+      "notes": "Their website positions them as a Newquay landscape gardening business and lists both hard and soft landscaping work."
+    },
+    {
+      "name": "JKG Gardening",
+      "url": "https://www.jkgardening.co.uk/contact",
+      "sourceLabel": "Official website",
+      "icon": "Leaf",
+      "linkLabel": "View site",
+      "bestFit": "Regular grounds maintenance, hedging, topiary, turfing and wider garden care.",
+      "notes": "Their contact page lists a Porth, Newquay address and describes a team handling regular maintenance and one-off gardening jobs."
+    },
+    {
+      "name": "Newquay Landscaping",
+      "url": "https://www.newquaylandscaping.com/",
+      "sourceLabel": "Official website",
+      "icon": "Shovel",
+      "linkLabel": "View site",
+      "bestFit": "Bespoke landscaping, garden design, paving, decking, fencing and outdoor living projects.",
+      "notes": "This looks more suitable for landscaping and garden-build projects than simple mowing or routine tidy-ups."
+    },
+    {
+      "name": "Ocean Green Management",
+      "url": "https://www.oceangreenman.co.uk/",
+      "sourceLabel": "Official website",
+      "icon": "Recycle",
+      "linkLabel": "View site",
+      "bestFit": "Landscape gardening, grounds maintenance and green-waste recycling near Newquay.",
+      "notes": "Their website mentions a Kestle Mill trade site for green-waste recycling plus landscape gardening and grounds maintenance."
+    },
+    {
+      "name": "Bryants Garden Enterprises",
+      "url": "https://www.yell.com/biz/bryants-garden-enterprises-newquay-10672719/",
+      "sourceLabel": "Yell listing",
+      "icon": "Scissors",
+      "linkLabel": "View site",
+      "bestFit": "Garden maintenance, grass cutting, hedge cutting, paving, fencing, turfing, planting, pruning, garden clearance and decking.",
+      "notes": "Their Yell profile lists a Newquay business with hard and soft landscaping services, plus waste-carrier credentials."
+    },
+    {
+      "name": "Juniper Gardens",
+      "url": "https://www.junipergardens.co.uk/",
+      "sourceLabel": "Official website",
+      "icon": "Flower2",
+      "linkLabel": "View site",
+      "bestFit": "Horticulturally led garden maintenance, lawn care, hedge cutting, careful pruning, planting design and commercial or holiday-home garden care.",
+      "notes": "Their website says they cover mid and west Cornwall including Newquay, with a stronger specialist horticulture angle than simple mowing-only services."
+    },
+    {
+      "name": "Cove Gardening Services",
+      "url": "https://www.covegardeningservices.com/",
+      "sourceLabel": "Official website",
+      "icon": "Leaf",
+      "linkLabel": "View site",
+      "bestFit": "Regular garden maintenance, holiday-let maintenance, garden design, hedge trimming, garden clearance, landscaping, patios, turfing, decking and fencing.",
+      "notes": "Their website says they cover much of West Cornwall, including Newquay, Truro, Falmouth, Padstow and nearby areas."
+    }
+  ],
+  "otherOptions": [
+    {
+      "title": "Google Maps results",
+      "description": "Useful for checking review count, review recency, photos and whether the business looks active."
+    },
+    {
+      "title": "Checkatrade, Yell and Bark listings",
+      "description": "Useful for finding additional gardeners and comparing how each business describes its services."
+    },
+    {
+      "title": "Neighbour and community recommendations",
+      "description": "Useful when you want someone already working on your street or estate, especially for regular maintenance."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Who is the best gardener in Newquay?",
+      "answer": "For domestic lawn mowing, hedge trimming, garden maintenance and one-off tidy-ups, Quilliams Gardening & Landscaping is a strong local option in Newquay. You should still compare recent reviews, photos, insurance, waste handling and whether the gardener is a good fit for your exact job."
+    },
+    {
+      "question": "How much does a gardener cost in Newquay?",
+      "answer": "Small lawn mowing jobs often start from around 20 pounds, hedge trimming is commonly priced by height and length, and one-off garden cleanups usually depend on waste volume and access. Quilliams quotes clearly before work starts."
+    },
+    {
+      "question": "Should I choose a gardener or a landscaper?",
+      "answer": "Choose a gardener for regular mowing, weeding, pruning, tidy-ups and hedge maintenance. Choose a landscaper for layout changes, planting schemes, turfing, gravel gardens and bigger garden improvements."
+    },
+    {
+      "question": "Do Newquay gardeners remove green waste?",
+      "answer": "Some do and some do not. Always ask before booking. Quilliams Gardening & Landscaping can remove green waste and is registered as a waste carrier."
+    }
+  ]
+}

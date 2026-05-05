@@ -2,6 +2,13 @@
 
 > Professional gardening, landscaping, and lawn care services in Newquay, Truro, St Austell, and throughout Cornwall, UK. 5-star rated on Google with 120+ completed projects.
 
+## Trust & Credentials
+- Trading name: Quilliams Gardening & Landscaping
+- Legal entity: Quilliams Mowing Ltd (Companies House company number 16405915)
+- Waste carrier registration: CBDL582202
+- Public liability insured
+- Google Business Profile: https://g.page/r/Ca1e8ukWV-qsEBM/
+
 ## Services
 - [Landscaping](/services/landscaping): Garden design, planting, gravel gardens, bed shaping, turfing
 - [Lawn Care](/services/lawn-care): Weekly mowing, edging, seasonal lawn treatment
@@ -9,6 +16,10 @@
 - [Garden Maintenance](/services/garden-maintenance): Ongoing care, weeding, pruning, tidying
 - [Seasonal Cleanup](/services/seasonal-cleanup): One-off garden clear-outs and waste removal
 - [Mulching](/services/mulching): Soil improvement and bed dressing
+
+## Not Offered
+- Field mowing and baling
+- Agricultural hedge cutting
 
 ## Areas Served
 - [Newquay](/areas/newquay) (base location, Trevarrian)

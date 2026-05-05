@@ -26,6 +26,24 @@ Target: move `quilliamsmowing.co.uk` from the corrected post-deploy score of rou
   - TBT: 253ms
   - CLS: 0.023
 
+## Added From Business And GSC Details
+
+- [x] Use `Quilliams Gardening & Landscaping` as the trading name on-site.
+- [x] Add the live Google Business Profile link to local trust surfaces: `https://g.page/r/Ca1e8ukWV-qsEBM/`.
+- [x] Add official entity identifiers to LocalBusiness schema and AI-readable site notes:
+  - Companies House: `Quilliams Mowing Ltd`, company number `16405915`.
+  - Environment Agency waste carrier registration: `CBDL582202`.
+- [x] Replace visible chainsaw-licence claims with public-liability/waste-carrier and practical hedge-work wording until certificate details are available.
+- [x] Mark `field mowing/baling` and `agricultural hedge cutting` as excluded SEO targets because they are not offered services.
+- [ ] Focus GSC keyword work on offered services instead:
+  - `gardeners newquay`
+  - `gardener newquay`
+  - `lawn mowing cornwall`
+  - `grass cutting cornwall`
+  - `garden design newquay`
+  - `garden services near me`
+- [ ] Export exact affected URL examples from each GSC Coverage issue before fixing the remaining 404/5xx/indexing rows.
+
 ## P0: Performance To 90+ Lighthouse
 
 - [ ] Re-run mobile Lighthouse after deployment and compare against the local fixed baseline:

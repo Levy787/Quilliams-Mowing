@@ -13,7 +13,7 @@ export function Banner() {
                     <div className="hidden md:flex items-center gap-6">
                         <Button asChild className="flex items-center gap-2" variant="link">
                             <Link
-                                href="https://g.page/r/Ca1e8ukWV-qsEAE"
+                                href="https://g.page/r/Ca1e8ukWV-qsEBM/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >

@@ -124,6 +124,9 @@ function priorityFor({ href, type }) {
   // Offers: treat as general marketing pages (below services/projects)
   if (type === "offer") return 60;
 
+  // Guides/blog posts: useful for discovery, but below conversion pages
+  if (type === "blog" || href.startsWith("/blog/")) return 60;
+
   // Other pages
   if (href === "/") return 0;
   return 50;
@@ -212,6 +215,27 @@ async function main() {
       const snippet = (typeof json.subheadline === "string" && json.subheadline.trim()) ? json.subheadline.trim() : guessSnippet(json);
 
       docs.push(makeDoc({ title, href: `/${slug}`, type: "offer", snippet }, collectStrings(json)));
+    }
+  } catch {
+    // ignore
+  }
+
+  // Blog posts
+  const blogDir = path.join(contentDir, "blog");
+  try {
+    const blogFiles = await listJsonFiles(blogDir);
+    for (const filePath of blogFiles) {
+      const json = await readJson(filePath);
+      const slug = (typeof json.slug === "string" && json.slug.trim()) ? json.slug.trim() : toSlugFromFile(filePath);
+      const title = (typeof json.title === "string" && json.title.trim()) ? json.title.trim() : slug;
+      const snippet =
+        json.seo && typeof json.seo.description === "string" && json.seo.description.trim()
+          ? json.seo.description.trim()
+          : (typeof json.subtitle === "string" && json.subtitle.trim())
+            ? json.subtitle.trim()
+            : guessSnippet(json);
+
+      docs.push(makeDoc({ title, href: `/blog/${slug}`, type: "blog", snippet }, collectStrings(json)));
     }
   } catch {
     // ignore
