@@ -178,8 +178,8 @@
     },
     "serviceArea": {
         "badge": "Service area",
-        "heading": "Newquay, Truro, St Austell",
-        "body": "We cover Newquay, Truro, St Austell and nearby areas. If you’re close by,\nreach out — we’ll confirm availability quickly.",
+        "heading": "Newquay and nearby areas",
+        "body": "We cover Newquay and nearby areas. If you’re close by, reach out — we’ll confirm availability quickly.",
         "chips": [
             "Fast response times",
             "Local, reliable service",
@@ -189,30 +189,30 @@
         "primaryCtaHref": "/quote",
         "secondaryCtaLabel": "Contact Us",
         "secondaryCtaHref": "/contact",
-        "footnote": "Not sure if you’re in range? Send your suburb in the quote form.",
+        "footnote": "Not sure if you’re in range? Send your postcode in the quote form.",
         "map": {
-            "centerLat": 50.4,
-            "centerLng": -4.93,
+            "centerLat": 50.4772,
+            "centerLng": -4.9836,
             "zoom": 10,
-            "circleLat": 50.4,
-            "circleLng": -4.93,
-            "circleRadiusMeters": 20000
+            "circleLat": 50.4772,
+            "circleLng": -4.9836,
+            "circleRadiusMeters": 12875
         },
         "mapLabels": [
             {
+                "text": "St Eval",
+                "leftPercent": 50,
+                "topPercent": 44
+            },
+            {
                 "text": "Newquay",
-                "leftPercent": 20,
-                "topPercent": 30
+                "leftPercent": 36,
+                "topPercent": 78
             },
             {
-                "text": "Truro",
-                "leftPercent": 46,
-                "topPercent": 34
-            },
-            {
-                "text": "St Austell",
-                "leftPercent": 56,
-                "topPercent": 49
+                "text": "Padstow",
+                "leftPercent": 63,
+                "topPercent": 24
             }
         ]
     },

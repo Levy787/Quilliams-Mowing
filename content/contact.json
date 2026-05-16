@@ -19,7 +19,7 @@
         "hoursLabel": "Hours",
         "hoursText": "Mon–Sun: 9am–5pm",
         "serviceAreaLabel": "Service area",
-        "serviceAreaText": "Serving Newquay, Cornwall and surrounding areas.",
+        "serviceAreaText": "Serving Newquay and nearby areas.",
         "googleMapsProfileLabel": "Find us on Google Maps",
         "googleMapsProfileUrl": "https://g.page/r/Ca1e8ukWV-qsEBM/"
     },
@@ -47,11 +47,11 @@
         "submitLoadingLabel": "Sending…"
     },
     "map": {
-        "centerLat": 50.4,
-        "centerLng": -4.93,
+        "centerLat": 50.4772,
+        "centerLng": -4.9836,
         "zoom": 10,
-        "circleLat": 50.4,
-        "circleLng": -4.93,
-        "circleRadiusMeters": 20000
+        "circleLat": 50.4772,
+        "circleLng": -4.9836,
+        "circleRadiusMeters": 12875
     }
 }
