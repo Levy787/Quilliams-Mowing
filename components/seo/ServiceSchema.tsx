@@ -63,7 +63,6 @@ export function ServiceSchema({
         offers: {
           "@type": "Offer",
           priceCurrency: "GBP",
-          price: "20",
           priceSpecification: {
             "@type": "PriceSpecification",
             priceCurrency: "GBP",

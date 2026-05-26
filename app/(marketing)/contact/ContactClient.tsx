@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { toast } from "sonner";
-import { Clock, Mail, MapPin, Phone } from "lucide-react";
+import { Clock, Mail, MapPin, Phone, ShieldCheck } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -41,6 +41,8 @@ export type ContactClientProps = {
         serviceAreaText: string;
         googleMapsProfileLabel: string;
         googleMapsProfileUrl: string | null;
+        credentialsLabel?: string;
+        credentialsText?: string;
     };
     form: {
         title: string;
@@ -251,6 +253,20 @@ export default function ContactClient({ header, details, form, map }: ContactCli
                                                     >
                                                         View on Google Maps
                                                     </Link>
+                                                </div>
+                                            </div>
+                                        ) : null}
+
+                                        {details.credentialsText?.trim() ? (
+                                            <div className="flex items-start gap-3">
+                                                <ShieldCheck className="mt-0.5 h-5 w-5 text-primary" aria-hidden="true" />
+                                                <div className="min-w-0">
+                                                    <div className="text-sm font-medium text-background dark:text-foreground">
+                                                        {details.credentialsLabel ?? "Credentials"}
+                                                    </div>
+                                                    <div className="mt-1 text-sm text-background/80 dark:text-muted-foreground">
+                                                        {details.credentialsText}
+                                                    </div>
                                                 </div>
                                             </div>
                                         ) : null}

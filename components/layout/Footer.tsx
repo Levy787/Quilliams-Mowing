@@ -78,7 +78,7 @@ export function FooterInner({
     logoSrc = "/logos/logo-icon-text.webp",
     logoAlt = "Quilliams Gardening & Landscaping",
     aboutText =
-    "Quilliams Gardening & Landscaping is a Newquay-based gardening and landscaping service run by Levi Quilliam. Public liability insured and waste-carrier licensed.",
+    "Quilliams Gardening & Landscaping is a Newquay-based gardening and landscaping service run by Levi Quilliam. Public liability insured. Waste carrier licence CBDL582202. Companies House 16405915.",
     connectHeading = "Connect With Us",
     businessHoursHeading = "Business Hours",
     businessHours = DEFAULT_BUSINESS_HOURS,

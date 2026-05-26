@@ -120,13 +120,6 @@ export function LocalBusinessSchema({
         closes: "17:00",
       },
     ],
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: 5,
-      bestRating: 5,
-      worstRating: 1,
-      reviewCount: 16,
-    },
     sameAs: [
       GOOGLE_BUSINESS_PROFILE_URL,
       COMPANIES_HOUSE_URL,

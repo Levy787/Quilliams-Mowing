@@ -228,6 +228,43 @@ export default async function BlogPostPage({
                             </div>
                         </section>
                     ) : null}
+
+                    <section
+                        aria-labelledby="author-bio-heading"
+                        className="mt-14 rounded-3xl border bg-muted/40 p-6 md:p-8"
+                    >
+                        <h2 id="author-bio-heading" className="sr-only">
+                            About the author
+                        </h2>
+                        <div className="flex flex-col gap-6 md:flex-row md:items-center">
+                            <Image
+                                src="/images/uploads/faq/levi-headshot-v2.jpg"
+                                alt="Levi Quilliam, founder of Quilliams Gardening & Landscaping"
+                                width={96}
+                                height={96}
+                                className="size-24 shrink-0 rounded-full object-cover"
+                            />
+                            <div className="min-w-0">
+                                <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+                                    Written by
+                                </p>
+                                <p className="mt-1 text-xl font-bold tracking-tight">Levi Quilliam</p>
+                                <p className="text-sm text-muted-foreground">
+                                    Founder & Lead Gardener, Quilliams Gardening &amp; Landscaping
+                                </p>
+                                <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+                                    I'm a Cornwall-based gardener and landscaper working across Newquay, Truro, St Austell and the surrounding villages. Public liability insured, Environment Agency waste carrier (CBDL582202), and a registered limited company (Companies House 16405915). I write these guides from real jobs on Cornish gardens.
+                                </p>
+                                <Link
+                                    href="/about"
+                                    className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
+                                >
+                                    More about Levi
+                                    <ArrowRight className="size-4" aria-hidden="true" />
+                                </Link>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </article>
         </main>

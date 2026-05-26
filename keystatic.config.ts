@@ -1933,6 +1933,17 @@ export const keystaticConfig = config({
             googleMapsProfileUrl: fields.url({
               label: "Google Maps profile URL",
             }),
+
+            credentialsLabel: fields.text({
+              label: "Credentials label",
+              defaultValue: "Credentials",
+            }),
+            credentialsText: fields.text({
+              label: "Credentials text",
+              multiline: true,
+              defaultValue:
+                "Public liability insured. Waste carrier licence CBDL582202. Quilliams Mowing Ltd, Companies House 16405915.",
+            }),
           },
           { label: "Contact details" },
         ),

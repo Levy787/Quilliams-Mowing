@@ -34,7 +34,7 @@
                 "tone": "normal"
             }
         ],
-        "subheading": "From weekly mowing and garden maintenance to full yard clean-ups and landscape improvements, we deliver stress-free, dependable care that keeps your outdoor spaces beautiful, functional, and something you can truly be proud of.",
+        "subheading": "From weekly mowing and garden maintenance to full yard clean-ups and landscape improvements, I deliver stress-free, dependable care that keeps your outdoor space beautiful, functional, and something you can be properly proud of.",
         "primaryCtaLabel": "Get a Free Quote Today",
         "primaryCtaHref": "/quote",
         "secondaryCtaLabel": "Contact Us",
@@ -217,12 +217,12 @@
         ]
     },
     "recentWorks": {
-        "badge": "Our Recent Works",
+        "badge": "Recent Works",
         "headingLines": [
             "Beautiful Gardens & Landscapes",
-            "We Created"
+            "I Created"
         ],
-        "description": "See how we’ve transformed spaces with our expert craftsmanship and attention\nto detail.",
+        "description": "Here are a few gardens I've transformed across Cornwall. Each one shows what's possible with the right approach and attention to detail.",
         "items": [
             {
                 "title": "Garden makeover + tidy up",
@@ -230,7 +230,7 @@
                 "projectSlug": "ongoing-garden-maintenance",
                 "imageFile": "recentWorks/items/0/imageFile.webp",
                 "imageAlt": "Freshly maintained garden with tidy hedges and a neat lawn",
-                "perfectFor": "Previously overgrown with weeds and oversized bushes/hedges. We weeded thoroughly, shaped the hedges and bushes, and finished with a fresh lawn mow.",
+                "perfectFor": "Previously overgrown with weeds and oversized bushes/hedges. I weeded thoroughly, shaped the hedges and bushes, and finished with a fresh lawn mow.",
                 "budget": "£50 - £150",
                 "duration": "0.5-1 day"
             },
@@ -276,7 +276,7 @@
             "Answering your",
             "questions"
         ],
-        "description": "Got more questions? Reach out to us using the button below",
+        "description": "Got more questions? Send me a message using the button below.",
         "ctaLabel": "Get In Touch",
         "ctaHref": "/contact",
         "decorativeImageFile": "faq/decorativeImageFile.webp",
@@ -329,8 +329,8 @@
     },
     "testimonials": {
         "badge": "Testimonials",
-        "heading": "Don’t just take our word for it",
-        "description": "Hear what homeowners say about working with us.",
+        "heading": "What Cornwall homeowners say",
+        "description": "Real reviews from people I've worked with across Newquay, Truro, and the surrounding villages.",
         "items": [
             {
                 "name": "Matthew Wellington",
@@ -427,6 +427,18 @@
                 "location": "Newquay, Cornwall",
                 "date": "2 Jun 2025",
                 "quote": "”Really tidied up my bushes"
+            },
+            {
+                "name": "Lucy Jane",
+                "location": "Cornwall",
+                "date": "26 Feb 2026",
+                "quote": "”Levi did an amazing job with our garden. He got loads more done than we thought would be possible in the time and is a very kind, respectful person.”"
+            },
+            {
+                "name": "Evie Pratt",
+                "location": "Cornwall",
+                "date": "19 May 2026",
+                "quote": "”Fantastic job transforming our garden! The weeds had become completely overgrown and out of hand. We're extremely pleased with the results and would highly recommend to anyone needing garden work done.”"
             }
         ]
     }

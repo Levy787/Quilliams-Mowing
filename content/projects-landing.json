@@ -1,7 +1,7 @@
 {
   "seo": {
     "title": "Garden Projects in Cornwall | Before & After Photos",
-    "description": "See our garden transformations in Cornwall. Before and after photos of landscaping, hedge trimming, and garden maintenance projects in Newquay and beyond."
+    "description": "See my garden transformations in Cornwall. Before and after photos of landscaping, hedge trimming, and garden maintenance projects in Newquay and beyond."
   },
   "hero": {
     "badge": "Projects",
@@ -44,7 +44,7 @@
   },
   "finalCta": {
     "title": "Have a garden that needs a refresh?",
-    "description": "Tell us what you want improved and we’ll recommend a practical plan, then quote it clearly.",
+    "description": "Tell me what you want improved and I'll recommend a practical plan, then quote it clearly.",
     "primaryCta": {
       "label": "Get a Quote",
       "href": "/quote"

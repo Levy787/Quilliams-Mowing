@@ -27,38 +27,38 @@
     }
   },
   "process": {
-    "title": "How we work",
+    "title": "How I work",
     "description": "A straightforward process with clear recommendations, clear pricing, and clean results.",
     "steps": [
       {
-        "title": "Tell us what you need",
-        "description": "Share a few details (and photos if you have them) so we can understand the job.",
+        "title": "Tell me what you need",
+        "description": "Share a few details (and photos if you have them) so I can understand the job.",
         "icon": "MessageCircle"
       },
       {
-        "title": "We assess and recommend",
-        "description": "We’ll suggest the best approach for your yard, budget, and maintenance level.",
+        "title": "I assess and recommend",
+        "description": "I'll suggest the best approach for your garden, budget, and maintenance level.",
         "icon": "Lightbulb"
       },
       {
-        "title": "We quote clearly",
-        "description": "You’ll get a clear quote so you know exactly what’s included.",
+        "title": "I quote clearly",
+        "description": "You'll get a clear quote so you know exactly what's included.",
         "icon": "ClipboardCheck"
       },
       {
-        "title": "We schedule and deliver",
-        "description": "We book a time that works and show up ready to get it done.",
+        "title": "I schedule and deliver",
+        "description": "I book a time that works and show up ready to get it done.",
         "icon": "CalendarDays"
       }
     ]
   },
   "servicesGrid": {
-    "title": "What we can help with",
-    "description": "Pick a service to learn more. If you’re not sure, request a quote and we’ll recommend the best next step."
+    "title": "What I can help with",
+    "description": "Pick a service to learn more. If you're not sure, request a quote and I'll recommend the best next step."
   },
   "highlights": {
     "title": "Service highlights",
-    "description": "Two common goals we hear: keep things consistently tidy, and make improvements that feel worth it.",
+    "description": "Two common goals I hear: keep things consistently tidy, and make improvements that feel worth it.",
     "items": [
       {
         "image": {
@@ -69,7 +69,7 @@
         "bullets": [
           "Reliable regular visits so your yard doesn’t get away from you.",
           "Clean edges, tidy beds, and seasonal refreshes when needed.",
-          "Clear communication on what we’ll do each visit."
+          "Clear communication on what I'll do each visit."
         ],
         "cta": {
           "label": "Get a Quote",
@@ -98,12 +98,12 @@
   },
   "faq": {
     "title": "FAQs",
-    "description": "Quick answers to the most common questions we hear.",
+    "description": "Quick answers to the most common questions I hear.",
     "items": [
       {
         "id": "maintenance",
         "question": "Do you offer ongoing maintenance?",
-        "answer": "Yes. We can schedule regular visits (weekly, fortnightly, or as needed) to keep your yard consistently tidy."
+        "answer": "Yes. I can schedule regular visits (weekly, fortnightly, or as needed) to keep your garden consistently tidy."
       },
       {
         "id": "photos",
@@ -113,23 +113,23 @@
       {
         "id": "waste",
         "question": "Do you remove green waste?",
-        "answer": "Yes, green waste removal can be included. Let us know what you’d like cleared and we’ll include it in the quote."
+        "answer": "Yes, green waste removal can be included. Let me know what you'd like cleared and I'll include it in the quote."
       },
       {
         "id": "timing",
         "question": "How soon can you start?",
-        "answer": "It depends on the season and the scope of work. Once we know what you need, we’ll confirm the next available times."
+        "answer": "It depends on the season and the scope of work. Once I know what you need, I'll confirm the next available times."
       },
       {
         "id": "pricing",
         "question": "Do you provide fixed quotes?",
-        "answer": "Yes. For most jobs we provide a clear quote outlining what’s included. If anything changes, we’ll discuss it before proceeding."
+        "answer": "Yes. For most jobs I provide a clear quote outlining what's included. If anything changes, I'll discuss it before proceeding."
       }
     ]
   },
   "finalCta": {
     "title": "Not sure what you need?",
-    "description": "Tell us a bit about your yard and we’ll recommend the best next step.",
+    "description": "Tell me a bit about your garden and I'll recommend the best next step.",
     "primaryCta": {
       "label": "Get a Quote",
       "href": "/quote"

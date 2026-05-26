@@ -18,7 +18,7 @@
   "calculator": {
     "badge": "Pricing calculator",
     "heading": "Try a few options.",
-    "description": "This is a rough guide only. We’ll confirm scope quickly and give you a more accurate range.",
+    "description": "This is a rough guide only. I'll confirm scope quickly and give you a more accurate range.",
     "addonSectionTitle": "Optional add-ons",
     "greenWasteTitle": "Green waste handling",
     "greenWasteDescription": "Bag/stack/removal needs affect time and cost.",
@@ -30,7 +30,7 @@
     "estimatedRangeNote": "Rough guide only. Final pricing depends on photos, access, exact scope, and green waste handling.",
     "includesTitle": "What this estimate includes",
     "sendTitle": "Send this with your quote",
-    "sendDescription": "We’ll receive your selections and the estimated range so we can confirm scope faster.",
+    "sendDescription": "I'll receive your selections and the estimated range so I can confirm scope faster.",
     "sendPrimaryCtaLabel": "Send to Quote",
     "sendSecondaryCtaLabel": "Open Quote Form",
     "sendSecondaryCtaHref": "/quote",
@@ -69,7 +69,7 @@
   "breakdown": {
     "badge": "What affects price",
     "heading": "A few real-world factors.",
-    "description": "We keep pricing straightforward. The fastest way to confirm your range is a short description and a few photos.",
+    "description": "I keep pricing straightforward. The fastest way to confirm your range is a short description and a few photos.",
     "drivers": [
       {
         "title": "Yard size + layout",
@@ -88,7 +88,7 @@
       },
       {
         "title": "Green waste handling",
-        "description": "Bagging, stacking, or removal changes the workload. We’ll confirm what you want done with clippings.",
+        "description": "Bagging, stacking, or removal changes the workload. I'll confirm what you want done with clippings.",
         "icon": "recycle"
       }
     ],

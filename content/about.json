@@ -14,11 +14,15 @@
       },
       {
         "strong": "Fully insured",
-        "text": "with public liability cover for your peace of mind."
+        "text": "with public liability cover for every job, large or small."
       },
       {
         "strong": "Licensed waste carrier",
-        "text": "so green waste is handled properly and responsibly."
+        "text": "registered with the Environment Agency (CBDL582202) so green waste is handled properly."
+      },
+      {
+        "strong": "Registered limited company",
+        "text": "Quilliams Mowing Ltd, Companies House 16405915, so you know who you are hiring."
       },
       {
         "strong": "Customer-first approach",
@@ -153,7 +157,7 @@
       },
       {
         "title": "Clear plan",
-        "description": "We agree on what's included, what matters most, and how I'll leave the space at the end.",
+        "description": "I'll confirm what's included, what matters most, and how I'll leave the space at the end.",
         "icon": "Wand2"
       },
       {
@@ -176,7 +180,7 @@
       {
         "id": "q1",
         "question": "Do you only do ongoing maintenance?",
-        "answer": "Not at all. I do both ongoing garden maintenance and one-off cleanups or transformations. Most of my regular clients started with a one-off job and liked the result enough to book me monthly. We'll figure out what makes sense for your space."
+        "answer": "Not at all. I do both ongoing garden maintenance and one-off cleanups or transformations. Most of my regular clients started with a one-off job and liked the result enough to book me monthly. I'll figure out what makes sense for your space."
       },
       {
         "id": "q2",
