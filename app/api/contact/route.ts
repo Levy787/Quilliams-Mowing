@@ -1,6 +1,6 @@
 import { type NextRequest, NextResponse } from "next/server";
 
-import { getEmailConfig, sendEmail } from "@/lib/email/sendgrid";
+import { getEmailConfig, sendEmail } from "@/lib/email/resend";
 import { contactAdminTemplate } from "@/emails/templates/contact-admin";
 import { contactUserTemplate } from "@/emails/templates/contact-user";
 import {
@@ -99,6 +99,15 @@ export async function POST(req: NextRequest) {
             );
         }
 
+        await sendLeadToTradeSender({
+            type: "contact",
+            name,
+            email,
+            phone: phone || undefined,
+            service: service || undefined,
+            message,
+        });
+
         const config = getEmailConfig();
 
         const admin = contactAdminTemplate({
@@ -126,15 +135,6 @@ export async function POST(req: NextRequest) {
             subject: user.subject,
             html: user.html,
             text: user.text,
-        });
-
-        sendLeadToTradeSender({
-            type: "contact",
-            name,
-            email,
-            phone: phone || undefined,
-            service: service || undefined,
-            message,
         });
 
         return NextResponse.json({ ok: true }, { status: 200 });

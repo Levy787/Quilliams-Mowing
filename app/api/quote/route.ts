@@ -1,6 +1,6 @@
 import { type NextRequest, NextResponse } from "next/server";
 
-import { getEmailConfig, sendEmail } from "@/lib/email/sendgrid";
+import { getEmailConfig, sendEmail } from "@/lib/email/resend";
 import { quoteAdminTemplate } from "@/emails/templates/quote-admin";
 import { quoteUserTemplate } from "@/emails/templates/quote-user";
 import {
@@ -113,6 +113,18 @@ export async function POST(req: NextRequest) {
             );
         }
 
+        await sendLeadToTradeSender({
+            type: "quote_request",
+            name,
+            email: email || "",
+            phone: phone || undefined,
+            message: jobDetails || undefined,
+            service: serviceType || undefined,
+            timeframe: timeframe || undefined,
+            budgetRange: budget || undefined,
+            address: address ? { line1: address } : undefined,
+        });
+
         const config = getEmailConfig();
 
         const admin = quoteAdminTemplate({
@@ -147,18 +159,6 @@ export async function POST(req: NextRequest) {
                 text: user.text,
             });
         }
-
-        sendLeadToTradeSender({
-            type: "quote_request",
-            name,
-            email: email || "",
-            phone: phone || undefined,
-            message: jobDetails || undefined,
-            service: serviceType || undefined,
-            timeframe: timeframe || undefined,
-            budgetRange: budget || undefined,
-            address: address ? { line1: address } : undefined,
-        });
 
         return NextResponse.json({ ok: true }, { status: 200 });
     } catch (error) {

@@ -1,6 +1,6 @@
 import { type NextRequest, NextResponse } from "next/server";
 
-import { getEmailConfig, sendEmail } from "@/lib/email/sendgrid";
+import { getEmailConfig, sendEmail } from "@/lib/email/resend";
 import { subscribeAdminTemplate } from "@/emails/templates/subscribe-admin";
 import { subscribeUserTemplate } from "@/emails/templates/subscribe-user";
 import { popupCouponUserTemplate } from "@/emails/templates/popup-coupon-user";
@@ -100,6 +100,15 @@ export async function POST(req: NextRequest) {
             );
         }
 
+        if (email) {
+            await sendLeadToTradeSender({
+                type: "lead_magnet",
+                name: "Website Subscriber",
+                email,
+                source: source || context || "website",
+            });
+        }
+
         const config = getEmailConfig();
 
         const admin = subscribeAdminTemplate({ email, phone, source });
@@ -139,15 +148,6 @@ export async function POST(req: NextRequest) {
                 subject: user.subject,
                 html: user.html,
                 text: user.text,
-            });
-        }
-
-        if (email) {
-            sendLeadToTradeSender({
-                type: "lead_magnet",
-                name: "Website Subscriber",
-                email,
-                source: source || context || "website",
             });
         }
 

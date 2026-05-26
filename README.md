@@ -10,7 +10,7 @@ Setup: https://posthog.com/docs/libraries/next-js?tab=Instrumentation+client
 
 Reverse Proxy: https://posthog.com/docs/advanced/proxy
 
-Emails: https://sendgrid.com/en-us
+Emails: https://resend.com/
 
 Image Hosting: https://cloudinary.com/
 
@@ -20,7 +20,7 @@ Bot Detection: https://cloud.google.com/security/products/recaptcha
 
 Domain Hosting: https://porkbun.com/
 
-## SendGrid email setup
+## Resend email setup
 
 This site sends emails on:
 
@@ -32,8 +32,8 @@ This site sends emails on:
 
 Set these in `.env` (see `.env.example`):
 
-- `SENDGRID_API_KEY` (SendGrid API key)
-- `EMAIL_FROM` (a verified sender address in SendGrid)
+- `RESEND_API_KEY` (Resend API key)
+- `EMAIL_FROM` (a verified sender address in Resend, e.g. `Quilliam's Mowing <levi@quilliamsmowing.co.uk>`)
 - `EMAIL_ADMIN_TO` (the business inbox that receives notifications)
 
 ### Local testing

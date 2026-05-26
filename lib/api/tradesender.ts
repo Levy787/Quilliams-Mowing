@@ -45,33 +45,38 @@ function stripNullish(obj: Record<string, unknown>): Record<string, unknown> {
     return result;
 }
 
-export function sendLeadToTradeSender(lead: Lead): void {
+export async function sendLeadToTradeSender(lead: Lead): Promise<void> {
     const apiKey = process.env.TRADESENDER_API_KEY?.trim();
     if (!apiKey) return;
 
     const payload = stripNullish(lead as unknown as Record<string, unknown>);
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 4000);
 
-    fetch("https://app.tradesender.co.uk/api/v1/leads", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${apiKey}`,
-        },
-        body: JSON.stringify(payload),
-    })
-        .then((res) => {
-            if (process.env.NODE_ENV !== "production") {
-                console.debug(
-                    `[TradeSender] ${lead.type} → ${res.status}`,
-                );
-            }
-        })
-        .catch((err) => {
-            if (process.env.NODE_ENV !== "production") {
-                console.debug(
-                    "[TradeSender] failed",
-                    err instanceof Error ? err.message : err,
-                );
-            }
+    try {
+        const res = await fetch("https://app.tradesender.co.uk/api/v1/leads", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${apiKey}`,
+            },
+            body: JSON.stringify(payload),
+            signal: controller.signal,
         });
+
+        if (process.env.NODE_ENV !== "production") {
+            console.debug(
+                `[TradeSender] ${lead.type} -> ${res.status}`,
+            );
+        }
+    } catch (err) {
+        if (process.env.NODE_ENV !== "production") {
+            console.debug(
+                "[TradeSender] failed",
+                err instanceof Error ? err.message : err,
+            );
+        }
+    } finally {
+        clearTimeout(timeout);
+    }
 }
