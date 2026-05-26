@@ -1,0 +1,222 @@
+[
+  {
+    "id": "lawn-base-growth-001",
+    "status": "ready",
+    "topic": "Lawns",
+    "organism_group": "grass",
+    "fact": "Grass grows from near its base, which is why it can be mown again and again without dying.",
+    "caption": "Grass plants keep their main growing points low. That is why mowing removes leaf tips, not the whole plant.",
+    "cta": "Follow for daily facts about lawns, soil, and garden life.",
+    "image_prompt": "Macro photograph of healthy British lawn grass after mowing, low angle, natural morning light, realistic garden photography, no text",
+    "search_terms": "lawn grass mowing growth point"
+  },
+  {
+    "id": "clover-nitrogen-002",
+    "status": "ready",
+    "topic": "Lawns",
+    "organism_group": "plant",
+    "fact": "Clover is a tiny fertiliser factory.",
+    "caption": "Clover works with bacteria in its roots to fix nitrogen from the air, adding fertility back into the soil system.",
+    "cta": "Follow for daily facts about lawns, soil, and garden life.",
+    "image_prompt": "Close-up of white clover flowers and leaves growing through a British lawn, soft daylight, natural macro photography, no text",
+    "search_terms": "white clover lawn nitrogen fixation"
+  },
+  {
+    "id": "grass-clippings-003",
+    "status": "ready",
+    "topic": "Lawns",
+    "organism_group": "grass",
+    "fact": "Grass clippings are not waste.",
+    "caption": "Fine grass clippings break down quickly and return nutrients to the lawn, especially when the grass is cut regularly.",
+    "cta": "",
+    "image_prompt": "Freshly cut lawn with fine grass clippings visible, realistic British garden, natural green tones, no text",
+    "search_terms": "grass clippings lawn nutrients"
+  },
+  {
+    "id": "soil-living-world-004",
+    "status": "ready",
+    "topic": "Soil",
+    "organism_group": "soil microbes",
+    "fact": "A teaspoon of healthy soil is a whole world.",
+    "caption": "Soil is full of bacteria, fungi, tiny animals, roots, organic matter, water, and air. It is a living system.",
+    "cta": "Follow for daily facts about lawns, soil, and garden life.",
+    "image_prompt": "Close-up of dark healthy garden soil in a hand with fine roots and organic matter, natural light, realistic photography, no text",
+    "search_terms": "healthy garden soil microbes"
+  },
+  {
+    "id": "earthworm-engineer-005",
+    "status": "ready",
+    "topic": "Soil",
+    "organism_group": "earthworm",
+    "fact": "Earthworms are underground engineers.",
+    "caption": "Their tunnels help air and water move through soil, and their casts recycle organic matter into plant-available nutrients.",
+    "cta": "",
+    "image_prompt": "Earthworm on damp garden soil with small roots and leaf litter, realistic macro photograph, no text",
+    "search_terms": "earthworm garden soil aeration"
+  },
+  {
+    "id": "mushroom-fruit-006",
+    "status": "ready",
+    "topic": "Fungi",
+    "organism_group": "fungus",
+    "fact": "A mushroom is only the visible part.",
+    "caption": "Most of the fungus lives hidden as fine threads called mycelium, spreading through soil, wood, or leaf litter.",
+    "cta": "Follow for daily facts about lawns, soil, and garden life.",
+    "image_prompt": "Small mushrooms growing in a damp lawn with moss and leaf litter, British garden macro photography, no text",
+    "search_terms": "mushroom mycelium lawn"
+  },
+  {
+    "id": "moss-symptom-007",
+    "status": "ready",
+    "topic": "Lawns",
+    "organism_group": "moss",
+    "fact": "Moss is a symptom, not the villain.",
+    "caption": "Moss often appears where grass is already struggling: shade, damp, compaction, poor drainage, or low fertility.",
+    "cta": "",
+    "image_prompt": "Macro photograph of moss growing between grass blades in a shaded damp lawn, natural soft light, no text",
+    "search_terms": "moss lawn shade compaction"
+  },
+  {
+    "id": "lawn-algae-clue-008",
+    "status": "ready",
+    "topic": "Lawns",
+    "organism_group": "algae",
+    "fact": "Algae on a lawn is a clue.",
+    "caption": "Green surface algae usually points to damp, compacted, shaded, or poorly drained ground.",
+    "cta": "Follow for daily facts about lawns, soil, and garden life.",
+    "image_prompt": "Damp shaded lawn with subtle green algae on compacted soil surface, realistic garden photography, no text",
+    "search_terms": "lawn algae damp compacted soil"
+  },
+  {
+    "id": "leaf-litter-shelter-009",
+    "status": "ready",
+    "topic": "Garden ecology",
+    "organism_group": "invertebrates",
+    "fact": "Leaf litter is winter shelter.",
+    "caption": "A thin layer of leaves in beds can protect insects, feed fungi, and return organic matter to the soil.",
+    "cta": "",
+    "image_prompt": "Autumn leaves resting in a garden border with dark soil and small plants, natural British garden photo, no text",
+    "search_terms": "leaf litter garden insects soil"
+  },
+  {
+    "id": "mulch-tree-trunk-010",
+    "status": "ready",
+    "topic": "Trees",
+    "organism_group": "tree",
+    "fact": "Mulch helps trees, unless it hugs the trunk.",
+    "caption": "Mulch is best kept away from bark. Piling it against a trunk can trap moisture and encourage decay.",
+    "cta": "Follow for daily facts about lawns, soil, and garden life.",
+    "image_prompt": "Young garden tree with neat mulch ring kept away from trunk, natural daylight, realistic horticultural photo, no text",
+    "search_terms": "tree mulch ring trunk"
+  },
+  {
+    "id": "compost-heat-011",
+    "status": "ready",
+    "topic": "Compost",
+    "organism_group": "microbes",
+    "fact": "Compost can heat itself.",
+    "caption": "The warmth comes from microbes breaking down plant material and releasing heat as they work.",
+    "cta": "",
+    "image_prompt": "Garden compost heap with steam in cool morning air, organic material, realistic documentary garden photography, no text",
+    "search_terms": "hot compost microbes"
+  },
+  {
+    "id": "roots-need-oxygen-012",
+    "status": "ready",
+    "topic": "Soil",
+    "organism_group": "roots",
+    "fact": "Roots breathe too.",
+    "caption": "Roots need oxygen. Waterlogged or heavily compacted soil can leave them short of air.",
+    "cta": "Follow for daily facts about lawns, soil, and garden life.",
+    "image_prompt": "Close-up cross section style photo of grass roots in soil with waterlogged area nearby, realistic garden educational image, no text",
+    "search_terms": "roots oxygen compacted soil waterlogged lawn"
+  },
+  {
+    "id": "fungi-recycle-wood-013",
+    "status": "ready",
+    "topic": "Fungi",
+    "organism_group": "fungus",
+    "fact": "Fungi are nature's recyclers.",
+    "caption": "Many fungi break down dead wood and leaves, returning locked-up nutrients to the soil.",
+    "cta": "",
+    "image_prompt": "Bracket fungus growing on an old garden log with moss and leaf litter, realistic macro nature photography, no text",
+    "search_terms": "fungi dead wood decomposer garden"
+  },
+  {
+    "id": "weeds-messengers-014",
+    "status": "ready",
+    "topic": "Weeds",
+    "organism_group": "plants",
+    "fact": "Weeds are often messengers.",
+    "caption": "Different weeds can hint at bare soil, compaction, low fertility, disturbance, or drainage patterns.",
+    "cta": "Follow for daily facts about lawns, soil, and garden life.",
+    "image_prompt": "Dandelion and plantain growing in a patchy lawn, realistic British garden photo, soft natural light, no text",
+    "search_terms": "lawn weeds soil indicators dandelion plantain"
+  },
+  {
+    "id": "hedges-wildlife-highways-015",
+    "status": "ready",
+    "topic": "Hedges",
+    "organism_group": "plants",
+    "fact": "Hedges are wildlife highways.",
+    "caption": "A mixed hedge can help birds, insects, and small mammals move through gardens and streets safely.",
+    "cta": "",
+    "image_prompt": "Mixed British garden hedge with leaves, berries, and soft wildlife-friendly texture, natural daylight, no text",
+    "search_terms": "mixed hedge wildlife corridor garden"
+  },
+  {
+    "id": "dandelion-taproot-016",
+    "status": "ready",
+    "topic": "Weeds",
+    "organism_group": "plant",
+    "fact": "Dandelions survive because they go deep.",
+    "caption": "Their taproots help them regrow after mowing and reach moisture lower in the soil.",
+    "cta": "Follow for daily facts about lawns, soil, and garden life.",
+    "image_prompt": "Dandelion growing in a lawn with visible long taproot shown naturally in soil, educational realistic photo style, no text",
+    "search_terms": "dandelion taproot lawn"
+  },
+  {
+    "id": "grass-cooling-017",
+    "status": "ready",
+    "topic": "Lawns",
+    "organism_group": "grass",
+    "fact": "A living lawn can cool a garden.",
+    "caption": "Grass releases water vapour and can stay cooler than paving during hot weather.",
+    "cta": "",
+    "image_prompt": "Sunny garden with green lawn next to warm paving stones, realistic summer light, no text",
+    "search_terms": "lawn cooling evapotranspiration paving"
+  },
+  {
+    "id": "green-slime-different-018",
+    "status": "ready",
+    "topic": "Garden ecology",
+    "organism_group": "algae lichen moss",
+    "fact": "Not all green growth is the same thing.",
+    "caption": "Moss, algae, lichens, liverworts, and slime moulds are different organisms doing different jobs.",
+    "cta": "Follow for daily facts about lawns, soil, and garden life.",
+    "image_prompt": "Close-up collage-like natural garden surface with moss, lichen, and algae textures on stone and soil, realistic macro photo, no text",
+    "search_terms": "moss lichen algae garden surface"
+  },
+  {
+    "id": "short-grass-stress-019",
+    "status": "ready",
+    "topic": "Lawns",
+    "organism_group": "grass",
+    "fact": "Short grass is stressed grass.",
+    "caption": "Scalping a lawn removes too much leaf, weakens roots, and gives weeds and moss more room to move in.",
+    "cta": "",
+    "image_prompt": "Patchy scalped lawn beside healthier longer grass, realistic British garden maintenance photo, no text",
+    "search_terms": "scalped lawn mowing stress"
+  },
+  {
+    "id": "soil-not-dirt-020",
+    "status": "ready",
+    "topic": "Soil",
+    "organism_group": "soil",
+    "fact": "Soil is not dirt.",
+    "caption": "Dirt is what you wash off. Soil is a living system that grows plants, stores water, and cycles nutrients.",
+    "cta": "Follow for daily facts about lawns, soil, and garden life.",
+    "image_prompt": "Rich garden soil with small roots, worm casts, and organic matter in soft natural light, macro photograph, no text",
+    "search_terms": "healthy soil living system garden"
+  }
+]

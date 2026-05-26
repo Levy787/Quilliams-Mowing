@@ -295,54 +295,40 @@ function HeroSection() {
                 alt="Finished gravel garden in Newquay"
                 fill
                 priority
-                className="scale-[1.02] object-cover opacity-[0.42]"
+                className="scale-[1.02] object-cover opacity-[0.58]"
                 sizes="100vw"
             />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(19,32,23,0.34),rgba(19,32,23,0.9)_72%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(19,32,23,0.18),rgba(19,32,23,0.72)_72%)]" />
             <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(180deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:72px_72px] opacity-35" />
 
-            <header className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-4 py-5">
-                <a
-                    href={`tel:${PHONE_TEL}`}
-                    onClick={() => trackPhone("gravel_offer_nav")}
-                    className="inline-flex items-center gap-3 text-base font-semibold text-white sm:text-xl"
-                    aria-label={`Call ${PHONE_DISPLAY}`}
+            <header className="relative z-10 mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-5">
+                <Link
+                    href="/"
+                    className="inline-flex items-center"
+                    aria-label="Quilliams Gardening and Landscaping home"
                 >
-                    <Phone className="size-6 fill-[#55c768] text-[#55c768]" />
-                    <span className="hidden sm:inline">{PHONE_DISPLAY}</span>
-                </a>
-
-                <div className="absolute left-1/2 flex -translate-x-1/2 items-center rounded-lg bg-white/92 px-3 py-1.5 shadow-[0_14px_40px_-28px_rgba(0,0,0,0.9)] sm:px-4 sm:py-2">
                     <Image
                         src="/images/uploads/site/branding/logoFile.webp"
                         alt="Quilliams Gardening and Landscaping"
                         width={214}
                         height={56}
-                        className="h-8 w-auto sm:h-10"
+                        className="h-8 w-auto drop-shadow-[0_3px_12px_rgba(0,0,0,0.5)] sm:h-10 lg:h-12"
                         priority
                     />
-                </div>
+                </Link>
 
-                <button
-                    type="button"
-                    onClick={scrollToForm}
-                    className="inline-flex items-center gap-2 text-base font-semibold text-white sm:text-xl"
+                <a
+                    href={`tel:${PHONE_TEL}`}
+                    onClick={() => trackPhone("gravel_offer_nav")}
+                    className="inline-flex shrink-0 items-center gap-2 text-base font-black text-white transition hover:text-[#7ee18d] sm:text-xl"
+                    aria-label={`Call ${PHONE_DISPLAY}`}
                 >
-                    <span className="hidden sm:inline">Quote</span>
-                    <ArrowRight className="size-7 stroke-[3]" />
-                </button>
+                    <Phone className="size-5 fill-[#55c768] text-[#55c768] sm:size-6" />
+                    <span>{PHONE_DISPLAY}</span>
+                </a>
             </header>
 
             <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center px-4 pb-20 pt-8 text-center sm:pt-16">
-                <motion.p
-                    initial={{ opacity: 0, y: 16 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.35 }}
-                    className="mb-4 inline-flex rounded-md border border-[#55c768]/35 bg-[#55c768]/12 px-4 py-2 text-xs font-black uppercase text-[#7ee18d] sm:mb-5"
-                >
-                    Free site visit and fixed quote
-                </motion.p>
-
                 <motion.h1
                     initial={{ opacity: 0, y: 18 }}
                     animate={{ opacity: 1, y: 0 }}
