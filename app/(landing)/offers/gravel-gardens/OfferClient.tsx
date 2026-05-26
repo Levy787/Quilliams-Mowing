@@ -226,7 +226,7 @@ function LeadForm({ compact = false }: { compact?: boolean }) {
                     "grid gap-2 rounded-lg bg-white/95 p-2 shadow-[0_30px_80px_-50px_rgba(0,0,0,0.9)]",
                     compact
                         ? "grid-cols-1"
-                        : "grid-cols-1 lg:grid-cols-[minmax(0,1fr)_auto]",
+                        : "grid-cols-1 md:grid-cols-[minmax(0,1fr)_auto]",
                 )}
             >
                 <div className="rounded-md bg-[#f1f2ee] px-4 py-2">
@@ -252,7 +252,7 @@ function LeadForm({ compact = false }: { compact?: boolean }) {
                     type="submit"
                     size="lg"
                     disabled={status === "submitting"}
-                    className="min-h-14 cursor-pointer rounded-md bg-[#55c768] px-7 text-base font-black text-[#10140e] transition hover:scale-[1.02] hover:bg-[#72d580] active:scale-[0.99] disabled:opacity-70 sm:text-lg lg:min-w-[220px]"
+                    className="min-h-14 cursor-pointer rounded-md bg-[#55c768] px-7 text-base font-black text-[#10140e] transition hover:scale-[1.02] hover:bg-[#72d580] active:scale-[0.99] disabled:opacity-70 sm:text-lg md:min-w-[220px]"
                 >
                     {status === "submitting" ? "Sending" : "Get fixed quote"}
                     {status !== "submitting" && <ArrowRight className="size-7 stroke-[3]" />}
