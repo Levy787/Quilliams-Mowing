@@ -2,6 +2,7 @@ import { createReader } from "@keystatic/core/reader";
 
 import keystaticConfig from "../keystatic.config";
 
+import type { BlogPost } from "@/lib/blog";
 import type { Offer } from "@/lib/offers";
 import type { ReferralContent } from "@/lib/referral";
 import type { Service } from "@/lib/services";
@@ -486,6 +487,58 @@ export async function listOfferSlugs() {
 
 export async function listServiceSlugs() {
     return reader.collections.services.list();
+}
+
+export async function listBlogSlugs() {
+    return reader.collections.blog.list();
+}
+
+export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> {
+    const entry = await reader.collections.blog.read(slug);
+    if (!entry) return null;
+
+    const publishedDate = entry.publishedDate ?? "";
+    const updatedDate = entry.updatedDate ?? publishedDate;
+
+    return {
+        slug,
+        title: entry.title,
+        subtitle: entry.subtitle,
+        author: entry.author,
+        publishedDate,
+        updatedDate,
+        readingTime: entry.readingTime,
+        heroImage: {
+            src: entry.heroImage.src,
+            alt: entry.heroImage.alt,
+        },
+        seo: {
+            title: entry.seo.title,
+            description: entry.seo.description,
+            ogTitle: entry.seo.ogTitle,
+            ogDescription: entry.seo.ogDescription,
+            ogImage: entry.seo.ogImage || undefined,
+        },
+        quickAnswer: entry.quickAnswer,
+        sections: entry.sections,
+        relatedLinks: entry.relatedLinks,
+        itemList: entry.itemList?.name?.trim()
+            ? {
+                name: entry.itemList.name,
+                items: entry.itemList.items,
+            }
+            : undefined,
+        faqs: entry.faqs,
+    };
+}
+
+export async function listBlogPosts(): Promise<BlogPost[]> {
+    const slugs = await listBlogSlugs();
+    const posts = await Promise.all(slugs.map((slug) => getBlogPostBySlug(slug)));
+
+    return posts
+        .filter((post): post is BlogPost => Boolean(post))
+        .sort((a, b) => b.updatedDate.localeCompare(a.updatedDate));
 }
 
 export async function getOfferBySlug(slug: string): Promise<Offer | null> {

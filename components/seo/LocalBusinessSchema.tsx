@@ -1,3 +1,5 @@
+import { areas } from "@/lib/areas/data";
+
 export interface LocalBusinessSchemaProps {
   name?: string;
   description?: string;
@@ -12,6 +14,25 @@ const GOOGLE_BUSINESS_PROFILE_URL = "https://g.page/r/Ca1e8ukWV-qsEBM/";
 const COMPANIES_HOUSE_URL = "https://find-and-update.company-information.service.gov.uk/company/16405915";
 const WASTE_CARRIER_REGISTER_URL =
   "https://environment.data.gov.uk/public-register/waste-carriers-brokers/registration/CBDL582202?__pageState=result-waste-carriers-brokers";
+const PERSON_ID = "https://quilliamsmowing.co.uk/about#levi";
+const DEFAULT_AREA_SERVED = [
+  ...Object.values(areas).map((area) => area.name),
+  "Cornwall",
+];
+
+function areaToSchema(area: string) {
+  if (area === "Cornwall") {
+    return {
+      "@type": "AdministrativeArea",
+      name: area,
+    };
+  }
+
+  return {
+    "@type": "City",
+    name: area,
+  };
+}
 
 export function LocalBusinessSchema({
   name = "Quilliams Gardening & Landscaping",
@@ -19,7 +40,7 @@ export function LocalBusinessSchema({
   telephone = "+447593121621",
   email = "levi@quilliamsmowing.co.uk",
   url = "https://quilliamsmowing.co.uk",
-  areaServed = ["Newquay", "Truro", "St Austell", "Cornwall"],
+  areaServed = DEFAULT_AREA_SERVED,
   priceRange = "££",
 }: LocalBusinessSchemaProps) {
   const schema = {
@@ -34,9 +55,14 @@ export function LocalBusinessSchema({
     telephone,
     email,
     priceRange,
+    currenciesAccepted: "GBP",
+    paymentAccepted: ["Bank transfer", "Card", "Cash"],
+    foundingDate: "2025-04-24",
     founder: {
-      "@type": "Person",
-      name: "Levi Quilliam",
+      "@id": PERSON_ID,
+    },
+    employee: {
+      "@id": PERSON_ID,
     },
     identifier: [
       {
@@ -65,13 +91,19 @@ export function LocalBusinessSchema({
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 50.41200,
-      longitude: -5.07570,
+      latitude: "50.41200",
+      longitude: "-5.07570",
     },
-    areaServed: areaServed.map((area) => ({
-      "@type": "City",
-      name: area,
-    })),
+    areaServed: areaServed.map(areaToSchema),
+    serviceArea: {
+      "@type": "GeoCircle",
+      geoMidpoint: {
+        "@type": "GeoCoordinates",
+        latitude: "50.41200",
+        longitude: "-5.07570",
+      },
+      geoRadius: "40000",
+    },
     serviceType: [
       "Lawn Mowing",
       "Hedge Trimming",
@@ -88,6 +120,13 @@ export function LocalBusinessSchema({
         closes: "17:00",
       },
     ],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: 5,
+      bestRating: 5,
+      worstRating: 1,
+      reviewCount: 16,
+    },
     sameAs: [
       GOOGLE_BUSINESS_PROFILE_URL,
       COMPANIES_HOUSE_URL,

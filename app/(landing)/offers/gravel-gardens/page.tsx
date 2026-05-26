@@ -2,14 +2,24 @@ import type { Metadata } from "next";
 import OfferClient from "./OfferClient";
 
 export const metadata: Metadata = {
-    title: "Free Gravel Garden Design Consultation | Quilliams Gardening & Landscaping",
+    title: {
+        absolute: "Gravel Garden Installers in Newquay | Quilliams",
+    },
     description:
-        "Tired of mowing or got an overgrown mess? Transform your garden into a stunning, low-maintenance gravel garden in as little as 3 days. Free design consultation worth £150. Serving Cornwall.",
+        "Turn an overgrown Newquay front garden or tired lawn into a clean, low-maintenance gravel garden. Book a free site visit and fixed quote.",
     openGraph: {
-        title: "Free Gravel Garden Design Consultation | Quilliams",
+        title: "Gravel Garden Installers in Newquay | Quilliams",
         description:
-            "Transform your garden in as little as 3 days. No more mowing, no more weeding. Book your free site visit today.",
+            "Clear the mess, prepare the base, fit membrane, edging and gravel, then take the waste away. Book a free site visit and fixed quote.",
         type: "website",
+        images: [
+            {
+                url: "/images/uploads/overgrown-mess-to-clean-gravel-garden/hero/imageFile.webp",
+                width: 1280,
+                height: 960,
+                alt: "Finished gravel garden in Newquay",
+            },
+        ],
     },
 };
 

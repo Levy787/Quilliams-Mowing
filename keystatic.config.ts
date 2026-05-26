@@ -406,6 +406,83 @@ export const keystaticConfig = config({
       },
     }),
 
+    blog: collection({
+      label: "Blog",
+      path: "content/blog/*",
+      format: "json",
+      slugField: "slug",
+      schema: {
+        slug: fields.slug({
+          name: {
+            label: "Title",
+            validation: { isRequired: true },
+          },
+          slug: {
+            label: "Slug",
+          },
+        }),
+        title: fields.text({ label: "Title" }),
+        subtitle: fields.text({ label: "Subtitle", multiline: true }),
+        author: fields.text({ label: "Author" }),
+        publishedDate: fields.date({ label: "Published date" }),
+        updatedDate: fields.date({ label: "Updated date" }),
+        readingTime: fields.text({ label: "Reading time" }),
+        heroImage: fields.object(
+          {
+            src: fields.text({ label: "Hero image src" }),
+            alt: fields.text({ label: "Hero image alt" }),
+          },
+          { label: "Hero image" },
+        ),
+        seo: seoFields(),
+        quickAnswer: fields.object(
+          {
+            title: fields.text({ label: "Title" }),
+            body: fields.text({ label: "Body", multiline: true }),
+          },
+          { label: "Quick answer" },
+        ),
+        sections: fields.array(
+          fields.object({
+            id: fields.text({ label: "ID" }),
+            title: fields.text({ label: "Title" }),
+            body: fields.text({ label: "Body", multiline: true }),
+            bullets: fields.array(fields.text({ label: "Bullet" }), {
+              label: "Bullets",
+            }),
+          }),
+          { label: "Sections" },
+        ),
+        relatedLinks: fields.array(
+          fields.object({
+            label: fields.text({ label: "Label" }),
+            href: fields.text({ label: "Href" }),
+          }),
+          { label: "Related links" },
+        ),
+        itemList: fields.object(
+          {
+            name: fields.text({ label: "Name" }),
+            items: fields.array(
+              fields.object({
+                label: fields.text({ label: "Label" }),
+                href: fields.text({ label: "Href" }),
+              }),
+              { label: "Items" },
+            ),
+          },
+          { label: "Optional ItemList" },
+        ),
+        faqs: fields.array(
+          fields.object({
+            question: fields.text({ label: "Question" }),
+            answer: fields.text({ label: "Answer", multiline: true }),
+          }),
+          { label: "FAQs" },
+        ),
+      },
+    }),
+
     services: collection({
       label: "Services",
       path: "content/services/*",

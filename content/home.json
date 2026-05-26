@@ -30,7 +30,7 @@
                 "tone": "primary"
             },
             {
-                "text": " You Can Rely On",
+                "text": " in Newquay & Cornwall",
                 "tone": "normal"
             }
         ],
@@ -93,23 +93,23 @@
             "Reliable Landscaping Services",
             "You Can Count On"
         ],
-        "body": "At Quilliams Gardening & Landscaping, we help homeowners enjoy clean, healthy, and beautiful outdoor spaces—without the physical work or time commitment. Whether you need regular mowing, garden maintenance, landscaping improvements, or a full yard clean-up, our team provides dependable, professional care tailored to your property and lifestyle.\n\nWe proudly serve homeowners who value their time, comfort, and peace of mind. From retirees who want to enjoy their yard without the strain, to busy families who simply don’t have the hours to maintain it, we take care of the details so you don’t have to.\n\nOur approach is simple: show up when we say we will, do the job properly, and leave your yard looking better every time. We use proven best practices to keep landscapes healthy, attractive, and easy to maintain—season after season.",
+        "body": "I'm Levi Quilliam, the gardener behind Quilliams Gardening & Landscaping. I help homeowners enjoy clean, healthy, and beautiful outdoor spaces without the physical work or time commitment. Whether you need regular mowing, garden maintenance, landscaping improvements, or a full yard clean-up, I provide dependable, practical care tailored to your property and the way you use it.\n\nI work with homeowners who value their time, comfort, and peace of mind. Some are retirees who want to enjoy the garden without the strain. Others are busy families, holiday-let owners, or landlords who need the outside space to stay presentable without chasing someone every week.\n\nMy approach is simple: turn up when I say I will, do the job properly, and leave your garden looking better every time. I use practical methods that suit Cornwall's coastal weather, from clean lawn edges and sensible mowing heights to tidy waste handling and low-maintenance planting choices.",
         "imageFile": "about/imageFile.webp",
         "imageAlt": "Levi hedge trimming a large hedge",
         "features": [
             {
                 "title": "Quality",
-                "description": "We take pride in doing the job right, using professional equipment and proven techniques to deliver consistent, long-lasting results.",
+                "description": "I take pride in doing the job properly, with sharp tools, clean edges, and a finish that still looks cared for after I leave.",
                 "icon": "star"
             },
             {
                 "title": "Satisfaction",
-                "description": "Your satisfaction matters. We listen to your needs, communicate clearly, and make sure every service meets your expectations.",
+                "description": "I listen to what you want, explain the practical options, and keep the quote clear so you know exactly what is included.",
                 "icon": "thumbsUp"
             },
             {
                 "title": "Sustainability",
-                "description": "We care for your landscape responsibly, focusing on healthy growth, smart maintenance, and practices that protect your yard for the long term.",
+                "description": "I handle green waste properly as a licensed carrier and favour maintenance choices that keep Cornwall gardens healthier over time.",
                 "icon": "shieldCheck"
             }
         ]
@@ -159,7 +159,7 @@
             {
                 "title": "Garden Cleanup",
                 "href": "/services/seasonal-cleanup",
-                "description": "One-off clear-outs to get things back under control — then leave it tidy and manageable.",
+                "description": "One-off clear-outs to get things back under control, then leave it tidy and manageable.",
                 "imageFile": "services/items/4/imageFile.webp",
                 "imageAlt": "Before and after of dense bramble clearance",
                 "tag": "Residential & Commercial",
@@ -179,7 +179,7 @@
     "serviceArea": {
         "badge": "Service area",
         "heading": "Newquay and nearby areas",
-        "body": "We cover Newquay and nearby areas. If you’re close by, reach out — we’ll confirm availability quickly.",
+        "body": "I cover Newquay and nearby areas. If you’re close by, reach out and I’ll confirm availability quickly.",
         "chips": [
             "Fast response times",
             "Local, reliable service",
@@ -226,7 +226,7 @@
         "items": [
             {
                 "title": "Garden makeover + tidy up",
-                "description": "A full tidy-up to bring an overgrown garden back under control—clean lines, shaped growth, and a lawn that looks cared for again.",
+                "description": "A full tidy-up to bring an overgrown garden back under control, with clean lines, shaped growth, and a lawn that looks cared for again.",
                 "projectSlug": "ongoing-garden-maintenance",
                 "imageFile": "recentWorks/items/0/imageFile.webp",
                 "imageAlt": "Freshly maintained garden with tidy hedges and a neat lawn",
@@ -236,7 +236,7 @@
             },
             {
                 "title": "Leylandii hedge trim (4m tall)",
-                "description": "A crisp Leylandii hedge trim to keep growth even, tidy, and manageable—done cleanly with a sharp finish.",
+                "description": "A crisp Leylandii hedge trim to keep growth even, tidy, and manageable, done cleanly with a sharp finish.",
                 "projectSlug": "leylandii-hedge-trim-4m-tall",
                 "imageFile": "recentWorks/items/1/imageFile.webp",
                 "imageAlt": "Front garden with neat lawn edges and trimmed hedges",
@@ -384,7 +384,7 @@
                 "name": "Maya J",
                 "location": "Newquay, Cornwall",
                 "date": "18 Nov 2025",
-                "quote": "”Levi did an amazing job in my garden! Everything was done to a high standard, making sure to leave it clean and tidy at the end. He is super friendly and reliable — highly recommend!”"
+                "quote": "”Levi did an amazing job in my garden! Everything was done to a high standard, making sure to leave it clean and tidy at the end. He is super friendly and reliable, highly recommend!”"
             },
             {
                 "name": "Jamie Q",

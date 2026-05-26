@@ -504,7 +504,7 @@ export default function OfferFunnelClient({ offer }: { offer: Offer }) {
 
                                         {submitted && (
                                             <p className="text-sm text-primary">
-                                                Thanks — we received your request.
+                                                Thanks, we received your request.
                                             </p>
                                         )}
 

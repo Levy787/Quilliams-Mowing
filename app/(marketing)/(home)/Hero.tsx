@@ -60,7 +60,7 @@ export function Hero({
                             {headlineParts.map((part, index) => (
                                 <span
                                     key={index}
-                                    className={part.tone === "primary" ? "text-green-600" : undefined}
+                                    className={part.tone === "primary" ? "text-primary" : undefined}
                                 >
                                     {part.text}
                                 </span>
@@ -74,7 +74,7 @@ export function Hero({
 
                         {/* CTA Buttons - Updated with phone number */}
                         <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
-                            <Button size="lg" asChild className="bg-green-600 hover:bg-green-700">
+                            <Button size="lg" asChild>
                                 <Link
                                     href={primaryCtaHref}
                                 >
@@ -85,8 +85,8 @@ export function Hero({
 
                             {/* Phone number instead of secondary CTA */}
                             <a
-                                href="tel:07593121621"
-                                className="flex items-center gap-2 text-white/90 hover:text-white transition-colors group"
+                                href="tel:+447593121621"
+                                className="flex min-h-12 items-center gap-2 text-white/90 hover:text-white transition-colors group"
                             >
                                 <span className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 group-hover:bg-white/20 transition-colors">
                                     <Phone className="w-5 h-5" aria-hidden="true" />
@@ -97,7 +97,7 @@ export function Hero({
                     </div>
 
                     {/* Image Grid - Right Side */}
-                    <div className="rounded-xl grid grid-cols-2 gap-4 h-[700px] w-full max-w-full overflow-hidden min-w-0">
+                    <div className="rounded-xl grid grid-cols-2 gap-4 h-[400px] md:h-[500px] lg:h-[700px] w-full max-w-full overflow-hidden min-w-0">
                         {/* Column 1 - Scrolling Down */}
                         <div className="flex flex-col gap-2 animate-scroll-down">
                             {imagesLeft.map((image, index) => (

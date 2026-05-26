@@ -1,14 +1,25 @@
 import { Star, Shield, MapPin, Zap } from "lucide-react";
 
+const GOOGLE_BUSINESS_PROFILE_URL = "https://g.page/r/Ca1e8ukWV-qsEBM/";
+const CHECKATRADE_URL = "https://www.checkatrade.com/trades/quilliamsmowingltd";
+const YELL_URL = "https://www.yell.com/biz/quilliams-mowing-ltd-newquay-10969895/";
+const BARK_URL = "https://www.bark.com/en/gb/b/quilliams-gardening-amp-landscaping/KNoMX4/";
+
 export function TrustBar() {
     return (
         <div className="bg-muted/50 py-4 border-b">
             <div className="container mx-auto px-4 flex flex-wrap justify-center items-center gap-4 sm:gap-8 text-sm text-muted-foreground">
-                <span className="flex items-center gap-2">
+                <a
+                    href={GOOGLE_BUSINESS_PROFILE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 hover:text-foreground"
+                >
                     <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                     <span className="font-semibold text-foreground">5.0</span>
-                    <span className="hidden sm:inline">on Google</span>
-                </span>
+                    <span className="hidden sm:inline">from 16 reviews on Google</span>
+                    <span className="sm:hidden">Google</span>
+                </a>
                 
                 <span className="hidden sm:inline text-muted-foreground/70">•</span>
                 
@@ -29,6 +40,20 @@ export function TrustBar() {
                 <span className="flex items-center gap-2">
                     <Zap className="w-4 h-4 text-yellow-500" />
                     <span>Same-week availability</span>
+                </span>
+
+                <span className="hidden lg:inline text-muted-foreground/70">•</span>
+
+                <span className="hidden lg:flex items-center gap-3">
+                    <a href={CHECKATRADE_URL} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">
+                        Checkatrade
+                    </a>
+                    <a href={YELL_URL} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">
+                        Yell
+                    </a>
+                    <a href={BARK_URL} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">
+                        Bark
+                    </a>
                 </span>
             </div>
         </div>

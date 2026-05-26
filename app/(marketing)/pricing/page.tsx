@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { PricingBreakdown } from "./PricingBreakdown";
 import { PricingCalculator } from "./PricingCalculator";
 import { PricingFAQ } from "./PricingFAQ";
+import { PricingGuide } from "./PricingGuide";
 import { PricingHero } from "./PricingHero";
 
 import { getPricingContent } from "@/lib/keystatic-reader";
@@ -35,6 +36,7 @@ export default async function PricingPage() {
             <BreadcrumbSchema items={[{ name: "Home", href: "/" }, { name: "Pricing", href: "/pricing" }]} />
             <FAQSchema items={faqItems} />
             <PricingHero {...pricing.hero} />
+            <PricingGuide />
             <PricingCalculator {...pricing.calculator} />
             <PricingBreakdown {...pricing.breakdown} />
             <PricingFAQ {...pricing.faq} />

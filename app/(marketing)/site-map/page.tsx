@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { buildMetadata } from "@/lib/seo";
-import { listServiceSlugs, listProjectSlugs } from "@/lib/keystatic-reader";
+import { listBlogPosts, listServiceSlugs, listProjectSlugs } from "@/lib/keystatic-reader";
 import { areas } from "@/lib/areas/data";
 
 export const metadata: Metadata = buildMetadata({
@@ -31,13 +31,12 @@ const legalPages = [
     { href: "/terms", label: "Terms & Conditions" },
 ];
 
-const blogPages = [
-    { href: "/blog/best-gardeners-newquay", label: "Best Gardeners in Newquay" },
-];
-
 export default async function SitemapPage() {
-    const serviceSlugs = await listServiceSlugs();
-    const projectSlugs = await listProjectSlugs();
+    const [serviceSlugs, projectSlugs, blogPosts] = await Promise.all([
+        listServiceSlugs(),
+        listProjectSlugs(),
+        listBlogPosts(),
+    ]);
     const areaSlugs = Object.keys(areas);
 
     return (
@@ -112,13 +111,13 @@ export default async function SitemapPage() {
                 <section className="mb-10">
                     <h2 className="text-2xl font-semibold mb-4">Blog</h2>
                     <ul className="space-y-2">
-                        {blogPages.map((page) => (
-                            <li key={page.href}>
+                        {blogPosts.map((post) => (
+                            <li key={post.slug}>
                                 <Link
-                                    href={page.href}
+                                    href={`/blog/${post.slug}`}
                                     className="text-primary hover:underline"
                                 >
-                                    {page.label}
+                                    {post.title}
                                 </Link>
                             </li>
                         ))}

@@ -4,7 +4,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { FileText, Grid2X2 } from "lucide-react";
+import { FileText, Menu } from "lucide-react";
 
 import {
     NavigationMenu,
@@ -47,14 +47,14 @@ export function Navbar({
             <div className="container mx-auto px-4 lg:px-12">
                 <div className="flex items-center justify-between h-20 lg:h-24">
                     {/* Logo Section */}
-                    <Link href="/" aria-label="Quilliams Gardening & Landscaping — Home" className="flex items-center gap-3 group">
-                        <div className="relative h-16 w-64">
+                    <Link href="/" aria-label="Quilliams Gardening & Landscaping - Home" className="flex items-center gap-3 group">
+                        <div className="flex h-16 w-[176px] items-center">
                             <Image
                                 src={logoSrc}
                                 alt={logoAlt}
-                                fill
-                                className="object-contain"
-                                sizes="176px"
+                                width={176}
+                                height={44}
+                                className="h-auto w-[176px] object-contain"
                                 priority
                             />
                         </div>
@@ -95,12 +95,12 @@ export function Navbar({
 
                         {/* Grid/Menu Icon */}
                         <button
-                            className="p-2 text-muted-foreground hover:text-primary transition-colors lg:hidden"
+                            className="flex min-h-12 min-w-12 items-center justify-center text-muted-foreground hover:text-primary transition-colors lg:hidden"
                             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                             aria-label="Toggle menu"
                             aria-expanded={mobileMenuOpen}
                         >
-                            <Grid2X2 className="w-5 h-5" aria-hidden />
+                            <Menu className="w-5 h-5" aria-hidden />
                         </button>
                     </div>
                 </div>
@@ -113,7 +113,7 @@ export function Navbar({
                                 <li key={item.label}>
                                     <Link
                                         href={item.href}
-                                        className="flex items-center justify-between text-foreground font-medium hover:text-primary transition-colors py-2"
+                                        className="flex min-h-12 items-center justify-between text-foreground font-medium hover:text-primary transition-colors py-2"
                                         onClick={() => setMobileMenuOpen(false)}
                                     >
                                         {item.label}

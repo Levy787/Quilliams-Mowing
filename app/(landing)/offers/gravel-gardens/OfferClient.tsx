@@ -2,713 +2,160 @@
 
 import * as React from "react";
 import Image from "next/image";
-import { motion, useInView, AnimatePresence } from "framer-motion";
+import Link from "next/link";
+import { motion } from "framer-motion";
 import {
-    Star,
-    Phone,
-    Clock,
-    Shield,
-    CheckCircle2,
-    Sparkles,
-    ChevronDown,
-    Leaf,
-    Droplets,
-    Sun,
-    TrendingUp,
-    Calendar,
     ArrowRight,
-    MapPin,
-    X,
+    CheckCircle2,
+    ChevronDown,
+    ClipboardCheck,
+    Facebook,
+    Phone,
+    Ruler,
+    ShieldCheck,
+    Star,
+    Truck,
 } from "lucide-react";
+
+import { Turnstile } from "@/components/TurnstileWidget";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Turnstile } from "@/components/TurnstileWidget";
-import { cn } from "@/lib/utils";
 import { capturePostHogEvent } from "@/lib/posthog-client";
+import { cn } from "@/lib/utils";
 
-/* ─────────────────────────── helpers ─────────────────────────── */
+const PHONE_DISPLAY = "07593 121 621";
+const PHONE_TEL = "07593121621";
+const GOOGLE_MAPS_URL = "https://g.page/r/Ca1e8ukWV-qsEBM/";
+const FACEBOOK_URL = "https://www.facebook.com/quilliamsmowing/";
 
-function FadeIn({
-    children,
-    className,
-    delay = 0,
-}: {
-    children: React.ReactNode;
-    className?: string;
-    delay?: number;
-}) {
-    const ref = React.useRef<HTMLDivElement>(null);
-    const inView = useInView(ref, { once: true, margin: "-60px" });
+const HERO_AFTER = "/images/uploads/overgrown-mess-to-clean-gravel-garden/hero/imageFile.webp";
 
+const OFFER_STATS = [
+    ["Free", "Site visit and measure-up"],
+    ["Fixed", "Quote before work starts"],
+    ["2-4 days", "Typical small front gardens"],
+] as const;
+
+const PROCESS_STEPS = [
+    {
+        icon: Ruler,
+        title: "Measure the space",
+        text: "Levi checks access, levels, drainage, waste volume, edging, and the finish you want.",
+    },
+    {
+        icon: Truck,
+        title: "Clear and prepare",
+        text: "Overgrowth is removed, the base is levelled, and green waste is handled properly.",
+    },
+    {
+        icon: ShieldCheck,
+        title: "Membrane and edges",
+        text: "Heavy-duty membrane is pinned at joins and edges so the gravel has a clean foundation.",
+    },
+    {
+        icon: ClipboardCheck,
+        title: "Gravel and tidy",
+        text: "Decorative gravel goes down, the edges are finished, and the site is left ready to use.",
+    },
+] as const;
+
+const PROOF_CARDS = [
+    {
+        before: "/images/uploads/overgrown-mess-to-clean-gravel-garden/gallery/0/imageFile.webp",
+        after: "/images/uploads/overgrown-mess-to-clean-gravel-garden/gallery/3/imageFile.jpg",
+        title: "The front-garden reset",
+    },
+    {
+        before: "/images/uploads/gravel-garden-with-patio/gallery/0/imageFile.webp",
+        after: "/images/uploads/gravel-garden-with-patio/hero/imageFile.jpg",
+        title: "The gravel-and-patio clean-up",
+    },
+];
+
+const REVIEWS = [
+    {
+        name: "Kim Brocklehurst",
+        location: "Newquay",
+        quote: "Quick response to initial enquiry. Fast and thorough clearance of overgrown land. Will definitely use Levi again.",
+    },
+    {
+        name: "Hannah B",
+        location: "Cornwall",
+        quote: "We are extremely pleased with the result. Levi did an amazing job and listened to what we wanted.",
+    },
+    {
+        name: "Michael Meer",
+        location: "Grampound",
+        quote: "He works really hard, has really good ideas for making a garden both tidy and practical, and his prices are very competitive.",
+    },
+] as const;
+
+const FAQS = [
+    {
+        q: "What does a gravel garden cost?",
+        a: "Most small front garden gravel conversions around Newquay start from roughly £1,500. Size, waste, access, edging, gravel choice, and patio work can move that up or down.",
+    },
+    {
+        q: "Will weeds come back?",
+        a: "The aim is to stop growth from below. We clear, prepare, and install heavy-duty membrane before gravel. Surface weeds from wind-blown seeds can still appear, but they are much easier to pull.",
+    },
+    {
+        q: "How quickly can it be done?",
+        a: "Many front garden resets take 2–4 days once materials and access are confirmed. You get a clear timeline with your fixed quote.",
+    },
+];
+
+function StarRating() {
     return (
-        <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 28 }}
-            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 28 }}
-            transition={{ duration: 0.55, delay, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className={className}
-        >
-            {children}
-        </motion.div>
-    );
-}
-
-function StarRating({ count = 5 }: { count?: number }) {
-    return (
-        <span className="inline-flex gap-0.5">
-            {Array.from({ length: count }).map((_, i) => (
-                <Star
-                    key={i}
-                    className="size-4 fill-amber-400 text-amber-400"
-                />
+        <span className="inline-flex gap-0.5" aria-label="5 star rating">
+            {Array.from({ length: 5 }).map((_, index) => (
+                <Star key={index} className="size-4 fill-[#ffd34d] text-[#ffd34d]" />
             ))}
         </span>
     );
 }
 
-/* ─────────────── smart scroll: hero form vs lower form ──────── */
-
 function scrollToForm() {
-    const heroForm = document.getElementById("hero-form");
-    if (heroForm) {
-        const rect = heroForm.getBoundingClientRect();
-        // If hero form is still visible or above viewport, scroll to it
-        if (rect.top > -rect.height && rect.top < window.innerHeight) {
-            heroForm.scrollIntoView({ behavior: "smooth", block: "center" });
-            return;
-        }
-    }
-    // Otherwise scroll to the lower form
     document
-        .getElementById("lead-form")
+        .getElementById("hero-lead-form")
         ?.scrollIntoView({ behavior: "smooth", block: "center" });
 }
 
-/* ─────────────── countdown timer ────────────────────────────── */
-
-function getEndOfMonth() {
-    const now = new Date();
-    return new Date(now.getFullYear(), now.getMonth() + 1, 1);
+function trackPhone(location: string) {
+    void capturePostHogEvent("click_phone", { location });
 }
 
-function useCountdown() {
-    const [timeLeft, setTimeLeft] = React.useState({ days: 0, hours: 0, mins: 0 });
-    const [mounted, setMounted] = React.useState(false);
-
-    React.useEffect(() => {
-        function calc() {
-            const diff = getEndOfMonth().getTime() - Date.now();
-            if (diff <= 0) return { days: 0, hours: 0, mins: 0 };
-            return {
-                days: Math.floor(diff / 86400000),
-                hours: Math.floor((diff % 86400000) / 3600000),
-                mins: Math.floor((diff % 3600000) / 60000),
-            };
-        }
-        setTimeLeft(calc());
-        setMounted(true);
-        const id = setInterval(() => setTimeLeft(calc()), 60000);
-        return () => clearInterval(id);
-    }, []);
-
-    return { ...timeLeft, mounted };
-}
-
-function CountdownTimer({ compact = false }: { compact?: boolean }) {
-    const { days, hours, mins, mounted } = useCountdown();
-
-    if (!mounted) {
-        // Render zeroed state to avoid hydration flash
-        if (compact) return <span className="text-amber-400 font-semibold text-xs">Offer ending soon</span>;
-        return (
-            <div className="flex items-center justify-center gap-3">
-                {["00", "00", "00"].map((v, i) => (
-                    <div key={i} className="flex flex-col items-center">
-                        <span className="rounded-lg bg-[oklch(0.20_0.02_80)] px-3 py-1.5 text-xl font-bold tabular-nums text-amber-400">
-                            {v}
-                        </span>
-                        <span className="mt-1 text-[10px] font-medium uppercase tracking-wider text-white/40">
-                            {["Days", "Hours", "Mins"][i]}
-                        </span>
-                    </div>
-                ))}
-            </div>
-        );
-    }
-
-    if (compact) {
-        return (
-            <span className="text-amber-400 font-semibold text-xs">
-                {days}d {hours}h left
-            </span>
-        );
-    }
-
-    return (
-        <div className="flex items-center justify-center gap-3">
-            {[
-                { v: days, l: "Days" },
-                { v: hours, l: "Hours" },
-                { v: mins, l: "Mins" },
-            ].map(({ v, l }) => (
-                <div key={l} className="flex flex-col items-center">
-                    <span className="rounded-lg bg-[oklch(0.20_0.02_80)] px-3 py-1.5 text-xl font-bold tabular-nums text-amber-400">
-                        {String(v).padStart(2, "0")}
-                    </span>
-                    <span className="mt-1 text-[10px] font-medium uppercase tracking-wider text-white/40">
-                        {l}
-                    </span>
-                </div>
-            ))}
-        </div>
-    );
-}
-
-/* ─────────────── spots remaining ────────────────────────────── */
-
-function useSpotsRemaining() {
-    const [spots, setSpots] = React.useState(5);
-    React.useEffect(() => {
-        const day = new Date().getDate();
-        // Deterministic: goes from 7 at start of month → 2 at end
-        const calculated = Math.max(2, 7 - Math.floor((day / 31) * 5));
-        setSpots(calculated);
-    }, []);
-    return spots;
-}
-
-/* ─────────────────────────── data ─────────────────────────────── */
-
-const TESTIMONIALS = [
-    {
-        name: "Kim Brocklehurst",
-        location: "Newquay, Cornwall",
-        quote: "Quick response to initial enquiry. Fast and thorough clearance of overgrown land. Will definitely use Levi again.",
-    },
-    {
-        name: "Hannah B",
-        location: "Summer Court, Cornwall",
-        quote: "We are extremely pleased with the result — Levi did an amazing job! He was very professional and listened to what we wanted. We will definitely be regular customers and would highly recommend to anyone looking for garden services!",
-    },
-    {
-        name: "Matthew Wellington",
-        location: "Truro, Cornwall",
-        quote: "Great service from start to finish. Quick, tidy, and very reasonably priced. Everything was left neat and exactly how we wanted it. Would definitely recommend and use again.",
-    },
-    {
-        name: "Michael Meer",
-        location: "Grampound, Cornwall",
-        quote: "He works really hard — non-stop, has really good ideas for making a garden both tidy and practical and his prices are very competitive. What\u2019s more, he\u2019s a really nice bloke.",
-    },
-];
-
-const BENEFITS = [
-    {
-        icon: Leaf,
-        title: "From Overgrown to Gorgeous",
-        desc: "Whether it\u2019s an untamed front patch or a tired lawn, we clear it all and start fresh.",
-    },
-    {
-        icon: Droplets,
-        title: "No Weeding",
-        desc: "Professional membrane underneath blocks weeds before they start.",
-    },
-    {
-        icon: Sun,
-        title: "Year-Round Looks",
-        desc: "Gravel doesn\u2019t go brown in summer or muddy in winter. Always pristine.",
-    },
-    {
-        icon: TrendingUp,
-        title: "Instant Kerb Appeal",
-        desc: "Neighbours will notice. A clean gravel frontage transforms how your home looks from the street.",
-    },
-];
-
-const FAQS = [
-    {
-        q: "How long does a gravel garden installation take?",
-        a: "Most residential gravel gardens are completed in 2\u20133 days, depending on the size and existing ground conditions. We\u2019ll give you a clear timeline before any work begins.",
-    },
-    {
-        q: "Will weeds still grow through the gravel?",
-        a: "We install a heavy-duty weed membrane underneath all our gravel installations. This blocks 99% of weed growth. The occasional stray seed that lands on top is easily pulled out in seconds.",
-    },
-    {
-        q: "What types of gravel do you use?",
-        a: "We offer a range of gravels including golden flint, Cotswold stone, slate chippings, and local Cornish aggregates. We\u2019ll bring samples to your consultation so you can see and feel the options in your own garden.",
-    },
-    {
-        q: "Can I still have plants in a gravel garden?",
-        a: "Absolutely! We create planting pockets within the gravel for Mediterranean-style plants, ornamental grasses, and shrubs. It creates a stunning low-maintenance look with real character.",
-    },
-    {
-        q: "How much does a gravel garden cost?",
-        a: "Every garden is different, which is why we offer a free, no-obligation design consultation and fixed quote within 24 hours. No surprises, no hidden fees. The consultation alone is worth \u00a3150.",
-    },
-    {
-        q: "Do you serve my area?",
-        a: "We cover Newquay, Truro, St Austell, and surrounding areas across Cornwall. Enter your postcode in the form above and we\u2019ll confirm your coverage straight away.",
-    },
-];
-
-const BEFORE_AFTER = [
-    {
-        before: "/images/uploads/overgrown-mess-to-clean-gravel-garden/gallery/0/imageFile.webp",
-        after: "/images/uploads/overgrown-mess-to-clean-gravel-garden/hero/imageFile.webp",
-        beforeAlt: "Overgrown front garden before gravel transformation",
-        afterAlt: "Clean gravel garden after professional installation",
-        label: "Overgrown Front Garden Rescue",
-    },
-    {
-        before: "/images/uploads/gravel-garden-with-patio/gallery/0/imageFile.webp",
-        after: "/images/uploads/gravel-garden-with-patio/hero/imageFile.jpg",
-        beforeAlt: "Overgrown side garden before landscaping",
-        afterAlt: "Beautiful gravel garden with patio after transformation",
-        label: "Gravel & Patio Combo",
-    },
-    {
-        before: "/images/uploads/overgrown-mess-to-clean-gravel-garden/gallery/2/imageFile.webp",
-        after: "/images/uploads/overgrown-mess-to-clean-gravel-garden/gallery/4/imageFile.webp",
-        beforeAlt: "Messy garden with overgrown plants and weeds",
-        afterAlt: "Immaculate gravel garden with neat borders",
-        label: "From Jungle to Gorgeous",
-    },
-];
-
-const SOCIAL_PROOF_ENTRIES = [
-    { name: "Sarah", location: "Truro", time: "2 hours ago" },
-    { name: "Mark", location: "Newquay", time: "5 hours ago" },
-    { name: "Julie", location: "St Austell", time: "yesterday" },
-];
-
-/* ─────────────────────────── components ──────────────────────── */
-
-function TopBar() {
-    return (
-        <div className="bg-[oklch(0.18_0.02_150)] text-white/90">
-            <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-2 text-xs sm:text-sm">
-                <span className="flex items-center gap-1.5">
-                    <MapPin className="size-3.5" />
-                    Serving Cornwall
-                </span>
-                <a
-                    href="tel:07593121621"
-                    className="flex items-center gap-1.5 font-semibold text-white transition-colors hover:text-primary"
-                    onClick={() => void capturePostHogEvent("click_phone", { location: "gravel_offer_topbar" })}
-                >
-                    <Phone className="size-3.5" />
-                    07593 121 621
-                </a>
-            </div>
-        </div>
-    );
-}
-
-function HeroSection() {
-    const spots = useSpotsRemaining();
-
-    return (
-        <section className="relative overflow-hidden bg-[oklch(0.14_0.01_150)]">
-            {/* texture overlay */}
-            <div
-                className="pointer-events-none absolute inset-0 opacity-[0.035]"
-                style={{
-                    backgroundImage:
-                        "url(\"data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
-                }}
-            />
-
-            {/* gradient accent */}
-            <div className="pointer-events-none absolute -top-24 right-0 h-96 w-96 rounded-full bg-primary/20 blur-[120px]" />
-
-            <div className="relative mx-auto max-w-6xl px-4 pb-16 pt-12 sm:pb-24 sm:pt-20">
-                <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-                    {/* copy */}
-                    <div>
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5 }}
-                        >
-                            <span className="mb-4 inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold tracking-wide text-primary sm:text-sm">
-                                <span className="relative flex size-2">
-                                    <span className="absolute inline-flex size-full animate-ping rounded-full bg-primary opacity-75" />
-                                    <span className="relative inline-flex size-2 rounded-full bg-primary" />
-                                </span>
-                                Only {spots} February Spots Left
-                            </span>
-                        </motion.div>
-
-                        <motion.h1
-                            initial={{ opacity: 0, y: 24 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.1 }}
-                            className="mt-4 text-4xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl"
-                        >
-                            <span className="text-primary">Tired of Mowing?</span>{" "}
-                            <span className="text-primary">Got an Overgrown&nbsp;Mess?</span>
-                        </motion.h1>
-
-                        <motion.p
-                            initial={{ opacity: 0, y: 24 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.2 }}
-                            className="mt-5 max-w-lg text-base leading-relaxed text-white/70 sm:text-lg"
-                        >
-                            Whether it&apos;s a lawn you&apos;re sick of cutting or an overgrown
-                            front patch you&apos;ve been putting off for years — we&apos;ll
-                            transform it into a stunning, low-maintenance gravel garden in as
-                            little as 3&nbsp;days.
-                        </motion.p>
-
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: 0.35 }}
-                            className="mt-8 flex items-center gap-4"
-                        >
-                            <a
-                                href="tel:07593121621"
-                                className="inline-flex items-center gap-2 text-sm font-semibold text-white/60 transition-colors hover:text-white"
-                                onClick={() => void capturePostHogEvent("click_phone", { location: "gravel_offer_hero" })}
-                            >
-                                <Phone className="size-4" />
-                                07593 121 621
-                            </a>
-                            <span className="flex items-center gap-1.5 text-sm text-white/50">
-                                <Shield className="size-4" />
-                                No obligation &middot; 100% free
-                            </span>
-                        </motion.div>
-
-                        {/* trust strip */}
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ duration: 0.6, delay: 0.55 }}
-                            className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-white/10 pt-6"
-                        >
-                            <div className="flex items-center gap-2">
-                                <StarRating />
-                                <span className="text-sm font-medium text-white/60">
-                                    5.0 on Google
-                                </span>
-                            </div>
-                            <span className="hidden h-4 w-px bg-white/20 sm:block" />
-                            <span className="flex items-center gap-1.5 text-sm text-white/60">
-                                <CheckCircle2 className="size-4 text-primary" />
-                                120+ projects completed
-                            </span>
-                            <span className="hidden h-4 w-px bg-white/20 sm:block" />
-                            <span className="flex items-center gap-1.5 text-sm text-white/60">
-                                <Clock className="size-4 text-primary" />
-                                Fixed quote in 24hrs
-                            </span>
-                        </motion.div>
-                    </div>
-
-                    {/* hero form card (replaces hero image) */}
-                    <motion.div
-                        id="hero-form"
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.7, delay: 0.2 }}
-                    >
-                        <div className="rounded-2xl border border-white/10 bg-white p-6 shadow-2xl sm:p-8">
-                            <div className="mb-6 text-center">
-                                <h3 className="text-lg font-bold text-foreground">
-                                    Get Your Free Consultation
-                                </h3>
-                                <p className="mt-1 text-sm text-muted-foreground">
-                                    Takes 30 seconds — we&apos;ll handle the rest
-                                </p>
-                            </div>
-                            <LeadForm />
-                            {/* micro trust strip */}
-                            <div className="mt-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 border-t border-border pt-4 text-xs text-muted-foreground">
-                                <span className="flex items-center gap-1">
-                                    <StarRating count={5} />
-                                    <span className="font-medium">5.0 Google</span>
-                                </span>
-                                <span className="h-3 w-px bg-border" />
-                                <span>120+ projects</span>
-                                <span className="h-3 w-px bg-border" />
-                                <span>No obligation</span>
-                            </div>
-                        </div>
-                    </motion.div>
-                </div>
-            </div>
-        </section>
-    );
-}
-
-function BeforeAfterSection() {
-    return (
-        <section className="bg-[oklch(0.97_0.005_80)] py-16 sm:py-24">
-            <div className="mx-auto max-w-6xl px-4">
-                <FadeIn className="text-center">
-                    <span className="mb-3 inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold tracking-wide text-primary">
-                        Real Results
-                    </span>
-                    <h2 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">
-                        See the Transformation
-                    </h2>
-                    <p className="mx-auto mt-3 max-w-xl text-muted-foreground">
-                        Overgrown front patches, tired lawns, messy side gardens —
-                        we&apos;ve transformed them all.
-                    </p>
-                </FadeIn>
-
-                <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                    {BEFORE_AFTER.map((item, i) => (
-                        <FadeIn key={i} delay={i * 0.12}>
-                            <div className="group overflow-hidden rounded-2xl border border-border bg-white shadow-sm transition-shadow hover:shadow-lg">
-                                {/* before */}
-                                <div className="relative aspect-[4/3]">
-                                    <Image
-                                        src={item.before}
-                                        alt={item.beforeAlt}
-                                        fill
-                                        className="object-cover"
-                                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                                    />
-                                    <span className="absolute left-3 top-3 rounded-md bg-red-600/90 px-2.5 py-1 text-xs font-bold text-white shadow-sm">
-                                        Before
-                                    </span>
-                                </div>
-                                {/* arrow divider */}
-                                <div className="flex items-center justify-center -my-3 relative z-10">
-                                    <span className="flex size-7 items-center justify-center rounded-full bg-primary text-white shadow-md">
-                                        <ChevronDown className="size-4" />
-                                    </span>
-                                </div>
-                                {/* after */}
-                                <div className="relative aspect-[4/3]">
-                                    <Image
-                                        src={item.after}
-                                        alt={item.afterAlt}
-                                        fill
-                                        className="object-cover"
-                                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                                    />
-                                    <span className="absolute left-3 top-3 rounded-md bg-primary/90 px-2.5 py-1 text-xs font-bold text-white shadow-sm">
-                                        After
-                                    </span>
-                                </div>
-                                {/* label */}
-                                <div className="border-t border-border px-4 py-3">
-                                    <p className="text-sm font-semibold text-foreground">
-                                        {item.label}
-                                    </p>
-                                </div>
-                            </div>
-                        </FadeIn>
-                    ))}
-                </div>
-            </div>
-        </section>
-    );
-}
-
-function BenefitsSection() {
-    return (
-        <section className="bg-white py-16 sm:py-24">
-            <div className="mx-auto max-w-6xl px-4">
-                <FadeIn className="text-center">
-                    <h2 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">
-                        Why Homeowners Are Switching to{" "}
-                        <span className="text-primary">Gravel Gardens</span>
-                    </h2>
-                    <p className="mx-auto mt-3 max-w-xl text-muted-foreground">
-                        Join dozens of Cornwall homeowners who swapped endless
-                        maintenance for effortless curb appeal.
-                    </p>
-                </FadeIn>
-
-                <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                    {BENEFITS.map((b, i) => {
-                        const Icon = b.icon;
-                        return (
-                            <FadeIn key={i} delay={i * 0.1}>
-                                <div className="group rounded-2xl border border-border bg-[oklch(0.985_0.003_150/0.5)] p-6 transition-all hover:border-primary/30 hover:shadow-md">
-                                    <span className="mb-4 inline-flex size-11 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-white">
-                                        <Icon className="size-5" />
-                                    </span>
-                                    <h3 className="text-lg font-bold text-foreground">
-                                        {b.title}
-                                    </h3>
-                                    <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
-                                        {b.desc}
-                                    </p>
-                                </div>
-                            </FadeIn>
-                        );
-                    })}
-                </div>
-            </div>
-        </section>
-    );
-}
-
-function OfferSection() {
-    const spots = useSpotsRemaining();
-
-    return (
-        <section className="relative overflow-hidden bg-[oklch(0.14_0.01_150)] py-16 sm:py-24">
-            {/* decorative blobs */}
-            <div className="pointer-events-none absolute -left-32 top-0 h-80 w-80 rounded-full bg-primary/15 blur-[100px]" />
-            <div className="pointer-events-none absolute -right-32 bottom-0 h-80 w-80 rounded-full bg-primary/10 blur-[100px]" />
-
-            <div className="relative mx-auto max-w-4xl px-4 text-center">
-                <FadeIn>
-                    <span className="mb-4 inline-flex items-center gap-1.5 rounded-full border border-amber-400/30 bg-amber-400/10 px-4 py-1.5 text-sm font-semibold text-amber-400">
-                        <Sparkles className="size-4" />
-                        February Exclusive — Ends Soon
-                    </span>
-
-                    <h2 className="mt-2 text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl">
-                        Free Gravel Garden Design Consultation
-                    </h2>
-                    <p className="mt-2 text-lg font-medium text-primary">
-                        Worth £150 — yours free, with zero obligation
-                    </p>
-                </FadeIn>
-
-                <FadeIn delay={0.15}>
-                    <div className="mx-auto mt-10 grid max-w-3xl gap-4 sm:grid-cols-3">
-                        {[
-                            {
-                                icon: Calendar,
-                                title: "Free Site Visit",
-                                desc: "We come to your property, measure up, and discuss your vision — completely free.",
-                            },
-                            {
-                                icon: Clock,
-                                title: "Fixed Quote in 24hrs",
-                                desc: "No vague estimates. You\u2019ll receive a detailed, fixed-price quote within 24 hours.",
-                            },
-                            {
-                                icon: Sparkles,
-                                title: "Free Membrane Upgrade",
-                                desc: "Book in February and we\u2019ll upgrade to premium weed membrane at no extra cost.",
-                            },
-                        ].map((o, i) => {
-                            const Icon = o.icon;
-                            return (
-                                <div
-                                    key={i}
-                                    className="rounded-2xl border border-white/10 bg-white/5 p-6 text-left backdrop-blur-sm"
-                                >
-                                    <span className="mb-3 inline-flex size-10 items-center justify-center rounded-lg bg-primary/20 text-primary">
-                                        <Icon className="size-5" />
-                                    </span>
-                                    <h3 className="text-base font-bold text-white">
-                                        {o.title}
-                                    </h3>
-                                    <p className="mt-1 text-sm leading-relaxed text-white/60">
-                                        {o.desc}
-                                    </p>
-                                </div>
-                            );
-                        })}
-                    </div>
-                </FadeIn>
-
-                <FadeIn delay={0.3}>
-                    <div className="mt-10 space-y-4">
-                        <CountdownTimer />
-                        <p className="text-sm text-white/60">
-                            We can only take on{" "}
-                            <span className="font-semibold text-amber-400">{spots} more projects</span>{" "}
-                            in February. Once they&apos;re booked, this offer closes.
-                        </p>
-                        <Button
-                            size="lg"
-                            onClick={scrollToForm}
-                            className="h-13 cursor-pointer rounded-xl px-8 text-base font-bold shadow-lg shadow-primary/25 transition-transform hover:scale-[1.02]"
-                        >
-                            Claim Your Free Consultation
-                            <ArrowRight className="ml-1 size-4" />
-                        </Button>
-                        <p className="text-sm text-white/40">
-                            Offer expires when the clock hits zero.
-                        </p>
-                    </div>
-                </FadeIn>
-            </div>
-        </section>
-    );
-}
-
-function TestimonialsSection() {
-    return (
-        <section className="bg-[oklch(0.97_0.005_80)] py-16 sm:py-24">
-            <div className="mx-auto max-w-6xl px-4">
-                <FadeIn className="text-center">
-                    <span className="mb-3 inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold tracking-wide text-primary">
-                        Testimonials
-                    </span>
-                    <h2 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">
-                        Cornwall Homeowners Love Us
-                    </h2>
-                </FadeIn>
-
-                <div className="mt-12 grid gap-6 sm:grid-cols-2">
-                    {TESTIMONIALS.map((t, i) => (
-                        <FadeIn key={i} delay={i * 0.1}>
-                            <figure className="flex h-full flex-col rounded-2xl border border-border bg-white p-6 shadow-sm">
-                                <StarRating />
-                                <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-foreground/80">
-                                    &ldquo;{t.quote}&rdquo;
-                                </blockquote>
-                                <figcaption className="mt-4 flex items-center gap-3 border-t border-border pt-4">
-                                    <span className="flex size-9 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary">
-                                        {t.name[0]}
-                                    </span>
-                                    <div>
-                                        <p className="text-sm font-semibold text-foreground">
-                                            {t.name}
-                                        </p>
-                                        <p className="text-xs text-muted-foreground">
-                                            {t.location}
-                                        </p>
-                                    </div>
-                                </figcaption>
-                            </figure>
-                        </FadeIn>
-                    ))}
-                </div>
-            </div>
-        </section>
-    );
-}
-
-function LeadForm({ location = "hero" }: { location?: "hero" | "bottom" }) {
+function LeadForm({ compact = false }: { compact?: boolean }) {
+    const fieldId = React.useId();
     const [form, setForm] = React.useState({
-        name: "",
-        phone: "",
-        postcode: "",
+        email: "",
+        company: "",
     });
     const [token, setToken] = React.useState("");
-    const [status, setStatus] = React.useState<
-        "idle" | "submitting" | "success" | "error"
-    >("idle");
+    const [status, setStatus] = React.useState<"idle" | "submitting" | "success" | "error">("idle");
     const [errorMsg, setErrorMsg] = React.useState("");
     const turnstileRef = React.useRef<{ reset: () => void }>(null);
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-    };
+    function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+        const { name, value } = event.target;
+        setForm((prev) => ({ ...prev, [name]: value }));
+    }
 
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
+    async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+        event.preventDefault();
         if (status === "submitting") return;
 
-        if (!form.name.trim() || !form.phone.trim() || !form.postcode.trim()) {
-            setErrorMsg("Please fill in all fields.");
+        const email = form.email.trim();
+
+        if (!email) {
+            setErrorMsg("Add your email first.");
+            setStatus("error");
+            return;
+        }
+
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            setErrorMsg("Enter a valid email address.");
             setStatus("error");
             return;
         }
@@ -717,21 +164,29 @@ function LeadForm({ location = "hero" }: { location?: "hero" | "bottom" }) {
         setErrorMsg("");
 
         try {
-            const res = await fetch("/api/contact", {
+            const jobDetails = [
+                "[Meta Ads Gravel Garden Lead]",
+                `Email: ${email}`,
+                "",
+                "Lead requested a free site visit and fixed gravel garden quote from the Newquay landing page.",
+            ].join("\n");
+
+            const res = await fetch("/api/quote", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    name: form.name.trim(),
-                    phone: form.phone.trim(),
-                    email: `${form.phone.trim().replace(/\s/g, "")}@offer-lead.local`,
-                    message: `[Gravel Garden Offer Lead]\nPostcode: ${form.postcode.trim()}\nPhone: ${form.phone.trim()}\nSource: gravel-garden-offer\n\nThis lead came from the paid ads gravel garden landing page.`,
-                    service: "Gravel Garden Installation",
-                    source: "gravel-garden-offer",
+                    name: "Gravel garden lead",
+                    email,
+                    serviceType: "Gravel Garden Installation",
+                    timeframe: "Free site visit requested",
+                    budget: "Not supplied",
+                    jobDetails,
+                    company: form.company,
                     turnstileToken: token,
                 }),
             });
 
-            const data = await res.json();
+            const data = (await res.json()) as { ok?: boolean; error?: string };
 
             if (!res.ok || !data.ok) {
                 throw new Error(data.error || "Something went wrong.");
@@ -739,215 +194,371 @@ function LeadForm({ location = "hero" }: { location?: "hero" | "bottom" }) {
 
             setStatus("success");
             void capturePostHogEvent("conversion_gravel_offer_submit", {
-                source: "gravel-garden-offer",
-                form_location: location,
+                source: "meta-gravel-garden-landing-page",
             });
-        } catch (err) {
-            setErrorMsg(
-                err instanceof Error
-                    ? err.message
-                    : "Something went wrong. Please try again.",
-            );
+        } catch (error) {
+            setErrorMsg(error instanceof Error ? error.message : "Something went wrong. Please try again.");
             setStatus("error");
             turnstileRef.current?.reset();
         }
-    };
+    }
 
     if (status === "success") {
         return (
-            <div className="rounded-2xl border border-primary/30 bg-primary/5 p-8 text-center">
-                <span className="mb-3 inline-flex size-14 items-center justify-center rounded-full bg-primary/10 text-primary">
-                    <CheckCircle2 className="size-7" />
-                </span>
-                <h3 className="text-xl font-bold text-foreground">
-                    You&apos;re Booked In!
-                </h3>
-                <p className="mt-2 text-muted-foreground">
-                    We&apos;ll call you within a few hours to arrange your free site
-                    visit. Keep an eye on your phone!
-                </p>
-                <p className="mt-4 text-sm text-muted-foreground">
-                    Or call us now:{" "}
-                    <a
-                        href="tel:07593121621"
-                        className="font-semibold text-primary hover:underline"
-                    >
-                        07593 121 621
-                    </a>
-                </p>
+            <div className="rounded-lg bg-white px-5 py-4 text-center text-[#10140e] shadow-[0_24px_80px_-48px_rgba(0,0,0,0.75)] sm:px-8">
+                <p className="text-lg font-black">Request sent. Levi will email you.</p>
+                <a
+                    href={`tel:${PHONE_TEL}`}
+                    onClick={() => trackPhone("gravel_offer_success")}
+                    className="mt-2 inline-flex items-center gap-2 text-sm font-bold text-[#238845]"
+                >
+                    <Phone className="size-4" />
+                    Call now instead
+                </a>
             </div>
         );
     }
 
     return (
-        <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-                <Label htmlFor="name" className="text-sm font-medium">
-                    Full Name
-                </Label>
-                <Input
-                    id="name"
-                    name="name"
-                    placeholder="e.g. Sarah Jones"
-                    value={form.name}
-                    onChange={handleChange}
-                    required
-                    className="mt-1.5 h-11"
-                />
-            </div>
-            <div>
-                <Label htmlFor="phone" className="text-sm font-medium">
-                    Phone Number
-                </Label>
-                <Input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    placeholder="e.g. 07700 900123"
-                    value={form.phone}
-                    onChange={handleChange}
-                    required
-                    className="mt-1.5 h-11"
-                />
-            </div>
-            <div>
-                <Label htmlFor="postcode" className="text-sm font-medium">
-                    Postcode
-                </Label>
-                <Input
-                    id="postcode"
-                    name="postcode"
-                    placeholder="e.g. TR7 1AE"
-                    value={form.postcode}
-                    onChange={handleChange}
-                    required
-                    className="mt-1.5 h-11"
-                />
+        <form onSubmit={handleSubmit} className={cn(compact ? "space-y-3" : "space-y-4")}>
+            <div
+                className={cn(
+                    "grid gap-2 rounded-lg bg-white/95 p-2 shadow-[0_30px_80px_-50px_rgba(0,0,0,0.9)]",
+                    compact
+                        ? "grid-cols-1"
+                        : "grid-cols-1 lg:grid-cols-[minmax(0,1fr)_auto]",
+                )}
+            >
+                <div className="rounded-md bg-[#f1f2ee] px-4 py-2">
+                    <Label
+                        htmlFor={`${fieldId}-email`}
+                        className="block text-[0.67rem] font-black uppercase text-[#51604d]"
+                    >
+                        Email
+                    </Label>
+                    <Input
+                        id={`${fieldId}-email`}
+                        name="email"
+                        type="email"
+                        autoComplete="email"
+                        value={form.email}
+                        onChange={handleChange}
+                        placeholder="Email address"
+                        required
+                        className="h-8 border-0 bg-transparent px-0 text-base font-semibold text-[#10140e] shadow-none placeholder:text-[#6f746a] focus-visible:ring-0"
+                    />
+                </div>
+                <Button
+                    type="submit"
+                    size="lg"
+                    disabled={status === "submitting"}
+                    className="min-h-14 cursor-pointer rounded-md bg-[#55c768] px-7 text-base font-black text-[#10140e] transition hover:scale-[1.02] hover:bg-[#72d580] active:scale-[0.99] disabled:opacity-70 sm:text-lg lg:min-w-[220px]"
+                >
+                    {status === "submitting" ? "Sending" : "Get fixed quote"}
+                    {status !== "submitting" && <ArrowRight className="size-7 stroke-[3]" />}
+                </Button>
             </div>
 
             <Turnstile
                 ref={turnstileRef}
                 onToken={setToken}
                 siteKey={
-                    process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY_CONTACT ??
+                    process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY_QUOTE ??
                     process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY
                 }
                 size="flexible"
-                className="mt-2"
             />
 
             {status === "error" && errorMsg && (
-                <p className="text-sm font-medium text-red-600">{errorMsg}</p>
+                <p className="text-center text-sm font-bold text-[#ffd34d]">{errorMsg}</p>
             )}
 
-            {/* honeypot */}
             <input
                 type="text"
                 name="company"
+                value={form.company}
+                onChange={handleChange}
                 tabIndex={-1}
                 autoComplete="off"
                 className="absolute left-[-9999px] opacity-0"
-                aria-hidden
+                aria-hidden="true"
             />
-
-            <Button
-                type="submit"
-                size="lg"
-                disabled={status === "submitting"}
-                className="h-12 w-full cursor-pointer rounded-xl text-base font-bold shadow-lg shadow-primary/25 transition-transform hover:scale-[1.01]"
-            >
-                {status === "submitting" ? (
-                    "Sending..."
-                ) : (
-                    <>
-                        Book My Free Consultation
-                        <ArrowRight className="ml-1 size-4" />
-                    </>
-                )}
-            </Button>
-
-            <p className="text-center text-xs text-muted-foreground">
-                <Shield className="mb-px mr-1 inline size-3" />
-                Your details are safe. We&apos;ll only use them to arrange your
-                consultation.
-            </p>
         </form>
     );
 }
 
-function FormSection() {
-    const spots = useSpotsRemaining();
-
+function HeroSection() {
     return (
-        <section id="lead-form" className="bg-white py-16 sm:py-24">
-            <div className="mx-auto max-w-6xl px-4">
-                <div className="grid items-start gap-12 lg:grid-cols-2">
-                    {/* left — reassurance */}
-                    <FadeIn>
-                        <div>
-                            <span className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold tracking-wide text-primary">
-                                <Calendar className="size-3.5" />
-                                Free &middot; No Obligation
-                            </span>
-                            <h2 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">
-                                Book Your Free Design Consultation
-                            </h2>
-                            <p className="mt-3 text-muted-foreground">
-                                Leave your details and we&apos;ll call you back within a
-                                few hours to arrange a free visit to your property.
-                            </p>
+        <section className="relative isolate min-h-[88svh] overflow-hidden bg-[#132017] text-white">
+            <Image
+                src={HERO_AFTER}
+                alt="Finished gravel garden in Newquay"
+                fill
+                priority
+                className="scale-[1.02] object-cover opacity-[0.42]"
+                sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(19,32,23,0.34),rgba(19,32,23,0.9)_72%)]" />
+            <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(180deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:72px_72px] opacity-35" />
 
-                            <ul className="mt-8 space-y-4">
-                                {[
-                                    "Free on-site design consultation (worth £150)",
-                                    "Fixed, no-surprise quote within 24 hours",
-                                    "February bonus: free premium membrane upgrade",
-                                    `Only ${spots} February spots remaining — book now`,
-                                ].map((text, i) => (
-                                    <li
-                                        key={i}
-                                        className="flex items-start gap-3 text-sm text-foreground/80"
-                                    >
-                                        <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-primary" />
-                                        {text}
-                                    </li>
-                                ))}
-                            </ul>
+            <header className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-4 py-5">
+                <a
+                    href={`tel:${PHONE_TEL}`}
+                    onClick={() => trackPhone("gravel_offer_nav")}
+                    className="inline-flex items-center gap-3 text-base font-semibold text-white sm:text-xl"
+                    aria-label={`Call ${PHONE_DISPLAY}`}
+                >
+                    <Phone className="size-6 fill-[#55c768] text-[#55c768]" />
+                    <span className="hidden sm:inline">{PHONE_DISPLAY}</span>
+                </a>
 
-                            <div className="mt-8 flex items-center gap-4 rounded-xl border border-border bg-secondary/50 p-4">
-                                <Image
-                                    src="/images/uploads/site/branding/logoFile.webp"
-                                    alt="Quilliams Gardening & Landscaping logo"
-                                    width={140}
-                                    height={40}
-                                    className="shrink-0"
-                                />
-                                <div className="text-sm">
-                                    <p className="font-semibold text-foreground">
-                                        Quilliams Gardening &amp; Landscaping
+                <div className="absolute left-1/2 flex -translate-x-1/2 items-center rounded-lg bg-white/92 px-3 py-1.5 shadow-[0_14px_40px_-28px_rgba(0,0,0,0.9)] sm:px-4 sm:py-2">
+                    <Image
+                        src="/images/uploads/site/branding/logoFile.webp"
+                        alt="Quilliams Gardening and Landscaping"
+                        width={214}
+                        height={56}
+                        className="h-8 w-auto sm:h-10"
+                        priority
+                    />
+                </div>
+
+                <button
+                    type="button"
+                    onClick={scrollToForm}
+                    className="inline-flex items-center gap-2 text-base font-semibold text-white sm:text-xl"
+                >
+                    <span className="hidden sm:inline">Quote</span>
+                    <ArrowRight className="size-7 stroke-[3]" />
+                </button>
+            </header>
+
+            <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center px-4 pb-20 pt-8 text-center sm:pt-16">
+                <motion.p
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.35 }}
+                    className="mb-4 inline-flex rounded-md border border-[#55c768]/35 bg-[#55c768]/12 px-4 py-2 text-xs font-black uppercase text-[#7ee18d] sm:mb-5"
+                >
+                    Free site visit and fixed quote
+                </motion.p>
+
+                <motion.h1
+                    initial={{ opacity: 0, y: 18 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.45, delay: 0.05 }}
+                    className="max-w-[13ch] text-[3.15rem] font-black leading-[0.92] text-white text-balance sm:text-[5.4rem] lg:text-[6.8rem]"
+                >
+                    A cleaner gravel garden in days
+                </motion.h1>
+
+                <motion.p
+                    initial={{ opacity: 0, y: 18 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.45, delay: 0.1 }}
+                    className="mt-5 max-w-[58ch] text-lg leading-7 text-white/82 sm:mt-6 sm:text-2xl sm:leading-9"
+                >
+                    Quilliams clears the mess, prepares the base, fits membrane, edging and
+                    gravel, then takes the waste away. You get the price before anything starts.
+                </motion.p>
+
+                <motion.div
+                    id="hero-lead-form"
+                    initial={{ opacity: 0, y: 18 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.45, delay: 0.16 }}
+                    className="mt-6 w-full max-w-5xl sm:mt-8"
+                >
+                    <LeadForm />
+                </motion.div>
+
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.45, delay: 0.24 }}
+                    className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-medium text-white/65"
+                >
+                    <span>Free site visit, fixed quote, and clear install timeline.</span>
+                    <span className="inline-flex items-center gap-2">
+                        <StarRating />
+                        Google and Facebook proof
+                    </span>
+                    <span className="inline-flex items-center gap-1.5">
+                        <ShieldCheck className="size-4 text-[#55c768]" />
+                        Insured and waste licensed
+                    </span>
+                </motion.div>
+            </div>
+
+            <div className="absolute bottom-[-1px] left-0 right-0 z-10 h-14 bg-[#eef4eb] [clip-path:polygon(0_72%,100%_18%,100%_100%,0_100%)]" />
+        </section>
+    );
+}
+
+function ProofSection() {
+    return (
+        <section className="bg-[#eef4eb] py-10 text-[#10140e] sm:py-14">
+            <div className="mx-auto grid max-w-7xl gap-4 px-4 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+                <div>
+                    <p className="text-sm font-black uppercase text-[#238845]">The offer</p>
+                    <h2 className="mt-2 max-w-[12ch] text-4xl font-black leading-[0.94] sm:text-6xl">
+                        Free visit. Fixed price. Clean install.
+                    </h2>
+                </div>
+
+                <div className="grid gap-3 sm:grid-cols-3">
+                    {OFFER_STATS.map(([value, label]) => (
+                        <div
+                            key={value}
+                            className="rounded-lg bg-white p-5 shadow-[0_20px_60px_-46px_rgba(16,20,14,0.72)]"
+                        >
+                            <p className="text-3xl font-black text-[#238845]">{value}</p>
+                            <p className="mt-1 text-sm font-semibold text-[#4b5748]">{label}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+}
+
+function ProcessSection() {
+    return (
+        <section className="bg-[#fffaf1] py-12 text-[#10140e] sm:py-16">
+            <div className="mx-auto max-w-7xl px-4">
+                <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
+                    <div>
+                        <p className="text-sm font-black uppercase text-[#a75d31]">What is included</p>
+                        <h2 className="mt-2 max-w-[11ch] text-4xl font-black leading-[0.94] sm:text-6xl">
+                            The messy work handled.
+                        </h2>
+                        <p className="mt-4 max-w-[44ch] text-base leading-7 text-[#4b463d]">
+                            The quote covers the work needed to turn an overgrown or tired front garden into a clean gravel finish.
+                        </p>
+                    </div>
+
+                    <div className="grid gap-3 sm:grid-cols-2">
+                        {PROCESS_STEPS.map(({ icon: Icon, title, text }) => (
+                            <div
+                                key={title}
+                                className="rounded-lg border border-[#eadfc9] bg-white p-5 shadow-[0_18px_60px_-48px_rgba(99,72,36,0.7)]"
+                            >
+                                <Icon className="size-6 text-[#238845]" />
+                                <h3 className="mt-4 text-2xl font-black leading-tight">{title}</h3>
+                                <p className="mt-2 text-sm leading-6 text-[#5b574e]">{text}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+}
+
+function BeforeAfterSection() {
+    return (
+        <section className="bg-[#f8f7f1] py-12 text-[#10140e] sm:py-16">
+            <div className="mx-auto max-w-7xl px-4">
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+                    <div>
+                        <p className="text-sm font-black uppercase text-[#238845]">
+                            Proof, not poetry
+                        </p>
+                        <h2 className="mt-2 max-w-[12ch] text-4xl font-black leading-[0.94] sm:text-6xl">
+                            See the garden change.
+                        </h2>
+                    </div>
+                    <Button
+                        size="lg"
+                        onClick={scrollToForm}
+                        className="h-14 w-fit cursor-pointer rounded-md bg-[#55c768] px-7 text-lg font-black text-[#10140e] transition hover:scale-[1.02] hover:bg-[#72d580]"
+                    >
+                        Get fixed quote
+                        <ArrowRight className="size-7 stroke-[3]" />
+                    </Button>
+                </div>
+
+                <div className="mt-8 grid gap-5 lg:grid-cols-2">
+                    {PROOF_CARDS.map((item) => (
+                        <article
+                            key={item.title}
+                            className="overflow-hidden rounded-lg bg-white shadow-[0_24px_70px_-52px_rgba(16,20,14,0.82)]"
+                        >
+                            <div className="grid grid-cols-2 gap-px bg-[#e4e7df]">
+                                <div className="bg-white p-2">
+                                    <div className="relative aspect-[4/3] overflow-hidden rounded-md">
+                                        <Image
+                                            src={item.before}
+                                            alt={`${item.title} before`}
+                                            fill
+                                            className="object-cover"
+                                            sizes="(max-width: 1024px) 50vw, 390px"
+                                        />
+                                    </div>
+                                    <p className="mt-2 text-xs font-black uppercase text-[#a75d31]">
+                                        Before
                                     </p>
-                                    <p className="text-muted-foreground">
-                                        5+ years &middot; 120+ projects &middot; Cornwall
+                                </div>
+                                <div className="bg-white p-2">
+                                    <div className="relative aspect-[4/3] overflow-hidden rounded-md">
+                                        <Image
+                                            src={item.after}
+                                            alt={`${item.title} after`}
+                                            fill
+                                            className="object-cover"
+                                            sizes="(max-width: 1024px) 50vw, 390px"
+                                        />
+                                    </div>
+                                    <p className="mt-2 text-xs font-black uppercase text-[#238845]">
+                                        After
                                     </p>
                                 </div>
                             </div>
-                        </div>
-                    </FadeIn>
-
-                    {/* right — form */}
-                    <FadeIn delay={0.15}>
-                        <div className="rounded-2xl border border-border bg-[oklch(0.985_0.003_150/0.3)] p-6 shadow-lg sm:p-8">
-                            <div className="mb-6 text-center">
-                                <h3 className="text-lg font-bold text-foreground">
-                                    Get Your Free Consultation
-                                </h3>
-                                <p className="mt-1 text-sm text-muted-foreground">
-                                    Takes 30 seconds — we&apos;ll handle the rest
-                                </p>
+                            <div className="flex items-center justify-between gap-4 p-5">
+                                <h3 className="text-2xl font-black">{item.title}</h3>
+                                <CheckCircle2 className="size-6 shrink-0 text-[#238845]" />
                             </div>
-                            <LeadForm location="bottom" />
-                        </div>
-                    </FadeIn>
+                        </article>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+}
+
+function ReviewSection() {
+    return (
+        <section className="bg-[#132017] py-12 text-white sm:py-16">
+            <div className="mx-auto max-w-7xl px-4">
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+                    <div>
+                        <p className="text-sm font-black uppercase text-[#7ee18d]">Local proof</p>
+                        <h2 className="mt-2 max-w-[12ch] text-4xl font-black leading-[0.94] sm:text-6xl">
+                            People call Levi back.
+                        </h2>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm font-bold text-white/72">
+                        <StarRating />
+                        Google and Facebook reviews
+                    </div>
+                </div>
+
+                <div className="mt-8 grid gap-3 lg:grid-cols-3">
+                    {REVIEWS.map((review) => (
+                        <figure
+                            key={review.name}
+                            className="rounded-lg border border-white/10 bg-white/[0.06] p-5 shadow-[0_24px_80px_-56px_rgba(0,0,0,0.95)]"
+                        >
+                            <StarRating />
+                            <blockquote className="mt-4 text-base leading-7 text-white/86">
+                                &ldquo;{review.quote}&rdquo;
+                            </blockquote>
+                            <figcaption className="mt-5 text-sm font-black text-white">
+                                {review.name}
+                                <span className="font-semibold text-white/48">, {review.location}</span>
+                            </figcaption>
+                        </figure>
+                    ))}
                 </div>
             </div>
         </section>
@@ -955,55 +566,68 @@ function FormSection() {
 }
 
 function FAQSection() {
-    const [openIdx, setOpenIdx] = React.useState<number | null>(null);
+    const [openIndex, setOpenIndex] = React.useState(0);
 
     return (
-        <section className="bg-[oklch(0.97_0.005_80)] py-16 sm:py-24">
-            <div className="mx-auto max-w-3xl px-4">
-                <FadeIn className="text-center">
-                    <h2 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">
-                        Common Questions
-                    </h2>
-                    <p className="mt-3 text-muted-foreground">
-                        Everything you need to know about gravel garden installations.
+        <section className="bg-[#f3f3ee] py-12 text-[#10140e] sm:py-16">
+            <div className="mx-auto grid max-w-7xl gap-8 px-4 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
+                <div>
+                    <p className="text-sm font-black uppercase text-[#238845]">
+                        The boring-but-important bits
                     </p>
-                </FadeIn>
+                    <h2 className="mt-2 max-w-[10ch] text-4xl font-black leading-[0.94] sm:text-6xl">
+                        Quick answers.
+                    </h2>
+                    <div className="mt-5 flex flex-wrap gap-2">
+                        <Link
+                            href={GOOGLE_MAPS_URL}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex items-center gap-2 rounded-md bg-white px-4 py-2 text-sm font-black"
+                        >
+                            <Star className="size-4 fill-[#d7a32a] text-[#d7a32a]" />
+                            Google reviews
+                        </Link>
+                        <Link
+                            href={FACEBOOK_URL}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex items-center gap-2 rounded-md bg-white px-4 py-2 text-sm font-black"
+                        >
+                            <Facebook className="size-4 text-[#238845]" />
+                            Facebook
+                        </Link>
+                    </div>
+                </div>
 
-                <div className="mt-10 space-y-3">
-                    {FAQS.map((faq, i) => {
-                        const isOpen = openIdx === i;
+                <div className="space-y-3">
+                    {FAQS.map((faq, index) => {
+                        const isOpen = openIndex === index;
+
                         return (
-                            <FadeIn key={i} delay={i * 0.06}>
-                                <div className="overflow-hidden rounded-xl border border-border bg-white">
-                                    <button
-                                        onClick={() =>
-                                            setOpenIdx(isOpen ? null : i)
-                                        }
-                                        className="flex w-full cursor-pointer items-center justify-between px-5 py-4 text-left text-sm font-semibold text-foreground transition-colors hover:bg-secondary/40"
-                                    >
-                                        {faq.q}
-                                        <ChevronDown
-                                            className={cn(
-                                                "size-4 shrink-0 text-muted-foreground transition-transform duration-200",
-                                                isOpen && "rotate-180",
-                                            )}
-                                        />
-                                    </button>
-                                    <motion.div
-                                        initial={false}
-                                        animate={{
-                                            height: isOpen ? "auto" : 0,
-                                            opacity: isOpen ? 1 : 0,
-                                        }}
-                                        transition={{ duration: 0.25, ease: "easeInOut" }}
-                                        className="overflow-hidden"
-                                    >
-                                        <p className="px-5 pb-4 text-sm leading-relaxed text-muted-foreground">
-                                            {faq.a}
-                                        </p>
-                                    </motion.div>
-                                </div>
-                            </FadeIn>
+                            <div
+                                key={faq.q}
+                                className="rounded-lg bg-white shadow-[0_18px_60px_-42px_rgba(16,20,14,0.7)]"
+                            >
+                                <button
+                                    type="button"
+                                    onClick={() => setOpenIndex(isOpen ? -1 : index)}
+                                    className="flex w-full cursor-pointer items-center justify-between gap-4 px-5 py-4 text-left text-xl font-black"
+                                >
+                                    <span>{faq.q}</span>
+                                    <ChevronDown
+                                        className={cn(
+                                            "size-6 shrink-0 text-[#238845] transition-transform",
+                                            isOpen && "rotate-180",
+                                        )}
+                                    />
+                                </button>
+                                {isOpen && (
+                                    <div className="border-t border-[#e4e4dc] px-5 pb-5 pt-4">
+                                        <p className="max-w-[70ch] text-base leading-7 text-[#41463d]">{faq.a}</p>
+                                    </div>
+                                )}
+                            </div>
                         );
                     })}
                 </div>
@@ -1014,222 +638,105 @@ function FAQSection() {
 
 function FinalCTA() {
     return (
-        <section className="bg-primary py-12 sm:py-16">
-            <div className="mx-auto max-w-3xl px-4 text-center">
-                <FadeIn>
-                    <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
-                        Ready to Finally Sort That Garden?
-                    </h2>
-                    <p className="mt-2 text-white/80">
-                        Whether it&apos;s overgrown or just boring — your free design
-                        consultation is one click away.
+        <section className="bg-[#132017] py-10 text-white">
+            <div className="mx-auto flex max-w-7xl flex-col gap-5 px-4 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                    <p className="text-sm font-black uppercase text-[#7ee18d]">
+                        Free site visit and fixed quote
                     </p>
-                    <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-                        <Button
-                            size="lg"
-                            onClick={scrollToForm}
-                            className="h-12 cursor-pointer rounded-xl bg-white px-7 text-base font-bold text-primary shadow-lg transition-transform hover:scale-[1.02] hover:bg-white/90"
-                        >
-                            Book Free Consultation
-                            <ArrowRight className="ml-1 size-4" />
-                        </Button>
-                        <span className="text-sm text-white/60">or</span>
-                        <a
-                            href="tel:07593121621"
-                            className="inline-flex items-center gap-2 text-base font-semibold text-white transition-colors hover:text-white/80"
-                            onClick={() => void capturePostHogEvent("click_phone", { location: "gravel_offer_footer" })}
-                        >
-                            <Phone className="size-4" />
-                            07593 121 621
-                        </a>
-                    </div>
-                </FadeIn>
+                    <h2 className="mt-1 text-4xl font-black leading-[0.94] sm:text-5xl">
+                        Get the garden priced.
+                    </h2>
+                </div>
+                <div className="flex flex-col gap-3 sm:flex-row">
+                    <Button
+                        size="lg"
+                        onClick={scrollToForm}
+                        className="h-14 cursor-pointer rounded-md bg-[#55c768] px-8 text-lg font-black text-[#10140e] transition hover:scale-[1.02] hover:bg-[#72d580]"
+                    >
+                        Get fixed quote
+                        <ArrowRight className="size-7 stroke-[3]" />
+                    </Button>
+                    <a
+                        href={`tel:${PHONE_TEL}`}
+                        onClick={() => trackPhone("gravel_offer_final")}
+                        className="inline-flex h-14 items-center justify-center gap-2 rounded-md border border-white/20 px-6 text-base font-black text-white transition hover:bg-white/10"
+                    >
+                        <Phone className="size-5" />
+                        {PHONE_DISPLAY}
+                    </a>
+                </div>
             </div>
         </section>
     );
 }
 
-function StickyMobileCTA() {
-    const [visible, setVisible] = React.useState(false);
-    const [dismissed, setDismissed] = React.useState(false);
-    const spots = useSpotsRemaining();
-
-    React.useEffect(() => {
-        const handleScroll = () => {
-            setVisible(window.scrollY > 600);
-        };
-        window.addEventListener("scroll", handleScroll, { passive: true });
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-
-    if (dismissed) return null;
-
-    return (
-        <motion.div
-            initial={{ y: 100 }}
-            animate={{ y: visible ? 0 : 100 }}
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-white/95 p-3 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] backdrop-blur-md lg:hidden"
-        >
-            <p className="mb-1.5 text-center text-xs font-medium text-muted-foreground">
-                Only {spots} February spots left — <CountdownTimer compact />
-            </p>
-            <div className="flex items-center gap-2">
-                <Button
-                    size="lg"
-                    onClick={scrollToForm}
-                    className="h-11 flex-1 cursor-pointer rounded-xl text-sm font-bold shadow-lg shadow-primary/20"
-                >
-                    Free Consultation
-                    <ArrowRight className="ml-1 size-3.5" />
-                </Button>
-                <a
-                    href="tel:07593121621"
-                    className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-border bg-secondary transition-colors hover:bg-secondary/80"
-                >
-                    <Phone className="size-4 text-foreground" />
-                </a>
-                <button
-                    onClick={() => setDismissed(true)}
-                    className="flex h-11 w-8 shrink-0 cursor-pointer items-center justify-center text-muted-foreground hover:text-foreground"
-                    aria-label="Dismiss"
-                >
-                    <X className="size-4" />
-                </button>
-            </div>
-        </motion.div>
-    );
-}
-
-/* ─────────────── social proof toast (desktop only) ──────────── */
-
-function SocialProofToast() {
-    const [current, setCurrent] = React.useState(-1);
-    const [showCount, setShowCount] = React.useState(0);
-    const [dismissed, setDismissed] = React.useState(false);
-
-    React.useEffect(() => {
-        if (dismissed) return;
-
-        // Show first toast after 8s
-        const initialTimer = setTimeout(() => {
-            setCurrent(0);
-            setShowCount(1);
-        }, 8000);
-
-        return () => clearTimeout(initialTimer);
-    }, [dismissed]);
-
-    React.useEffect(() => {
-        if (current < 0 || dismissed) return;
-
-        // Hide after 5s
-        const hideTimer = setTimeout(() => {
-            setCurrent(-1);
-
-            // If we haven't shown 3 yet, schedule next
-            if (showCount < 3) {
-                const nextTimer = setTimeout(() => {
-                    const nextIdx = showCount % SOCIAL_PROOF_ENTRIES.length;
-                    setCurrent(nextIdx);
-                    setShowCount((c) => c + 1);
-                }, 15000);
-                // Store cleanup
-                return () => clearTimeout(nextTimer);
-            }
-        }, 5000);
-
-        return () => clearTimeout(hideTimer);
-    }, [current, showCount, dismissed]);
-
-    // Cycle to next entry after hide
-    React.useEffect(() => {
-        if (current !== -1 || showCount >= 3 || showCount === 0 || dismissed) return;
-
-        const nextTimer = setTimeout(() => {
-            const nextIdx = showCount % SOCIAL_PROOF_ENTRIES.length;
-            setCurrent(nextIdx);
-            setShowCount((c) => c + 1);
-        }, 15000);
-
-        return () => clearTimeout(nextTimer);
-    }, [current, showCount, dismissed]);
-
-    if (dismissed) return null;
-
-    const entry = current >= 0 ? SOCIAL_PROOF_ENTRIES[current] : null;
-
-    return (
-        <div className="fixed bottom-6 left-6 z-40 hidden lg:block">
-            <AnimatePresence>
-                {entry && (
-                    <motion.div
-                        key={current}
-                        initial={{ opacity: 0, y: 20, scale: 0.95 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                        transition={{ duration: 0.3 }}
-                        className="flex items-center gap-3 rounded-xl border border-border bg-white px-4 py-3 shadow-lg"
-                    >
-                        <span className="flex size-8 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
-                            {entry.name[0]}
-                        </span>
-                        <div className="text-sm">
-                            <p className="font-semibold text-foreground">
-                                {entry.name} from {entry.location}
-                            </p>
-                            <p className="text-xs text-muted-foreground">
-                                Booked a consultation {entry.time}
-                            </p>
-                        </div>
-                        <button
-                            onClick={() => setDismissed(true)}
-                            className="ml-2 cursor-pointer text-muted-foreground hover:text-foreground"
-                            aria-label="Dismiss"
-                        >
-                            <X className="size-3.5" />
-                        </button>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-        </div>
-    );
-}
-
 function FooterMinimal() {
     return (
-        <footer className="border-t border-border bg-[oklch(0.14_0.01_150)] py-8">
-            <div className="mx-auto max-w-6xl px-4 text-center text-sm text-white/40">
-                <p>
-                    &copy; {new Date().getFullYear()} Quilliams Gardening &amp;
-                    Landscaping. All rights reserved.
-                </p>
-                <p className="mt-1">
-                    Serving Newquay, Truro, St Austell &amp; surrounding areas in
-                    Cornwall.
-                </p>
+        <footer className="bg-[#132017] py-6 text-white/55">
+            <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 text-sm sm:flex-row sm:items-center sm:justify-between">
+                <p>© {new Date().getFullYear()} Quilliams Gardening and Landscaping.</p>
+                <p>Newquay and nearby Cornwall areas.</p>
             </div>
         </footer>
     );
 }
 
-/* ─────────────────────────── page ────────────────────────────── */
+function StickyMobileCTA() {
+    const [visible, setVisible] = React.useState(false);
+
+    React.useEffect(() => {
+        function handleScroll() {
+            setVisible(window.scrollY > 760);
+        }
+
+        handleScroll();
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    return (
+        <div
+            aria-hidden={!visible}
+            className={cn(
+                "fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-[#132017]/96 p-3 text-white shadow-[0_-20px_60px_-36px_rgba(0,0,0,0.95)] backdrop-blur transition-transform lg:hidden",
+                visible ? "translate-y-0" : "translate-y-full",
+            )}
+        >
+            <div className="mx-auto grid max-w-md grid-cols-[1fr_auto] gap-2">
+                <Button
+                    size="lg"
+                    onClick={scrollToForm}
+                    className="h-12 cursor-pointer rounded-md bg-[#55c768] text-base font-black text-[#10140e] hover:bg-[#72d580]"
+                >
+                    Get fixed quote
+                    <ArrowRight className="size-5 stroke-[3]" />
+                </Button>
+                <a
+                    href={`tel:${PHONE_TEL}`}
+                    onClick={() => trackPhone("gravel_offer_sticky")}
+                    className="inline-flex size-12 items-center justify-center rounded-md border border-white/18 bg-white/8 text-white"
+                    aria-label={`Call ${PHONE_DISPLAY}`}
+                >
+                    <Phone className="size-5" />
+                </a>
+            </div>
+        </div>
+    );
+}
 
 export default function OfferClient() {
     return (
-        <div className="min-h-screen">
-            <TopBar />
+        <main className="min-h-screen bg-[#132017] pb-18 lg:pb-0">
             <HeroSection />
+            <ProofSection />
+            <ProcessSection />
             <BeforeAfterSection />
-            <BenefitsSection />
-            <OfferSection />
-            <TestimonialsSection />
-            <FormSection />
+            <ReviewSection />
             <FAQSection />
             <FinalCTA />
             <FooterMinimal />
             <StickyMobileCTA />
-            <SocialProofToast />
-        </div>
+        </main>
     );
 }

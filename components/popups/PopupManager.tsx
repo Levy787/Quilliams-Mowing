@@ -288,7 +288,7 @@ export function PopupManager({ popups }: { popups: ReadonlyArray<PopupEntry> }) 
                             </div>
                             <div className="text-base text-foreground/80">
                                 {popup.emailCapture?.successBody ??
-                                    "Thanks — please check your inbox."}
+                                    "Thanks, please check your inbox."}
                             </div>
 
                             {popup.emailCapture?.offerCode?.trim() ? (

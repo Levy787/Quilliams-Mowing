@@ -2,10 +2,10 @@
     "slug": "spring-cleanup-special",
     "template": "funnel",
     "headline": "Spring Cleanup Special",
-    "subheadline": "Clear the mess, refresh your garden beds, and get your yard back under control — fast, tidy, and stress-free.",
+    "subheadline": "Clear the mess, refresh your garden beds, and get your yard back under control, fast, tidy, and stress-free.",
     "seo": {
         "title": "Spring Cleanup Special",
-        "description": "Clear the mess, refresh your garden beds, and get your yard back under control — fast, tidy, and stress-free.",
+        "description": "Clear the mess, refresh your garden beds, and get your yard back under control, fast, tidy, and stress-free.",
         "ogTitle": "",
         "ogDescription": "",
         "ogImage": "https://picsum.photos/id/292/1200/1400"
@@ -66,7 +66,7 @@
         },
         {
             "q": "Is the offer available for large properties?",
-            "a": "Yes — we’ll tailor the quote based on property size, access, and workload."
+            "a": "Yes, we’ll tailor the quote based on property size, access, and workload."
         },
         {
             "q": "What do you need from me to quote?",

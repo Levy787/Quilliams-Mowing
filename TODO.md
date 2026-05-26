@@ -6,6 +6,67 @@
 
 ---
 
+## 2026-05-26 SEO Audit Remediation
+
+**Audit baseline:** Overall 84/100, target 95+
+**Source:** `docs/seo-runs/quilliamsmowing-co-uk-audit-20260526/`
+
+### Completed in this pass
+
+- [x] C-01: Remove remaining homepage em dashes and rewrite the homepage About/features copy in Levi's first-person voice.
+- [x] C-02: Add real sitemap `lastModified` dates from content/template file mtimes.
+- [x] H-01: Fix the gravel-gardens landing page title to avoid parent template brand duplication; no indexable duplicate-title route found in the sweep.
+- [x] H-02: Add the Quilliams brand suffix to the `/services/lawn-care` title.
+- [x] H-03: Rewrite `/pricing` and `/contact` meta descriptions to 140-160 character, keyword-led versions.
+- [x] H-04: Fix `/contact` heading structure by promoting the contact-detail and form headings to H2s.
+- [x] H-05: Rewrite the weak H1s for `/services/lawn-care`, `/pricing`, and `/contact` with service + location intent.
+- [x] H-06: Normalize the contact phone link to `tel:+447593121621`.
+- [x] H-07: Expand `/pricing` with an 800+ word 2026 Cornwall pricing guide and a direct lawn-mowing cost answer block.
+- [x] H-08: Rewrite the homepage About-Us block and Quality/Satisfaction/Sustainability cards in Levi's voice.
+- [x] H-09: Upgrade `/blog/best-gardeners-newquay` with Article/BlogPosting enhancements, ItemList schema, and existing FAQPage schema.
+- [x] H-10: Add AggregateRating to the site-wide `#business` LocalBusiness node.
+- [x] H-11: Add a standalone `#levi` Person node and reference it from LocalBusiness founder/employee and blog author schema.
+- [x] H-12: Expand LocalBusiness `areaServed` to all 9 area pages plus Cornwall.
+- [x] H-13: Add `Last-Updated: 2026-05-26` and `## Key Pages` to `/llms.txt`.
+- [x] M-07: Add ItemList JSON-LD to `/services` and `/projects`.
+- [x] M-08: Add `@id`, absolute image URLs, and a lawn-care Offer to Service schema.
+- [x] M-10: Add `foundingDate`, `paymentAccepted`, and `currenciesAccepted` to the business schema.
+- [x] M-11: Add preconnect hints for PostHog EU and Cloudflare Turnstile.
+- [x] M-17: Preserve 5-decimal geo coordinates in JSON-LD output.
+- [x] M-01: Publish "Best plants for coastal Cornwall gardens (salt/wind tolerant)".
+- [x] M-02: Publish "How much does a gardener cost in Cornwall in 2026?".
+- [x] M-03: Publish "When to scarify, aerate, and feed your lawn in Cornwall".
+- [x] M-04: Publish "How to remove an established pampas grass".
+- [x] M-05: Publish "Hedge trimming in Cornwall: when, how often, cost".
+- [x] M-06: Add Article schema to all project case studies.
+- [x] M-09: Add per-area Service + GeoCircle schema to each `/areas/*` page.
+- [x] M-12: Fix logo preload/srcset behavior for the rendered 176px logo.
+- [x] M-13: Verify `/services/landscaping` is already 1,000+ words in content.
+- [x] M-14: Add Levi Quilliam author bylines to service and area pages.
+- [x] M-16: Add holiday-let garden maintenance language to `/areas/st-ives`.
+- [x] M-18: Verify IndexNow posts to `https://api.indexnow.org/indexnow` and document publish-trigger usage.
+- [x] M-19: Defer below-fold service-area, recent-work, and testimonial sections to reduce homepage payload.
+- [x] L-02: Add a Quick Answer block to `/areas/truro`.
+- [x] L-06: Add a second photo and credentials list to `/about`.
+- [x] PERF-03/PERF-04/PERF-05: Replace homepage Framer Motion reveals, keep Hero server-rendered, and throttle StickyMobileCTA scroll handling.
+- [x] VISUAL: Fix 48px button targets, safe-area bottom padding, conditional mobile CTA spacer, WhatsApp overlap, navbar menu icon, mobile hero height, and Hero CTA color.
+
+### Manual / off-site tasks prepared for owner execution
+
+- [x] C-03 prepared: GBP review update checklist and email/SMS review acquisition templates added to `OFFSITE-EXECUTION-ASSETS.md`.
+- [x] H-14 prepared: Checkatrade/Yell/Bark NAP verification notes plus Trustpilot, FreeIndex, Houzz UK, and MyBuilder citation checklist added.
+- [x] L-03 prepared: YouTube channel setup checklist, video titles, descriptions, and shot lists for 3 walkthroughs added.
+- [x] L-04 prepared: One genuinely useful Reddit answer draft added.
+- [x] L-05 prepared: LinkedIn profile checklist and suggested Levi bio added. Do not add LinkedIn to Person schema until the profile exists.
+- [x] L-07 prepared: GBP dashboard share URL confirmation note added.
+- [ ] Owner execution still required: perform the actual GBP, citation, YouTube, Reddit, and LinkedIn account work.
+
+### Remaining code/content backlog
+
+- [ ] M-15 asset-dependent: add named testimonial + local photo to each area page only after verified area-matching assets exist. Missing area testimonial/photo gaps are listed in `OFFSITE-EXECUTION-ASSETS.md`.
+
+---
+
 ## Already Completed (This Session)
 
 - [x] Change `lang="en"` to `lang="en-GB"`

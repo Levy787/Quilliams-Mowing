@@ -1,8 +1,10 @@
 "use client";
 
 import * as React from "react";
-import { animate, motion, useInView, useReducedMotion } from "framer-motion";
 import { Award, HardHat, TreePine, Trees } from "lucide-react";
+
+import { cn } from "@/lib/utils";
+import { usePrefersReducedMotion, useRevealInView } from "@/hooks/use-reveal-in-view";
 
 const STAT_ICONS = {
     trees: Trees,
@@ -35,7 +37,7 @@ function StatCard({
     index: number;
     inView: boolean;
 }) {
-    const shouldReduceMotion = useReducedMotion();
+    const shouldReduceMotion = usePrefersReducedMotion();
     const [displayValue, setDisplayValue] = React.useState(0);
 
     React.useEffect(() => {
@@ -46,23 +48,33 @@ function StatCard({
             return;
         }
 
-        const controls = animate(0, stat.value, {
-            duration: COUNT_DURATION_S,
-            ease: "easeOut",
-            onUpdate: (v) => setDisplayValue(Math.round(v)),
-        });
+        let frameId = 0;
+        const startedAt = performance.now();
+        const durationMs = COUNT_DURATION_S * 1000;
+        const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
 
-        return () => controls.stop();
+        const tick = (now: number) => {
+            const progress = Math.min((now - startedAt) / durationMs, 1);
+            setDisplayValue(Math.round(easeOutCubic(progress) * stat.value));
+
+            if (progress < 1) {
+                frameId = window.requestAnimationFrame(tick);
+            }
+        };
+
+        frameId = window.requestAnimationFrame(tick);
+        return () => window.cancelAnimationFrame(frameId);
     }, [inView, shouldReduceMotion, stat.value]);
 
     const Icon = STAT_ICONS[stat.icon];
 
     return (
-        <motion.div
-            className="bg-muted rounded-4xl px-8 py-6 flex flex-col items-center text-center gap-3"
-            initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }}
-            animate={inView ? { opacity: 1, y: 0 } : shouldReduceMotion ? {} : { opacity: 0, y: 8 }}
-            transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.1 }}
+        <div
+            className={cn(
+                "bg-muted rounded-4xl px-8 py-6 flex flex-col items-center text-center gap-3 transition-[opacity,transform] duration-500 ease-out motion-reduce:transition-none",
+                inView || shouldReduceMotion ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0",
+            )}
+            style={{ transitionDelay: inView ? `${index * 100}ms` : "0ms" }}
         >
             <Icon className="h-10 w-10 shrink-0 text-primary" aria-hidden="true" />
             <div className="min-w-0">
@@ -72,13 +84,12 @@ function StatCard({
                 </div>
                 <div className="mt-1 text-base text-muted-foreground">{stat.label}</div>
             </div>
-        </motion.div>
+        </div>
     );
 }
 
 export function Stats({ items }: StatsProps) {
-    const sectionRef = React.useRef<HTMLElement | null>(null);
-    const inView = useInView(sectionRef, { once: true, amount: 0.35 });
+    const { ref: sectionRef, inView } = useRevealInView<HTMLElement>({ threshold: 0.35 });
 
     return (
         <section ref={sectionRef} className="mx-4 md:mx-8 lg:mx-16 py-10 md:py-12">

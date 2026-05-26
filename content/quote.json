@@ -1,12 +1,12 @@
 {
   "seo": {
     "title": "Get a Free Gardening Quote | Newquay & Cornwall",
-    "description": "Share a few details and upload photos of the area — we’ll review everything and get back to you with next steps."
+    "description": "Share a few details and upload photos of the area, and we’ll review everything and get back to you with next steps."
   },
   "header": {
     "badge": "Quote",
     "heading": "Get Your Quote",
-    "description": "Share a few details and upload photos of the area — we’ll review everything and get back to you with next steps."
+    "description": "Share a few details and upload photos of the area, and we’ll review everything and get back to you with next steps."
   },
   "expect": {
     "title": "What to expect",
@@ -24,7 +24,7 @@
   "calculatorSummary": {
     "title": "Pricing calculator estimate",
     "addonsLabel": "Add-ons:",
-    "note": "Rough guide only — final pricing depends on photos, access, and exact scope."
+    "note": "Rough guide only. Final pricing depends on photos, access, and exact scope."
   },
   "form": {
     "title": "Quote request",
@@ -72,7 +72,7 @@
     "jobDetailsLabel": "Job details",
     "jobDetailsPlaceholder": "What would you like done? Include approximate sizes, access notes, and anything else that helps us quote accurately.",
     "requiredServiceError": "Please select a service type.",
-    "submittedText": "Thanks — we received your request.",
+    "submittedText": "Thanks, we received your request.",
     "toastSuccess": "Quote request received! We'll be in touch soon.",
     "submitIdleLabel": "Request Quote",
     "submitLoadingLabel": "Submitting…"

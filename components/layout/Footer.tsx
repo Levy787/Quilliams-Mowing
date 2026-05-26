@@ -172,7 +172,7 @@ export function FooterInner({
                 return;
             }
 
-            toast.success("Thanks — you’re subscribed.");
+            toast.success("Thanks, you are subscribed.");
 
             capturePostHogEvent("conversion_subscribe", {
                 source: "footer",
@@ -201,7 +201,7 @@ export function FooterInner({
                     <div className="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-16">
                         {/* About Company */}
                         <div className="min-w-0">
-                            <Link href="/" aria-label="Quilliams Gardening & Landscaping — Home">
+                            <Link href="/" aria-label="Quilliams Gardening & Landscaping - Home">
                                 <Image
                                     src={logoSrc}
                                     alt={logoAlt}
@@ -354,7 +354,7 @@ export function FooterInner({
 
                                 <div aria-live="polite" className="mt-3 text-sm">
                                     {hasSubscribed ? (
-                                        <p className="text-primary">You’re subscribed — check your inbox.</p>
+                                        <p className="text-primary">You are subscribed, check your inbox.</p>
                                     ) : null}
                                 </div>
 
@@ -416,6 +416,7 @@ export function FooterInner({
                                 {[
                                     { label: "About Us", href: "/about" },
                                     { label: "Our Projects", href: "/projects" },
+                                    { label: "Blog", href: "/blog" },
                                     { label: "Pricing", href: "/pricing" },
                                     { label: "Refer a Friend", href: "/refer" },
                                 ].map((link) => (
@@ -441,6 +442,26 @@ export function FooterInner({
                                     </li>
                                 ))}
                             </ul>
+                            <div className="mt-5">
+                                <h5 className="text-xs font-semibold uppercase tracking-wide text-background/60">Profiles</h5>
+                                <div className="mt-2 flex flex-wrap gap-x-4 gap-y-2">
+                                    {[
+                                        { label: "Checkatrade", href: "https://www.checkatrade.com/trades/quilliamsmowingltd" },
+                                        { label: "Yell", href: "https://www.yell.com/biz/quilliams-mowing-ltd-newquay-10969895/" },
+                                        { label: "Bark", href: "https://www.bark.com/en/gb/b/quilliams-gardening-amp-landscaping/KNoMX4/" },
+                                    ].map((link) => (
+                                        <a
+                                            key={link.href}
+                                            href={link.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-sm text-background/60 transition-colors hover:text-background"
+                                        >
+                                            {link.label}
+                                        </a>
+                                    ))}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </nav>

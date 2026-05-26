@@ -440,7 +440,7 @@ export function QuoteClient({
                             <CardContent className="px-6">
                                 <div className="text-xl font-semibold text-foreground">{form.title}</div>
                                 <p className="mt-2 text-sm md:text-base leading-relaxed text-muted-foreground">
-                                    Just the basics — we&apos;ll handle the rest.
+                                    Just the basics, we&apos;ll handle the rest.
                                 </p>
 
                                 <form className="mt-6 space-y-5" onSubmit={onSubmit}>

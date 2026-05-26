@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import * as React from "react";
-import { motion, useInView, useReducedMotion } from "framer-motion";
 import { ArrowRight, Droplets, Leaf, Snowflake, Sprout } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -16,6 +15,7 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
+import { useRevealInView } from "@/hooks/use-reveal-in-view";
 
 type ServiceItem = {
     title: string;
@@ -44,10 +44,10 @@ export type ServicesProps = {
 };
 
 export function Services({ badge, heading, ctaLabel, ctaHref, items }: ServicesProps) {
-    const shouldReduceMotion = useReducedMotion();
-    const sectionRef = React.useRef<HTMLElement | null>(null);
-    const inView = useInView(sectionRef, { once: true, amount: 0.25 });
-    const EASE_OUT = [0.16, 1, 0.3, 1] as const;
+    const { ref: sectionRef, inView } = useRevealInView<HTMLElement>({ threshold: 0.25 });
+
+    const revealClassName = "transition-[opacity,transform] duration-700 ease-out motion-reduce:transition-none";
+    const revealStyle = (delayMs: number) => ({ transitionDelay: inView ? `${delayMs}ms` : "0ms" });
 
     return (
         <section ref={sectionRef} className="mx-4 md:mx-8 lg:mx-16 py-12 md:py-16">
@@ -55,42 +55,36 @@ export function Services({ badge, heading, ctaLabel, ctaHref, items }: ServicesP
                 {/* Header */}
                 <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
                     <div className="min-w-0">
-                        <motion.div
-                            className="inline-flex items-center rounded-full bg-muted px-4 py-1.5 text-sm text-muted-foreground"
-                            {...(shouldReduceMotion
-                                ? {}
-                                : {
-                                    initial: { opacity: 0, y: 10 },
-                                    animate: inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 },
-                                    transition: { duration: 0.6, ease: EASE_OUT },
-                                })}
+                        <div
+                            className={cn(
+                                "inline-flex items-center rounded-full bg-muted px-4 py-1.5 text-sm text-muted-foreground",
+                                revealClassName,
+                                inView ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0",
+                            )}
+                            style={revealStyle(0)}
                         >
                             {badge}
-                        </motion.div>
+                        </div>
 
-                        <motion.h2
-                            className="mt-4 text-4xl md:text-5xl font-bold tracking-tight text-foreground"
-                            {...(shouldReduceMotion
-                                ? {}
-                                : {
-                                    initial: { opacity: 0, y: 12 },
-                                    animate: inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 },
-                                    transition: { duration: 0.7, ease: EASE_OUT, delay: 0.05 },
-                                })}
+                        <h2
+                            className={cn(
+                                "mt-4 text-4xl md:text-5xl font-bold tracking-tight text-foreground",
+                                revealClassName,
+                                inView ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0",
+                            )}
+                            style={revealStyle(50)}
                         >
                             {heading}
-                        </motion.h2>
+                        </h2>
                     </div>
 
-                    <motion.div
-                        className="shrink-0"
-                        {...(shouldReduceMotion
-                            ? {}
-                            : {
-                                initial: { opacity: 0, y: 10 },
-                                animate: inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 },
-                                transition: { duration: 0.6, ease: EASE_OUT, delay: 0.08 },
-                            })}
+                    <div
+                        className={cn(
+                            "shrink-0",
+                            revealClassName,
+                            inView ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0",
+                        )}
+                        style={revealStyle(80)}
                     >
                         <Button asChild>
                             <Link href={ctaHref}>
@@ -98,7 +92,7 @@ export function Services({ badge, heading, ctaLabel, ctaHref, items }: ServicesP
                                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
                             </Link>
                         </Button>
-                    </motion.div>
+                    </div>
                 </div>
 
                 {/* Carousel */}
@@ -122,20 +116,12 @@ export function Services({ badge, heading, ctaLabel, ctaHref, items }: ServicesP
                                         key={service.title}
                                         className="basis-full sm:basis-1/2 lg:basis-1/4"
                                     >
-                                        <motion.div
-                                            {...(shouldReduceMotion
-                                                ? {}
-                                                : {
-                                                    initial: { opacity: 0, y: 12 },
-                                                    animate: inView
-                                                        ? { opacity: 1, y: 0 }
-                                                        : { opacity: 0, y: 12 },
-                                                    transition: {
-                                                        duration: 0.6,
-                                                        ease: EASE_OUT,
-                                                        delay: 0.12 + idx * 0.06,
-                                                    },
-                                                })}
+                                        <div
+                                            className={cn(
+                                                revealClassName,
+                                                inView ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0",
+                                            )}
+                                            style={revealStyle(120 + idx * 60)}
                                         >
                                             <Card className="border-0 shadow-none bg-transparent py-0">
                                                 <CardContent className="px-0">
@@ -212,7 +198,7 @@ export function Services({ badge, heading, ctaLabel, ctaHref, items }: ServicesP
                                                     )}
                                                 </CardContent>
                                             </Card>
-                                        </motion.div>
+                                        </div>
                                     </CarouselItem>
                                 );
                             })}
@@ -239,4 +225,3 @@ export function Services({ badge, heading, ctaLabel, ctaHref, items }: ServicesP
         </section>
     );
 }
-

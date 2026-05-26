@@ -1,0 +1,235 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { ArrowRight, CalendarDays, Clock, UserRound } from "lucide-react";
+
+import { ArticleSchema } from "@/components/seo/ArticleSchema";
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
+import { FAQSchema } from "@/components/seo/FAQSchema";
+import { ItemListSchema } from "@/components/seo/ItemListSchema";
+import { Button } from "@/components/ui/button";
+import { getBlogPostBySlug, listBlogSlugs } from "@/lib/keystatic-reader";
+import { buildMetadata } from "@/lib/seo";
+
+const SITE_URL = "https://quilliamsmowing.co.uk";
+
+export async function generateStaticParams(): Promise<Array<{ slug: string }>> {
+    const slugs = await listBlogSlugs();
+    return slugs.map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+    const { slug } = await params;
+    const post = await getBlogPostBySlug(slug);
+    if (!post) notFound();
+
+    return buildMetadata({
+        seo: post.seo,
+        fallbackTitle: post.title,
+        fallbackDescription: post.subtitle,
+        fallbackOgImage: post.heroImage.src,
+        canonicalPath: `/blog/${slug}`,
+    });
+}
+
+function wordCount(text: string): number {
+    return text.match(/\b[\w']+\b/g)?.length ?? 0;
+}
+
+function postWordCount(post: NonNullable<Awaited<ReturnType<typeof getBlogPostBySlug>>>): number {
+    return wordCount([
+        post.title,
+        post.subtitle,
+        post.quickAnswer.body,
+        ...post.sections.flatMap((section) => [
+            section.title,
+            section.body,
+            ...(section.bullets ?? []),
+        ]),
+        ...post.faqs.flatMap((faq) => [faq.question, faq.answer]),
+    ].join(" "));
+}
+
+function paragraphs(text: string) {
+    return text.split(/\n\n+/g).filter(Boolean);
+}
+
+export default async function BlogPostPage({
+    params,
+}: {
+    params: Promise<{ slug: string }>;
+}) {
+    const { slug } = await params;
+    const post = await getBlogPostBySlug(slug);
+    if (!post) notFound();
+
+    const canonicalPath = `/blog/${slug}`;
+    const pageUrl = `${SITE_URL}${canonicalPath}`;
+    const faqItems = post.faqs.map((faq) => ({
+        question: faq.question,
+        answer: faq.answer,
+    }));
+
+    return (
+        <main className="min-h-screen bg-background">
+            <BreadcrumbSchema
+                items={[
+                    { name: "Home", href: "/" },
+                    { name: "Blog", href: "/blog" },
+                    { name: post.title, href: canonicalPath },
+                ]}
+            />
+            <ArticleSchema
+                id={`${pageUrl}#article`}
+                headline={post.title}
+                description={post.seo.description}
+                images={[post.heroImage.src]}
+                datePublished={post.publishedDate}
+                dateModified={post.updatedDate}
+                pageUrl={pageUrl}
+                articleSection="Gardening Guides"
+                wordCount={postWordCount(post)}
+                about={[post.title, "Gardening in Cornwall", "Garden maintenance"]}
+                isBlogPost
+            />
+            {post.itemList ? (
+                <ItemListSchema
+                    id={`${pageUrl}#itemlist`}
+                    name={post.itemList.name}
+                    items={post.itemList.items.map((item) => ({
+                        name: item.label,
+                        url: item.href.startsWith("http") ? item.href : `${SITE_URL}${item.href}`,
+                    }))}
+                />
+            ) : null}
+            {faqItems.length ? <FAQSchema items={faqItems} /> : null}
+
+            <article>
+                <section className="mx-4 overflow-hidden rounded-b-4xl bg-foreground text-background md:mx-8 lg:mx-16">
+                    <div className="relative min-h-[520px]">
+                        <Image
+                            src={post.heroImage.src}
+                            alt={post.heroImage.alt}
+                            fill
+                            priority
+                            className="object-cover"
+                            sizes="100vw"
+                        />
+                        <div className="absolute inset-0 bg-black/60" aria-hidden="true" />
+                        <div className="relative z-10 flex min-h-[520px] items-end">
+                            <div className="container mx-auto px-4 py-12 lg:px-12 lg:py-16">
+                                <div className="max-w-3xl">
+                                    <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+                                        Cornwall Gardening Guide
+                                    </p>
+                                    <h1 className="mt-4 text-4xl font-extrabold leading-tight tracking-tight md:text-6xl">
+                                        {post.title}
+                                    </h1>
+                                    <p className="mt-5 max-w-2xl text-lg leading-relaxed text-background/90">
+                                        {post.subtitle}
+                                    </p>
+                                    <div className="mt-6 flex flex-wrap gap-4 text-sm text-background/80">
+                                        <span className="inline-flex items-center gap-2">
+                                            <UserRound className="size-4" aria-hidden="true" />
+                                            {post.author}
+                                        </span>
+                                        <span className="inline-flex items-center gap-2">
+                                            <CalendarDays className="size-4" aria-hidden="true" />
+                                            Updated {post.updatedDate}
+                                        </span>
+                                        <span className="inline-flex items-center gap-2">
+                                            <Clock className="size-4" aria-hidden="true" />
+                                            {post.readingTime}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div className="container mx-auto max-w-5xl px-4 py-12 lg:px-12">
+                    <section className="grid gap-8 border-b pb-12 lg:grid-cols-[minmax(0,1.35fr)_minmax(260px,0.65fr)]">
+                        <div>
+                            <h2 className="text-2xl font-bold tracking-tight">{post.quickAnswer.title}</h2>
+                            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+                                {post.quickAnswer.body}
+                            </p>
+                            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                                <Button asChild size="lg">
+                                    <Link href="/quote">
+                                        Get a quote
+                                        <ArrowRight className="size-4" aria-hidden="true" />
+                                    </Link>
+                                </Button>
+                                <Button asChild variant="outline" size="lg">
+                                    <Link href="/services">View services</Link>
+                                </Button>
+                            </div>
+                        </div>
+
+                        <aside className="border-l pl-6">
+                            <h2 className="text-lg font-semibold">Useful links</h2>
+                            <ul className="mt-4 space-y-3">
+                                {post.relatedLinks.map((link) => (
+                                    <li key={link.href}>
+                                        <Link
+                                            href={link.href}
+                                            className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
+                                        >
+                                            {link.label}
+                                            <ArrowRight className="size-4" aria-hidden="true" />
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </aside>
+                    </section>
+
+                    <div className="mt-12 space-y-12">
+                        {post.sections.map((section) => (
+                            <section key={section.id}>
+                                <h2 className="text-3xl font-bold tracking-tight">{section.title}</h2>
+                                <div className="mt-4 space-y-4">
+                                    {paragraphs(section.body).map((paragraph) => (
+                                        <p key={paragraph} className="text-lg leading-relaxed text-muted-foreground">
+                                            {paragraph}
+                                        </p>
+                                    ))}
+                                </div>
+                                {section.bullets?.length ? (
+                                    <ul className="mt-5 list-disc space-y-2 pl-6 text-base leading-relaxed text-muted-foreground">
+                                        {section.bullets.map((bullet) => (
+                                            <li key={bullet}>{bullet}</li>
+                                        ))}
+                                    </ul>
+                                ) : null}
+                            </section>
+                        ))}
+                    </div>
+
+                    {post.faqs.length ? (
+                        <section className="mt-14 border-t pt-10">
+                            <h2 className="text-3xl font-bold tracking-tight">Quick questions</h2>
+                            <div className="mt-6 divide-y">
+                                {post.faqs.map((faq) => (
+                                    <div key={faq.question} className="py-5">
+                                        <h3 className="text-lg font-semibold">{faq.question}</h3>
+                                        <p className="mt-2 leading-relaxed text-muted-foreground">
+                                            {faq.answer}
+                                        </p>
+                                    </div>
+                                ))}
+                            </div>
+                        </section>
+                    ) : null}
+                </div>
+            </article>
+        </main>
+    );
+}

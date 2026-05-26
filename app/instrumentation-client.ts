@@ -31,10 +31,11 @@ if (key?.trim()) {
         // Per PostHog Next.js reverse-proxy docs: use a relative path.
         api_host: API_HOST,
         ui_host: process.env.NEXT_PUBLIC_UI_HOST,
-        defaults: "2025-11-30",
+        defaults: "2026-01-30",
 
         // We handle pageviews manually (App Router SPA navigation).
         capture_pageview: false,
+        capture_pageleave: true,
 
         on_request_error: (err) => {
             if (!DEBUG) return;
@@ -48,8 +49,8 @@ if (key?.trim()) {
         loaded: (ph) => {
             if (DEBUG) {
                 console.info("[posthog] loaded", {
-                    api_host: ph.config.api_host,
-                    ui_host: ph.config.ui_host,
+                    api_host: API_HOST,
+                    ui_host: process.env.NEXT_PUBLIC_UI_HOST,
                 });
             }
 

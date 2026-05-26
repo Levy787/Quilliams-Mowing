@@ -125,6 +125,13 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                                         {service.description}
                                     </p>
 
+                                    <p className="mt-4 text-sm font-medium text-background/70">
+                                        By{" "}
+                                        <Link href="/about" className="underline decoration-primary/60 underline-offset-4 hover:text-background">
+                                            Levi Quilliam, Founder & Lead Gardener
+                                        </Link>
+                                    </p>
+
                                     <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
                                         <Button asChild size="lg">
                                             <Link href={service.ctas.primaryHref}>

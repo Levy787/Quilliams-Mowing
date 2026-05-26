@@ -3,9 +3,9 @@
 import * as React from "react";
 import Image from "next/image";
 import { ShieldCheck, Star, ThumbsUp } from "lucide-react";
-import { motion, useInView, useReducedMotion } from "framer-motion";
 
 import { cn } from "@/lib/utils";
+import { useRevealInView } from "@/hooks/use-reveal-in-view";
 
 type Feature = {
     title: string;
@@ -67,26 +67,22 @@ export function AboutUs({
         : imageSrc ?? "";
     const hasImage = Boolean(resolvedImageSrc.trim());
 
-    const shouldReduceMotion = useReducedMotion();
-    const sectionRef = React.useRef<HTMLElement | null>(null);
-    const inView = useInView(sectionRef, { once: true, amount: 0.35 });
-
-    const EASE_OUT = [0.16, 1, 0.3, 1] as const;
+    const { ref: sectionRef, inView } = useRevealInView<HTMLElement>({ threshold: 0.35 });
+    const revealClassName = "transition-[opacity,transform] duration-700 ease-out motion-reduce:transition-none";
+    const revealStyle = (delayMs: number) => ({ transitionDelay: inView ? `${delayMs}ms` : "0ms" });
 
     return (
         <section ref={sectionRef} className="mx-4 md:mx-8 lg:mx-16 py-12 md:py-16">
             <div className="container mx-auto px-4 lg:px-12">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
                     {/* Image */}
-                    <motion.div
-                        className="relative overflow-hidden rounded-4xl aspect-4/3 sm:aspect-5/4 lg:aspect-4/3"
-                        {...(shouldReduceMotion
-                            ? {}
-                            : {
-                                initial: { opacity: 0, scale: 0.98 },
-                                animate: inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.98 },
-                                transition: { duration: 0.7, ease: EASE_OUT },
-                            })}
+                    <div
+                        className={cn(
+                            "relative overflow-hidden rounded-4xl aspect-4/3 sm:aspect-5/4 lg:aspect-4/3",
+                            revealClassName,
+                            inView ? "scale-100 opacity-100" : "scale-[0.98] opacity-0",
+                        )}
+                        style={revealStyle(0)}
                     >
                         {hasImage ? (
                             <Image
@@ -98,83 +94,63 @@ export function AboutUs({
                                 priority={false}
                             />
                         ) : null}
-                    </motion.div>
+                    </div>
 
                     {/* Content */}
                     <div className="min-w-0">
-                        <motion.div
-                            className="inline-flex items-center rounded-full bg-muted px-4 py-1.5 text-sm text-muted-foreground"
-                            {...(shouldReduceMotion
-                                ? {}
-                                : {
-                                    initial: { opacity: 0, y: 12 },
-                                    animate: inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 },
-                                    transition: { duration: 0.6, ease: EASE_OUT },
-                                })}
+                        <div
+                            className={cn(
+                                "inline-flex items-center rounded-full bg-muted px-4 py-1.5 text-sm text-muted-foreground",
+                                revealClassName,
+                                inView ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0",
+                            )}
+                            style={revealStyle(0)}
                         >
                             {badge}
-                        </motion.div>
+                        </div>
 
-                        <motion.h2
-                            className="mt-5 text-4xl md:text-5xl font-bold tracking-tight text-foreground"
-                            {...(shouldReduceMotion
-                                ? {}
-                                : {
-                                    initial: { opacity: 0, y: 12 },
-                                    animate: inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 },
-                                    transition: { duration: 0.6, ease: EASE_OUT, delay: 0.05 },
-                                })}
+                        <h2
+                            className={cn(
+                                "mt-5 text-4xl md:text-5xl font-bold tracking-tight text-foreground",
+                                revealClassName,
+                                inView ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0",
+                            )}
+                            style={revealStyle(50)}
                         >
                             {renderHeadingLines(headingLines)}
-                        </motion.h2>
+                        </h2>
 
-                        <motion.p
-                            className="mt-5 text-base md:text-lg leading-relaxed text-muted-foreground max-w-prose"
-                            {...(shouldReduceMotion
-                                ? {}
-                                : {
-                                    initial: { opacity: 0, y: 12 },
-                                    animate: inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 },
-                                    transition: { duration: 0.6, ease: EASE_OUT, delay: 0.1 },
-                                })}
+                        <p
+                            className={cn(
+                                "mt-5 text-base md:text-lg leading-relaxed text-muted-foreground max-w-prose",
+                                revealClassName,
+                                inView ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0",
+                            )}
+                            style={revealStyle(100)}
                         >
                             {renderBodyWithParagraphBreaks(body)}
-                        </motion.p>
+                        </p>
 
-                        <motion.div
-                            className="mt-8 border-t border-border"
-                            {...(shouldReduceMotion
-                                ? {}
-                                : {
-                                    initial: { opacity: 0 },
-                                    animate: inView ? { opacity: 1 } : { opacity: 0 },
-                                    transition: { duration: 0.6, ease: EASE_OUT, delay: 0.15 },
-                                })}
+                        <div
+                            className={cn("mt-8 border-t border-border transition-opacity duration-700 motion-reduce:transition-none", inView ? "opacity-100" : "opacity-0")}
+                            style={revealStyle(150)}
                         />
 
                         <div className="mt-6">
                             {features.map((feature, idx) => {
                                 const Icon = FEATURE_ICONS[feature.icon];
                                 return (
-                                    <motion.div
+                                    <div
                                         key={feature.title}
                                         className={cn(
                                             "grid gap-x-5 gap-y-2 py-6",
                                             "grid-cols-[auto_1fr]",
                                             "md:grid-cols-[auto_12rem_1fr]",
-                                            idx !== 0 && "border-t border-border"
+                                            idx !== 0 && "border-t border-border",
+                                            revealClassName,
+                                            inView ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0",
                                         )}
-                                        {...(shouldReduceMotion
-                                            ? {}
-                                            : {
-                                                initial: { opacity: 0, y: 10 },
-                                                animate: inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 },
-                                                transition: {
-                                                    duration: 0.55,
-                                                    ease: EASE_OUT,
-                                                    delay: 0.18 + idx * 0.08,
-                                                },
-                                            })}
+                                        style={revealStyle(180 + idx * 80)}
                                     >
                                         <div className="pt-0.5">
                                             <Icon className="h-7 w-7 text-primary" aria-hidden="true" />
@@ -187,7 +163,7 @@ export function AboutUs({
                                         <p className="text-sm md:text-base leading-relaxed text-muted-foreground md:col-start-3">
                                             {feature.description}
                                         </p>
-                                    </motion.div>
+                                    </div>
                                 );
                             })}
                         </div>
@@ -197,4 +173,3 @@ export function AboutUs({
         </section>
     );
 }
-

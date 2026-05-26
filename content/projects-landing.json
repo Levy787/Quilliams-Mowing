@@ -6,7 +6,7 @@
   "hero": {
     "badge": "Projects",
     "title": "A mini showcase of recent work",
-    "description": "Real gardens, real results—tidier structure, cleaner lines, and a finish that feels properly looked after.",
+    "description": "Real gardens, real results: tidier structure, cleaner lines, and a finish that feels properly looked after.",
     "primaryCta": {
       "label": "Get a Quote",
       "href": "/quote"
@@ -30,7 +30,7 @@
   "featured": {
     "badge": "Featured",
     "title": "Click a project to jump straight in",
-    "description": "A quick visual skim—then tap through to see what was done and the result.",
+    "description": "A quick visual skim, then tap through to see what was done and the result.",
     "featuredSlugs": [
       "front-garden-refresh",
       "fresh-cut-clean-lines",
@@ -44,7 +44,7 @@
   },
   "finalCta": {
     "title": "Have a garden that needs a refresh?",
-    "description": "Tell us what you want improved and we’ll recommend a practical plan—then quote it clearly.",
+    "description": "Tell us what you want improved and we’ll recommend a practical plan, then quote it clearly.",
     "primaryCta": {
       "label": "Get a Quote",
       "href": "/quote"

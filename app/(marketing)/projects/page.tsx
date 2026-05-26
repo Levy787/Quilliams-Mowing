@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { getProjectsLandingContent, listProjects } from "@/lib/keystatic-reader";
 import { buildMetadata } from "@/lib/seo";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
+import { ItemListSchema } from "@/components/seo/ItemListSchema";
 import ProjectsClient from "./ProjectsClient";
 
 function resolveImageSrc({
@@ -41,6 +42,14 @@ export default async function ProjectsPage() {
     return (
         <>
             <BreadcrumbSchema items={[{ name: "Home", href: "/" }, { name: "Projects", href: "/projects" }]} />
+            <ItemListSchema
+                id="https://quilliamsmowing.co.uk/projects#itemlist"
+                name="Garden and landscaping projects in Cornwall"
+                items={projects.map((project) => ({
+                    name: project.title,
+                    url: `https://quilliamsmowing.co.uk/projects/${project.slug}`,
+                }))}
+            />
             <ProjectsClient content={content} projects={projects} />
         </>
     );

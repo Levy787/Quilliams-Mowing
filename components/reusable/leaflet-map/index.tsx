@@ -12,6 +12,11 @@ type Props = {
 
 const LeafletaMapClient = dynamic(() => import("./LeafletMapClient"), {
     ssr: false,
+    loading: () => (
+        <div className="flex min-h-[360px] w-full items-center justify-center rounded-lg border bg-muted/40 text-sm text-muted-foreground">
+            Loading service area map...
+        </div>
+    ),
 });
 
 export function LeafletMap(props: Props) {

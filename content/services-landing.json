@@ -1,7 +1,7 @@
 {
   "seo": {
     "title": "Gardening & Landscaping Services in Cornwall | Quilliams",
-    "description": "Lawn mowing, hedge trimming, landscaping & garden maintenance across Newquay, Truro & Cornwall. 5-star local gardeners — free quotes, no obligation."
+    "description": "Lawn mowing, hedge trimming, landscaping & garden maintenance across Newquay, Truro & Cornwall. 5-star local gardeners, free quotes, no obligation."
   },
   "hero": {
     "badge": "Services",
@@ -23,12 +23,12 @@
     "image": {
       "file": "hero/image/file.webp",
       "alt": "A well-kept garden and outdoor space",
-      "caption": "Practical, tidy, and reliable—work that makes your property easier to enjoy and easier to maintain."
+      "caption": "Practical, tidy, and reliable work that makes your property easier to enjoy and easier to maintain."
     }
   },
   "process": {
     "title": "How we work",
-    "description": "A straightforward process—clear recommendations, clear pricing, and clean results.",
+    "description": "A straightforward process with clear recommendations, clear pricing, and clean results.",
     "steps": [
       {
         "title": "Tell us what you need",
@@ -113,7 +113,7 @@
       {
         "id": "waste",
         "question": "Do you remove green waste?",
-        "answer": "Yes—green waste removal can be included. Let us know what you’d like cleared and we’ll include it in the quote."
+        "answer": "Yes, green waste removal can be included. Let us know what you’d like cleared and we’ll include it in the quote."
       },
       {
         "id": "timing",

@@ -3,12 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import * as React from "react";
-import { motion, useInView, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import { useRevealInView } from "@/hooks/use-reveal-in-view";
 
 type WorkItem = {
     title: string;
@@ -123,27 +123,17 @@ function WorkRow({
     item,
     index,
     inView,
-    shouldReduceMotion,
     ctaLabel,
     ctaHref,
 }: {
     item: WorkItem;
     index: number;
     inView: boolean;
-    shouldReduceMotion: boolean;
     ctaLabel: string;
     ctaHref: string;
 }) {
-    const EASE_OUT = [0.16, 1, 0.3, 1] as const;
     const variant = (index + 1) as 1 | 2 | 3;
-
-    const motionProps = shouldReduceMotion
-        ? {}
-        : {
-            initial: { opacity: 0, y: 12 },
-            animate: inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 },
-            transition: { duration: 0.65, ease: EASE_OUT, delay: 0.12 + index * 0.08 },
-        };
+    const revealClassName = "transition-[opacity,transform] duration-700 ease-out motion-reduce:transition-none";
 
     const contentBlock = (
         <div className="min-w-0">
@@ -190,7 +180,13 @@ function WorkRow({
     );
 
     return (
-        <motion.div {...motionProps}>
+        <div
+            className={cn(
+                revealClassName,
+                inView ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0",
+            )}
+            style={{ transitionDelay: inView ? `${120 + index * 80}ms` : "0ms" }}
+        >
             <Card
                 className={cn(
                     "rounded-4xl border border-border/20 bg-background/5 text-background",
@@ -242,17 +238,16 @@ function WorkRow({
                     </div>
                 </CardContent>
             </Card>
-        </motion.div>
+        </div>
     );
 }
 
 export function RecentWorks({ badge, headingLines, description, items, ctaLabel, ctaHref }: RecentWorksProps) {
-    const shouldReduceMotion = !!useReducedMotion();
     // NOTE: Don't observe the whole section; it's very tall on mobile.
     // Intersection ratio can stay below the threshold, leaving content stuck at opacity:0.
-    const inViewRef = React.useRef<HTMLDivElement | null>(null);
-    const inView = useInView(inViewRef, { once: true, amount: 0.2 });
-    const EASE_OUT = [0.16, 1, 0.3, 1] as const;
+    const { ref: inViewRef, inView } = useRevealInView<HTMLDivElement>({ threshold: 0.2 });
+    const revealClassName = "transition-[opacity,transform] duration-700 ease-out motion-reduce:transition-none";
+    const revealStyle = (delayMs: number) => ({ transitionDelay: inView ? `${delayMs}ms` : "0ms" });
 
     return (
         <section className="mx-4 md:mx-8 lg:mx-16 py-12 md:py-16">
@@ -269,55 +264,39 @@ export function RecentWorks({ badge, headingLines, description, items, ctaLabel,
                         {/* Header */}
                         <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
                             <div className="min-w-0">
-                                <motion.div
-                                    className="inline-flex items-center rounded-full bg-background/10 px-4 py-1.5 text-sm text-background"
-                                    {...(shouldReduceMotion
-                                        ? {}
-                                        : {
-                                            initial: { opacity: 0, y: 10 },
-                                            animate: inView
-                                                ? { opacity: 1, y: 0 }
-                                                : { opacity: 0, y: 10 },
-                                            transition: { duration: 0.6, ease: EASE_OUT },
-                                        })}
+                                <div
+                                    className={cn(
+                                        "inline-flex items-center rounded-full bg-background/10 px-4 py-1.5 text-sm text-background",
+                                        revealClassName,
+                                        inView ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0",
+                                    )}
+                                    style={revealStyle(0)}
                                 >
                                     {badge}
-                                </motion.div>
+                                </div>
 
-                                <motion.h2
-                                    className="mt-4 text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight"
-                                    {...(shouldReduceMotion
-                                        ? {}
-                                        : {
-                                            initial: { opacity: 0, y: 12 },
-                                            animate: inView
-                                                ? { opacity: 1, y: 0 }
-                                                : { opacity: 0, y: 12 },
-                                            transition: {
-                                                duration: 0.7,
-                                                ease: EASE_OUT,
-                                                delay: 0.05,
-                                            },
-                                        })}
+                                <h2
+                                    className={cn(
+                                        "mt-4 text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight",
+                                        revealClassName,
+                                        inView ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0",
+                                    )}
+                                    style={revealStyle(50)}
                                 >
                                     {renderHeadingLines(headingLines)}
-                                </motion.h2>
+                                </h2>
                             </div>
 
-                            <motion.p
-                                className="max-w-md text-sm md:text-base text-background/70 lg:text-right"
-                                {...(shouldReduceMotion
-                                    ? {}
-                                    : {
-                                        initial: { opacity: 0, y: 12 },
-                                        animate: inView
-                                            ? { opacity: 1, y: 0 }
-                                            : { opacity: 0, y: 12 },
-                                        transition: { duration: 0.7, ease: EASE_OUT, delay: 0.1 },
-                                    })}
+                            <p
+                                className={cn(
+                                    "max-w-md text-sm md:text-base text-background/70 lg:text-right",
+                                    revealClassName,
+                                    inView ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0",
+                                )}
+                                style={revealStyle(100)}
                             >
                                 {description}
-                            </motion.p>
+                            </p>
                         </div>
 
                         {/* Rows */}
@@ -328,7 +307,6 @@ export function RecentWorks({ badge, headingLines, description, items, ctaLabel,
                                     item={item}
                                     index={idx}
                                     inView={inView}
-                                    shouldReduceMotion={shouldReduceMotion}
                                     ctaLabel={ctaLabel}
                                     ctaHref={ctaHref}
                                 />
@@ -340,4 +318,3 @@ export function RecentWorks({ badge, headingLines, description, items, ctaLabel,
         </section>
     );
 }
-

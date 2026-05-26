@@ -1,7 +1,7 @@
 {
     "seo": {
         "title": "Refer a friend",
-        "description": "Share Quilliams Gardening with someone you care about — you both get a reward when they book.",
+        "description": "Share Quilliams Gardening with someone you care about, and you both get a reward when they book.",
         "ogTitle": "",
         "ogDescription": "",
         "ogImage": null
@@ -30,7 +30,7 @@
         "submitLoadingLabel": "Creating voucher…",
         "privacyNote": "We’ll only use these details to follow up about the referral. This form does not automatically email your friend yet.",
         "successTitle": "Voucher created",
-        "successMessage": "Thanks — your referral is saved. Keep this code safe; we’ll apply the reward when the referred booking is confirmed.",
+        "successMessage": "Thanks, your referral is saved. Keep this code safe; we’ll apply the reward when the referred booking is confirmed.",
         "voucherCodeLabel": "Voucher code",
         "copyCodeLabel": "Copy code",
         "copiedCodeLabel": "Copied"

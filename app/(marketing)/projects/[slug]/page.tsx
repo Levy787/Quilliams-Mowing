@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 
 import { getProjectBySlug, listProjectSlugs } from "@/lib/keystatic-reader";
 import { buildMetadata } from "@/lib/seo";
+import { ArticleSchema } from "@/components/seo/ArticleSchema";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { RelatedLinks } from "@/components/seo/RelatedLinks";
 import ProjectDetailClient from "./project-detail-client";
@@ -64,6 +65,20 @@ export default async function ProjectDetailPage({
     return (
         <>
             <BreadcrumbSchema items={breadcrumbs} />
+            <ArticleSchema
+                id={`https://quilliamsmowing.co.uk/projects/${slug}#article`}
+                headline={project.title}
+                description={project.seo.description || project.subtitle}
+                images={[
+                    project.hero.imageSrc,
+                    ...project.gallery.map((image) => image.imageSrc),
+                ].filter(Boolean)}
+                datePublished="2026-05-04"
+                dateModified="2026-05-26"
+                pageUrl={`https://quilliamsmowing.co.uk/projects/${slug}`}
+                articleSection="Garden Case Studies"
+                about={project.chips}
+            />
             <ProjectDetailClient project={project} />
             <RelatedLinks
                 title="More of our projects"

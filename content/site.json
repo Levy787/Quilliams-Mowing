@@ -28,6 +28,10 @@
         "href": "/projects"
       },
       {
+        "label": "Blog",
+        "href": "/blog"
+      },
+      {
         "label": "Contact",
         "href": "/contact"
       }
@@ -48,6 +52,10 @@
       {
         "label": "Sitemap",
         "href": "/site-map"
+      },
+      {
+        "label": "Blog",
+        "href": "/blog"
       }
     ]
   },

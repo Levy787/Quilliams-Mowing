@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { buildMetadata } from "@/lib/seo";
 import { areas } from "@/lib/areas/data";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
+import { AreaServiceSchema } from "@/components/seo/AreaServiceSchema";
 
 export async function generateStaticParams() {
     return Object.keys(areas).map((slug) => ({ slug }));
@@ -46,6 +47,14 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
     return (
         <main className="min-h-screen bg-background">
             <BreadcrumbSchema items={[{ name: "Home", href: "/" }, { name: "Areas", href: "/areas" }, { name: area.name, href: `/areas/${slug}` }]} />
+            <AreaServiceSchema
+                slug={slug}
+                name={area.name}
+                county={area.county}
+                latitude={area.geo.latitude}
+                longitude={area.geo.longitude}
+                radiusMeters={area.geo.radiusMeters}
+            />
             <div className="container mx-auto px-4 py-16 max-w-4xl">
                 <nav className="text-sm text-muted-foreground mb-8">
                     <Link href="/" className="hover:text-primary">Home</Link>
@@ -62,6 +71,22 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
                 <p className="text-xl text-muted-foreground mb-8">
                     Professional gardening and landscaping services
                 </p>
+
+                <p className="mb-8 text-sm font-medium text-muted-foreground">
+                    By{" "}
+                    <Link href="/about" className="text-foreground underline decoration-primary/40 underline-offset-4 hover:text-primary">
+                        Levi Quilliam, Founder & Lead Gardener
+                    </Link>
+                </p>
+
+                {slug === "truro" && (
+                    <section className="mb-12 rounded-lg border bg-muted/30 p-6">
+                        <h2 className="text-2xl font-semibold mb-3">Quick Answer</h2>
+                        <p className="text-muted-foreground">
+                            If you need a gardener in Truro, I cover lawn mowing, hedge trimming, garden maintenance, seasonal tidy-ups, clearance work, and practical landscaping across the city and nearby villages. Most Truro gardens benefit from steady fortnightly maintenance because the sheltered river valley and heavier clay soils keep grass, hedges, weeds, and moss growing for a long season. I usually ask for a few photos first, then send a clear fixed quote within 24 hours. Small lawn jobs start from around 20 pounds, regular maintenance visits from around 60 pounds, and hedge work is priced by height, thickness, and access. I am based near Newquay, about 25 minutes away, and I group Truro visits regularly so jobs can usually be booked without long delays.
+                        </p>
+                    </section>
+                )}
                 
                 <div className="prose prose-lg max-w-none mb-12">
                     {area.paragraphs.map((paragraph, index) => (
@@ -75,6 +100,17 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
                         <p>{area.gardenChallenges}</p>
                     </div>
                 </section>
+
+                {slug === "st-ives" && (
+                    <section className="mb-12">
+                        <h2 className="text-2xl font-semibold mb-4">Holiday-Let Garden Maintenance in St Ives</h2>
+                        <div className="prose prose-lg max-w-none">
+                            <p>
+                                St Ives has a lot of holiday-let and second-home gardens where the work needs to fit around changeover days, guest arrivals, tight access, and short weather windows. I can keep lawns, paths, beds, pots, and boundary planting tidy before guests arrive, then handle heavier seasonal work outside the busiest weeks. For owners who live away from Cornwall, photos after each visit make it easier to see what has been done and spot anything that needs attention before the next booking.
+                            </p>
+                        </div>
+                    </section>
+                )}
 
                 {area.testimonial && (
                     <section className="mb-12 bg-muted/50 rounded-lg p-8">
@@ -139,7 +175,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
                         </p>
                         <Link
                             href="/blog/best-gardeners-newquay"
-                            className="mt-4 inline-flex items-center rounded-lg bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+                            className="mt-4 inline-flex min-h-12 items-center rounded-lg bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
                         >
                             Read the Newquay gardener guide
                         </Link>
@@ -156,7 +192,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
                                     <Link
                                         key={nearbySlug}
                                         href={`/areas/${nearbySlug}`}
-                                        className="rounded-lg border px-4 py-2 text-sm font-medium hover:border-primary hover:text-primary transition-colors"
+                                        className="inline-flex min-h-12 items-center rounded-lg border px-4 py-2 text-sm font-medium hover:border-primary hover:text-primary transition-colors"
                                     >
                                         Gardening in {areas[nearbySlug].name}
                                     </Link>
@@ -173,13 +209,13 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Link
                             href="/quote"
-                            className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors"
+                            className="inline-flex min-h-12 items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors"
                         >
                             Request a Quote
                         </Link>
                         <Link
                             href="/contact"
-                            className="inline-flex items-center justify-center px-6 py-3 border rounded-lg font-medium hover:bg-muted transition-colors"
+                            className="inline-flex min-h-12 items-center justify-center px-6 py-3 border rounded-lg font-medium hover:bg-muted transition-colors"
                         >
                             Contact Us
                         </Link>

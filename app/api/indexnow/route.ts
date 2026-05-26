@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { listServiceSlugs, listProjectSlugs } from "@/lib/keystatic-reader";
+import { listServiceSlugs, listProjectSlugs, listBlogSlugs } from "@/lib/keystatic-reader";
 import { areas } from "@/lib/areas/data";
 
 const SITE_URL = "https://quilliamsmowing.co.uk";
@@ -13,6 +13,7 @@ export async function POST(request: Request) {
 
   const serviceSlugs = await listServiceSlugs();
   const projectSlugs = await listProjectSlugs();
+  const blogSlugs = await listBlogSlugs();
   const areaSlugs = Object.keys(areas);
 
   const urls = [
@@ -24,8 +25,10 @@ export async function POST(request: Request) {
     `${SITE_URL}/quote`,
     `${SITE_URL}/about`,
     `${SITE_URL}/areas`,
+    `${SITE_URL}/blog`,
     ...serviceSlugs.map((s) => `${SITE_URL}/services/${s}`),
     ...projectSlugs.map((s) => `${SITE_URL}/projects/${s}`),
+    ...blogSlugs.map((s) => `${SITE_URL}/blog/${s}`),
     ...areaSlugs.map((s) => `${SITE_URL}/areas/${s}`),
   ];
 

@@ -4,12 +4,14 @@ import { Hero } from "./Hero";
 import { Stats } from "./Stats";
 import { AboutUs } from "./AboutUs";
 import { Services } from "./Services";
-import { ServiceArea } from "./ServiceArea";
-import { RecentWorks } from "./RecentWorks";
 import { FAQ } from "./FAQ";
 import { BoldHeadings } from "./BoldHeadings"
 import { LargeCta } from "./LargeCta";
-import { Testimonials } from "./Testimonials";
+import {
+    DeferredRecentWorks,
+    DeferredServiceArea,
+    DeferredTestimonials,
+} from "./DeferredHomeSections";
 import { TrustBar } from "@/components/TrustBar";
 
 import { getHomeContent } from "@/lib/keystatic-reader";
@@ -60,12 +62,12 @@ export default async function Home() {
             <Stats items={home.stats} />
             <AboutUs {...home.about} />
             <Services {...home.services} />
-            <ServiceArea {...home.serviceArea} />
-            <RecentWorks {...home.recentWorks} />
+            <DeferredServiceArea {...home.serviceArea} />
+            <DeferredRecentWorks {...home.recentWorks} />
             <BoldHeadings categories={home.marquee.categories} />
             <FAQ {...home.faq} />
             <LargeCta {...home.largeCta} />
-            <Testimonials {...home.testimonials} />
+            <DeferredTestimonials {...home.testimonials} />
         </main>
     )
 }

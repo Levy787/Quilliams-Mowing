@@ -211,7 +211,7 @@ export default function ReferClient({ content }: ReferClientProps) {
                                                 Create a voucher
                                             </div>
                                             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                                                Fill in the details below. This form confirms the referral — it does not
+                                                Fill in the details below. This form confirms the referral, it does not
                                                 automatically email your friend yet.
                                             </p>
                                         </div>

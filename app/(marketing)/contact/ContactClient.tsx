@@ -173,9 +173,9 @@ export default function ContactClient({ header, details, form, map }: ContactCli
                             <CardContent className="relative px-6">
                                 <div className="space-y-6">
                                     <div>
-                                        <div className="text-xl font-semibold text-background dark:text-foreground">
+                                        <h2 className="text-xl font-semibold text-background dark:text-foreground">
                                             {details.title}
-                                        </div>
+                                        </h2>
                                         <p className="mt-2 text-sm md:text-base leading-relaxed text-background/80 dark:text-muted-foreground">
                                             {details.description}
                                         </p>
@@ -263,9 +263,9 @@ export default function ContactClient({ header, details, form, map }: ContactCli
                         <Card className="rounded-4xl border-border shadow-none">
                             <CardContent className="px-6">
                                 <div>
-                                    <div className="text-xl font-semibold text-foreground">
+                                    <h2 className="text-xl font-semibold text-foreground">
                                         {form.title}
-                                    </div>
+                                    </h2>
                                     <p className="mt-2 text-sm md:text-base leading-relaxed text-muted-foreground">
                                         {form.description}
                                     </p>

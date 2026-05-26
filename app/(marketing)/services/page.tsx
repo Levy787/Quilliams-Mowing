@@ -7,6 +7,7 @@ import {
 } from "@/lib/keystatic-reader";
 import { buildMetadata } from "@/lib/seo";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
+import { ItemListSchema } from "@/components/seo/ItemListSchema";
 import ServicesLandingClient, {
     type ServiceCardModel,
     type ServicesLandingContentModel,
@@ -51,8 +52,15 @@ export default async function ServicesPage() {
     return (
         <>
             <BreadcrumbSchema items={[{ name: "Home", href: "/" }, { name: "Services", href: "/services" }]} />
+            <ItemListSchema
+                id="https://quilliamsmowing.co.uk/services#itemlist"
+                name="Gardening Services in Newquay and Cornwall"
+                items={services.map((service) => ({
+                    name: service.title,
+                    url: `https://quilliamsmowing.co.uk/services/${service.slug}`,
+                }))}
+            />
             <ServicesLandingClient services={services} content={content} />
         </>
     );
 }
-

@@ -211,7 +211,7 @@ export function ExitIntentPopup() {
                             Get £20 off your first booking
                         </h3>
                         <p className="mt-2 text-muted-foreground text-sm">
-                            Drop your number or email — we&apos;ll send your code.
+                            Drop your number or email, we&apos;ll send your code.
                             No spam, just savings.
                         </p>
 
