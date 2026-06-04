@@ -37,7 +37,7 @@ export default async function SitemapPage() {
         listProjectSlugs(),
         listBlogPosts(),
     ]);
-    const areaSlugs = Object.keys(areas);
+    const areaSlugs = Object.keys(areas).filter((slug) => !areas[slug].noindex);
 
     return (
         <main className="min-h-screen bg-background">

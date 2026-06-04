@@ -19,6 +19,7 @@ import {
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { coreAreaLinks } from "@/lib/areas/data";
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -513,6 +514,26 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                             </Accordion>
                         </CardContent>
                     </Card>
+                </div>
+            </section>
+
+            {/* Areas covered */}
+            <section className="mx-4 md:mx-8 lg:mx-16 pb-8">
+                <div className="container mx-auto px-4 lg:px-12">
+                    <h2 className="text-xl font-semibold text-foreground">
+                        Available across Newquay and north Cornwall
+                    </h2>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                        {coreAreaLinks.map((area) => (
+                            <Link
+                                key={area.href}
+                                href={area.href}
+                                className="inline-flex min-h-12 items-center rounded-lg border px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+                            >
+                                {service.title} in {area.label}
+                            </Link>
+                        ))}
+                    </div>
                 </div>
             </section>
 

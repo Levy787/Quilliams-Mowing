@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
 import { LeafletMap } from "@/components/reusable/leaflet-map";
+import { coreAreaLinks } from "@/lib/areas/data";
 
 type MapLabel = {
     text: string;
@@ -87,6 +88,23 @@ export function ServiceArea({
                                 <p className="mt-5 text-sm text-muted-foreground">
                                     {footnote}
                                 </p>
+
+                                <div className="mt-6">
+                                    <p className="text-sm font-medium text-foreground">
+                                        Areas I cover
+                                    </p>
+                                    <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1">
+                                        {coreAreaLinks.map((area) => (
+                                            <Link
+                                                key={area.href}
+                                                href={area.href}
+                                                className="text-sm text-muted-foreground underline-offset-4 transition-colors hover:text-primary hover:underline"
+                                            >
+                                                {area.label}
+                                            </Link>
+                                        ))}
+                                    </div>
+                                </div>
                             </div>
 
                             {/* Map */}

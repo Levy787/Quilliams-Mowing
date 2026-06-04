@@ -1,3 +1,5 @@
+import { indexableAreas } from "@/lib/areas/data";
+
 export interface ServiceSchemaProps {
   name: string;
   description: string;
@@ -32,15 +34,7 @@ export function ServiceSchema({
   url,
   image,
   areaServed = [
-    "Newquay",
-    "Truro",
-    "St Austell",
-    "Bodmin",
-    "Padstow",
-    "Perranporth",
-    "St Ives",
-    "Wadebridge",
-    "St Agnes",
+    ...indexableAreas.map((area) => area.name),
     "Cornwall",
   ],
 }: ServiceSchemaProps) {

@@ -38,7 +38,7 @@ const quoteExamples = [
     },
     {
         title: "Fortnightly family garden",
-        body: "A typical family garden in Newquay, Truro, Wadebridge, or St Austell often sits around £60 to £90 per maintenance visit. That normally includes mowing, edging, quick weeding, light pruning, and leaving paths and patios tidy before I go.",
+        body: "A typical family garden in Newquay, St Columb Major, Wadebridge, or Padstow often sits around £60 to £90 per maintenance visit. That normally includes mowing, edging, quick weeding, light pruning, and leaving paths and patios tidy before I go.",
     },
     {
         title: "Overgrown tidy-up",
@@ -89,7 +89,7 @@ export function PricingGuide() {
                             Cornwall pricing is a little different from many inland areas because gardens grow for longer. The mild coastal climate means lawns can keep moving through winter, hedges push on after autumn rain, and weeds come back quickly once the soil warms. A garden that looks manageable in February can need proper attention by April. For that reason, regular customers usually get the best value from a fortnightly rhythm between March and October, with the option to drop back in winter.
                         </p>
                         <p>
-                            Access is one of the biggest price differences. A flat lawn with parking outside the gate is quick to work through. A terraced garden in St Ives, a long carry through a house, steep steps, or a narrow side path all add time. The same applies to waste. Grass clippings from a regular cut are simple, but wet hedge cuttings, bramble, pampas grass, and old shrub material take longer to bag, carry, and dispose of properly.
+                            Access is one of the biggest price differences. A flat lawn with parking outside the gate is quick to work through. A terraced garden in St Agnes, a long carry through a house, steep steps, or a narrow side path all add time. The same applies to waste. Grass clippings from a regular cut are simple, but wet hedge cuttings, bramble, pampas grass, and old shrub material take longer to bag, carry, and dispose of properly.
                         </p>
                         <p>
                             Condition matters too. If I am maintaining a garden every fortnight, the grass stays at a sensible height, edges are easier to keep crisp, and weeds never get a proper hold. If the garden has been left for months, the first visit may need heavier strimming, slower mowing, hand clearance, and extra waste handling. I normally separate that first reset from the ongoing maintenance price so the regular cost is fair.

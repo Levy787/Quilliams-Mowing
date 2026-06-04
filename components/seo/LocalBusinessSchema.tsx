@@ -16,7 +16,9 @@ const WASTE_CARRIER_REGISTER_URL =
   "https://environment.data.gov.uk/public-register/waste-carriers-brokers/registration/CBDL582202?__pageState=result-waste-carriers-brokers";
 const PERSON_ID = "https://quilliamsmowing.co.uk/about#levi";
 const DEFAULT_AREA_SERVED = [
-  ...Object.values(areas).map((area) => area.name),
+  ...Object.values(areas)
+    .filter((area) => !area.noindex)
+    .map((area) => area.name),
   "Cornwall",
 ];
 
@@ -36,7 +38,7 @@ function areaToSchema(area: string) {
 
 export function LocalBusinessSchema({
   name = "Quilliams Gardening & Landscaping",
-  description = "Professional gardening, landscaping, lawn mowing, hedge trimming and garden maintenance services in Newquay, Truro, and St Austell, Cornwall.",
+  description = "Professional gardening, landscaping, lawn mowing, hedge trimming and garden maintenance services in Newquay, St Columb Major, Padstow, Wadebridge and across north Cornwall.",
   telephone = "+447593121621",
   email = "levi@quilliamsmowing.co.uk",
   url = "https://quilliamsmowing.co.uk",

@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const area = areas[slug];
     
     if (!area) return {};
-    
-    return buildMetadata({
+
+    const meta = buildMetadata({
         seo: {
             title: `Gardener in ${area.name}, ${area.county} | Quilliams`,
             description: `Lawn mowing, hedge trimming and garden maintenance in ${area.name}, ${area.county}. Reliable, insured local gardener based near Newquay. Free quotes.`,
@@ -25,6 +25,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         fallbackTitle: `Gardener in ${area.name}`,
         canonicalPath: `/areas/${slug}`,
     });
+
+    // Areas outside the core service radius stay live but are kept out of the index.
+    if (area.noindex) {
+        meta.robots = { index: false, follow: true };
+    }
+
+    return meta;
 }
 
 const serviceLabels: Record<string, string> = {
@@ -187,7 +194,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
                         <h2 className="text-2xl font-semibold mb-4">We Also Serve Nearby Areas</h2>
                         <div className="flex flex-wrap gap-3">
                             {area.nearby
-                                .filter((slug) => areas[slug])
+                                .filter((slug) => areas[slug] && !areas[slug].noindex)
                                 .map((nearbySlug) => (
                                     <Link
                                         key={nearbySlug}

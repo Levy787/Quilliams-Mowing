@@ -8,14 +8,16 @@ import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 export const metadata: Metadata = buildMetadata({
     seo: {
         title: "Areas We Cover | Gardening Services Across Cornwall",
-        description: "Quilliams Gardening covers Newquay, Truro, St Austell, Bodmin, Padstow, Perranporth, St Ives and surrounding Cornwall areas. Local, reliable garden services.",
+        description: "Quilliams Gardening covers Newquay, St Columb Major, Padstow, Wadebridge, Perranporth, St Agnes and the surrounding north Cornwall villages. Local, reliable garden services.",
     },
     fallbackTitle: "Areas We Cover",
     canonicalPath: "/areas",
 });
 
 export default function AreasPage() {
-    const areaList = Object.entries(areas).map(([slug, area]) => ({
+    const areaList = Object.entries(areas)
+        .filter(([, area]) => !area.noindex)
+        .map(([slug, area]) => ({
         slug,
         name: area.name,
         description: area.description.substring(0, 100) + "...",

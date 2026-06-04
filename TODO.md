@@ -6,6 +6,41 @@
 
 ---
 
+## 2026-06-01 Service-area consistency cleanup
+
+- [x] Regenerate `public/search-index.json`. Note: the generator (`scripts/generate-search-index.mjs`) reads `content/*.json` only and never indexed area pages, so this does not change which towns the on-site search covers.
+- [x] Make `ServiceSchema` `areaServed` data-driven from `indexableAreas` (was a hardcoded 9-town list still including the narrowed Truro, St Austell, Bodmin, St Ives).
+- [x] Update `public/llms.txt`: Areas Served list and summary line now reflect the core area; Last-Updated bumped to 2026-06-01.
+- [x] Fix hardcoded out-of-area town lists in the blog author bio, the blog closing CTA (one I had introduced), the pricing OfferCatalog lawn-care description, and two PricingGuide examples (St Ives access example reworked to St Agnes, which is in-area and genuinely terraced).
+
+### Backlog
+
+- [ ] Content pass (via /seo-content): 15 `content/*.json` files still name Truro, St Austell, Bodmin, or St Ives in service-area meta descriptions and "areas I cover" FAQ answers. Align the service-area CLAIMS to the core five plus St Columb Major. Do NOT alter real testimonials (locations), real project case studies (e.g. Grampound near Truro), or informational soil/plant passages that use towns as geographic examples.
+- [ ] Optional enhancement: add the core area pages to `scripts/generate-search-index.mjs` so on-site search can find town pages (areas are not currently indexed at all).
+
+---
+
+## 2026-05-31 Search Console analysis and service-area focus
+
+**Source:** GSC export `quilliamsmowing.co.uk-Performance-on-Search-2026-05-31` (last 3 months) plus PostHog review.
+**Context:** Owner confirmed domestic-only services and a tight service radius around Newquay: Padstow, Wadebridge, St Columb Major, Perranporth, St Agnes. Truro, St Austell, Bodmin, and St Ives sit outside the radius.
+
+### Completed in this pass
+
+- [x] Add a St Columb Major area page in `lib/areas/data.ts`. It was the one in-area town with search demand and no page. Auto-propagates to the route, sitemap, areaServed schema, /areas listing, site-map, and IndexNow. Testimonial left `null` until a genuine St Columb Major review exists.
+- [x] Narrow the published service area to the core six (Newquay, Padstow, Perranporth, St Agnes, Wadebridge, St Columb Major). Added an optional `noindex` flag to the `Area` type and set it on Truro, St Austell, Bodmin, and St Ives. Those pages stay live (no 404) but are removed from the index (`robots: noindex, follow`), the sitemap, the areaServed schema, the /areas listing, the site-map links, the nearby-area links, and IndexNow. Reversible by clearing the flag.
+- [x] Add a reusable `QuoteCtaBand` component and place a closing quote CTA on `/pricing` and on blog posts, the two top pages that lacked one.
+
+### Search Console backlog (in-area focus)
+
+- [ ] Strengthen the in-area area pages (Padstow, Perranporth, St Agnes, Wadebridge, St Columb Major) for "[service] [town]" queries. They currently rank pos 13 to 38 with near-zero clicks.
+- [x] Add internal links from the homepage and service pages to the area pages. The homepage absorbs 88% of organic clicks (101 of 115) while deeper pages under-rank. Done via a shared `coreAreaLinks` helper in `lib/areas/data.ts`, surfaced in the homepage ServiceArea section, the sitewide footer (replacing the stale Truro/St Austell/Bodmin links), and an "available in [town]" block on every service detail page. All point only to the indexable core six.
+- [ ] Reinforce the "[service] near me" cluster on service pages (already strong: lawn care near me pos 3.2, garden maintenance near me pos 3.5).
+- [ ] Investigate the desktop ranking gap (desktop avg pos 20.6 vs mobile 9.7).
+- [ ] Owner: add a real St Columb Major testimonial and local photo when available (follow the OFFSITE-EXECUTION-ASSETS.md pattern).
+
+---
+
 ## 2026-05-26 SEO Audit Remediation
 
 **Audit baseline:** Overall 84/100, target 95+

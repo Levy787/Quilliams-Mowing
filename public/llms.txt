@@ -1,8 +1,8 @@
 # Quilliams Gardening & Landscaping
 
-> Professional gardening, landscaping, and lawn care services in Newquay, Truro, St Austell, and throughout Cornwall, UK. 5-star rated on Google with 120+ completed projects.
+> Professional gardening, landscaping, and lawn care services in Newquay, St Columb Major, Padstow, Wadebridge and across north Cornwall, UK. 5-star rated on Google with 120+ completed projects.
 
-Last-Updated: 2026-05-26
+Last-Updated: 2026-06-01
 
 ## Key Pages
 - https://quilliamsmowing.co.uk/
@@ -41,13 +41,10 @@ Last-Updated: 2026-05-26
 
 ## Areas Served
 - [Newquay](/areas/newquay) (base location, Trevarrian)
-- [Truro](/areas/truro)
-- [St Austell](/areas/st-austell)
-- [Bodmin](/areas/bodmin)
+- [St Columb Major](/areas/st-columb-major)
 - [Padstow](/areas/padstow)
-- [Perranporth](/areas/perranporth)
-- [St Ives](/areas/st-ives)
 - [Wadebridge](/areas/wadebridge)
+- [Perranporth](/areas/perranporth)
 - [St Agnes](/areas/st-agnes)
 
 ## Pricing

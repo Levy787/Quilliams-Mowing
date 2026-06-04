@@ -27,11 +27,18 @@ export type Area = {
     testimonial: AreaTestimonial | null;
     services: string[];
     nearby: string[];
+    /**
+     * When true, the area page stays live (no 404) but is removed from the
+     * search index, sitemap, areaServed schema, /areas listing, and IndexNow.
+     * Used to keep the published service area tight around Newquay.
+     */
+    noindex?: boolean;
 };
 
 export const areas: Record<string, Area> = {
     truro: {
         name: "Truro",
+        noindex: true,
         county: "Cornwall",
         description:
             "Professional gardening and landscaping services in Truro. Cornwall's only city has a mix of period townhouses, newer estates, and rural properties, each with their own garden challenges. Regular maintenance, hedge trimming, lawn care, and landscaping throughout Truro and surrounding areas.",
@@ -57,6 +64,7 @@ export const areas: Record<string, Area> = {
     },
     "st-austell": {
         name: "St Austell",
+        noindex: true,
         county: "Cornwall",
         description:
             "Reliable gardening services in St Austell and the surrounding areas. From regular lawn mowing to complete garden transformations, helping St Austell residents keep their outdoor spaces looking their best all year round.",
@@ -82,6 +90,7 @@ export const areas: Record<string, Area> = {
     },
     bodmin: {
         name: "Bodmin",
+        noindex: true,
         county: "Cornwall",
         description:
             "Expert garden care in Bodmin, Cornwall. Whether you need regular maintenance or a one-off garden clearance, professional, reliable service to Bodmin residents. Fully equipped for all garden sizes.",
@@ -157,6 +166,7 @@ export const areas: Record<string, Area> = {
     },
     "st-ives": {
         name: "St Ives",
+        noindex: true,
         county: "Cornwall",
         description:
             "Professional gardening in St Ives, Cornwall. From compact town gardens to larger coastal properties, tailored garden care. Lawn mowing, hedge cutting, planting, and full maintenance packages.",
@@ -257,4 +267,45 @@ export const areas: Record<string, Area> = {
         services: ["lawn-care", "hedge-trimming", "garden-maintenance", "seasonal-cleanup"],
         nearby: ["perranporth", "truro", "newquay"],
     },
+    "st-columb-major": {
+        name: "St Columb Major",
+        county: "Cornwall",
+        description:
+            "Professional gardening and garden maintenance in St Columb Major, Cornwall. Lawn mowing, hedge trimming, garden maintenance, and clearance work across St Columb Major and the surrounding villages including St Columb Road, Tregatillian, and Ruthvoes. Reliable, insured, and based just a few minutes away near Newquay.",
+        geo: { latitude: 50.43330, longitude: -4.93330, radiusMeters: 12000 },
+        paragraphs: [
+            "I'm Levi Quilliam, a gardener and landscaper based in Trevarrian near Newquay, and St Columb Major is one of the closest towns I cover. It's only about 10 to 15 minutes inland from my base, so I'm in the area constantly and can usually fit jobs in at short notice with no travel charge. St Columb Major is a proper old Cornish market town with a lot of history, from the huge parish church of St Columba to the famous hurling matches that still fill the streets on Shrove Tuesday. The properties here are a real mix, from the stone-built cottages and townhouses around the centre to the newer estates on the edges and the semi-rural plots scattered out towards Tregatillian and Ruthvoes. I offer the full range of garden work across all of them, including regular lawn mowing, hedge trimming, garden maintenance, seasonal clearances, and landscaping. I carry public liability insurance and I'm a licensed waste carrier, so every job is handled properly from the first cut to the last bag of green waste.",
+            "Sitting inland on the higher ground above the coast, St Columb Major gardens behave quite differently to the exposed coastal plots in Newquay or St Agnes. There's far less salt in the wind here, which means a wider range of plants will thrive and hedges aren't getting scorched on the seaward side. The trade-off is that the town sits up on the downs near Castle-an-Dinas, so the more open gardens still catch a fair bit of wind, and frost tends to settle a little harder than it does down on the coast. The soils inland around St Columb are mostly a heavy clay loam that holds onto moisture, which is great for thick, lush growth through the long Cornish season but also encourages moss in lawns and weeds in borders. A fortnightly maintenance visit keeps most St Columb gardens on top of that growth, and those visits start from around 60 pounds and cover mowing, edging, weeding, and a general tidy. Lawn mowing on its own runs between 20 and 50 pounds depending on the size of the garden.",
+            "One of the things I like about working in St Columb Major is the range of garden sizes. Closer to the centre, around Fore Street and the lanes off it, gardens tend to be smaller and more detailed, with hedges that need precise shaping and borders that benefit from regular attention. Out towards Talskiddy, Trekenning, and the smaller hamlets, the plots open up into larger semi-rural gardens with mature hedgerows, fruit trees, and proper lawns that reward consistent care. I've done plenty of clearance work in this area, getting on top of gardens that have been left for a season and reshaping boundary hedges that have grown well beyond where the owner wanted them. Hedge trimming runs between 5 and 15 pounds per linear metre depending on height and access, and clearance jobs start from around 80 pounds with green waste removed at 10 pounds per bag.",
+            "Because St Columb Major is so close to my base, I can offer more flexible scheduling here than in areas further afield, and I'm often able to visit within a day or two of getting in touch. If you live in St Columb Major or one of the surrounding villages and you're looking for a local gardener who turns up when he says he will and gives you a clear price upfront, the quote form is the quickest way to reach me. Send a few photos and a short description of what you need, and I'll come back to you within 24 hours with an honest price and a realistic timescale. No call-out fees, no vague estimates, just straightforward gardening from someone based just down the road.",
+        ],
+        gardenChallenges:
+            "St Columb Major sits inland on the higher ground of mid-Cornwall, which gives its gardens a different set of challenges to the exposed coastal towns nearby. Salt exposure is much lower here, so plant choice is broader, but the open position up towards Castle-an-Dinas and the downs means wind is still a factor for unsheltered gardens, and frosts settle harder and later than on the coast. The soils are predominantly a heavy clay loam that retains moisture well, which drives strong growth but also leaves lawns prone to moss, compaction, and waterlogging through the wet months from October to March. Drainage and regular aeration make a real difference on these soils, and scarifying combined with a spring feed keeps clay-bound lawns healthy rather than tired and patchy. Boundary hedging on the more exposed plots towards the downs benefits from proper shaping each year to keep it dense and even.",
+        travelTime: "About 10 to 15 minutes",
+        neighborhoods: ["St Columb Road", "Tregatillian", "Ruthvoes", "Talskiddy", "Trekenning"],
+        landmarks: ["St Columba's Church", "Castle-an-Dinas", "Nine Maidens stone row", "Screech Owl Sanctuary"],
+        testimonial: null,
+        services: ["lawn-care", "hedge-trimming", "garden-maintenance", "landscaping", "seasonal-cleanup"],
+        nearby: ["newquay", "padstow", "wadebridge", "perranporth"],
+    },
 };
+
+/** Slugs of indexable area pages (excludes noindex). Use for sitemap, schema, listings. */
+export const indexableAreaSlugs: string[] = Object.keys(areas).filter(
+    (slug) => !areas[slug].noindex,
+);
+
+/** Indexable area entries (excludes noindex). */
+export const indexableAreas: Area[] = Object.values(areas).filter(
+    (area) => !area.noindex,
+);
+
+/**
+ * Indexable area page links, Newquay first, for internal linking
+ * (footer, homepage service area, service detail pages). Single source of
+ * truth so internal links stay in sync with the published service area.
+ */
+export const coreAreaLinks: ReadonlyArray<{ label: string; href: string }> = [
+    "newquay",
+    ...indexableAreaSlugs.filter((slug) => slug !== "newquay"),
+].map((slug) => ({ label: areas[slug].name, href: `/areas/${slug}` }));

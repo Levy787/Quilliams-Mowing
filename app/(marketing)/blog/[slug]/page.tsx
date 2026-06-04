@@ -9,6 +9,7 @@ import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { FAQSchema } from "@/components/seo/FAQSchema";
 import { ItemListSchema } from "@/components/seo/ItemListSchema";
 import { Button } from "@/components/ui/button";
+import { QuoteCtaBand } from "@/components/reusable/QuoteCtaBand";
 import { getBlogPostBySlug, listBlogSlugs } from "@/lib/keystatic-reader";
 import { buildMetadata } from "@/lib/seo";
 
@@ -253,7 +254,7 @@ export default async function BlogPostPage({
                                     Founder & Lead Gardener, Quilliams Gardening &amp; Landscaping
                                 </p>
                                 <p className="mt-3 text-base leading-relaxed text-muted-foreground">
-                                    I'm a Cornwall-based gardener and landscaper working across Newquay, Truro, St Austell and the surrounding villages. Public liability insured, Environment Agency waste carrier (CBDL582202), and a registered limited company (Companies House 16405915). I write these guides from real jobs on Cornish gardens.
+                                    I&apos;m a Cornwall-based gardener and landscaper working across Newquay and the surrounding villages of north Cornwall. Public liability insured, Environment Agency waste carrier (CBDL582202), and a registered limited company (Companies House 16405915). I write these guides from real jobs on Cornish gardens.
                                 </p>
                                 <Link
                                     href="/about"
@@ -266,6 +267,11 @@ export default async function BlogPostPage({
                         </div>
                     </section>
                 </div>
+
+                <QuoteCtaBand
+                    heading="Need a hand with your own garden?"
+                    body="I cover Newquay, St Columb Major, Padstow, Wadebridge and the surrounding north Cornwall villages. Send a few details and I'll come back with a clear, fixed quote, usually within 24 hours."
+                />
             </article>
         </main>
     );

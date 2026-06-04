@@ -18,6 +18,7 @@ import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { capturePostHogEvent } from "@/lib/posthog-client";
+import { coreAreaLinks } from "@/lib/areas/data";
 import { Turnstile, type TurnstileHandle } from "@/components/TurnstileWidget";
 import { openCookieSettings } from "@/components/CookieBanner";
 
@@ -396,10 +397,7 @@ export function FooterInner({
                             <h4 className="text-sm font-semibold text-background">Areas</h4>
                             <ul className="mt-3 space-y-2">
                                 {[
-                                    { label: "Newquay", href: "/areas/newquay" },
-                                    { label: "Truro", href: "/areas/truro" },
-                                    { label: "St Austell", href: "/areas/st-austell" },
-                                    { label: "Bodmin", href: "/areas/bodmin" },
+                                    ...coreAreaLinks,
                                     { label: "All Areas", href: "/areas" },
                                 ].map((link) => (
                                     <li key={link.label}>

@@ -30,7 +30,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const serviceSlugs = await listServiceSlugs();
   const projectSlugs = await listProjectSlugs();
   const blogSlugs = await listBlogSlugs();
-  const areaSlugs = Object.keys(areas);
+  const areaSlugs = Object.keys(areas).filter((slug) => !areas[slug].noindex);
 
   const staticPageSpecs = [
     {

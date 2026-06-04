@@ -6,6 +6,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import {
     ArrowRight,
+    CalendarClock,
     CheckCircle2,
     ChevronDown,
     ClipboardCheck,
@@ -20,7 +21,6 @@ import {
 import { Turnstile } from "@/components/TurnstileWidget";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { capturePostHogEvent } from "@/lib/posthog-client";
 import { cn } from "@/lib/utils";
 
@@ -28,13 +28,16 @@ const PHONE_DISPLAY = "07593 121 621";
 const PHONE_TEL = "07593121621";
 const GOOGLE_MAPS_URL = "https://g.page/r/Ca1e8ukWV-qsEBM/";
 const FACEBOOK_URL = "https://www.facebook.com/quilliamsmowing/";
+const OFFER_TIME_ZONE = "Europe/London";
+const WEEKLY_OFFER_LABEL = "Current gravel garden offer: 10% off installs";
+const WEEKLY_OFFER_DEADLINE = "Sunday 11:59pm UK time";
 
 const HERO_AFTER = "/images/uploads/overgrown-mess-to-clean-gravel-garden/hero/imageFile.webp";
 
 const OFFER_STATS = [
-    ["Free", "Site visit and measure-up"],
-    ["Fixed", "Quote before work starts"],
-    ["2-4 days", "Typical small front gardens"],
+    ["10% off", "Installation labour discount"],
+    ["Free visit", "Site visit and fixed quote"],
+    ["1-3 days", "Typical small front gardens"],
 ] as const;
 
 const PROCESS_STEPS = [
@@ -102,7 +105,7 @@ const FAQS = [
     },
     {
         q: "How quickly can it be done?",
-        a: "Many front garden resets take 2–4 days once materials and access are confirmed. You get a clear timeline with your fixed quote.",
+        a: "Many front garden resets take 1-3 days once materials and access are confirmed. You get a clear timeline with your fixed quote.",
     },
 ];
 
@@ -113,6 +116,97 @@ function StarRating() {
                 <Star key={index} className="size-4 fill-[#ffd34d] text-[#ffd34d]" />
             ))}
         </span>
+    );
+}
+
+function getZonedDate(date: Date) {
+    return new Date(date.toLocaleString("en-US", { timeZone: OFFER_TIME_ZONE }));
+}
+
+function getWeeklyOfferDeadline(now = new Date()) {
+    const ukNow = getZonedDate(now);
+    const deadline = new Date(ukNow);
+    const daysUntilSunday = (7 - ukNow.getDay()) % 7;
+
+    deadline.setDate(ukNow.getDate() + daysUntilSunday);
+    deadline.setHours(23, 59, 59, 999);
+
+    if (deadline.getTime() <= ukNow.getTime()) {
+        deadline.setDate(deadline.getDate() + 7);
+    }
+
+    return deadline;
+}
+
+function formatWeeklyOfferDeadline(deadline: Date) {
+    return deadline.toLocaleDateString("en-GB", {
+        day: "numeric",
+        month: "short",
+        weekday: "long",
+    });
+}
+
+function getWeeklyOfferTimeLeft(now = new Date()) {
+    const ukNow = getZonedDate(now);
+    const deadline = getWeeklyOfferDeadline(now);
+    const totalMs = Math.max(0, deadline.getTime() - ukNow.getTime());
+    const days = Math.floor(totalMs / 86_400_000);
+    const hours = Math.floor((totalMs % 86_400_000) / 3_600_000);
+    const minutes = Math.floor((totalMs % 3_600_000) / 60_000);
+    const seconds = Math.floor((totalMs % 60_000) / 1_000);
+
+    return {
+        days,
+        hours,
+        minutes,
+        seconds,
+        deadlineLabel: formatWeeklyOfferDeadline(deadline),
+    };
+}
+
+function useWeeklyOfferCountdown() {
+    const [timeLeft, setTimeLeft] = React.useState<ReturnType<typeof getWeeklyOfferTimeLeft> | null>(null);
+
+    React.useEffect(() => {
+        function tick() {
+            setTimeLeft(getWeeklyOfferTimeLeft());
+        }
+
+        tick();
+        const intervalId = window.setInterval(tick, 1_000);
+
+        return () => window.clearInterval(intervalId);
+    }, []);
+
+    return timeLeft;
+}
+
+function WeeklyOfferCountdown() {
+    const timeLeft = useWeeklyOfferCountdown();
+
+    if (!timeLeft) {
+        return <span>Ends {WEEKLY_OFFER_DEADLINE}</span>;
+    }
+
+    const parts = [
+        timeLeft.days > 0 ? `${timeLeft.days}d` : null,
+        `${timeLeft.hours}h`,
+        `${timeLeft.minutes}m`,
+        timeLeft.days === 0 ? `${timeLeft.seconds}s` : null,
+    ].filter(Boolean);
+
+    return <span>Ends {timeLeft.deadlineLabel}: {parts.join(" ")}</span>;
+}
+
+function WeeklyOfferCallout() {
+    return (
+        <div className="mx-auto mt-5 flex w-fit max-w-full flex-wrap items-center justify-center gap-x-4 gap-y-2 rounded-lg border border-[#ffd34d]/45 bg-[#ffd34d]/14 px-4 py-3 text-sm font-black text-[#fff2b8] shadow-[0_18px_60px_-42px_rgba(0,0,0,0.9)] sm:text-base">
+            <span>{WEEKLY_OFFER_LABEL}</span>
+            <span className="inline-flex items-center gap-2 text-white">
+                <CalendarClock className="size-4 text-[#ffd34d]" />
+                <WeeklyOfferCountdown />
+            </span>
+        </div>
     );
 }
 
@@ -167,6 +261,8 @@ function LeadForm({ compact = false }: { compact?: boolean }) {
             const jobDetails = [
                 "[Meta Ads Gravel Garden Lead]",
                 `Email: ${email}`,
+                `Offer: ${WEEKLY_OFFER_LABEL}`,
+                `Offer deadline: ${WEEKLY_OFFER_DEADLINE}`,
                 "",
                 "Lead requested a free site visit and fixed gravel garden quote from the Newquay landing page.",
             ].join("\n");
@@ -178,8 +274,8 @@ function LeadForm({ compact = false }: { compact?: boolean }) {
                     name: "Gravel garden lead",
                     email,
                     serviceType: "Gravel Garden Installation",
-                    timeframe: "Free site visit requested",
-                    budget: "Not supplied",
+                    timeframe: `Free site visit requested before ${WEEKLY_OFFER_DEADLINE}`,
+                    budget: "10% off weekly offer claimed",
                     jobDetails,
                     company: form.company,
                     turnstileToken: token,
@@ -229,23 +325,18 @@ function LeadForm({ compact = false }: { compact?: boolean }) {
                         : "grid-cols-1 md:grid-cols-[minmax(0,1fr)_auto]",
                 )}
             >
-                <div className="rounded-md bg-[#f1f2ee] px-4 py-2">
-                    <Label
-                        htmlFor={`${fieldId}-email`}
-                        className="block text-[0.67rem] font-black uppercase text-[#51604d]"
-                    >
-                        Email
-                    </Label>
+                <div className="flex min-h-14 items-center rounded-md bg-[#f1f2ee] px-4">
                     <Input
                         id={`${fieldId}-email`}
                         name="email"
                         type="email"
                         autoComplete="email"
+                        aria-label="Email address"
                         value={form.email}
                         onChange={handleChange}
                         placeholder="Email address"
                         required
-                        className="h-8 border-0 bg-transparent px-0 text-base font-semibold text-[#10140e] shadow-none placeholder:text-[#6f746a] focus-visible:ring-0"
+                        className="h-10 border-0 bg-transparent px-0 text-base font-semibold text-[#10140e] shadow-none placeholder:text-[#6f746a] focus-visible:ring-0"
                     />
                 </div>
                 <Button
@@ -254,10 +345,14 @@ function LeadForm({ compact = false }: { compact?: boolean }) {
                     disabled={status === "submitting"}
                     className="min-h-14 cursor-pointer rounded-md bg-[#55c768] px-7 text-base font-black text-[#10140e] transition hover:scale-[1.02] hover:bg-[#72d580] active:scale-[0.99] disabled:opacity-70 sm:text-lg md:min-w-[220px]"
                 >
-                    {status === "submitting" ? "Sending" : "Get fixed quote"}
+                    {status === "submitting" ? "Claiming" : "Claim 10% off"}
                     {status !== "submitting" && <ArrowRight className="size-7 stroke-[3]" />}
                 </Button>
             </div>
+
+            <p className="text-center text-xs font-black uppercase tracking-wide text-[#fff2b8]">
+                Claim before the timer ends to keep the 10% discount.
+            </p>
 
             <Turnstile
                 ref={turnstileRef}
@@ -345,14 +440,23 @@ function HeroSection() {
                     className="mt-5 max-w-[58ch] text-lg leading-7 text-white/82 sm:mt-6 sm:text-2xl sm:leading-9"
                 >
                     Quilliams clears the mess, prepares the base, fits membrane, edging and
-                    gravel, then takes the waste away. You get the price before anything starts.
+                    gravel, then takes the waste away. You get the price first, then most
+                    small front gardens are installed in 1-3 days once booked.
                 </motion.p>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 14 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.45, delay: 0.14 }}
+                >
+                    <WeeklyOfferCallout />
+                </motion.div>
 
                 <motion.div
                     id="hero-lead-form"
                     initial={{ opacity: 0, y: 18 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.45, delay: 0.16 }}
+                    transition={{ duration: 0.45, delay: 0.18 }}
                     className="mt-6 w-full max-w-5xl sm:mt-8"
                 >
                     <LeadForm />
@@ -364,7 +468,7 @@ function HeroSection() {
                     transition={{ duration: 0.45, delay: 0.24 }}
                     className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-medium text-white/65"
                 >
-                    <span>Free site visit, fixed quote, and clear install timeline.</span>
+                    <span>Free site visit + fixed quote</span>
                     <span className="inline-flex items-center gap-2">
                         <StarRating />
                         Google and Facebook proof
@@ -388,8 +492,15 @@ function ProofSection() {
                 <div>
                     <p className="text-sm font-black uppercase text-[#238845]">The offer</p>
                     <h2 className="mt-2 max-w-[12ch] text-4xl font-black leading-[0.94] sm:text-6xl">
-                        Free visit. Fixed price. Clean install.
+                        10% off gravel installs.
                     </h2>
+                    <p className="mt-4 max-w-[42ch] text-base font-semibold leading-7 text-[#3f4b3d]">
+                        Claim a free site visit before the offer window closes. Discount applies to installation labour on confirmed gravel garden projects, with a fixed quote before work starts.
+                    </p>
+                    <div className="mt-4 inline-flex items-center gap-2 rounded-md bg-[#10140e] px-3 py-2 text-sm font-black text-[#fff2b8]">
+                        <CalendarClock className="size-4 text-[#ffd34d]" />
+                        <WeeklyOfferCountdown />
+                    </div>
                 </div>
 
                 <div className="grid gap-3 sm:grid-cols-3">
@@ -459,7 +570,7 @@ function BeforeAfterSection() {
                         onClick={scrollToForm}
                         className="h-14 w-fit cursor-pointer rounded-md bg-[#55c768] px-7 text-lg font-black text-[#10140e] transition hover:scale-[1.02] hover:bg-[#72d580]"
                     >
-                        Get fixed quote
+                        Claim 10% off
                         <ArrowRight className="size-7 stroke-[3]" />
                     </Button>
                 </div>
@@ -628,11 +739,14 @@ function FinalCTA() {
             <div className="mx-auto flex max-w-7xl flex-col gap-5 px-4 sm:flex-row sm:items-center sm:justify-between">
                 <div>
                     <p className="text-sm font-black uppercase text-[#7ee18d]">
-                        Free site visit and fixed quote
+                        Current offer
                     </p>
                     <h2 className="mt-1 text-4xl font-black leading-[0.94] sm:text-5xl">
-                        Get the garden priced.
+                        Claim 10% off while the offer is live.
                     </h2>
+                    <p className="mt-2 max-w-[44ch] text-sm font-semibold text-white/68">
+                        Free site visit, fixed quote, then 10% off installation labour if the project is confirmed from this weekly offer.
+                    </p>
                 </div>
                 <div className="flex flex-col gap-3 sm:flex-row">
                     <Button
@@ -640,7 +754,7 @@ function FinalCTA() {
                         onClick={scrollToForm}
                         className="h-14 cursor-pointer rounded-md bg-[#55c768] px-8 text-lg font-black text-[#10140e] transition hover:scale-[1.02] hover:bg-[#72d580]"
                     >
-                        Get fixed quote
+                        Claim 10% off
                         <ArrowRight className="size-7 stroke-[3]" />
                     </Button>
                     <a
@@ -695,7 +809,7 @@ function StickyMobileCTA() {
                     onClick={scrollToForm}
                     className="h-12 cursor-pointer rounded-md bg-[#55c768] text-base font-black text-[#10140e] hover:bg-[#72d580]"
                 >
-                    Get fixed quote
+                    Claim 10% off
                     <ArrowRight className="size-5 stroke-[3]" />
                 </Button>
                 <a

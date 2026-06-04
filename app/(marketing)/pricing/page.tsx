@@ -6,6 +6,7 @@ import { PricingFAQ } from "./PricingFAQ";
 import { PricingGuide } from "./PricingGuide";
 import { PricingHero } from "./PricingHero";
 
+import { QuoteCtaBand } from "@/components/reusable/QuoteCtaBand";
 import { getPricingContent } from "@/lib/keystatic-reader";
 import { buildMetadata } from "@/lib/seo";
 import { FAQSchema } from "@/components/seo/FAQSchema";
@@ -16,7 +17,7 @@ const PRICING_OFFERS = [
     {
         serviceSlug: "lawn-care",
         name: "Lawn Mowing & Lawn Care",
-        description: "Weekly or fortnightly lawn mowing with clean edges, strimming, and a tidy finish across Newquay, Truro, St Austell and Cornwall.",
+        description: "Weekly or fortnightly lawn mowing with clean edges, strimming, and a tidy finish across Newquay, St Columb Major, Padstow and north Cornwall.",
         minPrice: 20,
         maxPrice: 50,
         priceDescription: "From £20 for a small lawn; £30 to £50 for an average-sized garden.",
@@ -93,6 +94,10 @@ export default async function PricingPage() {
             <PricingCalculator {...pricing.calculator} />
             <PricingBreakdown {...pricing.breakdown} />
             <PricingFAQ {...pricing.faq} />
+            <QuoteCtaBand
+                heading="Want a price for your exact garden?"
+                body="The prices above are guides. Send me a few details and I'll give you a clear, fixed quote, usually within 24 hours. No obligation."
+            />
         </main>
     );
 }

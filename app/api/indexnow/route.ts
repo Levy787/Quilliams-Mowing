@@ -14,7 +14,7 @@ export async function POST(request: Request) {
   const serviceSlugs = await listServiceSlugs();
   const projectSlugs = await listProjectSlugs();
   const blogSlugs = await listBlogSlugs();
-  const areaSlugs = Object.keys(areas);
+  const areaSlugs = Object.keys(areas).filter((slug) => !areas[slug].noindex);
 
   const urls = [
     SITE_URL,
