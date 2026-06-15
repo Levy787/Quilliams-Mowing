@@ -87,6 +87,10 @@
       "href": "/areas/newquay"
     },
     {
+      "label": "Gardening prices",
+      "href": "/pricing"
+    },
+    {
       "label": "Request planting advice",
       "href": "/quote"
     }

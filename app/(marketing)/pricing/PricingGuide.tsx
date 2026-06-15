@@ -1,3 +1,8 @@
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
+
 const priceRows = [
     {
         service: "Small lawn mowing",
@@ -60,6 +65,17 @@ export function PricingGuide() {
                     <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
                         As of May 2026, lawn mowing in Cornwall usually costs £20 to £30 for a small front lawn and £30 to £50 for an average garden. Regular maintenance visits normally start from about £60 because they include more than cutting grass: edging, strimming, weeding, pruning, clearing paths, and leaving the garden tidy. One-off tidy-ups usually start from £80, while hedge trimming is commonly £5 to £15 per metre depending on height and access. These figures are useful for planning, but the exact quote depends on garden size, current condition, slope, gate access, parking, and how much green waste needs removing. I price most jobs after seeing a few photos, then confirm what is included before work starts. That keeps the quote clear and avoids the common problem where a cheap starting price grows once the job is underway.
                     </p>
+                    <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+                        <Button asChild size="lg">
+                            <Link href="/quote">
+                                Get an exact quote
+                                <ArrowRight className="h-5 w-5" aria-hidden="true" />
+                            </Link>
+                        </Button>
+                        <Button asChild size="lg" variant="outline">
+                            <Link href="/services/lawn-care">View lawn mowing service</Link>
+                        </Button>
+                    </div>
                 </div>
 
                 <div className="mt-10 overflow-x-auto border-y border-border">

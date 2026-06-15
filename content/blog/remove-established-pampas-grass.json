@@ -72,6 +72,10 @@
       "href": "/services/seasonal-cleanup"
     },
     {
+      "label": "Gardening prices",
+      "href": "/pricing"
+    },
+    {
       "label": "Ask about removal",
       "href": "/quote"
     }

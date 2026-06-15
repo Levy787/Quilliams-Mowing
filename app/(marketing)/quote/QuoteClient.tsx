@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Image from "next/image";
-import { X, ChevronDown } from "lucide-react";
+import { X, ChevronDown, MessageCircle, Phone } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import { toast } from "sonner";
 
@@ -169,6 +169,10 @@ function CalculatorSummaryFields({
 const MAX_FILES = 5;
 const MAX_SINGLE_FILE_MB = 10;
 const WARN_TOTAL_MB = 20;
+const PHONE_TEL = "+447593121621";
+const PHONE_DISPLAY = "07593 121 621";
+const WHATSAPP_NUMBER = "447593121621";
+const WHATSAPP_MESSAGE = "Hi Levi, I found you on your website and would like a garden quote.";
 
 export function QuoteClient({
     header,
@@ -299,7 +303,7 @@ export function QuoteClient({
         const email = String(fd.get("email") ?? "").trim();
 
         if (!phone && !email) {
-            setContactError("Please provide a phone number or email so we can get back to you.");
+            setContactError("Please provide a phone number or email so I can get back to you.");
             setIsSubmitting(false);
             return;
         }
@@ -406,12 +410,40 @@ export function QuoteClient({
                         <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg leading-relaxed text-muted-foreground">
                             {header.description}
                         </p>
+                        <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+                            <a
+                                href={`tel:${PHONE_TEL}`}
+                                className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-lg border border-border bg-background px-4 py-3 text-sm font-semibold text-foreground transition-colors hover:border-primary hover:text-primary sm:w-auto"
+                                onClick={() => {
+                                    void capturePostHogEvent("click_phone", {
+                                        location: "quote_header",
+                                    });
+                                }}
+                            >
+                                <Phone className="h-5 w-5" aria-hidden="true" />
+                                Call {PHONE_DISPLAY}
+                            </a>
+                            <a
+                                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-lg border border-border bg-background px-4 py-3 text-sm font-semibold text-foreground transition-colors hover:border-primary hover:text-primary sm:w-auto"
+                                onClick={() => {
+                                    void capturePostHogEvent("click_whatsapp", {
+                                        location: "quote_header",
+                                    });
+                                }}
+                            >
+                                <MessageCircle className="h-5 w-5" aria-hidden="true" />
+                                WhatsApp photos
+                            </a>
+                        </div>
                     </div>
 
                     {/* Main grid */}
-                    <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8">
+                    <div className="mt-10 grid grid-cols-1 items-start gap-6 lg:grid-cols-2 lg:gap-8">
                         {/* What to expect */}
-                        <Card className="relative overflow-hidden rounded-4xl border-border bg-slate-900 text-background shadow-none dark:bg-background dark:text-foreground">
+                        <Card className="relative h-fit overflow-hidden rounded-4xl border-border bg-slate-900 text-background shadow-none dark:bg-background dark:text-foreground">
                             <div className="absolute inset-0 bg-[url('/patterns/pattern-1.png')] bg-repeat opacity-10 dark:opacity-5" />
                             <CardContent className="relative px-6">
                                 <div className="text-xl font-semibold text-background dark:text-foreground">{expect.title}</div>
@@ -440,7 +472,7 @@ export function QuoteClient({
                             <CardContent className="px-6">
                                 <div className="text-xl font-semibold text-foreground">{form.title}</div>
                                 <p className="mt-2 text-sm md:text-base leading-relaxed text-muted-foreground">
-                                    Just the basics, we&apos;ll handle the rest.
+                                    {form.description}
                                 </p>
 
                                 <form className="mt-6 space-y-5" onSubmit={onSubmit}>
@@ -455,22 +487,22 @@ export function QuoteClient({
 
                                     {/* Name */}
                                     <div className="space-y-2">
-                                        <Label htmlFor="name">Your Name *</Label>
+                                        <Label htmlFor="name">{form.fullNameLabel} *</Label>
                                         <Input id="name" name="name" autoComplete="name" required placeholder="John Smith" />
                                     </div>
 
                                     {/* Contact - at least one required */}
                                     <fieldset className="space-y-3">
                                         <legend className="text-sm font-medium text-foreground">
-                                            How should we reach you? <span className="text-muted-foreground font-normal">(one or both)</span>
+                                            Best contact method <span className="text-muted-foreground font-normal">(phone or email)</span>
                                         </legend>
                                         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                                             <div className="space-y-2">
-                                                <Label htmlFor="phone">Phone</Label>
+                                                <Label htmlFor="phone">{form.phoneLabel}</Label>
                                                 <Input id="phone" name="phone" type="tel" autoComplete="tel" placeholder="07XXX XXXXXX" />
                                             </div>
                                             <div className="space-y-2">
-                                                <Label htmlFor="email">Email</Label>
+                                                <Label htmlFor="email">{form.emailLabel}</Label>
                                                 <Input id="email" name="email" type="email" autoComplete="email" placeholder="you@example.com" />
                                             </div>
                                         </div>
@@ -479,12 +511,12 @@ export function QuoteClient({
 
                                     {/* Job details */}
                                     <div className="space-y-2">
-                                        <Label htmlFor="details">What do you need help with? *</Label>
+                                        <Label htmlFor="details">{form.jobDetailsLabel} *</Label>
                                         <Textarea
                                             id="details"
                                             name="details"
                                             required
-                                            placeholder="e.g., 'Lawn needs mowing weekly' or 'Hedges are overgrown and need cutting back'"
+                                            placeholder={form.jobDetailsPlaceholder}
                                             className="min-h-[100px]"
                                         />
                                     </div>
@@ -492,17 +524,22 @@ export function QuoteClient({
                                     {/* Response time indicator */}
                                     <p className="text-sm text-muted-foreground flex items-center gap-2">
                                         <span className="inline-block w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                                        We usually respond within 2-4 hours
+                                        I usually respond within 2-4 hours
                                     </p>
 
                                     {/* Optional fields toggle */}
                                     <button
                                         type="button"
                                         onClick={() => setShowOptional(!showOptional)}
-                                        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                                        className="flex min-h-12 w-full items-center justify-between gap-3 rounded-lg border border-border bg-muted/30 px-4 py-3 text-left text-sm font-medium text-foreground transition-colors hover:border-primary"
+                                        aria-expanded={showOptional}
                                     >
-                                        <ChevronDown className={`w-4 h-4 transition-transform ${showOptional ? 'rotate-180' : ''}`} />
-                                        {showOptional ? 'Hide' : 'Add'} optional details (address, photos, etc.)
+                                        <span>
+                                            {showOptional
+                                                ? "Hide optional details"
+                                                : "Add photos, postcode, service type or budget"}
+                                        </span>
+                                        <ChevronDown className={`h-4 w-4 shrink-0 transition-transform ${showOptional ? 'rotate-180' : ''}`} />
                                     </button>
 
                                     {/* Optional fields - collapsed by default */}
@@ -511,7 +548,7 @@ export function QuoteClient({
                                             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                                                 <div className="space-y-2">
                                                     <Label htmlFor="address">{form.addressLabel}</Label>
-                                                    <Input id="address" name="address" autoComplete="street-address" placeholder="Your street address" />
+                                                    <Input id="address" name="address" autoComplete="street-address" placeholder="Postcode or street address" />
                                                 </div>
                                                 <div className="space-y-2">
                                                     <Label>{form.serviceTypeLabel}</Label>
@@ -649,7 +686,7 @@ export function QuoteClient({
                                         <Button type="submit" size="lg" className="w-full sm:w-auto" disabled={isSubmitting}>
                                             {isSubmitting
                                                 ? form.submitLoadingLabel
-                                                : "Get My Free Quote →"}
+                                                : form.submitIdleLabel}
                                         </Button>
                                     </div>
                                 </form>

@@ -1,11 +1,11 @@
 {
   "slug": "lawn-care",
   "label": "Lawn Care",
-  "title": "Lawn Mowing & Lawn Care in Cornwall",
-  "description": "Lawn mowing and grass cutting across Newquay and Cornwall, from Truro and St Austell to Bodmin, Padstow, and Perranporth. I offer reliable fortnightly and weekly visits with clean edges, strimming, and a tidy finish as standard on every cut. Cornwall's mild coastal climate means lawns here grow almost year-round, so they benefit from consistent attention rather than the seasonal stop-start you get further up the country. Whether you have a small front lawn or a larger family garden, I will keep it looking its best. Prices start from £20 for a small lawn and £30 to £50 for an average-sized garden, with no hidden extras.",
+  "title": "Lawn Mowing & Lawn Care in Newquay & Cornwall",
+  "description": "Lawn mowing and grass cutting across Newquay and Cornwall, from Porth, Pentire and Crantock to Truro, St Austell, Wadebridge, Padstow and Perranporth. I offer reliable fortnightly and weekly visits with clean edges, strimming, and a tidy finish as standard on every cut. Cornwall's mild coastal climate means lawns here grow almost year-round, so they benefit from consistent attention rather than the seasonal stop-start you get further up the country. Whether you have a small front lawn, a holiday-let garden, or a larger family lawn, I will keep it looking its best. Prices start from £20 for a small lawn and £30 to £50 for an average-sized garden, with no hidden extras.",
   "seo": {
     "title": "Lawn Mowing & Lawn Care in Cornwall | Quilliams",
-    "description": "Reliable lawn mowing across Newquay, Truro, St Austell and Cornwall. Weekly or fortnightly visits, clean edges and a striped finish from £20."
+    "description": "Reliable lawn mowing in Newquay, Truro, St Austell, Wadebridge, Padstow and Cornwall. Weekly or fortnightly visits, clean edges and a tidy finish from £20."
   },
   "cardIcon": "Sprout",
   "hero": {
@@ -15,9 +15,10 @@
     "pattern": "pattern-1"
   },
   "trustChips": [
-    "Reliable schedule",
+    "Newquay local",
     "Clean edges",
-    "Tidy finish"
+    "Tidy finish",
+    "Photo quotes welcome"
   ],
   "ctas": {
     "primaryText": "Get a Quote",
@@ -65,7 +66,7 @@
   "plans": {
     "label": "Your lawn, your schedule",
     "title": "Choose a rhythm that suits your garden",
-    "description": "Most of my lawn care customers in Cornwall go fortnightly from March through to October, then drop to monthly over winter. Weekly visits suit lawns that need a consistently sharp look, while one-off cuts are ideal before events, viewings, or when the grass has simply got away from you. I will recommend the right schedule based on your lawn size and how fast it grows.",
+    "description": "Most of my lawn care customers around Newquay and north Cornwall go fortnightly from March through to October, then drop to monthly over winter. Weekly visits suit lawns that need a consistently sharp look, while one-off cuts are ideal before guests, viewings, holiday-let changeovers, or when the grass has simply got away from you. I will recommend the right schedule based on your lawn size, access, and how fast it grows.",
     "cards": [
       {
         "title": "Weekly maintenance",
@@ -151,7 +152,7 @@
   "valueBand": {
     "label": "Value",
     "title": "A lawn that looks good week after week",
-    "description": "Consistency is what makes lawn care feel effortless. I turn up on the same day each cycle, cut to the right height for the time of year, and leave clean edges every time. If rain shifts the schedule, I will let you know and rebook promptly. You should not have to chase your gardener or wonder when the next visit is.",
+    "description": "Consistency is what makes lawn care feel effortless. I turn up on the same day each cycle, cut to the right height for the time of year, and leave clean edges every time. If rain shifts the schedule, I will let you know and rebook promptly. For Newquay, Porth, Pentire, St Columb Major, Padstow, Wadebridge and nearby villages, I group visits efficiently so you are not left wondering when the next cut is.",
     "bullets": [
       {
         "title": "Consistent visits",
