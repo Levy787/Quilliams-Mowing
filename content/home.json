@@ -34,7 +34,7 @@
                 "tone": "normal"
             }
         ],
-        "subheading": "From weekly mowing and garden maintenance to full yard clean-ups and landscape improvements, I deliver stress-free, dependable care that keeps your outdoor space beautiful, functional, and something you can be properly proud of.",
+        "subheading": "Local garden care from Trevarrian near Newquay, covering Newquay, Porth, Pentire, St Austell, Truro, Wadebridge and Padstow. From weekly mowing and garden maintenance to full tidy-ups and practical landscaping, I keep outdoor spaces clean, usable and easy to enjoy.",
         "primaryCtaLabel": "Get a Free Quote Today",
         "primaryCtaHref": "/quote",
         "secondaryCtaLabel": "Contact Us",
@@ -179,17 +179,18 @@
     "serviceArea": {
         "badge": "Service area",
         "heading": "Newquay and nearby areas",
-        "body": "I cover Newquay and nearby areas. If you’re close by, reach out and I’ll confirm availability quickly.",
+        "body": "I am based in Trevarrian, just outside Newquay, and regularly work across Porth, Pentire, Crantock, St Columb Major, Padstow, Wadebridge, St Austell, Truro, Perranporth and the nearby north Cornwall villages. Send your postcode and a few photos and I will confirm whether I can help.",
         "chips": [
-            "Fast response times",
-            "Local, reliable service",
-            "Clear quotes upfront"
+            "Newquay-based",
+            "Photos accepted for quotes",
+            "Clear prices before booking",
+            "Licensed waste carrier"
         ],
         "primaryCtaLabel": "Get a Free Quote Today",
         "primaryCtaHref": "/quote",
         "secondaryCtaLabel": "Contact Us",
         "secondaryCtaHref": "/contact",
-        "footnote": "Not sure if you’re in range? Send your postcode in the quote form.",
+        "footnote": "Not sure if you’re in range? Send your postcode in the quote form and I’ll confirm availability, usually the same day.",
         "map": {
             "centerLat": 50.4772,
             "centerLng": -4.9836,

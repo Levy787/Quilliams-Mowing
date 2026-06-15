@@ -67,6 +67,10 @@
       "href": "/services/garden-maintenance"
     },
     {
+      "label": "Gardening prices",
+      "href": "/pricing"
+    },
+    {
       "label": "Get a quote",
       "href": "/quote"
     }

@@ -75,6 +75,10 @@ export default async function BlogPostPage({
         question: faq.question,
         answer: faq.answer,
     }));
+    const primaryHeroCta =
+        slug === "best-gardeners-newquay"
+            ? "Get a Newquay gardener quote"
+            : "Get a quote";
 
     return (
         <main className="min-h-screen bg-background">
@@ -147,6 +151,17 @@ export default async function BlogPostPage({
                                             <Clock className="size-4" aria-hidden="true" />
                                             {post.readingTime}
                                         </span>
+                                    </div>
+                                    <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+                                        <Button asChild size="lg">
+                                            <Link href="/quote">
+                                                {primaryHeroCta}
+                                                <ArrowRight className="size-4" aria-hidden="true" />
+                                            </Link>
+                                        </Button>
+                                        <Button asChild variant="secondary" size="lg">
+                                            <Link href="/pricing">View prices</Link>
+                                        </Button>
                                     </div>
                                 </div>
                             </div>

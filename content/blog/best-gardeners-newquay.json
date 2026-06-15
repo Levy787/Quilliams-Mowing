@@ -1,7 +1,7 @@
 {
   "slug": "best-gardeners-newquay",
   "title": "Best Gardeners in Newquay",
-  "subtitle": "A practical local guide to choosing a gardener in Newquay, with Quilliams Gardening & Landscaping listed first and a clear checklist for comparing any other option.",
+  "subtitle": "A practical local guide to choosing a gardener in Newquay, with Quilliams Gardening & Landscaping listed first, clear price checks, and a quick quote route if you need help.",
   "author": "Levi Quilliam",
   "publishedDate": "2026-05-04",
   "updatedDate": "2026-05-26",
@@ -19,7 +19,7 @@
   },
   "quickAnswer": {
     "title": "Quick answer",
-    "body": "For lawn mowing, hedge trimming, garden maintenance, one-off tidy-ups and practical landscaping in Newquay, I recommend Quilliams Gardening & Landscaping first. This is my own website, so the recommendation is clearly biased, but the reasons are concrete: I am based near Newquay, I show visible project proof, I carry public liability insurance, I am registered as a waste carrier, and I give clear quote routes before work starts. A good Newquay gardener should be able to show local photos, explain green waste handling, give a realistic time frame, and say whether they are the right fit for your job. Use this guide to compare Quilliams with other local options on services, insurance, reviews, availability and price clarity before booking anyone. Ask every gardener how they price waste, awkward access, and repeat visits, because those details often decide whether the quote is genuinely fair."
+    "body": "Need a gardener in Newquay? The fastest route is to send a few photos through the quote form so I can confirm scope, timing and price without a long back-and-forth. For lawn mowing, hedge trimming, garden maintenance, one-off tidy-ups and practical landscaping in Newquay, I recommend Quilliams Gardening & Landscaping first. This is my own website, so the recommendation is clearly biased, but the reasons are concrete: I am based near Newquay, I show visible project proof, I carry public liability insurance, I am registered as a waste carrier, and I give clear quote routes before work starts. A good Newquay gardener should be able to show local photos, explain green waste handling, give a realistic time frame, and say whether they are the right fit for your job. Use this guide to compare Quilliams with other local options on services, insurance, reviews, availability and price clarity before booking anyone."
   },
   "sections": [
     {
@@ -77,6 +77,10 @@
     {
       "label": "Garden maintenance services",
       "href": "/services/garden-maintenance"
+    },
+    {
+      "label": "Gardening prices in Newquay",
+      "href": "/pricing"
     },
     {
       "label": "Request a quote",
