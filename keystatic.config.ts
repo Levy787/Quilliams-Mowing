@@ -450,6 +450,51 @@ export const keystaticConfig = config({
             bullets: fields.array(fields.text({ label: "Bullet" }), {
               label: "Bullets",
             }),
+            blocks: fields.array(
+              fields.object({
+                kind: fields.select({
+                  label: "Block type",
+                  options: [
+                    { label: "Callout", value: "callout" },
+                    { label: "Table", value: "table" },
+                    { label: "Image grid", value: "imageGrid" },
+                  ] as const,
+                  defaultValue: "callout",
+                }),
+                title: fields.text({ label: "Title" }),
+                description: fields.text({
+                  label: "Description",
+                  multiline: true,
+                }),
+                body: fields.text({ label: "Body", multiline: true }),
+                bullets: fields.array(fields.text({ label: "Bullet" }), {
+                  label: "Bullets",
+                }),
+                columns: fields.array(fields.text({ label: "Column" }), {
+                  label: "Table columns",
+                }),
+                rows: fields.array(
+                  fields.object({
+                    cells: fields.array(fields.text({ label: "Cell" }), {
+                      label: "Cells",
+                    }),
+                  }),
+                  { label: "Table rows" },
+                ),
+                images: fields.array(
+                  fields.object({
+                    src: fields.text({ label: "Image src" }),
+                    alt: fields.text({ label: "Image alt" }),
+                    caption: fields.text({
+                      label: "Caption",
+                      multiline: true,
+                    }),
+                  }),
+                  { label: "Images" },
+                ),
+              }),
+              { label: "Rich blocks" },
+            ),
           }),
           { label: "Sections" },
         ),

@@ -520,7 +520,7 @@ export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> 
             ogImage: entry.seo.ogImage || undefined,
         },
         quickAnswer: entry.quickAnswer,
-        sections: entry.sections,
+        sections: entry.sections as BlogPost["sections"],
         relatedLinks: entry.relatedLinks,
         itemList: entry.itemList?.name?.trim()
             ? {

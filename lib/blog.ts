@@ -3,7 +3,33 @@ export type BlogSection = {
     title: string;
     body: string;
     bullets?: readonly string[];
+    blocks?: readonly BlogBlock[];
 };
+
+export type BlogBlock =
+    | {
+        kind: "callout";
+        title: string;
+        body: string;
+        bullets?: readonly string[];
+    }
+    | {
+        kind: "table";
+        title: string;
+        description?: string;
+        columns: readonly string[];
+        rows: readonly { cells: readonly string[] }[];
+    }
+    | {
+        kind: "imageGrid";
+        title: string;
+        description?: string;
+        images: readonly {
+            src: string;
+            alt: string;
+            caption?: string;
+        }[];
+    };
 
 export type BlogRelatedLink = {
     label: string;

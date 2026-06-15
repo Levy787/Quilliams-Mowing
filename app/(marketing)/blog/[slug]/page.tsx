@@ -11,6 +11,7 @@ import { ItemListSchema } from "@/components/seo/ItemListSchema";
 import { Button } from "@/components/ui/button";
 import { QuoteCtaBand } from "@/components/reusable/QuoteCtaBand";
 import { getBlogPostBySlug, listBlogSlugs } from "@/lib/keystatic-reader";
+import type { BlogBlock } from "@/lib/blog";
 import { buildMetadata } from "@/lib/seo";
 
 const SITE_URL = "https://quilliamsmowing.co.uk";
@@ -42,6 +43,27 @@ function wordCount(text: string): number {
     return text.match(/\b[\w']+\b/g)?.length ?? 0;
 }
 
+function blockWordParts(block: BlogBlock): string[] {
+    if (block.kind === "callout") {
+        return [block.title, block.body, ...(block.bullets ?? [])];
+    }
+
+    if (block.kind === "table") {
+        return [
+            block.title,
+            block.description ?? "",
+            ...block.columns,
+            ...block.rows.flatMap((row) => row.cells),
+        ];
+    }
+
+    return [
+        block.title,
+        block.description ?? "",
+        ...block.images.flatMap((image) => [image.alt, image.caption ?? ""]),
+    ];
+}
+
 function postWordCount(post: NonNullable<Awaited<ReturnType<typeof getBlogPostBySlug>>>): number {
     return wordCount([
         post.title,
@@ -51,6 +73,7 @@ function postWordCount(post: NonNullable<Awaited<ReturnType<typeof getBlogPostBy
             section.title,
             section.body,
             ...(section.bullets ?? []),
+            ...(section.blocks ?? []).flatMap(blockWordParts),
         ]),
         ...post.faqs.flatMap((faq) => [faq.question, faq.answer]),
     ].join(" "));
@@ -58,6 +81,101 @@ function postWordCount(post: NonNullable<Awaited<ReturnType<typeof getBlogPostBy
 
 function paragraphs(text: string) {
     return text.split(/\n\n+/g).filter(Boolean);
+}
+
+function BlogRichBlock({ block }: { block: BlogBlock }) {
+    if (block.kind === "callout") {
+        return (
+            <aside className="mt-6 rounded-3xl border border-primary/20 bg-primary/5 p-5 md:p-6">
+                <h3 className="text-lg font-semibold tracking-tight">{block.title}</h3>
+                {block.body ? (
+                    <p className="mt-2 leading-relaxed text-muted-foreground">{block.body}</p>
+                ) : null}
+                {block.bullets?.length ? (
+                    <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed text-muted-foreground">
+                        {block.bullets.map((bullet) => (
+                            <li key={bullet}>{bullet}</li>
+                        ))}
+                    </ul>
+                ) : null}
+            </aside>
+        );
+    }
+
+    if (block.kind === "table") {
+        return (
+            <div className="mt-6">
+                <div className="mb-3">
+                    <h3 className="text-lg font-semibold tracking-tight">{block.title}</h3>
+                    {block.description ? (
+                        <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                            {block.description}
+                        </p>
+                    ) : null}
+                </div>
+                <div className="overflow-x-auto rounded-2xl border">
+                    <table className="w-full min-w-[680px] border-collapse text-left text-sm">
+                        <thead className="bg-muted/60 text-foreground">
+                            <tr>
+                                {block.columns.map((column) => (
+                                    <th key={column} className="border-b px-4 py-3 font-semibold">
+                                        {column}
+                                    </th>
+                                ))}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {block.rows.map((row, rowIndex) => (
+                                <tr key={`${block.title}-${rowIndex}`} className="border-b last:border-b-0">
+                                    {block.columns.map((column, cellIndex) => (
+                                        <td
+                                            key={`${column}-${cellIndex}`}
+                                            className="align-top px-4 py-3 text-muted-foreground"
+                                        >
+                                            {row.cells[cellIndex] ?? ""}
+                                        </td>
+                                    ))}
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        );
+    }
+
+    return (
+        <figure className="mt-6">
+            <div className="mb-3">
+                <h3 className="text-lg font-semibold tracking-tight">{block.title}</h3>
+                {block.description ? (
+                    <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                        {block.description}
+                    </p>
+                ) : null}
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+                {block.images.map((image) => (
+                    <div key={image.src} className="overflow-hidden rounded-3xl border bg-muted/20">
+                        <div className="relative aspect-[4/3]">
+                            <Image
+                                src={image.src}
+                                alt={image.alt}
+                                fill
+                                className="object-cover"
+                                sizes="(min-width: 768px) 420px, 100vw"
+                            />
+                        </div>
+                        {image.caption ? (
+                            <figcaption className="px-4 py-3 text-sm leading-relaxed text-muted-foreground">
+                                {image.caption}
+                            </figcaption>
+                        ) : null}
+                    </div>
+                ))}
+            </div>
+        </figure>
+    );
 }
 
 export default async function BlogPostPage({
@@ -224,6 +342,16 @@ export default async function BlogPostPage({
                                             <li key={bullet}>{bullet}</li>
                                         ))}
                                     </ul>
+                                ) : null}
+                                {section.blocks?.length ? (
+                                    <div>
+                                        {section.blocks.map((block, index) => (
+                                            <BlogRichBlock
+                                                key={`${section.id}-${block.kind}-${index}`}
+                                                block={block}
+                                            />
+                                        ))}
+                                    </div>
                                 ) : null}
                             </section>
                         ))}
