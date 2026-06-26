@@ -5,6 +5,7 @@ import "./globals.css";
 
 import { getSiteContent } from "@/lib/keystatic-reader";
 import { PostHogClientInit } from "@/components/PostHogClientInit";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -100,6 +101,7 @@ export default function RootLayout({
             strategy="afterInteractive"
           />
         ) : null}
+        <GoogleAnalytics />
         <PostHogClientInit />
         {children}
       </body>
