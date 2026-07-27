@@ -82,6 +82,18 @@ const nextConfig: NextConfig = {
   
   async redirects() {
     return [
+      // Keep the apex domain canonical while both hostnames serve production.
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "www.quilliamsmowing.co.uk",
+          },
+        ],
+        destination: "https://quilliamsmowing.co.uk/:path*",
+        permanent: true,
+      },
       // Renamed page: /sitemap → /site-map (avoid conflict with sitemap.xml)
       {
         source: "/sitemap",
