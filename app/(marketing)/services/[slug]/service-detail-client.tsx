@@ -34,6 +34,7 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion";
+import { QuoteActionStrip } from "@/components/reusable/QuoteActionStrip";
 import type {
     IconName,
     PatternName,
@@ -201,6 +202,11 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                     </div>
                 </div>
             </section>
+
+            <QuoteActionStrip
+                heading={`Need a ${service.label.toLowerCase()} quote?`}
+                body="Send a short note, your contact details, and photos if you have them. Levi will price it clearly."
+            />
 
             {/* What's included */}
             <section className="mx-4 md:mx-8 lg:mx-16 py-12 md:py-16">

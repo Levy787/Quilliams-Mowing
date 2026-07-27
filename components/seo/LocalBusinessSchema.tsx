@@ -15,6 +15,8 @@ const COMPANIES_HOUSE_URL = "https://find-and-update.company-information.service
 const WASTE_CARRIER_REGISTER_URL =
   "https://environment.data.gov.uk/public-register/waste-carriers-brokers/registration/CBDL582202?__pageState=result-waste-carriers-brokers";
 const PERSON_ID = "https://quilliamsmowing.co.uk/about#levi";
+const BUSINESS_LATITUDE = 50.4772;
+const BUSINESS_LONGITUDE = -4.9836;
 const DEFAULT_AREA_SERVED = [
   ...Object.values(areas)
     .filter((area) => !area.noindex)
@@ -38,7 +40,7 @@ function areaToSchema(area: string) {
 
 export function LocalBusinessSchema({
   name = "Quilliams Gardening & Landscaping",
-  description = "Professional gardening, landscaping, lawn mowing, hedge trimming and garden maintenance services in Newquay, St Columb Major, Padstow, Wadebridge and across north Cornwall.",
+  description = "Professional gardening, landscaping, lawn mowing, hedge trimming and garden maintenance from Trevarrian near Newquay, serving Padstow, Wadebridge and north Cornwall.",
   telephone = "+447593121621",
   email = "levi@quilliamsmowing.co.uk",
   url = "https://quilliamsmowing.co.uk",
@@ -82,30 +84,22 @@ export function LocalBusinessSchema({
         url: WASTE_CARRIER_REGISTER_URL,
       },
     ],
-    image: `${url}/images/uploads/site/branding/logoFile.webp`,
-    logo: `${url}/images/uploads/site/branding/logoFile.webp`,
+    image: `${url}/images/uploads/site/og-image.png?v=20260504`,
+    logo: `${url}/images/uploads/site/assets/androidChrome512PngFile.png`,
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Newquay",
+      addressLocality: "Trevarrian",
       addressRegion: "Cornwall",
       postalCode: "TR8",
       addressCountry: "GB",
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: "50.41200",
-      longitude: "-5.07570",
+      latitude: BUSINESS_LATITUDE,
+      longitude: BUSINESS_LONGITUDE,
     },
+    hasMap: GOOGLE_BUSINESS_PROFILE_URL,
     areaServed: areaServed.map(areaToSchema),
-    serviceArea: {
-      "@type": "GeoCircle",
-      geoMidpoint: {
-        "@type": "GeoCoordinates",
-        latitude: "50.41200",
-        longitude: "-5.07570",
-      },
-      geoRadius: "40000",
-    },
     serviceType: [
       "Lawn Mowing",
       "Hedge Trimming",
@@ -114,6 +108,14 @@ export function LocalBusinessSchema({
       "Garden Cleanup",
       "Weed Control",
     ],
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone,
+      email,
+      contactType: "customer service",
+      areaServed: "GB",
+      availableLanguage: "English",
+    },
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",

@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "posthog_quilliams_mowing": {
+      "type": "http",
+      "url": "https://mcp.posthog.com/mcp",
+      "headers": {
+        "x-posthog-organization-id": "019b6f04-794e-0000-de60-f43b3d76b96e",
+        "x-posthog-project-id": "111836",
+        "x-posthog-read-only": "true",
+        "x-posthog-mcp-mode": "cli"
+      }
+    }
+  }
+}

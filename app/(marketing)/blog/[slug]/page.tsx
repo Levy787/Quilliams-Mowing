@@ -9,6 +9,7 @@ import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { FAQSchema } from "@/components/seo/FAQSchema";
 import { ItemListSchema } from "@/components/seo/ItemListSchema";
 import { Button } from "@/components/ui/button";
+import { QuoteActionStrip } from "@/components/reusable/QuoteActionStrip";
 import { QuoteCtaBand } from "@/components/reusable/QuoteCtaBand";
 import { getBlogPostBySlug, listBlogSlugs } from "@/lib/keystatic-reader";
 import type { BlogBlock } from "@/lib/blog";
@@ -286,6 +287,12 @@ export default async function BlogPostPage({
                         </div>
                     </div>
                 </section>
+
+                <QuoteActionStrip
+                    heading="Want this handled for you?"
+                    body="If the job sounds bigger than a quick tidy, send the details and Levi will quote it."
+                    className="pb-0"
+                />
 
                 <div className="container mx-auto max-w-5xl px-4 py-12 lg:px-12">
                     <section className="grid gap-8 border-b pb-12 lg:grid-cols-[minmax(0,1.35fr)_minmax(260px,0.65fr)]">

@@ -2,7 +2,8 @@
 
 import * as React from "react";
 import Image from "next/image";
-import { ShieldCheck, Star, ThumbsUp } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, ShieldCheck, Star, ThumbsUp } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { useRevealInView } from "@/hooks/use-reveal-in-view";
@@ -130,6 +131,19 @@ export function AboutUs({
                         >
                             {renderBodyWithParagraphBreaks(body)}
                         </p>
+
+                        <Link
+                            href="/about"
+                            className={cn(
+                                "mt-6 inline-flex min-h-12 items-center gap-2 font-semibold text-primary underline-offset-4 hover:underline",
+                                revealClassName,
+                                inView ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0",
+                            )}
+                            style={revealStyle(125)}
+                        >
+                            Meet Levi Quilliam
+                            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                        </Link>
 
                         <div
                             className={cn("mt-8 border-t border-border transition-opacity duration-700 motion-reduce:transition-none", inView ? "opacity-100" : "opacity-0")}

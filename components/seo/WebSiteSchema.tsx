@@ -3,8 +3,14 @@ export function WebSiteSchema() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": "https://quilliamsmowing.co.uk/#website",
-    name: "Quilliams Gardening & Landscaping",
-    url: "https://quilliamsmowing.co.uk",
+    name: "Quilliams",
+    alternateName: [
+      "Quilliams Gardening & Landscaping",
+      "Quilliams Mowing",
+      "quilliamsmowing.co.uk",
+    ],
+    url: "https://quilliamsmowing.co.uk/",
+    inLanguage: "en-GB",
     publisher: {
       "@id": "https://quilliamsmowing.co.uk/#business",
     },

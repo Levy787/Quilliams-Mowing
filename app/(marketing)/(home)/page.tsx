@@ -13,12 +13,14 @@ import {
     DeferredTestimonials,
 } from "./DeferredHomeSections";
 import { TrustBar } from "@/components/TrustBar";
+import { QuoteActionStrip } from "@/components/reusable/QuoteActionStrip";
 
 import { getHomeContent } from "@/lib/keystatic-reader";
 import { buildMetadata } from "@/lib/seo";
 import { ReviewSchema } from "@/components/seo/ReviewSchema";
 import { FAQSchema } from "@/components/seo/FAQSchema";
 import { WebPageSchema } from "@/components/seo/WebPageSchema";
+import { PrimarySitelinks } from "@/components/seo/PrimarySitelinks";
 
 export async function generateMetadata(): Promise<Metadata> {
     const home = await getHomeContent();
@@ -59,6 +61,11 @@ export default async function Home() {
             <FAQSchema items={faqItems} />
             <Hero {...home.hero} />
             <TrustBar />
+            <QuoteActionStrip
+                heading="Need a garden quote this week?"
+                body="Send a few details or call Levi. Photos are helpful, but a short note is enough to start."
+            />
+            <PrimarySitelinks />
             <Stats items={home.stats} />
             <AboutUs {...home.about} />
             <Services {...home.services} />

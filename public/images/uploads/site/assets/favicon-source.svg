@@ -1,0 +1,24 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 512 512"
+  role="img"
+  aria-labelledby="title"
+>
+  <title id="title">Quilliams Q brand mark</title>
+  <rect width="512" height="512" rx="112" fill="#147F3C" />
+  <circle
+    cx="236"
+    cy="232"
+    r="122"
+    fill="none"
+    stroke="#FFFFFF"
+    stroke-width="58"
+  />
+  <path
+    d="M315 315L405 405"
+    fill="none"
+    stroke="#FFFFFF"
+    stroke-linecap="round"
+    stroke-width="58"
+  />
+</svg>

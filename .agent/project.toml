@@ -1,0 +1,30 @@
+schema_version = 1
+slug = "quilliams-mowing"
+name = "Quilliams Mowing"
+production_url = "https://quilliamsmowing.co.uk"
+
+[repository]
+provider = "github"
+owner = "Levy787"
+name = "Quilliams-Mowing"
+remote = "git@github.com:Levy787/Quilliams-Mowing.git"
+
+[google]
+search_console_property = "sc-domain:quilliamsmowing.co.uk"
+analytics_property_id = "501971583"
+analytics_measurement_id = "G-0W4NCH9D70"
+
+[posthog]
+region = "eu"
+organization_name = "Quilliams Gardening & Landscaping"
+organization_id = "019b6f04-794e-0000-de60-f43b3d76b96e"
+project_name = "Quilliams Mowing"
+project_id = "111836"
+mcp_server = "posthog_quilliams_mowing"
+
+[deployment]
+provider = "vercel"
+
+[access_policy]
+external_services = "read-only-by-default"
+production_changes = "explicit-user-request"

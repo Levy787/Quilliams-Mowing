@@ -48,8 +48,13 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     manifest: "/manifest.webmanifest",
     icons: {
-      icon: favicon ? [{ url: favicon, type: "image/png" }] : undefined,
-      apple: appleTouch ? [{ url: appleTouch, type: "image/png" }] : undefined,
+      icon: favicon
+        ? [{ url: favicon, type: "image/png", sizes: "96x96" }]
+        : undefined,
+      shortcut: [{ url: "/favicon.ico", type: "image/x-icon" }],
+      apple: appleTouch
+        ? [{ url: appleTouch, type: "image/png", sizes: "180x180" }]
+        : undefined,
       other:
         safariPinnedTab && themeColor
           ? [

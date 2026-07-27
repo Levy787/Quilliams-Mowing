@@ -1,7 +1,7 @@
 {
     "seo": {
         "title": "Lawn Mowing & Gardening in Newquay, Cornwall | Quilliams",
-        "description": "Lawn mowing, hedge trimming, landscaping & garden maintenance in Newquay, Truro & Cornwall. 5-star rated, 120+ projects. Get a free quote today."
+        "description": "Lawn mowing, hedge trimming, landscaping and garden maintenance across Newquay and north Cornwall. Fully insured, 5-star rated, with free quotes today."
     },
     "hero": {
         "headlineParts": [
@@ -116,7 +116,7 @@
     },
     "services": {
         "badge": "Services",
-        "heading": "Exclusive Services",
+        "heading": "Gardening Services in Newquay & Cornwall",
         "ctaLabel": "More Services",
         "ctaHref": "/services",
         "items": [
@@ -194,26 +194,41 @@
         "map": {
             "centerLat": 50.4772,
             "centerLng": -4.9836,
-            "zoom": 10,
+            "zoom": 9,
             "circleLat": 50.4772,
             "circleLng": -4.9836,
-            "circleRadiusMeters": 12875
+            "circleRadiusMeters": 40000
         },
         "mapLabels": [
             {
-                "text": "St Eval",
-                "leftPercent": 50,
-                "topPercent": 44
+                "text": "Perranporth",
+                "leftPercent": 18,
+                "topPercent": 72
             },
             {
                 "text": "Newquay",
-                "leftPercent": 36,
-                "topPercent": 78
+                "leftPercent": 35,
+                "topPercent": 58
             },
             {
                 "text": "Padstow",
-                "leftPercent": 63,
+                "leftPercent": 68,
                 "topPercent": 24
+            },
+            {
+                "text": "St Columb Major",
+                "leftPercent": 58,
+                "topPercent": 47
+            },
+            {
+                "text": "Wadebridge",
+                "leftPercent": 79,
+                "topPercent": 39
+            },
+            {
+                "text": "St Agnes",
+                "leftPercent": 14,
+                "topPercent": 57
             }
         ]
     },

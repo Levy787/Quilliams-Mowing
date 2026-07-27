@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">Device performance opportunity</title>
+  <desc id="desc">Desktop produces 2487 impressions at 0.64 percent click through rate. Mobile produces 1037 impressions at 3.47 percent. Tablet produces 46 impressions at 6.52 percent.</desc>
+  <rect width="1200" height="620" rx="28" fill="#f5f8f5"/>
+  <text x="60" y="70" font-family="Helvetica, Arial, sans-serif" font-size="30" font-weight="700" fill="#12372a">Desktop has reach, but weak capture</text>
+  <text x="60" y="108" font-family="Helvetica, Arial, sans-serif" font-size="18" fill="#52645c">Impressions and CTR by device, 27 June to 24 July 2026</text>
+
+  <rect x="50" y="150" width="535" height="410" rx="20" fill="#ffffff" stroke="#d7e3dc"/>
+  <text x="85" y="200" font-family="Helvetica, Arial, sans-serif" font-size="23" font-weight="700" fill="#12372a">Impressions</text>
+  <text x="85" y="260" font-family="Helvetica, Arial, sans-serif" font-size="18" fill="#52645c">Desktop</text>
+  <rect x="185" y="233" width="345" height="34" rx="8" fill="#08783f"/>
+  <text x="515" y="257" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#ffffff">2,487</text>
+  <text x="85" y="345" font-family="Helvetica, Arial, sans-serif" font-size="18" fill="#52645c">Mobile</text>
+  <rect x="185" y="318" width="144" height="34" rx="8" fill="#57a873"/>
+  <text x="314" y="342" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#ffffff">1,037</text>
+  <text x="85" y="430" font-family="Helvetica, Arial, sans-serif" font-size="18" fill="#52645c">Tablet</text>
+  <rect x="185" y="403" width="18" height="34" rx="8" fill="#a9cbb7"/>
+  <text x="220" y="427" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#52645c">46</text>
+  <text x="85" y="515" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#52645c">Desktop accounts for 69.7% of impressions.</text>
+
+  <rect x="615" y="150" width="535" height="410" rx="20" fill="#ffffff" stroke="#d7e3dc"/>
+  <text x="650" y="200" font-family="Helvetica, Arial, sans-serif" font-size="23" font-weight="700" fill="#12372a">Click-through rate</text>
+  <text x="650" y="260" font-family="Helvetica, Arial, sans-serif" font-size="18" fill="#52645c">Desktop</text>
+  <rect x="750" y="233" width="36" height="34" rx="8" fill="#a9cbb7"/>
+  <text x="800" y="257" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#52645c">0.64%</text>
+  <text x="650" y="345" font-family="Helvetica, Arial, sans-serif" font-size="18" fill="#52645c">Mobile</text>
+  <rect x="750" y="318" width="194" height="34" rx="8" fill="#57a873"/>
+  <text x="930" y="342" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#ffffff">3.47%</text>
+  <text x="650" y="430" font-family="Helvetica, Arial, sans-serif" font-size="18" fill="#52645c">Tablet</text>
+  <rect x="750" y="403" width="365" height="34" rx="8" fill="#08783f"/>
+  <text x="1100" y="427" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#ffffff">6.52%</text>
+  <text x="650" y="515" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#52645c">Priority: improve desktop ranking and snippet relevance.</text>
+</svg>

@@ -19,7 +19,10 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Turnstile, type TurnstileHandle } from "@/components/TurnstileWidget";
-import { capturePostHogEvent } from "@/lib/posthog-client";
+import {
+    capturePostHogEvent,
+    type PostHogEventProperties,
+} from "@/lib/posthog-client";
 
 type PreviewItem = {
     id: string;
@@ -51,6 +54,39 @@ function parseNumberParam(value: string | null) {
     if (!value) return null;
     const n = Number(value);
     return Number.isFinite(n) ? n : null;
+}
+
+function buildQuoteTrackingProperties({
+    fd,
+    service,
+    timeframe,
+    budget,
+    fileCount,
+    isTurnstileEnabled,
+    hasTurnstileToken,
+}: {
+    fd: FormData;
+    service: string;
+    timeframe: string;
+    budget: string;
+    fileCount: number;
+    isTurnstileEnabled: boolean;
+    hasTurnstileToken: boolean;
+}): PostHogEventProperties {
+    return {
+        source: "quote",
+        serviceType: service || null,
+        timeframe: timeframe || null,
+        budget: budget || null,
+        fileCount,
+        hasCalculatorSummary: Boolean(
+            String(fd.get("calculatorSummary") ?? "").trim(),
+        ),
+        turnstileEnabled: isTurnstileEnabled,
+        hasTurnstileToken,
+        hasEmail: Boolean(String(fd.get("email") ?? "").trim()),
+        hasPhone: Boolean(String(fd.get("phone") ?? "").trim()),
+    };
 }
 
 export type QuoteClientProps = {
@@ -301,10 +337,26 @@ export function QuoteClient({
 
         const phone = String(fd.get("phone") ?? "").trim();
         const email = String(fd.get("email") ?? "").trim();
+        const trackingProperties = buildQuoteTrackingProperties({
+            fd,
+            service,
+            timeframe,
+            budget,
+            fileCount: files.length,
+            isTurnstileEnabled,
+            hasTurnstileToken: Boolean(turnstileToken),
+        });
+
+        void capturePostHogEvent("quote_submit_attempt", trackingProperties);
 
         if (!phone && !email) {
             setContactError("Please provide a phone number or email so I can get back to you.");
             setIsSubmitting(false);
+            void capturePostHogEvent("quote_submit_failed", {
+                ...trackingProperties,
+                failureStage: "client_validation",
+                error: "missing_contact",
+            });
             return;
         }
 
@@ -365,6 +417,16 @@ export function QuoteClient({
                 setIsSubmitting(false);
                 setTurnstileToken("");
                 turnstileRef.current?.reset();
+                void capturePostHogEvent("quote_submit_failed", {
+                    ...trackingProperties,
+                    failureStage: "api_response",
+                    status: res.status,
+                    error: message,
+                    turnstileErrorCodes:
+                        json && "turnstileErrorCodes" in json
+                            ? json.turnstileErrorCodes ?? null
+                            : null,
+                });
                 return;
             }
 
@@ -372,23 +434,25 @@ export function QuoteClient({
             setSubmitted(true);
             toast.success(form.toastSuccess);
 
+            void capturePostHogEvent("quote_submit_success", {
+                ...trackingProperties,
+                status: res.status,
+            });
             void capturePostHogEvent("conversion_quote_submit", {
-                source: "quote",
-                serviceType: service,
-                timeframe: timeframe || null,
-                budget: budget || null,
-                fileCount: files.length,
-                hasCalculatorSummary: Boolean(
-                    String(fd.get("calculatorSummary") ?? "").trim(),
-                ),
-                turnstileEnabled: isTurnstileEnabled,
+                ...trackingProperties,
+                status: res.status,
             });
 
             resetForm(formEl);
-        } catch {
+        } catch (error) {
             setIsSubmitting(false);
             setTurnstileToken("");
             turnstileRef.current?.reset();
+            void capturePostHogEvent("quote_submit_failed", {
+                ...trackingProperties,
+                failureStage: "client_exception",
+                error: error instanceof Error ? error.name : "unknown_error",
+            });
             toast.error("Unable to submit. Please try again.");
         }
     }

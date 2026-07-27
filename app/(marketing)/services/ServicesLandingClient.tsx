@@ -35,6 +35,7 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion";
+import { QuoteActionStrip } from "@/components/reusable/QuoteActionStrip";
 
 export type ServiceCardModel = {
     slug: string;
@@ -243,6 +244,12 @@ export default function ServicesLandingClient({
                             </Card>
                         </motion.div>
                     </div>
+
+                    <QuoteActionStrip
+                        contained
+                        heading="Know what you need doing?"
+                        body="Send the job details now and Levi will come back with a clear quote."
+                    />
 
                     {/* Process */}
                     <div className="mt-14">

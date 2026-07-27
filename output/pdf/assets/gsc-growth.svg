@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="660" viewBox="0 0 1200 660" role="img" aria-labelledby="title desc">
+  <title id="title">Google Search Console growth</title>
+  <desc id="desc">Clicks grew from 14 in the same period in 2025 to 47 in the previous 28 days and 55 in the current 28 days. Impressions grew from 543 to 2859 and 3570.</desc>
+  <rect width="1200" height="660" rx="28" fill="#f5f8f5"/>
+  <text x="60" y="70" font-family="Helvetica, Arial, sans-serif" font-size="30" font-weight="700" fill="#12372a">Organic visibility is expanding</text>
+  <text x="60" y="108" font-family="Helvetica, Arial, sans-serif" font-size="18" fill="#52645c">Latest complete 28 days through 24 July 2026</text>
+
+  <rect x="50" y="145" width="530" height="455" rx="20" fill="#ffffff" stroke="#d7e3dc"/>
+  <text x="85" y="195" font-family="Helvetica, Arial, sans-serif" font-size="24" font-weight="700" fill="#12372a">Clicks</text>
+  <line x1="95" y1="520" x2="535" y2="520" stroke="#b8c8bf" stroke-width="2"/>
+  <rect x="125" y="430" width="95" height="90" rx="8" fill="#a9cbb7"/>
+  <rect x="280" y="218" width="95" height="302" rx="8" fill="#57a873"/>
+  <rect x="435" y="166" width="95" height="354" rx="8" fill="#08783f"/>
+  <text x="172" y="412" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="24" font-weight="700" fill="#12372a">14</text>
+  <text x="327" y="200" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="24" font-weight="700" fill="#12372a">47</text>
+  <text x="482" y="148" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="24" font-weight="700" fill="#08783f">55</text>
+  <text x="172" y="555" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#52645c">Same 2025</text>
+  <text x="327" y="555" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#52645c">Previous</text>
+  <text x="482" y="555" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#52645c">Current</text>
+  <text x="85" y="585" font-family="Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#08783f">+17.0% period over period</text>
+
+  <rect x="620" y="145" width="530" height="455" rx="20" fill="#ffffff" stroke="#d7e3dc"/>
+  <text x="655" y="195" font-family="Helvetica, Arial, sans-serif" font-size="24" font-weight="700" fill="#12372a">Impressions</text>
+  <line x1="665" y1="520" x2="1105" y2="520" stroke="#b8c8bf" stroke-width="2"/>
+  <rect x="695" y="455" width="95" height="65" rx="8" fill="#a9cbb7"/>
+  <rect x="850" y="177" width="95" height="343" rx="8" fill="#57a873"/>
+  <rect x="1005" y="92" width="95" height="428" rx="8" fill="#08783f"/>
+  <text x="742" y="438" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#12372a">543</text>
+  <text x="897" y="160" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#12372a">2,859</text>
+  <text x="1052" y="75" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#08783f">3,570</text>
+  <text x="742" y="555" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#52645c">Same 2025</text>
+  <text x="897" y="555" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#52645c">Previous</text>
+  <text x="1052" y="555" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#52645c">Current</text>
+  <text x="655" y="585" font-family="Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#08783f">+24.9% period over period</text>
+</svg>

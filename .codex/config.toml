@@ -1,0 +1,12 @@
+# The global `posthog` MCP connection belongs to a different PostHog account.
+# Keep that login intact for other repositories, but do not expose it here.
+[mcp_servers.posthog]
+url = "https://mcp.posthog.com/mcp"
+enabled = false
+
+# This server name has its own OAuth credential slot. It will be authenticated
+# with the account that owns Quilliams Mowing, then pinned to the exact project.
+[mcp_servers.posthog_quilliams_mowing]
+url = "https://mcp.posthog.com/mcp"
+auth = "oauth"
+http_headers = { "x-posthog-organization-id" = "019b6f04-794e-0000-de60-f43b3d76b96e", "x-posthog-project-id" = "111836", "x-posthog-read-only" = "true", "x-posthog-mcp-mode" = "cli" }

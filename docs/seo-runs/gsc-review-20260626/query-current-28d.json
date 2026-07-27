@@ -1,0 +1,1859 @@
+{
+  "property": "sc-domain:quilliamsmowing.co.uk",
+  "rows": [
+    {
+      "keys": [
+        "gardeners newquay"
+      ],
+      "clicks": 5,
+      "impressions": 34,
+      "ctr": 14.71,
+      "position": 8.3,
+      "query": "gardeners newquay"
+    },
+    {
+      "keys": [
+        "garden maintenance"
+      ],
+      "clicks": 1,
+      "impressions": 7,
+      "ctr": 14.29,
+      "position": 1.6,
+      "query": "garden maintenance"
+    },
+    {
+      "keys": [
+        "garden maintenance service"
+      ],
+      "clicks": 1,
+      "impressions": 1,
+      "ctr": 100,
+      "position": 2,
+      "query": "garden maintenance service"
+    },
+    {
+      "keys": [
+        "gardener newquay"
+      ],
+      "clicks": 1,
+      "impressions": 21,
+      "ctr": 4.76,
+      "position": 3.6,
+      "query": "gardener newquay"
+    },
+    {
+      "keys": [
+        "gardeners near me"
+      ],
+      "clicks": 1,
+      "impressions": 8,
+      "ctr": 12.5,
+      "position": 5.1,
+      "query": "gardeners near me"
+    },
+    {
+      "keys": [
+        "general gardening services near me"
+      ],
+      "clicks": 1,
+      "impressions": 1,
+      "ctr": 100,
+      "position": 2,
+      "query": "general gardening services near me"
+    },
+    {
+      "keys": [
+        "grass cutting prices near me"
+      ],
+      "clicks": 1,
+      "impressions": 2,
+      "ctr": 50.0,
+      "position": 3,
+      "query": "grass cutting prices near me"
+    },
+    {
+      "keys": [
+        "newquay in cornwall"
+      ],
+      "clicks": 1,
+      "impressions": 1,
+      "ctr": 100,
+      "position": 2,
+      "query": "newquay in cornwall"
+    },
+    {
+      "keys": [
+        "adams lawn care"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 45,
+      "query": "adams lawn care"
+    },
+    {
+      "keys": [
+        "aerate before or after scarifying"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 9,
+      "query": "aerate before or after scarifying"
+    },
+    {
+      "keys": [
+        "agricultural hedge cutting hayle"
+      ],
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 74.5,
+      "query": "agricultural hedge cutting hayle"
+    },
+    {
+      "keys": [
+        "agricultural hedge cutting liskeard"
+      ],
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 54.3,
+      "query": "agricultural hedge cutting liskeard"
+    },
+    {
+      "keys": [
+        "agricultural hedge cutting marazion"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 85.5,
+      "query": "agricultural hedge cutting marazion"
+    },
+    {
+      "keys": [
+        "agricultural hedge cutting newquay"
+      ],
+      "clicks": 0,
+      "impressions": 7,
+      "ctr": 0,
+      "position": 5.4,
+      "query": "agricultural hedge cutting newquay"
+    },
+    {
+      "keys": [
+        "agricultural hedge cutting padstow"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 28,
+      "query": "agricultural hedge cutting padstow"
+    },
+    {
+      "keys": [
+        "agricultural hedge cutting penryn"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 55,
+      "query": "agricultural hedge cutting penryn"
+    },
+    {
+      "keys": [
+        "agricultural hedge cutting st just in penwith"
+      ],
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 22.7,
+      "query": "agricultural hedge cutting st just in penwith"
+    },
+    {
+      "keys": [
+        "agricultural hedge cutting wadebridge"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 37.5,
+      "query": "agricultural hedge cutting wadebridge"
+    },
+    {
+      "keys": [
+        "all in one lawn care"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 7,
+      "query": "all in one lawn care"
+    },
+    {
+      "keys": [
+        "any local gardeners near me"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 2,
+      "query": "any local gardeners near me"
+    },
+    {
+      "keys": [
+        "best garden landscape near me"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 4,
+      "query": "best garden landscape near me"
+    },
+    {
+      "keys": [
+        "best garden maintenance near me"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 2,
+      "query": "best garden maintenance near me"
+    },
+    {
+      "keys": [
+        "best lawn care"
+      ],
+      "clicks": 0,
+      "impressions": 75,
+      "ctr": 0,
+      "position": 9.5,
+      "query": "best lawn care"
+    },
+    {
+      "keys": [
+        "cheap grass cutting services near me"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 2,
+      "query": "cheap grass cutting services near me"
+    },
+    {
+      "keys": [
+        "cheap landscapers near me"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 9,
+      "query": "cheap landscapers near me"
+    },
+    {
+      "keys": [
+        "cut my grass lawn service"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 6,
+      "query": "cut my grass lawn service"
+    },
+    {
+      "keys": [
+        "cutting down pampas grass"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 25,
+      "query": "cutting down pampas grass"
+    },
+    {
+      "keys": [
+        "cutting pampas grass"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 31,
+      "query": "cutting pampas grass"
+    },
+    {
+      "keys": [
+        "digging up pampas grass"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 27,
+      "query": "digging up pampas grass"
+    },
+    {
+      "keys": [
+        "field mowing and bailing topsham"
+      ],
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 38,
+      "query": "field mowing and bailing topsham"
+    },
+    {
+      "keys": [
+        "field mowing and bailing torquay"
+      ],
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 82.7,
+      "query": "field mowing and bailing torquay"
+    },
+    {
+      "keys": [
+        "field mowing and baling bodmin"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 11,
+      "query": "field mowing and baling bodmin"
+    },
+    {
+      "keys": [
+        "field mowing and baling camborne"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 44.5,
+      "query": "field mowing and baling camborne"
+    },
+    {
+      "keys": [
+        "field mowing and baling liskeard"
+      ],
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 51.2,
+      "query": "field mowing and baling liskeard"
+    },
+    {
+      "keys": [
+        "field mowing and baling newquay"
+      ],
+      "clicks": 0,
+      "impressions": 13,
+      "ctr": 0,
+      "position": 1.6,
+      "query": "field mowing and baling newquay"
+    },
+    {
+      "keys": [
+        "field mowing and baling padstow"
+      ],
+      "clicks": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "position": 8.9,
+      "query": "field mowing and baling padstow"
+    },
+    {
+      "keys": [
+        "field mowing and baling porthleven"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 13,
+      "query": "field mowing and baling porthleven"
+    },
+    {
+      "keys": [
+        "field mowing and baling st austell"
+      ],
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0,
+      "position": 17.6,
+      "query": "field mowing and baling st austell"
+    },
+    {
+      "keys": [
+        "field mowing and baling st blazey"
+      ],
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 16.5,
+      "query": "field mowing and baling st blazey"
+    },
+    {
+      "keys": [
+        "field mowing and baling st columb major"
+      ],
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 10.6,
+      "query": "field mowing and baling st columb major"
+    },
+    {
+      "keys": [
+        "field mowing and baling st just in penwith"
+      ],
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 29.3,
+      "query": "field mowing and baling st just in penwith"
+    },
+    {
+      "keys": [
+        "find a gardener"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 2,
+      "query": "find a gardener"
+    },
+    {
+      "keys": [
+        "find a gardener near me"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 2,
+      "query": "find a gardener near me"
+    },
+    {
+      "keys": [
+        "garden and patio services near me"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 11,
+      "query": "garden and patio services near me"
+    },
+    {
+      "keys": [
+        "garden clearance near me"
+      ],
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 6,
+      "query": "garden clearance near me"
+    },
+    {
+      "keys": [
+        "garden design newquay"
+      ],
+      "clicks": 0,
+      "impressions": 36,
+      "ctr": 0,
+      "position": 13.1,
+      "query": "garden design newquay"
+    },
+    {
+      "keys": [
+        "garden design st austell"
+      ],
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 23.3,
+      "query": "garden design st austell"
+    },
+    {
+      "keys": [
+        "garden landscapers near me"
+      ],
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 6.5,
+      "query": "garden landscapers near me"
+    },
+    {
+      "keys": [
+        "garden maintenance near me"
+      ],
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0,
+      "position": 5.4,
+      "query": "garden maintenance near me"
+    },
+    {
+      "keys": [
+        "garden maintenance near me prices"
+      ],
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 6,
+      "query": "garden maintenance near me prices"
+    },
+    {
+      "keys": [
+        "garden maintenance services"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 9,
+      "query": "garden maintenance services"
+    },
+    {
+      "keys": [
+        "garden maintenance st agnes"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 20,
+      "query": "garden maintenance st agnes"
+    },
+    {
+      "keys": [
+        "garden planting services"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 7,
+      "query": "garden planting services"
+    },
+    {
+      "keys": [
+        "garden service"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 4,
+      "query": "garden service"
+    },
+    {
+      "keys": [
+        "garden services cornwall"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 3,
+      "query": "garden services cornwall"
+    },
+    {
+      "keys": [
+        "garden services near me"
+      ],
+      "clicks": 0,
+      "impressions": 15,
+      "ctr": 0,
+      "position": 5.3,
+      "query": "garden services near me"
+    },
+    {
+      "keys": [
+        "garden tidy up"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 2,
+      "query": "garden tidy up"
+    },
+    {
+      "keys": [
+        "garden tidy up needed uk homeowner request"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 16,
+      "query": "garden tidy up needed uk homeowner request"
+    },
+    {
+      "keys": [
+        "garden weeding services near me"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 2,
+      "query": "garden weeding services near me"
+    },
+    {
+      "keys": [
+        "gardener"
+      ],
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 6.4,
+      "query": "gardener"
+    },
+    {
+      "keys": [
+        "gardener cornwall"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 19,
+      "query": "gardener cornwall"
+    },
+    {
+      "keys": [
+        "gardener near me"
+      ],
+      "clicks": 0,
+      "impressions": 13,
+      "ctr": 0,
+      "position": 3.4,
+      "query": "gardener near me"
+    },
+    {
+      "keys": [
+        "gardeners"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 2,
+      "query": "gardeners"
+    },
+    {
+      "keys": [
+        "gardeners in my area prices"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 7,
+      "query": "gardeners in my area prices"
+    },
+    {
+      "keys": [
+        "gardeners near me prices"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 8,
+      "query": "gardeners near me prices"
+    },
+    {
+      "keys": [
+        "gardeners torquay"
+      ],
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 68.6,
+      "query": "gardeners torquay"
+    },
+    {
+      "keys": [
+        "gardening companies near me"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 9,
+      "query": "gardening companies near me"
+    },
+    {
+      "keys": [
+        "gardening contractors near me"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1,
+      "query": "gardening contractors near me"
+    },
+    {
+      "keys": [
+        "gardening maintenance services near me"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 8,
+      "query": "gardening maintenance services near me"
+    },
+    {
+      "keys": [
+        "gardening services"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 1.5,
+      "query": "gardening services"
+    },
+    {
+      "keys": [
+        "gardening services near me prices"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 11,
+      "query": "gardening services near me prices"
+    },
+    {
+      "keys": [
+        "gardening services torquay"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 67,
+      "query": "gardening services torquay"
+    },
+    {
+      "keys": [
+        "gardners landscaping"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 5,
+      "query": "gardners landscaping"
+    },
+    {
+      "keys": [
+        "getting rid of pampas grass"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 37,
+      "query": "getting rid of pampas grass"
+    },
+    {
+      "keys": [
+        "grass"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1,
+      "query": "grass"
+    },
+    {
+      "keys": [
+        "grass care near me"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 2.5,
+      "query": "grass care near me"
+    },
+    {
+      "keys": [
+        "grass cutters near me"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 20,
+      "query": "grass cutters near me"
+    },
+    {
+      "keys": [
+        "grass cutting"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 14,
+      "query": "grass cutting"
+    },
+    {
+      "keys": [
+        "grass cutting cornwall"
+      ],
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0,
+      "position": 28.9,
+      "query": "grass cutting cornwall"
+    },
+    {
+      "keys": [
+        "grass cutting near me"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 10,
+      "query": "grass cutting near me"
+    },
+    {
+      "keys": [
+        "grass cutting service"
+      ],
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 2,
+      "query": "grass cutting service"
+    },
+    {
+      "keys": [
+        "grass cutting service near me"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 13,
+      "query": "grass cutting service near me"
+    },
+    {
+      "keys": [
+        "grass cutting services near me"
+      ],
+      "clicks": 0,
+      "impressions": 9,
+      "ctr": 0,
+      "position": 14.1,
+      "query": "grass cutting services near me"
+    },
+    {
+      "keys": [
+        "grass cutting services near me prices"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 9.5,
+      "query": "grass cutting services near me prices"
+    },
+    {
+      "keys": [
+        "grounds maintenance"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 9,
+      "query": "grounds maintenance"
+    },
+    {
+      "keys": [
+        "hedge cutting near me"
+      ],
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 11,
+      "query": "hedge cutting near me"
+    },
+    {
+      "keys": [
+        "hedge cutting near me prices"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 5,
+      "query": "hedge cutting near me prices"
+    },
+    {
+      "keys": [
+        "hedge cutting prices per metre"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 9,
+      "query": "hedge cutting prices per metre"
+    },
+    {
+      "keys": [
+        "hedge cutting prices per metre near me"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 4,
+      "query": "hedge cutting prices per metre near me"
+    },
+    {
+      "keys": [
+        "hedge cutting service near me"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 2,
+      "query": "hedge cutting service near me"
+    },
+    {
+      "keys": [
+        "hedge cutting services"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 2,
+      "query": "hedge cutting services"
+    },
+    {
+      "keys": [
+        "hedge trimming"
+      ],
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 31,
+      "query": "hedge trimming"
+    },
+    {
+      "keys": [
+        "hedge trimming cornwall"
+      ],
+      "clicks": 0,
+      "impressions": 80,
+      "ctr": 0,
+      "position": 38.3,
+      "query": "hedge trimming cornwall"
+    },
+    {
+      "keys": [
+        "hedge trimming cost"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 35,
+      "query": "hedge trimming cost"
+    },
+    {
+      "keys": [
+        "hedge trimming flint"
+      ],
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 38.3,
+      "query": "hedge trimming flint"
+    },
+    {
+      "keys": [
+        "hedge trimming near me"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 11.5,
+      "query": "hedge trimming near me"
+    },
+    {
+      "keys": [
+        "hedge trimming near me prices"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 5,
+      "query": "hedge trimming near me prices"
+    },
+    {
+      "keys": [
+        "hedge trimming service"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 13,
+      "query": "hedge trimming service"
+    },
+    {
+      "keys": [
+        "hedge trimming service near me"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 12,
+      "query": "hedge trimming service near me"
+    },
+    {
+      "keys": [
+        "how to cut pampas grass"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 38,
+      "query": "how to cut pampas grass"
+    },
+    {
+      "keys": [
+        "how to get rid of pampas grass"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 34.5,
+      "query": "how to get rid of pampas grass"
+    },
+    {
+      "keys": [
+        "how to get rid of pampas grass roots"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 25,
+      "query": "how to get rid of pampas grass roots"
+    },
+    {
+      "keys": [
+        "how to get rid of pampas grass uk"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 10,
+      "query": "how to get rid of pampas grass uk"
+    },
+    {
+      "keys": [
+        "how to remove pampas grass"
+      ],
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 7.5,
+      "query": "how to remove pampas grass"
+    },
+    {
+      "keys": [
+        "how to remove pampas grass plants"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 30,
+      "query": "how to remove pampas grass plants"
+    },
+    {
+      "keys": [
+        "how to remove pampas grass uk"
+      ],
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 9.3,
+      "query": "how to remove pampas grass uk"
+    },
+    {
+      "keys": [
+        "i need a cheap gardener near me"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 2,
+      "query": "i need a cheap gardener near me"
+    },
+    {
+      "keys": [
+        "land clearing near me"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 2,
+      "query": "land clearing near me"
+    },
+    {
+      "keys": [
+        "landscape gardener near me"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 6,
+      "query": "landscape gardener near me"
+    },
+    {
+      "keys": [
+        "landscape gardeners cornwall"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 33,
+      "query": "landscape gardeners cornwall"
+    },
+    {
+      "keys": [
+        "landscape gardeners in cornwall"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 52.5,
+      "query": "landscape gardeners in cornwall"
+    },
+    {
+      "keys": [
+        "landscape gardeners near me"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 34,
+      "query": "landscape gardeners near me"
+    },
+    {
+      "keys": [
+        "landscape maintenance"
+      ],
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 1,
+      "query": "landscape maintenance"
+    },
+    {
+      "keys": [
+        "landscaper"
+      ],
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 1,
+      "query": "landscaper"
+    },
+    {
+      "keys": [
+        "landscapers"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1,
+      "query": "landscapers"
+    },
+    {
+      "keys": [
+        "landscapers cornwall"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 39,
+      "query": "landscapers cornwall"
+    },
+    {
+      "keys": [
+        "landscapers near me"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 6,
+      "query": "landscapers near me"
+    },
+    {
+      "keys": [
+        "landscapers newquay"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 13,
+      "query": "landscapers newquay"
+    },
+    {
+      "keys": [
+        "landscaping"
+      ],
+      "clicks": 0,
+      "impressions": 12,
+      "ctr": 0,
+      "position": 10.2,
+      "query": "landscaping"
+    },
+    {
+      "keys": [
+        "landscaping and gardening services near me"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 27,
+      "query": "landscaping and gardening services near me"
+    },
+    {
+      "keys": [
+        "landscaping companies near me"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 7,
+      "query": "landscaping companies near me"
+    },
+    {
+      "keys": [
+        "landscaping contractors near me"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 4,
+      "query": "landscaping contractors near me"
+    },
+    {
+      "keys": [
+        "landscaping lawn care"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 70,
+      "query": "landscaping lawn care"
+    },
+    {
+      "keys": [
+        "landscaping near me"
+      ],
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 23.3,
+      "query": "landscaping near me"
+    },
+    {
+      "keys": [
+        "landscaping newquay"
+      ],
+      "clicks": 0,
+      "impressions": 25,
+      "ctr": 0,
+      "position": 5.8,
+      "query": "landscaping newquay"
+    },
+    {
+      "keys": [
+        "landscaping services"
+      ],
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 1.7,
+      "query": "landscaping services"
+    },
+    {
+      "keys": [
+        "landscaping services cornwall"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 47,
+      "query": "landscaping services cornwall"
+    },
+    {
+      "keys": [
+        "landscaping services near me"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1,
+      "query": "landscaping services near me"
+    },
+    {
+      "keys": [
+        "landscaping services truro"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 22,
+      "query": "landscaping services truro"
+    },
+    {
+      "keys": [
+        "lawmcare"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 3,
+      "query": "lawmcare"
+    },
+    {
+      "keys": [
+        "lawn"
+      ],
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0,
+      "position": 3.5,
+      "query": "lawn"
+    },
+    {
+      "keys": [
+        "lawn care"
+      ],
+      "clicks": 0,
+      "impressions": 135,
+      "ctr": 0,
+      "position": 3.1,
+      "query": "lawn care"
+    },
+    {
+      "keys": [
+        "lawn care 2026"
+      ],
+      "clicks": 0,
+      "impressions": 12,
+      "ctr": 0,
+      "position": 12.1,
+      "query": "lawn care 2026"
+    },
+    {
+      "keys": [
+        "lawn care cornwall"
+      ],
+      "clicks": 0,
+      "impressions": 85,
+      "ctr": 0,
+      "position": 20.4,
+      "query": "lawn care cornwall"
+    },
+    {
+      "keys": [
+        "lawn care in cornwall"
+      ],
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 14.8,
+      "query": "lawn care in cornwall"
+    },
+    {
+      "keys": [
+        "lawn care near me"
+      ],
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 4.8,
+      "query": "lawn care near me"
+    },
+    {
+      "keys": [
+        "lawn care truro"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 10,
+      "query": "lawn care truro"
+    },
+    {
+      "keys": [
+        "lawn cutting"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 14,
+      "query": "lawn cutting"
+    },
+    {
+      "keys": [
+        "lawn cutting service"
+      ],
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 4,
+      "query": "lawn cutting service"
+    },
+    {
+      "keys": [
+        "lawn cutting service near me"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 8,
+      "query": "lawn cutting service near me"
+    },
+    {
+      "keys": [
+        "lawn experts near me"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 3,
+      "query": "lawn experts near me"
+    },
+    {
+      "keys": [
+        "lawn iron treatment"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 15.5,
+      "query": "lawn iron treatment"
+    },
+    {
+      "keys": [
+        "lawn levelling near me"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 10,
+      "query": "lawn levelling near me"
+    },
+    {
+      "keys": [
+        "lawn maintenance greenfield"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 6,
+      "query": "lawn maintenance greenfield"
+    },
+    {
+      "keys": [
+        "lawn mowing"
+      ],
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 7.2,
+      "query": "lawn mowing"
+    },
+    {
+      "keys": [
+        "lawn mowing cornwall"
+      ],
+      "clicks": 0,
+      "impressions": 17,
+      "ctr": 0,
+      "position": 31.1,
+      "query": "lawn mowing cornwall"
+    },
+    {
+      "keys": [
+        "lawn mowing service"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 2,
+      "query": "lawn mowing service"
+    },
+    {
+      "keys": [
+        "lawn mowing service near me"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 9.5,
+      "query": "lawn mowing service near me"
+    },
+    {
+      "keys": [
+        "lawn mulching"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 11,
+      "query": "lawn mulching"
+    },
+    {
+      "keys": [
+        "lawn rates"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 13,
+      "query": "lawn rates"
+    },
+    {
+      "keys": [
+        "lawn restoration service"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 2,
+      "query": "lawn restoration service"
+    },
+    {
+      "keys": [
+        "lawn treatment cornwall"
+      ],
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 30.7,
+      "query": "lawn treatment cornwall"
+    },
+    {
+      "keys": [
+        "lawncare services near me"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 2,
+      "query": "lawncare services near me"
+    },
+    {
+      "keys": [
+        "local gardener"
+      ],
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 7,
+      "query": "local gardener"
+    },
+    {
+      "keys": [
+        "local gardeners"
+      ],
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 10.2,
+      "query": "local gardeners"
+    },
+    {
+      "keys": [
+        "local gardeners near me"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 4,
+      "query": "local gardeners near me"
+    },
+    {
+      "keys": [
+        "local gardeners near me prices"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 4,
+      "query": "local gardeners near me prices"
+    },
+    {
+      "keys": [
+        "local gardeners near me uk"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 20,
+      "query": "local gardeners near me uk"
+    },
+    {
+      "keys": [
+        "local gardeners near me within 5 mi"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 6,
+      "query": "local gardeners near me within 5 mi"
+    },
+    {
+      "keys": [
+        "local lawn service"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 2,
+      "query": "local lawn service"
+    },
+    {
+      "keys": [
+        "looking for a gardener"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 10,
+      "query": "looking for a gardener"
+    },
+    {
+      "keys": [
+        "moving pampas grass"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 31,
+      "query": "moving pampas grass"
+    },
+    {
+      "keys": [
+        "mow the lawn"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 2,
+      "query": "mow the lawn"
+    },
+    {
+      "keys": [
+        "mowing and more"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 6.5,
+      "query": "mowing and more"
+    },
+    {
+      "keys": [
+        "mowing companies"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 7,
+      "query": "mowing companies"
+    },
+    {
+      "keys": [
+        "mowing lawn"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 5,
+      "query": "mowing lawn"
+    },
+    {
+      "keys": [
+        "mulching and weeding services"
+      ],
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 56.2,
+      "query": "mulching and weeding services"
+    },
+    {
+      "keys": [
+        "need a gardener"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 13,
+      "query": "need a gardener"
+    },
+    {
+      "keys": [
+        "pampas grass removal cost"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 5,
+      "query": "pampas grass removal cost"
+    },
+    {
+      "keys": [
+        "quilliams"
+      ],
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 27.8,
+      "query": "quilliams"
+    },
+    {
+      "keys": [
+        "regular gardening services"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 5,
+      "query": "regular gardening services"
+    },
+    {
+      "keys": [
+        "remove pampas grass"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 9.5,
+      "query": "remove pampas grass"
+    },
+    {
+      "keys": [
+        "residential lawn care"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 2,
+      "query": "residential lawn care"
+    },
+    {
+      "keys": [
+        "rhs qualified gardeners near me"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 12,
+      "query": "rhs qualified gardeners near me"
+    },
+    {
+      "keys": [
+        "same day grass cutting near me"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 74,
+      "query": "same day grass cutting near me"
+    },
+    {
+      "keys": [
+        "scarify or aerate first"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 23.5,
+      "query": "scarify or aerate first"
+    },
+    {
+      "keys": [
+        "self employed gardener near me"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1,
+      "query": "self employed gardener near me"
+    },
+    {
+      "keys": [
+        "small garden maintenance near me"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 2,
+      "query": "small garden maintenance near me"
+    },
+    {
+      "keys": [
+        "tall hedge trimming services"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 10,
+      "query": "tall hedge trimming services"
+    },
+    {
+      "keys": [
+        "turf near me"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 20,
+      "query": "turf near me"
+    },
+    {
+      "keys": [
+        "weekly lawn mowing"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1,
+      "query": "weekly lawn mowing"
+    },
+    {
+      "keys": [
+        "yard work"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 9,
+      "query": "yard work"
+    },
+    {
+      "keys": [
+        "yes"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 24,
+      "query": "yes"
+    }
+  ],
+  "totals": {
+    "clicks": 12,
+    "impressions": 962,
+    "ctr": 1.25,
+    "position": 0
+  },
+  "quick_wins": [
+    {
+      "keys": [
+        "best lawn care"
+      ],
+      "position": 9.5,
+      "impressions": 75,
+      "clicks": 0,
+      "ctr": 0,
+      "opportunity": "Position 4-10 with high impressions -- small ranking improvement yields significant traffic gain"
+    }
+  ],
+  "row_count": 183,
+  "error": null,
+  "date_range": {
+    "start": "2026-05-27",
+    "end": "2026-06-23"
+  }
+}

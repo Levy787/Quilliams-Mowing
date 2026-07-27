@@ -1,0 +1,218 @@
+{
+  "property": "sc-domain:quilliamsmowing.co.uk",
+  "rows": [
+    {
+      "keys": [
+        "https://quilliamsmowing.co.uk/"
+      ],
+      "clicks": 37,
+      "impressions": 1142,
+      "ctr": 3.24,
+      "position": 9.8,
+      "page": "https://quilliamsmowing.co.uk/"
+    },
+    {
+      "keys": [
+        "https://quilliamsmowing.co.uk/blog/best-gardeners-newquay"
+      ],
+      "clicks": 5,
+      "impressions": 404,
+      "ctr": 1.24,
+      "position": 12.4,
+      "page": "https://quilliamsmowing.co.uk/blog/best-gardeners-newquay"
+    },
+    {
+      "keys": [
+        "https://quilliamsmowing.co.uk/blog/best-plants-coastal-cornwall-gardens"
+      ],
+      "clicks": 2,
+      "impressions": 34,
+      "ctr": 5.88,
+      "position": 7.4,
+      "page": "https://quilliamsmowing.co.uk/blog/best-plants-coastal-cornwall-gardens"
+    },
+    {
+      "keys": [
+        "https://quilliamsmowing.co.uk/pricing"
+      ],
+      "clicks": 2,
+      "impressions": 220,
+      "ctr": 0.91,
+      "position": 11.0,
+      "page": "https://quilliamsmowing.co.uk/pricing"
+    },
+    {
+      "keys": [
+        "https://quilliamsmowing.co.uk/services/hedge-trimming"
+      ],
+      "clicks": 1,
+      "impressions": 279,
+      "ctr": 0.36,
+      "position": 29.2,
+      "page": "https://quilliamsmowing.co.uk/services/hedge-trimming"
+    },
+    {
+      "keys": [
+        "https://quilliamsmowing.co.uk/services/lawn-care"
+      ],
+      "clicks": 1,
+      "impressions": 241,
+      "ctr": 0.41,
+      "position": 18.5,
+      "page": "https://quilliamsmowing.co.uk/services/lawn-care"
+    },
+    {
+      "keys": [
+        "https://quilliamsmowing.co.uk/about"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 3.5,
+      "page": "https://quilliamsmowing.co.uk/about"
+    },
+    {
+      "keys": [
+        "https://quilliamsmowing.co.uk/areas"
+      ],
+      "clicks": 0,
+      "impressions": 107,
+      "ctr": 0,
+      "position": 24.5,
+      "page": "https://quilliamsmowing.co.uk/areas"
+    },
+    {
+      "keys": [
+        "https://quilliamsmowing.co.uk/areas/st-agnes"
+      ],
+      "clicks": 0,
+      "impressions": 29,
+      "ctr": 0,
+      "position": 5.9,
+      "page": "https://quilliamsmowing.co.uk/areas/st-agnes"
+    },
+    {
+      "keys": [
+        "https://quilliamsmowing.co.uk/areas/st-columb-major"
+      ],
+      "clicks": 0,
+      "impressions": 106,
+      "ctr": 0,
+      "position": 31.1,
+      "page": "https://quilliamsmowing.co.uk/areas/st-columb-major"
+    },
+    {
+      "keys": [
+        "https://quilliamsmowing.co.uk/blog/hedge-trimming-cornwall-cost-timing"
+      ],
+      "clicks": 0,
+      "impressions": 30,
+      "ctr": 0,
+      "position": 19.1,
+      "page": "https://quilliamsmowing.co.uk/blog/hedge-trimming-cornwall-cost-timing"
+    },
+    {
+      "keys": [
+        "https://quilliamsmowing.co.uk/blog/low-maintenance-garden-ideas-cornwall"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 7,
+      "page": "https://quilliamsmowing.co.uk/blog/low-maintenance-garden-ideas-cornwall"
+    },
+    {
+      "keys": [
+        "https://quilliamsmowing.co.uk/blog/remove-established-pampas-grass"
+      ],
+      "clicks": 0,
+      "impressions": 52,
+      "ctr": 0,
+      "position": 14.0,
+      "page": "https://quilliamsmowing.co.uk/blog/remove-established-pampas-grass"
+    },
+    {
+      "keys": [
+        "https://quilliamsmowing.co.uk/blog/scarify-aerate-feed-lawn-cornwall"
+      ],
+      "clicks": 0,
+      "impressions": 20,
+      "ctr": 0,
+      "position": 23.2,
+      "page": "https://quilliamsmowing.co.uk/blog/scarify-aerate-feed-lawn-cornwall"
+    },
+    {
+      "keys": [
+        "https://quilliamsmowing.co.uk/projects"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 3.5,
+      "page": "https://quilliamsmowing.co.uk/projects"
+    },
+    {
+      "keys": [
+        "https://quilliamsmowing.co.uk/quote"
+      ],
+      "clicks": 0,
+      "impressions": 20,
+      "ctr": 0,
+      "position": 8.1,
+      "page": "https://quilliamsmowing.co.uk/quote"
+    },
+    {
+      "keys": [
+        "https://quilliamsmowing.co.uk/services"
+      ],
+      "clicks": 0,
+      "impressions": 305,
+      "ctr": 0,
+      "position": 41.0,
+      "page": "https://quilliamsmowing.co.uk/services"
+    },
+    {
+      "keys": [
+        "https://quilliamsmowing.co.uk/services/garden-maintenance"
+      ],
+      "clicks": 0,
+      "impressions": 88,
+      "ctr": 0,
+      "position": 51.2,
+      "page": "https://quilliamsmowing.co.uk/services/garden-maintenance"
+    },
+    {
+      "keys": [
+        "https://quilliamsmowing.co.uk/services/landscaping"
+      ],
+      "clicks": 0,
+      "impressions": 101,
+      "ctr": 0,
+      "position": 44.5,
+      "page": "https://quilliamsmowing.co.uk/services/landscaping"
+    },
+    {
+      "keys": [
+        "https://quilliamsmowing.co.uk/site-map"
+      ],
+      "clicks": 0,
+      "impressions": 15,
+      "ctr": 0,
+      "position": 19.3,
+      "page": "https://quilliamsmowing.co.uk/site-map"
+    }
+  ],
+  "totals": {
+    "clicks": 48,
+    "impressions": 3198,
+    "ctr": 1.5,
+    "position": 0
+  },
+  "quick_wins": [],
+  "row_count": 20,
+  "error": null,
+  "date_range": {
+    "start": "2026-05-27",
+    "end": "2026-06-23"
+  }
+}

@@ -59,7 +59,10 @@
       }
     ]
   },
-  "pwa": {},
+  "pwa": {
+    "themeColor": "#147F3C",
+    "backgroundColor": "#FFFFFF"
+  },
   "footer": {
     "aboutText": "Quilliams Gardening & Landscaping is a Newquay-based gardening and landscaping service run by Levi Quilliam. Public liability insured and waste-carrier licensed.",
     "connectHeading": "Connect With Us",
@@ -90,7 +93,7 @@
     "creditHref": "https://quilliam.ai/"
   },
   "assets": {
-    "faviconPngFile": "assets/faviconPngFile.ico",
+    "faviconPngFile": "assets/faviconPngFile.png",
     "appleTouchIconPngFile": "assets/appleTouchIconPngFile.png",
     "androidChrome192PngFile": "assets/androidChrome192PngFile.png",
     "androidChrome512PngFile": "assets/androidChrome512PngFile.png",

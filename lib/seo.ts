@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 const DEFAULT_OG_IMAGE = "https://quilliamsmowing.co.uk/images/uploads/site/og-image.png?v=20260504";
-const SITE_NAME = "Quilliams Gardening & Landscaping";
+const SITE_NAME = "Quilliams";
 const SITE_URL = "https://quilliamsmowing.co.uk";
 
 export type SeoFields = {
