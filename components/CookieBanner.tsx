@@ -10,6 +10,9 @@ const CONSENT_COOKIE = "cookie_consent_analytics";
 const OPEN_EVENT = "cookie-settings-open";
 
 type ConsentValue = "accepted" | "rejected";
+type AnalyticsWindow = Window & {
+    gtag?: (...args: unknown[]) => void;
+};
 
 function getCookieValue(name: string): string | null {
     if (typeof document === "undefined") return null;
@@ -26,6 +29,48 @@ function setCookieValue(name: string, value: string, maxAgeSeconds: number) {
     if (typeof document === "undefined") return;
     const isHttps = typeof location !== "undefined" && location.protocol === "https:";
     document.cookie = `${name}=${encodeURIComponent(value)}; Path=/; Max-Age=${maxAgeSeconds}; SameSite=Lax${isHttps ? "; Secure" : ""}`;
+}
+
+function clearAnalyticsStorage() {
+    if (typeof document === "undefined" || typeof window === "undefined") return;
+
+    const cookieNames = document.cookie
+        .split(";")
+        .map((cookie) => cookie.split("=")[0]?.trim())
+        .filter(
+            (name): name is string =>
+                Boolean(name) &&
+                (name.startsWith("_ga") ||
+                    name === "_gid" ||
+                    name.startsWith("_gat") ||
+                    name.startsWith("ph_")),
+        );
+    const isHttps = window.location.protocol === "https:";
+    const hostname = window.location.hostname;
+    const canonicalDomain =
+        hostname === "quilliamsmowing.co.uk" ||
+        hostname.endsWith(".quilliamsmowing.co.uk")
+            ? "quilliamsmowing.co.uk"
+            : hostname;
+    const domains = new Set(["", hostname, canonicalDomain]);
+
+    for (const name of cookieNames) {
+        for (const domain of domains) {
+            document.cookie = `${name}=; Path=/; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=Lax${domain ? `; Domain=${domain}` : ""}${isHttps ? "; Secure" : ""}`;
+        }
+    }
+
+    for (const storageName of ["localStorage", "sessionStorage"] as const) {
+        try {
+            const storage = window[storageName];
+            for (let index = storage.length - 1; index >= 0; index -= 1) {
+                const key = storage.key(index);
+                if (key?.startsWith("ph_")) storage.removeItem(key);
+            }
+        } catch {
+            // Storage can be unavailable in privacy-restricted browser contexts.
+        }
+    }
 }
 
 function readConsent(): ConsentValue | null {
@@ -56,6 +101,16 @@ export function CookieBanner() {
 
     function applyConsent(value: ConsentValue) {
         setCookieValue(CONSENT_COOKIE, value, 60 * 60 * 24 * 365);
+        if (value === "rejected") {
+            const analyticsWindow = window as AnalyticsWindow;
+            analyticsWindow.gtag?.("consent", "update", {
+                analytics_storage: "denied",
+                ad_storage: "denied",
+                ad_user_data: "denied",
+                ad_personalization: "denied",
+            });
+            clearAnalyticsStorage();
+        }
         setOpen(false);
 
         // Apply tracking mode change immediately.

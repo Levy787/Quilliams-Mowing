@@ -1,5 +1,13 @@
 packages:
   - .
+allowBuilds:
+  core-js: false
+  sharp: false
+  unrs-resolver: false
 ignoredBuiltDependencies:
+  - core-js
   - sharp
   - unrs-resolver
+minimumReleaseAgeExclude:
+  - '@posthog/browser-common@0.2.2'
+  - posthog-js@1.407.3

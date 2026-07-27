@@ -41,6 +41,10 @@ export function initializePostHog(): Promise<PostHogClient | null> {
                 });
             }
 
+            // Next canonicalises trailing-slash paths before applying rewrites.
+            // Match that canonical route so each event reaches ingestion directly.
+            posthog.analyticsDefaultEndpoint = "/e";
+
             posthog.init(key, {
                 // Per PostHog Next.js reverse-proxy docs: use a relative path.
                 api_host: API_HOST,
