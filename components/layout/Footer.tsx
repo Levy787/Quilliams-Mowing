@@ -206,9 +206,9 @@ export function FooterInner({
                                 <Image
                                     src={logoSrc}
                                     alt={logoAlt}
-                                    width={176}
-                                    height={40}
-                                    style={{ width: "auto", height: "auto" }}
+                                    width={256}
+                                    height={43}
+                                    className="h-auto w-[176px] object-contain"
                                 />
                             </Link>
                             <p className="mt-6 max-w-md text-base leading-relaxed text-background/90">
