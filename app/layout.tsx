@@ -48,7 +48,7 @@ export async function generateMetadata(): Promise<Metadata> {
     manifest: "/manifest.webmanifest",
     icons: {
       icon: favicon
-        ? [{ url: favicon, type: "image/png", sizes: "96x96" }]
+        ? [{ url: favicon, type: "image/x-icon" }]
         : undefined,
       shortcut: [{ url: "/favicon.ico", type: "image/x-icon" }],
       apple: appleTouch

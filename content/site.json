@@ -93,7 +93,7 @@
     "creditHref": "https://quilliam.ai/"
   },
   "assets": {
-    "faviconPngFile": "assets/faviconPngFile.png",
+    "faviconPngFile": "assets/faviconPngFile.ico",
     "appleTouchIconPngFile": "assets/appleTouchIconPngFile.png",
     "androidChrome192PngFile": "assets/androidChrome192PngFile.png",
     "androidChrome512PngFile": "assets/androidChrome512PngFile.png",
