@@ -1,7 +1,7 @@
 {
     "seo": {
         "title": "Lawn Mowing & Gardening in Newquay, Cornwall | Quilliams",
-        "description": "Lawn mowing, hedge trimming, landscaping & garden maintenance in Newquay, Truro & Cornwall. 5-star rated, 120+ projects. Get a free quote today."
+        "description": "Lawn mowing, hedge trimming, landscaping and garden maintenance across Newquay and north Cornwall. Fully insured, 5-star rated, with free quotes today."
     },
     "hero": {
         "headlineParts": [
@@ -37,8 +37,8 @@
         "subheading": "Local garden care from Trevarrian near Newquay, covering Newquay, Porth, Pentire, St Austell, Truro, Wadebridge and Padstow. From weekly mowing and garden maintenance to full tidy-ups and practical landscaping, I keep outdoor spaces clean, usable and easy to enjoy.",
         "primaryCtaLabel": "Get a Free Quote Today",
         "primaryCtaHref": "/quote",
-        "secondaryCtaLabel": "Contact Us",
-        "secondaryCtaHref": "/contact",
+        "secondaryCtaLabel": "See typical prices",
+        "secondaryCtaHref": "/pricing",
         "imagesLeft": [
             {
                 "file": "hero/imagesLeft/0/file.webp",
@@ -109,14 +109,14 @@
             },
             {
                 "title": "Sustainability",
-                "description": "I handle green waste properly as a licensed carrier and favour maintenance choices that keep Cornwall gardens healthier over time.",
+                "description": "Environment Agency registered waste carrier (lower tier), CBDL582202. I handle green waste properly and favour maintenance choices that keep Cornwall gardens healthier over time.",
                 "icon": "shieldCheck"
             }
         ]
     },
     "services": {
         "badge": "Services",
-        "heading": "Exclusive Services",
+        "heading": "Gardening Services in Newquay & Cornwall",
         "ctaLabel": "More Services",
         "ctaHref": "/services",
         "items": [
@@ -133,7 +133,7 @@
                 "title": "Lawn Mowing",
                 "href": "/services/lawn-care",
                 "description": "Reliable mowing with clean edges and a tidy finish for homes and commercial properties.",
-                "imageFile": "services/items/1/imageFile.webp",
+                "imageFile": "lawn-care/hero/imageFile.webp",
                 "imageAlt": "Freshly mown lawn with tidy borders",
                 "tag": "Residential & Commercial",
                 "icon": "sprout"
@@ -184,7 +184,7 @@
             "Newquay-based",
             "Photos accepted for quotes",
             "Clear prices before booking",
-            "Licensed waste carrier"
+            "Environment Agency registered waste carrier (lower tier), CBDL582202"
         ],
         "primaryCtaLabel": "Get a Free Quote Today",
         "primaryCtaHref": "/quote",
@@ -194,26 +194,41 @@
         "map": {
             "centerLat": 50.4772,
             "centerLng": -4.9836,
-            "zoom": 10,
+            "zoom": 9,
             "circleLat": 50.4772,
             "circleLng": -4.9836,
-            "circleRadiusMeters": 12875
+            "circleRadiusMeters": 40000
         },
         "mapLabels": [
             {
-                "text": "St Eval",
-                "leftPercent": 50,
-                "topPercent": 44
+                "text": "Perranporth",
+                "leftPercent": 18,
+                "topPercent": 72
             },
             {
                 "text": "Newquay",
-                "leftPercent": 36,
-                "topPercent": 78
+                "leftPercent": 35,
+                "topPercent": 58
             },
             {
                 "text": "Padstow",
-                "leftPercent": 63,
+                "leftPercent": 68,
                 "topPercent": 24
+            },
+            {
+                "text": "St Columb Major",
+                "leftPercent": 58,
+                "topPercent": 47
+            },
+            {
+                "text": "Wadebridge",
+                "leftPercent": 79,
+                "topPercent": 39
+            },
+            {
+                "text": "St Agnes",
+                "leftPercent": 14,
+                "topPercent": 57
             }
         ]
     },
@@ -333,6 +348,24 @@
         "heading": "What Cornwall homeowners say",
         "description": "Real reviews from people I've worked with across Newquay, Truro, and the surrounding villages.",
         "items": [
+            {
+                "name": "Megan Schmid",
+                "location": "Google review",
+                "date": "Jun 2026",
+                "quote": "“Great communication from Levi from the moment I made my initial enquiry. Luis came out to provide a quote and then carried out the work. Our front and back gardens were heavily overgrown and needed a thorough tidy-up and cutback. Luis worked tirelessly throughout, and the results are fantastic. Highly recommended!”"
+            },
+            {
+                "name": "Ellie King",
+                "location": "Google review",
+                "date": "Jun 2026",
+                "quote": "“Superb service and very thorough job. Levi works really hard and makes the garden look amazingly neat and tidy. Would definitely recommend.”"
+            },
+            {
+                "name": "Nathan Bonney",
+                "location": "Google review",
+                "date": "Jun 2026",
+                "quote": "“Would highly recommend. He was cheap and very polite, and also did a fantastic job on my overgrown garden.”"
+            },
             {
                 "name": "Matthew Wellington",
                 "location": "Truro, Cornwall",

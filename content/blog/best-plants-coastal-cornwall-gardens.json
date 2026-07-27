@@ -4,14 +4,14 @@
   "subtitle": "Salt and wind tolerant planting ideas for exposed gardens in Newquay, Padstow, Perranporth, St Agnes, St Ives and other coastal parts of Cornwall.",
   "author": "Levi Quilliam",
   "publishedDate": "2026-04-13",
-  "updatedDate": "2026-05-26",
-  "readingTime": "8 min read",
+  "updatedDate": "2026-07-27",
+  "readingTime": "9 min read",
   "heroImage": {
     "src": "/images/uploads/landscaping/hero/imageFile.webp",
     "alt": "Coastal Cornwall garden planting with gravel and hardy shrubs"
   },
   "seo": {
-    "title": "Best Plants for Coastal Cornwall Gardens | Salt & Wind Tolerant",
+    "title": "Coastal Cornwall Plants | Salt & Wind-Tolerant Guide",
     "description": "Best salt and wind tolerant plants for coastal Cornwall gardens, including hedging, shrubs, perennials and low-maintenance planting advice.",
     "ogTitle": "Best Plants for Coastal Cornwall Gardens",
     "ogDescription": "A practical guide to salt and wind tolerant plants for exposed coastal gardens in Cornwall.",
@@ -30,6 +30,71 @@
         "Salt tolerance matters most on exposed seaward boundaries.",
         "Wind tolerance matters even when the garden is not right on the cliff.",
         "Drainage and establishment watering decide whether young plants survive the first year."
+      ],
+      "blocks": [
+        {
+          "kind": "table",
+          "title": "Coastal planting shortlist by garden role",
+          "description": "A practical starting point based on RHS coastal-plant guidance and my experience of exposed Cornwall gardens. Final choice still depends on soil, shelter and mature size.",
+          "columns": [
+            "Garden role",
+            "Plants to consider",
+            "Best starting position",
+            "Watch for"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "Evergreen screening",
+                "Griselinia, escallonia or olearia",
+                "Boundaries with some shelter from the strongest direct sea wind",
+                "Young plants need watering and a permeable windbreak while establishing"
+              ]
+            },
+            {
+              "cells": [
+                "Hard-exposure hedge or screen",
+                "Tamarisk, sea buckthorn or blackthorn",
+                "Open, salt-laden sites where a looser screen is acceptable",
+                "Check mature spread, thorns and whether the habit suits a domestic boundary"
+              ]
+            },
+            {
+              "cells": [
+                "Evergreen structure",
+                "Hebe, phormium or cordyline",
+                "Sunny borders with drainage and some protection",
+                "Avoid repeating large spiky forms until they dominate the garden"
+              ]
+            },
+            {
+              "cells": [
+                "Sunny, free-draining shrubs",
+                "Cistus, rosemary or lavender",
+                "Raised, gravelled or naturally free-draining beds",
+                "Winter wet is a bigger risk than salt for many Mediterranean plants"
+              ]
+            },
+            {
+              "cells": [
+                "Low coastal colour",
+                "Sea thrift, sea holly or hardy geraniums",
+                "Front edges and lower planting where wind passes over",
+                "Match each species to available moisture and sunlight"
+              ]
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "RHS: plants for coastal areas",
+          "href": "https://www.rhs.org.uk/plants/for-places/coastal-areas"
+        },
+        {
+          "label": "RHS: designing and planting coastal gardens",
+          "href": "https://www.rhs.org.uk/garden-inspiration/garden-types/coastal-gardens"
+        }
       ]
     },
     {
@@ -40,6 +105,12 @@
         "Use griselinia for fast evergreen screening.",
         "Use escallonia where flowers and wildlife value matter.",
         "Use olearia or tamarisk on harder coastal boundaries."
+      ],
+      "sources": [
+        {
+          "label": "RHS: coastal shrubs and hedging plants",
+          "href": "https://www.rhs.org.uk/plants/for-places/coastal-areas"
+        }
       ]
     },
     {
@@ -50,6 +121,12 @@
         "Hebes suit compact evergreen structure.",
         "Cistus, rosemary and lavender need sun and good drainage.",
         "Phormiums and cordylines add structure but should not dominate every bed."
+      ],
+      "sources": [
+        {
+          "label": "RHS: coastal plants and practical shelter guidance",
+          "href": "https://www.rhs.org.uk/plants/for-places/coastal-areas"
+        }
       ]
     },
     {
@@ -60,6 +137,12 @@
         "Agapanthus is one of the strongest coastal flowering choices.",
         "Sea thrift and osteospermum suit sunny exposed edges.",
         "Repeat plants in groups for a calmer, more professional result."
+      ],
+      "sources": [
+        {
+          "label": "RHS: wildlife-friendly plants for coast habitats",
+          "href": "https://www.rhs.org.uk/wildlife/stone-and-coast-habitats"
+        }
       ]
     },
     {
@@ -70,12 +153,18 @@
         "Improve sandy soil with organic matter before planting.",
         "Use gravel mulch where drainage and low maintenance are priorities.",
         "Water new planting through the first dry spells, even if the plant is drought tolerant later."
+      ],
+      "sources": [
+        {
+          "label": "RHS: coastal soil, windbreak and mulch guidance",
+          "href": "https://www.rhs.org.uk/garden-inspiration/garden-types/coastal-gardens"
+        }
       ]
     }
   ],
   "relatedLinks": [
     {
-      "label": "Landscaping in Cornwall",
+      "label": "Garden design in Newquay and landscaping across Cornwall",
       "href": "/services/landscaping"
     },
     {

@@ -15,7 +15,6 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
-import { useRevealInView } from "@/hooks/use-reveal-in-view";
 
 type ServiceItem = {
     title: string;
@@ -44,48 +43,22 @@ export type ServicesProps = {
 };
 
 export function Services({ badge, heading, ctaLabel, ctaHref, items }: ServicesProps) {
-    const { ref: sectionRef, inView } = useRevealInView<HTMLElement>({ threshold: 0.25 });
-
-    const revealClassName = "transition-[opacity,transform] duration-700 ease-out motion-reduce:transition-none";
-    const revealStyle = (delayMs: number) => ({ transitionDelay: inView ? `${delayMs}ms` : "0ms" });
-
     return (
-        <section ref={sectionRef} className="mx-4 md:mx-8 lg:mx-16 py-12 md:py-16">
+        <section className="mx-4 md:mx-8 lg:mx-16 py-12 md:py-16">
             <div className="container mx-auto px-4 lg:px-12">
                 {/* Header */}
                 <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
                     <div className="min-w-0">
-                        <div
-                            className={cn(
-                                "inline-flex items-center rounded-full bg-muted px-4 py-1.5 text-sm text-muted-foreground",
-                                revealClassName,
-                                inView ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0",
-                            )}
-                            style={revealStyle(0)}
-                        >
+                        <div className="inline-flex items-center rounded-full bg-muted px-4 py-1.5 text-sm text-muted-foreground">
                             {badge}
                         </div>
 
-                        <h2
-                            className={cn(
-                                "mt-4 text-4xl md:text-5xl font-bold tracking-tight text-foreground",
-                                revealClassName,
-                                inView ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0",
-                            )}
-                            style={revealStyle(50)}
-                        >
+                        <h2 className="mt-4 text-4xl md:text-5xl font-bold tracking-tight text-foreground">
                             {heading}
                         </h2>
                     </div>
 
-                    <div
-                        className={cn(
-                            "shrink-0",
-                            revealClassName,
-                            inView ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0",
-                        )}
-                        style={revealStyle(80)}
-                    >
+                    <div className="shrink-0">
                         <Button asChild>
                             <Link href={ctaHref}>
                                 {ctaLabel}
@@ -102,7 +75,7 @@ export function Services({ badge, heading, ctaLabel, ctaHref, items }: ServicesP
                         className="relative pt-12 md:pt-0"
                     >
                         <CarouselContent>
-                            {items.map((service, idx) => {
+                            {items.map((service) => {
                                 const Icon = SERVICE_ICONS[service.icon];
                                 const resolvedImageSrc = (service.imageFile?.trim()
                                     ? `/images/uploads/${service.imageFile}`
@@ -116,13 +89,7 @@ export function Services({ badge, heading, ctaLabel, ctaHref, items }: ServicesP
                                         key={service.title}
                                         className="basis-full sm:basis-1/2 lg:basis-1/4"
                                     >
-                                        <div
-                                            className={cn(
-                                                revealClassName,
-                                                inView ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0",
-                                            )}
-                                            style={revealStyle(120 + idx * 60)}
-                                        >
+                                        <div>
                                             <Card className="border-0 shadow-none bg-transparent py-0">
                                                 <CardContent className="px-0">
                                                     {isClickable ? (
@@ -208,14 +175,14 @@ export function Services({ badge, heading, ctaLabel, ctaHref, items }: ServicesP
                         <CarouselPrevious
                             variant="outline"
                             className={cn(
-                                "top-0 md:-top-15 right-14 left-auto translate-y-0 size-10 md:size-8",
+                                "top-0 md:-top-15 right-16 left-auto translate-y-0 size-12",
                                 "bg-background border-border"
                             )}
                         />
                         <CarouselNext
                             variant="outline"
                             className={cn(
-                                "top-0 md:-top-15 right-3 left-auto translate-y-0 size-10 md:size-8",
+                                "top-0 md:-top-15 right-2 left-auto translate-y-0 size-12",
                                 "bg-background border-border"
                             )}
                         />

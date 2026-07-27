@@ -1,11 +1,11 @@
 {
   "slug": "landscaping",
   "label": "Landscaping",
-  "title": "Landscaping",
-  "description": "I offer practical landscaping services across Newquay, Truro, St Austell, and the wider Cornwall area. Whether you want a full gravel garden, new planting beds, or just a smarter layout that is easier to look after, I will plan the job around your space, your budget, and Cornwall's coastal conditions. I grew up on a farm in Tasmania, so working outdoors and shaping land is second nature to me. Every quote is fixed and clear before I start, and I keep things straightforward from start to finish.",
+  "title": "Garden Design & Landscaping in Newquay",
+  "description": "I provide practical garden design in Newquay and landscaping across Cornwall for homeowners who want a better layout without an overcomplicated process. Whether you want a gravel garden, new planting beds, turf or a smarter space that is easier to look after, I plan the work around your site, budget and coastal conditions. I grew up on a farm in Tasmania, so working outdoors and shaping land is second nature to me. Every scope and quote is clear before I start.",
   "seo": {
-    "title": "Landscape Gardeners in Cornwall | Garden Design",
-    "description": "Landscape gardener in Newquay, Truro and Cornwall. Gravel gardens from £1,500, bed shaping, turfing and planting. Fixed quotes, fully insured."
+    "title": "Garden Design Newquay | Landscaping Across Cornwall",
+    "description": "Practical garden design in Newquay and landscaping across Cornwall. Gravel gardens from £1,500, planting, turf and bed shaping. Insured, fixed quotes."
   },
   "cardTag": "Most requested",
   "cardIcon": "Trees",
@@ -58,7 +58,7 @@
       },
       {
         "title": "Seasonal refresh & waste removal",
-        "description": "All green waste is cleared from site and disposed of properly. I am a licensed waste carrier, so everything goes through the right channels. Green waste removal is charged at £10 per dumpy bag, and I include an estimate in every quote so there are no surprises at the end.",
+        "description": "Green waste can be cleared from site as agreed in the quote. Quilliams is an Environment Agency registered waste carrier (lower tier), CBDL582202. Green waste removal is charged at £10 per dumpy bag, and I include the expected route and cost in the quote so there are no surprises.",
         "icon": "Trash2"
       }
     ]
@@ -157,7 +157,7 @@
       {
         "id": "waste",
         "question": "Do you remove waste?",
-        "answer": "Yes, I remove all waste generated during landscaping work. Green waste removal is charged at £10 per dumpy bag. I am a licensed waste carrier, so all materials, whether green waste, rubble, or old fencing, are disposed of properly and legally. I factor waste removal into the overall quote so you have a clear picture of the total cost before work begins."
+        "answer": "Waste removal can be included where agreed. Green waste removal is charged at £10 per dumpy bag, and other materials such as rubble or old fencing need a suitable route priced for that material. Quilliams is an Environment Agency registered waste carrier (lower tier), CBDL582202. I set out the expected waste route and cost in the quote before work begins."
       },
       {
         "id": "low-maintenance",

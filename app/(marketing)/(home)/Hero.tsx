@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { FileText, Phone } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 type HeroHeadlineTone = "normal" | "primary" | "muted";
@@ -39,12 +39,14 @@ export function Hero({
     subheading,
     primaryCtaLabel,
     primaryCtaHref,
+    secondaryCtaLabel,
+    secondaryCtaHref,
     imagesLeft,
     imagesRight,
 }: HeroProps) {
     return (
         <section
-            className="bg-gray-900 pt-16 pb-4 lg:py-0 mx-4 md:mx-8 lg:mx-16 rounded-4xl relative overflow-hidden"
+            className="bg-gray-900 pt-8 pb-4 md:pt-16 lg:py-0 mx-4 md:mx-8 lg:mx-16 rounded-4xl relative overflow-hidden"
             style={{
                 backgroundImage: 'url(/patterns/pattern-1.png)',
                 backgroundRepeat: 'repeat',
@@ -54,9 +56,12 @@ export function Hero({
             <div className="container mx-auto px-4 lg:px-12 relative z-10">
                 <div className="grid lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-12 lg:gap-16 items-center">
                     {/* Content Area - Left Side */}
-                    <div className="space-y-8 min-w-0">
+                    <div className="min-w-0 space-y-5 md:space-y-8">
                         {/* Heading */}
-                        <h1 className="text-4xl text-white md:text-5xl lg:text-6xl font-bold leading-tight">
+                        <h1
+                            className="text-[2.125rem] text-white md:text-5xl lg:text-6xl font-bold leading-tight"
+                            style={{ fontFamily: "Arial, Helvetica, sans-serif" }}
+                        >
                             {headlineParts.map((part, index) => (
                                 <span
                                     key={index}
@@ -72,18 +77,24 @@ export function Hero({
                             {subheading}
                         </p>
 
-                        {/* CTA Buttons - Updated with phone number */}
-                        <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
-                            <Button size="lg" asChild>
+                        {/* Primary action stays visually dominant; pricing answers early cost questions. */}
+                        <div className="flex flex-wrap items-center gap-x-3 gap-y-3">
+                            <Button size="lg" className="px-3" asChild>
                                 <Link
                                     href={primaryCtaHref}
                                 >
-                                    <FileText className="w-5 h-5" aria-hidden="true" />
                                     {primaryCtaLabel}
                                 </Link>
                             </Button>
 
-                            {/* Phone number instead of secondary CTA */}
+                            <Link
+                                href={secondaryCtaHref}
+                                className="inline-flex min-h-12 items-center gap-1.5 px-1 text-sm font-semibold text-white underline decoration-white/50 underline-offset-4 transition-colors hover:decoration-white"
+                            >
+                                {secondaryCtaLabel}
+                                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                            </Link>
+
                             <a
                                 href="tel:+447593121621"
                                 className="flex min-h-12 items-center gap-2 text-white/90 hover:text-white transition-colors group"
@@ -97,7 +108,10 @@ export function Hero({
                     </div>
 
                     {/* Image Grid - Right Side */}
-                    <div className="rounded-xl grid grid-cols-2 gap-4 h-[400px] md:h-[500px] lg:h-[700px] w-full max-w-full overflow-hidden min-w-0">
+                    <div
+                        className="rounded-xl grid grid-cols-2 gap-4 h-[400px] md:h-[500px] lg:h-[700px] w-full max-w-full overflow-hidden min-w-0"
+                        style={{ contentVisibility: "auto", containIntrinsicSize: "0 400px" }}
+                    >
                         {/* Column 1 - Scrolling Down */}
                         <div className="flex flex-col gap-2 animate-scroll-down">
                             {imagesLeft.map((image, index) => (

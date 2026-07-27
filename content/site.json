@@ -59,9 +59,12 @@
       }
     ]
   },
-  "pwa": {},
+  "pwa": {
+    "themeColor": "#147F3C",
+    "backgroundColor": "#FFFFFF"
+  },
   "footer": {
-    "aboutText": "Quilliams Gardening & Landscaping is a Newquay-based gardening and landscaping service run by Levi Quilliam. Public liability insured and waste-carrier licensed.",
+    "aboutText": "Quilliams Gardening & Landscaping is a Newquay-based gardening and landscaping service run by Levi Quilliam. Public liability insured and an Environment Agency registered waste carrier (lower tier), CBDL582202.",
     "connectHeading": "Connect With Us",
     "businessHoursHeading": "Business Hours",
     "businessHours": [

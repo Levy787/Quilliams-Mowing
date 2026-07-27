@@ -6,6 +6,7 @@ import { PricingFAQ } from "./PricingFAQ";
 import { PricingGuide } from "./PricingGuide";
 import { PricingHero } from "./PricingHero";
 
+import { QuoteActionStrip } from "@/components/reusable/QuoteActionStrip";
 import { QuoteCtaBand } from "@/components/reusable/QuoteCtaBand";
 import { getPricingContent } from "@/lib/keystatic-reader";
 import { buildMetadata } from "@/lib/seo";
@@ -90,6 +91,10 @@ export default async function PricingPage() {
             <FAQSchema items={faqItems} />
             <OfferCatalogSchema items={PRICING_OFFERS} />
             <PricingHero {...pricing.hero} />
+            <QuoteActionStrip
+                heading="Want the real price, not a guide?"
+                body="Use the calculator for a rough range, or send the job details for a fixed quote."
+            />
             <PricingGuide />
             <PricingCalculator {...pricing.calculator} />
             <PricingBreakdown {...pricing.breakdown} />

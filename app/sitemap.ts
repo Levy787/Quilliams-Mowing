@@ -1,29 +1,28 @@
-import { MetadataRoute } from "next";
-import { stat } from "fs/promises";
-import path from "path";
+import type { MetadataRoute } from "next";
 
-import { listBlogSlugs, listServiceSlugs, listProjectSlugs } from "@/lib/keystatic-reader";
+import {
+  getBlogPostBySlug,
+  listBlogSlugs,
+  listProjectSlugs,
+  listServiceSlugs,
+} from "@/lib/keystatic-reader";
 import { areas } from "@/lib/areas/data";
 
 const BASE_URL = "https://quilliamsmowing.co.uk";
-const FALLBACK_LAST_MODIFIED = new Date("2026-05-26");
 
-async function getLastModified(relativePaths: string[]): Promise<Date> {
-  const mtimes = await Promise.all(
-    relativePaths.map(async (relativePath) => {
-      try {
-        const fileStat = await stat(path.join(process.cwd(), relativePath));
-        return fileStat.mtime;
-      } catch {
-        return null;
-      }
-    }),
-  );
+function reliableContentDate(value: string | null | undefined): string | undefined {
+  const trimmed = value?.trim();
+  if (!trimmed || !/^\d{4}-\d{2}-\d{2}$/.test(trimmed)) return undefined;
 
-  return mtimes.reduce<Date>((newest, mtime) => {
-    if (!mtime) return newest;
-    return mtime > newest ? mtime : newest;
-  }, FALLBACK_LAST_MODIFIED);
+  const timestamp = Date.parse(`${trimmed}T00:00:00Z`);
+  return Number.isFinite(timestamp) ? trimmed : undefined;
+}
+
+function entry(
+  url: string,
+  lastModified?: string,
+): MetadataRoute.Sitemap[number] {
+  return lastModified ? { url, lastModified } : { url };
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -32,99 +31,57 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const blogSlugs = await listBlogSlugs();
   const areaSlugs = Object.keys(areas).filter((slug) => !areas[slug].noindex);
 
-  const staticPageSpecs = [
-    {
-      url: BASE_URL,
-      files: ["content/home.json", "app/(marketing)/(home)/page.tsx"],
-    },
-    {
-      url: `${BASE_URL}/services`,
-      files: ["content/services-landing.json", "app/(marketing)/services/page.tsx"],
-    },
-    {
-      url: `${BASE_URL}/projects`,
-      files: ["content/projects-landing.json", "app/(marketing)/projects/page.tsx"],
-    },
-    {
-      url: `${BASE_URL}/pricing`,
-      files: ["content/pricing.json", "app/(marketing)/pricing/page.tsx"],
-    },
-    {
-      url: `${BASE_URL}/contact`,
-      files: ["content/contact.json", "app/(marketing)/contact/page.tsx"],
-    },
-    {
-      url: `${BASE_URL}/quote`,
-      files: ["content/quote.json", "app/(marketing)/quote/page.tsx"],
-    },
-    {
-      url: `${BASE_URL}/about`,
-      files: ["content/about.json", "app/(marketing)/about/page.tsx"],
-    },
-    {
-      url: `${BASE_URL}/areas`,
-      files: ["lib/areas/data.ts", "app/(marketing)/areas/page.tsx"],
-    },
-    {
-      url: `${BASE_URL}/blog`,
-      files: ["app/(marketing)/blog/page.tsx", ...blogSlugs.map((slug) => `content/blog/${slug}.json`)],
-    },
-    {
-      url: `${BASE_URL}/site-map`,
-      files: ["app/(marketing)/site-map/page.tsx"],
-    },
-    {
-      url: `${BASE_URL}/refer`,
-      files: ["content/referral.json", "app/refer/page.tsx"],
-    },
-    {
-      url: `${BASE_URL}/privacy`,
-      files: ["content/privacy.json", "app/(marketing)/privacy/page.tsx"],
-    },
-    {
-      url: `${BASE_URL}/terms`,
-      files: ["content/terms.json", "app/(marketing)/terms/page.tsx"],
-    },
-  ];
-
-  const staticPages: MetadataRoute.Sitemap = await Promise.all(
-    staticPageSpecs.map(async (page) => ({
-      url: page.url,
-      lastModified: await getLastModified(page.files),
+  const blogPosts = await Promise.all(
+    blogSlugs.map(async (slug) => ({
+      slug,
+      post: await getBlogPostBySlug(slug),
     })),
   );
 
-  const servicePages: MetadataRoute.Sitemap = await Promise.all(serviceSlugs.map(async (slug) => ({
-    url: `${BASE_URL}/services/${slug}`,
-    lastModified: await getLastModified([
-      `content/services/${slug}.json`,
-      "app/(marketing)/services/[slug]/page.tsx",
-    ]),
-  })));
+  const blogDates = blogPosts
+    .map(({ post }) =>
+      reliableContentDate(post?.updatedDate ?? post?.publishedDate),
+    )
+    .filter((date): date is string => Boolean(date));
+  const latestBlogDate = blogDates.sort().at(-1);
 
-  const projectPages: MetadataRoute.Sitemap = await Promise.all(projectSlugs.map(async (slug) => ({
-    url: `${BASE_URL}/projects/${slug}`,
-    lastModified: await getLastModified([
-      `content/projects/${slug}.json`,
-      "app/(marketing)/projects/[slug]/page.tsx",
-    ]),
-  })));
+  // Source-control mtimes are reset by fresh deployments, so they are not
+  // truthful page modification dates. Omit lastmod unless the content model
+  // exposes an editorial date used by the rendered Article schema.
+  const staticPages: MetadataRoute.Sitemap = [
+    entry(BASE_URL),
+    entry(`${BASE_URL}/services`),
+    entry(`${BASE_URL}/projects`),
+    entry(`${BASE_URL}/pricing`),
+    entry(`${BASE_URL}/contact`),
+    entry(`${BASE_URL}/quote`),
+    entry(`${BASE_URL}/about`),
+    entry(`${BASE_URL}/areas`),
+    entry(`${BASE_URL}/blog`, latestBlogDate),
+    entry(`${BASE_URL}/site-map`),
+    entry(`${BASE_URL}/refer`),
+    entry(`${BASE_URL}/privacy`),
+    entry(`${BASE_URL}/terms`),
+  ];
 
-  const areaPages: MetadataRoute.Sitemap = await Promise.all(areaSlugs.map(async (slug) => ({
-    url: `${BASE_URL}/areas/${slug}`,
-    lastModified: await getLastModified([
-      "lib/areas/data.ts",
-      "app/(marketing)/areas/[slug]/page.tsx",
-    ]),
-  })));
+  const servicePages: MetadataRoute.Sitemap = serviceSlugs.map((slug) =>
+    entry(`${BASE_URL}/services/${slug}`),
+  );
 
-  const blogPages: MetadataRoute.Sitemap = await Promise.all(blogSlugs.map(async (slug) => ({
-    url: `${BASE_URL}/blog/${slug}`,
-    lastModified: await getLastModified([
-      `content/blog/${slug}.json`,
-      "app/(marketing)/blog/[slug]/page.tsx",
-    ]),
-  })));
+  const projectPages: MetadataRoute.Sitemap = projectSlugs.map((slug) =>
+    entry(`${BASE_URL}/projects/${slug}`),
+  );
+
+  const areaPages: MetadataRoute.Sitemap = areaSlugs.map((slug) =>
+    entry(`${BASE_URL}/areas/${slug}`),
+  );
+
+  const blogPages: MetadataRoute.Sitemap = blogPosts.map(({ slug, post }) =>
+    entry(
+      `${BASE_URL}/blog/${slug}`,
+      reliableContentDate(post?.updatedDate ?? post?.publishedDate),
+    ),
+  );
 
   return [...staticPages, ...servicePages, ...projectPages, ...areaPages, ...blogPages];
 }

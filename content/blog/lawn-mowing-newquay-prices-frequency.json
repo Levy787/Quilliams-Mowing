@@ -4,8 +4,8 @@
   "subtitle": "A practical local guide to lawn mowing in Newquay, covering realistic prices, how often coastal lawns need cutting, what changes the quote, and how to choose a reliable mowing service.",
   "author": "Levi Quilliam",
   "publishedDate": "2026-06-15",
-  "updatedDate": "2026-06-15",
-  "readingTime": "8 min read",
+  "updatedDate": "2026-07-27",
+  "readingTime": "9 min read",
   "heroImage": {
     "src": "/images/uploads/lawn-care/hero/imageFile.webp",
     "alt": "Before and after lawn mowing reset on a Newquay front garden"
@@ -133,6 +133,12 @@
           "body": "For most Newquay homes, fortnightly mowing from spring through autumn is the best balance of cost and finish. Weekly visits make sense for very visible front lawns, holiday lets, fast-growing sheltered gardens, or customers who want a consistently sharp look.",
           "bullets": []
         }
+      ],
+      "sources": [
+        {
+          "label": "RHS: seasonal lawn mowing frequency and cutting heights",
+          "href": "https://www.rhs.org.uk/lawns/mowing"
+        }
       ]
     },
     {
@@ -182,6 +188,12 @@
             }
           ]
         }
+      ],
+      "sources": [
+        {
+          "label": "RHS: mow in suitable conditions and remove no more than one-third",
+          "href": "https://www.rhs.org.uk/lawns/how-to-mow-a-lawn"
+        }
       ]
     },
     {
@@ -210,6 +222,12 @@
               "caption": "A regular maintenance finish: lawn cut, edges tidied and borders kept under control."
             }
           ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "GOV.UK: checking waste arrangements when a business removes garden waste",
+          "href": "https://www.gov.uk/government/publications/waste-duty-of-care-code-of-practice/waste-duty-of-care-code-of-practice"
         }
       ]
     },
@@ -283,7 +301,7 @@
   ],
   "relatedLinks": [
     {
-      "label": "Lawn mowing service",
+      "label": "Cornwall lawn care and mowing service",
       "href": "/services/lawn-care"
     },
     {
@@ -291,7 +309,7 @@
       "href": "/pricing"
     },
     {
-      "label": "Gardener in Newquay",
+      "label": "Local gardener and recurring maintenance in Newquay",
       "href": "/areas/newquay"
     },
     {

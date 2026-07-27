@@ -74,22 +74,24 @@ export function CookieBanner() {
             role="dialog"
             aria-label="Cookie preferences"
         >
-            <div className="container mx-auto flex flex-col gap-3 px-4 py-4 md:flex-row md:items-center md:justify-between">
-                <div className="text-sm text-foreground">
-                    Choose “Yes” to allow analytics cookies, or “Only necessary” to continue without analytics cookies.
-                    We still track page visits without cookies.
+            <div className="container mx-auto flex flex-col gap-2 px-4 py-2 md:flex-row md:items-center md:justify-between md:gap-4 md:py-4">
+                <div className="text-[13px] leading-5 text-foreground sm:text-sm">
+                    Allow analytics cookies? Choose “Yes” or continue with “Only necessary”.
+                    Page visits are still measured without cookies.
                 </div>
 
-                <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
+                <div className="grid shrink-0 grid-cols-2 gap-2 md:flex md:items-center">
                     <Button
                         type="button"
                         variant="secondary"
+                        className="px-3"
                         onClick={() => applyConsent("rejected")}
                     >
                         Only necessary
                     </Button>
                     <Button
                         type="button"
+                        className="px-3"
                         onClick={() => applyConsent("accepted")}
                     >
                         Yes

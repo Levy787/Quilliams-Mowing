@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 
 import { getSiteContent } from "@/lib/keystatic-reader";
@@ -48,8 +47,13 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     manifest: "/manifest.webmanifest",
     icons: {
-      icon: favicon ? [{ url: favicon, type: "image/png" }] : undefined,
-      apple: appleTouch ? [{ url: appleTouch, type: "image/png" }] : undefined,
+      icon: favicon
+        ? [{ url: favicon, type: "image/x-icon" }]
+        : undefined,
+      shortcut: [{ url: "/favicon.ico", type: "image/x-icon" }],
+      apple: appleTouch
+        ? [{ url: appleTouch, type: "image/png", sizes: "180x180" }]
+        : undefined,
       other:
         safariPinnedTab && themeColor
           ? [
@@ -73,34 +77,15 @@ export async function generateViewport(): Promise<Viewport> {
 }
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-  const hasTurnstileConfigured = Boolean(
-    process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY_SUBSCRIBE?.trim() ||
-    process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY_CONTACT?.trim() ||
-    process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY_QUOTE?.trim() ||
-    process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY_POPUP?.trim() ||
-    process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY?.trim(),
-  );
-
   return (
     <html lang="en-GB">
-      <head>
-        <link rel="preconnect" href="https://eu.i.posthog.com" crossOrigin="" />
-        <link rel="preconnect" href="https://challenges.cloudflare.com" crossOrigin="" />
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {hasTurnstileConfigured ? (
-          <Script
-            id="cf-turnstile"
-            src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
-            strategy="afterInteractive"
-          />
-        ) : null}
         <GoogleAnalytics />
         <PostHogClientInit />
         {children}

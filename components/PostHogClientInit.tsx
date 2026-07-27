@@ -2,33 +2,51 @@
 
 import * as React from "react";
 import { usePathname } from "next/navigation";
-import posthog from "posthog-js";
+
+import { initializePostHog } from "@/app/instrumentation-client";
+
+type IdleWindow = Window & {
+    requestIdleCallback?: (
+        callback: () => void,
+        options?: { timeout: number },
+    ) => number;
+    cancelIdleCallback?: (handle: number) => void;
+};
 
 export function PostHogClientInit() {
     const pathname = usePathname();
 
     React.useEffect(() => {
-        // Defer analytics initialization until after hydration.
-        // This avoids DOM mutations (e.g. injected <script> tags) during hydration.
-        void import("@/app/instrumentation-client");
-    }, []);
-
-    React.useEffect(() => {
         let cancelled = false;
+        const idleWindow = window as IdleWindow;
 
-        async function capturePageView() {
-            await import("@/app/instrumentation-client");
-            if (cancelled) return;
+        async function initializeAndCapturePageView() {
+            const posthog = await initializePostHog();
+            if (cancelled || !posthog) return;
 
             posthog.capture("$pageview", {
-                $current_url:
-                    typeof window !== "undefined" ? window.location.href : undefined,
+                $current_url: window.location.href,
             });
         }
 
-        void capturePageView();
+        const run = () => {
+            void initializeAndCapturePageView();
+        };
+
+        const idleHandle = idleWindow.requestIdleCallback?.(run, {
+            timeout: 2000,
+        });
+        const timeoutHandle =
+            idleHandle === undefined ? window.setTimeout(run, 1500) : undefined;
+
         return () => {
             cancelled = true;
+            if (idleHandle !== undefined) {
+                idleWindow.cancelIdleCallback?.(idleHandle);
+            }
+            if (timeoutHandle !== undefined) {
+                window.clearTimeout(timeoutHandle);
+            }
         };
     }, [pathname]);
 

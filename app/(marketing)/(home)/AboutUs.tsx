@@ -2,10 +2,8 @@
 
 import * as React from "react";
 import Image from "next/image";
-import { ShieldCheck, Star, ThumbsUp } from "lucide-react";
-
-import { cn } from "@/lib/utils";
-import { useRevealInView } from "@/hooks/use-reveal-in-view";
+import Link from "next/link";
+import { ArrowRight, ShieldCheck, Star, ThumbsUp } from "lucide-react";
 
 type Feature = {
     title: string;
@@ -67,90 +65,59 @@ export function AboutUs({
         : imageSrc ?? "";
     const hasImage = Boolean(resolvedImageSrc.trim());
 
-    const { ref: sectionRef, inView } = useRevealInView<HTMLElement>({ threshold: 0.35 });
-    const revealClassName = "transition-[opacity,transform] duration-700 ease-out motion-reduce:transition-none";
-    const revealStyle = (delayMs: number) => ({ transitionDelay: inView ? `${delayMs}ms` : "0ms" });
-
     return (
-        <section ref={sectionRef} className="mx-4 md:mx-8 lg:mx-16 py-12 md:py-16">
+        <section className="mx-4 py-8 md:mx-8 md:py-10 lg:mx-16">
             <div className="container mx-auto px-4 lg:px-12">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-2 lg:gap-16">
                     {/* Image */}
-                    <div
-                        className={cn(
-                            "relative overflow-hidden rounded-4xl aspect-4/3 sm:aspect-5/4 lg:aspect-4/3",
-                            revealClassName,
-                            inView ? "scale-100 opacity-100" : "scale-[0.98] opacity-0",
-                        )}
-                        style={revealStyle(0)}
-                    >
-                        {hasImage ? (
-                            <Image
-                                src={resolvedImageSrc}
-                                alt={imageAlt ?? ""}
-                                fill
-                                className="object-cover"
-                                sizes="(max-width: 1024px) 100vw, 50vw"
-                                priority={false}
-                            />
-                        ) : null}
+                    <div className="lg:sticky lg:top-28 lg:self-start">
+                        <div className="relative aspect-4/3 overflow-hidden rounded-4xl sm:aspect-5/4 lg:aspect-4/5">
+                            {hasImage ? (
+                                <Image
+                                    src={resolvedImageSrc}
+                                    alt={imageAlt ?? ""}
+                                    fill
+                                    className="object-cover"
+                                    sizes="(max-width: 1024px) 100vw, 50vw"
+                                    priority={false}
+                                />
+                            ) : null}
+                        </div>
                     </div>
 
                     {/* Content */}
                     <div className="min-w-0">
-                        <div
-                            className={cn(
-                                "inline-flex items-center rounded-full bg-muted px-4 py-1.5 text-sm text-muted-foreground",
-                                revealClassName,
-                                inView ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0",
-                            )}
-                            style={revealStyle(0)}
-                        >
+                        <div className="inline-flex items-center rounded-full bg-muted px-4 py-1.5 text-sm text-muted-foreground">
                             {badge}
                         </div>
 
-                        <h2
-                            className={cn(
-                                "mt-5 text-4xl md:text-5xl font-bold tracking-tight text-foreground",
-                                revealClassName,
-                                inView ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0",
-                            )}
-                            style={revealStyle(50)}
-                        >
+                        <h2 className="mt-5 text-4xl md:text-5xl font-bold tracking-tight text-foreground">
                             {renderHeadingLines(headingLines)}
                         </h2>
 
-                        <p
-                            className={cn(
-                                "mt-5 text-base md:text-lg leading-relaxed text-muted-foreground max-w-prose",
-                                revealClassName,
-                                inView ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0",
-                            )}
-                            style={revealStyle(100)}
-                        >
+                        <p className="mt-5 text-base md:text-lg leading-relaxed text-muted-foreground max-w-prose">
                             {renderBodyWithParagraphBreaks(body)}
                         </p>
 
-                        <div
-                            className={cn("mt-8 border-t border-border transition-opacity duration-700 motion-reduce:transition-none", inView ? "opacity-100" : "opacity-0")}
-                            style={revealStyle(150)}
-                        />
+                        <Link
+                            href="/about"
+                            className="mt-6 inline-flex min-h-12 items-center gap-2 font-semibold text-primary underline-offset-4 hover:underline"
+                        >
+                            Meet Levi Quilliam
+                            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                        </Link>
 
-                        <div className="mt-6">
+                        <div className="mt-6 border-t border-border" />
+
+                        <div className="mt-2">
                             {features.map((feature, idx) => {
                                 const Icon = FEATURE_ICONS[feature.icon];
                                 return (
                                     <div
                                         key={feature.title}
-                                        className={cn(
-                                            "grid gap-x-5 gap-y-2 py-6",
-                                            "grid-cols-[auto_1fr]",
-                                            "md:grid-cols-[auto_12rem_1fr]",
-                                            idx !== 0 && "border-t border-border",
-                                            revealClassName,
-                                            inView ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0",
-                                        )}
-                                        style={revealStyle(180 + idx * 80)}
+                                        className={`grid grid-cols-[auto_1fr] gap-x-5 gap-y-2 py-4 md:grid-cols-[auto_9rem_1fr] ${
+                                            idx !== 0 ? "border-t border-border" : ""
+                                        }`}
                                     >
                                         <div className="pt-0.5">
                                             <Icon className="h-7 w-7 text-primary" aria-hidden="true" />

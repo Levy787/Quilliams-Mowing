@@ -34,6 +34,7 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion";
+import { QuoteActionStrip } from "@/components/reusable/QuoteActionStrip";
 import type {
     IconName,
     PatternName,
@@ -58,6 +59,19 @@ function patternUrl(pattern: PatternName): string {
     return pattern === "pattern-1"
         ? "url('/patterns/pattern-1.png')"
         : "url('/patterns/pattern-2.png')";
+}
+
+function serviceAreaAnchor(service: Service): string {
+    const labels: Record<string, string> = {
+        "lawn-care": "Lawn care and mowing",
+        "hedge-trimming": "Hedge trimming",
+        landscaping: "Garden design and landscaping",
+        "garden-maintenance": "Garden maintenance",
+        "seasonal-cleanup": "Seasonal garden clearance",
+        mulching: "Garden mulching",
+    };
+
+    return labels[service.slug] ?? service.label;
 }
 
 export default function ServiceDetailClient({ service }: { service: Service }) {
@@ -201,6 +215,11 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                     </div>
                 </div>
             </section>
+
+            <QuoteActionStrip
+                heading={`Need a ${service.label.toLowerCase()} quote?`}
+                body="Send a short note, your contact details, and photos if you have them. Levi will price it clearly."
+            />
 
             {/* What's included */}
             <section className="mx-4 md:mx-8 lg:mx-16 py-12 md:py-16">
@@ -530,7 +549,7 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                                 href={area.href}
                                 className="inline-flex min-h-12 items-center rounded-lg border px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:border-primary hover:text-primary"
                             >
-                                {service.title} in {area.label}
+                                {serviceAreaAnchor(service)} in {area.label}
                             </Link>
                         ))}
                     </div>

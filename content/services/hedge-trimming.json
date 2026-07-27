@@ -1,11 +1,11 @@
 {
   "slug": "hedge-trimming",
   "label": "Hedge Trimming",
-  "title": "Hedge Trimming",
-  "description": "Hedge trimming and cutting across Newquay, Truro, St Austell, Bodmin, and the wider Cornwall area. I handle everything from a quick tidy on a low box hedge to a full reset on overgrown leylandii. Neat shapes, clean lines, and a consistent finish every time. Cornwall's mild climate and longer growing season mean hedges here can quickly get out of hand if they are not kept on top of, so sensible timing and regular cuts make all the difference. Prices start from £5 per metre for smaller hedges and go up to around £15 per metre for taller or thicker growth.",
+  "title": "Hedge Trimming in Newquay & North Cornwall",
+  "description": "Hedge trimming across Cornwall from my Newquay base, from light domestic maintenance to careful reshaping of overgrown boundaries. I handle everything from a quick tidy on a low box hedge to a planned reset on overgrown leylandii, with nest checks, neat lines and a clean finish. Cornwall's long growing season means regular, species-appropriate cuts make a visible difference. Prices start from £5 per metre for smaller hedges and rise with height, thickness, access and waste.",
   "seo": {
-    "title": "Hedge Trimming in Cornwall | Hedge Cutting Service",
-    "description": "Hedge trimming across Newquay, Truro, St Austell and Cornwall. From £5 per metre. Neat shapes, clean lines, insured local gardener.",
+    "title": "Hedge Trimming Cornwall | Newquay Hedge Cutting",
+    "description": "Hedge trimming across Cornwall from a Newquay-based, insured gardener. Nest checks, neat lines and a tidy finish from £5 per metre. Request a clear quote.",
     "ogImage": "/images/IMG_20250708_11200.webp"
   },
   "cardIcon": "Scissors",
@@ -53,7 +53,7 @@
       },
       {
         "title": "Green waste removal (optional)",
-        "description": "All hedge clippings and trimmings can be collected and removed from site. Green waste removal is £10 per dumpy bag. I am a licensed waste carrier, so disposal is done properly and legally. For smaller trims the waste cost is minimal, and I will always let you know the likely amount before starting.",
+        "description": "Hedge clippings and trimmings can be collected and removed by agreement. Green waste removal is £10 per dumpy bag. Quilliams is an Environment Agency registered waste carrier (lower tier), CBDL582202, and I state the agreed waste route and likely charge before starting.",
         "icon": "Trash2"
       },
       {
@@ -198,7 +198,7 @@
       {
         "id": "waste",
         "question": "Do you remove hedge clippings?",
-        "answer": "Yes, I remove all hedge clippings and leave the site tidy. Green waste removal is charged at £10 per dumpy bag, which covers transport and disposal. I am a licensed waste carrier, so you can be confident everything is disposed of properly and legally. For smaller trims the waste cost is minimal. I will always give you a clear idea of likely waste costs before starting the job."
+        "answer": "Yes, hedge clippings can be removed by agreement and I leave the site tidy. Green waste removal is charged at £10 per dumpy bag. Quilliams is an Environment Agency registered waste carrier (lower tier), CBDL582202. I will state the agreed waste route and give you a clear idea of likely costs before starting the job."
       },
       {
         "id": "one-off",

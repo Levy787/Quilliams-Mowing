@@ -1,5 +1,35 @@
 import type { NextConfig } from "next";
 
+const isDevelopment = process.env.NODE_ENV === "development";
+
+const contentSecurityPolicy = [
+  "default-src 'self'",
+  [
+    "script-src 'self' 'unsafe-inline'",
+    // React/Next development tooling needs eval for enhanced debugging.
+    // Production bundles do not.
+    isDevelopment ? "'unsafe-eval'" : "",
+    "https://challenges.cloudflare.com",
+    "https://www.googletagmanager.com",
+  ]
+    .filter(Boolean)
+    .join(" "),
+  "style-src 'self' 'unsafe-inline'",
+  "font-src 'self' data:",
+  "img-src 'self' data: blob: https://picsum.photos https://images.unsplash.com https://*.posthog.com https://*.basemaps.cartocdn.com https://*.tile.openstreetmap.org",
+  "connect-src 'self' https://eu.i.posthog.com https://eu-assets.i.posthog.com https://*.basemaps.cartocdn.com https://www.google-analytics.com https://region1.google-analytics.com",
+  "worker-src 'self' blob:",
+  "frame-src 'self' https://challenges.cloudflare.com",
+  "frame-ancestors 'self'",
+  "object-src 'none'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "manifest-src 'self'",
+  isDevelopment ? "" : "upgrade-insecure-requests",
+]
+  .filter(Boolean)
+  .join("; ") + ";";
+
 const nextConfig: NextConfig = {
   // Image optimization
   images: {
@@ -163,19 +193,7 @@ const nextConfig: NextConfig = {
           },
           {
             key: "Content-Security-Policy",
-            value: [
-              "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://eu.i.posthog.com https://eu-assets.i.posthog.com https://challenges.cloudflare.com https://www.googletagmanager.com",
-              "style-src 'self' 'unsafe-inline'",
-              "font-src 'self' data:",
-              "img-src 'self' data: blob: https://picsum.photos https://images.unsplash.com https://*.posthog.com https://*.basemaps.cartocdn.com https://*.tile.openstreetmap.org",
-              "connect-src 'self' https://eu.i.posthog.com https://eu-assets.i.posthog.com https://*.basemaps.cartocdn.com https://www.google-analytics.com https://region1.google-analytics.com",
-              "worker-src 'self' blob:",
-              "frame-src 'self' https://challenges.cloudflare.com",
-              "frame-ancestors 'self'",
-              "base-uri 'self'",
-              "form-action 'self'",
-            ].join("; ") + ";",
+            value: contentSecurityPolicy,
           },
         ],
       },

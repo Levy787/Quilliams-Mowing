@@ -1,0 +1,22 @@
+{
+  "property": "sc-domain:quilliamsmowing.co.uk",
+  "sitemaps": [
+    {
+      "path": "https://quilliamsmowing.co.uk/sitemap.xml",
+      "last_submitted": "2026-02-08T07:43:20.228Z",
+      "is_pending": false,
+      "is_index": false,
+      "type": "sitemap",
+      "warnings": "0",
+      "errors": "0",
+      "contents": [
+        {
+          "type": "web",
+          "submitted": "37",
+          "indexed": "0"
+        }
+      ]
+    }
+  ],
+  "error": null
+}

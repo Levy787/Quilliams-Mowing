@@ -10,7 +10,7 @@ function HeadingWord({ word, index }: { word: string; index: number }) {
             className={
                 isEven
                     ? "text-primary"
-                    : "text-primary/50"
+                    : "text-primary/80"
             }
         >
             {word}

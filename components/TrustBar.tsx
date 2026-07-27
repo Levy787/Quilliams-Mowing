@@ -1,6 +1,10 @@
 import { Star, Shield, MapPin, Zap } from "lucide-react";
+import {
+    GOOGLE_BUSINESS_PROFILE_URL,
+    GOOGLE_REVIEW_COUNT,
+    GOOGLE_REVIEW_RATING,
+} from "@/lib/google-reviews";
 
-const GOOGLE_BUSINESS_PROFILE_URL = "https://g.page/r/Ca1e8ukWV-qsEBM/";
 const CHECKATRADE_URL = "https://www.checkatrade.com/trades/quilliamsmowingltd";
 const YELL_URL = "https://www.yell.com/biz/quilliams-mowing-ltd-newquay-10969895/";
 const BARK_URL = "https://www.bark.com/en/gb/b/quilliams-gardening-amp-landscaping/KNoMX4/";
@@ -16,8 +20,12 @@ export function TrustBar() {
                     className="flex items-center gap-2 hover:text-foreground"
                 >
                     <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                    <span className="font-semibold text-foreground">5.0</span>
-                    <span className="hidden sm:inline">from 16 reviews on Google</span>
+                    <span className="font-semibold text-foreground">
+                        {GOOGLE_REVIEW_RATING.toFixed(1)}
+                    </span>
+                    <span className="hidden sm:inline">
+                        from {GOOGLE_REVIEW_COUNT} reviews on Google
+                    </span>
                     <span className="sm:hidden">Google</span>
                 </a>
                 

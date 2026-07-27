@@ -4,8 +4,8 @@
   "subtitle": "A clear 2026 guide to lawn mowing, hedge trimming, garden tidy-ups, maintenance visits and practical landscaping costs in Cornwall.",
   "author": "Levi Quilliam",
   "publishedDate": "2026-01-12",
-  "updatedDate": "2026-05-26",
-  "readingTime": "8 min read",
+  "updatedDate": "2026-07-27",
+  "readingTime": "9 min read",
   "heroImage": {
     "src": "/images/uploads/garden-maintenance/hero/imageFile.webp",
     "alt": "Freshly maintained Cornwall garden with lawn and tidy borders"
@@ -19,7 +19,7 @@
   },
   "quickAnswer": {
     "title": "Quick answer",
-    "body": "As of May 2026, a gardener in Cornwall usually costs £20 to £50 for lawn mowing, £60 to £120 for a regular maintenance visit, and from around £80 for a one-off tidy-up. Hedge trimming is often £5 to £15 per metre depending on height, thickness, access and waste. Larger landscaping or gravel garden work can range from £500 to £2,500 plus materials. The final price depends on garden size, current condition, slope, parking, gate access and whether green waste is removed. In coastal towns like Newquay, Padstow, Perranporth and St Ives, access and wind-shaped growth can affect time on site. Photos from a few angles are usually enough for me to give a clearer price before booking. A proper quote should state what is included, what is excluded, and whether waste disposal is charged separately."
+    "body": "As of 27 July 2026, my published planning ranges are £20 to £50 for lawn mowing, £60 to £120 for a regular maintenance visit, and from around £80 for a one-off tidy-up. I usually price hedge trimming at £5 to £15 per metre depending on height, thickness, access and waste. Larger landscaping or gravel garden work can range from £500 to £2,500 plus materials. These are Quilliams guide prices, not an official Cornwall tariff or a promise that every gardener charges the same. The final quote depends on garden size, current condition, slope, parking, gate access and whether green waste is removed. In coastal towns like Newquay, Padstow, Perranporth and St Ives, access and wind-shaped growth can affect time on site. Photos from a few angles are usually enough for me to give a clearer price before booking. A proper quote should state what is included, what is excluded, and whether waste disposal is charged separately."
   },
   "sections": [
     {
@@ -30,6 +30,61 @@
         "Size, condition and access are the three biggest price factors.",
         "Green waste volume can change the total more than people expect.",
         "Regular maintenance is usually better value than repeated rescues."
+      ],
+      "blocks": [
+        {
+          "kind": "table",
+          "title": "Quilliams 2026 planning prices",
+          "description": "Published guide ranges checked on 27 July 2026. They help with budgeting, but photos or a site visit are still needed for a fixed quote.",
+          "columns": [
+            "Job",
+            "Planning range",
+            "Usually included",
+            "Main price variables"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "Small or average lawn",
+                "£20 to £50",
+                "Mowing, edging, strimming and a tidy blow-down",
+                "Size, grass length, slope, obstacles and access"
+              ]
+            },
+            {
+              "cells": [
+                "Regular maintenance visit",
+                "£60 to £120",
+                "Agreed mix of mowing, weeding, light pruning and tidying",
+                "Visit length, garden condition and priorities"
+              ]
+            },
+            {
+              "cells": [
+                "Domestic hedge trimming",
+                "£5 to £15 per metre",
+                "Agreed trim and site tidy",
+                "Height, width, species, access and waste volume"
+              ]
+            },
+            {
+              "cells": [
+                "One-off tidy-up",
+                "From £80",
+                "Work listed in the fixed quote",
+                "Overgrowth, bramble, access and waste volume"
+              ]
+            },
+            {
+              "cells": [
+                "Practical landscaping",
+                "About £500 to £2,500 plus materials",
+                "Scope agreed before work starts",
+                "Ground preparation, materials, drainage and finish"
+              ]
+            }
+          ]
+        }
       ]
     },
     {
@@ -40,6 +95,12 @@
         "Small lawn: usually £20 to £30.",
         "Average garden: usually £30 to £50.",
         "Fortnightly visits suit most lawns during the growing season."
+      ],
+      "sources": [
+        {
+          "label": "RHS: how and when to mow a lawn",
+          "href": "https://www.rhs.org.uk/lawns/how-to-mow-a-lawn"
+        }
       ]
     },
     {
@@ -50,12 +111,32 @@
     {
       "id": "hedges",
       "title": "Hedge trimming costs",
-      "body": "Hedge trimming is often priced by length, height and difficulty. A low, easy hedge might be near the lower end of £5 to £15 per metre. A taller, thicker hedge with awkward access, steps, slopes or a lot of waste will cost more because it takes longer to cut safely and clear properly. If the hedge has been neglected for years, it may need reduction work rather than a standard trim.\n\nTiming matters too. I avoid disturbing active bird nests, and I will always talk through what is sensible before cutting hard. For many domestic hedges in Cornwall, one or two trims a year keeps them looking tidy. Coastal hedges can grow unevenly, with the sheltered side pushing out more strongly than the windward side. A good trim should account for that rather than just shaving everything flat."
+      "body": "Hedge trimming is often priced by length, height and difficulty. A low, easy hedge might be near the lower end of £5 to £15 per metre. A taller, thicker hedge with awkward access, steps, slopes or a lot of waste will cost more because it takes longer to cut safely and clear properly. If the hedge has been neglected for years, it may need reduction work rather than a standard trim.\n\nTiming matters too. I avoid disturbing active bird nests, and I will always talk through what is sensible before cutting hard. For many domestic hedges in Cornwall, one or two trims a year keeps them looking tidy. Coastal hedges can grow unevenly, with the sheltered side pushing out more strongly than the windward side. A good trim should account for that rather than just shaving everything flat.",
+      "sources": [
+        {
+          "label": "GOV.UK: wild birds, nests and activities that can harm them",
+          "href": "https://www.gov.uk/guidance/wild-birds-protection-surveys-and-licences"
+        },
+        {
+          "label": "RHS: pruning established hedges",
+          "href": "https://www.rhs.org.uk/plants/types/hedges/pruning-hedges"
+        }
+      ]
     },
     {
       "id": "tidy-ups",
       "title": "One-off tidy-ups and clearances",
-      "body": "One-off garden tidy-ups usually start from around £80 and rise with the amount of growth, waste and access difficulty. A small tidy might be a lawn cut, edges, weeds and a general clear. A bigger clearance might involve bramble, overgrown shrubs, long grass, old pots, fallen branches, pampas grass, or several dumpy bags of green waste.\n\nPhotos are the fastest way to price this fairly. I need to see the area, the access route, the height of the growth, and what needs removing. Green waste is a real cost because it takes time to cut, bag, carry, load and dispose of properly. I am registered as a waste carrier, and I charge green waste clearly rather than hiding it in vague wording."
+      "body": "One-off garden tidy-ups usually start from around £80 and rise with the amount of growth, waste and access difficulty. A small tidy might be a lawn cut, edges, weeds and a general clear. A bigger clearance might involve bramble, overgrown shrubs, long grass, old pots, fallen branches, pampas grass, or several dumpy bags of green waste.\n\nPhotos are the fastest way to price this fairly. I need to see the area, the access route, the height of the growth, and what needs removing. Green waste is a real cost because it takes time to cut, bag, carry, load and dispose of properly. Quilliams is an Environment Agency registered waste carrier (lower tier), CBDL582202, and I show waste charges clearly rather than hiding them in vague wording.",
+      "sources": [
+        {
+          "label": "GOV.UK: waste duty of care code of practice",
+          "href": "https://www.gov.uk/government/publications/waste-duty-of-care-code-of-practice/waste-duty-of-care-code-of-practice"
+        },
+        {
+          "label": "Environment Agency public register: Quilliams, CBDL582202",
+          "href": "https://environment.data.gov.uk/public-register/waste-carriers-brokers/registration/CBDL582202?__pageState=result-waste-carriers-brokers"
+        }
+      ]
     },
     {
       "id": "landscaping",
@@ -69,12 +150,16 @@
       "href": "/pricing"
     },
     {
-      "label": "Lawn mowing",
+      "label": "Cornwall mowing and lawn care",
       "href": "/services/lawn-care"
     },
     {
-      "label": "Hedge trimming",
+      "label": "Hedge trimming across Cornwall",
       "href": "/services/hedge-trimming"
+    },
+    {
+      "label": "Garden design and landscaping in Newquay",
+      "href": "/services/landscaping"
     },
     {
       "label": "Request a quote",

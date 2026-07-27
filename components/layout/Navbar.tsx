@@ -52,8 +52,8 @@ export function Navbar({
                             <Image
                                 src={logoSrc}
                                 alt={logoAlt}
-                                width={176}
-                                height={44}
+                                width={256}
+                                height={43}
                                 className="h-auto w-[176px] object-contain"
                                 priority
                             />

@@ -1,7 +1,7 @@
 {
   "slug": "mulching",
   "label": "Mulching",
-  "title": "Mulching",
+  "title": "Garden Mulching in Newquay & North Cornwall",
   "description": "I provide mulching services across Newquay, Truro, St Austell, and the wider Cornwall area. A proper mulch application tidies up your beds, suppresses weeds, retains moisture, and protects plant roots through Cornwall's milder but wetter winters. I supply quality bark mulch or composted material at market rate and handle the full job from bed prep through to a clean, even finish.",
   "seo": {
     "title": "Mulching Services in Newquay & Cornwall | Garden Bed Care",
@@ -57,7 +57,7 @@
       },
       {
         "title": "Waste removal (optional)",
-        "description": "Any waste from bed preparation, including old mulch, weeds, and debris, is cleared away and taken off-site. I am a licensed waste carrier, so disposal is handled properly and legally. Green waste removal is charged at £10 per dumpy bag.",
+        "description": "Waste from bed preparation, including old mulch, weeds and debris, can be removed by agreement. Quilliams is an Environment Agency registered waste carrier (lower tier), CBDL582202. Green waste removal is charged at £10 per dumpy bag, with the route and estimate shown in the quote.",
         "icon": "Trash2"
       }
     ]
@@ -150,7 +150,7 @@
       {
         "id": "cleanup",
         "question": "Do you remove waste?",
-        "answer": "Yes. Any waste generated during bed preparation, such as old mulch, weeds, or debris, is cleared away and taken off-site. Green waste removal is charged at £10 per dumpy bag. I am a licensed waste carrier, so disposal is handled properly and legally. I will give you an idea of likely waste costs when quoting the job."
+        "answer": "Yes, waste generated during bed preparation can be removed by agreement. Green waste removal is charged at £10 per dumpy bag. Quilliams is an Environment Agency registered waste carrier (lower tier), CBDL582202. I will confirm the agreed waste route and likely cost when quoting the job."
       },
       {
         "id": "materials",

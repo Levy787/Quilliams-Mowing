@@ -7,6 +7,28 @@ import { areas } from "@/lib/areas/data";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { AreaServiceSchema } from "@/components/seo/AreaServiceSchema";
 
+const priorityAreaCopy: Record<
+    string,
+    { title: string; description: string; heading: string; subheading: string }
+> = {
+    newquay: {
+        title: "Gardener Newquay | Recurring Garden Maintenance",
+        description:
+            "Local Newquay gardener for recurring maintenance, lawn care, hedges and tidy-ups. Owner-operated from nearby Trevarrian, with clear free quotes.",
+        heading: "Local Gardener for Garden Maintenance in Newquay",
+        subheading:
+            "Owner-operated lawn, hedge and recurring garden care across Newquay",
+    },
+    "st-agnes": {
+        title: "Garden Maintenance St Agnes | Local Gardener",
+        description:
+            "Reliable garden maintenance in St Agnes, Mithian, Porthtowan and Peterville. Lawn care, hedges and seasonal tidy-ups with clear free quotes.",
+        heading: "Garden Maintenance in St Agnes",
+        subheading:
+            "Reliable lawn, hedge and seasonal garden care for exposed north-coast properties",
+    },
+};
+
 export async function generateStaticParams() {
     return Object.keys(areas).map((slug) => ({ slug }));
 }
@@ -17,10 +39,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     
     if (!area) return {};
 
+    const priorityCopy = priorityAreaCopy[slug];
     const meta = buildMetadata({
         seo: {
-            title: `Gardener in ${area.name}, ${area.county} | Quilliams`,
-            description: `Lawn mowing, hedge trimming and garden maintenance in ${area.name}, ${area.county}. Reliable, insured local gardener based near Newquay. Free quotes.`,
+            title:
+                priorityCopy?.title ??
+                `Gardener in ${area.name}, ${area.county} | Quilliams`,
+            description:
+                priorityCopy?.description ??
+                `Lawn mowing, hedge trimming and garden maintenance in ${area.name}, ${area.county}. Reliable, insured local gardener based near Newquay. Free quotes.`,
         },
         fallbackTitle: `Gardener in ${area.name}`,
         canonicalPath: `/areas/${slug}`,
@@ -35,12 +62,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 }
 
 const serviceLabels: Record<string, string> = {
-    "lawn-care": "Lawn Care",
+    "lawn-care": "Lawn Mowing & Lawn Care",
     "hedge-trimming": "Hedge Trimming", 
     "garden-maintenance": "Garden Maintenance",
-    "landscaping": "Landscaping",
-    "seasonal-cleanup": "Seasonal Cleanup",
-    "mulching": "Mulching",
+    "landscaping": "Garden Design & Landscaping",
+    "seasonal-cleanup": "Seasonal Garden Clearance",
+    "mulching": "Garden Mulching",
 };
 
 export default async function AreaPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -50,6 +77,8 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
     if (!area) {
         notFound();
     }
+
+    const priorityCopy = priorityAreaCopy[slug];
     
     return (
         <main className="min-h-screen bg-background">
@@ -72,11 +101,11 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
                 </nav>
                 
                 <h1 className="text-4xl font-bold mb-4">
-                    Gardener in {area.name}, {area.county}
+                    {priorityCopy?.heading ?? `Gardener in ${area.name}, ${area.county}`}
                 </h1>
                 
                 <p className="text-xl text-muted-foreground mb-8">
-                    Professional gardening and landscaping services
+                    {priorityCopy?.subheading ?? "Professional gardening and landscaping services"}
                 </p>
 
                 <p className="mb-8 text-sm font-medium text-muted-foreground">
@@ -156,7 +185,17 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
                         </li>
                         <li className="flex items-start gap-3">
                             <span className="text-primary font-bold">✓</span>
-                            <span>Public liability insured, waste-carrier licensed</span>
+                            <span>
+                                Public liability insured;{" "}
+                                <a
+                                    href="https://environment.data.gov.uk/public-register/waste-carriers-brokers/registration/CBDL582202?__pageState=result-waste-carriers-brokers"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="underline decoration-primary/40 underline-offset-4 hover:text-primary"
+                                >
+                                    Environment Agency registered waste carrier (lower tier), CBDL582202
+                                </a>
+                            </span>
                         </li>
                         <li className="flex items-start gap-3">
                             <span className="text-primary font-bold">✓</span>

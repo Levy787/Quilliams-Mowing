@@ -8,7 +8,6 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { useRevealInView } from "@/hooks/use-reveal-in-view";
 
 type WorkItem = {
     title: string;
@@ -122,19 +121,15 @@ function MediaBlock({
 function WorkRow({
     item,
     index,
-    inView,
     ctaLabel,
     ctaHref,
 }: {
     item: WorkItem;
     index: number;
-    inView: boolean;
     ctaLabel: string;
     ctaHref: string;
 }) {
     const variant = (index + 1) as 1 | 2 | 3;
-    const revealClassName = "transition-[opacity,transform] duration-700 ease-out motion-reduce:transition-none";
-
     const contentBlock = (
         <div className="min-w-0">
             <div className="text-xl font-semibold text-background">{item.title}</div>
@@ -180,13 +175,7 @@ function WorkRow({
     );
 
     return (
-        <div
-            className={cn(
-                revealClassName,
-                inView ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0",
-            )}
-            style={{ transitionDelay: inView ? `${120 + index * 80}ms` : "0ms" }}
-        >
+        <div>
             <Card
                 className={cn(
                     "rounded-4xl border border-border/20 bg-background/5 text-background",
@@ -243,12 +232,6 @@ function WorkRow({
 }
 
 export function RecentWorks({ badge, headingLines, description, items, ctaLabel, ctaHref }: RecentWorksProps) {
-    // NOTE: Don't observe the whole section; it's very tall on mobile.
-    // Intersection ratio can stay below the threshold, leaving content stuck at opacity:0.
-    const { ref: inViewRef, inView } = useRevealInView<HTMLDivElement>({ threshold: 0.2 });
-    const revealClassName = "transition-[opacity,transform] duration-700 ease-out motion-reduce:transition-none";
-    const revealStyle = (delayMs: number) => ({ transitionDelay: inView ? `${delayMs}ms` : "0ms" });
-
     return (
         <section className="mx-4 md:mx-8 lg:mx-16 py-12 md:py-16">
             <div
@@ -259,42 +242,21 @@ export function RecentWorks({ badge, headingLines, description, items, ctaLabel,
                     aria-hidden="true"
                 />
 
-                <div ref={inViewRef} className="relative container mx-auto px-4 lg:px-12">
+                <div className="relative container mx-auto px-4 lg:px-12">
                     <div className="px-2 py-12 md:py-14">
                         {/* Header */}
                         <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
                             <div className="min-w-0">
-                                <div
-                                    className={cn(
-                                        "inline-flex items-center rounded-full bg-background/10 px-4 py-1.5 text-sm text-background",
-                                        revealClassName,
-                                        inView ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0",
-                                    )}
-                                    style={revealStyle(0)}
-                                >
+                                <div className="inline-flex items-center rounded-full bg-background/10 px-4 py-1.5 text-sm text-background">
                                     {badge}
                                 </div>
 
-                                <h2
-                                    className={cn(
-                                        "mt-4 text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight",
-                                        revealClassName,
-                                        inView ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0",
-                                    )}
-                                    style={revealStyle(50)}
-                                >
+                                <h2 className="mt-4 text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
                                     {renderHeadingLines(headingLines)}
                                 </h2>
                             </div>
 
-                            <p
-                                className={cn(
-                                    "max-w-md text-sm md:text-base text-background/70 lg:text-right",
-                                    revealClassName,
-                                    inView ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0",
-                                )}
-                                style={revealStyle(100)}
-                            >
+                            <p className="max-w-md text-sm md:text-base text-background/70 lg:text-right">
                                 {description}
                             </p>
                         </div>
@@ -306,7 +268,6 @@ export function RecentWorks({ badge, headingLines, description, items, ctaLabel,
                                     key={idx}
                                     item={item}
                                     index={idx}
-                                    inView={inView}
                                     ctaLabel={ctaLabel}
                                     ctaHref={ctaHref}
                                 />

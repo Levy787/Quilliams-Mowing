@@ -1,8 +1,11 @@
-import posthog from "posthog-js";
+import type posthogType from "posthog-js/dist/module.slim";
 
 const CONSENT_COOKIE = "cookie_consent_analytics";
 const DEBUG = process.env.NODE_ENV !== "production";
 const API_HOST = "/ph";
+type PostHogClient = typeof posthogType;
+
+let initializationPromise: Promise<PostHogClient | null> | null = null;
 
 function getCookieValue(name: string): string | null {
     if (typeof document === "undefined") return null;
@@ -17,71 +20,95 @@ function getCookieValue(name: string): string | null {
     return null;
 }
 
-const key = process.env.NEXT_PUBLIC_POSTHOG_KEY;
-if (key?.trim()) {
-    if (DEBUG && typeof window !== "undefined") {
-        console.info("[posthog] instrumentation-client loaded", {
-            api_host: API_HOST,
-            ui_host: process.env.NEXT_PUBLIC_UI_HOST,
-            hasKey: Boolean(key?.trim()),
-        });
+export function initializePostHog(): Promise<PostHogClient | null> {
+    if (initializationPromise) return initializationPromise;
+
+    const key = process.env.NEXT_PUBLIC_POSTHOG_KEY?.trim();
+    if (!key) {
+        if (DEBUG && typeof window !== "undefined") {
+            console.info("[posthog] disabled (missing NEXT_PUBLIC_POSTHOG_KEY)");
+        }
+        initializationPromise = Promise.resolve(null);
+        return initializationPromise;
     }
 
-    posthog.init(key, {
-        // Per PostHog Next.js reverse-proxy docs: use a relative path.
-        api_host: API_HOST,
-        ui_host: process.env.NEXT_PUBLIC_UI_HOST,
-        defaults: "2026-01-30",
-
-        // We handle pageviews manually (App Router SPA navigation).
-        capture_pageview: false,
-        capture_pageleave: true,
-
-        on_request_error: (err) => {
-            if (!DEBUG) return;
-
-            console.warn("[posthog] request error", {
-                statusCode: err.statusCode,
-                text: err.text,
-            });
-        },
-
-        loaded: (ph) => {
+    initializationPromise = import("posthog-js/dist/module.slim")
+        .then(({ default: posthog }) => {
             if (DEBUG) {
-                console.info("[posthog] loaded", {
+                console.info("[posthog] initializing after idle/interaction", {
                     api_host: API_HOST,
                     ui_host: process.env.NEXT_PUBLIC_UI_HOST,
                 });
             }
 
-            const consent = getCookieValue(CONSENT_COOKIE);
+            posthog.init(key, {
+                // Per PostHog Next.js reverse-proxy docs: use a relative path.
+                api_host: API_HOST,
+                ui_host: process.env.NEXT_PUBLIC_UI_HOST,
+                defaults: "2026-01-30",
 
-            if (DEBUG) {
-                console.info("[posthog] consent", { consent });
-            }
+                // Pageviews are captured manually for App Router navigation.
+                capture_pageview: false,
+                capture_pageleave: true,
 
-            // Always capture page visits without cookies.
-            // If the user explicitly accepts, enable persistence (cookies/localStorage).
-            const persistenceEnabled = consent === "accepted";
+                // This site uses explicit events only. The slim entry point plus
+                // these settings prevent optional recorders and remote modules
+                // from entering the critical path.
+                autocapture: false,
+                capture_dead_clicks: false,
+                capture_exceptions: false,
+                capture_heatmaps: false,
+                capture_performance: false,
+                disable_session_recording: true,
+                disable_surveys: true,
+                disable_surveys_automatic_display: true,
+                enable_recording_console_log: false,
+                disable_external_dependency_loading: true,
+                advanced_disable_flags: true,
 
-            ph.set_config({
-                disable_persistence: !persistenceEnabled,
-                persistence: persistenceEnabled
-                    ? "localStorage+cookie"
-                    : "memory",
+                on_request_error: (error) => {
+                    if (!DEBUG) return;
+
+                    console.warn("[posthog] request error", {
+                        statusCode: error.statusCode,
+                        text: error.text,
+                    });
+                },
+
+                loaded: (client) => {
+                    const consent = getCookieValue(CONSENT_COOKIE);
+
+                    // Always capture explicit visits/events without cookies.
+                    // Acceptance enables durable browser persistence.
+                    const persistenceEnabled = consent === "accepted";
+
+                    client.set_config({
+                        disable_persistence: !persistenceEnabled,
+                        persistence: persistenceEnabled
+                            ? "localStorage+cookie"
+                            : "memory",
+                    });
+                    client.opt_in_capturing();
+
+                    if (DEBUG) {
+                        console.info("[posthog] capture enabled", {
+                            mode: persistenceEnabled
+                                ? "persistent"
+                                : "cookieless",
+                        });
+                    }
+                },
             });
 
-            ph.opt_in_capturing();
-
+            return posthog;
+        })
+        .catch((error: unknown) => {
+            initializationPromise = null;
             if (DEBUG) {
-                console.info("[posthog] capture enabled", {
-                    mode: persistenceEnabled ? "persistent" : "cookieless",
-                });
+                console.warn("[posthog] initialization failed", error);
             }
-        },
-    });
-} else {
-    if (DEBUG && typeof window !== "undefined") {
-        console.info("[posthog] disabled (missing NEXT_PUBLIC_POSTHOG_KEY)");
-    }
+            return null;
+        });
+
+    return initializationPromise;
 }
