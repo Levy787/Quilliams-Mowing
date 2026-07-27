@@ -21,6 +21,10 @@ import { ReviewSchema } from "@/components/seo/ReviewSchema";
 import { FAQSchema } from "@/components/seo/FAQSchema";
 import { WebPageSchema } from "@/components/seo/WebPageSchema";
 import { PrimarySitelinks } from "@/components/seo/PrimarySitelinks";
+import {
+    GOOGLE_REVIEW_COUNT,
+    GOOGLE_REVIEW_RATING,
+} from "@/lib/google-reviews";
 
 export async function generateMetadata(): Promise<Metadata> {
     const home = await getHomeContent();
@@ -42,7 +46,7 @@ export default async function Home() {
         author: item.name,
         reviewBody: item.quote,
         datePublished: item.date,
-        ratingValue: 5,
+        ratingValue: GOOGLE_REVIEW_RATING,
     }));
 
     // Transform FAQ items for schema
@@ -57,7 +61,10 @@ export default async function Home() {
                 name={home.seo.title}
                 description={home.seo.description}
             />
-            <ReviewSchema reviews={reviews} />
+            <ReviewSchema
+                reviews={reviews}
+                aggregateReviewCount={GOOGLE_REVIEW_COUNT}
+            />
             <FAQSchema items={faqItems} />
             <Hero {...home.hero} />
             <TrustBar />

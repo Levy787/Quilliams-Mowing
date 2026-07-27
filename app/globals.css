@@ -172,11 +172,30 @@
   }
 
   .marquee-inner {
-    animation: marqueeScroll 25s linear infinite;
+    animation: none;
   }
 
   .marquee-reverse {
     animation-direction: reverse;
+  }
+
+  .testimonial-scroll {
+    scrollbar-width: none;
+  }
+
+  .testimonial-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .marquee-inner {
+      animation: marqueeScroll 25s linear infinite;
+    }
+
+    .marquee-row:hover .marquee-inner,
+    .marquee-row:focus-within .marquee-inner {
+      animation-play-state: paused;
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {

@@ -8,6 +8,7 @@ export interface Review {
 export interface ReviewSchemaProps {
   businessName?: string;
   reviews: Review[];
+  aggregateReviewCount?: number;
 }
 
 /**
@@ -23,6 +24,7 @@ function toISODate(raw?: string): string | undefined {
 
 export function ReviewSchema({
   reviews,
+  aggregateReviewCount,
 }: ReviewSchemaProps) {
   if (!reviews.length) return null;
 
@@ -38,7 +40,7 @@ export function ReviewSchema({
       ratingValue: Number(averageRating.toFixed(1)),
       bestRating: 5,
       worstRating: 1,
-      reviewCount: reviews.length,
+      reviewCount: Math.max(aggregateReviewCount ?? reviews.length, reviews.length),
     },
     review: reviews.map((review) => ({
       "@type": "Review",

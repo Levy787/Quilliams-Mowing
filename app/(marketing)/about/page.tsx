@@ -10,6 +10,10 @@ import { AboutTimeline } from "./AboutTimeline";
 
 import { buildMetadata } from "@/lib/seo";
 import { getAboutContent } from "@/lib/keystatic-reader";
+import {
+    GOOGLE_REVIEW_COUNT,
+    GOOGLE_REVIEW_RATING,
+} from "@/lib/google-reviews";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -57,7 +61,10 @@ export default async function AboutPage() {
                                 <li className="rounded-lg border p-4">Public liability insured</li>
                                 <li className="rounded-lg border p-4">Environment Agency registered waste carrier (lower tier), CBDL582202</li>
                                 <li className="rounded-lg border p-4">Companies House company number 16405915</li>
-                                <li className="rounded-lg border p-4">5.0 rating from 16 Google reviews</li>
+                                <li className="rounded-lg border p-4">
+                                    {GOOGLE_REVIEW_RATING.toFixed(1)} rating from{" "}
+                                    {GOOGLE_REVIEW_COUNT} Google reviews
+                                </li>
                             </ul>
                             <div className="mt-6 flex flex-wrap gap-3 text-sm">
                                 <a href="https://g.page/r/Ca1e8ukWV-qsEBM/" target="_blank" rel="noopener noreferrer" className="text-primary underline underline-offset-4">
