@@ -3,7 +3,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { ComponentType, SVGProps } from "react";
-import { motion } from "framer-motion";
 import {
     ArrowRight,
     CalendarDays,
@@ -137,11 +136,6 @@ export default function ServicesLandingClient({
     services: ServiceCardModel[];
     content: ServicesLandingContentModel;
 }) {
-    const fadeUp = {
-        hidden: { opacity: 0, y: 12 },
-        show: { opacity: 1, y: 0 },
-    };
-
     return (
         <main>
             <div className="mx-4 md:mx-8 lg:mx-16 pt-6 md:pt-8">
@@ -166,13 +160,7 @@ export default function ServicesLandingClient({
                 <div className="container mx-auto px-4 lg:px-12">
                     {/* Hero */}
                     <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center">
-                        <motion.div
-                            variants={fadeUp}
-                            initial="hidden"
-                            whileInView="show"
-                            viewport={{ once: true, amount: 0.25 }}
-                            transition={{ duration: 0.5, ease: "easeOut" }}
-                        >
+                        <div>
                             <div className="inline-flex items-center rounded-full bg-muted px-4 py-1.5 text-sm text-muted-foreground">
                                 {content.hero.badge}
                             </div>
@@ -208,19 +196,9 @@ export default function ServicesLandingClient({
                                     </div>
                                 ))}
                             </div>
-                        </motion.div>
+                        </div>
 
-                        <motion.div
-                            variants={fadeUp}
-                            initial="hidden"
-                            whileInView="show"
-                            viewport={{ once: true, amount: 0.25 }}
-                            transition={{
-                                duration: 0.6,
-                                ease: "easeOut",
-                                delay: 0.05,
-                            }}
-                        >
+                        <div>
                             <Card className="rounded-4xl border-border shadow-none overflow-hidden p-0 py-0 gap-0">
                                 <div className="relative aspect-16/11 w-full">
                                     <div className="absolute inset-0 bg-[url('/patterns/pattern-2.png')] bg-repeat opacity-20" />
@@ -242,7 +220,7 @@ export default function ServicesLandingClient({
                                     </div>
                                 </div>
                             </Card>
-                        </motion.div>
+                        </div>
                     </div>
 
                     <QuoteActionStrip
@@ -256,39 +234,21 @@ export default function ServicesLandingClient({
                         <div className="relative overflow-hidden rounded-4xl border border-border bg-foreground text-background dark:bg-background dark:text-foreground">
                             <div className="absolute inset-0 bg-[url('/patterns/pattern-1.png')] bg-repeat opacity-5" />
                             <div className="relative p-6 md:p-10">
-                                <motion.div
-                                    variants={fadeUp}
-                                    initial="hidden"
-                                    whileInView="show"
-                                    viewport={{ once: true, amount: 0.2 }}
-                                    transition={{ duration: 0.5, ease: "easeOut" }}
-                                    className="max-w-2xl"
-                                >
+                                <div className="max-w-2xl">
                                     <h2 className="text-2xl font-semibold">
                                         {content.process.title}
                                     </h2>
                                     <p className="mt-2 text-sm md:text-base leading-relaxed text-background/80 dark:text-muted-foreground">
                                         {content.process.description}
                                     </p>
-                                </motion.div>
+                                </div>
 
                                 <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                                    {content.process.steps.map((step, index) => {
+                                    {content.process.steps.map((step) => {
                                         const StepIcon = PROCESS_ICONS[step.icon];
 
                                         return (
-                                            <motion.div
-                                                key={step.title}
-                                                variants={fadeUp}
-                                                initial="hidden"
-                                                whileInView="show"
-                                                viewport={{ once: true, amount: 0.2 }}
-                                                transition={{
-                                                    duration: 0.45,
-                                                    ease: "easeOut",
-                                                    delay: 0.06 * index,
-                                                }}
-                                            >
+                                            <div key={step.title}>
                                                 <Card className="rounded-3xl h-full border-background/15 bg-background/5 text-background shadow-none dark:border-border dark:bg-muted dark:text-foreground">
                                                     <CardContent className="px-6 py-6">
                                                         <div className="flex items-start gap-4">
@@ -309,7 +269,7 @@ export default function ServicesLandingClient({
                                                         </div>
                                                     </CardContent>
                                                 </Card>
-                                            </motion.div>
+                                            </div>
                                         );
                                     })}
                                 </div>
