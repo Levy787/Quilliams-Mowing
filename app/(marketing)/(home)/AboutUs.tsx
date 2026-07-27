@@ -66,23 +66,23 @@ export function AboutUs({
     const hasImage = Boolean(resolvedImageSrc.trim());
 
     return (
-        <section className="mx-4 md:mx-8 lg:mx-16 py-12 md:py-16">
+        <section className="mx-4 py-8 md:mx-8 md:py-10 lg:mx-16">
             <div className="container mx-auto px-4 lg:px-12">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-2 lg:gap-16">
                     {/* Image */}
-                    <div
-                        className="relative overflow-hidden rounded-4xl aspect-4/3 sm:aspect-5/4 lg:aspect-4/3"
-                    >
-                        {hasImage ? (
-                            <Image
-                                src={resolvedImageSrc}
-                                alt={imageAlt ?? ""}
-                                fill
-                                className="object-cover"
-                                sizes="(max-width: 1024px) 100vw, 50vw"
-                                priority={false}
-                            />
-                        ) : null}
+                    <div className="lg:sticky lg:top-28 lg:self-start">
+                        <div className="relative aspect-4/3 overflow-hidden rounded-4xl sm:aspect-5/4 lg:aspect-4/5">
+                            {hasImage ? (
+                                <Image
+                                    src={resolvedImageSrc}
+                                    alt={imageAlt ?? ""}
+                                    fill
+                                    className="object-cover"
+                                    sizes="(max-width: 1024px) 100vw, 50vw"
+                                    priority={false}
+                                />
+                            ) : null}
+                        </div>
                     </div>
 
                     {/* Content */}
@@ -107,15 +107,15 @@ export function AboutUs({
                             <ArrowRight className="h-4 w-4" aria-hidden="true" />
                         </Link>
 
-                        <div className="mt-8 border-t border-border" />
+                        <div className="mt-6 border-t border-border" />
 
-                        <div className="mt-6">
+                        <div className="mt-2">
                             {features.map((feature, idx) => {
                                 const Icon = FEATURE_ICONS[feature.icon];
                                 return (
                                     <div
                                         key={feature.title}
-                                        className={`grid grid-cols-[auto_1fr] gap-x-5 gap-y-2 py-6 md:grid-cols-[auto_12rem_1fr] ${
+                                        className={`grid grid-cols-[auto_1fr] gap-x-5 gap-y-2 py-4 md:grid-cols-[auto_9rem_1fr] ${
                                             idx !== 0 ? "border-t border-border" : ""
                                         }`}
                                     >

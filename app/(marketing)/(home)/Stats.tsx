@@ -28,14 +28,14 @@ function StatCard({
     const Icon = STAT_ICONS[stat.icon];
 
     return (
-        <div className="flex flex-col items-center gap-3 rounded-4xl bg-muted px-8 py-6 text-center">
-            <Icon className="h-10 w-10 shrink-0 text-primary" aria-hidden="true" />
+        <div className="flex items-center justify-center gap-4 px-6 py-5 text-left">
+            <Icon className="h-9 w-9 shrink-0 text-primary" aria-hidden="true" />
             <div className="min-w-0">
-                <div className="text-4xl font-bold leading-none text-foreground">
+                <div className="text-3xl font-bold leading-none text-foreground">
                     {stat.value}
                     {stat.suffix ?? ""}
                 </div>
-                <div className="mt-1 text-base text-muted-foreground">{stat.label}</div>
+                <div className="mt-1 text-sm text-muted-foreground">{stat.label}</div>
             </div>
         </div>
     );
@@ -43,9 +43,9 @@ function StatCard({
 
 export function Stats({ items }: StatsProps) {
     return (
-        <section className="mx-4 py-10 md:mx-8 md:py-12 lg:mx-16">
+        <section className="mx-4 pb-4 pt-8 md:mx-8 md:pb-6 md:pt-10 lg:mx-16">
             <div className="container mx-auto px-4 lg:px-12">
-                <div className="flex flex-wrap justify-center gap-6">
+                <div className="mx-auto grid max-w-5xl divide-y divide-border overflow-hidden rounded-3xl border border-border bg-muted/40 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
                     {items.map((stat) => (
                         <StatCard key={stat.label} stat={stat} />
                     ))}
