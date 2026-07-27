@@ -4,8 +4,8 @@
   "subtitle": "A month-by-month Cornwall lawn care guide for scarifying, aerating, feeding, mowing height and moss control in a mild coastal climate.",
   "author": "Levi Quilliam",
   "publishedDate": "2026-03-23",
-  "updatedDate": "2026-05-26",
-  "readingTime": "8 min read",
+  "updatedDate": "2026-07-27",
+  "readingTime": "9 min read",
   "heroImage": {
     "src": "/images/uploads/lawn-care/hero/imageFile.webp",
     "alt": "Freshly mown lawn in Cornwall with clean edges"
@@ -19,7 +19,7 @@
   },
   "quickAnswer": {
     "title": "Quick answer",
-    "body": "In Cornwall, scarify most lawns in April or early May when grass is actively growing, or lightly again in September if the lawn is healthy enough to recover. Aerate compacted lawns in spring or autumn, especially on wet clay soils around Truro, St Austell and Wadebridge. Feed lawns in March or April with a spring feed, then again in early autumn with an autumn lawn feed. Avoid heavy scarifying during drought, frost, waterlogging or peak summer heat. Cornwall's mild coastal climate means grass grows for much of the year, but damp winters encourage moss and thatch. The best routine is regular mowing, spring scarifying where needed, autumn aeration for compacted ground, and feeding at the right time rather than throwing product at a stressed lawn. If the lawn is thin, overseed after scarifying so bare patches recover before weeds move in."
+    "body": "For most Cornwall lawns, September and October are the main scarifying and aerating window: the soil is usually warm and moist enough for grass to recover before winter. I only scarify in spring when the lawn is actively growing, conditions are mild, and there is enough time and moisture for recovery. Aerate compacted lawns in spring or autumn, especially on wet clay soils around Truro, St Austell and Wadebridge. If a traditional lawn needs feeding, use a suitable spring product when growth is active and a purpose-made autumn feed in early autumn, following the label. Avoid heavy scarifying during drought, frost, waterlogging or peak summer heat. Cornwall's mild coastal climate means grass grows for much of the year, but damp winters also favour moss. The best routine is regular mowing, autumn renovation where needed, and feeding in response to lawn condition rather than throwing product at a stressed lawn."
   },
   "sections": [
     {
@@ -30,16 +30,83 @@
         "Scarify when grass is actively growing and able to recover.",
         "Aerate compacted lawns when soil is moist but not saturated.",
         "Feed to support growth, not to rescue a lawn that is under stress."
+      ],
+      "blocks": [
+        {
+          "kind": "table",
+          "title": "Cornwall lawn-care evidence calendar",
+          "description": "A practical schedule aligned with RHS lawn guidance. Use current weather and lawn condition rather than treating dates as automatic instructions.",
+          "columns": [
+            "Period",
+            "Useful work",
+            "Wait if",
+            "Evidence note"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "Late March to April",
+                "Light first cuts; spring feed only if the lawn needs it; local repair or light scarifying where recovery conditions are good",
+                "Soil is saturated, frozen or grass is not actively growing",
+                "RHS advises a light first cut and spring feeding only where a boost is needed"
+              ]
+            },
+            {
+              "cells": [
+                "May to August",
+                "Regular mowing, sensible cutting height and observation of moss or compaction",
+                "The lawn is drought-stressed or the ground is very wet",
+                "RHS advises adjusting mowing to growth and avoiding removal of more than one-third"
+              ]
+            },
+            {
+              "cells": [
+                "September to October",
+                "Main window for scarifying, aerating, overseeding and autumn feed where needed",
+                "Weather is very dry, very wet, frosty or recovery is unlikely",
+                "RHS identifies early autumn as the main renovation period"
+              ]
+            },
+            {
+              "cells": [
+                "November to February",
+                "Occasional high cut in a dry mild window; plan spring work",
+                "Ground is soft, waterlogged or frozen",
+                "Heavy traffic and mowing on unsuitable ground can damage turf"
+              ]
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "RHS: autumn scarifying, aerating and feeding guidance",
+          "href": "https://www.rhs.org.uk/lawns/autumn-care"
+        },
+        {
+          "label": "RHS: how to mow without stressing a lawn",
+          "href": "https://www.rhs.org.uk/lawns/how-to-mow-a-lawn"
+        }
       ]
     },
     {
       "id": "spring",
       "title": "March to May: spring recovery",
-      "body": "March is when I start watching lawns properly again. If the weather is mild, the grass begins moving and the first cuts become useful. Keep the mower higher at the start of the season and avoid scalping damp or uneven ground. A spring lawn feed can go down in March or April once growth is active. This is also the period to plan moss control if the lawn has come out of winter looking spongy and green-brown.\n\nApril and early May are usually the best scarifying window for many Cornwall lawns. The grass is growing, the soil has warmed, and there is normally enough moisture for recovery. Scarifying removes thatch and moss, but it can make the lawn look rough for a couple of weeks. That is normal. The important thing is to follow with sensible mowing, watering if needed, and overseeding where bare patches appear.",
+      "body": "March is when I start watching lawns properly again. If the weather is mild, the grass begins moving and the first cuts become useful. Keep the mower higher at the start of the season and avoid scalping damp or uneven ground. A spring lawn feed can go down in late March or April if the grass genuinely needs a boost and the product label supports that timing. This is also the period to diagnose why a lawn has come out of winter looking spongy or mossy.\n\nSpring scarifying is an option, not an annual deadline. I use it selectively when grass is already growing, the lawn has enough moisture, and bare areas can be overseeded and allowed to recover. For a full routine renovation, early autumn is usually the more dependable window. Scarifying removes thatch and moss, but it can make the lawn look rough for a while. The important thing is to follow with sensible mowing, watering if needed, and overseeding where bare patches appear.",
       "bullets": [
         "March: first tidy cuts and spring feed when growth starts.",
-        "April: main scarifying window for many lawns.",
+        "April: diagnose moss and scarify only where recovery conditions are right.",
         "May: overseed bare patches and settle into regular mowing."
+      ],
+      "sources": [
+        {
+          "label": "RHS: March lawn jobs and spring feeding",
+          "href": "https://www.rhs.org.uk/advice/in-month/march/lawns"
+        },
+        {
+          "label": "RHS: moss in lawns and underlying causes",
+          "href": "https://www.rhs.org.uk/lawns/moss-on-lawns"
+        }
       ]
     },
     {
@@ -50,6 +117,12 @@
         "Raise mowing height during dry spells.",
         "Avoid heavy scarifying in peak summer.",
         "Use summer to observe problem areas for autumn work."
+      ],
+      "sources": [
+        {
+          "label": "RHS: seasonal mowing frequency and cutting height",
+          "href": "https://www.rhs.org.uk/lawns/mowing"
+        }
       ]
     },
     {
@@ -60,6 +133,12 @@
         "September: light scarify and overseed if the lawn is strong enough.",
         "September to October: aerate compacted or wet lawns.",
         "Autumn feed: choose root strength over lush top growth."
+      ],
+      "sources": [
+        {
+          "label": "RHS: lawn care in autumn",
+          "href": "https://www.rhs.org.uk/lawns/autumn-care"
+        }
       ]
     },
     {
@@ -81,7 +160,7 @@
   ],
   "relatedLinks": [
     {
-      "label": "Lawn mowing and lawn care",
+      "label": "Cornwall mowing and lawn care service",
       "href": "/services/lawn-care"
     },
     {
@@ -104,7 +183,7 @@
   "faqs": [
     {
       "question": "When should I scarify a lawn in Cornwall?",
-      "answer": "April or early May is usually the best spring scarifying window in Cornwall. September can also work for a light scarify if the lawn is healthy and actively growing."
+      "answer": "September and October are the main scarifying window for most Cornwall lawns because mild, damp conditions support recovery. Spring scarifying can work selectively once grass is actively growing and conditions allow overseeding and recovery."
     },
     {
       "question": "Should I aerate before or after scarifying?",

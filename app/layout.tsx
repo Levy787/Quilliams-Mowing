@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 
 import { getSiteContent } from "@/lib/keystatic-reader";
@@ -78,34 +77,15 @@ export async function generateViewport(): Promise<Viewport> {
 }
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-  const hasTurnstileConfigured = Boolean(
-    process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY_SUBSCRIBE?.trim() ||
-    process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY_CONTACT?.trim() ||
-    process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY_QUOTE?.trim() ||
-    process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY_POPUP?.trim() ||
-    process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY?.trim(),
-  );
-
   return (
     <html lang="en-GB">
-      <head>
-        <link rel="preconnect" href="https://eu.i.posthog.com" crossOrigin="" />
-        <link rel="preconnect" href="https://challenges.cloudflare.com" crossOrigin="" />
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {hasTurnstileConfigured ? (
-          <Script
-            id="cf-turnstile"
-            src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
-            strategy="afterInteractive"
-          />
-        ) : null}
         <GoogleAnalytics />
         <PostHogClientInit />
         {children}

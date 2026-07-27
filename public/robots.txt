@@ -6,18 +6,28 @@ Disallow: /ph/
 # Allow AI search crawlers (for citation/visibility)
 User-agent: GPTBot
 Allow: /
+Disallow: /keystatic
+Disallow: /ph/
 
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /keystatic
+Disallow: /ph/
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /keystatic
+Disallow: /ph/
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /keystatic
+Disallow: /ph/
 
 User-agent: Applebot-Extended
 Allow: /
+Disallow: /keystatic
+Disallow: /ph/
 
 # Block AI training-only crawlers
 User-agent: CCBot

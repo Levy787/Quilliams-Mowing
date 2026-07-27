@@ -223,7 +223,7 @@ export function NavbarSearch({ className }: { className?: string }) {
                 ref={triggerButtonRef}
                 type="button"
                 className={cn(
-                    "h-10 w-10 inline-flex items-center justify-center rounded-md",
+                    "inline-flex size-12 items-center justify-center rounded-md",
                     "text-muted-foreground hover:text-primary transition-colors motion-reduce:transition-none",
                     "focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background"
                 )}
@@ -284,7 +284,7 @@ export function NavbarSearch({ className }: { className?: string }) {
                                             : undefined
                                     }
                                     className={cn(
-                                        "h-10 pl-9",
+                                        "h-12 pl-9",
                                         "bg-background border-border text-foreground placeholder:text-muted-foreground"
                                     )}
                                 />
@@ -293,7 +293,7 @@ export function NavbarSearch({ className }: { className?: string }) {
                             <button
                                 type="button"
                                 className={cn(
-                                    "inline-flex h-9 w-9 items-center justify-center rounded-md",
+                                    "inline-flex size-12 items-center justify-center rounded-md",
                                     "text-muted-foreground hover:text-foreground transition-colors motion-reduce:transition-none",
                                     "focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background"
                                 )}

@@ -38,7 +38,8 @@ function StatCard({
     inView: boolean;
 }) {
     const shouldReduceMotion = usePrefersReducedMotion();
-    const [displayValue, setDisplayValue] = React.useState(0);
+    // Keep the truthful value in server HTML. The count-up is presentation only.
+    const [displayValue, setDisplayValue] = React.useState(stat.value);
 
     React.useEffect(() => {
         if (!inView) return;

@@ -4,6 +4,7 @@ export type BlogSection = {
     body: string;
     bullets?: readonly string[];
     blocks?: readonly BlogBlock[];
+    sources?: readonly BlogRelatedLink[];
 };
 
 export type BlogBlock =

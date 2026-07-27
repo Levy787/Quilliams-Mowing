@@ -208,14 +208,14 @@ export function Services({ badge, heading, ctaLabel, ctaHref, items }: ServicesP
                         <CarouselPrevious
                             variant="outline"
                             className={cn(
-                                "top-0 md:-top-15 right-14 left-auto translate-y-0 size-10 md:size-8",
+                                "top-0 md:-top-15 right-16 left-auto translate-y-0 size-12",
                                 "bg-background border-border"
                             )}
                         />
                         <CarouselNext
                             variant="outline"
                             className={cn(
-                                "top-0 md:-top-15 right-3 left-auto translate-y-0 size-10 md:size-8",
+                                "top-0 md:-top-15 right-2 left-auto translate-y-0 size-12",
                                 "bg-background border-border"
                             )}
                         />

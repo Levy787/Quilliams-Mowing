@@ -6,6 +6,41 @@
 | Current health score | 84/100 |
 | Goal | Protect the strong indexation foundation, restore measurement, consolidate local identity, and convert the growing impression footprint into qualified leads. |
 
+## Agent execution status — 27 July 2026
+
+The repository-executable work has been implemented for 23 actions:
+
+- H-05 and H-07–H-11
+- M-01, M-02, M-04–M-07, and M-09–M-17
+- L-01 and the safe repository stage of L-03
+
+This includes server-rendering `/refer`, reducing critical third-party loading,
+improving homepage LCP and accessibility, correcting sitemap/robots behaviour,
+implementing the search ownership map, adding sourced editorial content and
+accessible tables, optimising large images, and hardening the production CSP.
+
+L-02 was reclassified as externally blocked after a live redirect trace proved
+that Vercel performs the first HTTP-to-HTTPS hop before Next.js can handle the
+request. It now sits with the external-access work and is documented in
+[docs/seo-runtime-deployment-notes.md](./docs/seo-runtime-deployment-notes.md).
+
+No owner-dependent business facts, public profiles, deployments, or production
+analytics settings were changed. H-05 was selected, so the mutually exclusive
+H-06 `noindex` alternative was intentionally not performed.
+
+Repository verification:
+
+| Check | Result |
+|---|---|
+| ESLint and TypeScript | Pass |
+| Next.js production build | Pass; 52 pages generated |
+| Mobile homepage LCP | 996 / 1,004 / 1,008 ms in the throttled browser check; 1,004 ms median, CLS 0 |
+| Homepage raw HTML | Final `120+`, `30`, and `5+` values present; no zero placeholders |
+| `/refer` raw HTML | One H1, offer, terms, privacy link, canonical, WebPage schema, and Breadcrumb schema |
+| Sitemap | 37 URLs; nine editorial `lastmod` values |
+| Large audited images | 4,562,703 bytes reduced to 1,260,755 bytes (72%); duplicate removed |
+| Production CSP build | No `'unsafe-eval'`; `object-src 'none'` enabled |
+
 ## Priority definitions
 
 - **Urgent measurement:** does not block rankings, but prevents reliable business decisions.

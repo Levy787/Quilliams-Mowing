@@ -495,6 +495,13 @@ export const keystaticConfig = config({
               }),
               { label: "Rich blocks" },
             ),
+            sources: fields.array(
+              fields.object({
+                label: fields.text({ label: "Source label" }),
+                href: fields.text({ label: "Source URL" }),
+              }),
+              { label: "Primary sources" },
+            ),
           }),
           { label: "Sections" },
         ),

@@ -1,11 +1,11 @@
 {
   "slug": "seasonal-cleanup",
   "label": "Seasonal Cleanup",
-  "title": "Seasonal Cleanup",
+  "title": "Seasonal Garden Clearances Across Cornwall",
   "description": "I offer seasonal garden cleanup and clearance across Newquay, Truro, St Austell, Bodmin, and the wider Cornwall area. Whether your garden has been let go over winter, needs a spring reset, or just wants tidying before autumn sets in, I will clear the mess, cut back the overgrowth, and leave it looking sharp. Cleanups start from £80, and every quote is clear and fixed before I begin.",
   "seo": {
     "title": "Seasonal Garden Cleanup in Cornwall | Garden Clearance",
-    "description": "Garden clearance and seasonal cleanup in Newquay, Truro and Cornwall. Overgrown garden tidy-ups from £80, licensed waste carrier, fixed quotes."
+    "description": "Garden clearance and seasonal tidy-ups across Cornwall from my Newquay base. Overgrown-garden resets from £80, fixed quotes and clear waste arrangements."
   },
   "cardTag": "Popular",
   "cardIcon": "Wind",
@@ -151,7 +151,7 @@
       {
         "id": "waste",
         "question": "Do you remove waste?",
-        "answer": "Yes, all waste from seasonal cleanups is removed and taken off-site. Green waste removal is charged at £10 per dumpy bag. I am a licensed waste carrier, so everything is disposed of properly and in line with regulations. Cleanups can produce a fair amount of green waste, especially after autumn leaf fall or when cutting back overgrown areas. I will include an estimate for waste removal in your quote so the total cost is clear from the start."
+        "answer": "Yes, waste from seasonal cleanups can be removed by agreement. Green waste removal is charged at £10 per dumpy bag. Quilliams is an Environment Agency registered waste carrier (lower tier), CBDL582202. Cleanups can produce substantial green waste, especially after autumn leaf fall or when cutting back overgrown areas, so I include the agreed route and estimate in the quote."
       },
       {
         "id": "one-off",

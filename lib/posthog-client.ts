@@ -1,6 +1,6 @@
 "use client";
 
-import type posthogType from "posthog-js";
+import { initializePostHog } from "@/app/instrumentation-client";
 
 export type PostHogEventProperties = Record<string, unknown>;
 
@@ -54,14 +54,8 @@ export async function capturePostHogEvent(
     captureGoogleAnalyticsEvent(eventName, properties);
 
     try {
-        // Ensure PostHog has been initialized (module-level init).
-        await import("@/app/instrumentation-client");
-
-        const mod = (await import("posthog-js")) as unknown as {
-            default: typeof posthogType;
-        };
-
-        mod.default.capture(eventName, properties);
+        const posthog = await initializePostHog();
+        posthog?.capture(eventName, properties);
     } catch {
         // Best-effort: analytics should never break UX.
     }

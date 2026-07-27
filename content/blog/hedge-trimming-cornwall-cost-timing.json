@@ -4,8 +4,8 @@
   "subtitle": "A practical guide to hedge trimming timing, frequency, nesting season, coastal growth and typical hedge cutting costs in Cornwall.",
   "author": "Levi Quilliam",
   "publishedDate": "2026-05-12",
-  "updatedDate": "2026-05-26",
-  "readingTime": "8 min read",
+  "updatedDate": "2026-07-27",
+  "readingTime": "9 min read",
   "heroImage": {
     "src": "/images/uploads/hedge-trimming/hero/imageFile.webp",
     "alt": "Freshly trimmed hedge in a Cornwall garden"
@@ -30,22 +30,105 @@
         "Always check for nesting birds before cutting.",
         "Late summer and autumn suit many domestic hedges.",
         "Avoid cutting conifers too hard into old brown growth."
+      ],
+      "blocks": [
+        {
+          "kind": "table",
+          "title": "Domestic hedge timing and decision guide",
+          "description": "Use the hedge species, its condition and a fresh nest check together. A calendar date never overrides the legal protection for an active nest.",
+          "columns": [
+            "Situation",
+            "Usual planning window",
+            "Before cutting",
+            "Reason"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "Routine trim on an established hedge",
+                "Often late summer after the main growth flush",
+                "Inspect carefully for active nests and confirm the species",
+                "Timing varies by hedge; maintenance trimming removes young growth"
+              ]
+            },
+            {
+              "cells": [
+                "Formal fast-growing hedge",
+                "One to three light trims during active growth, species permitting",
+                "Check for nests before every visit",
+                "Lighter repeat cuts maintain a dense outline"
+              ]
+            },
+            {
+              "cells": [
+                "Deciduous hedge renovation",
+                "Often during dormancy, depending on species",
+                "Identify the hedge and plan how much old wood it can tolerate",
+                "Many deciduous hedges respond better to renovation than conifers"
+              ]
+            },
+            {
+              "cells": [
+                "Leylandii or another conifer",
+                "Trim green growth regularly and generally by late summer",
+                "Keep a green leafy surface",
+                "Most conifers do not regrow from old brown wood"
+              ]
+            },
+            {
+              "cells": [
+                "Active nest found",
+                "Postpone the affected work",
+                "Do not damage, destroy or disturb a nest in use",
+                "Wild birds, eggs and nests in use are protected by law"
+              ]
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "GOV.UK: legal protection for wild birds and active nests",
+          "href": "https://www.gov.uk/guidance/wild-birds-protection-surveys-and-licences"
+        },
+        {
+          "label": "RHS: hedge pruning times, frequency and nesting checks",
+          "href": "https://www.rhs.org.uk/plants/types/hedges/pruning-hedges"
+        }
       ]
     },
     {
       "id": "frequency",
       "title": "How often hedges need trimming",
-      "body": "Most domestic hedges in Cornwall need trimming once or twice a year. Formal hedges, front boundaries and holiday-let gardens often benefit from two visits because presentation matters and growth is obvious from the road. Informal hedges may only need one tidy cut a year if they have enough space and are not blocking paths, windows or driveways.\n\nCornwall's mild climate extends the growing season, so hedges can push growth for longer than people expect. Coastal hedges also grow unevenly. The windward side can be scorched and slower, while the sheltered side grows thick and heavy. A good trim accounts for that pattern rather than blindly cutting every face the same. Regular lighter cuts usually look better and create less waste than waiting until the hedge is too large."
+      "body": "Most domestic hedges in Cornwall need trimming once or twice a year. Formal hedges, front boundaries and holiday-let gardens often benefit from two visits because presentation matters and growth is obvious from the road. Informal hedges may only need one tidy cut a year if they have enough space and are not blocking paths, windows or driveways.\n\nCornwall's mild climate extends the growing season, so hedges can push growth for longer than people expect. Coastal hedges also grow unevenly. The windward side can be scorched and slower, while the sheltered side grows thick and heavy. A good trim accounts for that pattern rather than blindly cutting every face the same. Regular lighter cuts usually look better and create less waste than waiting until the hedge is too large.",
+      "sources": [
+        {
+          "label": "RHS: how often established hedges need trimming",
+          "href": "https://www.rhs.org.uk/plants/types/hedges/pruning-hedges"
+        }
+      ]
     },
     {
       "id": "cost",
       "title": "How much hedge trimming costs",
-      "body": "Hedge trimming in Cornwall often falls between £5 and £15 per metre, but that range only makes sense once height, thickness and access are known. A low front hedge with easy access, little waste and a simple shape is quick. A tall Leylandii hedge, a wide boundary hedge, or a hedge above a slope or wall takes much longer and may require more equipment, more careful working and more waste removal.\n\nGreen waste is a major part of hedge work. A tidy-looking hedge can produce a surprising amount of cut material, especially if it has not been maintained for a year or two. Bagging, carrying and disposing of the waste properly takes time. I confirm whether waste removal is included before work starts so the quote is clear."
+      "body": "Hedge trimming in Cornwall often falls between £5 and £15 per metre, but that is my planning range rather than an official tariff. It only makes sense once height, thickness and access are known. A low front hedge with easy access, little waste and a simple shape is quick. A tall Leylandii hedge, a wide boundary hedge, or a hedge above a slope or wall takes much longer and may require more equipment, more careful working and more waste removal.\n\nGreen waste is a major part of hedge work. A tidy-looking hedge can produce a surprising amount of cut material, especially if it has not been maintained for a year or two. Bagging, carrying and disposing of the waste properly takes time. I confirm whether waste removal is included before work starts so the quote is clear.",
+      "sources": [
+        {
+          "label": "GOV.UK: household waste duty of care when a business removes waste",
+          "href": "https://www.gov.uk/government/publications/waste-duty-of-care-code-of-practice/waste-duty-of-care-code-of-practice"
+        }
+      ]
     },
     {
       "id": "coastal",
       "title": "Coastal hedges need different care",
-      "body": "Hedges near the coast have to deal with salt wind, fast-draining soil and storm damage. Around Newquay, Perranporth, St Agnes, Padstow and St Ives, I often see hedges that are thin or scorched on the seaward side but thick on the sheltered side. Cutting too hard on the damaged face can make the hedge look worse, so the aim is often to balance shape while keeping enough healthy growth.\n\nSpecies choice matters too. Griselinia, escallonia, olearia and tamarisk cope with coastal exposure better than many standard hedging choices. If an existing hedge is struggling every winter, repeated trimming will not solve the underlying problem. It may need shelter, feeding, better soil, replacement sections or a more realistic shape."
+      "body": "Hedges near the coast have to deal with salt wind, fast-draining soil and storm damage. Around Newquay, Perranporth, St Agnes, Padstow and St Ives, I often see hedges that are thin or scorched on the seaward side but thick on the sheltered side. Cutting too hard on the damaged face can make the hedge look worse, so the aim is often to balance shape while keeping enough healthy growth.\n\nSpecies choice matters too. Griselinia, escallonia, olearia and tamarisk cope with coastal exposure better than many standard hedging choices. If an existing hedge is struggling every winter, repeated trimming will not solve the underlying problem. It may need shelter, feeding, better soil, replacement sections or a more realistic shape.",
+      "sources": [
+        {
+          "label": "RHS: coastal hedging and salt-tolerant shrubs",
+          "href": "https://www.rhs.org.uk/plants/for-places/coastal-areas"
+        }
+      ]
     },
     {
       "id": "overgrown",
@@ -60,7 +143,7 @@
   ],
   "relatedLinks": [
     {
-      "label": "Hedge trimming service",
+      "label": "Hedge trimming across Newquay and Cornwall",
       "href": "/services/hedge-trimming"
     },
     {

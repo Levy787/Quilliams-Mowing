@@ -4,7 +4,6 @@ import * as React from "react";
 import { useSearchParams } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
@@ -43,10 +42,16 @@ function generateVoucherCode(discountPercent: number): string {
 }
 
 type ReferClientProps = {
-    content: ReferralContent;
+    services: ReferralContent["services"];
+    discountPercent: number;
+    formCopy: ReferralContent["formCopy"];
 };
 
-export default function ReferClient({ content }: ReferClientProps) {
+export default function ReferClient({
+    services,
+    discountPercent,
+    formCopy,
+}: ReferClientProps) {
     const searchParams = useSearchParams();
 
     const initialFromSearch = React.useMemo(() => {
@@ -78,7 +83,7 @@ export default function ReferClient({ content }: ReferClientProps) {
     const [voucherCode, setVoucherCode] = React.useState<string | null>(null);
     const [copied, setCopied] = React.useState(false);
 
-    const serviceOptions = content.services;
+    const serviceOptions = services;
 
     // If a link includes a service that doesn't exist anymore, don't keep it selected.
     React.useEffect(() => {
@@ -147,7 +152,7 @@ export default function ReferClient({ content }: ReferClientProps) {
         }
 
         setIsSubmitting(true);
-        const code = generateVoucherCode(content.offer.discountPercent);
+        const code = generateVoucherCode(discountPercent);
 
         window.setTimeout(() => {
             setVoucherCode(code);
@@ -162,238 +167,194 @@ export default function ReferClient({ content }: ReferClientProps) {
     const selectedServiceLabel =
         serviceOptions.find((s) => s.value === service)?.label ?? null;
 
-    return (
-        <main>
-            <section className="py-16 md:py-20">
-                <div className="mx-auto w-full max-w-6xl px-4">
-                    <div className="mx-auto max-w-2xl text-center">
-                        <div className="text-sm font-semibold text-primary">
-                            {content.hero.eyebrow}
-                        </div>
-                        <h1 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-foreground">
-                            {content.hero.heading}
-                        </h1>
-                        <p className="mt-4 text-base md:text-lg leading-relaxed text-muted-foreground">
-                            {content.hero.subheading}
+    return !voucherCode ? (
+        <form className="space-y-6" onSubmit={onSubmit}>
+            <div className="rounded-3xl border border-border p-4">
+                <div className="text-sm font-semibold text-foreground">Step 1</div>
+                <div className="mt-3 space-y-2">
+                    <Label htmlFor="referrerEmail">Your email</Label>
+                    <Input
+                        id="referrerEmail"
+                        name="referrerEmail"
+                        type="email"
+                        autoComplete="email"
+                        value={referrerEmail}
+                        onChange={(e) => setReferrerEmail(e.target.value)}
+                        onBlur={() =>
+                            setTouched((current) => ({
+                                ...current,
+                                referrerEmail: true,
+                            }))
+                        }
+                        required
+                    />
+                    {touched.referrerEmail && errors.referrerEmail ? (
+                        <p className="text-sm text-destructive">
+                            {errors.referrerEmail}
                         </p>
-                    </div>
-
-                    <div className="mx-auto mt-10 grid max-w-4xl grid-cols-1 gap-6 lg:grid-cols-5">
-                        {/* Offer */}
-                        <Card className="rounded-4xl border-border shadow-none lg:col-span-2">
-                            <CardContent className="px-6 py-6">
-                                <div className="text-sm font-semibold text-foreground">Offer</div>
-                                <div className="mt-2 text-xl font-semibold text-foreground">
-                                    {content.offer.headline}
-                                </div>
-                                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                                    {content.offer.description}
-                                </p>
-
-                                {content.offer.terms.trim().length > 0 && (
-                                    <div className="mt-4 rounded-3xl border border-border bg-muted/25 p-4">
-                                        <div className="text-xs font-semibold text-foreground">Terms</div>
-                                        <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-                                            {content.offer.terms}
-                                        </p>
-                                    </div>
-                                )}
-                            </CardContent>
-                        </Card>
-
-                        {/* Form */}
-                        <Card className="rounded-4xl border-border shadow-none lg:col-span-3">
-                            <CardContent className="px-6 py-6">
-                                {!voucherCode ? (
-                                    <form className="space-y-6" onSubmit={onSubmit}>
-                                        <div>
-                                            <div className="text-xl font-semibold text-foreground">
-                                                Create a voucher
-                                            </div>
-                                            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                                                Fill in the details below. This form confirms the referral, it does not
-                                                automatically email your friend yet.
-                                            </p>
-                                        </div>
-
-                                        {/* Step 1 */}
-                                        <div className="rounded-3xl border border-border p-4">
-                                            <div className="text-sm font-semibold text-foreground">Step 1</div>
-                                            <div className="mt-3 space-y-2">
-                                                <Label htmlFor="referrerEmail">Your email</Label>
-                                                <Input
-                                                    id="referrerEmail"
-                                                    name="referrerEmail"
-                                                    type="email"
-                                                    autoComplete="email"
-                                                    value={referrerEmail}
-                                                    onChange={(e) => setReferrerEmail(e.target.value)}
-                                                    onBlur={() =>
-                                                        setTouched((t) => ({ ...t, referrerEmail: true }))
-                                                    }
-                                                    required
-                                                />
-                                                {touched.referrerEmail && errors.referrerEmail && (
-                                                    <p className="text-sm text-destructive">
-                                                        {errors.referrerEmail}
-                                                    </p>
-                                                )}
-                                            </div>
-
-                                            <div className="mt-4">
-                                                <Button
-                                                    type="button"
-                                                    onClick={onContinue}
-                                                    disabled={!errors.step1Ok}
-                                                >
-                                                    Continue
-                                                </Button>
-                                            </div>
-                                        </div>
-
-                                        {/* Step 2 */}
-                                        <div className="rounded-3xl border border-border p-4">
-                                            <div className="text-sm font-semibold text-foreground">Step 2</div>
-                                            {step !== 2 ? (
-                                                <p className="mt-2 text-sm text-muted-foreground">
-                                                    Enter your email above to continue.
-                                                </p>
-                                            ) : (
-                                                <div className="mt-3 space-y-5">
-                                                    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                                                        <div className="space-y-2">
-                                                            <Label htmlFor="friendName">Friend’s name</Label>
-                                                            <Input
-                                                                id="friendName"
-                                                                name="friendName"
-                                                                value={friendName}
-                                                                onChange={(e) => setFriendName(e.target.value)}
-                                                                onBlur={() =>
-                                                                    setTouched((t) => ({ ...t, friendName: true }))
-                                                                }
-                                                                required
-                                                            />
-                                                            {touched.friendName && errors.friendName && (
-                                                                <p className="text-sm text-destructive">
-                                                                    {errors.friendName}
-                                                                </p>
-                                                            )}
-                                                        </div>
-
-                                                        <div className="space-y-2">
-                                                            <Label htmlFor="friendEmail">Friend’s email</Label>
-                                                            <Input
-                                                                id="friendEmail"
-                                                                name="friendEmail"
-                                                                type="email"
-                                                                autoComplete="email"
-                                                                value={friendEmail}
-                                                                onChange={(e) => setFriendEmail(e.target.value)}
-                                                                onBlur={() =>
-                                                                    setTouched((t) => ({ ...t, friendEmail: true }))
-                                                                }
-                                                                required
-                                                            />
-                                                            {touched.friendEmail && errors.friendEmail && (
-                                                                <p className="text-sm text-destructive">
-                                                                    {errors.friendEmail}
-                                                                </p>
-                                                            )}
-                                                        </div>
-                                                    </div>
-
-                                                    <div className="space-y-2">
-                                                        <Label>Service needed</Label>
-                                                        <Select
-                                                            value={service || undefined}
-                                                            onValueChange={(v) => {
-                                                                setService(v);
-                                                                setTouched((t) => ({ ...t, service: true }));
-                                                            }}
-                                                        >
-                                                            <SelectTrigger className="w-full">
-                                                                <SelectValue placeholder="Choose a service" />
-                                                            </SelectTrigger>
-                                                            <SelectContent>
-                                                                {serviceOptions.map((opt) => (
-                                                                    <SelectItem key={opt.value} value={opt.value}>
-                                                                        {opt.label}
-                                                                    </SelectItem>
-                                                                ))}
-                                                            </SelectContent>
-                                                        </Select>
-                                                        {touched.service && errors.service && (
-                                                            <p className="text-sm text-destructive">
-                                                                {errors.service}
-                                                            </p>
-                                                        )}
-                                                    </div>
-
-                                                    {content.formCopy.privacyNote.trim().length > 0 && (
-                                                        <p className="text-xs leading-relaxed text-muted-foreground">
-                                                            {content.formCopy.privacyNote}
-                                                        </p>
-                                                    )}
-
-                                                    <div className="pt-1">
-                                                        <Button
-                                                            type="submit"
-                                                            size="lg"
-                                                            disabled={isSubmitting || !errors.step2Ok}
-                                                        >
-                                                            {isSubmitting
-                                                                ? content.formCopy.submitLoadingLabel
-                                                                : content.formCopy.submitIdleLabel}
-                                                        </Button>
-                                                    </div>
-                                                </div>
-                                            )}
-                                        </div>
-                                    </form>
-                                ) : (
-                                    <div className="space-y-5">
-                                        <div>
-                                            <div className="text-xl font-semibold text-foreground">
-                                                {content.formCopy.successTitle}
-                                            </div>
-                                            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                                                {content.formCopy.successMessage}
-                                            </p>
-                                        </div>
-
-                                        <div className="rounded-3xl border border-border bg-muted/25 p-4">
-                                            <div className="text-xs font-semibold text-foreground">
-                                                {content.formCopy.voucherCodeLabel}
-                                            </div>
-                                            <div className="mt-2 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                                                <div className="text-lg font-mono font-semibold text-foreground">
-                                                    {voucherCode}
-                                                </div>
-                                                <Button type="button" variant="secondary" onClick={onCopyCode}>
-                                                    {copied
-                                                        ? content.formCopy.copiedCodeLabel
-                                                        : content.formCopy.copyCodeLabel}
-                                                </Button>
-                                            </div>
-                                            {selectedServiceLabel && (
-                                                <p className="mt-3 text-xs text-muted-foreground">
-                                                    Service selected: {selectedServiceLabel}
-                                                </p>
-                                            )}
-                                        </div>
-
-                                        <div className="flex flex-col gap-2 sm:flex-row">
-                                            <Button type="button" variant="outline" onClick={onEditDetails}>
-                                                Edit details
-                                            </Button>
-                                        </div>
-                                    </div>
-                                )}
-                            </CardContent>
-                        </Card>
-                    </div>
+                    ) : null}
                 </div>
-            </section>
-        </main>
+
+                <div className="mt-4">
+                    <Button
+                        type="button"
+                        onClick={onContinue}
+                        disabled={!errors.step1Ok}
+                    >
+                        Continue
+                    </Button>
+                </div>
+            </div>
+
+            <div className="rounded-3xl border border-border p-4">
+                <div className="text-sm font-semibold text-foreground">Step 2</div>
+                {step !== 2 ? (
+                    <p className="mt-2 text-sm text-muted-foreground">
+                        Enter your email above to continue.
+                    </p>
+                ) : (
+                    <div className="mt-3 space-y-5">
+                        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                            <div className="space-y-2">
+                                <Label htmlFor="friendName">Friend’s name</Label>
+                                <Input
+                                    id="friendName"
+                                    name="friendName"
+                                    value={friendName}
+                                    onChange={(e) => setFriendName(e.target.value)}
+                                    onBlur={() =>
+                                        setTouched((current) => ({
+                                            ...current,
+                                            friendName: true,
+                                        }))
+                                    }
+                                    required
+                                />
+                                {touched.friendName && errors.friendName ? (
+                                    <p className="text-sm text-destructive">
+                                        {errors.friendName}
+                                    </p>
+                                ) : null}
+                            </div>
+
+                            <div className="space-y-2">
+                                <Label htmlFor="friendEmail">Friend’s email</Label>
+                                <Input
+                                    id="friendEmail"
+                                    name="friendEmail"
+                                    type="email"
+                                    autoComplete="email"
+                                    value={friendEmail}
+                                    onChange={(e) => setFriendEmail(e.target.value)}
+                                    onBlur={() =>
+                                        setTouched((current) => ({
+                                            ...current,
+                                            friendEmail: true,
+                                        }))
+                                    }
+                                    required
+                                />
+                                {touched.friendEmail && errors.friendEmail ? (
+                                    <p className="text-sm text-destructive">
+                                        {errors.friendEmail}
+                                    </p>
+                                ) : null}
+                            </div>
+                        </div>
+
+                        <div className="space-y-2">
+                            <Label>Service needed</Label>
+                            <Select
+                                value={service || undefined}
+                                onValueChange={(value) => {
+                                    setService(value);
+                                    setTouched((current) => ({
+                                        ...current,
+                                        service: true,
+                                    }));
+                                }}
+                            >
+                                <SelectTrigger className="w-full">
+                                    <SelectValue placeholder="Choose a service" />
+                                </SelectTrigger>
+                                <SelectContent>
+                                    {serviceOptions.map((option) => (
+                                        <SelectItem
+                                            key={option.value}
+                                            value={option.value}
+                                        >
+                                            {option.label}
+                                        </SelectItem>
+                                    ))}
+                                </SelectContent>
+                            </Select>
+                            {touched.service && errors.service ? (
+                                <p className="text-sm text-destructive">
+                                    {errors.service}
+                                </p>
+                            ) : null}
+                        </div>
+
+                        <div className="pt-1">
+                            <Button
+                                type="submit"
+                                size="lg"
+                                disabled={isSubmitting || !errors.step2Ok}
+                            >
+                                {isSubmitting
+                                    ? formCopy.submitLoadingLabel
+                                    : formCopy.submitIdleLabel}
+                            </Button>
+                        </div>
+                    </div>
+                )}
+            </div>
+        </form>
+    ) : (
+        <div className="space-y-5">
+            <div>
+                <div className="text-xl font-semibold text-foreground">
+                    {formCopy.successTitle}
+                </div>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    {formCopy.successMessage}
+                </p>
+            </div>
+
+            <div className="rounded-3xl border border-border bg-muted/25 p-4">
+                <div className="text-xs font-semibold text-foreground">
+                    {formCopy.voucherCodeLabel}
+                </div>
+                <div className="mt-2 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                    <div className="font-mono text-lg font-semibold text-foreground">
+                        {voucherCode}
+                    </div>
+                    <Button
+                        type="button"
+                        variant="secondary"
+                        onClick={onCopyCode}
+                    >
+                        {copied
+                            ? formCopy.copiedCodeLabel
+                            : formCopy.copyCodeLabel}
+                    </Button>
+                </div>
+                {selectedServiceLabel ? (
+                    <p className="mt-3 text-xs text-muted-foreground">
+                        Service selected: {selectedServiceLabel}
+                    </p>
+                ) : null}
+            </div>
+
+            <div className="flex flex-col gap-2 sm:flex-row">
+                <Button
+                    type="button"
+                    variant="outline"
+                    onClick={onEditDetails}
+                >
+                    Edit details
+                </Button>
+            </div>
+        </div>
     );
 }

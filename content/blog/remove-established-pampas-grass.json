@@ -4,7 +4,7 @@
   "subtitle": "A practical guide to removing large pampas grass safely, including cutting back, digging out roots, waste handling and what to plant afterwards.",
   "author": "Levi Quilliam",
   "publishedDate": "2026-02-09",
-  "updatedDate": "2026-05-26",
+  "updatedDate": "2026-07-27",
   "readingTime": "7 min read",
   "heroImage": {
     "src": "/images/uploads/gravel-garden-with-patio/hero/imageFile.jpg",
@@ -30,12 +30,24 @@
         "Pampas leaves are sharp and can cut bare skin.",
         "The crown and root mass can be heavy and awkward.",
         "Cutting it flat without removing the crown can allow regrowth."
+      ],
+      "sources": [
+        {
+          "label": "RHS plant profile: Cortaderia selloana (pampas grass)",
+          "href": "https://www.rhs.org.uk/plants/4431/cortaderia-selloana/details"
+        }
       ]
     },
     {
       "id": "safety",
       "title": "Start with safety and access",
-      "body": "Before cutting anything, check the access around the plant. Make sure you have room to work, a clear route for carrying waste, and a safe place to stack cut material. Wear thick gloves, long sleeves, sturdy footwear and eye protection. Pampas leaves can slice skin, and dry stems can flick back while cutting. If the plant is wet, it will be heavier and messier to move.\n\nI usually start by tying sections of the foliage where possible, then cutting back in manageable bundles. Trying to attack the whole plant at once creates a huge pile of sharp leaves and makes the base harder to see. Work gradually. Once the top growth is reduced, you can see the crown, the surrounding ground and any obstacles hidden inside the clump."
+      "body": "Before cutting anything, check the access around the plant. Make sure you have room to work, a clear route for carrying waste, and a safe place to stack cut material. Wear thick gloves, long sleeves, sturdy footwear and eye protection. Pampas leaves can slice skin, and dry stems can flick back while cutting. If the plant is wet, it will be heavier and messier to move.\n\nI usually start by tying sections of the foliage where possible, then cutting back in manageable bundles. Trying to attack the whole plant at once creates a huge pile of sharp leaves and makes the base harder to see. Work gradually. Once the top growth is reduced, you can see the crown, the surrounding ground and any obstacles hidden inside the clump.",
+      "sources": [
+        {
+          "label": "HSE: selecting and using suitable personal protective equipment",
+          "href": "https://www.hse.gov.uk/ppe/selection-and-use.htm"
+        }
+      ]
     },
     {
       "id": "cutting-back",
@@ -50,12 +62,32 @@
     {
       "id": "waste",
       "title": "Plan the waste before you start",
-      "body": "Pampas removal creates more waste than most people expect. The leaves are bulky, the stems are awkward, and the root mass can be heavy with soil. If you are doing it yourself, check your local waste options first and make sure you can transport everything safely. Do not overfill bags to the point where they split or become dangerous to lift.\n\nAs a licensed waste carrier, I remove green waste properly when it is part of a job. For customers, this is often the part that makes professional removal worthwhile. Cutting the plant down is one thing. Bagging, carrying, loading and disposing of the material is where a quick weekend job can become a long and unpleasant one."
+      "body": "Pampas removal creates more waste than most people expect. The leaves are bulky, the stems are awkward, and the root mass can be heavy with soil. If you are doing it yourself, check your local waste options first and make sure you can transport everything safely. Do not overfill bags to the point where they split or become dangerous to lift.\n\nQuilliams is an Environment Agency registered waste carrier (lower tier), CBDL582202. For customers, handling the material is often the part that makes professional removal worthwhile. Cutting the plant down is one thing. Bagging, carrying and loading it is where a quick weekend job can become a long and unpleasant one; the quote should also make the agreed disposal route and charge clear.",
+      "sources": [
+        {
+          "label": "Cornwall Council: household waste and recycling centres",
+          "href": "https://www.cornwall.gov.uk/hwrc"
+        },
+        {
+          "label": "GOV.UK: waste duty of care code of practice",
+          "href": "https://www.gov.uk/government/publications/waste-duty-of-care-code-of-practice/waste-duty-of-care-code-of-practice"
+        },
+        {
+          "label": "Environment Agency public register: Quilliams, CBDL582202",
+          "href": "https://environment.data.gov.uk/public-register/waste-carriers-brokers/registration/CBDL582202?__pageState=result-waste-carriers-brokers"
+        }
+      ]
     },
     {
       "id": "replacement",
       "title": "What to do with the space afterwards",
-      "body": "Once the pampas is gone, you have a chance to make the garden more useful. If the old plant dominated a front garden, a gravel garden with edging and a few tough shrubs can be much easier to maintain. If the space is near a seating area, a patio extension or stepping stones may make more sense. If you still want height and movement, choose smaller grasses or shrubs that will not take over the whole bed.\n\nIn Cornwall, I often recommend low-maintenance coastal planting after pampas removal: hebes, cistus, phormiums used sparingly, rosemary, lavender, griselinia or escallonia depending on the spot. The best replacement depends on wind, soil, sun and how much time you want to spend maintaining it."
+      "body": "Once the pampas is gone, you have a chance to make the garden more useful. If the old plant dominated a front garden, a gravel garden with edging and a few tough shrubs can be much easier to maintain. If the space is near a seating area, a patio extension or stepping stones may make more sense. If you still want height and movement, choose smaller grasses or shrubs that will not take over the whole bed.\n\nIn Cornwall, I often recommend low-maintenance coastal planting after pampas removal: hebes, cistus, phormiums used sparingly, rosemary, lavender, griselinia or escallonia depending on the spot. The best replacement depends on wind, soil, sun and how much time you want to spend maintaining it.",
+      "sources": [
+        {
+          "label": "RHS: plants for coastal areas",
+          "href": "https://www.rhs.org.uk/plants/for-places/coastal-areas"
+        }
+      ]
     }
   ],
   "relatedLinks": [
@@ -64,7 +96,7 @@
       "href": "/projects/gravel-garden-with-patio"
     },
     {
-      "label": "Landscaping services",
+      "label": "Garden design in Newquay and landscaping across Cornwall",
       "href": "/services/landscaping"
     },
     {

@@ -61,6 +61,19 @@ function patternUrl(pattern: PatternName): string {
         : "url('/patterns/pattern-2.png')";
 }
 
+function serviceAreaAnchor(service: Service): string {
+    const labels: Record<string, string> = {
+        "lawn-care": "Lawn care and mowing",
+        "hedge-trimming": "Hedge trimming",
+        landscaping: "Garden design and landscaping",
+        "garden-maintenance": "Garden maintenance",
+        "seasonal-cleanup": "Seasonal garden clearance",
+        mulching: "Garden mulching",
+    };
+
+    return labels[service.slug] ?? service.label;
+}
+
 export default function ServiceDetailClient({ service }: { service: Service }) {
     const shouldReduceMotion = !!useReducedMotion();
     const EASE_OUT = [0.16, 1, 0.3, 1] as const;
@@ -536,7 +549,7 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                                 href={area.href}
                                 className="inline-flex min-h-12 items-center rounded-lg border px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:border-primary hover:text-primary"
                             >
-                                {service.title} in {area.label}
+                                {serviceAreaAnchor(service)} in {area.label}
                             </Link>
                         ))}
                     </div>

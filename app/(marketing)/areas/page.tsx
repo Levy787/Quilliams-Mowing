@@ -8,7 +8,7 @@ import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 export const metadata: Metadata = buildMetadata({
     seo: {
         title: "Areas We Cover | Gardening Services Across Cornwall",
-        description: "Quilliams Gardening covers Newquay, St Columb Major, Padstow, Wadebridge, Perranporth, St Agnes and the surrounding north Cornwall villages. Local, reliable garden services.",
+        description: "Garden services across Newquay, St Columb Major, Padstow, Wadebridge, Perranporth, St Agnes and nearby north Cornwall villages.",
     },
     fallbackTitle: "Areas We Cover",
     canonicalPath: "/areas",
@@ -33,8 +33,8 @@ export default function AreasPage() {
                 </p>
                 
                 <p className="mb-8">
-                    Based in Newquay, we provide gardening and landscaping services throughout Cornwall. 
-                    Whether you need regular maintenance or a one-off project, we cover these areas and more.
+                    Based in Trevarrian near Newquay, I provide gardening and practical landscaping across nearby north Cornwall.
+                    Whether you need regular maintenance or a one-off project, start with the areas below.
                 </p>
                 
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-12">

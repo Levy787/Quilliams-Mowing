@@ -116,10 +116,18 @@ function BlogRichBlock({ block }: { block: BlogBlock }) {
                 </div>
                 <div className="overflow-x-auto rounded-2xl border">
                     <table className="w-full min-w-[680px] border-collapse text-left text-sm">
+                        <caption className="sr-only">
+                            {block.title}
+                            {block.description ? `. ${block.description}` : ""}
+                        </caption>
                         <thead className="bg-muted/60 text-foreground">
                             <tr>
                                 {block.columns.map((column) => (
-                                    <th key={column} className="border-b px-4 py-3 font-semibold">
+                                    <th
+                                        key={column}
+                                        scope="col"
+                                        className="border-b px-4 py-3 font-semibold"
+                                    >
                                         {column}
                                     </th>
                                 ))}
@@ -128,14 +136,26 @@ function BlogRichBlock({ block }: { block: BlogBlock }) {
                         <tbody>
                             {block.rows.map((row, rowIndex) => (
                                 <tr key={`${block.title}-${rowIndex}`} className="border-b last:border-b-0">
-                                    {block.columns.map((column, cellIndex) => (
-                                        <td
-                                            key={`${column}-${cellIndex}`}
-                                            className="align-top px-4 py-3 text-muted-foreground"
-                                        >
-                                            {row.cells[cellIndex] ?? ""}
-                                        </td>
-                                    ))}
+                                    {block.columns.map((column, cellIndex) => {
+                                        const cell = row.cells[cellIndex] ?? "";
+
+                                        return cellIndex === 0 ? (
+                                            <th
+                                                key={`${column}-${cellIndex}`}
+                                                scope="row"
+                                                className="align-top px-4 py-3 font-medium text-foreground"
+                                            >
+                                                {cell}
+                                            </th>
+                                        ) : (
+                                            <td
+                                                key={`${column}-${cellIndex}`}
+                                                className="align-top px-4 py-3 text-muted-foreground"
+                                            >
+                                                {cell}
+                                            </td>
+                                        );
+                                    })}
                                 </tr>
                             ))}
                         </tbody>
@@ -360,6 +380,34 @@ export default async function BlogPostPage({
                                         ))}
                                     </div>
                                 ) : null}
+                                {section.sources?.length ? (
+                                    <aside
+                                        aria-label={`Sources for ${section.title}`}
+                                        className="mt-6 rounded-2xl border bg-muted/30 p-5"
+                                    >
+                                        <h3 className="text-base font-semibold tracking-tight">
+                                            Sources and further reading
+                                        </h3>
+                                        <ul className="mt-3 space-y-2 text-sm">
+                                            {section.sources.map((source) => (
+                                                <li key={source.href}>
+                                                    <a
+                                                        href={source.href}
+                                                        target="_blank"
+                                                        rel="noreferrer"
+                                                        className="font-medium text-primary underline decoration-primary/30 underline-offset-4 hover:decoration-primary"
+                                                    >
+                                                        {source.label}
+                                                        <span className="sr-only">
+                                                            {" "}
+                                                            (opens in a new tab)
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </aside>
+                                ) : null}
                             </section>
                         ))}
                     </div>
@@ -404,7 +452,7 @@ export default async function BlogPostPage({
                                     Founder & Lead Gardener, Quilliams Gardening &amp; Landscaping
                                 </p>
                                 <p className="mt-3 text-base leading-relaxed text-muted-foreground">
-                                    I&apos;m a Cornwall-based gardener and landscaper working across Newquay and the surrounding villages of north Cornwall. Public liability insured, Environment Agency waste carrier (CBDL582202), and a registered limited company (Companies House 16405915). I write these guides from real jobs on Cornish gardens.
+                                    I&apos;m a Cornwall-based gardener and landscaper working across Newquay and the surrounding villages of north Cornwall. Public liability insured, Environment Agency registered waste carrier (lower tier), CBDL582202, and a registered limited company (Companies House 16405915). I write these guides from real jobs on Cornish gardens.
                                 </p>
                                 <Link
                                     href="/about"

@@ -264,9 +264,9 @@ export default function ServicesLandingClient({
                                     transition={{ duration: 0.5, ease: "easeOut" }}
                                     className="max-w-2xl"
                                 >
-                                    <div className="text-2xl font-semibold">
+                                    <h2 className="text-2xl font-semibold">
                                         {content.process.title}
-                                    </div>
+                                    </h2>
                                     <p className="mt-2 text-sm md:text-base leading-relaxed text-background/80 dark:text-muted-foreground">
                                         {content.process.description}
                                     </p>
@@ -299,9 +299,9 @@ export default function ServicesLandingClient({
                                                                 />
                                                             </div>
                                                             <div className="min-w-0">
-                                                                <div className="text-sm font-semibold">
+                                                                <h3 className="text-sm font-semibold">
                                                                     {step.title}
-                                                                </div>
+                                                                </h3>
                                                                 <p className="mt-2 text-sm leading-relaxed text-background/80 dark:text-muted-foreground">
                                                                     {step.description}
                                                                 </p>
@@ -320,9 +320,9 @@ export default function ServicesLandingClient({
                     {/* Services grid */}
                     <div className="mt-14">
                         <div className="max-w-2xl">
-                            <div className="text-2xl font-semibold text-foreground">
+                            <h2 className="text-2xl font-semibold text-foreground">
                                 {content.servicesGrid.title}
-                            </div>
+                            </h2>
                             <p className="mt-2 text-sm md:text-base leading-relaxed text-muted-foreground">
                                 {content.servicesGrid.description}
                             </p>
@@ -368,9 +368,9 @@ export default function ServicesLandingClient({
 
                                                     <div className="min-w-0 flex-1">
                                                         <div className="flex flex-wrap items-center gap-2">
-                                                            <div className="text-lg font-semibold text-foreground">
+                                                            <h3 className="text-lg font-semibold text-foreground">
                                                                 {service.title}
-                                                            </div>
+                                                            </h3>
                                                             {service.tag ? (
                                                                 <div className="inline-flex items-center rounded-full bg-muted px-2 py-0.5 text-xs text-muted-foreground">
                                                                     {service.tag}
@@ -521,9 +521,9 @@ export default function ServicesLandingClient({
                     {/* FAQ */}
                     <div className="mt-14">
                         <div className="max-w-2xl">
-                            <div className="text-2xl font-semibold text-foreground">
+                            <h2 className="text-2xl font-semibold text-foreground">
                                 {content.faq.title}
-                            </div>
+                            </h2>
                             <p className="mt-2 text-sm md:text-base leading-relaxed text-muted-foreground">
                                 {content.faq.description}
                             </p>
@@ -560,9 +560,9 @@ export default function ServicesLandingClient({
                             <CardContent className="px-6 py-6">
                                 <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
                                     <div className="min-w-0">
-                                        <div className="text-2xl font-semibold text-foreground">
+                                        <h2 className="text-2xl font-semibold text-foreground">
                                             {content.finalCta.title}
-                                        </div>
+                                        </h2>
                                         <p className="mt-2 text-sm md:text-base leading-relaxed text-muted-foreground max-w-2xl">
                                             {content.finalCta.description}
                                         </p>

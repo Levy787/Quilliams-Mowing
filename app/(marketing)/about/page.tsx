@@ -51,11 +51,11 @@ export default async function AboutPage() {
                                 Properly set up, insured, and easy to check
                             </h2>
                             <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
-                                I keep the practical details visible because they matter when you are inviting someone to work at your home, holiday let, or business. Quilliams Mowing Ltd is registered, insured, waste-carrier licensed, and backed by visible local review profiles.
+                                I keep the practical details visible because they matter when you are inviting someone to work at your home, holiday let, or business. Quilliams Mowing Ltd is registered, public liability insured, and backed by visible local review profiles.
                             </p>
                             <ul className="mt-6 grid gap-3 text-sm text-foreground sm:grid-cols-2">
                                 <li className="rounded-lg border p-4">Public liability insured</li>
-                                <li className="rounded-lg border p-4">Environment Agency waste carrier CBDL582202</li>
+                                <li className="rounded-lg border p-4">Environment Agency registered waste carrier (lower tier), CBDL582202</li>
                                 <li className="rounded-lg border p-4">Companies House company number 16405915</li>
                                 <li className="rounded-lg border p-4">5.0 rating from 16 Google reviews</li>
                             </ul>

@@ -1,11 +1,11 @@
 {
   "slug": "lawn-care",
   "label": "Lawn Mowing",
-  "title": "Lawn Mowing & Lawn Care in Newquay & Cornwall",
-  "description": "Lawn mowing and grass cutting across Newquay and Cornwall, from Porth, Pentire and Crantock to Truro, St Austell, Wadebridge, Padstow and Perranporth. I offer reliable fortnightly and weekly visits with clean edges, strimming, and a tidy finish as standard on every cut. Cornwall's mild coastal climate means lawns here grow almost year-round, so they benefit from consistent attention rather than the seasonal stop-start you get further up the country. Whether you have a small front lawn, a holiday-let garden, or a larger family lawn, I will keep it looking its best. Prices start from £20 for a small lawn and £30 to £50 for an average-sized garden, with no hidden extras.",
+  "title": "Lawn Mowing & Lawn Care Across Cornwall",
+  "description": "Cornwall lawn mowing and lawn care from my Newquay base, covering Porth, Pentire and Crantock as well as regular routes towards Wadebridge, Padstow, Perranporth and nearby towns. I offer reliable fortnightly and weekly visits with clean edges, strimming, and a tidy finish as standard on every cut. Cornwall's mild coastal climate means lawns here can grow for much of the year, so I adjust the schedule to the weather and the lawn rather than using a rigid calendar. Whether you have a small front lawn, a holiday-let garden, or a larger family lawn, I will keep it looking its best. Prices start from £20 for a small lawn and £30 to £50 for an average-sized garden, with no hidden extras.",
   "seo": {
-    "title": "Lawn Mowing & Lawn Care in Cornwall | Quilliams",
-    "description": "Reliable lawn mowing in Newquay, Truro, St Austell, Wadebridge, Padstow and Cornwall. Weekly or fortnightly visits, clean edges and a tidy finish from £20."
+    "title": "Lawn Care Cornwall | Mowing in Newquay from £20",
+    "description": "Cornwall lawn care and reliable mowing from a Newquay-based gardener. Weekly or fortnightly visits, clean edges and a tidy finish from £20. Free quote."
   },
   "cardIcon": "Sprout",
   "hero": {
@@ -58,7 +58,7 @@
       },
       {
         "title": "Green waste removal (optional)",
-        "description": "Grass clippings can be collected and removed if you prefer a cleaner finish. Green waste removal is charged at £10 per dumpy bag, and I am a licensed waste carrier so everything is disposed of properly. For most regular cuts the clippings are fine left on the lawn, where they break down and feed the soil naturally.",
+        "description": "Grass clippings can be collected and removed if you prefer a cleaner finish. Green waste removal is charged at £10 per dumpy bag. Quilliams is an Environment Agency registered waste carrier (lower tier), CBDL582202, and I confirm the agreed waste route in the quote. For many regular cuts, short clippings can instead be left on the lawn where appropriate.",
         "icon": "Trash2"
       }
     ]

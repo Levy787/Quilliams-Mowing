@@ -1,8 +1,8 @@
 {
   "slug": "garden-maintenance",
   "label": "Garden Maintenance",
-  "title": "Garden Maintenance",
-  "description": "Regular garden maintenance across Newquay, Truro, St Austell, Bodmin, and the wider Cornwall area. I offer weekly, fortnightly, and monthly visits to keep your garden tidy, healthy, and manageable throughout the year. Cornwall's mild coastal climate means gardens here stay active well into autumn and start growing early in spring, so consistent upkeep makes a real difference compared to letting things build up. Visits are priced between £60 and £120 depending on garden size and the work involved. I am a reliable, insured local gardener with a farming background, and I treat every garden as if it were my own.",
+  "title": "Regular Garden Maintenance in Newquay",
+  "description": "Regular garden maintenance in Newquay and on my north Cornwall routes, with weekly, fortnightly and monthly visits tailored to what the garden actually needs. I keep lawns, borders, hedges and paths tidy so work does not build into an expensive rescue. Cornwall's mild coastal climate means gardens stay active well into autumn and often start early in spring, so consistent upkeep makes a real difference. Visits are priced between £60 and £120 depending on garden size and priorities. I am an insured, owner-operated local gardener with a farming background.",
   "seo": {
     "title": "Garden Maintenance in Newquay & Cornwall | Garden Care",
     "description": "Garden maintenance in Newquay, Truro, St Austell and Cornwall. Weekly, fortnightly and monthly visits from £60. Reliable local gardener. Free quote."
@@ -53,7 +53,7 @@
       },
       {
         "title": "Green waste removal (optional)",
-        "description": "All garden waste, clippings, and prunings can be collected and removed from site. Green waste removal is £10 per dumpy bag, and I am a licensed waste carrier so everything is disposed of responsibly. For regular maintenance customers the waste produced each visit is usually quite manageable, and I will let you know the likely cost upfront.",
+        "description": "Garden waste, clippings and prunings can be collected and removed by agreement. Green waste removal is £10 per dumpy bag. Quilliams is an Environment Agency registered waste carrier (lower tier), CBDL582202, and I confirm the agreed waste route and likely cost upfront.",
         "icon": "Trash2"
       },
       {
@@ -200,7 +200,7 @@
       {
         "id": "waste",
         "question": "Can you remove green waste?",
-        "answer": "Yes, I can take away all green waste from maintenance visits. Removal is charged at £10 per dumpy bag, and I am a licensed waste carrier so everything is disposed of responsibly and in line with regulations. For regular maintenance customers, the waste produced each visit is usually quite manageable. I will let you know the likely waste cost upfront so there are no surprises on the invoice."
+        "answer": "Yes, green waste can be removed by agreement. Removal is charged at £10 per dumpy bag. Quilliams is an Environment Agency registered waste carrier (lower tier), CBDL582202. For regular maintenance customers, the waste produced each visit is usually manageable, and I confirm the agreed waste route and likely cost upfront."
       },
       {
         "id": "one-off",
