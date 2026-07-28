@@ -10,7 +10,7 @@
 
 ### Owner actions
 
-- [ ] 1. Submit one clearly labelled production test quote and confirm the real notification arrives.
+- [x] 1. Submit one clearly labelled production test quote and confirm the real notification arrives. Confirmed 2026-07-28: both the admin lead notification and customer acknowledgement were delivered for `INTERNAL DELIVERY TEST`.
 - [x] 2. Request Search Console indexing for `/services/landscaping`.
 - [x] 3. Add the UTM-tagged production website URL to Google Business Profile.
 - [ ] 4. Keep requesting genuine Google reviews, reply personally, and upload recent project photos to Google Business Profile.
