@@ -24,6 +24,10 @@ export function GoogleAnalytics() {
 window.dataLayer = window.dataLayer || [];
 function gtag(){window.dataLayer.push(arguments);}
 window.gtag = gtag;
+var internalAnalyticsTraffic = window.__QM_INTERNAL_TRAFFIC__ === true;
+if (internalAnalyticsTraffic) {
+  window['ga-disable-${measurementId}'] = true;
+}
 var analyticsConsent = document.cookie.split(';').some(function(cookie) {
   return cookie.trim() === '${CONSENT_COOKIE}=accepted';
 }) ? 'granted' : 'denied';
@@ -33,8 +37,10 @@ gtag('consent', 'default', {
   ad_user_data: 'denied',
   ad_personalization: 'denied'
 });
-gtag('js', new Date());
-gtag('config', '${measurementId}');
+if (!internalAnalyticsTraffic) {
+  gtag('js', new Date());
+  gtag('config', '${measurementId}');
+}
 `,
                 }}
             />

@@ -84,9 +84,8 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
         ? {}
         : {
             initial: { opacity: 0, y: 12 },
-            whileInView: { opacity: 1, y: 0 },
-            viewport: { once: true, amount: 0.25 },
-            transition: { duration: 0.6, ease: EASE_OUT },
+            animate: { opacity: 1, y: 0 },
+            transition: { duration: 0.45, ease: EASE_OUT },
         };
 
     const HeroPattern = patternUrl(service.hero.pattern);
@@ -177,10 +176,9 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                                         ? {}
                                         : {
                                             initial: { opacity: 0, y: 12 },
-                                            whileInView: { opacity: 1, y: 0 },
-                                            viewport: { once: true, amount: 0.25 },
+                                            animate: { opacity: 1, y: 0 },
                                             transition: {
-                                                duration: 0.65,
+                                                duration: 0.5,
                                                 ease: EASE_OUT,
                                                 delay: 0.05,
                                             },

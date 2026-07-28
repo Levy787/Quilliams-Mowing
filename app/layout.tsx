@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 import { getSiteContent } from "@/lib/keystatic-reader";
+import { AnalyticsTrafficMode } from "@/components/AnalyticsTrafficMode";
 import { PostHogClientInit } from "@/components/PostHogClientInit";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 
@@ -86,6 +87,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <AnalyticsTrafficMode />
         <GoogleAnalytics />
         <PostHogClientInit />
         {children}

@@ -6,6 +6,26 @@
 
 ---
 
+## 2026-07-28 Post-merge SEO and conversion follow-up
+
+### Owner actions
+
+- [ ] 1. Submit one clearly labelled production test quote and confirm the real notification arrives.
+- [x] 2. Request Search Console indexing for `/services/landscaping`.
+- [x] 3. Add the UTM-tagged production website URL to Google Business Profile.
+- [ ] 4. Keep requesting genuine Google reviews, reply personally, and upload recent project photos to Google Business Profile.
+- [ ] 5. Supply one real completed project each month for a proof-led case study with original photos, town, scope, result, and an honest price range where appropriate.
+
+### Agent work
+
+- [x] Remove self-serving `Review` and `AggregateRating` markup while retaining the visible 22-review proof.
+- [x] Add quote/contact form-start, validation-error, direct-email-click, and successful-lead analytics.
+- [x] Add a durable way to mark or exclude QA/internal traffic from GA4 and PostHog reporting.
+- [x] Review post-release quote recordings and recheck `/quote` responsiveness plus `/services/landscaping` loading before making any UX change. No post-merge quote recordings were available yet; the live benchmark passed its main timing budgets, and the visual sweep found and fixed delayed service-page headings that left blank gaps.
+- [x] Run focused tests, lint, type checks, a production build, and local browser checks at mobile, tablet, and desktop widths.
+
+---
+
 ## 2026-06-01 Service-area consistency cleanup
 
 - [x] Regenerate `public/search-index.json`. Note: the generator (`scripts/generate-search-index.mjs`) reads `content/*.json` only and never indexed area pages, so this does not change which towns the on-site search covers.
@@ -59,7 +79,7 @@
 - [x] H-07: Expand `/pricing` with an 800+ word 2026 Cornwall pricing guide and a direct lawn-mowing cost answer block.
 - [x] H-08: Rewrite the homepage About-Us block and Quality/Satisfaction/Sustainability cards in Levi's voice.
 - [x] H-09: Upgrade `/blog/best-gardeners-newquay` with Article/BlogPosting enhancements, ItemList schema, and existing FAQPage schema.
-- [x] H-10: Add AggregateRating to the site-wide `#business` LocalBusiness node.
+- [x] H-10: Added AggregateRating to the site-wide `#business` LocalBusiness node. Superseded on 2026-07-28: removed self-serving review/rating markup while retaining visible review proof.
 - [x] H-11: Add a standalone `#levi` Person node and reference it from LocalBusiness founder/employee and blog author schema.
 - [x] H-12: Expand LocalBusiness `areaServed` to all 9 area pages plus Cornwall.
 - [x] H-13: Add `Last-Updated: 2026-05-26` and `## Key Pages` to `/llms.txt`.

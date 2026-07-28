@@ -4,6 +4,7 @@ import * as React from "react";
 import { usePathname } from "next/navigation";
 
 import { initializePostHog } from "@/app/instrumentation-client";
+import { capturePostHogEvent } from "@/lib/posthog-client";
 
 type IdleWindow = Window & {
     requestIdleCallback?: (
@@ -15,6 +16,28 @@ type IdleWindow = Window & {
 
 export function PostHogClientInit() {
     const pathname = usePathname();
+
+    React.useEffect(() => {
+        function onDocumentClick(event: MouseEvent) {
+            const target = event.target;
+            if (!(target instanceof Element)) return;
+
+            const emailLink = target.closest<HTMLAnchorElement>(
+                'a[href^="mailto:"]',
+            );
+            if (!emailLink) return;
+
+            void capturePostHogEvent("click_email", {
+                location: emailLink.closest("footer")
+                    ? "footer"
+                    : "page_content",
+                path: window.location.pathname,
+            });
+        }
+
+        document.addEventListener("click", onDocumentClick);
+        return () => document.removeEventListener("click", onDocumentClick);
+    }, []);
 
     React.useEffect(() => {
         let cancelled = false;

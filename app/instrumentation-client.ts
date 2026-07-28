@@ -1,5 +1,7 @@
 import type posthogType from "posthog-js/dist/module.slim";
 
+import { isInternalAnalyticsTraffic } from "@/lib/analytics-traffic";
+
 const CONSENT_COOKIE = "cookie_consent_analytics";
 const DEBUG = process.env.NODE_ENV !== "production";
 const API_HOST = "/ph";
@@ -22,6 +24,14 @@ function getCookieValue(name: string): string | null {
 
 export function initializePostHog(): Promise<PostHogClient | null> {
     if (initializationPromise) return initializationPromise;
+
+    if (isInternalAnalyticsTraffic()) {
+        if (DEBUG && typeof window !== "undefined") {
+            console.info("[posthog] disabled for internal traffic");
+        }
+        initializationPromise = Promise.resolve(null);
+        return initializationPromise;
+    }
 
     const key = process.env.NEXT_PUBLIC_POSTHOG_KEY?.trim();
     if (!key) {

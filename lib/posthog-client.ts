@@ -1,6 +1,7 @@
 "use client";
 
 import { initializePostHog } from "@/app/instrumentation-client";
+import { isInternalAnalyticsTraffic } from "@/lib/analytics-traffic";
 
 export type PostHogEventProperties = Record<string, unknown>;
 
@@ -10,6 +11,7 @@ const GA_EVENT_MAP: Record<string, { name: string; method?: string }> = {
     conversion_gravel_offer_submit: { name: "generate_lead", method: "gravel_offer_form" },
     conversion_exit_intent_lead: { name: "generate_lead", method: "exit_intent_form" },
     click_phone: { name: "click_phone" },
+    click_email: { name: "click_email" },
     click_whatsapp: { name: "click_whatsapp" },
 };
 
@@ -37,7 +39,13 @@ function captureGoogleAnalyticsEvent(
     eventName: string,
     properties?: PostHogEventProperties,
 ) {
-    if (typeof window === "undefined" || typeof window.gtag !== "function") return;
+    if (
+        typeof window === "undefined" ||
+        typeof window.gtag !== "function" ||
+        isInternalAnalyticsTraffic()
+    ) {
+        return;
+    }
 
     const mapped = GA_EVENT_MAP[eventName] ?? { name: eventName };
     window.gtag("event", mapped.name, {
@@ -51,6 +59,8 @@ export async function capturePostHogEvent(
     eventName: string,
     properties?: PostHogEventProperties,
 ) {
+    if (isInternalAnalyticsTraffic()) return;
+
     captureGoogleAnalyticsEvent(eventName, properties);
 
     try {

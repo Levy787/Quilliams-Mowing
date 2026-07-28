@@ -17,14 +17,9 @@ import { QuoteActionStrip } from "@/components/reusable/QuoteActionStrip";
 
 import { getHomeContent } from "@/lib/keystatic-reader";
 import { buildMetadata } from "@/lib/seo";
-import { ReviewSchema } from "@/components/seo/ReviewSchema";
 import { FAQSchema } from "@/components/seo/FAQSchema";
 import { WebPageSchema } from "@/components/seo/WebPageSchema";
 import { PrimarySitelinks } from "@/components/seo/PrimarySitelinks";
-import {
-    GOOGLE_REVIEW_COUNT,
-    GOOGLE_REVIEW_RATING,
-} from "@/lib/google-reviews";
 
 export async function generateMetadata(): Promise<Metadata> {
     const home = await getHomeContent();
@@ -41,14 +36,6 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function Home() {
     const home = await getHomeContent();
 
-    // Transform testimonials to review format
-    const reviews = home.testimonials.items.map((item) => ({
-        author: item.name,
-        reviewBody: item.quote,
-        datePublished: item.date,
-        ratingValue: GOOGLE_REVIEW_RATING,
-    }));
-
     // Transform FAQ items for schema
     const faqItems = home.faq.items.map((item) => ({
         question: item.question,
@@ -60,10 +47,6 @@ export default async function Home() {
             <WebPageSchema
                 name={home.seo.title}
                 description={home.seo.description}
-            />
-            <ReviewSchema
-                reviews={reviews}
-                aggregateReviewCount={GOOGLE_REVIEW_COUNT}
             />
             <FAQSchema items={faqItems} />
             <Hero {...home.hero} />

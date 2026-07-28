@@ -20,6 +20,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { LeafletMap } from "@/components/reusable/leaflet-map";
 import { Turnstile, type TurnstileHandle } from "@/components/TurnstileWidget";
 import { capturePostHogEvent } from "@/lib/posthog-client";
+import { useFormAnalytics } from "@/lib/use-form-analytics";
 
 export type ContactClientProps = {
     header: {
@@ -76,6 +77,12 @@ export default function ContactClient({ header, details, form, map }: ContactCli
     const [isSubmitting, setIsSubmitting] = React.useState(false);
     const [turnstileToken, setTurnstileToken] = React.useState("");
     const turnstileRef = React.useRef<TurnstileHandle>(null);
+    const {
+        resetFormAnalytics,
+        trackFormStart,
+        trackInvalidField,
+        trackValidationError,
+    } = useFormAnalytics("contact");
 
     const isTurnstileEnabled = Boolean(
         process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY_CONTACT?.trim(),
@@ -83,8 +90,10 @@ export default function ContactClient({ header, details, form, map }: ContactCli
 
     async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
+        trackFormStart();
 
         if (isTurnstileEnabled && !turnstileToken.trim()) {
+            trackValidationError("turnstile", "value_missing");
             toast.error("Please complete the verification.");
             return;
         }
@@ -106,6 +115,18 @@ export default function ContactClient({ header, details, form, map }: ContactCli
                 turnstileToken: isTurnstileEnabled ? turnstileToken : "",
             };
 
+            const trackingProperties = {
+                form_name: "contact",
+                has_service: Boolean(payload.service),
+                has_phone: Boolean(payload.phone),
+                turnstile_enabled: isTurnstileEnabled,
+            };
+
+            void capturePostHogEvent(
+                "contact_submit_attempt",
+                trackingProperties,
+            );
+
             const res = await fetch("/api/contact", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -123,6 +144,11 @@ export default function ContactClient({ header, details, form, map }: ContactCli
                 setIsSubmitting(false);
                 setTurnstileToken("");
                 turnstileRef.current?.reset();
+                void capturePostHogEvent("contact_submit_failed", {
+                    ...trackingProperties,
+                    failure_stage: "api_response",
+                    status: res.status,
+                });
                 return;
             }
 
@@ -130,20 +156,33 @@ export default function ContactClient({ header, details, form, map }: ContactCli
             setSubmitted(true);
             toast.success(form.toastSuccess);
 
+            void capturePostHogEvent("contact_submit_success", {
+                ...trackingProperties,
+                status: res.status,
+            });
             void capturePostHogEvent("conversion_contact_submit", {
+                ...trackingProperties,
                 source: "contact",
-                hasService: Boolean((service ?? "").trim()),
-                turnstileEnabled: isTurnstileEnabled,
+                status: res.status,
             });
 
             formEl.reset();
             setService("");
             setTurnstileToken("");
             turnstileRef.current?.reset();
-        } catch {
+            resetFormAnalytics();
+        } catch (error) {
             setIsSubmitting(false);
             setTurnstileToken("");
             turnstileRef.current?.reset();
+            void capturePostHogEvent("contact_submit_failed", {
+                form_name: "contact",
+                failure_stage: "client_exception",
+                error:
+                    error instanceof Error
+                        ? error.name
+                        : "unknown_error",
+            });
             toast.error("Unable to submit. Please try again.");
         }
     }
@@ -193,6 +232,15 @@ export default function ContactClient({ header, details, form, map }: ContactCli
                                                 <Link
                                                     href={`tel:${details.phoneTel}`}
                                                     className="mt-1 block text-sm text-background/80 hover:text-background dark:text-muted-foreground dark:hover:text-foreground"
+                                                    onClick={() => {
+                                                        void capturePostHogEvent(
+                                                            "click_phone",
+                                                            {
+                                                                location:
+                                                                    "contact_details",
+                                                            },
+                                                        );
+                                                    }}
                                                 >
                                                     {details.phoneDisplay}
                                                 </Link>
@@ -287,7 +335,13 @@ export default function ContactClient({ header, details, form, map }: ContactCli
                                     </p>
                                 </div>
 
-                                <form className="mt-6 space-y-5" onSubmit={onSubmit}>
+                                <form
+                                    className="mt-6 space-y-5"
+                                    onSubmit={onSubmit}
+                                    onFocusCapture={trackFormStart}
+                                    onPointerDown={trackFormStart}
+                                    onInvalidCapture={trackInvalidField}
+                                >
                                     {/* Honeypot field for basic spam protection */}
                                     <input
                                         type="text"

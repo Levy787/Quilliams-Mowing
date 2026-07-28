@@ -23,6 +23,7 @@ import {
     capturePostHogEvent,
     type PostHogEventProperties,
 } from "@/lib/posthog-client";
+import { useFormAnalytics } from "@/lib/use-form-analytics";
 
 type PreviewItem = {
     id: string;
@@ -243,6 +244,12 @@ export function QuoteClient({
     const [submitted, setSubmitted] = React.useState(false);
 
     const [showOptional, setShowOptional] = React.useState(false);
+    const {
+        resetFormAnalytics,
+        trackFormStart,
+        trackInvalidField,
+        trackValidationError,
+    } = useFormAnalytics("quote");
 
     function validateAndAddFiles(incoming: FileList | null) {
         if (!incoming) return;
@@ -251,10 +258,12 @@ export function QuoteClient({
 
         const allowed = [...incoming].filter((f) => {
             if (!f.type.startsWith("image/")) {
+                trackValidationError("photos", "invalid_file_type");
                 setFileError(form.onlyImagesError);
                 return false;
             }
             if (f.size > MAX_SINGLE_FILE_MB * 1024 * 1024) {
+                trackValidationError("photos", "file_too_large");
                 setFileError(`File "${f.name}" exceeds ${MAX_SINGLE_FILE_MB}MB.`);
                 return false;
             }
@@ -262,6 +271,7 @@ export function QuoteClient({
         });
 
         if (files.length + allowed.length > MAX_FILES) {
+            trackValidationError("photos", "too_many_files");
             setFileError(form.maxPhotosError);
             return;
         }
@@ -321,6 +331,7 @@ export function QuoteClient({
 
     async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
+        trackFormStart();
         setFormError("");
         setContactError("");
         setIsSubmitting(true);
@@ -352,6 +363,7 @@ export function QuoteClient({
         if (!phone && !email) {
             setContactError("Please provide a phone number or email so I can get back to you.");
             setIsSubmitting(false);
+            trackValidationError("contact_method", "value_missing");
             void capturePostHogEvent("quote_submit_failed", {
                 ...trackingProperties,
                 failureStage: "client_validation",
@@ -444,6 +456,7 @@ export function QuoteClient({
             });
 
             resetForm(formEl);
+            resetFormAnalytics();
         } catch (error) {
             setIsSubmitting(false);
             setTurnstileToken("");
@@ -539,7 +552,13 @@ export function QuoteClient({
                                     {form.description}
                                 </p>
 
-                                <form className="mt-6 space-y-5" onSubmit={onSubmit}>
+                                <form
+                                    className="mt-6 space-y-5"
+                                    onSubmit={onSubmit}
+                                    onFocusCapture={trackFormStart}
+                                    onPointerDown={trackFormStart}
+                                    onInvalidCapture={trackInvalidField}
+                                >
                                     {/* Honeypot field for basic spam protection */}
                                     <input
                                         type="text"
@@ -594,7 +613,18 @@ export function QuoteClient({
                                     {/* Optional fields toggle */}
                                     <button
                                         type="button"
-                                        onClick={() => setShowOptional(!showOptional)}
+                                        onClick={() => {
+                                            const nextShowOptional =
+                                                !showOptional;
+                                            setShowOptional(nextShowOptional);
+                                            void capturePostHogEvent(
+                                                "quote_optional_details_toggle",
+                                                {
+                                                    expanded:
+                                                        nextShowOptional,
+                                                },
+                                            );
+                                        }}
                                         className="flex min-h-12 w-full items-center justify-between gap-3 rounded-lg border border-border bg-muted/30 px-4 py-3 text-left text-sm font-medium text-foreground transition-colors hover:border-primary"
                                         aria-expanded={showOptional}
                                     >
